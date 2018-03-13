@@ -1,17 +1,17 @@
 package acg.pam.sql
 
 import java.time.Instant
-import javax.persistence.Entity
-import javax.persistence.JoinColumn
-import javax.persistence.ManyToOne
+import java.util.*
+import javax.persistence.*
 
 @Entity(name = "transfers")
 data class Transfer(
     @ManyToOne
-    @JoinColumn(name = "memberID")
+    @JoinColumn(name = "member_id")
     val acgMember: AcgMember,
     @ManyToOne
-    @JoinColumn(name = "squadronID")
+    @JoinColumn(name = "squadron_id")
     val squadron: Squadron,
-    val transferDate: Instant
+    @Temporal(TemporalType.DATE)
+    val transferDate: Date = Date.from(Instant.MIN)
 ) : BaseEntity()
