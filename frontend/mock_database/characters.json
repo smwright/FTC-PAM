@@ -1,0 +1,38 @@
+[
+  {
+		"character_id": "1",
+    "rank": "Gefr",
+    "name": "Birndorfer, Jakob",
+    "callsign": "Bryan",
+    "status": "POW",
+    "squadron": "6./ZG76",
+    "last_mission": "1940-09-07 16:00:00"
+  },
+  {
+		"character_id": "2",
+    "rank": "Sgt",
+    "name": "Printon-Smith, Sebastian",
+    "callsign": "Pathfinder",
+    "status": "KIA",
+    "squadron": "No.32",
+    "last_mission": "1940-08-18 16:00:00"
+  },
+  {
+		"character_id": "3",
+    "rank": "Sgt",
+    "name": "Wraith, Cecil",
+    "callsign": "Pathfinder",
+    "status": "KIA",
+    "squadron": "No.32",
+    "last_mission": "1940-08-21 11:30:00"
+  },
+	{
+		"character_id": "4",
+		"rank": "Lt",
+		"name": "Julius Beck",
+		"callsign": "Coopes",
+		"status": "KIA",
+		"squadron": "9./JG26",
+		"last_mission": "1940-06-13 13:05:00"
+	}
+]

@@ -1,0 +1,41 @@
+{
+	"name": "Adler",
+	"status": "dismissed",
+	"length_of_service": "0 years, 5 months, 10 days",
+	"sorties": "6",
+	"pilot_status_ok": "5",
+	"pilot_status_kia": "1",
+	"aircraft_status_ok": "2",
+	"aircraft_status_damaged": "3",
+	"aircraft_status_lost": "1",
+	"victories_lw_unconfirmed": "1",
+	"victories_lw_confirmed": "1",
+	"status_updates": [
+		{
+			"status": "dismissed",
+			"date": "2015-08-05"
+		},
+		{
+			"status": "active",
+			"date": "2015-02-22"
+		}
+	],
+	"transfers": [
+		{
+			"date": "2015-02-22",
+			"to": "4./JG26"
+		}
+	],
+	"rank_changes": [
+		{
+			"date": "2015-03-30",
+			"rank": "Obergefreiter",
+			"comment": "Luftwaffe Promotions March 2015"
+		},
+		{
+			"date": "2015-02-22",
+			"rank": "Gefreiter",
+			"comment": "Added to staffel."
+		}
+	]
+}

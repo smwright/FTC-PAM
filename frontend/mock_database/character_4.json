@@ -1,0 +1,40 @@
+{
+	"firstname": "Julius",
+	"lastname": "Beck",
+	"callsign": "Coopes",
+	"status": "KIA",
+  "campaigns": [
+    {
+      "campaign_name": "Fall Gelb",
+      "service_period": "1940-06-01 - 1940-06-02",
+      "length_of_service": "0 years, 0 months, 2 days"
+    },
+    {
+      "campaign_name": "Fall Rot",
+      "service_period": "1940-06-05 - 1940-06-13",
+      "length_of_service": "0 years, 0 months, 9 days"
+    }
+  ],
+	"sorties": "10",
+	"pilot_status_ok": "7",
+	"pilot_status_wounded": "2",
+	"pilot_status_kia": "1",
+	"aircraft_status_ok": "1",
+	"aircraft_status_damaged": "8",
+	"aircraft_status_lost": "1",
+	"victories_lw_unconfirmed": "2",
+	"victories_lw_confirmed": "5",
+	"transfers": [
+		{
+			"date": "1940-06-01",
+			"to": "9./JG26"
+		}
+	],
+	"rank_changes": [
+		{
+			"date": "1940-06-01",
+			"rank": "Leutnant",
+			"comment": "Transfer to 9./JG26 as Staffelkapitän"
+		}
+	]
+}

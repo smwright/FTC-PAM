@@ -1,0 +1,24 @@
+[
+  {
+    "name": "5th September 1940 - Beruhige dich: Er kommt!",
+    "date": "2018-01-07",
+    "historic_date": "1940-09-05 09:30:00",
+    "campaign": "Battle of Britain",
+    "status": "debriefing"
+  },
+  {
+    "name": "4th September - Invasion assembly",
+    "date": "2017-12-10",
+    "historic_date": "1940-09-04 09:00:00",
+    "campaign": "Battle of Britain",
+    "status": "closed"
+  },
+  {
+    "name": "3rd September 1940 Pm - Losing their nerve",
+    "date": "2017-12-03",
+    "historic_date": "1940-09-03 12:00:00",
+    "campaign": "Battle of Britain",
+    "status": "closed"
+  }
+]
+
