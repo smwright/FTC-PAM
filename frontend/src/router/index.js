@@ -7,6 +7,11 @@ import CampaignInfoMissions from '@/components/CampaignInfoMissions'
 import CampaignInfoUnits from '@/components/CampaignInfoUnits'
 import CampaignInfoSideNav from '@/components/CampaignInfoSideNav'
 import CampaignEditor from '@/components/CampaignEditor'
+
+//Flight school components
+import FlightSchoolSideNav from '@/components/FlightSchoolSideNav'
+import FlightSchoolMain from '@/components/FlightSchoolMain'
+
 import Members from '@/components/Members'
 import Missions from '@/components/Missions'
 import Admin from '@/components/Admin'
@@ -60,6 +65,25 @@ export default new VueRouter({
       path: '/campaign-editor',
       name: 'CampaignEditor',
       component: CampaignEditor
+    },
+    // Flight school routing
+    {
+      // Main entry of the flight school
+      path: '/flight-school',
+      name: 'FlightSchool',
+      components: {
+        default: FlightSchoolMain,
+        sidenav: FlightSchoolSideNav
+      },
+      // children: [
+      //   {
+      //     // path: '/flight-school/lesson-name',
+      //     // name: 'lesson-name' <- same name as in <router-link :to="{ name: 'PUT_LESSON_NAME HERE' }"
+      //     // components: {
+      //     //   subcontent: ComponentName <- As imported above. 
+      //     // }
+      //   }
+      // ]
     },
     {
       path: '/members',
