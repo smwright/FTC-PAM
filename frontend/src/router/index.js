@@ -80,7 +80,7 @@ export default new VueRouter({
       //     // path: '/flight-school/lesson-name',
       //     // name: 'lesson-name' <- same name as in <router-link :to="{ name: 'PUT_LESSON_NAME HERE' }"
       //     // components: {
-      //     //   subcontent: ComponentName <- As imported above. 
+      //     //   default: ComponentName <- As imported above. 
       //     // }
       //   }
       // ]
