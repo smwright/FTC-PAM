@@ -1,0 +1,12 @@
+{
+	"id" : 6,
+	"name" : "Battle of Britain",
+	"primary" : 1,
+	"platform" : "CloD",
+	"campaign_status" : 1,
+	"time" : "1900 UTC",
+	"open" : 0,
+	"campaign_link" : 5,
+	"description" : "",
+	"image" : ""
+}

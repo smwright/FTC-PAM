@@ -2,6 +2,9 @@
   <div class="frontpage">
     <h1>Air Combat Group - Mission and Pilot Database</h1>
     <img src="../assets/ww2paperworksimulator.png">
+    
+    <p>This is new. We're working here.</p>
+    
     <p>Welcome to the Air Combat Group Pilot and Mission database - The place where information on ACG pilots, squadrons and missions is stored and presented.</p>
 
     <p>Flying the Air Combat Group campaign means flying for historical immersion. We do not seek competition or try to win, we try to re-enact and get a feel for what it was like to be a fighter pilot during World War II.</p>

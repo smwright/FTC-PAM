@@ -1,0 +1,303 @@
+[
+	{
+		"id" : 96,
+		"name" : "10th July 1940  - The Battle Begins",
+		"real_date" : "2016-08-07",
+		"hist_date" : "1940-07-10 11:30:00",
+		"mission_status" : 2
+	},
+	{
+		"id" : 97,
+		"name" : "11th July 1940 - The Channel Warms Up",
+		"real_date" : "2016-08-14",
+		"hist_date" : "1940-07-11 16:00:00",
+		"mission_status" : 2
+	},
+	{
+		"id" : 98,
+		"name" : "12th July 1940 - The Battle Of Booty",
+		"real_date" : "2016-08-21",
+		"hist_date" : "1940-07-12 13:30:00",
+		"mission_status" : 2
+	},
+	{
+		"id" : 99,
+		"name" : "13th July 1940",
+		"real_date" : "2016-08-28",
+		"hist_date" : "1940-07-13 17:00:00",
+		"mission_status" : 2
+	},
+	{
+		"id" : 100,
+		"name" : "14th July 1940 - \"A Hot Little Engagement\"",
+		"real_date" : "2016-09-11",
+		"hist_date" : "1940-07-14 12:40:00",
+		"mission_status" : 2
+	},
+	{
+		"id" : 101,
+		"name" : "15th July 1940 - Convoy \"Pilot\"",
+		"real_date" : "2016-09-18",
+		"hist_date" : "1940-07-15 12:35:00",
+		"mission_status" : 2
+	},
+	{
+		"id" : 102,
+		"name" : "25th July 1940 - Ding Dong Over The Channel",
+		"real_date" : "2016-10-09",
+		"hist_date" : "1940-07-25 11:20:00",
+		"mission_status" : 2
+	},
+	{
+		"id" : 103,
+		"name" : "28 July 1940 The Feint",
+		"real_date" : "2016-10-16",
+		"hist_date" : "1940-07-28 12:00:00",
+		"mission_status" : 2
+	},
+	{
+		"id" : 104,
+		"name" : "29 July 1940 - The Channel Stays Hot",
+		"real_date" : "2016-10-23",
+		"hist_date" : "1940-07-29 07:00:00",
+		"mission_status" : 2
+	},
+	{
+		"id" : 105,
+		"name" : "8th August 1940 (Morning) - Boom Town",
+		"real_date" : "2016-10-30",
+		"hist_date" : "1940-08-08 08:10:00",
+		"mission_status" : 2
+	},
+	{
+		"id" : 106,
+		"name" : "8th August 1940 (Afternoon) - ",
+		"real_date" : "2016-11-06",
+		"hist_date" : "1940-08-08 15:00:00",
+		"mission_status" : 2
+	},
+	{
+		"id" : 107,
+		"name" : "11th August 1940 - All Along The Channel",
+		"real_date" : "2016-11-13",
+		"hist_date" : "1940-08-11 11:00:00",
+		"mission_status" : 2
+	},
+	{
+		"id" : 108,
+		"name" : "12th August 1940 -  Tag der Zerstorer",
+		"real_date" : "2016-12-11",
+		"hist_date" : "1940-08-12 08:00:00",
+		"mission_status" : 2
+	},
+	{
+		"id" : 109,
+		"name" : "13th August 1940 - Adlertag",
+		"real_date" : "2017-01-08",
+		"hist_date" : "1940-08-13 05:50:00",
+		"mission_status" : 2
+	},
+	{
+		"id" : 110,
+		"name" : "13th August 1940  - Adlernachmittag",
+		"real_date" : "2017-01-22",
+		"hist_date" : "1940-08-13 15:25:00",
+		"mission_status" : 2
+	},
+	{
+		"id" : 111,
+		"name" : "14th August 1940 - The quiet after the storm",
+		"real_date" : "2017-01-29",
+		"hist_date" : "1940-08-14 10:30:00",
+		"mission_status" : 2
+	},
+	{
+		"id" : 112,
+		"name" : "15th August 1940 - Now we can begin",
+		"real_date" : "2017-02-05",
+		"hist_date" : "1940-08-15 10:30:00",
+		"mission_status" : 2
+	},
+	{
+		"id" : 113,
+		"name" : "15th August 1940 - Balls Out",
+		"real_date" : "2017-02-12",
+		"hist_date" : "1940-08-15 15:30:00",
+		"mission_status" : 2
+	},
+	{
+		"id" : 114,
+		"name" : "16th August 1940 (Morning) - Feel The Steel",
+		"real_date" : "2017-03-12",
+		"hist_date" : "1940-08-16 11:15:00",
+		"mission_status" : 2
+	},
+	{
+		"id" : 115,
+		"name" : "16th August 1940 (Afternoon) - Fighter Commands VC",
+		"real_date" : "2017-03-19",
+		"hist_date" : "1940-08-16 16:30:00",
+		"mission_status" : 2
+	},
+	{
+		"id" : 116,
+		"name" : "The Hardest Day - Part 1",
+		"real_date" : "2017-03-26",
+		"hist_date" : "1940-08-18 12:50:00",
+		"mission_status" : 2
+	},
+	{
+		"id" : 117,
+		"name" : "The Hardest Day - Part 2",
+		"real_date" : "2017-04-02",
+		"hist_date" : "1940-08-18 16:00:00",
+		"mission_status" : 2
+	},
+	{
+		"id" : 118,
+		"name" : "19th August 1940-  Escorting the escorts ",
+		"real_date" : "2017-04-09",
+		"hist_date" : "1940-08-19 14:00:00",
+		"mission_status" : 2
+	},
+	{
+		"id" : 119,
+		"name" : "20th August 1940 - Churchills speech",
+		"real_date" : "2017-04-30",
+		"hist_date" : "1940-08-20 13:45:00",
+		"mission_status" : 2
+	},
+	{
+		"id" : 120,
+		"name" : "21st August 1940 - Dark days ahead",
+		"real_date" : "2017-05-07",
+		"hist_date" : "1940-08-21 11:30:00",
+		"mission_status" : 2
+	},
+	{
+		"id" : 121,
+		"name" : "22nd  August 1940 - Weathering the storm ",
+		"real_date" : "2017-05-14",
+		"hist_date" : "1940-08-22 11:30:00",
+		"mission_status" : 2
+	},
+	{
+		"id" : 122,
+		"name" : "24th August 1940 - A Stand Of Defiance",
+		"real_date" : "2017-05-21",
+		"hist_date" : "1940-08-24 08:15:00",
+		"mission_status" : 2
+	},
+	{
+		"id" : 123,
+		"name" : "25th August 1940 - Berlin will burn",
+		"real_date" : "2017-05-28",
+		"hist_date" : "1940-08-25 17:00:00",
+		"mission_status" : 2
+	},
+	{
+		"id" : 124,
+		"name" : "26th August 1940 (Morning) - Czech mate",
+		"real_date" : "2017-06-25",
+		"hist_date" : "1940-08-26 10:00:00",
+		"mission_status" : 2
+	},
+	{
+		"id" : 125,
+		"name" : "26th August 1940 (Afternoon) - Feel the steel II",
+		"real_date" : "2017-07-02",
+		"hist_date" : "1940-08-26 14:00:00",
+		"mission_status" : 2
+	},
+	{
+		"id" : 126,
+		"name" : "28th August 1940 ( Churchills visit )",
+		"real_date" : "2017-07-16",
+		"hist_date" : "1940-08-28 09:30:00",
+		"mission_status" : 2
+	},
+	{
+		"id" : 128,
+		"name" : "29th August 1940 Kesselrings Line",
+		"real_date" : "2017-08-06",
+		"hist_date" : "1940-08-29 14:00:00",
+		"mission_status" : 2
+	},
+	{
+		"id" : 129,
+		"name" : "30th August 1940 - Sex And Violence ",
+		"real_date" : "2017-09-03",
+		"hist_date" : "1940-08-30 10:30:00",
+		"mission_status" : 2
+	},
+	{
+		"id" : 131,
+		"name" : "30th August 1940 -PM- Thats what I call action",
+		"real_date" : "2017-09-10",
+		"hist_date" : "1940-08-30 14:00:00",
+		"mission_status" : 2
+	},
+	{
+		"id" : 132,
+		"name" : "31st August 1940 am ( Blimey not again)",
+		"real_date" : "2017-09-24",
+		"hist_date" : "1940-08-31 07:00:00",
+		"mission_status" : 2
+	},
+	{
+		"id" : 133,
+		"name" : "31th August - They just dont give up, do they",
+		"real_date" : "2017-10-01",
+		"hist_date" : "1940-08-31 09:00:00",
+		"mission_status" : 2
+	},
+	{
+		"id" : 134,
+		"name" : "1st September 1940 - Bloody holes in the ground",
+		"real_date" : "2017-10-22",
+		"hist_date" : "1940-09-01 11:30:00",
+		"mission_status" : 2
+	},
+	{
+		"id" : 135,
+		"name" : "2nd September 1940 - Zielwechsel",
+		"real_date" : "2017-10-29",
+		"hist_date" : "1940-09-02 07:30:00",
+		"mission_status" : 2
+	},
+	{
+		"id" : 136,
+		"name" : "2nd September 1940 (Afternoon) - Londons Burning",
+		"real_date" : "2017-11-05",
+		"hist_date" : "1940-09-02 13:00:00",
+		"mission_status" : 2
+	},
+	{
+		"id" : 138,
+		"name" : "3rd September 1940 - Down to their reserves ",
+		"real_date" : "2017-11-26",
+		"hist_date" : "1940-09-03 08:45:00",
+		"mission_status" : 2
+	},
+	{
+		"id" : 139,
+		"name" : "3rd September 1940 Pm - Losing their nerve",
+		"real_date" : "2017-12-03",
+		"hist_date" : "1940-09-03 12:00:00",
+		"mission_status" : 2
+	},
+	{
+		"id" : 140,
+		"name" : "4th September - Invasion assembly",
+		"real_date" : "2017-12-10",
+		"hist_date" : "1940-09-04 09:00:00",
+		"mission_status" : 2
+	},
+	{
+		"id" : 141,
+		"name" : "5th September 1940 - Beruhige dich: Er kommt!",
+		"real_date" : "2018-01-07",
+		"hist_date" : "1940-09-05 09:30:00",
+		"mission_status" : 1
+	}
+]

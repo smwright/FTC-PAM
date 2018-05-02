@@ -1,6 +1,12 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Frontpage from '@/components/Frontpage'
+import CampaignList from '@/components/CampaignList'
+import CampaignInfoMain from '@/components/CampaignInfoMain'
+import CampaignInfoMissions from '@/components/CampaignInfoMissions'
+import CampaignInfoUnits from '@/components/CampaignInfoUnits'
+import CampaignInfoSideNav from '@/components/CampaignInfoSideNav'
+import CampaignEditor from '@/components/CampaignEditor'
 import Members from '@/components/Members'
 import Missions from '@/components/Missions'
 import Admin from '@/components/Admin'
@@ -19,26 +25,49 @@ export default new VueRouter({
     {
       path: '/',
       name: 'Home',
-      component: Home,
+      component: Home
+    },
+    {
+      path: '/campaign-list',
+      name: 'CampaignList',
+      component: CampaignList
+    },
+    {
+      path: '/campaign-info/:campaign_id',
+      name: 'Campaign',
+      components: {
+        default: CampaignInfoMain,
+        sidenav: CampaignInfoSideNav
+      },
       children: [
         {
-          path: '',
-          component: Frontpage
+          path: '/campaign-info/units/:campaign_id',
+          name: 'Units',
+          components: {
+            subcontent: CampaignInfoUnits
+          }
         },
         {
-          path: 'campaign-statistics',
-          name: 'CampaignStatistics',
-          component: CampaignStatistics
+          path: '/campaign-info/missions/:campaign_id',
+          name: 'Missions',
+          components: {
+            subcontent: CampaignInfoMissions
+          }
         }
       ]
     },
     {
+      path: '/campaign-editor',
+      name: 'CampaignEditor',
+      component: CampaignEditor
+    },
+    {
       path: '/members',
-      name: 'Members',
       component: Members,
       children: [
         {
           path: '',
+          name: 'Members',
           redirect: 'members-list'
         },
         {

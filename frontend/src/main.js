@@ -4,13 +4,18 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import resource from './resource'
+import fancytree from 'jquery.fancytree';
 
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
-new Vue({
+var vm = new Vue({
   el: '#app',
   router,
   components: { App },
   template: '<App/>'
 })
+
+
+//DEBUG
+global.vm = vm; //Define you app variable globally

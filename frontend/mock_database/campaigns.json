@@ -1,0 +1,62 @@
+[
+	{
+		"id" : 2,
+		"name" : "Peace in our Time",
+		"primary" : 1,
+		"platform" : "CloD",
+		"campaign_status" : 2,
+		"time" : "1900 UTC",
+		"open" : 0,
+		"campaign_link" : "",
+		"description" : "",
+		"image" : ""
+	},
+	{
+		"id" : 3,
+		"name" : "Leaning Forward",
+		"primary" : 1,
+		"platform" : "CloD",
+		"campaign_status" : 2,
+		"time" : "1900 UTC",
+		"open" : 0,
+		"campaign_link" : 2,
+		"description" : "",
+		"image" : ""
+	},
+	{
+		"id" : 4,
+		"name" : "Fall Gelb",
+		"primary" : 1,
+		"platform" : "CloD",
+		"campaign_status" : 2,
+		"time" : "1900 UTC",
+		"open" : 0,
+		"campaign_link" : "",
+		"description" : "",
+		"image" : ""
+	},
+	{
+		"id" : 5,
+		"name" : "Fall Rot",
+		"primary" : 1,
+		"platform" : "CloD",
+		"campaign_status" : 2,
+		"time" : "1900 UTC",
+		"open" : 0,
+		"campaign_link" : 4,
+		"description" : "",
+		"image" : ""
+	},
+	{
+		"id" : 6,
+		"name" : "Battle of Britain",
+		"primary" : 1,
+		"platform" : "CloD",
+		"campaign_status" : 1,
+		"time" : "1900 UTC",
+		"open" : 0,
+		"campaign_link" : 5,
+		"description" : "",
+		"image" : ""
+	}
+]
