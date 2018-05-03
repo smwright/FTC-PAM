@@ -5,7 +5,8 @@
     <!--<router-link :to="{ name: 'PUT_LESSON_NAME HERE' }">TEXT_TO_SHOW_IN_SIDENAV</router-link>-->
     <!--Add seperators <p>General</p>, <p>Royal Air Force</p>, etc.. as needed-->
    <p>CATEGORY</p>
-   <router-link :to="{ name: 'PUT_LESSON_NAME HERE' }">LESSON</router-link>
+   <router-link :to="{ name: 'FirstLesson' }">First Lesson</router-link>
+   <router-link :to="{ name: 'SecondLesson' }">Second Lesson</router-link>
    </div>
 </template>
 

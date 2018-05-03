@@ -11,6 +11,8 @@ import CampaignEditor from '@/components/CampaignEditor'
 //Flight school components
 import FlightSchoolSideNav from '@/components/FlightSchoolSideNav'
 import FlightSchoolMain from '@/components/FlightSchoolMain'
+import FlightSchoolFirstLesson from '@/components/FlightSchoolFirstLesson'
+import FlightSchoolSecondLesson from '@/components/FlightSchoolSecondLesson'
 
 import Members from '@/components/Members'
 import Missions from '@/components/Missions'
@@ -75,15 +77,22 @@ export default new VueRouter({
         default: FlightSchoolMain,
         sidenav: FlightSchoolSideNav
       },
-      // children: [
-      //   {
-      //     // path: '/flight-school/lesson-name',
-      //     // name: 'lesson-name' <- same name as in <router-link :to="{ name: 'PUT_LESSON_NAME HERE' }"
-      //     // components: {
-      //     //   default: ComponentName <- As imported above. 
-      //     // }
-      //   }
-      // ]
+      children: [
+        {
+          path: '/flight-school/first-lesson',
+          name: 'FirstLesson',
+          components: {
+            lessoncontainer: FlightSchoolFirstLesson 
+          }
+        },
+        {
+          path: '/flight-school/second-lesson',
+          name: 'SecondLesson',
+          components: {
+            lessoncontainer: FlightSchoolSecondLesson 
+          }
+        }
+      ]
     },
     {
       path: '/members',
