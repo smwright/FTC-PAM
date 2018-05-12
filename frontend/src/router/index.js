@@ -96,6 +96,7 @@ export default new VueRouter({
     },
     {
       path: '/members',
+      name: 'Members',
       component: Members,
       children: [
         {

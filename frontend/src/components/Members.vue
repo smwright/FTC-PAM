@@ -1,43 +1,54 @@
 <template>
   <div class="members">
-    <nav>
-      <ul>
-        <li><a href="#/members/members-list">All Members</a></li>
-        <li><a href="#/members/characters-list">All Characters</a></li>
-      </ul>
-      <ul>
-        <li v-for="squadron in squadrons"><a v-bind:href="'#/members/members-list/'+squadron.squadron_id">{{squadron.name}}</a></li>
-      </ul>
-    </nav>
-    <router-view></router-view>
+   <h1>Members</h1>
+    <p>These pages list all registered ACG members.</p>
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Callsign</th>
+        <th>Admin</th>
+        <th>Map Viewer</th>
+        <th>Mission Builder</th>
+      </tr>
+      <tr class="link" v-for="member in members" v-on:click="routeToMember(member.member_id)">
+        <td>{{member.id}}</td>
+        <td>{{member.username}}</td>
+        <td>{{member.callsign}}</td>
+        <td>{{member.admin}}</td>
+        <td>{{member.map_viewer}}</td>
+        <td>{{member.mission_builder}}</td>
+      </tr>
+    </table>
   </div>
 </template>
 
 <script>
-import Squadron from './../resource/squadron'
+import Member from './../resource/member'
 
-let membersComponent = {
+export default {
   name: 'Members',
   created: function () {
-    this.getSquadrons()
+    this.getMembers()
   },
-  data: function () {
+  data () {
     return {
-      squadrons: []
+      members: []
     }
   },
   methods: {
-    getSquadrons: function () {
-      Squadron.getAll().then((data) => {
-        this.squadrons = data
+    getMembers: function () {
+      Member.getAll().then((data) => {
+        this.members = data;
       }, (err) => {
         console.log(err)
       })
-    }
+    },
+    // routeToMember: function (memberID) {
+    //   this.$router.push({name: 'Member', params: {member_id: memberID}})
+    // }
   }
 }
-
-export default membersComponent
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
