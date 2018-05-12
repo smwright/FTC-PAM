@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <h1>
-    Welcome to Air Combat Group 
+    Welcome to Air Combat Group
     </h1>
     <p>
     Air Combat Group consists of both Allied and Axis squadrons under a single operational 

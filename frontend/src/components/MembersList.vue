@@ -44,9 +44,9 @@ export default {
         console.log(err)
       })
     },
-    routeToMember: function (memberID) {
-      this.$router.push({name: 'Member', params: {member_id: memberID}})
-    }
+    // routeToMember: function (memberID) {
+    //   this.$router.push({name: 'Member', params: {member_id: memberID}})
+    // }
   }
 }
 </script>

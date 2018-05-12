@@ -1,0 +1,29 @@
+[
+  {
+		"member_id": "1",
+    "rank": "Ogfr",
+    "callsign": "Adler",
+    "joining_date": "2015-02-22",
+    "last_status_change": "2015-08-05",
+    "current_status": "dismissed",
+    "current_squadron": "4./JG26"
+  },
+  {
+		"member_id": "2",
+    "rank": "P/O",
+    "callsign": "Agladas",
+    "joining_date": "2016-02-09",
+    "last_status_change": "2016-12-30",
+    "current_status": "dismissed",
+    "current_squadron": "No.302"
+  },
+  {
+		"member_id": "3",
+    "rank": "Ogfr",
+    "callsign": "Alecu",
+    "joining_date": "2017-09-03",
+    "last_status_change": "2017-09-03",
+    "current_status": "active",
+    "current_squadron": "9./JG26"
+  }
+]

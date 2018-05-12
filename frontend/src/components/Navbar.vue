@@ -8,7 +8,7 @@
       <li><router-link :to="{name: 'CampaignList'}">Campaigns</router-link></li>
       <li><router-link :to="{name: 'CampaignEditor'}">Campaign Editor</router-link></li>
       <li><router-link :to="{name: 'FlightSchool'}">FlightSchool</router-link></li>
-      <li><a href="#/members">Members</a></li>
+      <li><router-link :to="{name: 'Members'}">Members</router-link></li>
       <li><a href="#/missions">Missions</a></li>
       <li><a href="#/admin">Administration</a></li>
       <li><a href="#/sqncmd">Sqn/Stff cmd</a></li>

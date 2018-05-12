@@ -1,4 +1,4 @@
-<template v-if="campaign">
+<template >
   <div>
     <router-link :to="{ name: 'Units', params: { campaign_id: campaign_id }}">Units</router-link>
     <router-link :to="{ name: 'Missions', params: { campaign_id: campaign_id }}">Missions</router-link>
