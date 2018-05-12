@@ -5,23 +5,11 @@ import javax.persistence.JoinColumn
 import javax.persistence.ManyToOne
 import javax.persistence.OneToMany
 
-@Entity(name = "careercharacters")
+@Entity(name = "career_character")
 data class Character(
     val firstName: String,
     val lastName: String,
-    val characterStatus: Status,
     @ManyToOne
-    @JoinColumn(name = "member_id")
-    val acgMember: AcgMember,
-    @OneToMany(mappedBy = "character")
-    val decorations: List<Decoration>
-) : BaseEntity() {
-
-  enum class Status {
-    SHORE_LEAVE,
-    WOUNDED,
-    OK,
-    POW,
-    KIA
-  }
-}
+    @JoinColumn(name = "personified_by")
+    val acgMember: AcgMember
+) : BaseEntity()
