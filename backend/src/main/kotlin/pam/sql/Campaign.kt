@@ -1,9 +1,6 @@
 package pam.sql
 
-import javax.persistence.Column
-import javax.persistence.Entity
-import javax.persistence.JoinColumn
-import javax.persistence.OneToOne
+import javax.persistence.*
 
 @Entity
 data class Campaign(
@@ -17,7 +14,9 @@ data class Campaign(
     @JoinColumn(name = "campaign_link")
     val previous_campaign: Campaign,
     val description: String,
-    val image: String
+    val image: String,
+    @OneToMany(mappedBy = "campaign")
+    val missions: List<Mission>
 ) : BaseEntity() {
 
 
