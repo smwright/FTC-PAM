@@ -1,6 +1,6 @@
 package pam.repositories
 
-import pam.sql.MemberStatus
+import pam.sql.MemberState
 import org.springframework.data.jpa.repository.JpaRepository
 
-interface MemberStatusRepository : JpaRepository<MemberStatus, Int>
+interface MemberStatusRepository : JpaRepository<MemberState, Int>

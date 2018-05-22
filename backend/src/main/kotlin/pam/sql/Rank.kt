@@ -1,14 +1,16 @@
+/*
 package pam.sql
 
-import javax.persistence.Entity
-import javax.persistence.Table
+import javax.persistence.*
 
 @Entity
-@Table(name = "ranks")
+@Table(name = "rank")
 data class Rank(
     val name: String,
     val abreviation: String,
-    val level: Int,
-    val faction: String,
+    val rank_value: Int,
+    val faction: Int,
     val image: String
 ) : BaseEntity()
+
+*/

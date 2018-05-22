@@ -5,3 +5,8 @@ spring:
     password: root
     driver-class-name: com.mysql.jdbc.Driver
     platform: pam
+  data:
+    rest:
+      base-path: pam/
+server:
+  port: 8081

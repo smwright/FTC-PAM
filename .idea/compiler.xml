@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="CompilerConfiguration">
-    <bytecodeTargetLevel>
-      <module name="acg-web-multiplatform-rep_main" target="1.8" />
-      <module name="acg-web-multiplatform-rep_test" target="1.8" />
-    </bytecodeTargetLevel>
-  </component>
-</project>

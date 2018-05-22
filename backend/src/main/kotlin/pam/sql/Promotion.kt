@@ -4,13 +4,13 @@ import java.util.*
 import javax.persistence.*
 
 @Entity
-@Table(name = "promotions")
+@Table(name = "promotion")
 data class Promotion(
     @ManyToOne
     @JoinColumn(name = "member_id")
     val acgMember: AcgMember,
-    val value: Int,
     @Temporal(TemporalType.DATE)
     val date: Date,
-    val comment: String
+    val comment: String,
+    val rankValue: Int
 ) : BaseEntity()

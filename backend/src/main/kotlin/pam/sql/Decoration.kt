@@ -4,7 +4,6 @@ import java.util.*
 import javax.persistence.*
 
 @Entity
-@Table(name = "decorations")
 data class Decoration(
     @ManyToOne
     @JoinColumn(name = "character_id")
@@ -19,5 +18,5 @@ data class Decoration(
     @JoinColumn(name = "awarded_by")
     val awardedBy: AcgMember,
     @Temporal(TemporalType.DATE)
-    val availableSince: Date
+    val recommendationDate: Date
 ) : BaseEntity()
