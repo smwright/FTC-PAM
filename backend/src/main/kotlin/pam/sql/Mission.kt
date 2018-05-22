@@ -14,7 +14,9 @@ data class Mission(
     @Temporal(TemporalType.DATE)
     val histDate: Date,
     @Column(name = "mission_status")
-    val state: State
+    val state: State,
+    @OneToOne(mappedBy = "mission")
+    val briefing: Briefing
 ) : BaseEntity() {
 
   enum class State {
