@@ -25,11 +25,13 @@
 
 <script>
 import Member from './../resource/member'
+import axios from 'axios'
 
 export default {
   name: 'Members',
   created: function () {
-    this.getMembers()
+    //this.getMembers()
+    this.callRestService()
   },
   data () {
     return {
@@ -37,13 +39,25 @@ export default {
     }
   },
   methods: {
-    getMembers: function () {
-      Member.getAll().then((data) => {
-        this.members = data;
-      }, (err) => {
+
+    callRestService () {
+      axios.get('pam/acgMembers')
+      .then(response => {
+        this.members = response.data
+        console.log(JSON.stringify(this.members))
+      })
+      .catch(err => {
         console.log(err)
       })
-    },
+    }
+
+    //getMembers: function () {
+    //  Member.getAll().then((data) => {
+    //    this.members = data;
+    //  }, (err) => {
+    //    console.log(err)
+    //  })
+    //},
     // routeToMember: function (memberID) {
     //   this.$router.push({name: 'Member', params: {member_id: memberID}})
     // }
