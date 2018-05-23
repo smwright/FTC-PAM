@@ -1,11 +1,11 @@
 <template>
   <div class="CampaignList">
-    <p>Here you find a list of all ACG campaigns. The list contains future, current 
+    <p>Here you find a list of all ACG campaigns. The list contains future, current
     and past campaigns. There's only one primary campaign at any time. The number
     of side campaigns at any time is not limited.</p>
     <div class="link" v-for="(campaign, index) in campaigns" v-on:click="routeToCampaign(campaign.id)">
         <div>
-          ID:{{ campaign.id }} -- 
+          ID:{{ campaign.id }} --
           <template v-if="campaign.primary">
             Primary campaign
           </template>
@@ -16,7 +16,7 @@
         </div>
         <div>
           {{ campaign.name }} --
-        </div> 
+        </div>
         <div>
           Platform: {{ campaign.platform }} --
           Time: {{ campaign.time }}
@@ -26,27 +26,26 @@
 </template>
 
 <script>
-import Campaigns from './../resource/campaigns'
+import axios from 'axios';
 
 export default {
   name: 'CampaignList',
-  created: function () {
-    this.getCampaigns()
-  },
+  mounted () {
+      axios.get("pam/campaigns")
+        .then(response => {
+          this.campaigns = response.data._embedded.campaigns;
+        })
+        .catch(err => {
+          console.log("call: "+call+" error: "+err)
+        })
+    },
   data () {
     return {
-      campaigns: []
+      campaigns: null
     }
   },
   methods: {
-    getCampaigns: function () {
-      Campaigns.getAll().then((data) => {
-        this.campaigns = data;
-      }, (err) => {
-        console.log(err)
-      })
-    },
-    
+
     routeToCampaign: function (campaignID) {
       this.$router.push({name: 'Campaign', params: {campaign_id: campaignID}})
       //DEBUG

@@ -16,51 +16,34 @@
         <td>{{member.username}}</td>
         <td>{{member.callsign}}</td>
         <td>{{member.admin}}</td>
-        <td>{{member.map_viewer}}</td>
-        <td>{{member.mission_builder}}</td>
+        <td>{{member.mapViewer}}</td>
+        <td>{{member.missionBuilder}}</td>
       </tr>
     </table>
   </div>
 </template>
 
 <script>
-import Member from './../resource/member'
-import axios from 'axios'
+import axios from 'axios';
 
 export default {
   name: 'Members',
-  created: function () {
-    //this.getMembers()
-    this.callRestService()
+  mounted () {
+    axios.get("pam/acgMembers")
+      .then(response => {
+        this.members = response.data._embedded.acgMembers;
+      })
+      .catch(err => {
+        console.log("call: "+call+" error: "+err)
+      })
   },
   data () {
     return {
-      members: []
+      members: null
     }
   },
   methods: {
 
-    callRestService () {
-      axios.get('pam/acgMembers')
-      .then(response => {
-        this.members = response.data
-        console.log(JSON.stringify(this.members))
-      })
-      .catch(err => {
-        console.log(err)
-      })
-    }
-
-    //getMembers: function () {
-    //  Member.getAll().then((data) => {
-    //    this.members = data;
-    //  }, (err) => {
-    //    console.log(err)
-    //  })
-    //},
-    // routeToMember: function (memberID) {
-    //   this.$router.push({name: 'Member', params: {member_id: memberID}})
-    // }
   }
 }
 </script>
