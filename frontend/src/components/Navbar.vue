@@ -5,6 +5,7 @@
       <!--Please reference the routes by name.-->
       <!--Use CamelCase for route names.-->
       <li><router-link :to="{name: 'Home'}">Home</router-link></li>
+      <li><router-link :to="{name: 'AboutACG'}">About ACG</router-link></li>
       <li><router-link :to="{name: 'CampaignList'}">Campaigns</router-link></li>
       <li><router-link :to="{name: 'CampaignEditor'}">Campaign Editor</router-link></li>
       <li><router-link :to="{name: 'FlightSchool'}">FlightSchool</router-link></li>

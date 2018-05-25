@@ -1,6 +1,10 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Frontpage from '@/components/Frontpage'
+
+import AboutACG from '@/components/AboutACG'
+import AboutACGSideNav from '@/components/AboutACGSideNav'
+
 import CampaignList from '@/components/CampaignList'
 import CampaignInfoMain from '@/components/CampaignInfoMain'
 import CampaignInfoMissions from '@/components/CampaignInfoMissions'
@@ -33,6 +37,19 @@ export default new VueRouter({
       path: '/',
       name: 'Home',
       component: Home
+    },
+    {
+      path: '/about-acg',
+      name: 'AboutACG',
+      redirect: {name: 'AboutUs'}
+    },
+    {
+      path: '/about-acg/about-us',
+      name: 'AboutUs',
+      components: {
+        default: AboutACG,
+        sidenav: AboutACGSideNav
+      }
     },
     {
       path: '/campaign-list',
@@ -82,14 +99,14 @@ export default new VueRouter({
           path: '/flight-school/first-lesson',
           name: 'FirstLesson',
           components: {
-            lessoncontainer: FlightSchoolFirstLesson 
+            lessoncontainer: FlightSchoolFirstLesson
           }
         },
         {
           path: '/flight-school/second-lesson',
           name: 'SecondLesson',
           components: {
-            lessoncontainer: FlightSchoolSecondLesson 
+            lessoncontainer: FlightSchoolSecondLesson
           }
         }
       ]
