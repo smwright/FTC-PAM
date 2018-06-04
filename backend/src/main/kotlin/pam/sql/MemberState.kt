@@ -5,7 +5,7 @@ import javax.persistence.*
 
 @Entity
 @Table(name = "member_status_log")
-data class MemberState(
+data class  MemberState(
     @ManyToOne
     @JoinColumn(name = "member_id")
     val acgMember: AcgMember,
