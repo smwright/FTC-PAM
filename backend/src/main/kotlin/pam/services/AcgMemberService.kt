@@ -7,8 +7,6 @@ import pam.sql.comparators.MemberStateByDateComparator
 import pam.format.AcgMemberListElement
 import pam.repositories.AcgMemberRepository
 import pam.sql.AcgMember
-import pam.sql.MemberState
-import pam.sql.Promotion
 import pam.sql.comparators.PromotionByDateComparator
 
 @Service
@@ -28,30 +26,19 @@ class AcgMemberService(
     return AcgMemberListElement(
         id = acgMember.id,
         name = acgMember.callsign,
-        joiningDate = getFirstOrLastStatus(acgMember.memberState, false).date,
-        lastStatusChanged = getFirstOrLastStatus(acgMember.memberState, true).date,
-        current_Status = getFirstOrLastStatus(acgMember.memberState, true).state.name,
-        rank = getFirstOrLastPromotion(acgMember.promotions, true).rankValue
+        joiningDate = getFirstOrLastFromList(acgMember.memberState, MemberStateByDateComparator(), false).date,
+        lastStatusChanged = getFirstOrLastFromList(acgMember.memberState, MemberStateByDateComparator(), true).date,
+        current_Status = getFirstOrLastFromList(acgMember.memberState, MemberStateByDateComparator(), true).state.name,
+        rank = getFirstOrLastFromList(acgMember.promotions, PromotionByDateComparator(), true).rankValue
     )
-
   }
 
-  fun getFirstOrLastPromotion(promotions: List<Promotion>, last: Boolean): Promotion {
-    return if (last) {
-      promotions.sortedWith(PromotionByDateComparator()).last()
-    } else {
-      promotions.sortedWith(PromotionByDateComparator()).first()
-    }
-
-  }
-
-  fun getFirstOrLastStatus(memberStates: List<MemberState>, last: Boolean): MemberState {
+  fun <S, T : Comparator<S>> getFirstOrLastFromList(list: List<S>, comparator: T, last: Boolean): S {
 
     return if (last) {
-      memberStates.sortedWith(MemberStateByDateComparator())
-          .last()
+      list.sortedWith(comparator).last()
     } else {
-      memberStates.sortedWith(MemberStateByDateComparator()).first()
+      list.sortedWith(comparator).first()
     }
   }
 }
