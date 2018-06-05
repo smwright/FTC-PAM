@@ -11,5 +11,5 @@ data class Squadron(
     val code: String,
     val faction: String,
     @OneToMany(mappedBy = "squadron")
-    val transfers: List<Transfer>
+    var transfers: List<Transfer>
 ) : BaseEntity()

@@ -16,7 +16,9 @@ data class Campaign(
     val description: String,
     val image: String,
     @OneToMany(mappedBy = "campaign")
-    val missions: List<Mission>
+    val missions: List<Mission>,
+    @OneToMany(mappedBy = "campaign")
+    val deployedUnits: List<DeployedUnit>
 ) : BaseEntity() {
 
 
