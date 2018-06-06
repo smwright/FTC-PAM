@@ -1,7 +1,6 @@
 
 // Members
 import * as members from '../../mock_database/members.json'
-import * as members_c_info from '../../mock_database/members_c_info.json'
 import * as members_c_info_1 from '../../mock_database/members_c_info_1.json'
 import * as members_c_info_2 from '../../mock_database/members_c_info_2.json'
 import * as members_c_info_3 from '../../mock_database/members_c_info_3.json'
@@ -20,7 +19,6 @@ import * as character_4 from '../../mock_database/character_4.json'
 
 let json_files = {
   members: members,
-  members_c_info: members_c_info,
   members_c_info_1: members_c_info_1,
   members_c_info_2: members_c_info_2,
   members_c_info_3: members_c_info_3,
