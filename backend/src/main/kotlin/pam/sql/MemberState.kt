@@ -4,19 +4,19 @@ import java.util.*
 import javax.persistence.*
 
 @Entity
-@Table(name = "memberstatuslog")
-data class MemberStatus(
+@Table(name = "member_status_log")
+data class MemberState(
     @ManyToOne
     @JoinColumn(name = "member_id")
     val acgMember: AcgMember,
-    val status: Status,
+    @Column(name = "member_status")
+    val state: State,
     @Temporal(TemporalType.DATE)
     val date: Date,
     val comment: String
 ) : BaseEntity() {
 
-  enum class Status {
-    UNKNOWN,
+  enum class State {
     ACTIVE,
     DISMISSED,
     RELIEVED_FROM_DUTY,

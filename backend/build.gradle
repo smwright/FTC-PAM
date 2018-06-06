@@ -4,13 +4,18 @@ buildscript {
         springBootVersion = '2.0.0.RELEASE'
     }
     repositories {
+        jcenter()
         mavenCentral()
+        maven {
+            url "https://dl.bintray.com/kotlin/kotlin-eap"
+        }
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlinVersion}")
         classpath("org.jetbrains.kotlin:kotlin-allopen:${kotlinVersion}")
         classpath("org.jetbrains.kotlin:kotlin-noarg:${kotlinVersion}")
+        classpath "org.jetbrains.kotlin:kotlin-frontend-plugin:0.0.30"
 
     }
 }
@@ -22,6 +27,8 @@ apply plugin: 'kotlin-spring'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
+
+apply plugin: 'org.jetbrains.kotlin.frontend'
 
 group = 'acg.rest'
 version = '0.0.1-SNAPSHOT'

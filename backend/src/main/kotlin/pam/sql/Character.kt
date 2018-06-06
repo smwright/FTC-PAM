@@ -11,5 +11,7 @@ data class Character(
     val lastName: String,
     @ManyToOne
     @JoinColumn(name = "personified_by")
-    val acgMember: AcgMember
+    val acgMember: AcgMember,
+    @OneToMany(mappedBy = "character")
+    val decorations: List<Decoration>
 ) : BaseEntity()
