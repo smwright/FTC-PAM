@@ -41,7 +41,11 @@ export default {
   name: 'Home',
   mounted () {
     this.testPHP();
-
+    console.log("Starting store testing");
+    console.log("Calling getter: " + this.$store.getters['test/doubleCount'])
+    console.log("Calling mutation: ")
+    this.$store.commit('test/increment')
+    console.log("Calling getter: " + this.$store.getters['test/doubleCount'])
   },
   methods: {
 

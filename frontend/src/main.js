@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import store from './store'
 
 import resource from './resource'
 import fancytree from 'jquery.fancytree';
@@ -13,10 +14,7 @@ Vue.config.productionTip = false
 var vm = new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })
-
-
-//DEBUG
-global.vm = vm; //Define you app variable globally
