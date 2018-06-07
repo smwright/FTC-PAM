@@ -15,3 +15,21 @@ export default new Vuex.Store({
   strict: debug,
   plugins: debug ? [createLogger()] : []
 })
+
+if (module.hot) {
+  // accept actions and mutations as hot modules
+  module.hot.accept([
+
+    './modules/test'
+  ], () => {
+    // require the updated modules
+    // have to add .default here due to babel 6 module output
+    const test = require('./modules/test').default
+    // swap in the new actions and mutations
+    store.hotUpdate({
+      modules: {
+        test: test
+      }
+    })
+  })
+}
