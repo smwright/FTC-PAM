@@ -5,8 +5,12 @@
 		"admin" : 1,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 5
+		"jdate" : "2013-10-31",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 95,
+		"campaigns" : 5
 	},
 	{
 		"id" : 2,
@@ -14,8 +18,12 @@
 		"admin" : 1,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 14
+		"jdate" : "2012-08-06",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 14,
+		"sorties" : 99,
+		"campaigns" : 5
 	},
 	{
 		"id" : 3,
@@ -23,8 +31,12 @@
 		"admin" : 1,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 12
+		"jdate" : "2012-07-19",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 12,
+		"sorties" : 120,
+		"campaigns" : 5
 	},
 	{
 		"id" : 4,
@@ -32,8 +44,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 10
+		"jdate" : "2012-07-17",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 10,
+		"sorties" : 105,
+		"campaigns" : 5
 	},
 	{
 		"id" : 6,
@@ -41,8 +57,12 @@
 		"admin" : 1,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 10
+		"jdate" : "2012-10-07",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 10,
+		"sorties" : 115,
+		"campaigns" : 5
 	},
 	{
 		"id" : 7,
@@ -50,8 +70,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 5
+		"jdate" : "2012-10-16",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 35,
+		"campaigns" : 2
 	},
 	{
 		"id" : 8,
@@ -59,8 +83,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 8
+		"jdate" : "2013-03-07",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 8,
+		"sorties" : 10,
+		"campaigns" : 2
 	},
 	{
 		"id" : 9,
@@ -68,8 +96,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 10
+		"jdate" : "2013-02-28",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 10,
+		"sorties" : 87,
+		"campaigns" : 5
 	},
 	{
 		"id" : 10,
@@ -77,8 +109,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 6
+		"jdate" : "2013-04-30",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 21,
+		"campaigns" : 1
 	},
 	{
 		"id" : 11,
@@ -86,8 +122,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 3
+		"jdate" : "2013-09-26",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 3,
+		"sorties" : 7,
+		"campaigns" : 1
 	},
 	{
 		"id" : 12,
@@ -95,8 +135,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 1
+		"jdate" : "2013-11-10",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 3,
+		"campaigns" : 1
 	},
 	{
 		"id" : 13,
@@ -104,8 +148,12 @@
 		"admin" : 1,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 11
+		"jdate" : "2012-07-19",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 11,
+		"sorties" : 91,
+		"campaigns" : 5
 	},
 	{
 		"id" : 14,
@@ -113,8 +161,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 5
+		"jdate" : "2014-01-19",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 90,
+		"campaigns" : 5
 	},
 	{
 		"id" : 15,
@@ -122,8 +174,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 1
+		"jdate" : "2014-02-16",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 41,
+		"campaigns" : 4
 	},
 	{
 		"id" : 16,
@@ -131,8 +187,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 1
+		"jdate" : "2014-02-23",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 2,
+		"campaigns" : 1
 	},
 	{
 		"id" : 17,
@@ -140,8 +200,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 6
+		"jdate" : "2014-04-27",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 49,
+		"campaigns" : 5
 	},
 	{
 		"id" : 18,
@@ -149,8 +213,12 @@
 		"admin" : 1,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 11
+		"jdate" : "2012-07-14",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 11,
+		"sorties" : 94,
+		"campaigns" : 5
 	},
 	{
 		"id" : 19,
@@ -158,8 +226,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 5
+		"jdate" : "2012-07-16",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 28,
+		"campaigns" : 3
 	},
 	{
 		"id" : 20,
@@ -167,8 +239,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 9
+		"jdate" : "2013-07-05",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 9,
+		"sorties" : 103,
+		"campaigns" : 5
 	},
 	{
 		"id" : 21,
@@ -176,8 +252,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 8
+		"jdate" : "2012-11-17",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 8,
+		"sorties" : 6,
+		"campaigns" : 1
 	},
 	{
 		"id" : 22,
@@ -185,8 +265,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 10
+		"jdate" : "2012-11-17",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 10,
+		"sorties" : 112,
+		"campaigns" : 5
 	},
 	{
 		"id" : 23,
@@ -194,8 +278,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 10
+		"jdate" : "2012-10-06",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 10,
+		"sorties" : 110,
+		"campaigns" : 5
 	},
 	{
 		"id" : 24,
@@ -203,8 +291,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 4
+		"jdate" : "2012-12-17",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 4,
+		"sorties" : 108,
+		"campaigns" : 5
 	},
 	{
 		"id" : 25,
@@ -212,8 +304,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 6
+		"jdate" : "2012-12-12",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 114,
+		"campaigns" : 5
 	},
 	{
 		"id" : 27,
@@ -221,8 +317,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 8
+		"jdate" : "2012-07-17",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 8,
+		"sorties" : 54,
+		"campaigns" : 5
 	},
 	{
 		"id" : 28,
@@ -230,8 +330,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 6
+		"jdate" : "2013-08-13",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 69,
+		"campaigns" : 5
 	},
 	{
 		"id" : 29,
@@ -239,8 +343,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 1
+		"jdate" : "2013-09-05",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 1,
+		"campaigns" : 1
 	},
 	{
 		"id" : 30,
@@ -248,8 +356,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 8
+		"jdate" : "2013-07-27",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 8,
+		"sorties" : 74,
+		"campaigns" : 5
 	},
 	{
 		"id" : 31,
@@ -257,8 +369,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 5
+		"jdate" : "2014-01-11",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 10,
+		"campaigns" : 1
 	},
 	{
 		"id" : 32,
@@ -266,8 +382,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 6
+		"jdate" : "2014-01-12",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 98,
+		"campaigns" : 5
 	},
 	{
 		"id" : 33,
@@ -275,8 +395,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 5
+		"jdate" : "2014-03-07",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 14,
+		"campaigns" : 1
 	},
 	{
 		"id" : 34,
@@ -284,8 +408,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 10
+		"jdate" : "2014-04-27",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 10,
+		"sorties" : 91,
+		"campaigns" : 5
 	},
 	{
 		"id" : 35,
@@ -293,8 +421,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 5
+		"jdate" : "2014-04-07",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 12,
+		"campaigns" : 1
 	},
 	{
 		"id" : 36,
@@ -302,8 +434,12 @@
 		"admin" : 1,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 13
+		"jdate" : "2012-05-14",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 13,
+		"sorties" : 112,
+		"campaigns" : 5
 	},
 	{
 		"id" : 37,
@@ -311,8 +447,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 10
+		"jdate" : "2012-10-04",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 10,
+		"sorties" : 27,
+		"campaigns" : 2
 	},
 	{
 		"id" : 38,
@@ -320,8 +460,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 11
+		"jdate" : "2012-08-12",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 11,
+		"sorties" : 18,
+		"campaigns" : 1
 	},
 	{
 		"id" : 39,
@@ -329,8 +473,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 5
+		"jdate" : "2012-07-15",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 22,
+		"campaigns" : 2
 	},
 	{
 		"id" : 40,
@@ -338,8 +486,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 8
+		"jdate" : "2012-07-15",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 8,
+		"sorties" : 75,
+		"campaigns" : 5
 	},
 	{
 		"id" : 41,
@@ -347,8 +499,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 5
+		"jdate" : "2013-04-04",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 22,
+		"campaigns" : 1
 	},
 	{
 		"id" : 42,
@@ -356,8 +512,12 @@
 		"admin" : 1,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 10
+		"jdate" : "2013-03-13",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 10,
+		"sorties" : 93,
+		"campaigns" : 5
 	},
 	{
 		"id" : 43,
@@ -365,8 +525,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 3
+		"jdate" : "2013-06-29",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 3,
+		"sorties" : 1,
+		"campaigns" : 1
 	},
 	{
 		"id" : 44,
@@ -374,8 +538,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 2
+		"jdate" : "2013-11-24",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 17,
+		"campaigns" : 2
 	},
 	{
 		"id" : 45,
@@ -383,8 +551,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 1
+		"jdate" : "2014-01-12",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 1,
+		"campaigns" : 1
 	},
 	{
 		"id" : 46,
@@ -392,8 +564,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 5
+		"jdate" : "2013-05-04",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 121,
+		"campaigns" : 5
 	},
 	{
 		"id" : 47,
@@ -401,8 +577,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 1
+		"jdate" : "2014-01-12",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 1,
+		"campaigns" : 1
 	},
 	{
 		"id" : 48,
@@ -410,8 +590,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 1
+		"jdate" : "2014-01-05",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 2,
+		"campaigns" : 1
 	},
 	{
 		"id" : 49,
@@ -419,8 +603,12 @@
 		"admin" : 1,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 8
+		"jdate" : "2013-12-29",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 8,
+		"sorties" : 81,
+		"campaigns" : 5
 	},
 	{
 		"id" : 50,
@@ -428,8 +616,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 2
+		"jdate" : "2014-02-16",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 73,
+		"campaigns" : 4
 	},
 	{
 		"id" : 51,
@@ -437,8 +629,12 @@
 		"admin" : 1,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 11
+		"jdate" : "2014-05-04",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 11,
+		"sorties" : 98,
+		"campaigns" : 5
 	},
 	{
 		"id" : 52,
@@ -446,8 +642,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 5
+		"jdate" : "2014-05-25",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 12,
+		"campaigns" : 2
 	},
 	{
 		"id" : 53,
@@ -455,8 +655,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 1
+		"jdate" : "2014-05-25",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 4,
+		"campaigns" : 1
 	},
 	{
 		"id" : 54,
@@ -464,8 +668,12 @@
 		"admin" : 1,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 12
+		"jdate" : "2014-06-22",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 12,
+		"sorties" : 97,
+		"campaigns" : 5
 	},
 	{
 		"id" : 55,
@@ -473,8 +681,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 1
+		"jdate" : "2014-06-22",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 1,
+		"campaigns" : 1
 	},
 	{
 		"id" : 56,
@@ -482,8 +694,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 6
+		"jdate" : "2015-06-14",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 53,
+		"campaigns" : 5
 	},
 	{
 		"id" : 57,
@@ -491,8 +707,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 4
+		"jdate" : "2014-06-22",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 4,
+		"sorties" : 65,
+		"campaigns" : 4
 	},
 	{
 		"id" : 58,
@@ -500,8 +720,12 @@
 		"admin" : 1,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 8
+		"jdate" : "2014-06-26",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 8,
+		"sorties" : 61,
+		"campaigns" : 5
 	},
 	{
 		"id" : 59,
@@ -509,8 +733,12 @@
 		"admin" : 1,
 		"map_viewer" : 1,
 		"mission_builder" : 1,
-		"member_status" : 0,
-		"rank_value" : 8
+		"jdate" : "2014-07-20",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 8,
+		"sorties" : 47,
+		"campaigns" : 5
 	},
 	{
 		"id" : 60,
@@ -518,8 +746,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 1
+		"jdate" : "2014-07-27",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 5,
+		"campaigns" : 1
 	},
 	{
 		"id" : 61,
@@ -527,8 +759,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 8
+		"jdate" : "2014-08-31",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 8,
+		"sorties" : 71,
+		"campaigns" : 5
 	},
 	{
 		"id" : 62,
@@ -536,8 +772,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 5
+		"jdate" : "2013-05-06",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 12,
+		"campaigns" : 2
 	},
 	{
 		"id" : 63,
@@ -545,8 +785,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 9
+		"jdate" : "2014-09-07",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 9,
+		"sorties" : 103,
+		"campaigns" : 5
 	},
 	{
 		"id" : 64,
@@ -554,8 +798,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 8
+		"jdate" : "2014-09-28",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 8,
+		"sorties" : 53,
+		"campaigns" : 5
 	},
 	{
 		"id" : 65,
@@ -563,8 +811,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 8
+		"jdate" : "2014-10-26",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 8,
+		"sorties" : 94,
+		"campaigns" : 5
 	},
 	{
 		"id" : 66,
@@ -572,8 +824,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 8
+		"jdate" : "2013-07-20",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 8,
+		"sorties" : 9,
+		"campaigns" : 1
 	},
 	{
 		"id" : 67,
@@ -581,8 +837,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 2
+		"jdate" : "2013-11-14",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 11,
+		"campaigns" : 1
 	},
 	{
 		"id" : 68,
@@ -590,8 +850,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 3
+		"jdate" : "2013-06-24",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 3,
+		"sorties" : 1,
+		"campaigns" : 1
 	},
 	{
 		"id" : 69,
@@ -599,8 +863,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 2
+		"jdate" : "2013-06-20",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 1,
+		"campaigns" : 1
 	},
 	{
 		"id" : 70,
@@ -608,8 +876,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 2
+		"jdate" : "2013-09-10",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 2,
+		"campaigns" : 1
 	},
 	{
 		"id" : 71,
@@ -617,8 +889,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 4
+		"jdate" : "2013-06-20",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 4,
+		"sorties" : 18,
+		"campaigns" : 1
 	},
 	{
 		"id" : 72,
@@ -626,8 +902,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 5
+		"jdate" : "2013-07-18",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 9,
+		"campaigns" : 1
 	},
 	{
 		"id" : 73,
@@ -635,8 +915,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 5
+		"jdate" : "2013-11-12",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 8,
+		"campaigns" : 2
 	},
 	{
 		"id" : 74,
@@ -644,8 +928,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 6
+		"jdate" : "2013-11-27",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 31,
+		"campaigns" : 1
 	},
 	{
 		"id" : 75,
@@ -653,8 +941,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 2
+		"jdate" : "2013-11-30",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 2,
+		"campaigns" : 1
 	},
 	{
 		"id" : 76,
@@ -662,8 +954,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 5
+		"jdate" : "2013-12-19",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 51,
+		"campaigns" : 5
 	},
 	{
 		"id" : 77,
@@ -671,8 +967,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 2
+		"jdate" : "2014-01-11",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 10,
+		"campaigns" : 1
 	},
 	{
 		"id" : 78,
@@ -680,8 +980,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 9
+		"jdate" : "2014-03-02",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 9,
+		"sorties" : 14,
+		"campaigns" : 1
 	},
 	{
 		"id" : 79,
@@ -689,8 +993,12 @@
 		"admin" : 1,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 11
+		"jdate" : "2014-05-04",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 11,
+		"sorties" : 94,
+		"campaigns" : 5
 	},
 	{
 		"id" : 80,
@@ -698,8 +1006,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 4
+		"jdate" : "2014-06-08",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 4,
+		"sorties" : 22,
+		"campaigns" : 4
 	},
 	{
 		"id" : 81,
@@ -707,8 +1019,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 8
+		"jdate" : "2013-07-10",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 8,
+		"sorties" : 3,
+		"campaigns" : 1
 	},
 	{
 		"id" : 82,
@@ -716,8 +1032,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 4
+		"jdate" : "2013-09-08",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 4,
+		"sorties" : 7,
+		"campaigns" : 1
 	},
 	{
 		"id" : 83,
@@ -725,8 +1045,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 3
+		"jdate" : "2013-08-19",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 3,
+		"sorties" : 84,
+		"campaigns" : 5
 	},
 	{
 		"id" : 84,
@@ -734,8 +1058,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 3
+		"jdate" : "2013-08-11",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 3,
+		"sorties" : 9,
+		"campaigns" : 1
 	},
 	{
 		"id" : 85,
@@ -743,8 +1071,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 9
+		"jdate" : "2013-11-07",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 9,
+		"sorties" : 107,
+		"campaigns" : 5
 	},
 	{
 		"id" : 86,
@@ -752,8 +1084,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 5
+		"jdate" : "2013-06-21",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 64,
+		"campaigns" : 5
 	},
 	{
 		"id" : 87,
@@ -761,8 +1097,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 8
+		"jdate" : "2013-10-14",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 8,
+		"sorties" : 112,
+		"campaigns" : 5
 	},
 	{
 		"id" : 88,
@@ -770,8 +1110,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 7
+		"jdate" : "2013-12-08",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 7,
+		"sorties" : 98,
+		"campaigns" : 5
 	},
 	{
 		"id" : 89,
@@ -779,8 +1123,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 2
+		"jdate" : "2013-01-23",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 3,
+		"campaigns" : 1
 	},
 	{
 		"id" : 90,
@@ -788,8 +1136,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 2
+		"jdate" : "2014-01-18",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 2,
+		"campaigns" : 1
 	},
 	{
 		"id" : 91,
@@ -797,8 +1149,12 @@
 		"admin" : 1,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 9
+		"jdate" : "2014-02-05",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 9,
+		"sorties" : 106,
+		"campaigns" : 5
 	},
 	{
 		"id" : 92,
@@ -806,8 +1162,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 7
+		"jdate" : "2014-02-16",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 7,
+		"sorties" : 102,
+		"campaigns" : 5
 	},
 	{
 		"id" : 93,
@@ -815,8 +1175,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 3
+		"jdate" : "2014-02-16",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 3,
+		"sorties" : 2,
+		"campaigns" : 1
 	},
 	{
 		"id" : 94,
@@ -824,8 +1188,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 3
+		"jdate" : "2014-04-27",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 3,
+		"sorties" : 13,
+		"campaigns" : 1
 	},
 	{
 		"id" : 95,
@@ -833,8 +1201,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 8
+		"jdate" : "2014-05-04",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 8,
+		"sorties" : 70,
+		"campaigns" : 5
 	},
 	{
 		"id" : 96,
@@ -842,8 +1214,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 4
+		"jdate" : "2014-05-04",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 4,
+		"sorties" : 10,
+		"campaigns" : 1
 	},
 	{
 		"id" : 97,
@@ -851,8 +1227,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 7
+		"jdate" : "2013-03-08",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 7,
+		"sorties" : 6,
+		"campaigns" : 1
 	},
 	{
 		"id" : 98,
@@ -860,8 +1240,12 @@
 		"admin" : 1,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 8
+		"jdate" : "2013-10-09",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 8,
+		"sorties" : 111,
+		"campaigns" : 5
 	},
 	{
 		"id" : 99,
@@ -869,8 +1253,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 3
+		"jdate" : "2013-04-17",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 3,
+		"sorties" : 2,
+		"campaigns" : 1
 	},
 	{
 		"id" : 100,
@@ -878,8 +1266,12 @@
 		"admin" : 1,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 11
+		"jdate" : "2013-08-10",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 11,
+		"sorties" : 110,
+		"campaigns" : 5
 	},
 	{
 		"id" : 101,
@@ -887,8 +1279,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 5
+		"jdate" : "2013-02-24",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 8,
+		"campaigns" : 1
 	},
 	{
 		"id" : 102,
@@ -896,8 +1292,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 3
+		"jdate" : "2013-05-04",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 3,
+		"sorties" : 5,
+		"campaigns" : 1
 	},
 	{
 		"id" : 103,
@@ -905,8 +1305,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 4
+		"jdate" : "2013-02-22",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 4,
+		"sorties" : 8,
+		"campaigns" : 1
 	},
 	{
 		"id" : 104,
@@ -914,8 +1318,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 8
+		"jdate" : "2012-11-05",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 8,
+		"sorties" : 13,
+		"campaigns" : 1
 	},
 	{
 		"id" : 105,
@@ -923,8 +1331,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 7
+		"jdate" : "2013-04-05",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 7,
+		"sorties" : 6,
+		"campaigns" : 1
 	},
 	{
 		"id" : 106,
@@ -932,8 +1344,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 4
+		"jdate" : "2012-09-15",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 4,
+		"sorties" : 5,
+		"campaigns" : 1
 	},
 	{
 		"id" : 107,
@@ -941,8 +1357,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 2
+		"jdate" : "2013-01-23",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 6,
+		"campaigns" : 1
 	},
 	{
 		"id" : 108,
@@ -950,8 +1370,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 8
+		"jdate" : "2014-02-16",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 8,
+		"sorties" : 37,
+		"campaigns" : 2
 	},
 	{
 		"id" : 109,
@@ -959,8 +1383,12 @@
 		"admin" : 1,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 9
+		"jdate" : "2014-03-19",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 9,
+		"sorties" : 105,
+		"campaigns" : 5
 	},
 	{
 		"id" : 110,
@@ -968,8 +1396,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 2,
-		"rank_value" : 6
+		"jdate" : "2014-05-25",
+		"cstatus" : 2,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 49,
+		"campaigns" : 5
 	},
 	{
 		"id" : 111,
@@ -977,8 +1409,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 1
+		"jdate" : "2014-06-07",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 1,
+		"campaigns" : 1
 	},
 	{
 		"id" : 112,
@@ -986,8 +1422,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 1
+		"jdate" : "2014-06-22",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 4,
+		"campaigns" : 2
 	},
 	{
 		"id" : 113,
@@ -995,8 +1435,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 1
+		"jdate" : "2014-06-29",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 3,
+		"campaigns" : 1
 	},
 	{
 		"id" : 114,
@@ -1004,8 +1448,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 6
+		"jdate" : "2014-07-05",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 45,
+		"campaigns" : 5
 	},
 	{
 		"id" : 115,
@@ -1013,8 +1461,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 2
+		"jdate" : "2014-07-20",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 2,
+		"campaigns" : 1
 	},
 	{
 		"id" : 116,
@@ -1022,8 +1474,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 6
+		"jdate" : "2014-07-20",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 34,
+		"campaigns" : 3
 	},
 	{
 		"id" : 117,
@@ -1031,8 +1487,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 8
+		"jdate" : "2014-07-20",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 8,
+		"sorties" : 30,
+		"campaigns" : 2
 	},
 	{
 		"id" : 118,
@@ -1040,8 +1500,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 1
+		"jdate" : "2014-07-20",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 3,
+		"campaigns" : 1
 	},
 	{
 		"id" : 119,
@@ -1049,8 +1513,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 4
+		"jdate" : "2014-07-20",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 4,
+		"sorties" : 20,
+		"campaigns" : 2
 	},
 	{
 		"id" : 120,
@@ -1058,8 +1526,12 @@
 		"admin" : 1,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 9
+		"jdate" : "2014-07-20",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 9,
+		"sorties" : 88,
+		"campaigns" : 5
 	},
 	{
 		"id" : 121,
@@ -1067,8 +1539,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 1
+		"jdate" : "2014-08-31",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 3,
+		"campaigns" : 2
 	},
 	{
 		"id" : 122,
@@ -1076,8 +1552,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 5
+		"jdate" : "2014-09-24",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 50,
+		"campaigns" : 3
 	},
 	{
 		"id" : 123,
@@ -1085,8 +1565,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 5
+		"jdate" : "2014-09-28",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 31,
+		"campaigns" : 4
 	},
 	{
 		"id" : 124,
@@ -1094,8 +1578,12 @@
 		"admin" : 1,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 10
+		"jdate" : "2014-07-15",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 10,
+		"sorties" : 96,
+		"campaigns" : 5
 	},
 	{
 		"id" : 125,
@@ -1103,8 +1591,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 4
+		"jdate" : "2014-10-12",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 4,
+		"sorties" : 17,
+		"campaigns" : 3
 	},
 	{
 		"id" : 126,
@@ -1112,8 +1604,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 3
+		"jdate" : "2014-10-12",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 3,
+		"sorties" : 7,
+		"campaigns" : 1
 	},
 	{
 		"id" : 127,
@@ -1121,8 +1617,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 1
+		"jdate" : "2014-10-12",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 2,
+		"campaigns" : 1
 	},
 	{
 		"id" : 128,
@@ -1130,8 +1630,12 @@
 		"admin" : 1,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 10
+		"jdate" : "2014-10-19",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 10,
+		"sorties" : 85,
+		"campaigns" : 5
 	},
 	{
 		"id" : 129,
@@ -1139,8 +1643,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 9
+		"jdate" : "2013-11-10",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 9,
+		"sorties" : 29,
+		"campaigns" : 2
 	},
 	{
 		"id" : 130,
@@ -1148,8 +1656,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 2
+		"jdate" : "2014-11-04",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 2,
+		"campaigns" : 1
 	},
 	{
 		"id" : 131,
@@ -1157,8 +1669,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 6
+		"jdate" : "2014-10-26",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 99,
+		"campaigns" : 5
 	},
 	{
 		"id" : 132,
@@ -1166,8 +1682,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 2
+		"jdate" : "2014-05-25",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 4,
+		"campaigns" : 1
 	},
 	{
 		"id" : 133,
@@ -1175,8 +1695,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 5
+		"jdate" : "2014-06-09",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 2,
+		"campaigns" : 1
 	},
 	{
 		"id" : 134,
@@ -1184,8 +1708,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 5
+		"jdate" : "2014-11-01",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 31,
+		"campaigns" : 4
 	},
 	{
 		"id" : 135,
@@ -1193,8 +1721,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 5
+		"jdate" : "2014-11-02",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 24,
+		"campaigns" : 5
 	},
 	{
 		"id" : 136,
@@ -1202,8 +1734,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 8
+		"jdate" : "2014-11-01",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 8,
+		"sorties" : 82,
+		"campaigns" : 5
 	},
 	{
 		"id" : 137,
@@ -1211,8 +1747,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 7
+		"jdate" : "2014-11-01",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 7,
+		"sorties" : 69,
+		"campaigns" : 5
 	},
 	{
 		"id" : 138,
@@ -1220,8 +1760,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 10
+		"jdate" : "2014-11-08",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 10,
+		"sorties" : 91,
+		"campaigns" : 5
 	},
 	{
 		"id" : 139,
@@ -1229,8 +1773,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 1
+		"jdate" : "2014-10-10",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 13,
+		"campaigns" : 3
 	},
 	{
 		"id" : 140,
@@ -1238,8 +1786,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 1
+		"jdate" : "2014-10-03",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 8,
+		"campaigns" : 1
 	},
 	{
 		"id" : 141,
@@ -1247,8 +1799,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 5
+		"jdate" : "2014-12-13",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 19,
+		"campaigns" : 2
 	},
 	{
 		"id" : 142,
@@ -1256,8 +1812,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 5
+		"jdate" : "2014-12-13",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 46,
+		"campaigns" : 5
 	},
 	{
 		"id" : 143,
@@ -1265,8 +1825,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 5
+		"jdate" : "2014-12-13",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 70,
+		"campaigns" : 4
 	},
 	{
 		"id" : 144,
@@ -1274,8 +1838,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 6
+		"jdate" : "2014-12-13",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 1,
+		"campaigns" : 1
 	},
 	{
 		"id" : 145,
@@ -1283,8 +1851,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 1
+		"jdate" : "2014-12-04",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 9,
+		"campaigns" : 2
 	},
 	{
 		"id" : 146,
@@ -1292,8 +1864,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 9
+		"jdate" : "2014-12-21",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 9,
+		"sorties" : 42,
+		"campaigns" : 4
 	},
 	{
 		"id" : 147,
@@ -1301,8 +1877,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 10
+		"jdate" : "2014-12-28",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 10,
+		"sorties" : 43,
+		"campaigns" : 5
 	},
 	{
 		"id" : 148,
@@ -1310,8 +1890,12 @@
 		"admin" : 1,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 7
+		"jdate" : "2015-01-04",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 7,
+		"sorties" : 61,
+		"campaigns" : 5
 	},
 	{
 		"id" : 149,
@@ -1319,8 +1903,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 1
+		"jdate" : "2015-01-02",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 2,
+		"campaigns" : 1
 	},
 	{
 		"id" : 150,
@@ -1328,8 +1916,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 2
+		"jdate" : "2015-01-15",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 8,
+		"campaigns" : 1
 	},
 	{
 		"id" : 151,
@@ -1337,8 +1929,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 1
+		"jdate" : "2015-01-13",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 15,
+		"campaigns" : 3
 	},
 	{
 		"id" : 152,
@@ -1346,8 +1942,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 4
+		"jdate" : "2014-12-07",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 4,
+		"sorties" : 12,
+		"campaigns" : 3
 	},
 	{
 		"id" : 153,
@@ -1355,8 +1955,12 @@
 		"admin" : 1,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 10
+		"jdate" : "2015-01-18",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 10,
+		"sorties" : 88,
+		"campaigns" : 5
 	},
 	{
 		"id" : 154,
@@ -1364,8 +1968,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 6
+		"jdate" : "2015-01-18",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 60,
+		"campaigns" : 5
 	},
 	{
 		"id" : 155,
@@ -1373,8 +1981,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 1
+		"jdate" : "2015-01-18",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 3,
+		"campaigns" : 1
 	},
 	{
 		"id" : 157,
@@ -1382,8 +1994,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 5
+		"jdate" : "2015-02-01",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 69,
+		"campaigns" : 5
 	},
 	{
 		"id" : 158,
@@ -1391,8 +2007,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 2,
-		"rank_value" : 6
+		"jdate" : "2015-02-01",
+		"cstatus" : 2,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 44,
+		"campaigns" : 5
 	},
 	{
 		"id" : 159,
@@ -1400,8 +2020,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 3
+		"jdate" : "2015-02-01",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 3,
+		"sorties" : 58,
+		"campaigns" : 5
 	},
 	{
 		"id" : 160,
@@ -1409,17 +2033,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 1
-	},
-	{
-		"id" : 161,
-		"callsign" : "Hawkins",
-		"admin" : 0,
-		"map_viewer" : 0,
-		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 5
+		"jdate" : "2015-02-01",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 1,
+		"campaigns" : 1
 	},
 	{
 		"id" : 162,
@@ -1427,8 +2046,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 6
+		"jdate" : "2015-02-04",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 65,
+		"campaigns" : 5
 	},
 	{
 		"id" : 163,
@@ -1436,8 +2059,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 2
+		"jdate" : "2015-02-15",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 1,
+		"campaigns" : 1
 	},
 	{
 		"id" : 164,
@@ -1445,8 +2072,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 6
+		"jdate" : "2015-02-15",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 78,
+		"campaigns" : 5
 	},
 	{
 		"id" : 165,
@@ -1454,8 +2085,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 2
+		"jdate" : "2015-02-22",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 6,
+		"campaigns" : 2
 	},
 	{
 		"id" : 166,
@@ -1463,8 +2098,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 5
+		"jdate" : "2015-02-28",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 69,
+		"campaigns" : 5
 	},
 	{
 		"id" : 167,
@@ -1472,8 +2111,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 6
+		"jdate" : "2015-02-08",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 87,
+		"campaigns" : 5
 	},
 	{
 		"id" : 168,
@@ -1481,8 +2124,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 5
+		"jdate" : "2015-02-08",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 87,
+		"campaigns" : 5
 	},
 	{
 		"id" : 169,
@@ -1490,8 +2137,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 3
+		"jdate" : "2015-03-08",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 3,
+		"sorties" : 39,
+		"campaigns" : 4
 	},
 	{
 		"id" : 170,
@@ -1499,8 +2150,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 2
+		"jdate" : "2015-03-08",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 14,
+		"campaigns" : 2
 	},
 	{
 		"id" : 171,
@@ -1508,8 +2163,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 3
+		"jdate" : "2015-03-01",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 3,
+		"sorties" : 9,
+		"campaigns" : 2
 	},
 	{
 		"id" : 172,
@@ -1517,8 +2176,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 5
+		"jdate" : "2015-03-15",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 12,
+		"campaigns" : 2
 	},
 	{
 		"id" : 173,
@@ -1526,8 +2189,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 2,
-		"rank_value" : 6
+		"jdate" : "2015-03-22",
+		"cstatus" : 2,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 58,
+		"campaigns" : 5
 	},
 	{
 		"id" : 174,
@@ -1535,17 +2202,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 5
-	},
-	{
-		"id" : 175,
-		"callsign" : "Cina",
-		"admin" : 0,
-		"map_viewer" : 0,
-		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 5
+		"jdate" : "2015-03-21",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 26,
+		"campaigns" : 3
 	},
 	{
 		"id" : 176,
@@ -1553,8 +2215,12 @@
 		"admin" : 1,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 9
+		"jdate" : "2015-04-09",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 9,
+		"sorties" : 79,
+		"campaigns" : 4
 	},
 	{
 		"id" : 177,
@@ -1562,8 +2228,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 1
+		"jdate" : "2015-04-10",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 1,
+		"campaigns" : 1
 	},
 	{
 		"id" : 178,
@@ -1571,8 +2241,12 @@
 		"admin" : 1,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 8
+		"jdate" : "2015-04-19",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 8,
+		"sorties" : 80,
+		"campaigns" : 4
 	},
 	{
 		"id" : 179,
@@ -1580,8 +2254,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 2
+		"jdate" : "2015-04-26",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 3,
+		"campaigns" : 1
 	},
 	{
 		"id" : 181,
@@ -1589,8 +2267,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 3,
-		"rank_value" : 5
+		"jdate" : "2015-05-05",
+		"cstatus" : 3,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 12,
+		"campaigns" : 2
 	},
 	{
 		"id" : 182,
@@ -1598,8 +2280,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 6
+		"jdate" : "2015-05-10",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 75,
+		"campaigns" : 4
 	},
 	{
 		"id" : 183,
@@ -1607,8 +2293,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 2
+		"jdate" : "2015-05-10",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 6,
+		"campaigns" : 1
 	},
 	{
 		"id" : 184,
@@ -1616,8 +2306,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 5
+		"jdate" : "2015-05-10",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 21,
+		"campaigns" : 4
 	},
 	{
 		"id" : 185,
@@ -1625,8 +2319,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 5
+		"jdate" : "2015-05-10",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 37,
+		"campaigns" : 4
 	},
 	{
 		"id" : 186,
@@ -1634,8 +2332,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 7
+		"jdate" : "2015-05-10",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 7,
+		"sorties" : 44,
+		"campaigns" : 4
 	},
 	{
 		"id" : 187,
@@ -1643,8 +2345,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 6
+		"jdate" : "2015-05-10",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 32,
+		"campaigns" : 4
 	},
 	{
 		"id" : 188,
@@ -1652,8 +2358,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 4
+		"jdate" : "2015-05-17",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 4,
+		"sorties" : 25,
+		"campaigns" : 3
 	},
 	{
 		"id" : 189,
@@ -1661,8 +2371,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 5
+		"jdate" : "2015-05-24",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 5,
+		"campaigns" : 1
 	},
 	{
 		"id" : 190,
@@ -1670,8 +2384,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 1
+		"jdate" : "2015-05-24",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 1,
+		"campaigns" : 1
 	},
 	{
 		"id" : 191,
@@ -1679,8 +2397,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 6
+		"jdate" : "2015-05-24",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 30,
+		"campaigns" : 3
 	},
 	{
 		"id" : 192,
@@ -1688,8 +2410,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 2
+		"jdate" : "2015-06-02",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 50,
+		"campaigns" : 4
 	},
 	{
 		"id" : 193,
@@ -1697,8 +2423,12 @@
 		"admin" : 1,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 9
+		"jdate" : "2015-06-14",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 9,
+		"sorties" : 76,
+		"campaigns" : 4
 	},
 	{
 		"id" : 194,
@@ -1706,8 +2436,12 @@
 		"admin" : 1,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 9
+		"jdate" : "2015-07-05",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 9,
+		"sorties" : 69,
+		"campaigns" : 4
 	},
 	{
 		"id" : 195,
@@ -1715,8 +2449,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 3
+		"jdate" : "2015-07-04",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 3,
+		"sorties" : 17,
+		"campaigns" : 2
 	},
 	{
 		"id" : 196,
@@ -1724,8 +2462,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 5
+		"jdate" : "2015-07-21",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 3,
+		"campaigns" : 1
 	},
 	{
 		"id" : 197,
@@ -1733,17 +2475,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 7
-	},
-	{
-		"id" : 198,
-		"callsign" : "Boy",
-		"admin" : 0,
-		"map_viewer" : 0,
-		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 5
+		"jdate" : "2015-07-20",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 7,
+		"sorties" : 74,
+		"campaigns" : 4
 	},
 	{
 		"id" : 199,
@@ -1751,8 +2488,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 5
+		"jdate" : "2015-08-10",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 68,
+		"campaigns" : 4
 	},
 	{
 		"id" : 200,
@@ -1760,8 +2501,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 5
+		"jdate" : "2015-08-16",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 48,
+		"campaigns" : 4
 	},
 	{
 		"id" : 201,
@@ -1769,8 +2514,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 2
+		"jdate" : "2015-08-17",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 3,
+		"campaigns" : 1
 	},
 	{
 		"id" : 202,
@@ -1778,8 +2527,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 6
+		"jdate" : "2015-08-16",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 52,
+		"campaigns" : 4
 	},
 	{
 		"id" : 203,
@@ -1787,8 +2540,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 6
+		"jdate" : "2015-08-21",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 60,
+		"campaigns" : 4
 	},
 	{
 		"id" : 204,
@@ -1796,8 +2553,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 3
+		"jdate" : "2015-08-24",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 3,
+		"sorties" : 33,
+		"campaigns" : 4
 	},
 	{
 		"id" : 205,
@@ -1805,8 +2566,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 2
+		"jdate" : "2015-08-23",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 28,
+		"campaigns" : 3
 	},
 	{
 		"id" : 206,
@@ -1814,8 +2579,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 5
+		"jdate" : "2015-08-20",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 62,
+		"campaigns" : 4
 	},
 	{
 		"id" : 207,
@@ -1823,8 +2592,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 2
+		"jdate" : "2015-08-28",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 17,
+		"campaigns" : 4
 	},
 	{
 		"id" : 208,
@@ -1832,8 +2605,12 @@
 		"admin" : 1,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 4
+		"jdate" : "2015-08-30",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 4,
+		"sorties" : 65,
+		"campaigns" : 4
 	},
 	{
 		"id" : 209,
@@ -1841,8 +2618,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 1
+		"jdate" : "2015-08-30",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 1,
+		"campaigns" : 1
 	},
 	{
 		"id" : 210,
@@ -1850,8 +2631,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 5
+		"jdate" : "2015-08-30",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 1,
+		"campaigns" : 1
 	},
 	{
 		"id" : 211,
@@ -1859,8 +2644,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 5
+		"jdate" : "2015-08-30",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 1,
+		"campaigns" : 1
 	},
 	{
 		"id" : 212,
@@ -1868,8 +2657,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 3
+		"jdate" : "2015-08-30",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 3,
+		"sorties" : 38,
+		"campaigns" : 4
 	},
 	{
 		"id" : 213,
@@ -1877,8 +2670,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 5
+		"jdate" : "2015-09-01",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 50,
+		"campaigns" : 4
 	},
 	{
 		"id" : 214,
@@ -1886,8 +2683,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 11
+		"jdate" : "2015-09-06",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 11,
+		"sorties" : 71,
+		"campaigns" : 4
 	},
 	{
 		"id" : 215,
@@ -1895,8 +2696,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 2
+		"jdate" : "2015-09-09",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 4,
+		"campaigns" : 1
 	},
 	{
 		"id" : 216,
@@ -1904,8 +2709,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 3
+		"jdate" : "2015-09-09",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 3,
+		"sorties" : 31,
+		"campaigns" : 4
 	},
 	{
 		"id" : 217,
@@ -1913,8 +2722,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 5
+		"jdate" : "2015-09-13",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 4,
+		"campaigns" : 1
 	},
 	{
 		"id" : 218,
@@ -1922,17 +2735,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 5
-	},
-	{
-		"id" : 219,
-		"callsign" : "Orr",
-		"admin" : 0,
-		"map_viewer" : 0,
-		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 5
+		"jdate" : "2015-09-19",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 65,
+		"campaigns" : 4
 	},
 	{
 		"id" : 220,
@@ -1940,8 +2748,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 9
+		"jdate" : "2015-09-16",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 9,
+		"sorties" : 67,
+		"campaigns" : 4
 	},
 	{
 		"id" : 221,
@@ -1949,8 +2761,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 6
+		"jdate" : "2015-09-27",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 55,
+		"campaigns" : 4
 	},
 	{
 		"id" : 222,
@@ -1958,8 +2774,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 5
+		"jdate" : "2016-01-23",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 7,
+		"campaigns" : 2
 	},
 	{
 		"id" : 223,
@@ -1967,8 +2787,12 @@
 		"admin" : 1,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 6
+		"jdate" : "2015-10-04",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 66,
+		"campaigns" : 4
 	},
 	{
 		"id" : 224,
@@ -1976,8 +2800,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 4
+		"jdate" : "2015-10-18",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 4,
+		"sorties" : 51,
+		"campaigns" : 4
 	},
 	{
 		"id" : 225,
@@ -1985,8 +2813,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 6
+		"jdate" : "2015-10-25",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 64,
+		"campaigns" : 4
 	},
 	{
 		"id" : 226,
@@ -1994,8 +2826,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 4
+		"jdate" : "2015-10-25",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 4,
+		"sorties" : 38,
+		"campaigns" : 4
 	},
 	{
 		"id" : 227,
@@ -2003,8 +2839,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 1
+		"jdate" : "2015-10-25",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 2,
+		"campaigns" : 1
 	},
 	{
 		"id" : 228,
@@ -2012,8 +2852,12 @@
 		"admin" : 1,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 6
+		"jdate" : "2015-11-01",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 59,
+		"campaigns" : 4
 	},
 	{
 		"id" : 229,
@@ -2021,8 +2865,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 3
+		"jdate" : "2015-11-01",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 3,
+		"sorties" : 37,
+		"campaigns" : 4
 	},
 	{
 		"id" : 230,
@@ -2030,8 +2878,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 5
+		"jdate" : "2015-11-01",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 7,
+		"campaigns" : 2
 	},
 	{
 		"id" : 231,
@@ -2039,8 +2891,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 6
+		"jdate" : "2015-11-07",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 32,
+		"campaigns" : 4
 	},
 	{
 		"id" : 232,
@@ -2048,8 +2904,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 2,
-		"rank_value" : 5
+		"jdate" : "2015-10-25",
+		"cstatus" : 2,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 48,
+		"campaigns" : 4
 	},
 	{
 		"id" : 233,
@@ -2057,8 +2917,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 4
+		"jdate" : "2015-11-15",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 4,
+		"sorties" : 41,
+		"campaigns" : 4
 	},
 	{
 		"id" : 234,
@@ -2066,8 +2930,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 8
+		"jdate" : "2015-11-29",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 8,
+		"sorties" : 58,
+		"campaigns" : 4
 	},
 	{
 		"id" : 235,
@@ -2075,8 +2943,12 @@
 		"admin" : 1,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 7
+		"jdate" : "2015-11-29",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 7,
+		"sorties" : 49,
+		"campaigns" : 4
 	},
 	{
 		"id" : 236,
@@ -2084,8 +2956,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 1
+		"jdate" : "2015-12-06",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 6,
+		"campaigns" : 2
 	},
 	{
 		"id" : 237,
@@ -2093,17 +2969,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 5
-	},
-	{
-		"id" : 238,
-		"callsign" : "Stevefire",
-		"admin" : 0,
-		"map_viewer" : 0,
-		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 5
+		"jdate" : "2015-12-31",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 37,
+		"campaigns" : 3
 	},
 	{
 		"id" : 239,
@@ -2111,8 +2982,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 5
+		"jdate" : "2016-01-08",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 10,
+		"campaigns" : 1
 	},
 	{
 		"id" : 240,
@@ -2120,8 +2995,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 2,
-		"rank_value" : 3
+		"jdate" : "2016-01-10",
+		"cstatus" : 2,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 3,
+		"sorties" : 22,
+		"campaigns" : 3
 	},
 	{
 		"id" : 241,
@@ -2129,8 +3008,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 6
+		"jdate" : "2016-01-10",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 44,
+		"campaigns" : 3
 	},
 	{
 		"id" : 242,
@@ -2138,8 +3021,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 5
+		"jdate" : "2016-01-10",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 42,
+		"campaigns" : 3
 	},
 	{
 		"id" : 243,
@@ -2147,8 +3034,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 2
+		"jdate" : "2016-01-17",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 12,
+		"campaigns" : 2
 	},
 	{
 		"id" : 244,
@@ -2156,8 +3047,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 3
+		"jdate" : "2016-01-17",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 3,
+		"sorties" : 27,
+		"campaigns" : 3
 	},
 	{
 		"id" : 245,
@@ -2165,8 +3060,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 3
+		"jdate" : "2016-01-17",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 3,
+		"sorties" : 19,
+		"campaigns" : 3
 	},
 	{
 		"id" : 246,
@@ -2174,8 +3073,12 @@
 		"admin" : 1,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 4
+		"jdate" : "2016-01-24",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 4,
+		"sorties" : 33,
+		"campaigns" : 3
 	},
 	{
 		"id" : 247,
@@ -2183,8 +3086,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 2,
-		"rank_value" : 5
+		"jdate" : "2016-01-23",
+		"cstatus" : 2,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 55,
+		"campaigns" : 3
 	},
 	{
 		"id" : 248,
@@ -2192,8 +3099,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 2
+		"jdate" : "2016-01-24",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 14,
+		"campaigns" : 3
 	},
 	{
 		"id" : 249,
@@ -2201,8 +3112,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 2
+		"jdate" : "2016-01-24",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 14,
+		"campaigns" : 3
 	},
 	{
 		"id" : 250,
@@ -2210,8 +3125,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 6
+		"jdate" : "2016-02-01",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 56,
+		"campaigns" : 3
 	},
 	{
 		"id" : 251,
@@ -2219,8 +3138,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 2
+		"jdate" : "2016-02-04",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 6,
+		"campaigns" : 2
 	},
 	{
 		"id" : 252,
@@ -2228,8 +3151,12 @@
 		"admin" : 1,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 5
+		"jdate" : "2016-02-16",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 50,
+		"campaigns" : 3
 	},
 	{
 		"id" : 253,
@@ -2237,8 +3164,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 5
+		"jdate" : "2016-02-07",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 23,
+		"campaigns" : 3
 	},
 	{
 		"id" : 254,
@@ -2246,8 +3177,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 11
+		"jdate" : "2016-02-06",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 11,
+		"sorties" : 16,
+		"campaigns" : 3
 	},
 	{
 		"id" : 255,
@@ -2255,8 +3190,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 5
+		"jdate" : "2016-02-09",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 14,
+		"campaigns" : 3
 	},
 	{
 		"id" : 256,
@@ -2264,8 +3203,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 6
+		"jdate" : "2016-02-09",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 22,
+		"campaigns" : 3
 	},
 	{
 		"id" : 257,
@@ -2273,8 +3216,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 5
+		"jdate" : "2016-02-01",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 8,
+		"campaigns" : 3
 	},
 	{
 		"id" : 258,
@@ -2282,8 +3229,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 1
+		"jdate" : "2016-02-09",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 21,
+		"campaigns" : 3
 	},
 	{
 		"id" : 259,
@@ -2291,8 +3242,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 8
+		"jdate" : "2016-02-09",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 8,
+		"sorties" : 24,
+		"campaigns" : 3
 	},
 	{
 		"id" : 260,
@@ -2300,17 +3255,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 8
-	},
-	{
-		"id" : 261,
-		"callsign" : "Jaden",
-		"admin" : 0,
-		"map_viewer" : 0,
-		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 5
+		"jdate" : "2016-02-09",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 8,
+		"sorties" : 14,
+		"campaigns" : 3
 	},
 	{
 		"id" : 262,
@@ -2318,8 +3268,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 5
+		"jdate" : "2016-02-09",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 1,
+		"campaigns" : 1
 	},
 	{
 		"id" : 263,
@@ -2327,8 +3281,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 5
+		"jdate" : "2016-02-09",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 1,
+		"campaigns" : 1
 	},
 	{
 		"id" : 264,
@@ -2336,8 +3294,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 5
+		"jdate" : "2016-02-09",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 9,
+		"campaigns" : 2
 	},
 	{
 		"id" : 265,
@@ -2345,8 +3307,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 5
+		"jdate" : "2016-02-14",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 3,
+		"campaigns" : 1
 	},
 	{
 		"id" : 266,
@@ -2354,8 +3320,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 1
+		"jdate" : "2016-02-14",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 1,
+		"campaigns" : 1
 	},
 	{
 		"id" : 267,
@@ -2363,17 +3333,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 5
-	},
-	{
-		"id" : 268,
-		"callsign" : "Judge",
-		"admin" : 0,
-		"map_viewer" : 0,
-		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 1
+		"jdate" : "2016-02-13",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 17,
+		"campaigns" : 3
 	},
 	{
 		"id" : 269,
@@ -2381,8 +3346,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 3
+		"jdate" : "2016-02-15",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 3,
+		"sorties" : 22,
+		"campaigns" : 2
 	},
 	{
 		"id" : 270,
@@ -2390,8 +3359,12 @@
 		"admin" : 1,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 9
+		"jdate" : "2016-02-21",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 9,
+		"sorties" : 57,
+		"campaigns" : 3
 	},
 	{
 		"id" : 274,
@@ -2399,8 +3372,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 2,
-		"rank_value" : 6
+		"jdate" : "2016-03-06",
+		"cstatus" : 2,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 39,
+		"campaigns" : 3
 	},
 	{
 		"id" : 275,
@@ -2408,17 +3385,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 5
-	},
-	{
-		"id" : 276,
-		"callsign" : "Ben",
-		"admin" : 0,
-		"map_viewer" : 0,
-		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 5
+		"jdate" : "2016-03-06",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 38,
+		"campaigns" : 3
 	},
 	{
 		"id" : 277,
@@ -2426,8 +3398,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 5
+		"jdate" : "2016-03-06",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 55,
+		"campaigns" : 3
 	},
 	{
 		"id" : 278,
@@ -2435,8 +3411,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 5
+		"jdate" : "2016-03-13",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 32,
+		"campaigns" : 3
 	},
 	{
 		"id" : 279,
@@ -2444,8 +3424,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 5
+		"jdate" : "2016-03-21",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 45,
+		"campaigns" : 3
 	},
 	{
 		"id" : 280,
@@ -2453,8 +3437,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 1
+		"jdate" : "2016-03-20",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 4,
+		"campaigns" : 1
 	},
 	{
 		"id" : 281,
@@ -2462,8 +3450,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 1
+		"jdate" : "2016-04-03",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 7,
+		"campaigns" : 2
 	},
 	{
 		"id" : 282,
@@ -2471,8 +3463,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 5
+		"jdate" : "2016-04-03",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 44,
+		"campaigns" : 3
 	},
 	{
 		"id" : 283,
@@ -2480,8 +3476,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 4
+		"jdate" : "2016-04-10",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 4,
+		"sorties" : 44,
+		"campaigns" : 3
 	},
 	{
 		"id" : 284,
@@ -2489,8 +3489,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 2
+		"jdate" : "2016-04-10",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 13,
+		"campaigns" : 3
 	},
 	{
 		"id" : 285,
@@ -2498,8 +3502,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 4
+		"jdate" : "2016-04-10",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 4,
+		"sorties" : 22,
+		"campaigns" : 3
 	},
 	{
 		"id" : 286,
@@ -2507,8 +3515,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 2
+		"jdate" : "2016-04-17",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 13,
+		"campaigns" : 3
 	},
 	{
 		"id" : 287,
@@ -2516,8 +3528,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 5
+		"jdate" : "2016-04-17",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 52,
+		"campaigns" : 3
 	},
 	{
 		"id" : 288,
@@ -2525,8 +3541,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 5
+		"jdate" : "2016-04-17",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 8,
+		"campaigns" : 2
 	},
 	{
 		"id" : 289,
@@ -2534,8 +3554,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 2
+		"jdate" : "2016-04-17",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 17,
+		"campaigns" : 3
 	},
 	{
 		"id" : 290,
@@ -2543,8 +3567,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 5
+		"jdate" : "2016-04-19",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 29,
+		"campaigns" : 2
 	},
 	{
 		"id" : 291,
@@ -2552,8 +3580,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 6
+		"jdate" : "2016-04-19",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 44,
+		"campaigns" : 2
 	},
 	{
 		"id" : 292,
@@ -2561,8 +3593,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 4
+		"jdate" : "2016-05-08",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 4,
+		"sorties" : 38,
+		"campaigns" : 2
 	},
 	{
 		"id" : 293,
@@ -2570,8 +3606,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 5
+		"jdate" : "2016-05-22",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 44,
+		"campaigns" : 2
 	},
 	{
 		"id" : 294,
@@ -2579,8 +3619,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 5
+		"jdate" : "2016-06-05",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 2,
+		"campaigns" : 1
 	},
 	{
 		"id" : 295,
@@ -2588,8 +3632,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 5
+		"jdate" : "2016-06-05",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 10,
+		"campaigns" : 2
 	},
 	{
 		"id" : 296,
@@ -2597,8 +3645,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 1
+		"jdate" : "2016-06-05",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 15,
+		"campaigns" : 2
 	},
 	{
 		"id" : 297,
@@ -2606,8 +3658,12 @@
 		"admin" : 1,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 4
+		"jdate" : "2016-06-05",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 4,
+		"sorties" : 44,
+		"campaigns" : 2
 	},
 	{
 		"id" : 298,
@@ -2615,8 +3671,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 5
+		"jdate" : "2016-06-12",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 40,
+		"campaigns" : 2
 	},
 	{
 		"id" : 299,
@@ -2624,8 +3684,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 3
+		"jdate" : "2016-06-12",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 3,
+		"sorties" : 36,
+		"campaigns" : 2
 	},
 	{
 		"id" : 300,
@@ -2633,8 +3697,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 5
+		"jdate" : "2016-07-03",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 38,
+		"campaigns" : 2
 	},
 	{
 		"id" : 301,
@@ -2642,8 +3710,12 @@
 		"admin" : 1,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 11
+		"jdate" : "2016-07-11",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 11,
+		"sorties" : 41,
+		"campaigns" : 2
 	},
 	{
 		"id" : 302,
@@ -2651,8 +3723,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 2
+		"jdate" : "2016-07-13",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 9,
+		"campaigns" : 2
 	},
 	{
 		"id" : 303,
@@ -2660,8 +3736,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 1
+		"jdate" : "2016-07-17",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 6,
+		"campaigns" : 2
 	},
 	{
 		"id" : 304,
@@ -2669,8 +3749,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 1
+		"jdate" : "2016-07-17",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 4,
+		"campaigns" : 2
 	},
 	{
 		"id" : 305,
@@ -2678,8 +3762,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 5
+		"jdate" : "2016-07-24",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 8,
+		"campaigns" : 2
 	},
 	{
 		"id" : 306,
@@ -2687,8 +3775,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 5
+		"jdate" : "2016-07-24",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 2,
+		"campaigns" : 1
 	},
 	{
 		"id" : 307,
@@ -2696,8 +3788,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 2
+		"jdate" : "2016-07-24",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 26,
+		"campaigns" : 1
 	},
 	{
 		"id" : 308,
@@ -2705,8 +3801,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 4
+		"jdate" : "2016-07-24",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 4,
+		"sorties" : 32,
+		"campaigns" : 2
 	},
 	{
 		"id" : 309,
@@ -2714,8 +3814,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 1
+		"jdate" : "2016-07-29",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 3,
+		"campaigns" : 1
 	},
 	{
 		"id" : 310,
@@ -2723,8 +3827,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 2
+		"jdate" : "2016-07-29",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 29,
+		"campaigns" : 1
 	},
 	{
 		"id" : 311,
@@ -2732,8 +3840,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 2
+		"jdate" : "2016-07-31",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 14,
+		"campaigns" : 1
 	},
 	{
 		"id" : 311,
@@ -2741,8 +3853,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 2
+		"jdate" : "2016-07-31",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 14,
+		"campaigns" : 1
 	},
 	{
 		"id" : 312,
@@ -2750,8 +3866,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 1
+		"jdate" : "2016-08-04",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 1,
+		"campaigns" : 1
 	},
 	{
 		"id" : 313,
@@ -2759,8 +3879,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 5
+		"jdate" : "2016-08-12",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 24,
+		"campaigns" : 1
 	},
 	{
 		"id" : 314,
@@ -2768,8 +3892,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 5
+		"jdate" : "2016-08-13",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 12,
+		"campaigns" : 1
 	},
 	{
 		"id" : 315,
@@ -2777,8 +3905,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 4
+		"jdate" : "2016-08-14",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 4,
+		"sorties" : 34,
+		"campaigns" : 1
 	},
 	{
 		"id" : 316,
@@ -2786,8 +3918,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 3
+		"jdate" : "2016-08-22",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 3,
+		"sorties" : 38,
+		"campaigns" : 1
 	},
 	{
 		"id" : 317,
@@ -2795,8 +3931,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 1
+		"jdate" : "2016-08-22",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 6,
+		"campaigns" : 1
 	},
 	{
 		"id" : 318,
@@ -2804,8 +3944,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 2
+		"jdate" : "2016-08-22",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 16,
+		"campaigns" : 1
 	},
 	{
 		"id" : 318,
@@ -2813,8 +3957,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 2
+		"jdate" : "2016-08-22",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 16,
+		"campaigns" : 1
 	},
 	{
 		"id" : 319,
@@ -2822,8 +3970,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 2
+		"jdate" : "2016-09-04",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 18,
+		"campaigns" : 1
 	},
 	{
 		"id" : 320,
@@ -2831,8 +3983,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 1
+		"jdate" : "2016-09-04",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 6,
+		"campaigns" : 1
 	},
 	{
 		"id" : 321,
@@ -2840,8 +3996,12 @@
 		"admin" : 1,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 5
+		"jdate" : "2016-09-07",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 32,
+		"campaigns" : 1
 	},
 	{
 		"id" : 322,
@@ -2849,8 +4009,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 5
+		"jdate" : "2016-09-11",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 27,
+		"campaigns" : 1
 	},
 	{
 		"id" : 323,
@@ -2858,8 +4022,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 7
+		"jdate" : "2016-10-09",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 7,
+		"sorties" : 32,
+		"campaigns" : 1
 	},
 	{
 		"id" : 324,
@@ -2867,8 +4035,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 1
+		"jdate" : "2016-10-09",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 1,
+		"campaigns" : 1
 	},
 	{
 		"id" : 325,
@@ -2876,8 +4048,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 3
+		"jdate" : "2016-10-23",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 3,
+		"sorties" : 34,
+		"campaigns" : 1
 	},
 	{
 		"id" : 326,
@@ -2885,8 +4061,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 2,
-		"rank_value" : 3
+		"jdate" : "2016-10-30",
+		"cstatus" : 2,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 3,
+		"sorties" : 21,
+		"campaigns" : 1
 	},
 	{
 		"id" : 327,
@@ -2894,8 +4074,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 5
+		"jdate" : "2016-10-29",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 24,
+		"campaigns" : 1
 	},
 	{
 		"id" : 328,
@@ -2903,8 +4087,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 1
+		"jdate" : "2016-10-30",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 5,
+		"campaigns" : 1
 	},
 	{
 		"id" : 329,
@@ -2912,8 +4100,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 3
+		"jdate" : "2016-11-13",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 3,
+		"sorties" : 25,
+		"campaigns" : 1
 	},
 	{
 		"id" : 330,
@@ -2921,8 +4113,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 5
+		"jdate" : "2016-12-02",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 18,
+		"campaigns" : 1
 	},
 	{
 		"id" : 331,
@@ -2930,8 +4126,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 3
+		"jdate" : "2016-12-01",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 3,
+		"sorties" : 9,
+		"campaigns" : 1
 	},
 	{
 		"id" : 332,
@@ -2939,8 +4139,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 2,
-		"rank_value" : 3
+		"jdate" : "2016-12-06",
+		"cstatus" : 2,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 3,
+		"sorties" : 19,
+		"campaigns" : 1
 	},
 	{
 		"id" : 333,
@@ -2948,17 +4152,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 3
-	},
-	{
-		"id" : 334,
-		"callsign" : "Linty",
-		"admin" : 0,
-		"map_viewer" : 0,
-		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 1
+		"jdate" : "2016-12-06",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 3,
+		"sorties" : 29,
+		"campaigns" : 1
 	},
 	{
 		"id" : 335,
@@ -2966,8 +4165,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 5
+		"jdate" : "2016-12-08",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 17,
+		"campaigns" : 1
 	},
 	{
 		"id" : 336,
@@ -2975,8 +4178,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 3
+		"jdate" : "2016-12-11",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 3,
+		"sorties" : 27,
+		"campaigns" : 1
 	},
 	{
 		"id" : 337,
@@ -2984,8 +4191,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 5
+		"jdate" : "2017-01-07",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 20,
+		"campaigns" : 1
 	},
 	{
 		"id" : 338,
@@ -2993,8 +4204,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 1
+		"jdate" : "2017-01-08",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 4,
+		"campaigns" : 1
 	},
 	{
 		"id" : 339,
@@ -3002,8 +4217,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 5
+		"jdate" : "2017-01-15",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 20,
+		"campaigns" : 1
 	},
 	{
 		"id" : 340,
@@ -3011,8 +4230,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 6
+		"jdate" : "2017-01-15",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 20,
+		"campaigns" : 1
 	},
 	{
 		"id" : 341,
@@ -3020,8 +4243,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 5
+		"jdate" : "2017-01-29",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 17,
+		"campaigns" : 1
 	},
 	{
 		"id" : 342,
@@ -3029,17 +4256,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 5
-	},
-	{
-		"id" : 343,
-		"callsign" : "Hectic",
-		"admin" : 0,
-		"map_viewer" : 0,
-		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 1
+		"jdate" : "2017-01-29",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 20,
+		"campaigns" : 1
 	},
 	{
 		"id" : 344,
@@ -3047,8 +4269,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 2
+		"jdate" : "2017-01-29",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 19,
+		"campaigns" : 1
 	},
 	{
 		"id" : 345,
@@ -3056,8 +4282,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 1
+		"jdate" : "2017-02-01",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 8,
+		"campaigns" : 1
 	},
 	{
 		"id" : 346,
@@ -3065,8 +4295,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 5
+		"jdate" : "2017-02-06",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 24,
+		"campaigns" : 1
 	},
 	{
 		"id" : 347,
@@ -3074,8 +4308,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 2
+		"jdate" : "2017-02-05",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 18,
+		"campaigns" : 1
 	},
 	{
 		"id" : 348,
@@ -3083,8 +4321,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 1
+		"jdate" : "2002-06-17",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 4,
+		"campaigns" : 1
 	},
 	{
 		"id" : 349,
@@ -3092,8 +4334,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 1
+		"jdate" : "2017-03-11",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 12,
+		"campaigns" : 1
 	},
 	{
 		"id" : 350,
@@ -3101,8 +4347,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 5
+		"jdate" : "2017-03-11",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 8,
+		"campaigns" : 1
 	},
 	{
 		"id" : 351,
@@ -3110,8 +4360,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 1
+		"jdate" : "2017-03-12",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 2,
+		"campaigns" : 1
 	},
 	{
 		"id" : 352,
@@ -3119,8 +4373,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 6
+		"jdate" : "2017-03-26",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 20,
+		"campaigns" : 1
 	},
 	{
 		"id" : 353,
@@ -3128,8 +4386,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 5
+		"jdate" : "2017-04-15",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 14,
+		"campaigns" : 1
 	},
 	{
 		"id" : 354,
@@ -3137,8 +4399,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 5
+		"jdate" : "2017-04-16",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 18,
+		"campaigns" : 1
 	},
 	{
 		"id" : 356,
@@ -3146,8 +4412,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 1
+		"jdate" : "2017-04-24",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 3,
+		"campaigns" : 1
 	},
 	{
 		"id" : 357,
@@ -3155,8 +4425,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 1
+		"jdate" : "2017-04-30",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 11,
+		"campaigns" : 1
 	},
 	{
 		"id" : 358,
@@ -3164,8 +4438,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 1
+		"jdate" : "2017-04-30",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 2,
+		"campaigns" : 1
 	},
 	{
 		"id" : 358,
@@ -3173,8 +4451,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 1
+		"jdate" : "2017-04-30",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 2,
+		"campaigns" : 1
 	},
 	{
 		"id" : 359,
@@ -3182,8 +4464,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 2
+		"jdate" : "2017-04-30",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 12,
+		"campaigns" : 1
 	},
 	{
 		"id" : 360,
@@ -3191,8 +4477,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 1
+		"jdate" : "2017-04-30",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 7,
+		"campaigns" : 1
 	},
 	{
 		"id" : 361,
@@ -3200,8 +4490,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 5
+		"jdate" : "2017-05-07",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 14,
+		"campaigns" : 1
 	},
 	{
 		"id" : 362,
@@ -3209,8 +4503,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 5
+		"jdate" : "2017-05-17",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 15,
+		"campaigns" : 1
 	},
 	{
 		"id" : 363,
@@ -3218,8 +4516,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 5
+		"jdate" : "2017-05-16",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 2,
+		"campaigns" : 1
 	},
 	{
 		"id" : 364,
@@ -3227,8 +4529,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 5
+		"jdate" : "2017-07-02",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 11,
+		"campaigns" : 1
 	},
 	{
 		"id" : 365,
@@ -3236,8 +4542,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 5
+		"jdate" : "2017-07-04",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 4,
+		"campaigns" : 1
 	},
 	{
 		"id" : 366,
@@ -3245,8 +4555,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 5
+		"jdate" : "2017-07-04",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 11,
+		"campaigns" : 1
 	},
 	{
 		"id" : 366,
@@ -3254,8 +4568,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 5
+		"jdate" : "2017-07-04",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 11,
+		"campaigns" : 1
 	},
 	{
 		"id" : 367,
@@ -3263,8 +4581,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 5
+		"jdate" : "2017-07-15",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 10,
+		"campaigns" : 1
 	},
 	{
 		"id" : 368,
@@ -3272,8 +4594,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 5
+		"jdate" : "2017-07-30",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 11,
+		"campaigns" : 1
 	},
 	{
 		"id" : 369,
@@ -3281,8 +4607,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 1
+		"jdate" : "2017-07-30",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 4,
+		"campaigns" : 1
 	},
 	{
 		"id" : 370,
@@ -3290,8 +4620,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 2,
-		"rank_value" : 2
+		"jdate" : "2017-07-30",
+		"cstatus" : 2,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 4,
+		"campaigns" : 1
 	},
 	{
 		"id" : 371,
@@ -3299,8 +4633,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 2
+		"jdate" : "2017-07-30",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 11,
+		"campaigns" : 1
 	},
 	{
 		"id" : 372,
@@ -3308,8 +4646,12 @@
 		"admin" : 1,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 5
+		"jdate" : "2017-07-30",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 10,
+		"campaigns" : 1
 	},
 	{
 		"id" : 373,
@@ -3317,8 +4659,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 2
+		"jdate" : "2017-07-30",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 7,
+		"campaigns" : 1
 	},
 	{
 		"id" : 374,
@@ -3326,8 +4672,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 2
+		"jdate" : "2017-07-30",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 11,
+		"campaigns" : 1
 	},
 	{
 		"id" : 375,
@@ -3335,8 +4685,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 1
+		"jdate" : "2017-08-06",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 2,
+		"campaigns" : 1
 	},
 	{
 		"id" : 376,
@@ -3344,8 +4698,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 2
+		"jdate" : "2017-08-05",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 11,
+		"campaigns" : 1
 	},
 	{
 		"id" : 377,
@@ -3353,8 +4711,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 1
+		"jdate" : "2017-08-05",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 1,
+		"campaigns" : 1
 	},
 	{
 		"id" : 378,
@@ -3362,8 +4724,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 8
+		"jdate" : "2017-05-29",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 8,
+		"sorties" : 10,
+		"campaigns" : 2
 	},
 	{
 		"id" : 379,
@@ -3371,8 +4737,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 1
+		"jdate" : "2017-08-17",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 6,
+		"campaigns" : 1
 	},
 	{
 		"id" : 380,
@@ -3380,8 +4750,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 1
+		"jdate" : "2017-08-17",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 5,
+		"campaigns" : 1
 	},
 	{
 		"id" : 381,
@@ -3389,8 +4763,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 1
+		"jdate" : "2017-08-17",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 3,
+		"campaigns" : 1
 	},
 	{
 		"id" : 382,
@@ -3398,8 +4776,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 5
+		"jdate" : "2017-08-20",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 8,
+		"campaigns" : 1
 	},
 	{
 		"id" : 383,
@@ -3407,8 +4789,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 2,
-		"rank_value" : 1
+		"jdate" : "2017-08-27",
+		"cstatus" : 2,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 2,
+		"campaigns" : 1
 	},
 	{
 		"id" : 384,
@@ -3416,8 +4802,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 2
+		"jdate" : "2017-08-27",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 10,
+		"campaigns" : 1
 	},
 	{
 		"id" : 385,
@@ -3425,8 +4815,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 5
+		"jdate" : "2017-08-31",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 10,
+		"campaigns" : 1
 	},
 	{
 		"id" : 386,
@@ -3434,8 +4828,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 2
+		"jdate" : "2017-09-03",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 9,
+		"campaigns" : 1
 	},
 	{
 		"id" : 387,
@@ -3443,8 +4841,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 5
+		"jdate" : "2017-09-10",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 9,
+		"campaigns" : 1
 	},
 	{
 		"id" : 388,
@@ -3452,8 +4854,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 1
+		"jdate" : "2017-09-17",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 8,
+		"campaigns" : 1
 	},
 	{
 		"id" : 389,
@@ -3461,8 +4867,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 1
+		"jdate" : "2017-09-17",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 6,
+		"campaigns" : 1
 	},
 	{
 		"id" : 390,
@@ -3470,8 +4880,12 @@
 		"admin" : 1,
 		"map_viewer" : 1,
 		"mission_builder" : 1,
-		"member_status" : 0,
-		"rank_value" : 1
+		"jdate" : "2017-09-24",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 5,
+		"campaigns" : 1
 	},
 	{
 		"id" : 391,
@@ -3479,8 +4893,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 2,
-		"rank_value" : 1
+		"jdate" : "2017-10-01",
+		"cstatus" : 2,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 1,
+		"campaigns" : 1
 	},
 	{
 		"id" : 392,
@@ -3488,8 +4906,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 1
+		"jdate" : "2017-10-01",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 1,
+		"campaigns" : 1
 	},
 	{
 		"id" : 393,
@@ -3497,8 +4919,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 1
+		"jdate" : "2017-10-01",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 6,
+		"campaigns" : 1
 	},
 	{
 		"id" : 394,
@@ -3506,8 +4932,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 2,
-		"rank_value" : 5
+		"jdate" : "2017-10-08",
+		"cstatus" : 2,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 6,
+		"campaigns" : 1
 	},
 	{
 		"id" : 395,
@@ -3515,8 +4945,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 1,
-		"rank_value" : 1
+		"jdate" : "2017-10-10",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 5,
+		"campaigns" : 1
 	},
 	{
 		"id" : 397,
@@ -3524,8 +4958,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 1
+		"jdate" : "2017-10-12",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 7,
+		"campaigns" : 1
 	},
 	{
 		"id" : 398,
@@ -3533,8 +4971,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 1
+		"jdate" : "2017-10-22",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 4,
+		"campaigns" : 1
 	},
 	{
 		"id" : 399,
@@ -3542,8 +4984,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 5
+		"jdate" : "2017-11-26",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 2,
+		"campaigns" : 1
 	},
 	{
 		"id" : 400,
@@ -3551,8 +4997,12 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 1
+		"jdate" : "2017-11-30",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 2,
+		"campaigns" : 1
 	},
 	{
 		"id" : 401,
@@ -3560,106 +5010,11 @@
 		"admin" : 0,
 		"map_viewer" : 0,
 		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 5
-	},
-	{
-		"id" : 402,
-		"callsign" : "Mato",
-		"admin" : 0,
-		"map_viewer" : 0,
-		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 5
-	},
-	{
-		"id" : 403,
-		"callsign" : "Spigot",
-		"admin" : 0,
-		"map_viewer" : 0,
-		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 5
-	},
-	{
-		"id" : 404,
-		"callsign" : "Django",
-		"admin" : 0,
-		"map_viewer" : 0,
-		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 6
-	},
-	{
-		"id" : 404,
-		"callsign" : "Django",
-		"admin" : 0,
-		"map_viewer" : 0,
-		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 5
-	},
-	{
-		"id" : 405,
-		"callsign" : "Boone",
-		"admin" : 0,
-		"map_viewer" : 0,
-		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 1
-	},
-	{
-		"id" : 406,
-		"callsign" : "Schleprock",
-		"admin" : 0,
-		"map_viewer" : 0,
-		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 1
-	},
-	{
-		"id" : 407,
-		"callsign" : "Squid",
-		"admin" : 0,
-		"map_viewer" : 0,
-		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 5
-	},
-	{
-		"id" : 408,
-		"callsign" : "Eric",
-		"admin" : 0,
-		"map_viewer" : 0,
-		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 5
-	},
-	{
-		"id" : 409,
-		"callsign" : "Guido",
-		"admin" : 0,
-		"map_viewer" : 0,
-		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 5
-	},
-	{
-		"id" : 410,
-		"callsign" : "Shakespeade",
-		"admin" : 0,
-		"map_viewer" : 0,
-		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 1
-	},
-	{
-		"id" : 411,
-		"callsign" : "Slippy",
-		"admin" : 0,
-		"map_viewer" : 0,
-		"mission_builder" : 0,
-		"member_status" : 0,
-		"rank_value" : 1
+		"jdate" : "2017-12-10",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 1,
+		"campaigns" : 1
 	}
 ]
