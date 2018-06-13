@@ -17,7 +17,7 @@
         <router-view/>
       </div>
     </div>
-    
+
   </div>
 </template>
 
@@ -97,21 +97,46 @@ tr,td {
   width: calc(80% - 2px); /* Whished widht in % minus 2x border size */
 }
 
+/*General quick style aspects*/
+.full-width {
+  width: 100%;
+}
 
+.inline{
+  display: inline-block;
+}
 
-.link {
+.float-left{
+  float: left;
+}
+
+.float-right{
+  float: right;
+}
+
+/*Styles for listing elements (members list, campaigns list, missions list....)*/
+
+.link-list{
+  margin: 10px 2px 10px 2px;
   cursor: pointer;
 }
 
-.link:hover {
+.link-list:hover {
   background: gray;
 }
 
-tr.link {
-  cursor: pointer;
+.link-list-heading{
+  font-weight: bold;
+  font-size: 1.2em;
 }
 
-tr.link:hover {
-  background: gray;
+.multi-line-link-button {
+  display: inline-block;
 }
+
+.multi-line-link-button span {
+  margin: 10px;
+  width: auto;
+}
+
 </style>

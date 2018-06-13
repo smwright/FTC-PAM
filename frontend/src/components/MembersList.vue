@@ -2,11 +2,11 @@
   <div class="MembersList">
     <h1>Members</h1>
     <p>These pages list all registered ACG members with their corresponding names, callsigns, joining- and eventually discharge dates, their status and their current squadron. Click on any member to access a detailed profile.</p>
-    <div class="link" v-for="(member, id) in members" v-on:click="routeToMember(member.id)">
-      <div class="callsign">
+    <div class="link-list" v-for="(member, id) in members" v-on:click="routeToMember(member.id)">
+      <div class="link-list-heading">
         {{ member.callsign}}
       </div>
-      <div class="two-line-link-button">
+      <div class="multi-line-link-button">
         <div>
           <span>Joining date: {{ member.jdate }}</span>
           <span>Current status: {{ currentStatus(member.cstatus) }}</span>
@@ -26,6 +26,7 @@
 
 <script>
 import Mockcom from './../resource/index'
+import {memberStatus}  from '../resource/statusConverter'
 
 export default {
   name: 'MembersList',
@@ -36,7 +37,6 @@ export default {
       // })
       .then(response => {
         this.members = response;
-        console.log(JSON.stringify(this.members))
       })
       .catch(function (error) {
         console.log(error.message);
@@ -45,7 +45,8 @@ export default {
   },
   data () {
     return {
-      members: null
+      members: null,
+      currentStatus: memberStatus
     }
   },
   methods: {
@@ -62,20 +63,7 @@ export default {
     //   }
     //   return members;
     // }
-    currentStatus: function(cstatus) {
-      switch (cstatus) {
-        case 0:
-          return "Active";
-        case 1:
-          return "Dismissed";
-        case 2:
-          return "Relieved from duty";
-        case 3:
-          return "Passed away";
-        default:
-          return cstatus;
-      }
-    }
+
   }
 }
 </script>
@@ -83,24 +71,10 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
   .div-rank-value {
+    float: right;
     display: inline-block;
     width: calc(10% - 4px); /* Whished widht in % minus 2x border size */
     text-align: center;
-    vertical-align: center;
   }
 
-  .two-line-link-button {
-    width: calc(90% - 4px); /* Whished widht in % minus 2x border size */
-    display: inline-block;
-  }
-
-  .two-line-link-button span {
-    margin: 10px;
-    width: auto;
-  }
-
-  .callsign{
-    font-weight: bold;
-    font-size: 1.2em;
-  }
 </style>
