@@ -14,7 +14,12 @@ module.exports = {
       '/pam': {
         target: 'http://localhost:8081',
         changeOrigin: true
-      }
+      },
+      '**/*.php': {
+        target: 'http://localhost:80',
+        changeOrigin: true,
+        logLevel: 'debug'
+      },
 
     },
 

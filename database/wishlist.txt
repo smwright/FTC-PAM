@@ -26,7 +26,7 @@ member-details/{id}
             -hist_unit name
             -hist_unit faction
             -asset name
-            -number of missions
+            -number of missions attended
             -number of characters kia/pow/ok
             -number of aircraft ok/damaged/lost
             -number of victories (routine dependend on faction and platform)
@@ -39,3 +39,16 @@ member-details/{id}
                 -number of probable victories
                 -number of damaged victories
                 -number of ground victories
+
+campaign-list
+    -campaign id
+    -campaign name
+    -campaign platform
+    -campaign primary
+    -campaign status
+    -campaign time
+    -campaign open
+    -campaign campaign_link
+    -campaign description
+    -number of missions
+    -number of sorties

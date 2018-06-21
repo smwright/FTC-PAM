@@ -1,0 +1,17 @@
+campaigns json should include:
+
+id
+name
+primary
+platform
+campaign_status
+time
+open
+campaign_link
+description
+image
+units: number of participating acg-units
+sorties: number of sorties flown (equal to number of submitted and accepted reports)
+missions: number of completed missions in that campaign
+participants: sum of distinct members that submitted and had accepted reports
+avg_attendance: sorties/missions
