@@ -21,7 +21,6 @@ data class Campaign(
     val deployedUnits: List<DeployedUnit>
 ) : BaseEntity() {
 
-
   enum class Platform {
     IL2_CLIFFS_OF_DOVER,
     IL2_BATTLE_OF_MOSCOW,

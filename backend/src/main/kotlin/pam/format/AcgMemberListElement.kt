@@ -1,10 +1,7 @@
 package pam.format
 
-import com.fasterxml.jackson.annotation.JsonAlias
 import com.fasterxml.jackson.annotation.JsonProperty
-import com.sun.org.apache.xerces.internal.util.URI
 import org.springframework.web.util.DefaultUriBuilderFactory
-import org.springframework.web.util.UriBuilder
 import pam.sql.MemberState
 import java.io.Serializable
 import java.util.*
