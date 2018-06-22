@@ -10,7 +10,7 @@ data class GroundClaim(
         @JoinColumn(name = "report_id")
         val report: Report,
         @ManyToOne
-        @JoinColumn(name = "report_id")
+        @JoinColumn(name = "asset_id")
         val asset: Asset,
         val amount: Int,
         val description: String,

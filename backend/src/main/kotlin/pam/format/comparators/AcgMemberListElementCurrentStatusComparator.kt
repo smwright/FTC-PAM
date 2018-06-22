@@ -14,9 +14,9 @@ interface AcgMemberListElementComparator : Comparator<AcgMemberListElement> {
         override fun compare(p0: AcgMemberListElement, p1: AcgMemberListElement) = p0.rank.compareTo(p1.rank)
     }
 
-    class ByName : AcgMemberListElementComparator {
+    class ByCallSign : AcgMemberListElementComparator {
 
-        override fun compare(p0: AcgMemberListElement, p1: AcgMemberListElement) = p0.name.compareTo(p1.name)
+        override fun compare(p0: AcgMemberListElement, p1: AcgMemberListElement) = p0.callSign.compareTo(p1.callSign)
     }
 
     class ByJoiningDate : AcgMemberListElementComparator {

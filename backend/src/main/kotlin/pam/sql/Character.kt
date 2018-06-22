@@ -17,5 +17,7 @@ data class Character(
     val acgMember: AcgMember,
     @OneToMany(mappedBy = "character")
     @JsonManagedReference
-    val decorations: List<Decoration>
+    val decorations: List<Decoration>,
+    @OneToMany(mappedBy = "character")
+    val reports : List<Report>
 ) : BaseEntity()

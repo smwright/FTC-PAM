@@ -9,10 +9,12 @@ import java.util.*
 data class AcgMemberListElement(
         val id: Int,
         val rank: Int,
-        val name: String,
+        val callSign: String,
         val joiningDate: Date,
         val lastStatusChanged: Date,
-        val state: MemberState.State
+        val state: MemberState.State,
+        val campaignStats: List<MemberListCampaignElement>
+
 ) : Serializable {
 
     @JsonProperty("_link")
@@ -20,4 +22,12 @@ data class AcgMemberListElement(
             .builder()
             .path("/pam/acgMembers/$id")
             .build()
+
+
+    data class MemberListCampaignElement(
+            val id: Int,
+            val name: String,
+            val flownSorties: Int
+    )
+
 }

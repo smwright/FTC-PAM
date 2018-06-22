@@ -7,13 +7,16 @@ import pam.sql.comparators.MemberStateByDateComparator
 import pam.format.AcgMemberListElement
 import pam.format.comparators.AcgMemberListElementComparator
 import pam.repositories.AcgMemberRepository
+import pam.repositories.CampaignRepository
 import pam.sql.AcgMember
+import pam.sql.Mission
 import pam.sql.comparators.PromotionByDateComparator
 import pam.util.Sort
 
 @Service
 class AcgMemberService(
-        val acgMemberRepository: AcgMemberRepository
+        val acgMemberRepository: AcgMemberRepository,
+        val campaignRepository: CampaignRepository
 ) {
 
     fun createAcgMemberListElement(page: Pageable, sort: List<Sort>?): Page<AcgMemberListElement> {
@@ -28,7 +31,7 @@ class AcgMemberService(
                 when (it.name) {
                     "id" -> comparatorSortDirection(AcgMemberListElementComparator.ById(), it)
                     "rank" -> comparatorSortDirection(AcgMemberListElementComparator.ByRank(), it)
-                    "name" -> comparatorSortDirection(AcgMemberListElementComparator.ByName(), it)
+                    "name" -> comparatorSortDirection(AcgMemberListElementComparator.ByCallSign(), it)
                     "by_joining_date" -> comparatorSortDirection(AcgMemberListElementComparator.ByJoiningDate(), it)
                     "by_last_status_changed" -> comparatorSortDirection(AcgMemberListElementComparator.ByLastStatusChanged(), it)
                     "by_state" -> comparatorSortDirection(AcgMemberListElementComparator.ByState(), it)
@@ -61,12 +64,48 @@ class AcgMemberService(
     fun toListElement(acgMember: AcgMember): AcgMemberListElement {
         return AcgMemberListElement(
                 id = acgMember.id,
-                name = acgMember.callsign,
+                callSign = acgMember.callsign,
                 joiningDate = getFirstOrLastFromList(acgMember.memberState, MemberStateByDateComparator(), false).date,
                 lastStatusChanged = getFirstOrLastFromList(acgMember.memberState, MemberStateByDateComparator(), true).date,
                 state = getFirstOrLastFromList(acgMember.memberState, MemberStateByDateComparator(), true).state,
-                rank = getFirstOrLastFromList(acgMember.promotions, PromotionByDateComparator(), true).rankValue
+                rank = getFirstOrLastFromList(acgMember.promotions, PromotionByDateComparator(), true).rankValue,
+                campaignStats = mapCampaignStats(acgMember)
         )
+    }
+
+    fun mapCampaignStats(acgMember: AcgMember): List<AcgMemberListElement.MemberListCampaignElement> {
+
+        val campaigns = campaignRepository.findAll()
+
+        return campaigns.mapNotNull {
+
+            val participatedIn = it.missions.filter {
+                participated(it, acgMember)
+            }
+
+            if (participatedIn.isNotEmpty()) {
+                return@mapNotNull AcgMemberListElement.MemberListCampaignElement(
+                        id = it.id,
+                        name = it.name,
+                        flownSorties = participatedIn.size
+                )
+            } else {
+                return@mapNotNull null
+            }
+        }
+    }
+
+    private fun participated(mission: Mission, acgMember: AcgMember): Boolean {
+        var count = 0
+
+        acgMember.characters.forEach {
+            it.reports.forEach {
+                if (it.mission.id == mission.id) {
+                    count++
+                }
+            }
+        }
+        return count != 0
     }
 
     fun <S, T : Comparator<S>> getFirstOrLastFromList(list: List<S>, comparator: T, last: Boolean): S {
