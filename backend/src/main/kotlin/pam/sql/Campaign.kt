@@ -14,12 +14,13 @@ data class Campaign(
         @JoinColumn(name = "campaign_link")
         val previous_campaign: Campaign,
         val description: String,
-        val image: String,
-        @OneToMany(mappedBy = "campaign")
-        val missions: List<Mission>,
-        @OneToMany(mappedBy = "campaign")
-        val deployedUnits: List<DeployedUnit>
+        val image: String
 ) : BaseEntity() {
+
+    @OneToMany(mappedBy = "campaign")
+    lateinit var missions: List<Mission>
+    @OneToMany(mappedBy = "campaign")
+    lateinit var deployedUnits: List<DeployedUnit>
 
     enum class Platform {
         IL2_CLIFFS_OF_DOVER,

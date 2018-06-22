@@ -17,17 +17,23 @@ data class AcgMemberListElement(
 
 ) : Serializable {
 
+
     @JsonProperty("_link")
     val link = DefaultUriBuilderFactory()
             .builder()
             .path("/pam/acgMembers/$id")
             .build()
 
-
     data class MemberListCampaignElement(
             val id: Int,
             val name: String,
             val flownSorties: Int
-    )
+    ){
 
+        @JsonProperty("_link")
+        val link = DefaultUriBuilderFactory()
+                .builder()
+                .path("/pam/campaigns/$id")
+                .build()
+    }
 }

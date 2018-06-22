@@ -3,18 +3,17 @@ package pam.controller
 import org.springframework.data.domain.PageRequest
 import org.springframework.data.web.PagedResourcesAssembler
 import org.springframework.hateoas.PagedResources
-import org.springframework.hateoas.Resource
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
 import pam.format.AcgMemberListElement
-import pam.services.AcgMemberService
+import pam.services.AcgMemberListService
 import pam.util.Sort
 
 
 @RestController()
 class AcgMemberCustomController(
-        val acgMemberService: AcgMemberService,
+        val acgMemberListService: AcgMemberListService,
         val pagedResourcesAssembler: PagedResourcesAssembler<AcgMemberListElement>
 ) {
 
@@ -27,7 +26,7 @@ class AcgMemberCustomController(
     ): PagedResources<*> {
 
         val pageable = PageRequest.of(page ?: 0, size ?: 20)
-        val responseBody = acgMemberService.createAcgMemberListElement(pageable, sort)
+        val responseBody = acgMemberListService.createAcgMemberListElement(pageable, sort)
 
         return pagedResourcesAssembler.toResource(responseBody)
     }

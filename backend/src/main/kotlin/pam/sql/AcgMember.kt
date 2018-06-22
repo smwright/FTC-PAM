@@ -9,16 +9,17 @@ data class AcgMember(
         val callsign: String,
         val admin: Boolean,
         val mapViewer: Boolean,
-        val missionBuilder: Boolean,
-        @OneToMany(mappedBy = "acgMember")
-        @JsonManagedReference
-        val characters: List<Character>,
-        @OneToMany(mappedBy = "acgMember")
-        @JsonManagedReference
-        val memberState: List<MemberState>,
-        @OneToMany(mappedBy = "acgMember")
-        @JsonManagedReference
-        val promotions: List<Promotion>,
-        @OneToMany(mappedBy = "acgMember")
-        val transfers: List<Transfer>
-) : BaseEntity()
+        val missionBuilder: Boolean
+
+) : BaseEntity() {
+
+    @OneToMany(mappedBy = "acgMember")
+    @JsonManagedReference
+    lateinit var characters: List<Character>
+    @OneToMany(mappedBy = "acgMember")
+    @JsonManagedReference
+    lateinit var memberState: List<MemberState>
+    @OneToMany(mappedBy = "acgMember")
+    @JsonManagedReference
+    lateinit var promotions: List<Promotion>
+}

@@ -14,7 +14,7 @@ import pam.sql.comparators.PromotionByDateComparator
 import pam.util.Sort
 
 @Service
-class AcgMemberService(
+class AcgMemberListService(
         val acgMemberRepository: AcgMemberRepository,
         val campaignRepository: CampaignRepository
 ) {
@@ -81,13 +81,13 @@ class AcgMemberService(
 
             val participatedIn = it.missions.filter {
                 participated(it, acgMember)
-            }
+            }.size
 
-            if (participatedIn.isNotEmpty()) {
+            if (participatedIn > 0) {
                 return@mapNotNull AcgMemberListElement.MemberListCampaignElement(
                         id = it.id,
                         name = it.name,
-                        flownSorties = participatedIn.size
+                        flownSorties = participatedIn
                 )
             } else {
                 return@mapNotNull null
@@ -96,16 +96,12 @@ class AcgMemberService(
     }
 
     private fun participated(mission: Mission, acgMember: AcgMember): Boolean {
-        var count = 0
 
-        acgMember.characters.forEach {
-            it.reports.forEach {
-                if (it.mission.id == mission.id) {
-                    count++
-                }
-            }
-        }
-        return count != 0
+        return acgMember.characters.find {
+            it.reports.find {
+                it.mission == mission
+            } != null
+        } != null
     }
 
     fun <S, T : Comparator<S>> getFirstOrLastFromList(list: List<S>, comparator: T, last: Boolean): S {

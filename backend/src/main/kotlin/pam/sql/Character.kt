@@ -9,15 +9,18 @@ import javax.persistence.OneToMany
 
 @Entity(name = "career_character")
 data class Character(
-    val firstName: String,
-    val lastName: String,
-    @ManyToOne
-    @JoinColumn(name = "personified_by")
-    @JsonBackReference
-    val acgMember: AcgMember,
+        val firstName: String,
+        val lastName: String,
+        @ManyToOne
+        @JoinColumn(name = "personified_by")
+        @JsonBackReference
+        val acgMember: AcgMember
+) : BaseEntity() {
+
     @OneToMany(mappedBy = "character")
     @JsonManagedReference
-    val decorations: List<Decoration>,
+    lateinit var decorations: List<Decoration>
     @OneToMany(mappedBy = "character")
-    val reports : List<Report>
-) : BaseEntity()
+    lateinit var reports: List<Report>
+
+}
