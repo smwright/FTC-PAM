@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty
 import org.springframework.web.util.DefaultUriBuilderFactory
 import pam.sql.MemberState
 import java.io.Serializable
+import java.net.URI
 import java.util.*
 
 data class AcgMemberListElement(
@@ -19,7 +20,7 @@ data class AcgMemberListElement(
 
 
     @JsonProperty("_link")
-    val link = DefaultUriBuilderFactory()
+    val link: URI = DefaultUriBuilderFactory()
             .builder()
             .path("/pam/acgMembers/$id")
             .build()
@@ -28,10 +29,10 @@ data class AcgMemberListElement(
             val id: Int,
             val name: String,
             val flownSorties: Int
-    ){
+    ) {
 
         @JsonProperty("_link")
-        val link = DefaultUriBuilderFactory()
+        val link: URI = DefaultUriBuilderFactory()
                 .builder()
                 .path("/pam/campaigns/$id")
                 .build()
