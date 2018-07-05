@@ -10,4 +10,9 @@ interface AcgMemberRepository : JpaRepository<AcgMember, Int> {
   fun findByCallsign(callsign: String, p: Pageable): Page<AcgMember>
 
   fun findByAdmin(admin: Boolean, p: Pageable): Page<AcgMember>
+
+
 }
+
+
+

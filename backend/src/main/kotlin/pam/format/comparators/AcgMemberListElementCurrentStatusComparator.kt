@@ -42,7 +42,7 @@ interface AcgMemberListElementComparator : Comparator<AcgMemberListElement> {
         override fun compare(p0: AcgMemberListElement, p1: AcgMemberListElement): Int {
             val comparator = list.first()
 
-            list.subList(1, list.size - 1).forEach {
+            list.subList(1, list.size).forEach {
                 comparator.thenComparing(it)
             }
 
