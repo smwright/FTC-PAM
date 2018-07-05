@@ -1,28 +1,28 @@
 <template>
   <div class="home">
     <h1>
-    Welcome to Air Combat Group
+    Welcome to Air Combat Group awesome
     </h1>
     <p>
-    Air Combat Group consists of both Allied and Axis squadrons under a single operational 
-    umbrella flying with full realism settings. We are an English and German speaking 
-    group located in Europe and the Americas and meet on our own Teamspeak 3 server. 
-    Our pilots are interested in the history of World War II air combat on all fronts, 
-    seeking immersive air combat in the theatres of the time through historical 
-    campaign and other online activities. By supporting both sides of the conflict 
-    we can create parity in theatre and achieve common ground across the group, 
-    ultimately we seek to mirror the numbers flying on each side and support increasingly 
+    Air Combat Group consists of both Allied and Axis squadrons under a single operational
+    umbrella flying with full realism settings. We are an English and German speaking
+    group located in Europe and the Americas and meet on our own Teamspeak 3 server.
+    Our pilots are interested in the history of World War II air combat on all fronts,
+    seeking immersive air combat in the theatres of the time through historical
+    campaign and other online activities. By supporting both sides of the conflict
+    we can create parity in theatre and achieve common ground across the group,
+    ultimately we seek to mirror the numbers flying on each side and support increasingly
     large campaigns.
     </p>
     <p>
     Our objective is to provide an unpressurised, non-competitive
-    and friendly environment in which to enjoy combat operations, whichever side 
+    and friendly environment in which to enjoy combat operations, whichever side
     a pilot prefers, and all standards are welcome regardless of experience. The
     squadrons within the group are historically based and the missions we fly are
     selected for their historical accuracy whether on our public server or in campaign.
     Group and squadron objectives are to re-enact the history ahead of competition,
     to attempt to be a part of being there, to learn about some of the experiences
-    that were faced by the young pilots who fought for their countries in World 
+    that were faced by the young pilots who fought for their countries in World
     War II and to honour them by understanding more about what they faced.
     </p>
     <p>
@@ -35,8 +35,45 @@
 </template>
 
 <script>
+  import axios from 'axios';
+
 export default {
-  name: 'Home'
+  name: 'Home',
+  mounted () {
+    this.testPHP();
+    console.log("Starting store testing");
+    console.log("Calling getter: " + this.$store.getters['test/doubleCount'])
+    console.log("Calling mutation: ")
+    this.$store.commit('test/increment')
+    console.log("Calling getter: " + this.$store.getters['test/doubleCount'])
+  },
+  methods: {
+
+    testPHP: function() {
+      axios.get("test.php")
+      .then(function(response){
+        console.log(response.data);
+      })
+      .catch(function (error) {
+        if (error.response) {
+          // The request was made and the server responded with a status code
+          // that falls out of the range of 2xx
+          console.log(error.response.data);
+          console.log(error.response.status);
+          console.log(error.response.headers);
+        } else if (error.request) {
+          // The request was made but no response was received
+          // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
+          // http.ClientRequest in node.js
+          console.log(error.request);
+        } else {
+          // Something happened in setting up the request that triggered an Error
+          console.log('Error', error.message);
+        }
+        console.log(error.config);
+      })
+    }
+  }
 }
 </script>
 

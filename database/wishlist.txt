@@ -1,0 +1,54 @@
+member-list
+    -member id
+    -member callsign
+    -member admin
+    -member map viewer
+    -member mission builder
+    -most recent status from member_status_log
+    -most recent rank value from promotion
+    -for each member
+        -id's of participated campaigns
+        -names of participated campaigns
+        -number of sorties in each of the participated campaigns
+
+member-details/{id}
+    -member id
+    -member callsign
+    -member admin
+    -member map viewer
+    -member mission builder
+
+    -list of participated campaigns with for each campaign
+        -campaign id
+        -campaign name
+        -list of hist_units the member flew for, with for each hist unit
+            -hist_unit id
+            -hist_unit name
+            -hist_unit faction
+            -asset name
+            -number of missions attended
+            -number of characters kia/pow/ok
+            -number of aircraft ok/damaged/lost
+            -number of victories (routine dependend on faction and platform)
+                #for LW:
+                -number of confirmed victories
+                -number of unconfirmed victories
+                -number of ground victories
+                #for RAF:
+                -number of destroyed victories
+                -number of probable victories
+                -number of damaged victories
+                -number of ground victories
+
+campaign-list
+    -campaign id
+    -campaign name
+    -campaign platform
+    -campaign primary
+    -campaign status
+    -campaign time
+    -campaign open
+    -campaign campaign_link
+    -campaign description
+    -number of missions
+    -number of sorties

@@ -1,0 +1,15 @@
+members json should include:
+
+id
+callsign
+admin
+map_viewer
+mission_builder
+jdate: joining date (earliest date of member in member_status_log)
+cstatus: current status (status entry of most recent entry in member_status_log)
+length_of_service: sum of elapsed time between active- and dismissed-entries in member_status_log,
+ and/or most recent active-entry in member_status_log and current date.
+ Format: String with "X years, Y month, Z days" - attention to singular/plural (1 year / 2 years)
+rank_value: number of last rank value (most recent entry in promotion)
+sorties: sum of approved sorties.
+campaigns: sum of distinct campaigns attended (min. 1 sortie)

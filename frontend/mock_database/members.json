@@ -1,3186 +1,5020 @@
 [
 	{
 		"id" : 1,
-		"username" : "Thaine",
 		"callsign" : "Thaine",
 		"admin" : 1,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2013-10-31",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 95,
+		"campaigns" : 5
 	},
 	{
 		"id" : 2,
-		"username" : "Dickie",
 		"callsign" : "Dickie",
 		"admin" : 1,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2012-08-06",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 14,
+		"sorties" : 99,
+		"campaigns" : 5
 	},
 	{
 		"id" : 3,
-		"username" : "Teepee",
 		"callsign" : "Teepee",
 		"admin" : 1,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2012-07-19",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 12,
+		"sorties" : 120,
+		"campaigns" : 5
 	},
 	{
 		"id" : 4,
-		"username" : "Bunny",
 		"callsign" : "Bunny",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2012-07-17",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 10,
+		"sorties" : 105,
+		"campaigns" : 5
 	},
 	{
 		"id" : 6,
-		"username" : "Bully",
 		"callsign" : "Bully",
 		"admin" : 1,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2012-10-07",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 10,
+		"sorties" : 115,
+		"campaigns" : 5
 	},
 	{
 		"id" : 7,
-		"username" : "Meaker",
 		"callsign" : "Meaker",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2012-10-16",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 35,
+		"campaigns" : 2
 	},
 	{
 		"id" : 8,
-		"username" : "Azref",
 		"callsign" : "Azref",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2013-03-07",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 8,
+		"sorties" : 10,
+		"campaigns" : 2
 	},
 	{
 		"id" : 9,
-		"username" : "Sabre",
 		"callsign" : "Sabre",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2013-02-28",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 10,
+		"sorties" : 87,
+		"campaigns" : 5
 	},
 	{
 		"id" : 10,
-		"username" : "Fang",
 		"callsign" : "Fang",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2013-04-30",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 21,
+		"campaigns" : 1
 	},
 	{
 		"id" : 11,
-		"username" : "Flick",
 		"callsign" : "Flick",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2013-09-26",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 3,
+		"sorties" : 7,
+		"campaigns" : 1
 	},
 	{
 		"id" : 12,
-		"username" : "Pickle",
 		"callsign" : "Pickle",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2013-11-10",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 3,
+		"campaigns" : 1
 	},
 	{
 		"id" : 13,
-		"username" : "Bonkin",
 		"callsign" : "Bonkin",
 		"admin" : 1,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2012-07-19",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 11,
+		"sorties" : 91,
+		"campaigns" : 5
 	},
 	{
 		"id" : 14,
-		"username" : "Mauf",
 		"callsign" : "Mauf",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-01-19",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 90,
+		"campaigns" : 5
 	},
 	{
 		"id" : 15,
-		"username" : "Von Archie",
 		"callsign" : "Archie",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-02-16",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 41,
+		"campaigns" : 4
 	},
 	{
 		"id" : 16,
-		"username" : "Serpico",
 		"callsign" : "Serpico",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-02-23",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 2,
+		"campaigns" : 1
 	},
 	{
 		"id" : 17,
-		"username" : "Robo",
 		"callsign" : "Robo",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-04-27",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 49,
+		"campaigns" : 5
 	},
 	{
 		"id" : 18,
-		"username" : "Gromic",
 		"callsign" : "Gromic",
 		"admin" : 1,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2012-07-14",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 11,
+		"sorties" : 94,
+		"campaigns" : 5
 	},
 	{
 		"id" : 19,
-		"username" : "Nitrous",
 		"callsign" : "Nitrous",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2012-07-16",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 28,
+		"campaigns" : 3
 	},
 	{
 		"id" : 20,
-		"username" : "Looky",
 		"callsign" : "Looky",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2013-07-05",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 9,
+		"sorties" : 103,
+		"campaigns" : 5
 	},
 	{
 		"id" : 21,
-		"username" : "Bounder",
 		"callsign" : "Bounder",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2012-11-17",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 8,
+		"sorties" : 6,
+		"campaigns" : 1
 	},
 	{
 		"id" : 22,
-		"username" : "Vranac",
 		"callsign" : "Vranac",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2012-11-17",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 10,
+		"sorties" : 112,
+		"campaigns" : 5
 	},
 	{
 		"id" : 23,
-		"username" : "Tyrone",
 		"callsign" : "Tyrone",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2012-10-06",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 10,
+		"sorties" : 110,
+		"campaigns" : 5
 	},
 	{
 		"id" : 24,
-		"username" : "Luke",
 		"callsign" : "Luke",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2012-12-17",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 4,
+		"sorties" : 108,
+		"campaigns" : 5
 	},
 	{
 		"id" : 25,
-		"username" : "Binkitone",
 		"callsign" : "Binkitone",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2012-12-12",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 114,
+		"campaigns" : 5
 	},
 	{
 		"id" : 27,
-		"username" : "Fenris",
 		"callsign" : "Fenris",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2012-07-17",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 8,
+		"sorties" : 54,
+		"campaigns" : 5
 	},
 	{
 		"id" : 28,
-		"username" : "Vukac",
 		"callsign" : "Vukac",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2013-08-13",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 69,
+		"campaigns" : 5
 	},
 	{
 		"id" : 29,
-		"username" : "McTavish",
 		"callsign" : "McTavish",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2013-09-05",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 1,
+		"campaigns" : 1
 	},
 	{
 		"id" : 30,
-		"username" : "Redeye",
 		"callsign" : "Redeye",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2013-07-27",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 8,
+		"sorties" : 74,
+		"campaigns" : 5
 	},
 	{
 		"id" : 31,
-		"username" : "Wiggs",
 		"callsign" : "Wiggs",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-01-11",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 10,
+		"campaigns" : 1
 	},
 	{
 		"id" : 32,
-		"username" : "Dange",
 		"callsign" : "Dange",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-01-12",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 98,
+		"campaigns" : 5
 	},
 	{
 		"id" : 33,
-		"username" : "Venom",
 		"callsign" : "Venom",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-03-07",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 14,
+		"campaigns" : 1
 	},
 	{
 		"id" : 34,
-		"username" : "Midge",
 		"callsign" : "Midge",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-04-27",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 10,
+		"sorties" : 91,
+		"campaigns" : 5
 	},
 	{
 		"id" : 35,
-		"username" : "Deeside",
 		"callsign" : "Deeside",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-04-07",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 12,
+		"campaigns" : 1
 	},
 	{
 		"id" : 36,
-		"username" : "Pitti",
 		"callsign" : "Pitti",
 		"admin" : 1,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2012-05-14",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 13,
+		"sorties" : 112,
+		"campaigns" : 5
 	},
 	{
 		"id" : 37,
-		"username" : "Trautloft",
 		"callsign" : "Trautloft",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2012-10-04",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 10,
+		"sorties" : 27,
+		"campaigns" : 2
 	},
 	{
 		"id" : 38,
-		"username" : "Hawes",
 		"callsign" : "Hawes",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2012-08-12",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 11,
+		"sorties" : 18,
+		"campaigns" : 1
 	},
 	{
 		"id" : 39,
-		"username" : "Siddich",
 		"callsign" : "Siddich",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2012-07-15",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 22,
+		"campaigns" : 2
 	},
 	{
 		"id" : 40,
-		"username" : "Hollywood",
 		"callsign" : "Hollywood",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2012-07-15",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 8,
+		"sorties" : 75,
+		"campaigns" : 5
 	},
 	{
 		"id" : 41,
-		"username" : "Random",
 		"callsign" : "Random",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2013-04-04",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 22,
+		"campaigns" : 1
 	},
 	{
 		"id" : 42,
-		"username" : "Baron le Scrope",
 		"callsign" : "Baron",
 		"admin" : 1,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2013-03-13",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 10,
+		"sorties" : 93,
+		"campaigns" : 5
 	},
 	{
 		"id" : 43,
-		"username" : "Gorman",
 		"callsign" : "Gorman",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2013-06-29",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 3,
+		"sorties" : 1,
+		"campaigns" : 1
 	},
 	{
 		"id" : 44,
-		"username" : "Dots",
 		"callsign" : "Dots",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2013-11-24",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 17,
+		"campaigns" : 2
 	},
 	{
 		"id" : 45,
-		"username" : "Jefu",
 		"callsign" : "Jefu",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-01-12",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 1,
+		"campaigns" : 1
 	},
 	{
 		"id" : 46,
-		"username" : "Katt",
 		"callsign" : "Katt",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2013-05-04",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 121,
+		"campaigns" : 5
 	},
 	{
 		"id" : 47,
-		"username" : "Bouma",
 		"callsign" : "Bouma",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-01-12",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 1,
+		"campaigns" : 1
 	},
 	{
 		"id" : 48,
-		"username" : "Kart",
 		"callsign" : "Kart",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-01-05",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 2,
+		"campaigns" : 1
 	},
 	{
 		"id" : 49,
-		"username" : "Johnny",
 		"callsign" : "Johnny",
 		"admin" : 1,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2013-12-29",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 8,
+		"sorties" : 81,
+		"campaigns" : 5
 	},
 	{
 		"id" : 50,
-		"username" : "Spud",
 		"callsign" : "Spud",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-02-16",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 73,
+		"campaigns" : 4
 	},
 	{
 		"id" : 51,
-		"username" : "Kev",
 		"callsign" : "Kev",
 		"admin" : 1,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-05-04",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 11,
+		"sorties" : 98,
+		"campaigns" : 5
 	},
 	{
 		"id" : 52,
-		"username" : "Biggles",
 		"callsign" : "Biggles",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-05-25",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 12,
+		"campaigns" : 2
 	},
 	{
 		"id" : 53,
-		"username" : "Stokesey",
 		"callsign" : "Stokesey",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-05-25",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 4,
+		"campaigns" : 1
 	},
 	{
 		"id" : 54,
-		"username" : "Maltloaf",
 		"callsign" : "Maltloaf",
 		"admin" : 1,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-06-22",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 12,
+		"sorties" : 97,
+		"campaigns" : 5
 	},
 	{
 		"id" : 55,
-		"username" : "TwoStep",
 		"callsign" : "TwoStep",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-06-22",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 1,
+		"campaigns" : 1
 	},
 	{
 		"id" : 56,
-		"username" : "Major",
 		"callsign" : "Major",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-06-14",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 53,
+		"campaigns" : 5
 	},
 	{
 		"id" : 57,
-		"username" : "Wolf",
 		"callsign" : "Wolf",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-06-22",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 4,
+		"sorties" : 65,
+		"campaigns" : 4
 	},
 	{
 		"id" : 58,
-		"username" : "Toxic",
 		"callsign" : "Toxic",
 		"admin" : 1,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-06-26",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 8,
+		"sorties" : 61,
+		"campaigns" : 5
 	},
 	{
 		"id" : 59,
-		"username" : "Donkey",
 		"callsign" : "Donkey",
 		"admin" : 1,
 		"map_viewer" : 1,
-		"mission_builder" : 1
+		"mission_builder" : 1,
+		"jdate" : "2014-07-20",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 8,
+		"sorties" : 47,
+		"campaigns" : 5
 	},
 	{
 		"id" : 60,
-		"username" : "Raptor",
 		"callsign" : "Raptor",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-07-27",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 5,
+		"campaigns" : 1
 	},
 	{
 		"id" : 61,
-		"username" : "Schmuck",
 		"callsign" : "Schmuck",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-08-31",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 8,
+		"sorties" : 71,
+		"campaigns" : 5
 	},
 	{
 		"id" : 62,
-		"username" : "Vas",
 		"callsign" : "Vas",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2013-05-06",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 12,
+		"campaigns" : 2
 	},
 	{
 		"id" : 63,
-		"username" : "Broadsword",
 		"callsign" : "Broadsword",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-09-07",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 9,
+		"sorties" : 103,
+		"campaigns" : 5
 	},
 	{
 		"id" : 64,
-		"username" : "Dave",
 		"callsign" : "Dave",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-09-28",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 8,
+		"sorties" : 53,
+		"campaigns" : 5
 	},
 	{
 		"id" : 65,
-		"username" : "Larry",
 		"callsign" : "Larry",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-10-26",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 8,
+		"sorties" : 94,
+		"campaigns" : 5
 	},
 	{
 		"id" : 66,
-		"username" : "Coolhand",
 		"callsign" : "Coolhand",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2013-07-20",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 8,
+		"sorties" : 9,
+		"campaigns" : 1
 	},
 	{
 		"id" : 67,
-		"username" : "Mason",
 		"callsign" : "Mason",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2013-11-14",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 11,
+		"campaigns" : 1
 	},
 	{
 		"id" : 68,
-		"username" : "Kaliman",
 		"callsign" : "Kaliman",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2013-06-24",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 3,
+		"sorties" : 1,
+		"campaigns" : 1
 	},
 	{
 		"id" : 69,
-		"username" : "Jupp",
 		"callsign" : "Jupp",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2013-06-20",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 1,
+		"campaigns" : 1
 	},
 	{
 		"id" : 70,
-		"username" : "Pappy",
 		"callsign" : "Pappy",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2013-09-10",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 2,
+		"campaigns" : 1
 	},
 	{
 		"id" : 71,
-		"username" : "Chumleigh",
 		"callsign" : "Chumleigh",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2013-06-20",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 4,
+		"sorties" : 18,
+		"campaigns" : 1
 	},
 	{
 		"id" : 72,
-		"username" : "Druid",
 		"callsign" : "Druid",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2013-07-18",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 9,
+		"campaigns" : 1
 	},
 	{
 		"id" : 73,
-		"username" : "Maple",
 		"callsign" : "Maple",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2013-11-12",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 8,
+		"campaigns" : 2
 	},
 	{
 		"id" : 74,
-		"username" : "Hypoxia",
 		"callsign" : "Hypoxia",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2013-11-27",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 31,
+		"campaigns" : 1
 	},
 	{
 		"id" : 75,
-		"username" : "Ritter",
 		"callsign" : "Ritter",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2013-11-30",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 2,
+		"campaigns" : 1
 	},
 	{
 		"id" : 76,
-		"username" : "Kraut",
 		"callsign" : "Kraut",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2013-12-19",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 51,
+		"campaigns" : 5
 	},
 	{
 		"id" : 77,
-		"username" : "Aurora",
 		"callsign" : "Aurora",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-01-11",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 10,
+		"campaigns" : 1
 	},
 	{
 		"id" : 78,
-		"username" : "Reinhart",
 		"callsign" : "Reinhart",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-03-02",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 9,
+		"sorties" : 14,
+		"campaigns" : 1
 	},
 	{
 		"id" : 79,
-		"username" : "Boyezee",
 		"callsign" : "Boyezee",
 		"admin" : 1,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-05-04",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 11,
+		"sorties" : 94,
+		"campaigns" : 5
 	},
 	{
 		"id" : 80,
-		"username" : "Bear",
 		"callsign" : "Bear",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-06-08",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 4,
+		"sorties" : 22,
+		"campaigns" : 4
 	},
 	{
 		"id" : 81,
-		"username" : "Maddog",
 		"callsign" : "Maddog",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2013-07-10",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 8,
+		"sorties" : 3,
+		"campaigns" : 1
 	},
 	{
 		"id" : 82,
-		"username" : "Vlerkies",
 		"callsign" : "Vlerkies",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2013-09-08",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 4,
+		"sorties" : 7,
+		"campaigns" : 1
 	},
 	{
 		"id" : 83,
-		"username" : "Grey",
 		"callsign" : "Grey",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2013-08-19",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 3,
+		"sorties" : 84,
+		"campaigns" : 5
 	},
 	{
 		"id" : 84,
-		"username" : "Madigan",
 		"callsign" : "Madigan",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2013-08-11",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 3,
+		"sorties" : 9,
+		"campaigns" : 1
 	},
 	{
 		"id" : 85,
-		"username" : "Atreides",
 		"callsign" : "Atreides",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2013-11-07",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 9,
+		"sorties" : 107,
+		"campaigns" : 5
 	},
 	{
 		"id" : 86,
-		"username" : "Dub",
 		"callsign" : "Dub",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2013-06-21",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 64,
+		"campaigns" : 5
 	},
 	{
 		"id" : 87,
-		"username" : "Flyby",
 		"callsign" : "Flyby",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2013-10-14",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 8,
+		"sorties" : 112,
+		"campaigns" : 5
 	},
 	{
 		"id" : 88,
-		"username" : "Stig",
 		"callsign" : "Stig",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2013-12-08",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 7,
+		"sorties" : 98,
+		"campaigns" : 5
 	},
 	{
 		"id" : 89,
-		"username" : "Zap",
 		"callsign" : "Zap",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2013-01-23",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 3,
+		"campaigns" : 1
 	},
 	{
 		"id" : 90,
-		"username" : "Trauma",
 		"callsign" : "Trauma",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-01-18",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 2,
+		"campaigns" : 1
 	},
 	{
 		"id" : 91,
-		"username" : "Lee",
 		"callsign" : "Lee",
 		"admin" : 1,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-02-05",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 9,
+		"sorties" : 106,
+		"campaigns" : 5
 	},
 	{
 		"id" : 92,
-		"username" : "Krass",
 		"callsign" : "Krass",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-02-16",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 7,
+		"sorties" : 102,
+		"campaigns" : 5
 	},
 	{
 		"id" : 93,
-		"username" : "Need",
 		"callsign" : "Need",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-02-16",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 3,
+		"sorties" : 2,
+		"campaigns" : 1
 	},
 	{
 		"id" : 94,
-		"username" : "Esri",
 		"callsign" : "Esri",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-04-27",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 3,
+		"sorties" : 13,
+		"campaigns" : 1
 	},
 	{
 		"id" : 95,
-		"username" : "Zalzam",
 		"callsign" : "Zalzam",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-05-04",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 8,
+		"sorties" : 70,
+		"campaigns" : 5
 	},
 	{
 		"id" : 96,
-		"username" : "Oho",
 		"callsign" : "Oho",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-05-04",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 4,
+		"sorties" : 10,
+		"campaigns" : 1
 	},
 	{
 		"id" : 97,
-		"username" : "Ape",
 		"callsign" : "Ape",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2013-03-08",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 7,
+		"sorties" : 6,
+		"campaigns" : 1
 	},
 	{
 		"id" : 98,
-		"username" : "DaHeld",
 		"callsign" : "DaHeld",
 		"admin" : 1,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2013-10-09",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 8,
+		"sorties" : 111,
+		"campaigns" : 5
 	},
 	{
 		"id" : 99,
-		"username" : "Maalek",
 		"callsign" : "Maalek",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2013-04-17",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 3,
+		"sorties" : 2,
+		"campaigns" : 1
 	},
 	{
 		"id" : 100,
-		"username" : "Wiesel",
 		"callsign" : "Wiesel",
 		"admin" : 1,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2013-08-10",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 11,
+		"sorties" : 110,
+		"campaigns" : 5
 	},
 	{
 		"id" : 101,
-		"username" : "Warjunkie",
 		"callsign" : "Warjunkie",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2013-02-24",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 8,
+		"campaigns" : 1
 	},
 	{
 		"id" : 102,
-		"username" : "Timo",
 		"callsign" : "Timo",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2013-05-04",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 3,
+		"sorties" : 5,
+		"campaigns" : 1
 	},
 	{
 		"id" : 103,
-		"username" : "Nik",
 		"callsign" : "Nik",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2013-02-22",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 4,
+		"sorties" : 8,
+		"campaigns" : 1
 	},
 	{
 		"id" : 104,
-		"username" : "Rook",
 		"callsign" : "Rook",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2012-11-05",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 8,
+		"sorties" : 13,
+		"campaigns" : 1
 	},
 	{
 		"id" : 105,
-		"username" : "Neun",
 		"callsign" : "Neun",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2013-04-05",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 7,
+		"sorties" : 6,
+		"campaigns" : 1
 	},
 	{
 		"id" : 106,
-		"username" : "Apache",
 		"callsign" : "Apache",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2012-09-15",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 4,
+		"sorties" : 5,
+		"campaigns" : 1
 	},
 	{
 		"id" : 107,
-		"username" : "Syno",
 		"callsign" : "Syno",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2013-01-23",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 6,
+		"campaigns" : 1
 	},
 	{
 		"id" : 108,
-		"username" : "MarLeo",
 		"callsign" : "MarLeo",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-02-16",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 8,
+		"sorties" : 37,
+		"campaigns" : 2
 	},
 	{
 		"id" : 109,
-		"username" : "Huff Duff",
 		"callsign" : "HuffDuff",
 		"admin" : 1,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-03-19",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 9,
+		"sorties" : 105,
+		"campaigns" : 5
 	},
 	{
 		"id" : 110,
-		"username" : "StaryMruk",
 		"callsign" : "StaryMruk",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-05-25",
+		"cstatus" : 2,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 49,
+		"campaigns" : 5
 	},
 	{
 		"id" : 111,
-		"username" : "Grizzly",
 		"callsign" : "Grizzly",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-06-07",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 1,
+		"campaigns" : 1
 	},
 	{
 		"id" : 112,
-		"username" : "vonLazan",
 		"callsign" : "vonLazan",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-06-22",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 4,
+		"campaigns" : 2
 	},
 	{
 		"id" : 113,
-		"username" : "Badger",
 		"callsign" : "Badger",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-06-29",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 3,
+		"campaigns" : 1
 	},
 	{
 		"id" : 114,
-		"username" : "Hindsight",
 		"callsign" : "Hindsight",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-07-05",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 45,
+		"campaigns" : 5
 	},
 	{
 		"id" : 115,
-		"username" : "Heretic",
 		"callsign" : "Heretic",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-07-20",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 2,
+		"campaigns" : 1
 	},
 	{
 		"id" : 116,
-		"username" : "Javelina",
 		"callsign" : "Javelina",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-07-20",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 34,
+		"campaigns" : 3
 	},
 	{
 		"id" : 117,
-		"username" : "Bubi",
 		"callsign" : "Bubi",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-07-20",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 8,
+		"sorties" : 30,
+		"campaigns" : 2
 	},
 	{
 		"id" : 118,
-		"username" : "Scannon",
 		"callsign" : "Scannon",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-07-20",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 3,
+		"campaigns" : 1
 	},
 	{
 		"id" : 119,
-		"username" : "Keroth",
 		"callsign" : "Keroth",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-07-20",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 4,
+		"sorties" : 20,
+		"campaigns" : 2
 	},
 	{
 		"id" : 120,
-		"username" : "IronJockel",
 		"callsign" : "IronJockel",
 		"admin" : 1,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-07-20",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 9,
+		"sorties" : 88,
+		"campaigns" : 5
 	},
 	{
 		"id" : 121,
-		"username" : "Tac",
 		"callsign" : "Tac",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-08-31",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 3,
+		"campaigns" : 2
 	},
 	{
 		"id" : 122,
-		"username" : "Villiers",
 		"callsign" : "Villiers",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-09-24",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 50,
+		"campaigns" : 3
 	},
 	{
 		"id" : 123,
-		"username" : "Obermann",
 		"callsign" : "Obermann",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-09-28",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 31,
+		"campaigns" : 4
 	},
 	{
 		"id" : 124,
-		"username" : "Goat",
 		"callsign" : "Goat",
 		"admin" : 1,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-07-15",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 10,
+		"sorties" : 96,
+		"campaigns" : 5
 	},
 	{
 		"id" : 125,
-		"username" : "Malarky",
 		"callsign" : "Malarky",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-10-12",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 4,
+		"sorties" : 17,
+		"campaigns" : 3
 	},
 	{
 		"id" : 126,
-		"username" : "Zero",
 		"callsign" : "Zero",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-10-12",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 3,
+		"sorties" : 7,
+		"campaigns" : 1
 	},
 	{
 		"id" : 127,
-		"username" : "Orzel",
 		"callsign" : "Orzel",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-10-12",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 2,
+		"campaigns" : 1
 	},
 	{
 		"id" : 128,
-		"username" : "Falcon",
 		"callsign" : "Falcon",
 		"admin" : 1,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-10-19",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 10,
+		"sorties" : 85,
+		"campaigns" : 5
 	},
 	{
 		"id" : 129,
-		"username" : "Casca",
 		"callsign" : "Casca",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2013-11-10",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 9,
+		"sorties" : 29,
+		"campaigns" : 2
 	},
 	{
 		"id" : 130,
-		"username" : "Reiser",
 		"callsign" : "Reiser",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-11-04",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 2,
+		"campaigns" : 1
 	},
 	{
 		"id" : 131,
-		"username" : "Zyk",
 		"callsign" : "Zyk",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-10-26",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 99,
+		"campaigns" : 5
 	},
 	{
 		"id" : 132,
-		"username" : "Salsam",
 		"callsign" : "Salsam",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-05-25",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 4,
+		"campaigns" : 1
 	},
 	{
 		"id" : 133,
-		"username" : "Greezy",
 		"callsign" : "Greezy",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-06-09",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 2,
+		"campaigns" : 1
 	},
 	{
 		"id" : 134,
-		"username" : "Shark",
 		"callsign" : "Shark",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-11-01",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 31,
+		"campaigns" : 4
 	},
 	{
 		"id" : 135,
-		"username" : "Horus",
 		"callsign" : "Horus",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-11-02",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 24,
+		"campaigns" : 5
 	},
 	{
 		"id" : 136,
-		"username" : "Ratty",
 		"callsign" : "Ratty",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-11-01",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 8,
+		"sorties" : 82,
+		"campaigns" : 5
 	},
 	{
 		"id" : 137,
-		"username" : "Ninja",
 		"callsign" : "Ninja",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-11-01",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 7,
+		"sorties" : 69,
+		"campaigns" : 5
 	},
 	{
 		"id" : 138,
-		"username" : "Sokka",
 		"callsign" : "Sokka",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-11-08",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 10,
+		"sorties" : 91,
+		"campaigns" : 5
 	},
 	{
 		"id" : 139,
-		"username" : "SnowWolf",
 		"callsign" : "SnowWolf",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-10-10",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 13,
+		"campaigns" : 3
 	},
 	{
 		"id" : 140,
-		"username" : "Donnerschlag",
 		"callsign" : "Donnerschlag",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-10-03",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 8,
+		"campaigns" : 1
 	},
 	{
 		"id" : 141,
-		"username" : "Stuffy",
 		"callsign" : "Stuffy",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-12-13",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 19,
+		"campaigns" : 2
 	},
 	{
 		"id" : 142,
-		"username" : "Macnihilist",
 		"callsign" : "Macnihilist",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-12-13",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 46,
+		"campaigns" : 5
 	},
 	{
 		"id" : 143,
-		"username" : "Killerfaust",
 		"callsign" : "Killerfaust",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-12-13",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 70,
+		"campaigns" : 4
 	},
 	{
 		"id" : 144,
-		"username" : "Turpin",
 		"callsign" : "Turpin",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-12-13",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 1,
+		"campaigns" : 1
 	},
 	{
 		"id" : 145,
-		"username" : "Bullhead",
 		"callsign" : "Bullhead",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-12-04",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 9,
+		"campaigns" : 2
 	},
 	{
 		"id" : 146,
-		"username" : "Ruff",
 		"callsign" : "Ruff",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-12-21",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 9,
+		"sorties" : 42,
+		"campaigns" : 4
 	},
 	{
 		"id" : 147,
-		"username" : "Ike",
 		"callsign" : "Ike",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-12-28",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 10,
+		"sorties" : 43,
+		"campaigns" : 5
 	},
 	{
 		"id" : 148,
-		"username" : "Kubo",
 		"callsign" : "Kubo",
 		"admin" : 1,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-01-04",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 7,
+		"sorties" : 61,
+		"campaigns" : 5
 	},
 	{
 		"id" : 149,
-		"username" : "Eicken",
 		"callsign" : "Eicken",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-01-02",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 2,
+		"campaigns" : 1
 	},
 	{
 		"id" : 150,
-		"username" : "Death",
 		"callsign" : "Death",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-01-15",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 8,
+		"campaigns" : 1
 	},
 	{
 		"id" : 151,
-		"username" : "Tornado",
 		"callsign" : "Tornado",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-01-13",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 15,
+		"campaigns" : 3
 	},
 	{
 		"id" : 152,
-		"username" : "Chris",
 		"callsign" : "Chris",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2014-12-07",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 4,
+		"sorties" : 12,
+		"campaigns" : 3
 	},
 	{
 		"id" : 153,
-		"username" : "LuftAsher",
 		"callsign" : "LuftAsher",
 		"admin" : 1,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-01-18",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 10,
+		"sorties" : 88,
+		"campaigns" : 5
 	},
 	{
 		"id" : 154,
-		"username" : "Pariah",
 		"callsign" : "Pariah",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-01-18",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 60,
+		"campaigns" : 5
 	},
 	{
 		"id" : 155,
-		"username" : "Duckhawk",
 		"callsign" : "Duckhawk",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-01-18",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 3,
+		"campaigns" : 1
 	},
 	{
 		"id" : 157,
-		"username" : "HansWind",
 		"callsign" : "HansWind",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-02-01",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 69,
+		"campaigns" : 5
 	},
 	{
 		"id" : 158,
-		"username" : "Losa",
 		"callsign" : "Losa",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-02-01",
+		"cstatus" : 2,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 44,
+		"campaigns" : 5
 	},
 	{
 		"id" : 159,
-		"username" : "Menace",
 		"callsign" : "Menace",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-02-01",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 3,
+		"sorties" : 58,
+		"campaigns" : 5
 	},
 	{
 		"id" : 160,
-		"username" : "Schwarz",
 		"callsign" : "Schwarz",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
-	},
-	{
-		"id" : 161,
-		"username" : "Hawkins",
-		"callsign" : "Hawkins",
-		"admin" : 0,
-		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-02-01",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 1,
+		"campaigns" : 1
 	},
 	{
 		"id" : 162,
-		"username" : "Peete",
 		"callsign" : "Peete",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-02-04",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 65,
+		"campaigns" : 5
 	},
 	{
 		"id" : 163,
-		"username" : "Bryan",
 		"callsign" : "Bryan",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-02-15",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 1,
+		"campaigns" : 1
 	},
 	{
 		"id" : 164,
-		"username" : "Godman",
 		"callsign" : "Godman",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-02-15",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 78,
+		"campaigns" : 5
 	},
 	{
 		"id" : 165,
-		"username" : "Adler",
 		"callsign" : "Adler",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-02-22",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 6,
+		"campaigns" : 2
 	},
 	{
 		"id" : 166,
-		"username" : "Otthold",
 		"callsign" : "Otthold",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-02-28",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 69,
+		"campaigns" : 5
 	},
 	{
 		"id" : 167,
-		"username" : "Centurion",
 		"callsign" : "Centurion",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-02-08",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 87,
+		"campaigns" : 5
 	},
 	{
 		"id" : 168,
-		"username" : "Robin",
 		"callsign" : "Robin",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-02-08",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 87,
+		"campaigns" : 5
 	},
 	{
 		"id" : 169,
-		"username" : "Geordie",
 		"callsign" : "Geordie",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-03-08",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 3,
+		"sorties" : 39,
+		"campaigns" : 4
 	},
 	{
 		"id" : 170,
-		"username" : "Von Webber",
 		"callsign" : "VonWebber",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-03-08",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 14,
+		"campaigns" : 2
 	},
 	{
 		"id" : 171,
-		"username" : "August",
 		"callsign" : "August",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-03-01",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 3,
+		"sorties" : 9,
+		"campaigns" : 2
 	},
 	{
 		"id" : 172,
-		"username" : "Rabbit",
 		"callsign" : "Rabbit",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-03-15",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 12,
+		"campaigns" : 2
 	},
 	{
 		"id" : 173,
-		"username" : "Wolfgang",
 		"callsign" : "Wolfgang",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-03-22",
+		"cstatus" : 2,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 58,
+		"campaigns" : 5
 	},
 	{
 		"id" : 174,
-		"username" : "Cam",
 		"callsign" : "Cam",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
-	},
-	{
-		"id" : 175,
-		"username" : "Cina",
-		"callsign" : "Cina",
-		"admin" : 0,
-		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-03-21",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 26,
+		"campaigns" : 3
 	},
 	{
 		"id" : 176,
-		"username" : "Coopes",
 		"callsign" : "Coopes",
 		"admin" : 1,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-04-09",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 9,
+		"sorties" : 79,
+		"campaigns" : 4
 	},
 	{
 		"id" : 177,
-		"username" : "Buzzdismissed",
 		"callsign" : "Buzzdis",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-04-10",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 1,
+		"campaigns" : 1
 	},
 	{
 		"id" : 178,
-		"username" : "Miki",
 		"callsign" : "Miki",
 		"admin" : 1,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-04-19",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 8,
+		"sorties" : 80,
+		"campaigns" : 4
 	},
 	{
 		"id" : 179,
-		"username" : "Gew",
 		"callsign" : "Gew",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-04-26",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 3,
+		"campaigns" : 1
 	},
 	{
 		"id" : 181,
-		"username" : "Spike",
 		"callsign" : "Spike",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-05-05",
+		"cstatus" : 3,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 12,
+		"campaigns" : 2
 	},
 	{
 		"id" : 182,
-		"username" : "Secu",
 		"callsign" : "Secu",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-05-10",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 75,
+		"campaigns" : 4
 	},
 	{
 		"id" : 183,
-		"username" : "Kirkwood",
 		"callsign" : "Kirkwood",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-05-10",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 6,
+		"campaigns" : 1
 	},
 	{
 		"id" : 184,
-		"username" : "Piotras",
 		"callsign" : "Piotras",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-05-10",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 21,
+		"campaigns" : 4
 	},
 	{
 		"id" : 185,
-		"username" : "Nebuluz",
 		"callsign" : "Nebuluz",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-05-10",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 37,
+		"campaigns" : 4
 	},
 	{
 		"id" : 186,
-		"username" : "Banzai",
 		"callsign" : "Banzai",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-05-10",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 7,
+		"sorties" : 44,
+		"campaigns" : 4
 	},
 	{
 		"id" : 187,
-		"username" : "Ludojad",
 		"callsign" : "Ludojad",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-05-10",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 32,
+		"campaigns" : 4
 	},
 	{
 		"id" : 188,
-		"username" : "Mani",
 		"callsign" : "Mani",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-05-17",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 4,
+		"sorties" : 25,
+		"campaigns" : 3
 	},
 	{
 		"id" : 189,
-		"username" : "Propduster",
 		"callsign" : "Propduster",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-05-24",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 5,
+		"campaigns" : 1
 	},
 	{
 		"id" : 190,
-		"username" : "Fox",
 		"callsign" : "Fox",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-05-24",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 1,
+		"campaigns" : 1
 	},
 	{
 		"id" : 191,
-		"username" : "Wayne",
 		"callsign" : "Wayne",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-05-24",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 30,
+		"campaigns" : 3
 	},
 	{
 		"id" : 192,
-		"username" : "Daz",
 		"callsign" : "Daz",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-06-02",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 50,
+		"campaigns" : 4
 	},
 	{
 		"id" : 193,
-		"username" : "Archangel",
 		"callsign" : "Archangel",
 		"admin" : 1,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-06-14",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 9,
+		"sorties" : 76,
+		"campaigns" : 4
 	},
 	{
 		"id" : 194,
-		"username" : "Biggs",
 		"callsign" : "Biggs",
 		"admin" : 1,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-07-05",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 9,
+		"sorties" : 69,
+		"campaigns" : 4
 	},
 	{
 		"id" : 195,
-		"username" : "Kari",
 		"callsign" : "Kari",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-07-04",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 3,
+		"sorties" : 17,
+		"campaigns" : 2
 	},
 	{
 		"id" : 196,
-		"username" : "Bartman",
 		"callsign" : "Bartman",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-07-21",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 3,
+		"campaigns" : 1
 	},
 	{
 		"id" : 197,
-		"username" : "Jammy",
 		"callsign" : "Jammy",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
-	},
-	{
-		"id" : 198,
-		"username" : "Boy",
-		"callsign" : "Boy",
-		"admin" : 0,
-		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-07-20",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 7,
+		"sorties" : 74,
+		"campaigns" : 4
 	},
 	{
 		"id" : 199,
-		"username" : "Kildren",
 		"callsign" : "Kildren",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-08-10",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 68,
+		"campaigns" : 4
 	},
 	{
 		"id" : 200,
-		"username" : "Bones",
 		"callsign" : "Bones",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-08-16",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 48,
+		"campaigns" : 4
 	},
 	{
 		"id" : 201,
-		"username" : "Nom",
 		"callsign" : "Nom",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-08-17",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 3,
+		"campaigns" : 1
 	},
 	{
 		"id" : 202,
-		"username" : "Boobies",
 		"callsign" : "Boobies",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-08-16",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 52,
+		"campaigns" : 4
 	},
 	{
 		"id" : 203,
-		"username" : "Mesa",
 		"callsign" : "Mesa",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-08-21",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 60,
+		"campaigns" : 4
 	},
 	{
 		"id" : 204,
-		"username" : "Werwolf",
 		"callsign" : "Werwolf",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-08-24",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 3,
+		"sorties" : 33,
+		"campaigns" : 4
 	},
 	{
 		"id" : 205,
-		"username" : "Sprite",
 		"callsign" : "Sprite",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-08-23",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 28,
+		"campaigns" : 3
 	},
 	{
 		"id" : 206,
-		"username" : "Leole",
 		"callsign" : "Leole",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-08-20",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 62,
+		"campaigns" : 4
 	},
 	{
 		"id" : 207,
-		"username" : "Lif",
 		"callsign" : "Lif",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-08-28",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 17,
+		"campaigns" : 4
 	},
 	{
 		"id" : 208,
-		"username" : "Vanguard",
 		"callsign" : "Vanguard",
 		"admin" : 1,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-08-30",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 4,
+		"sorties" : 65,
+		"campaigns" : 4
 	},
 	{
 		"id" : 209,
-		"username" : "Batwing",
 		"callsign" : "Batwing",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-08-30",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 1,
+		"campaigns" : 1
 	},
 	{
 		"id" : 210,
-		"username" : "Nova",
 		"callsign" : "Nova",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-08-30",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 1,
+		"campaigns" : 1
 	},
 	{
 		"id" : 211,
-		"username" : "Reaper",
 		"callsign" : "Reaper",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-08-30",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 1,
+		"campaigns" : 1
 	},
 	{
 		"id" : 212,
-		"username" : "DadVader",
 		"callsign" : "DadVader",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-08-30",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 3,
+		"sorties" : 38,
+		"campaigns" : 4
 	},
 	{
 		"id" : 213,
-		"username" : "Miller",
 		"callsign" : "Miller",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-09-01",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 50,
+		"campaigns" : 4
 	},
 	{
 		"id" : 214,
-		"username" : "Ginger",
 		"callsign" : "Ginger",
-		"admin" : 1,
+		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-09-06",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 11,
+		"sorties" : 71,
+		"campaigns" : 4
 	},
 	{
 		"id" : 215,
-		"username" : "Silversurfer",
 		"callsign" : "Silversurfer",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-09-09",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 4,
+		"campaigns" : 1
 	},
 	{
 		"id" : 216,
-		"username" : "Hannibal",
 		"callsign" : "Hannibal",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-09-09",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 3,
+		"sorties" : 31,
+		"campaigns" : 4
 	},
 	{
 		"id" : 217,
-		"username" : "Dai-San",
 		"callsign" : "DaiSan",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-09-13",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 4,
+		"campaigns" : 1
 	},
 	{
 		"id" : 218,
-		"username" : "Toast",
 		"callsign" : "Toast",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
-	},
-	{
-		"id" : 219,
-		"username" : "Orr",
-		"callsign" : "Orr",
-		"admin" : 0,
-		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-09-19",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 65,
+		"campaigns" : 4
 	},
 	{
 		"id" : 220,
-		"username" : "Paddy",
 		"callsign" : "Paddy",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-09-16",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 9,
+		"sorties" : 67,
+		"campaigns" : 4
 	},
 	{
 		"id" : 221,
-		"username" : "Hawkeye",
 		"callsign" : "Hawkeye",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-09-27",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 55,
+		"campaigns" : 4
 	},
 	{
 		"id" : 222,
-		"username" : "HurstLlama",
 		"callsign" : "HurstLlama",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-01-23",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 7,
+		"campaigns" : 2
 	},
 	{
 		"id" : 223,
-		"username" : "Elos",
 		"callsign" : "Elos",
 		"admin" : 1,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-10-04",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 66,
+		"campaigns" : 4
 	},
 	{
 		"id" : 224,
-		"username" : "Cerberus",
 		"callsign" : "Cerberus",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-10-18",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 4,
+		"sorties" : 51,
+		"campaigns" : 4
 	},
 	{
 		"id" : 225,
-		"username" : "Kondor",
 		"callsign" : "Kondor",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-10-25",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 64,
+		"campaigns" : 4
 	},
 	{
 		"id" : 226,
-		"username" : "Rich",
 		"callsign" : "Rich",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-10-25",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 4,
+		"sorties" : 38,
+		"campaigns" : 4
 	},
 	{
 		"id" : 227,
-		"username" : "Red",
 		"callsign" : "Red",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-10-25",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 2,
+		"campaigns" : 1
 	},
 	{
 		"id" : 228,
-		"username" : "Double",
 		"callsign" : "Double",
 		"admin" : 1,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-11-01",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 59,
+		"campaigns" : 4
 	},
 	{
 		"id" : 229,
-		"username" : "Rowns",
 		"callsign" : "Rowns",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-11-01",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 3,
+		"sorties" : 37,
+		"campaigns" : 4
 	},
 	{
 		"id" : 230,
-		"username" : "Illusion",
 		"callsign" : "Illusion",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-11-01",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 7,
+		"campaigns" : 2
 	},
 	{
 		"id" : 231,
-		"username" : "Woop",
 		"callsign" : "Woop",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-11-07",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 32,
+		"campaigns" : 4
 	},
 	{
 		"id" : 232,
-		"username" : "Cougar",
 		"callsign" : "Cougar",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-10-25",
+		"cstatus" : 2,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 48,
+		"campaigns" : 4
 	},
 	{
 		"id" : 233,
-		"username" : "Jackman",
 		"callsign" : "Jackman",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-11-15",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 4,
+		"sorties" : 41,
+		"campaigns" : 4
 	},
 	{
 		"id" : 234,
-		"username" : "wozaworld",
 		"callsign" : "Woza",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-11-29",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 8,
+		"sorties" : 58,
+		"campaigns" : 4
 	},
 	{
 		"id" : 235,
-		"username" : "Grumpy",
 		"callsign" : "Grumpy",
 		"admin" : 1,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-11-29",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 7,
+		"sorties" : 49,
+		"campaigns" : 4
 	},
 	{
 		"id" : 236,
-		"username" : "Gazuuu",
 		"callsign" : "Gazuuu",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-12-06",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 6,
+		"campaigns" : 2
 	},
 	{
 		"id" : 237,
-		"username" : "Duke",
 		"callsign" : "Duke",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
-	},
-	{
-		"id" : 238,
-		"username" : "Stevefire",
-		"callsign" : "Stevefire",
-		"admin" : 0,
-		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2015-12-31",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 37,
+		"campaigns" : 3
 	},
 	{
 		"id" : 239,
-		"username" : "Santiago",
 		"callsign" : "Santiago",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-01-08",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 10,
+		"campaigns" : 1
 	},
 	{
 		"id" : 240,
-		"username" : "Darmene",
 		"callsign" : "Darmene",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-01-10",
+		"cstatus" : 2,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 3,
+		"sorties" : 22,
+		"campaigns" : 3
 	},
 	{
 		"id" : 241,
-		"username" : "Kai Lae",
 		"callsign" : "KaiLae",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-01-10",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 44,
+		"campaigns" : 3
 	},
 	{
 		"id" : 242,
-		"username" : "Aristo",
 		"callsign" : "Aristo",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-01-10",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 42,
+		"campaigns" : 3
 	},
 	{
 		"id" : 243,
-		"username" : "Roxmate",
 		"callsign" : "Roxmate",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-01-17",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 12,
+		"campaigns" : 2
 	},
 	{
 		"id" : 244,
-		"username" : "Mystico",
 		"callsign" : "Mystico",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-01-17",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 3,
+		"sorties" : 27,
+		"campaigns" : 3
 	},
 	{
 		"id" : 245,
-		"username" : "Tobias",
 		"callsign" : "Tobias",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-01-17",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 3,
+		"sorties" : 19,
+		"campaigns" : 3
 	},
 	{
 		"id" : 246,
-		"username" : "Shadepiece",
 		"callsign" : "Shadepiece",
 		"admin" : 1,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-01-24",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 4,
+		"sorties" : 33,
+		"campaigns" : 3
 	},
 	{
 		"id" : 247,
-		"username" : "Wiggy",
 		"callsign" : "Wiggy",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-01-23",
+		"cstatus" : 2,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 55,
+		"campaigns" : 3
 	},
 	{
 		"id" : 248,
-		"username" : "Alorus",
 		"callsign" : "Alorus",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-01-24",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 14,
+		"campaigns" : 3
 	},
 	{
 		"id" : 249,
-		"username" : "Silver",
 		"callsign" : "Silver",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-01-24",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 14,
+		"campaigns" : 3
 	},
 	{
 		"id" : 250,
-		"username" : "Matt",
 		"callsign" : "Matt",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-02-01",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 56,
+		"campaigns" : 3
 	},
 	{
 		"id" : 251,
-		"username" : "Drake",
 		"callsign" : "Drake",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-02-04",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 6,
+		"campaigns" : 2
 	},
 	{
 		"id" : 252,
-		"username" : "Santi",
 		"callsign" : "Santi",
 		"admin" : 1,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-02-16",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 50,
+		"campaigns" : 3
 	},
 	{
 		"id" : 253,
-		"username" : "Benny",
 		"callsign" : "Benny",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-02-07",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 23,
+		"campaigns" : 3
 	},
 	{
 		"id" : 254,
-		"username" : "Pablodzim",
 		"callsign" : "Pablo",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-02-06",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 11,
+		"sorties" : 16,
+		"campaigns" : 3
 	},
 	{
 		"id" : 255,
-		"username" : "Cysiek",
 		"callsign" : "Cysiek",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-02-09",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 14,
+		"campaigns" : 3
 	},
 	{
 		"id" : 256,
-		"username" : "Piotross",
 		"callsign" : "Piotross",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-02-09",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 22,
+		"campaigns" : 3
 	},
 	{
 		"id" : 257,
-		"username" : "Patton",
 		"callsign" : "Patton",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-02-01",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 8,
+		"campaigns" : 3
 	},
 	{
 		"id" : 258,
-		"username" : "Woodkid",
 		"callsign" : "Woodkid",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-02-09",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 21,
+		"campaigns" : 3
 	},
 	{
 		"id" : 259,
-		"username" : "Damian",
 		"callsign" : "Damian",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-02-09",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 8,
+		"sorties" : 24,
+		"campaigns" : 3
 	},
 	{
 		"id" : 260,
-		"username" : "Agladas",
 		"callsign" : "Agladas",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
-	},
-	{
-		"id" : 261,
-		"username" : "Jaden",
-		"callsign" : "Jaden",
-		"admin" : 0,
-		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-02-09",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 8,
+		"sorties" : 14,
+		"campaigns" : 3
 	},
 	{
 		"id" : 262,
-		"username" : "Stalker",
 		"callsign" : "Stalker",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-02-09",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 1,
+		"campaigns" : 1
 	},
 	{
 		"id" : 263,
-		"username" : "DryEvil",
 		"callsign" : "DryEvil",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-02-09",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 1,
+		"campaigns" : 1
 	},
 	{
 		"id" : 264,
-		"username" : "Martinez",
 		"callsign" : "Martinez",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-02-09",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 9,
+		"campaigns" : 2
 	},
 	{
 		"id" : 265,
-		"username" : "Yoshi",
 		"callsign" : "Yoshi",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-02-14",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 3,
+		"campaigns" : 1
 	},
 	{
 		"id" : 266,
-		"username" : "Shughart",
 		"callsign" : "Shughart",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-02-14",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 1,
+		"campaigns" : 1
 	},
 	{
 		"id" : 267,
-		"username" : "Tomcat",
 		"callsign" : "Tomcat",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
-	},
-	{
-		"id" : 268,
-		"username" : "Judge",
-		"callsign" : "Judge",
-		"admin" : 0,
-		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-02-13",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 17,
+		"campaigns" : 3
 	},
 	{
 		"id" : 269,
-		"username" : "Jixer",
 		"callsign" : "Jixer",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-02-15",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 3,
+		"sorties" : 22,
+		"campaigns" : 2
 	},
 	{
 		"id" : 270,
-		"username" : "Frederf",
 		"callsign" : "Frederf",
 		"admin" : 1,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-02-21",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 9,
+		"sorties" : 57,
+		"campaigns" : 3
 	},
 	{
 		"id" : 274,
-		"username" : "Lofty",
 		"callsign" : "Lofty",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-03-06",
+		"cstatus" : 2,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 39,
+		"campaigns" : 3
 	},
 	{
 		"id" : 275,
-		"username" : "Phalcon",
 		"callsign" : "Phalcon",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
-	},
-	{
-		"id" : 276,
-		"username" : "Ben",
-		"callsign" : "Ben",
-		"admin" : 0,
-		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-03-06",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 38,
+		"campaigns" : 3
 	},
 	{
 		"id" : 277,
-		"username" : "Genisis",
 		"callsign" : "Genisis",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-03-06",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 55,
+		"campaigns" : 3
 	},
 	{
 		"id" : 278,
-		"username" : "Raven",
 		"callsign" : "Raven",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-03-13",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 32,
+		"campaigns" : 3
 	},
 	{
 		"id" : 279,
-		"username" : "Kagou",
 		"callsign" : "Kagou",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-03-21",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 45,
+		"campaigns" : 3
 	},
 	{
 		"id" : 280,
-		"username" : "Samba",
 		"callsign" : "Samba",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-03-20",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 4,
+		"campaigns" : 1
 	},
 	{
 		"id" : 281,
-		"username" : "Hauggy",
 		"callsign" : "Hauggy",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-04-03",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 7,
+		"campaigns" : 2
 	},
 	{
 		"id" : 282,
-		"username" : "Lachs",
 		"callsign" : "Lachs",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-04-03",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 44,
+		"campaigns" : 3
 	},
 	{
 		"id" : 283,
-		"username" : "SMOKEJUMPER",
 		"callsign" : "Smokejumper",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-04-10",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 4,
+		"sorties" : 44,
+		"campaigns" : 3
 	},
 	{
 		"id" : 284,
-		"username" : "Propnut",
 		"callsign" : "Propnut",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-04-10",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 13,
+		"campaigns" : 3
 	},
 	{
 		"id" : 285,
-		"username" : "Riggs",
 		"callsign" : "Riggs",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-04-10",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 4,
+		"sorties" : 22,
+		"campaigns" : 3
 	},
 	{
 		"id" : 286,
-		"username" : "Snake",
 		"callsign" : "Snake",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-04-17",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 13,
+		"campaigns" : 3
 	},
 	{
 		"id" : 287,
-		"username" : "Sharpe",
 		"callsign" : "Sharpe",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-04-17",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 52,
+		"campaigns" : 3
 	},
 	{
 		"id" : 288,
-		"username" : "Shadow",
 		"callsign" : "Shadow",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-04-17",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 8,
+		"campaigns" : 2
 	},
 	{
 		"id" : 289,
-		"username" : "Zebraz",
 		"callsign" : "Zebraz",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-04-17",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 17,
+		"campaigns" : 3
 	},
 	{
 		"id" : 290,
-		"username" : "Steph",
 		"callsign" : "Steph",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-04-19",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 29,
+		"campaigns" : 2
 	},
 	{
 		"id" : 291,
-		"username" : "Tex",
 		"callsign" : "Tex",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-04-19",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 44,
+		"campaigns" : 2
 	},
 	{
 		"id" : 292,
-		"username" : "Brigg",
 		"callsign" : "Brigg",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-05-08",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 4,
+		"sorties" : 38,
+		"campaigns" : 2
 	},
 	{
 		"id" : 293,
-		"username" : "Carbs",
 		"callsign" : "Carbs",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-05-22",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 44,
+		"campaigns" : 2
 	},
 	{
 		"id" : 294,
-		"username" : "Szybownik",
 		"callsign" : "Szybownik",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-06-05",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 2,
+		"campaigns" : 1
 	},
 	{
 		"id" : 295,
-		"username" : "Rosomak",
 		"callsign" : "Rosomak",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-06-05",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 10,
+		"campaigns" : 2
 	},
 	{
 		"id" : 296,
-		"username" : "Vonhye",
 		"callsign" : "Vonhye",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-06-05",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 15,
+		"campaigns" : 2
 	},
 	{
 		"id" : 297,
-		"username" : "Lexius",
 		"callsign" : "Lexius",
 		"admin" : 1,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-06-05",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 4,
+		"sorties" : 44,
+		"campaigns" : 2
 	},
 	{
 		"id" : 298,
-		"username" : "Leadman",
 		"callsign" : "Leadman",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-06-12",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 40,
+		"campaigns" : 2
 	},
 	{
 		"id" : 299,
-		"username" : "Lobo",
 		"callsign" : "Lobo",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-06-12",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 3,
+		"sorties" : 36,
+		"campaigns" : 2
 	},
 	{
 		"id" : 300,
-		"username" : "Spectre",
 		"callsign" : "Spectre",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-07-03",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 38,
+		"campaigns" : 2
 	},
 	{
 		"id" : 301,
-		"username" : "Onebad",
 		"callsign" : "Onebad",
 		"admin" : 1,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-07-11",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 11,
+		"sorties" : 41,
+		"campaigns" : 2
 	},
 	{
 		"id" : 302,
-		"username" : "Tecnam",
 		"callsign" : "Tecnam",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-07-13",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 9,
+		"campaigns" : 2
 	},
 	{
 		"id" : 303,
-		"username" : "BenJoe",
 		"callsign" : "BenJoe",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-07-17",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 6,
+		"campaigns" : 2
 	},
 	{
 		"id" : 304,
-		"username" : "Nightrise",
 		"callsign" : "Nightrise",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-07-17",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 4,
+		"campaigns" : 2
 	},
 	{
 		"id" : 305,
-		"username" : "Alienzo",
 		"callsign" : "Alienzo",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-07-24",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 8,
+		"campaigns" : 2
 	},
 	{
 		"id" : 306,
-		"username" : "Darek",
 		"callsign" : "Darek",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-07-24",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 2,
+		"campaigns" : 1
 	},
 	{
 		"id" : 307,
-		"username" : "Sabro",
 		"callsign" : "Sabro",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-07-24",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 26,
+		"campaigns" : 1
 	},
 	{
 		"id" : 308,
-		"username" : "SkyVi",
 		"callsign" : "SkyVi",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-07-24",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 4,
+		"sorties" : 32,
+		"campaigns" : 2
 	},
 	{
 		"id" : 309,
-		"username" : "Matze",
 		"callsign" : "Matze",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-07-29",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 3,
+		"campaigns" : 1
 	},
 	{
 		"id" : 310,
-		"username" : "Gremlin",
 		"callsign" : "Gremlin",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-07-29",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 29,
+		"campaigns" : 1
 	},
 	{
 		"id" : 311,
-		"username" : "Schneider",
 		"callsign" : "Schneider",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-07-31",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 14,
+		"campaigns" : 1
+	},
+	{
+		"id" : 311,
+		"callsign" : "Schneider",
+		"admin" : 0,
+		"map_viewer" : 0,
+		"mission_builder" : 0,
+		"jdate" : "2016-07-31",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 14,
+		"campaigns" : 1
 	},
 	{
 		"id" : 312,
-		"username" : "Torchy",
 		"callsign" : "Torchy",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-08-04",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 1,
+		"campaigns" : 1
 	},
 	{
 		"id" : 313,
-		"username" : "Tatts",
 		"callsign" : "Tatts",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-08-12",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 24,
+		"campaigns" : 1
 	},
 	{
 		"id" : 314,
-		"username" : "Joey",
 		"callsign" : "Joey",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-08-13",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 12,
+		"campaigns" : 1
 	},
 	{
 		"id" : 315,
-		"username" : "Jaydog",
 		"callsign" : "Jaydog",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-08-14",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 4,
+		"sorties" : 34,
+		"campaigns" : 1
 	},
 	{
 		"id" : 316,
-		"username" : "Wordy",
 		"callsign" : "Wordy",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-08-22",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 3,
+		"sorties" : 38,
+		"campaigns" : 1
 	},
 	{
 		"id" : 317,
-		"username" : "Mozes",
 		"callsign" : "Mozes",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-08-22",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 6,
+		"campaigns" : 1
 	},
 	{
 		"id" : 318,
-		"username" : "Schneemann",
 		"callsign" : "Schneemann",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-08-22",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 16,
+		"campaigns" : 1
+	},
+	{
+		"id" : 318,
+		"callsign" : "Schneemann",
+		"admin" : 0,
+		"map_viewer" : 0,
+		"mission_builder" : 0,
+		"jdate" : "2016-08-22",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 16,
+		"campaigns" : 1
 	},
 	{
 		"id" : 319,
-		"username" : "Ros",
 		"callsign" : "Ros",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-09-04",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 18,
+		"campaigns" : 1
 	},
 	{
 		"id" : 320,
-		"username" : "Dowdy",
 		"callsign" : "Dowdy",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-09-04",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 6,
+		"campaigns" : 1
 	},
 	{
 		"id" : 321,
-		"username" : "Nev",
 		"callsign" : "Nev",
 		"admin" : 1,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-09-07",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 32,
+		"campaigns" : 1
 	},
 	{
 		"id" : 322,
-		"username" : "Fishin",
 		"callsign" : "Fishin",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-09-11",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 27,
+		"campaigns" : 1
 	},
 	{
 		"id" : 323,
-		"username" : "Nails",
 		"callsign" : "Nails",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-10-09",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 7,
+		"sorties" : 32,
+		"campaigns" : 1
 	},
 	{
 		"id" : 324,
-		"username" : "Smolders",
 		"callsign" : "Smolders",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-10-09",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 1,
+		"campaigns" : 1
 	},
 	{
 		"id" : 325,
-		"username" : "Woekie",
 		"callsign" : "Woekie",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-10-23",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 3,
+		"sorties" : 34,
+		"campaigns" : 1
 	},
 	{
 		"id" : 326,
-		"username" : "Gripen",
 		"callsign" : "Gripen",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-10-30",
+		"cstatus" : 2,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 3,
+		"sorties" : 21,
+		"campaigns" : 1
 	},
 	{
 		"id" : 327,
-		"username" : "Darky",
 		"callsign" : "Darky",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-10-29",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 24,
+		"campaigns" : 1
 	},
 	{
 		"id" : 328,
-		"username" : "Beyond",
 		"callsign" : "Beyond",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-10-30",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 5,
+		"campaigns" : 1
 	},
 	{
 		"id" : 329,
-		"username" : "Taxi",
 		"callsign" : "Taxi",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-11-13",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 3,
+		"sorties" : 25,
+		"campaigns" : 1
 	},
 	{
 		"id" : 330,
-		"username" : "Kerdou",
 		"callsign" : "Kerdou",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-12-02",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 18,
+		"campaigns" : 1
 	},
 	{
 		"id" : 331,
-		"username" : "RayCharles",
 		"callsign" : "RayCharles",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-12-01",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 3,
+		"sorties" : 9,
+		"campaigns" : 1
 	},
 	{
 		"id" : 332,
-		"username" : "Sixfeet",
 		"callsign" : "Sixfeet",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-12-06",
+		"cstatus" : 2,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 3,
+		"sorties" : 19,
+		"campaigns" : 1
 	},
 	{
 		"id" : 333,
-		"username" : "Spirit",
 		"callsign" : "Spirit",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
-	},
-	{
-		"id" : 334,
-		"username" : "Linty",
-		"callsign" : "Linty",
-		"admin" : 0,
-		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-12-06",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 3,
+		"sorties" : 29,
+		"campaigns" : 1
 	},
 	{
 		"id" : 335,
-		"username" : "Scotty",
 		"callsign" : "Scotty",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-12-08",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 17,
+		"campaigns" : 1
 	},
 	{
 		"id" : 336,
-		"username" : "Whisky",
 		"callsign" : "Whisky",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2016-12-11",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 3,
+		"sorties" : 27,
+		"campaigns" : 1
 	},
 	{
 		"id" : 337,
-		"username" : "Miek",
 		"callsign" : "Miek",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2017-01-07",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 20,
+		"campaigns" : 1
 	},
 	{
 		"id" : 338,
-		"username" : "Hund",
 		"callsign" : "Hund",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2017-01-08",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 4,
+		"campaigns" : 1
 	},
 	{
 		"id" : 339,
-		"username" : "Sherwood",
 		"callsign" : "Sherwood",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2017-01-15",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 20,
+		"campaigns" : 1
 	},
 	{
 		"id" : 340,
-		"username" : "Pathfinder",
 		"callsign" : "Pathfinder",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2017-01-15",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 20,
+		"campaigns" : 1
 	},
 	{
 		"id" : 341,
-		"username" : "Coolio",
 		"callsign" : "Coolio",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2017-01-29",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 17,
+		"campaigns" : 1
 	},
 	{
 		"id" : 342,
-		"username" : "Alpha",
 		"callsign" : "Alpha",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
-	},
-	{
-		"id" : 343,
-		"username" : "Hectic",
-		"callsign" : "Hectic",
-		"admin" : 0,
-		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2017-01-29",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 20,
+		"campaigns" : 1
 	},
 	{
 		"id" : 344,
-		"username" : "Brennan",
 		"callsign" : "Brennan",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2017-01-29",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 19,
+		"campaigns" : 1
 	},
 	{
 		"id" : 345,
-		"username" : "Firefly",
 		"callsign" : "Firefly",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2017-02-01",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 8,
+		"campaigns" : 1
 	},
 	{
 		"id" : 346,
-		"username" : "Magic",
 		"callsign" : "Magic",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2017-02-06",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 24,
+		"campaigns" : 1
 	},
 	{
 		"id" : 347,
-		"username" : "Lozzie",
 		"callsign" : "Lozzie",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2017-02-05",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 18,
+		"campaigns" : 1
 	},
 	{
 		"id" : 348,
-		"username" : "Ruse",
 		"callsign" : "Ruse",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2002-06-17",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 4,
+		"campaigns" : 1
 	},
 	{
 		"id" : 349,
-		"username" : "Kaufman",
 		"callsign" : "Kaufman",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2017-03-11",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 12,
+		"campaigns" : 1
 	},
 	{
 		"id" : 350,
-		"username" : "Euler",
 		"callsign" : "Euler",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2017-03-11",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 8,
+		"campaigns" : 1
 	},
 	{
 		"id" : 351,
-		"username" : "Raafe",
 		"callsign" : "Raafe",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2017-03-12",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 2,
+		"campaigns" : 1
 	},
 	{
 		"id" : 352,
-		"username" : "Slyer",
 		"callsign" : "Slyer",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2017-03-26",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 6,
+		"sorties" : 20,
+		"campaigns" : 1
 	},
 	{
 		"id" : 353,
-		"username" : "Jailor",
 		"callsign" : "Jailor",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2017-04-15",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 14,
+		"campaigns" : 1
 	},
 	{
 		"id" : 354,
-		"username" : "Ullski",
 		"callsign" : "Ullski",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2017-04-16",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 18,
+		"campaigns" : 1
 	},
 	{
 		"id" : 356,
-		"username" : "Zed",
 		"callsign" : "Zed",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2017-04-24",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 3,
+		"campaigns" : 1
 	},
 	{
 		"id" : 357,
-		"username" : "Goose",
 		"callsign" : "Goose",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2017-04-30",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 11,
+		"campaigns" : 1
 	},
 	{
 		"id" : 358,
-		"username" : "Wingnut",
 		"callsign" : "Wingnut",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2017-04-30",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 2,
+		"campaigns" : 1
+	},
+	{
+		"id" : 358,
+		"callsign" : "Wingnut",
+		"admin" : 0,
+		"map_viewer" : 0,
+		"mission_builder" : 0,
+		"jdate" : "2017-04-30",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 2,
+		"campaigns" : 1
 	},
 	{
 		"id" : 359,
-		"username" : "Rev",
 		"callsign" : "Rev",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2017-04-30",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 12,
+		"campaigns" : 1
 	},
 	{
 		"id" : 360,
-		"username" : "Sky",
 		"callsign" : "Sky",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2017-04-30",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 7,
+		"campaigns" : 1
 	},
 	{
 		"id" : 361,
-		"username" : "Joker",
 		"callsign" : "Joker",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2017-05-07",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 14,
+		"campaigns" : 1
 	},
 	{
 		"id" : 362,
-		"username" : "Pinetree",
 		"callsign" : "Pinetree",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2017-05-17",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 15,
+		"campaigns" : 1
 	},
 	{
 		"id" : 363,
-		"username" : "Carey",
 		"callsign" : "Carey",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2017-05-16",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 2,
+		"campaigns" : 1
 	},
 	{
 		"id" : 364,
-		"username" : "Digby",
 		"callsign" : "Digby",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2017-07-02",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 11,
+		"campaigns" : 1
 	},
 	{
 		"id" : 365,
-		"username" : "Grunt",
 		"callsign" : "Grunt",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2017-07-04",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 4,
+		"campaigns" : 1
 	},
 	{
 		"id" : 366,
-		"username" : "Mooch",
 		"callsign" : "Mooch",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2017-07-04",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 11,
+		"campaigns" : 1
+	},
+	{
+		"id" : 366,
+		"callsign" : "Mooch",
+		"admin" : 0,
+		"map_viewer" : 0,
+		"mission_builder" : 0,
+		"jdate" : "2017-07-04",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 11,
+		"campaigns" : 1
 	},
 	{
 		"id" : 367,
-		"username" : "Stu",
 		"callsign" : "Stu",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2017-07-15",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 10,
+		"campaigns" : 1
 	},
 	{
 		"id" : 368,
-		"username" : "Passion",
 		"callsign" : "Passion",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2017-07-30",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 11,
+		"campaigns" : 1
 	},
 	{
 		"id" : 369,
-		"username" : "HotLunch",
 		"callsign" : "HotLunch",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2017-07-30",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 4,
+		"campaigns" : 1
 	},
 	{
 		"id" : 370,
-		"username" : "Willy",
 		"callsign" : "Willy",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2017-07-30",
+		"cstatus" : 2,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 4,
+		"campaigns" : 1
 	},
 	{
 		"id" : 371,
-		"username" : "Rudi",
 		"callsign" : "Rudi",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2017-07-30",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 11,
+		"campaigns" : 1
 	},
 	{
 		"id" : 372,
-		"username" : "Trystan",
 		"callsign" : "Trystan",
 		"admin" : 1,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2017-07-30",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 10,
+		"campaigns" : 1
 	},
 	{
 		"id" : 373,
-		"username" : "Welshy",
 		"callsign" : "Welshy",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2017-07-30",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 7,
+		"campaigns" : 1
 	},
 	{
 		"id" : 374,
-		"username" : "Stribers",
 		"callsign" : "Stribers",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2017-07-30",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 11,
+		"campaigns" : 1
 	},
 	{
 		"id" : 375,
-		"username" : "Ikarus",
 		"callsign" : "Ikarus",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2017-08-06",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 2,
+		"campaigns" : 1
 	},
 	{
 		"id" : 376,
-		"username" : "Mezza",
 		"callsign" : "Mezza",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2017-08-05",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 11,
+		"campaigns" : 1
 	},
 	{
 		"id" : 377,
-		"username" : "Crabby",
 		"callsign" : "Crabby",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2017-08-05",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 1,
+		"campaigns" : 1
 	},
 	{
 		"id" : 378,
-		"username" : "Kuntz",
 		"callsign" : "Kuntz",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2017-05-29",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 8,
+		"sorties" : 10,
+		"campaigns" : 2
 	},
 	{
 		"id" : 379,
-		"username" : "Web",
 		"callsign" : "Web",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2017-08-17",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 6,
+		"campaigns" : 1
 	},
 	{
 		"id" : 380,
-		"username" : "Walter",
 		"callsign" : "Walter",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2017-08-17",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 5,
+		"campaigns" : 1
 	},
 	{
 		"id" : 381,
-		"username" : "Fritz",
 		"callsign" : "Fritz",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2017-08-17",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 3,
+		"campaigns" : 1
 	},
 	{
 		"id" : 382,
-		"username" : "Thompson",
 		"callsign" : "Thompson",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2017-08-20",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 8,
+		"campaigns" : 1
 	},
 	{
 		"id" : 383,
-		"username" : "Kirk",
 		"callsign" : "Kirk",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2017-08-27",
+		"cstatus" : 2,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 2,
+		"campaigns" : 1
 	},
 	{
 		"id" : 384,
-		"username" : "BlackDog",
 		"callsign" : "BlackDog",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2017-08-27",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 10,
+		"campaigns" : 1
 	},
 	{
 		"id" : 385,
-		"username" : "Jonesy",
 		"callsign" : "Jonesy",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2017-08-31",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 10,
+		"campaigns" : 1
 	},
 	{
 		"id" : 386,
-		"username" : "Alecu",
 		"callsign" : "Alecu",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2017-09-03",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 2,
+		"sorties" : 9,
+		"campaigns" : 1
 	},
 	{
 		"id" : 387,
-		"username" : "Screwball",
 		"callsign" : "Screwball",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2017-09-10",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 9,
+		"campaigns" : 1
 	},
 	{
 		"id" : 388,
-		"username" : "Berethor",
 		"callsign" : "Berethor",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2017-09-17",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 8,
+		"campaigns" : 1
 	},
 	{
 		"id" : 389,
-		"username" : "Zig-Zag",
 		"callsign" : "ZigZag",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2017-09-17",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 6,
+		"campaigns" : 1
 	},
 	{
 		"id" : 390,
-		"username" : "Niwsters",
 		"callsign" : "Niwsters",
-		"admin" : 0,
-		"map_viewer" : 0,
-		"mission_builder" : 0
+		"admin" : 1,
+		"map_viewer" : 1,
+		"mission_builder" : 1,
+		"jdate" : "2017-09-24",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 5,
+		"campaigns" : 1
 	},
 	{
 		"id" : 391,
-		"username" : "StuntPuppy",
 		"callsign" : "StuntPuppy",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2017-10-01",
+		"cstatus" : 2,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 1,
+		"campaigns" : 1
 	},
 	{
 		"id" : 392,
-		"username" : "Drifter",
 		"callsign" : "Drifter",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2017-10-01",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 1,
+		"campaigns" : 1
 	},
 	{
 		"id" : 393,
-		"username" : "Tommi",
 		"callsign" : "Tommi",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2017-10-01",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 6,
+		"campaigns" : 1
 	},
 	{
 		"id" : 394,
-		"username" : "Olmy",
 		"callsign" : "Olmy",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2017-10-08",
+		"cstatus" : 2,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 6,
+		"campaigns" : 1
 	},
 	{
 		"id" : 395,
-		"username" : "Rossco",
 		"callsign" : "Rossco",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2017-10-10",
+		"cstatus" : 1,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 5,
+		"campaigns" : 1
 	},
 	{
 		"id" : 397,
-		"username" : "Today",
 		"callsign" : "Today",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2017-10-12",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 7,
+		"campaigns" : 1
 	},
 	{
 		"id" : 398,
-		"username" : "Bentley",
 		"callsign" : "Bentley",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2017-10-22",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 4,
+		"campaigns" : 1
 	},
 	{
 		"id" : 399,
-		"username" : "Slav",
 		"callsign" : "Slav",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2017-11-26",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 2,
+		"campaigns" : 1
 	},
 	{
 		"id" : 400,
-		"username" : "Flak",
 		"callsign" : "Flak",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2017-11-30",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 1,
+		"sorties" : 2,
+		"campaigns" : 1
 	},
 	{
 		"id" : 401,
-		"username" : "Jones",
 		"callsign" : "Jones",
 		"admin" : 0,
 		"map_viewer" : 0,
-		"mission_builder" : 0
-	},
-	{
-		"id" : 402,
-		"username" : "Matofact",
-		"callsign" : "Mato",
-		"admin" : 0,
-		"map_viewer" : 0,
-		"mission_builder" : 0
-	},
-	{
-		"id" : 403,
-		"username" : "Spigot",
-		"callsign" : "Spigot",
-		"admin" : 0,
-		"map_viewer" : 0,
-		"mission_builder" : 0
-	},
-	{
-		"id" : 404,
-		"username" : "Django",
-		"callsign" : "Django",
-		"admin" : 0,
-		"map_viewer" : 0,
-		"mission_builder" : 0
-	},
-	{
-		"id" : 405,
-		"username" : "Boone",
-		"callsign" : "Boone",
-		"admin" : 0,
-		"map_viewer" : 0,
-		"mission_builder" : 0
-	},
-	{
-		"id" : 406,
-		"username" : "Schleprock",
-		"callsign" : "Schleprock",
-		"admin" : 0,
-		"map_viewer" : 0,
-		"mission_builder" : 0
-	},
-	{
-		"id" : 407,
-		"username" : "Squid",
-		"callsign" : "Squid",
-		"admin" : 0,
-		"map_viewer" : 0,
-		"mission_builder" : 0
+		"mission_builder" : 0,
+		"jdate" : "2017-12-10",
+		"cstatus" : 0,
+		"length_of_service" : "X years, Y month, Z days",
+		"rank_value" : 5,
+		"sorties" : 1,
+		"campaigns" : 1
 	}
 ]
