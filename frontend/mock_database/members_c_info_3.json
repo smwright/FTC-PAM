@@ -1,0 +1,27 @@
+[
+	{
+		"sorties" : 40,
+		"c_id" : 2,
+		"name" : "Peace in our Time"
+	},
+	{
+		"sorties" : 21,
+		"c_id" : 3,
+		"name" : "Leaning Forward"
+	},
+	{
+		"sorties" : 11,
+		"c_id" : 4,
+		"name" : "Fall Gelb"
+	},
+	{
+		"sorties" : 7,
+		"c_id" : 5,
+		"name" : "Fall Rot"
+	},
+	{
+		"sorties" : 41,
+		"c_id" : 6,
+		"name" : "Battle of Britain"
+	}
+]

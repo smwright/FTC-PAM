@@ -1,4 +1,4 @@
-/*
+
 package pam.sql
 
 import javax.persistence.*
@@ -8,9 +8,8 @@ import javax.persistence.*
 data class Rank(
     val name: String,
     val abreviation: String,
-    val rank_value: Int,
+    val value: Int,
     val faction: Int,
     val image: String
 ) : BaseEntity()
 
-*/
