@@ -1,6 +1,6 @@
 package pam.repositories
 
-import pam.sql.Transfer
 import org.springframework.data.jpa.repository.JpaRepository
+import pam.sql.AcgUnit
 
-interface TransferRepository : JpaRepository<Transfer, Int>
+interface AcgUnitRepository : JpaRepository<AcgUnit, Int>

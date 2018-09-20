@@ -1,6 +1,6 @@
 package pam.repositories
 
-import pam.sql.Squadron
 import org.springframework.data.jpa.repository.JpaRepository
+import pam.sql.Report
 
-interface SquadronRepository : JpaRepository<Squadron, Int>
+interface ReportRepository : JpaRepository<Report, Int>
