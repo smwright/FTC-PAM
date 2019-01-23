@@ -1,43 +1,33 @@
 <template>
   <div class="CampaignInfoMain">
     <p>Here you find info about a particular campaign.</p>
-    <p>
-      ID:{{ campaign.id }} -- 
-      <template v-if="campaign.primary">
-        Primary campaign
-      </template>
-      <template v-else>
-        Side campaign
-      </template> --
-      Status: {{ campaign.campaign_status }}
-    </p>
-    <p>
-      {{ campaign.name }} -- Platform: {{ campaign.platform }} -- Time: {{ campaign.time }}
-    </p>
+    <CampaignInfoBaseComp v-bind="campaign"></CampaignInfoBaseComp>
     <router-view name="subcontent"></router-view>
   </div>
 </template>
 
 <script>
-import Campaign from './../resource/campaigns'
+import * as dbCon from './../resource/dbConnector'
+import {platform, campaignStatus} from './../resource/statusConverter'
+import CampaignInfoBaseComp from "./CampaignInfoBaseComp";
 
 export default {
   name: 'CampaignInfoMain',
-  created () {
-    this.getCampaign()
+  components: {CampaignInfoBaseComp},
+  mounted () {
+    dbCon.requestViewData({view:"campaign_list", id:this.$route.params.campaign_id})
+      .then(response => {
+        this.campaign = response[0];
+      })
+      .catch(error => {
+        console.log(error.message);
+      });
   },
   data () {
     return {
-      campaign: {}
-    }
-  },
-  methods: {
-    getCampaign () {
-      Campaign.get(this.$route.params.campaign_id).then((data) => {
-        this.campaign = data
-      }, (err) => {
-        console.log(err)
-      })
+      campaign: null,
+      platform: platform,
+      campaignStatus: campaignStatus
     }
   }
 }

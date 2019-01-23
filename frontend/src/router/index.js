@@ -2,8 +2,11 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Frontpage from '@/components/Frontpage'
 
-import AboutACG from '@/components/AboutACG'
+
+//About aCG
+import AboutUs from '@/components/AboutACGAboutUs'
 import AboutACGSideNav from '@/components/AboutACGSideNav'
+import Ranks from '@/components/AboutACGRanks'
 
 import CampaignList from '@/components/CampaignList'
 import CampaignInfoMain from '@/components/CampaignInfoMain'
@@ -48,7 +51,15 @@ export default new VueRouter({
       path: '/about-acg/about-us',
       name: 'AboutUs',
       components: {
-        default: AboutACG,
+        default: AboutUs,
+        sidenav: AboutACGSideNav
+      }
+    },
+    {
+      path: '/about-acg/ranks',
+      name: 'Ranks',
+      components: {
+        default: Ranks,
         sidenav: AboutACGSideNav
       }
     },

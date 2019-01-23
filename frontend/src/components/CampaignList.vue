@@ -5,67 +5,38 @@
     of side campaigns at any time is not limited.</p>
     <div class="link-list" v-for="(campaign) in campaigns" v-on:click="routeToCampaign(campaign.id)">
       <div class="multi-line-link-button full-width">
-        <div>
-          <div class="inline">
-            <span class="link-list-heading">{{ campaign.name}}</span>
-          </div>
-          <div class="inline float-right">
-            <span v-if="campaign.primary">Primary campaign</span>
-            <span v-else>Side campaign</span>
-            <span>{{ campaignStatus(campaign.campaign_status) }}</span>
-          </div>
-        </div>
-        <div>
-          <span>Platform: {{ platform(campaign.platform) }}</span>
-          <span>Time: {{ campaign.time }}</span>
-        </div>
-        <div>
-          <span>Number of participating units: {{ campaign.units }}</span>
-          <span>Missions completed: {{ campaign.missions }}</span>
-          <span>Sorties flown: {{ campaign.sorties }}</span>
-        </div>
-        <div>
-          <span>Average participants per mission: {{ campaign.avg_attendance }}</span>
-        </div>
+        <CampaignInfoBaseComp v-bind="campaign"></CampaignInfoBaseComp>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import axios from 'axios';
-import Mockcom from './../resource/index'
-import {platform, campaignStatus} from './../resource/statusConverter'
+import * as dbCon from './../resource/dbConnector'
+import CampaignInfoBaseComp from "./CampaignInfoBaseComp";
 
 export default {
   name: 'CampaignList',
+  components: {CampaignInfoBaseComp},
   mounted () {
-      // axios.get("pam/campaigns")
-      //   .then(response => {
-      //     this.campaigns = response.data._embedded.campaigns;
-      //   })
-      //   .catch(err => {
-      //     console.log("call: "+call+" error: "+err)
-      //   })
-    Mockcom.getByName('campaigns')
+
+    dbCon.requestViewData({view: "campaign_list"})
       .then(response => {
         this.campaigns = response;
       })
-      .catch(function (error) {
+      .catch(error => {
         console.log(error.message);
-      })
-    },
+      });
+  },
   data () {
     return {
-      campaigns: null,
-      platform: platform,
-      campaignStatus: campaignStatus
+      campaigns: {},
     }
   },
   methods: {
 
     routeToCampaign: function (campaignID) {
-      this.$router.push({name: 'Campaign', params: {campaign_id: campaignID}})
+      this.$router.push({name: 'Campaign', params: {campaign_id: campaignID}});
       //DEBUG
       console.log("CampaignList: Pushing to -> {name: 'Campaign', params: {campaign_id: "+campaignID+"}}")
     }

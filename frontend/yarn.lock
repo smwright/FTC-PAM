@@ -4335,6 +4335,10 @@ neo-async@^2.5.0:
   version "2.5.1"
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.5.1.tgz#acb909e327b1e87ec9ef15f41b8a269512ad41ee"
 
+nested-set@^1.0.0-rc0:
+  version "1.0.0-rc0"
+  resolved "https://registry.yarnpkg.com/nested-set/-/nested-set-1.0.0-rc0.tgz#98b35db000f9adc8925a9869b1b86daeed043dee"
+
 next-tick@1:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/next-tick/-/next-tick-1.0.0.tgz#ca86d1fe8828169b0120208e3dc8424b9db8342c"
@@ -5992,6 +5996,10 @@ stack-utils@^1.0.1:
 stackframe@^1.0.3:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/stackframe/-/stackframe-1.0.4.tgz#357b24a992f9427cba6b545d96a14ed2cbca187b"
+
+start@^5.1.0:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/start/-/start-5.1.0.tgz#1c171f0ef9487f56d0ab9a755ace860169208763"
 
 static-extend@^0.1.1:
   version "0.1.2"

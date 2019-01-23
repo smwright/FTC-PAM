@@ -14,6 +14,9 @@ function whitelist_table($name) {
         case "campaign_list":
             $result = $name;
             break;
+        case "campaign_info_unit":
+            $result = $name;
+            break;
         default:
             echo "Table not listed: $name";
             exit;
@@ -36,6 +39,11 @@ if(filter_has_var(INPUT_GET, "view")) {
     if(filter_has_var(INPUT_GET, "id")){
         $query = "SELECT * FROM $view_name WHERE id = ?";
         $id = filter_input(INPUT_GET, "id");
+        $stmt = mysqli_prepare($dbx, $query);
+        mysqli_stmt_bind_param($stmt, "i",$id);
+    } if(filter_has_var(INPUT_GET, "campaign_id")){
+        $query = "SELECT * FROM $view_name WHERE campaign_id = ?";
+        $id = filter_input(INPUT_GET, "campaign_id");
         $stmt = mysqli_prepare($dbx, $query);
         mysqli_stmt_bind_param($stmt, "i",$id);
     } else {

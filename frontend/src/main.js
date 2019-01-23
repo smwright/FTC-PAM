@@ -5,9 +5,6 @@ import App from './App'
 import router from './router'
 import store from './store'
 
-import resource from './resource'
-import fancytree from 'jquery.fancytree';
-
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

@@ -6,7 +6,6 @@
 </template>
 
 <script>
-import Campaign from './../resource/campaigns'
 
 export default {
   name: 'CampaignInfoSideNav',
