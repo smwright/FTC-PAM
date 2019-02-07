@@ -3,7 +3,7 @@ import nestedSetContextFactory from 'nested-set';
 
 var usePHP = true;
 
-function requestViewData(param) {
+function requestViewData(caller, param) {
 
   if (usePHP) {
 
@@ -12,7 +12,7 @@ function requestViewData(param) {
     //   view: name
     // }
 
-    return createGETPromise(url, param);
+    return createGETPromise(caller, url, param);
 
   } else {
 
@@ -21,16 +21,17 @@ function requestViewData(param) {
   }
 }
 
-function createGETPromise(url, param) {
+function createGETPromise(caller, url, param) {
 
   var resultData = new Promise(
     function (resolve, reject) {
       axios.get(url, {params: param})
         .then(response => {
-          console.log(`dbConnector.createGETPromise call to ${url} with param ${JSON.stringify(param)}`);
+          console.log(caller+` dbConnector.createGETPromise call to ${url} with param ${JSON.stringify(param)}`);
           resolve(response.data);
         })
         .catch(error => {
+          // console.log("ERROR DETECTED: ");
           var errorStr;
           errorStr = `dbConnector.createGETPromise call to ${url} with param ${JSON.stringify(param)}`;
           if (error.response) {
@@ -40,8 +41,9 @@ function createGETPromise(url, param) {
             errorStr += ` Response data: ${error.response.data}`;
             errorStr += ` Response status: ${error.response.status}`;
             errorStr += ` Response headers: ${error.response.headers}`;
+            errorStr += ` Response headers: ${error.message}`;
           } else if (error.request) {
-            // The request was made but no response was received
+            // The request was made but no response was receive
             // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
             // http.ClientRequest in node.js
             errorStr += " request error.";
@@ -53,6 +55,7 @@ function createGETPromise(url, param) {
           }
           errorStr += " "+error.config;
           var reason = new Error(errorStr);
+          // console.log("Sending ERROR: "+reason.message);
           reject(reason);
         })
 

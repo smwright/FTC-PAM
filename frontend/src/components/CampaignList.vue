@@ -20,7 +20,7 @@ export default {
   components: {CampaignInfoBaseComp},
   mounted () {
 
-    dbCon.requestViewData({view: "campaign_list"})
+    dbCon.requestViewData(this.$options.name, {view: "campaign_list"})
       .then(response => {
         this.campaigns = response;
       })

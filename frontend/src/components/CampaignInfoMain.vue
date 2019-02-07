@@ -15,7 +15,7 @@ export default {
   name: 'CampaignInfoMain',
   components: {CampaignInfoBaseComp},
   mounted () {
-    dbCon.requestViewData({view:"campaign_list", id:this.$route.params.campaign_id})
+    dbCon.requestViewData(this.$options.name, {view:"campaign_list", id:this.$route.params.campaign_id})
       .then(response => {
         this.campaign = response[0];
       })

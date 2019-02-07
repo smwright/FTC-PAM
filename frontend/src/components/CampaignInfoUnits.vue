@@ -1,8 +1,8 @@
 <template>
   <div class="CampaignInfoMissions">
     <p>Here you find a list of all units of the campaign {{campaign_id}}.</p>
-    <div>
-      <CampaignInfoUnitsBaseComp v-bind="campaign_units[0]"></CampaignInfoUnitsBaseComp>
+    <div v-for="child in campaign_units">
+      <CampaignInfoUnitsBaseComp v-bind="child"></CampaignInfoUnitsBaseComp>
     </div>
   </div>
 </template>
@@ -16,7 +16,7 @@ export default {
   components: {CampaignInfoUnitsBaseComp},
   mounted () {
 
-    dbCon.requestViewData({view:"campaign_info_unit", campaign_id:this.$route.params.campaign_id})
+    dbCon.requestViewData(this.$options.name, {view:"campaign_info_unit", campaign_id:this.$route.params.campaign_id})
       .then(response => {
         this.campaign_units = dbCon.nestData(response);
         console.log(JSON.stringify(this.campaign_units));
@@ -28,7 +28,7 @@ export default {
   data () {
     return {
       campaign_id: this.$route.params.campaign_id,
-      campaign_units: {}
+      campaign_units: null
     }
   }
 }

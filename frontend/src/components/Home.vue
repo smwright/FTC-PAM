@@ -40,8 +40,9 @@
 export default {
   name: 'Home',
   mounted () {
+    console.log("THIS IS: "+this.$options.name);
     console.log("Testing PHP connection")
-    dbCon.requestViewData({view: "campaign_list"})
+    dbCon.requestViewData(this.$options.name, {view: "campaign_list"})
       .then(function(response){
         console.log("PHP connection test, response received.");
         console.log(response);
