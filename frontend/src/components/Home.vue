@@ -35,14 +35,14 @@
 </template>
 
 <script>
-  import * as dbCon from './../resource/dbConnector'
+import he from 'he'
 
 export default {
   name: 'Home',
   mounted () {
-    console.log("THIS IS: "+this.$options.name);
+
     console.log("Testing PHP connection")
-    dbCon.requestViewData(this.$options.name, {view: "campaign_list"})
+    this.requestViewData(this.$options.name, {view: "campaign_list"})
       .then(function(response){
         console.log("PHP connection test, response received.");
         console.log(response);
@@ -58,6 +58,15 @@ export default {
     console.log("Calling mutation: ")
     this.$store.commit('test/increment')
     console.log("Calling getter: " + this.$store.getters['test/doubleCount'])
+
+    console.log("Starting session testing");
+    console.log("Starting session");
+    this.$session.start();
+    console.log("Session id: " + this.$session.id());
+    console.log("Syncing sessions.");
+    this.syncSession();
+    console.log("he-version: "+he.version);
+
   },
   methods: {
 
