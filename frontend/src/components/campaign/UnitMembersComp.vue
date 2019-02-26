@@ -101,10 +101,9 @@
 </template>
 
 <script>
-  import * as dbCon from './../resource/dbConnector';
 
   export default {
-    name: "CampaignInfoUnitsMembersComp",
+    name: "UnitMembersComp",
     props: {
       id: {
         type: Number,
@@ -117,18 +116,17 @@
     },
     created () {
 
-      dbCon.requestViewData(this.$options.name, {view:"campaign_unit_plane_asset_status", campaign_id:this.$route.params.campaign_id,
+      this.requestViewData(this.$options.name, {view:"campaign_unit_plane_asset_status", campaign_id:this.$route.params.campaign_id,
         depl_unit_id:this.$props.id})
         .then(response => {
           this.campaign_unit_stats = response[0];
-          console.log(JSON.stringify(this.campaign_unit_stats))
         })
         .catch(error => {
           console.log(error.message);
         });
 
       if(this.$props.acg_unit_id != null){
-        dbCon.requestViewData(this.$options.name, {view:"campaign_unit_member_info", campaign_id:this.$route.params.campaign_id,
+        this.requestViewData(this.$options.name, {view:"campaign_unit_member_info", campaign_id:this.$route.params.campaign_id,
           depl_unit_id:this.$props.id})
           .then(response => {
             this.campaign_unit_member = response;
@@ -158,8 +156,5 @@
 </script>
 
 <style scoped>
- .rankSpan {
-   display: inline;
-   width: 50px;
-}
+
 </style>

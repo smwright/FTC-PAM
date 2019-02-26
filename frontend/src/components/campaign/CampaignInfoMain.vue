@@ -7,15 +7,13 @@
 </template>
 
 <script>
-import * as dbCon from './../resource/dbConnector'
-import {platform, campaignStatus} from './../resource/statusConverter'
 import CampaignInfoBaseComp from "./CampaignInfoBaseComp";
 
 export default {
   name: 'CampaignInfoMain',
   components: {CampaignInfoBaseComp},
   mounted () {
-    dbCon.requestViewData(this.$options.name, {view:"campaign_list", id:this.$route.params.campaign_id})
+    this.requestViewData(this.$options.name, {view:"campaign_list", id:this.$route.params.campaign_id})
       .then(response => {
         this.campaign = response[0];
       })
@@ -25,9 +23,7 @@ export default {
   },
   data () {
     return {
-      campaign: null,
-      platform: platform,
-      campaignStatus: campaignStatus
+      campaign: null
     }
   }
 }
