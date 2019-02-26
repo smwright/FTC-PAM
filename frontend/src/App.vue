@@ -1,8 +1,9 @@
 <template>
   <div id="app">
-    <div class="navbar">
+    <div class="clearfix">
       <!--Navbar for main navigation.-->
-      <navbar></navbar>
+      <navbar class="float-left navbar"></navbar>
+      <div class="float-right">{{this.$session.get('username')}}</div>
     </div>
     <div class="clearfix">
       <!--Clearfix is used to help align sidenav and main divs horizonatally next to-->
@@ -28,6 +29,9 @@ export default {
   name: 'App',
   components: {
     'navbar': Navbar
+  },
+  mounted() {
+    this.syncSession();
   }
 }
 </script>
@@ -73,6 +77,7 @@ tr,td {
 
 .navbar {
   height: 50px;
+  width: calc(80% - 2px); /* Whished widht in % minus 2x border size */
   border: 1px green solid;
 }
 
@@ -98,11 +103,11 @@ tr,td {
 }
 
 /*General quick style aspects*/
-.full-width {
+.full-width{
   width: 100%;
 }
 
-.inline{
+.inline-block{
   display: inline-block;
 }
 
@@ -114,29 +119,46 @@ tr,td {
   float: right;
 }
 
-/*Styles for listing elements (members list, campaigns list, missions list....)*/
-
-.link-list{
-  margin: 10px 2px 10px 2px;
-  cursor: pointer;
-}
-
-.link-list:hover {
-  background: gray;
-}
-
-.link-list-heading{
+.heading{
   font-weight: bold;
   font-size: 1.2em;
 }
 
-.multi-line-link-button {
-  display: inline-block;
+.white-space-pre-line{
+  white-space: pre-line;
 }
 
-.multi-line-link-button span {
-  margin: 10px;
-  width: auto;
+/*Clearly visible div to mark placeholders for elements that haven't been added to the pam yet*/
+.to-add{
+  font-weight: bold;
+  color: yellow;
+  border: 2px yellow dashed;
+  background-color: black;
 }
+
+/*Styles for listing elements (members list, campaigns list, missions list....)*/
+
+/*.link-list{*/
+  /*margin: 10px 2px 10px 2px;*/
+  /*cursor: pointer;*/
+/*}*/
+
+/*.link-list:hover {*/
+  /*background: gray;*/
+/*}*/
+
+/*.link-list-heading{*/
+  /*font-weight: bold;*/
+  /*font-size: 1.2em;*/
+/*}*/
+
+/*.multi-line-link-button {*/
+  /*display: inline-block;*/
+/*}*/
+
+/*.multi-line-link-button span {*/
+  /*margin: 10px;*/
+  /*width: auto;*/
+/*}*/
 
 </style>
