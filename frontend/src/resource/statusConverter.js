@@ -86,6 +86,52 @@ export default {
           "Destroyed", //0
           "Probable", //1
           "Damaged" //2
+        ],
+
+      swarmStatus:
+        [
+          "1.Schwarm", //0
+          "2.Schwarm", //1
+          "3.Schwarm", //2
+          "4.Schwarm", //3
+          "N/A", //5
+        ],
+
+      swarmPosStatus:
+        [
+          "Staffelführer", //0
+          "Schwarmführer", //1
+          "Rottenführer", //2
+          "Katschmarek", //4
+          "N/A" //5
+        ],
+
+      claimLWTypeOfDestruction:
+        [
+          "Light smoke", //0
+          "Dark smoke", //1
+          "Flames", //2
+          "Parts broken away", //3
+          "Explosion", //4
+          "Forced crash landing", //5
+          "Set alight on ground", //6
+        ],
+
+      claimLWTypeOfImpact:
+        [
+          "Not observed", //0
+          "Steep angle with crash fire", //1
+          "Shallow angle with crash fire", //2
+          "Steep angle with dust cloud", //3
+          "Shallow angle with dust cloud", //4
+          "Splashdown" //5
+        ],
+
+      claimLWFateOfCrew:
+        [
+          "Not observed", //0
+          "Parachuted", //1
+          "Dead" //2
         ]
     }
   }
