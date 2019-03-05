@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import * as auth from '@/resource/auth.js'
 
 //About aCG
 import AboutUs from '@/components/AboutACGAboutUs'
@@ -18,7 +19,8 @@ import CampaignInfoSideNav from '../components/campaign/SideNav'
 import CampaignInfoMissionUnitsSideNav from '../components/campaign/MissionUnitSideNav'
 import Report from '../components/campaign/Report'
 
-import CampaignEditor from '@/components/CampaignEditor'
+//Administration
+import AdminIndex from '../components/admin/AdminIndex'
 
 
 //Flight school components
@@ -32,7 +34,7 @@ import Home from '@/components/Home'
 
 Vue.use(VueRouter)
 
-export default new VueRouter({
+const router = new VueRouter({
   routes: [
     {
       path: '/',
@@ -120,10 +122,12 @@ export default new VueRouter({
         },
       ],
     },
+    // Administration
     {
-      path: '/campaign-editor',
-      name: 'CampaignEditor',
-      component: CampaignEditor
+      path: '/admin',
+      name: 'Admin',
+      component: AdminIndex,
+      meta: {requiresAdmin: true}
     },
     // Flight school routing
     {
@@ -153,3 +157,21 @@ export default new VueRouter({
     },
   ]
 })
+
+router.beforeEach( (to, from, next) => {
+  if(to.matched.some(record => record.meta.requiresAdmin)) {
+
+    var vue_inst = this.a.app;
+    var isAdmin = vue_inst.$auth.isAdmin(this.name);
+    console.log("Route requires admin rights: " + from.name + " -> " + to.name);
+    console.log("Permission granted: " + isAdmin);
+    if(isAdmin){
+      next();
+    } else {
+      next('/')
+    }
+  }
+  next()
+})
+
+export default router;
