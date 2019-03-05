@@ -116,7 +116,7 @@
     },
     created () {
 
-      this.requestViewData(this.$options.name, {view:"campaign_unit_plane_asset_status", campaign_id:this.$route.params.campaign_id,
+      this.$dbCon.requestViewData(this.$options.name, {view:"campaign_unit_plane_asset_status", campaign_id:this.$route.params.campaign_id,
         depl_unit_id:this.$props.id})
         .then(response => {
           this.campaign_unit_stats = response[0];
@@ -126,7 +126,7 @@
         });
 
       if(this.$props.acg_unit_id != null){
-        this.requestViewData(this.$options.name, {view:"campaign_unit_member_info", campaign_id:this.$route.params.campaign_id,
+        this.$dbCon.requestViewData(this.$options.name, {view:"campaign_unit_member_info", campaign_id:this.$route.params.campaign_id,
           depl_unit_id:this.$props.id})
           .then(response => {
             this.campaign_unit_member = response;

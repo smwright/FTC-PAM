@@ -82,10 +82,10 @@ import DivLinkButton from "../basic_comp/DivLinkButton";
       },
       loadReports: function(){
         if(this.$props.children.length === 0)
-          this.requestViewData(this.$options.name, {view:"mission_report_nav_list", mission_id:this.$route.params.mission_id,
+          this.$dbCon.requestViewData(this.$options.name, {view:"mission_report_nav_list", mission_id:this.$route.params.mission_id,
           depl_unit_id:this.$props.id})
             .then(response => {
-              this.reports = this.nestData(response);
+              this.reports = this.$dbCon.nestData(response);
             })
             .catch(error => {
               console.log(error.message);

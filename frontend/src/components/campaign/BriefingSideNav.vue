@@ -22,7 +22,7 @@ export default {
   mixins: [statConv],
   mounted () {
 
-    this.requestViewData(this.$options.name, {view:"briefing", mission_id:this.$route.params.mission_id})
+    this.$dbCon.requestViewData(this.$options.name, {view:"briefing", mission_id:this.$route.params.mission_id})
       .then(response => {
         this.briefing_info = response;
       })

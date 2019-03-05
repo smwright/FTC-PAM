@@ -15,9 +15,9 @@ export default {
   },
   mounted () {
 
-    this.requestViewData(this.$options.name, {view:"campaign_mission_info", id:this.$route.params.mission_id})
+    this.$dbCon.requestViewData(this.$options.name, {view:"campaign_mission_info", id:this.$route.params.mission_id})
       .then(response => {
-        this.mission_info = this.nestData(response)[0];
+        this.mission_info = this.$dbCon.nestData(response)[0];
       })
       .catch(error => {
         console.log(error.message);

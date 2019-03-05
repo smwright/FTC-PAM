@@ -24,7 +24,7 @@ export default {
   },
   mounted () {
 
-    this.requestViewData(this.$options.name, {view: "campaign_list"})
+    this.$dbCon.requestViewData(this.$options.name, {view: "campaign_list"})
       .then(response => {
         this.campaigns = response;
       })

@@ -31,7 +31,7 @@ export default {
     'navbar': Navbar
   },
   mounted() {
-    this.syncSession();
+    this.$auth.syncSession(this.$options.name);
   }
 }
 </script>

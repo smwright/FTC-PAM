@@ -15,9 +15,9 @@ export default {
   components: {UnitBaseComp},
   mounted () {
 
-    this.requestViewData(this.$options.name, {view:"campaign_info_unit", campaign_id:this.$route.params.campaign_id})
+    this.$dbCon.requestViewData(this.$options.name, {view:"campaign_info_unit", campaign_id:this.$route.params.campaign_id})
       .then(response => {
-        this.campaign_units = this.nestData(response);
+        this.campaign_units = this.$dbCon.nestData(response);
       })
       .catch(error => {
         console.log(error.message);

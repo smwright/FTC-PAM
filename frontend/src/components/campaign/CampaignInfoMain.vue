@@ -13,7 +13,7 @@ export default {
   name: 'CampaignInfoMain',
   components: {CampaignInfoBaseComp},
   mounted () {
-    this.requestViewData(this.$options.name, {view:"campaign_list", id:this.$route.params.campaign_id})
+    this.$dbCon.requestViewData(this.$options.name, {view:"campaign_list", id:this.$route.params.campaign_id})
       .then(response => {
         this.campaign = response[0];
       })

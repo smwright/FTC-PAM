@@ -7,16 +7,25 @@ import store from './store'
 import session from 'vue-session'
 import auth from './resource/auth'
 import dbCon from './resource/dbConnector'
+import testPlugin from './resource/testPlugin'
 
 Vue.config.productionTip = false;
 
+//plugins
+
 Vue.use(session, {persist: true});
+Vue.use(dbCon, {usePHP: true});
+Vue.use(auth);
+Vue.use(testPlugin);
+// mixins
 Vue.mixin(auth);
-Vue.mixin(dbCon);
+// Vue.mixin(dbCon);
+
 
 /* eslint-disable no-new */
 var vm = new Vue({
   el: '#app',
+  name: "Vue-instance",
   router,
   store,
   components: { App },

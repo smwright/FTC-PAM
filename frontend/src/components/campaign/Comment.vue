@@ -17,10 +17,9 @@ export default {
   mixins: [stringConv],
   mounted () {
 
-    this.requestViewData(this.$options.name, {view:"comment_info", report_id:this.$route.params.report_id})
+    this.$dbCon.requestViewData(this.$options.name, {view:"comment_info", report_id:this.$route.params.report_id})
       .then(response => {
         this.comment_info = response;
-        console.log(JSON.stringify(this.comment_info))
       })
       .catch(error => {
         console.log(error.message);

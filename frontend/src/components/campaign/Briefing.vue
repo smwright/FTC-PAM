@@ -25,7 +25,7 @@ export default {
   methods: {
 
     loadBriefing: function () {
-      this.requestViewData(this.$options.name,
+      this.$dbCon.requestViewData(this.$options.name,
         {view:"briefing", mission_id:this.$route.params.mission_id, faction:this.$route.params.briefing_faction})
         .then(response => {
           this.briefing_info = response[0];

@@ -1,5 +1,5 @@
 <template>
-  <div>RAF REPORT
+  <div>
     <div>
       <span>Squadron:</span>
       <span>{{ unit_name }}</span>
@@ -57,6 +57,16 @@
         v-bind:key="aerial_claim.claim_id"
         v-bind="aerial_claim"
       ></ClaimRAF>
+    </div>
+
+    <div>
+      <hr>
+      Ground Claims:
+      <ClaimGround
+        v-for="ground_claim in ground_claims"
+        v-bind:key="ground_claim.claim_id"
+        v-bind="ground_claim"
+      ></ClaimGround>
     </div>
 
     <div>
@@ -161,14 +171,14 @@ export default {
   },
   mounted () {
 
-    this.requestViewData(this.$options.name, {view:"report_raf", report_id:this.$route.params.report_id})
+    this.$dbCon.requestViewData(this.$options.name, {view:"report_raf", report_id:this.$route.params.report_id})
       .then(response => {
         this.report_details = response[0];
       })
       .catch(error => {
         console.log(error.message);
       });
-    this.requestViewData(this.$options.name, {view:"claim_raf_info", report_id:this.$route.params.report_id})
+    this.$dbCon.requestViewData(this.$options.name, {view:"claim_raf_info", report_id:this.$route.params.report_id})
       .then(response => {
         this.aerial_claims = response;
       })
