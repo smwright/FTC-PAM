@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "jquery.fancytree": "^2.28.1"
+    "jquery.fancytree": "^2.28.1",
+    "vue-session": "^1.0.0"
   }
 }
