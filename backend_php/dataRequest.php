@@ -22,6 +22,9 @@ function whitelist_table($name) {
         "report_info",
         "report_raf",
         "claim_raf_info",
+        "report_lw",
+        "claim_lw_info",
+        "claim_ground_info",
         "comment_info"
     ];
 
@@ -48,7 +51,7 @@ function whitelist_table($name) {
         return $name;
     } else {
         header('HTTP/1.1 403 Forbidden');
-        echo("Table not listed: $name");
+        echo("Table not white-listed: $name");
     }
 }
 
