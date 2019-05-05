@@ -12,20 +12,28 @@ include_once(dirname(__FILE__).'/dbx.php');
 function whitelist_table($name) {
 
     $available_views = [
+        "acg_unit",
+        "asset_info",
         "briefing",
+        "briefing_info",
+        "campaign",
         "campaign_list",
         "campaign_info_unit",
         "campaign_unit_member_info",
         "campaign_unit_plane_asset_status",
         "campaign_mission_info",
+        "claim_raf_info",
+        "claim_lw_info",
+        "claim_ground_info",
+        "comment_info",
+        "current_unit_members",
         "mission_report_nav_list",
         "report_info",
         "report_raf",
-        "claim_raf_info",
         "report_lw",
-        "claim_lw_info",
-        "claim_ground_info",
-        "comment_info"
+        "hist_unit_info",
+        "depl_unit_info",
+        "hist_unit"
     ];
 
 //    switch ($name){
@@ -71,11 +79,16 @@ if(filter_has_var(INPUT_GET, "view")) {
     $counter = 0;
     $var_types = "";
     $var_array = [];
+    $order_string = "";
     $params = filter_input_array(INPUT_GET);
     foreach ($params as $var_name => $var_value) {
         $counter++;
         if($var_name == "view"){
             continue;
+        }
+
+        if($var_name == "order"){
+            $order_string = $var_value;
         }
 
         if($counter == 2){
@@ -85,12 +98,13 @@ if(filter_has_var(INPUT_GET, "view")) {
         }
         $query .= " $var_name = ?";
         if(is_numeric($var_value)) {
-            $var_types .= "s";
+            $var_types .= "i";
         } else if(is_string($var_value)) {
             $var_types .= "s";
         }
         $var_array[$var_name] = &$params[$var_name];
     }
+    $query .= " ".$order_string;
     $stmt = mysqli_prepare($dbx, $query);
     $params = array_merge(array($stmt, $var_types), $var_array);
 //    echo mysqli_character_set_name($dbx);
@@ -106,7 +120,7 @@ if(filter_has_var(INPUT_GET, "view")) {
         echo (json_encode(mysqli_fetch_all($result, MYSQLI_ASSOC),JSON_NUMERIC_CHECK));
     } else {
 //        echo("Empty result: ".var_export($result, true));
-        echo(json_encode(null));
+        echo (json_encode(null));
     }
 }
 mysqli_stmt_close($stmt);
