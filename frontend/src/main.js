@@ -7,7 +7,6 @@ import store from './store'
 import session from 'vue-session'
 import auth from './resource/auth'
 import dbCon from './resource/dbConnector'
-import testPlugin from './resource/testPlugin'
 
 Vue.config.productionTip = false;
 
@@ -16,9 +15,8 @@ Vue.config.productionTip = false;
 Vue.use(session, {persist: true});
 Vue.use(dbCon, {usePHP: true});
 Vue.use(auth);
-Vue.use(testPlugin);
 // mixins
-Vue.mixin(auth);
+// Vue.mixin(auth);
 // Vue.mixin(dbCon);
 
 
