@@ -3,6 +3,7 @@
     <div class="heading">Briefing</div>
       <div class="white-space-pre-line">
         {{ this.decodeHTML(briefing_info.text) }}
+        <!--{{ // this.encryptBriefing(briefing_info.text, 5) }}-->
       </div>
   </div>
 </template>

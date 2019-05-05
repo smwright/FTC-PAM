@@ -5,7 +5,7 @@
         <span class="heading">{{ name }}</span>
       </div>
       <div class="inline-block float-right">
-        <span v-if="primary">Primary campaign</span>
+        <span v-if="is_primary">Primary campaign</span>
         <span v-else>Side campaign</span>
         <span>{{ this.campaignStatus[campaign_status] }}</span>
       </div>
@@ -46,7 +46,7 @@
     mixins: [statConv],
     props: {
       name: String,
-      primary: Number,
+      is_primary: Number,
       campaign_status: Number,
       platform: Number,
       time: String,

@@ -4,16 +4,17 @@
       <span>{{ mission_name }}</span>
       <span>({{ hist_date }})</span>
     <div class="inline float-right">
-      <span v-if="mission_status===0">Briefing</span>
-      <span v-else-if="mission_status===1">Debriefing</span>
-      <span v-else-if="mission_status===2">closed</span>
+      <span>{{ missionStatus[mission_status] }}</span>
     </div>
   </div>
 </template>
 
 <script>
+import statConv from "../../resource/statusConverter"
+
 export default {
   name: "MissionHeader",
+  mixins: [statConv],
   props: {
     id: {
       type: Number,

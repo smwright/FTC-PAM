@@ -185,11 +185,19 @@ export default {
       .catch(error => {
         console.log(error.message);
       });
+    this.$dbCon.requestViewData(this.$options.name, {view:"claim_ground_info", report_id:this.$route.params.report_id})
+      .then(response => {
+        this.ground_claims = response;
+      })
+      .catch(error => {
+        console.log(error.message);
+      });
   },
   data () {
     return {
       report_details: {},
-      aerial_claims: {}
+      aerial_claims: {},
+      ground_climas: {}
     }
   },
 }
