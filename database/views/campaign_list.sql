@@ -6,7 +6,7 @@ VIEW `campaign_list` AS
     SELECT 
         `pam`.`campaign`.`id` AS `id`,
         `pam`.`campaign`.`name` AS `name`,
-        `pam`.`campaign`.`primary` AS `primary`,
+        `pam`.`campaign`.`is_primary` AS `is_primary`,
         `pam`.`campaign`.`platform` AS `platform`,
         `pam`.`campaign`.`campaign_status` AS `campaign_status`,
         `pam`.`campaign`.`time` AS `time`,
