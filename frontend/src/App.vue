@@ -107,8 +107,24 @@ tr,td {
   width: 100%;
 }
 
+.half-width{
+  width: calc(50% - 2px);
+}
+
+.width-80{
+  width: 80%;
+}
+
+.width-auto{
+  width: auto;
+}
+
 .inline-block{
   display: inline-block;
+}
+
+.table {
+  display: table;
 }
 
 .float-left{
@@ -127,6 +143,7 @@ tr,td {
 .white-space-pre-line{
   white-space: pre-line;
 }
+
 
 /*Clearly visible div to mark placeholders for elements that haven't been added to the pam yet*/
 .to-add{
@@ -160,5 +177,54 @@ tr,td {
   /*margin: 10px;*/
   /*width: auto;*/
 /*}*/
+
+/*CSS FOR draggable-nested-tree*/
+
+DraggableTree div {
+  border: none
+}
+
+.he-tree{
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+
+.tree-node{
+}
+
+.tree-node {
+  border: none
+}
+
+.tree-node-children{
+  border: none
+}
+
+.tree-node-inner{
+  padding: 5px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.tree-node-inner div {
+  border: 1px solid red
+}
+
+.tree-node-inner-back{
+  border: none
+}
+.draggable-placeholder{
+}
+.draggable-placeholder-inner{
+  border: 1px dashed #0088F8;
+  box-sizing: border-box;
+  background: rgba(0, 136, 249, 0.09);
+  color: #0088f9;
+  text-align: center;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
 
 </style>
