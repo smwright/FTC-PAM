@@ -21,6 +21,10 @@ import Report from '../components/campaign/Report'
 
 //Administration
 import AdminIndex from '../components/admin/AdminIndex'
+import AdminMainSideNav from '../components/admin/AdminMainSideNav'
+import AdminCampaign from '../components/admin/Campaign'
+import AdminHistUnit from '../components/admin/HistUnits'
+import Assets from '../components/admin/Assets'
 
 
 //Flight school components
@@ -126,8 +130,38 @@ const router = new VueRouter({
     {
       path: '/admin',
       name: 'Admin',
-      component: AdminIndex,
-      meta: {requiresAdmin: true}
+      components: {
+        default: AdminIndex,
+        sidenav: AdminMainSideNav
+      },
+      meta: {requiresAdmin: true},
+    },
+    {
+      path: '/admin/campaign/:campaign_id',
+      name: 'AdminCampaign',
+      components: {
+        default: AdminCampaign,
+        sidenav: AdminMainSideNav
+      },
+      meta: {requiresAdmin: true},
+    },
+    {
+      path: '/admin/hist-unit',
+      name: 'AdminHistUnit',
+      components: {
+        default: AdminHistUnit,
+        sidenav: AdminMainSideNav
+      },
+      meta: {requiresAdmin: true},
+    },
+    {
+      path: '/admin/asset',
+      name: 'Asset',
+      components: {
+        default: Assets,
+        sidenav: AdminMainSideNav
+      },
+      meta: {requiresAdmin: true},
     },
     // Flight school routing
     {
