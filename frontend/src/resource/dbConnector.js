@@ -23,6 +23,7 @@ var dbConnector = {
   },
 
   createPOSTPromise: function (caller, url, param) {
+
     var resultData = new Promise(
       function (resolve, reject) {
         axios.post(url, param)
@@ -80,6 +81,10 @@ dbConnector.install =  function(Vue, options) {
 
   Vue.prototype.$dbCon = {
 
+    testConnection: function() {
+       return "Testing connection: Connector listening...";
+    },
+
     callBaEnAuth: function(caller, param) {
 
       if (usePHP) {
@@ -106,9 +111,40 @@ dbConnector.install =  function(Vue, options) {
       }
     },
 
+    insertUpdateData: function(caller, param) {
+
+      if (usePHP) {
+
+        var url = "dataInsertUpdate.php";
+        return dbConnector.createPOSTPromise(caller, url, param);
+
+      } else {
+
+        return dbConnector.createPOSTPromise("pam/" + name);
+      }
+    },
+
+    deleteData: function(caller, param) {
+
+      if (usePHP) {
+
+        var url = "dataDelete.php";
+        return dbConnector.createPOSTPromise(caller, url, param);
+
+      } else {
+
+        return dbConnector.createPOSTPromise("pam/" + name);
+      }
+    },
+
     nestData: function (data) {
       const nestedSetContext = nestedSetContextFactory();
       return nestedSetContext.nest(data);
+    },
+
+    flatData: function (data) {
+      const nestedSetContext = nestedSetContextFactory();
+      return nestedSetContext.flat(data);
     }
   }
 

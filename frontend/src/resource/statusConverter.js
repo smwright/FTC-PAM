@@ -29,6 +29,13 @@ export default {
           "Finished" //2
         ],
 
+      missionStatus:
+        [
+          "Briefing", //0
+          "Debriefing", //1
+          "Closed" //2
+        ],
+
       pilotStatus:
         [
           "OK", //0

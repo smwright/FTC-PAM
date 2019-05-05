@@ -10,6 +10,14 @@ export default {
       } else {
         return null;
       }
+    },
+
+    encodeHTML: function (text) {
+      if(typeof text == 'string') {
+        return  he.encode(text);
+      } else {
+        return null;
+      }
     }
   }
 }
