@@ -37,6 +37,7 @@ DEFAULT CHARACTER SET = latin1;
 CREATE TABLE IF NOT EXISTS `pam`.`acg_unit` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `permanent` TINYINT(1) NOT NULL,
+  `name` VARCHAR(50) NULL DEFAULT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB
 AUTO_INCREMENT = 18
@@ -80,7 +81,7 @@ DEFAULT CHARACTER SET = latin1;
 CREATE TABLE IF NOT EXISTS `pam`.`campaign` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(45) NOT NULL,
-  `primary` TINYINT(1) NOT NULL,
+  `is_primary` TINYINT(1) NOT NULL,
   `platform` INT(11) NOT NULL,
   `campaign_status` INT(10) NOT NULL,
   `time` VARCHAR(45) NOT NULL,
@@ -185,7 +186,7 @@ DEFAULT CHARACTER SET = latin1;
 CREATE TABLE IF NOT EXISTS `pam`.`deployed_unit` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `campaign_id` INT(11) NOT NULL,
-  `acg_unit_id` INT(11) NOT NULL,
+  `acg_unit_id` INT(11) NULL DEFAULT NULL,
   `hist_unit_id` INT(11) NOT NULL,
   `asset_id` INT(11) NULL DEFAULT NULL,
   `report_type` INT(11) NULL DEFAULT NULL,
@@ -230,7 +231,7 @@ CREATE TABLE IF NOT EXISTS `pam`.`report` (
   `synopsis` VARCHAR(15000) NULL DEFAULT NULL,
   `asset_status` INT(11) NOT NULL,
   `pilot_status` INT(11) NOT NULL,
-  `dateSubmitted` DATE NOT NULL,
+  `date_submitted` DATE NOT NULL,
   `accepted` TINYINT(1) NOT NULL,
   `accepted_by` INT(11) NULL DEFAULT NULL,
   PRIMARY KEY (`id`, `mission_id`, `character_id`, `deployed_unit_id`, `asset_id`),
@@ -268,30 +269,29 @@ ENGINE = InnoDB
 AUTO_INCREMENT = 12078
 DEFAULT CHARACTER SET = latin1;
 
+-- -----------------------------------------------------
+-- Table `pam`.`claim`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `pam`.`claim` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `report_id` INT(11) NOT NULL,
+  `asset_id` INT(11) NOT NULL,
+  `description` VARCHAR(500) NULL DEFAULT NULL,
+  `accepted` TINYINT(1) NOT NULL,
+  PRIMARY KEY (`id`, `report_id`, `asset_id`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 144
+DEFAULT CHARACTER SET = latin1;
+
 
 -- -----------------------------------------------------
 -- Table `pam`.`claim_ground`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pam`.`claim_ground` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
-  `report_id` INT(11) NOT NULL,
-  `asset_id` INT(11) NOT NULL,
+  `claim_id` INT(11) NOT NULL,
   `amount` INT(11) NOT NULL,
-  `description` VARCHAR(500) NULL DEFAULT NULL,
-  `accepted` TINYINT(1) NOT NULL,
-  PRIMARY KEY (`id`, `report_id`, `asset_id`),
-  INDEX `fk_claimsground_reports1_idx` (`report_id` ASC),
-  INDEX `fk_claimsground_assets1` (`asset_id` ASC),
-  CONSTRAINT `fk_claimsground_assets1`
-    FOREIGN KEY (`asset_id`)
-    REFERENCES `pam`.`asset` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_claimsground_reports1`
-    FOREIGN KEY (`report_id`)
-    REFERENCES `pam`.`report` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`id`, `claim_id`))
 ENGINE = InnoDB
 AUTO_INCREMENT = 144
 DEFAULT CHARACTER SET = latin1;
@@ -302,8 +302,7 @@ DEFAULT CHARACTER SET = latin1;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pam`.`claim_lw` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
-  `report_id` INT(11) NOT NULL,
-  `asset_id` INT(11) NOT NULL,
+  `claim_id` INT(11) NOT NULL,
   `claim_time` VARCHAR(5) NULL DEFAULT NULL,
   `place` VARCHAR(50) NULL DEFAULT NULL,
   `opponent` VARCHAR(20) NULL DEFAULT NULL,
@@ -312,20 +311,7 @@ CREATE TABLE IF NOT EXISTS `pam`.`claim_lw` (
   `fate_of_crew` INT(11) NOT NULL,
   `witness` INT(11) NULL DEFAULT NULL,
   `confirmed` TINYINT(1) NOT NULL,
-  `accepted` TINYINT(1) NOT NULL,
-  PRIMARY KEY (`id`, `report_id`, `asset_id`),
-  INDEX `fk_claimslw_reports1_idx` (`report_id` ASC),
-  INDEX `fk_claimslw_aeroplanes1_idx` (`asset_id` ASC),
-  CONSTRAINT `fk_claimslw_aeroplanes1`
-    FOREIGN KEY (`asset_id`)
-    REFERENCES `pam`.`asset` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_claimslw_reports1`
-    FOREIGN KEY (`report_id`)
-    REFERENCES `pam`.`report` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`id`, `claim_id`))
 ENGINE = InnoDB
 AUTO_INCREMENT = 2108
 DEFAULT CHARACTER SET = latin1;
@@ -336,29 +322,30 @@ DEFAULT CHARACTER SET = latin1;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `pam`.`claim_raf` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
-  `report_id` INT(11) NOT NULL,
-  `asset_id` INT(11) NOT NULL,
+  `claim_id` INT(11) NOT NULL,
   `enemy_status` INT(11) NOT NULL,
   `shared` TINYINT(1) NULL DEFAULT NULL,
-  `description` VARCHAR(200) NULL DEFAULT NULL,
-  `accepted` TINYINT(1) NOT NULL,
-  PRIMARY KEY (`id`, `report_id`, `asset_id`),
-  INDEX `fk_claimsraf_reports1_idx` (`report_id` ASC),
-  INDEX `fk_claimsraf_aeroplanes1_idx` (`asset_id` ASC),
-  CONSTRAINT `fk_claimsraf_aeroplanes1`
-    FOREIGN KEY (`asset_id`)
-    REFERENCES `pam`.`asset` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_claimsraf_reports1`
-    FOREIGN KEY (`report_id`)
-    REFERENCES `pam`.`report` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`id`, `claim_id`))
 ENGINE = InnoDB
 AUTO_INCREMENT = 6870
 DEFAULT CHARACTER SET = latin1;
 
+
+-- -----------------------------------------------------
+-- Table `pam`.`claim_vvs`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `pam`.`claim_vvs` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `claim_id` INT(11) NOT NULL,
+  `claim_time` VARCHAR(5) NULL DEFAULT NULL,
+  `place` VARCHAR(50) NULL DEFAULT NULL,
+  `witness` INT(11) NULL DEFAULT NULL,
+  `confirmed` TINYINT(1) NOT NULL,
+  `group_claim` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`, `claim_id`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 2108
+DEFAULT CHARACTER SET = latin1;
 
 -- -----------------------------------------------------
 -- Table `pam`.`comment`
@@ -432,7 +419,8 @@ CREATE TABLE IF NOT EXISTS `pam`.`member_status_log` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `member_id` INT(11) NOT NULL,
   `member_status` INT(11) NOT NULL,
-  `date` DATE NOT NULL,
+  `status_date_in` DATE NOT NULL,
+  `status_date_out` DATE NULL DEFAULT NULL,
   `comment` VARCHAR(200) NULL DEFAULT NULL,
   PRIMARY KEY (`id`, `member_id`),
   INDEX `fk_memberstatuslog_acgmembers1_idx` (`member_id` ASC),
@@ -449,15 +437,15 @@ DEFAULT CHARACTER SET = latin1;
 -- -----------------------------------------------------
 -- Table `pam`.`namepool`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `pam`.`namepool` (
-  `id` INT(11) NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(20) NOT NULL,
-  `type` VARCHAR(10) NOT NULL,
-  `faction` INT(11) NOT NULL,
-  PRIMARY KEY (`id`))
-ENGINE = InnoDB
-AUTO_INCREMENT = 1140
-DEFAULT CHARACTER SET = latin1;
+-- CREATE TABLE IF NOT EXISTS `pam`.`namepool` (
+--   `id` INT(11) NOT NULL AUTO_INCREMENT,
+--   `name` VARCHAR(20) NOT NULL,
+--   `type` VARCHAR(10) NOT NULL,
+--   `faction` INT(11) NOT NULL,
+--   PRIMARY KEY (`id`))
+-- ENGINE = InnoDB
+-- AUTO_INCREMENT = 1140
+-- DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
@@ -549,29 +537,29 @@ DEFAULT CHARACTER SET = latin1;
 -- -----------------------------------------------------
 -- Table `pam`.`roster`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `pam`.`roster` (
-  `id` INT(11) NOT NULL AUTO_INCREMENT,
-  `member_id` INT(11) NOT NULL,
-  `deployed_unit_id` INT(11) NOT NULL,
-  `position` INT(11) NOT NULL,
-  `asset_id` INT(11) NOT NULL,
-  `designation` VARCHAR(45) NULL DEFAULT NULL,
-  `image` VARCHAR(45) NULL DEFAULT NULL,
-  PRIMARY KEY (`id`, `member_id`, `deployed_unit_id`),
-  INDEX `fk_roster_acgmembers1_idx` (`member_id` ASC),
-  INDEX `fk_roster_deployed_unit1` (`deployed_unit_id` ASC),
-  CONSTRAINT `fk_roster_acgmembers1`
-    FOREIGN KEY (`member_id`)
-    REFERENCES `pam`.`acg_member` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_roster_deployed_unit1`
-    FOREIGN KEY (`deployed_unit_id`)
-    REFERENCES `pam`.`deployed_unit` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = latin1;
+-- CREATE TABLE IF NOT EXISTS `pam`.`roster` (
+--   `id` INT(11) NOT NULL AUTO_INCREMENT,
+--   `member_id` INT(11) NOT NULL,
+--   `deployed_unit_id` INT(11) NOT NULL,
+--   `position` INT(11) NOT NULL,
+--   `asset_id` INT(11) NOT NULL,
+--   `designation` VARCHAR(45) NULL DEFAULT NULL,
+--   `image` VARCHAR(45) NULL DEFAULT NULL,
+--   PRIMARY KEY (`id`, `member_id`, `deployed_unit_id`),
+--   INDEX `fk_roster_acgmembers1_idx` (`member_id` ASC),
+--   INDEX `fk_roster_deployed_unit1` (`deployed_unit_id` ASC),
+--   CONSTRAINT `fk_roster_acgmembers1`
+--     FOREIGN KEY (`member_id`)
+--     REFERENCES `pam`.`acg_member` (`id`)
+--     ON DELETE NO ACTION
+--     ON UPDATE NO ACTION,
+--   CONSTRAINT `fk_roster_deployed_unit1`
+--     FOREIGN KEY (`deployed_unit_id`)
+--     REFERENCES `pam`.`deployed_unit` (`id`)
+--     ON DELETE NO ACTION
+--     ON UPDATE NO ACTION)
+-- ENGINE = InnoDB
+-- DEFAULT CHARACTER SET = latin1;
 
 
 -- -----------------------------------------------------
@@ -581,7 +569,8 @@ CREATE TABLE IF NOT EXISTS `pam`.`transfer` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `member_id` INT(11) NOT NULL,
   `acg_unit_id` INT(11) NOT NULL,
-  `transfer_date` DATE NOT NULL,
+  `transfer_date_in` DATE NOT NULL,
+  `transfer_date_out` DATE NULL DEFAULT NULL,
   PRIMARY KEY (`id`, `member_id`, `acg_unit_id`),
   INDEX `fk_transfers_acgunits1` (`acg_unit_id` ASC),
   INDEX `fk_transfer_acg_member1_idx` (`member_id` ASC),
