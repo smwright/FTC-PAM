@@ -18,7 +18,13 @@ function whitelist_table($name) {
         "deployed_unit" => array("id"),
         "hist_unit" => array("id"),
         "mission" => array("id"),
-        "briefing" => array("id")
+        "briefing" => array("id"),
+        "claim" => array("id"),
+        "claim_lw" => array("id"),
+        "claim_raf" => array("id"),
+        "claim_vvs" => array("id"),
+        "claim_ground" => array("id"),
+        "comment" => array("id")
     );
 
 
@@ -58,7 +64,7 @@ if(array_key_exists("table", $params)) {
         $delete_counter++;
         mysqli_stmt_bind_param($delete_stmt, "i", $id);
         if (mysqli_stmt_execute($delete_stmt)) {
-            $delete_success += mysqli_stmt_affected_rows($insert_stmt);
+            $delete_success += mysqli_stmt_affected_rows($delete_stmt);
         } else {
             $error_str .= mysqli_error($dbx).", ";
         }

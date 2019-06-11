@@ -26,9 +26,21 @@ function whitelist_table($name) {
         "briefing" => array("mission_id", "faction", "text"),
         "campaign" => array("name", "is_primary", "platform", "campaign_status", "time", "open", "campaign_link",
             "description", "image"),
+        "career_character" => array("personified_by", "first_name", "last_name"),
+        "claim" => array("report_id", "asset_id", "description", "accepted", "accepted_by"),
+        "claim_lw" => array("claim_id", "claim_time", "place", "opponent", "type_of_destruction", "type_of_impact",
+            "fate_of_crew", "witness", "confirmed"),
+        "claim_raf" => array("claim_id", "enemy_status", "shared"),
+        "claim_vvs" => array("claim_id", "claim_time", "place", "witness", "confirmed", "group_claim"),
+        "claim_ground" => array("claim_id", "amount"),
+        "comment" => array("report_id", "member_id", "comment_date", "comment_text"),
         "deployed_unit" => array("campaign_id", "acg_unit_id", "hist_unit_id", "asset_id", "report_type", "lft", "rgt"),
         "hist_unit" => array("name", "code", "faction", "type", "description", "image"),
-        "mission" => array("name", "campaign_id", "real_date", "hist_date", "mission_status")
+        "mission" => array("name", "campaign_id", "real_date", "hist_date", "mission_status"),
+        "report" => array("mission_id", "character_id", "deployed_unit_id", "base", "asset_id", "markings", "synopsis",
+            "asset_status", "pilot_status", "date_submitted", "accepted", "accepted_by"),
+        "report_detail_lw" => array("report_id", "swarm", "swarm_pos"),
+        "report_detail_raf" => array("report_id", "flight", "section", "section_pos", "serial_no")
     );
 
 

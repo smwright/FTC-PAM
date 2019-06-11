@@ -14,26 +14,36 @@ function whitelist_table($name) {
     $available_views = [
         "acg_unit",
         "asset_info",
+        "asset_subtree",
         "briefing",
         "briefing_info",
         "campaign",
         "campaign_list",
         "campaign_info_unit",
+        "campaign_member_latest_unit",
         "campaign_unit_member_info",
         "campaign_unit_plane_asset_status",
         "campaign_mission_info",
+        "character_latest_report",
         "claim_raf_info",
         "claim_lw_info",
+        "claim_vvs_info",
         "claim_ground_info",
         "comment_info",
         "current_unit_members",
+        "member_info_with_last_status",
         "mission_report_nav_list",
+        "mission_member_faction",
+        "mission_member_rank",
+        "random_first_name",
+        "random_last_name",
         "report_info",
-        "report_raf",
-        "report_lw",
+        "report_detail_raf",
+        "report_detail_lw",
         "hist_unit_info",
         "depl_unit_info",
-        "hist_unit"
+        "hist_unit",
+        "report_submission_depl_units"
     ];
 
 //    switch ($name){
@@ -58,8 +68,8 @@ function whitelist_table($name) {
     if(in_array($name, $available_views)){
         return $name;
     } else {
-        header('HTTP/1.1 403 Forbidden');
         echo("Table not white-listed: $name");
+        header('HTTP/1.1 403 Forbidden');
     }
 }
 
@@ -120,7 +130,7 @@ if(filter_has_var(INPUT_GET, "view")) {
         echo (json_encode(mysqli_fetch_all($result, MYSQLI_ASSOC),JSON_NUMERIC_CHECK));
     } else {
 //        echo("Empty result: ".var_export($result, true));
-        echo (json_encode(null));
+        echo (json_encode([]));
     }
 }
 mysqli_stmt_close($stmt);
