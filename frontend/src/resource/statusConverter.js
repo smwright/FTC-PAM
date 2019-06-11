@@ -55,7 +55,8 @@ export default {
         [
           {short: "", long: ""}, //0
           {short: "LW", long:"Luftwaffe"}, //1
-          {short: "RAF", long:"Royal Air Force"} //2
+          {short: "RAF", long:"Royal Air Force"}, //2
+          {short: "VVS", long:"Voyenno-Vozdushnye Sily Rossii"} //3
         ],
 
       flightStatus:
@@ -109,8 +110,8 @@ export default {
           "Staffelführer", //0
           "Schwarmführer", //1
           "Rottenführer", //2
-          "Katschmarek", //4
-          "N/A" //5
+          "Katschmarek", //3
+          "N/A" //4
         ],
 
       claimLWTypeOfDestruction:

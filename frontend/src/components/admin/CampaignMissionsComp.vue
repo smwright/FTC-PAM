@@ -9,7 +9,7 @@
             <MissionHeader
               v-bind="{
               real_date: real_date,
-              mission_name: mission_name,
+              name: mission_name,
               hist_date: hist_date,
               mission_status: mission_status
              }"
@@ -45,7 +45,14 @@
           <!--Scheduled date-->
           <div>
             <label>Scheduled date:</label>
-            <date-picker v-model="real_date" v-bind:clearable="false" v-bind:lang="'en'"></date-picker>
+            <date-picker
+              v-model="real_date"
+              lang="en"
+              type="datetime"
+              format="YYYY-MM-DD"
+              value-type="format"
+              v-bind:clearable="false">
+            </date-picker>
           </div>
 
           <!--Historic date-->

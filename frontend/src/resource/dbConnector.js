@@ -145,6 +145,12 @@ dbConnector.install =  function(Vue, options) {
     flatData: function (data) {
       const nestedSetContext = nestedSetContextFactory();
       return nestedSetContext.flat(data);
+    },
+
+    sendForumPM: function(caller, param) {
+
+      var url = "sendForumPM.php";
+      return dbConnector.createPOSTPromise(caller, url, param);
     }
   }
 

@@ -19,6 +19,9 @@ import CampaignInfoSideNav from '../components/campaign/SideNav'
 import CampaignInfoMissionUnitsSideNav from '../components/campaign/MissionUnitSideNav'
 import Report from '../components/campaign/Report'
 
+//Report submission
+import ReportCharacterSelection from '../components/campaign/ReportCharacterSelection'
+
 //Administration
 import AdminIndex from '../components/admin/AdminIndex'
 import AdminMainSideNav from '../components/admin/AdminMainSideNav'
@@ -120,6 +123,13 @@ const router = new VueRouter({
               name: 'Report',
               components: {
                 mission_lobby_content: Report
+              }
+            },
+            {
+              path: 'addReport/',
+              name: 'AddReport',
+              components: {
+                mission_lobby_content: ReportCharacterSelection
               }
             }
           ]

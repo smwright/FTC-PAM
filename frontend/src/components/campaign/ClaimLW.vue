@@ -12,11 +12,13 @@
       <tr>
         <td>{{ claim_time }}</td>
         <td>{{ place }}</td>
-        <td>{{ asset_name }}</td>
+        <td>{{ assetById(asset_id).name }}</td>
         <td>{{ opponent }}</td>
-        <td v-if="accepted == 1">Approved</td>
-        <td v-else-if="accepted == -1">Rejected</td>
-        <td v-else></td>
+        <td>
+          <ClaimApprovalComp
+            v-bind="{claim_id: this.claim_id, claim_type:'aerial'}"
+          ></ClaimApprovalComp>
+        </td>
       </tr>
       <tr>
         <td>Type of destruction:</td>
@@ -29,9 +31,13 @@
         <td>{{ claimLWTypeOfDestruction[type_of_destruction] }}</td>
         <td>{{ claimLWTypeOfImpact[type_of_impact] }}</td>
         <td>{{ claimLWFateOfCrew[fate_of_crew] }}</td>
-        <td>{{ witness_callsign }}</td>
-        <td v-if="confirmed">Confirmed</td>
+        <td v-if="witness_id !== null">{{ memberById(witness_id).callsign }}</td>
         <td v-else></td>
+        <td>
+          <ClaimConfirmationComp
+          v-bind="{claim_id: this.claim_id, claim_detail_id: this.claim_detail_id}"
+          ></ClaimConfirmationComp>
+        </td>
       </tr>
 
     </table>
@@ -42,6 +48,9 @@
 <script>
 import stringConv from "../../resource/stringConverter"
 import statConv from "../../resource/statusConverter"
+import ClaimApprovalComp from "./ClaimApprovalComp"
+import ClaimConfirmationComp from "./ClaimConfirmationComp"
+import { mapGetters } from "vuex"
 
 export default {
   name: "ClaimLW",
@@ -49,13 +58,25 @@ export default {
     statConv,
     stringConv
   ],
+  components: {
+    ClaimApprovalComp,
+    ClaimConfirmationComp
+  },
   props: {
-    asset_name: {
-      type: String,
+    claim_id: {
+      type: Number,
+      default: null
+    },
+    claim_detail_id: {
+      type: Number,
       default: null
     },
     claim_time: {
-      type: String,
+      type: [Number, String],
+      default: null
+    },
+    asset_id: {
+      type: Number,
       default: null
     },
     place: {
@@ -63,7 +84,7 @@ export default {
       default: null
     },
     opponent: {
-      type: String,
+      type: [Number, String],
       default: null
     },
     type_of_destruction: {
@@ -82,10 +103,6 @@ export default {
       type: Number,
       default: 0
     },
-    witness_callsign: {
-      type: String,
-      default: null
-    },
     confirmed: {
       type: Number,
       default: 0
@@ -94,6 +111,12 @@ export default {
       type: Number,
       default: 0
     }
+  },
+  computed: {
+    ...mapGetters("missionStore", [
+      "assetById",
+      "memberById"
+    ])
   }
 }
 </script>

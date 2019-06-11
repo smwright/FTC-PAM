@@ -304,16 +304,16 @@ export default {
 
     addUnit: function () {
 
+      var flatData = this.$dbCon.flatData(this.$refs.tree.getRawData());
+      var min_id = flatData.reduce((min, unit) => Math.min(min, unit.id, 0), state.unit.id);
       var node =
         {
           acg_unit_id: null,
           asset_id: null,
           campaign_id: this.campaign_id,
-          hist_unit_id: 0,
-          id: -1,
+          hist_unit_id: min_id - 1,
           report_type: null
         };
-
       this.$refs.tree.addNode(node);
     },
 
@@ -341,6 +341,7 @@ export default {
 
       if(this.units_clone_id !== null) {
 
+        var unit_id = -1;
         var campaign_id = this.campaign_id;
         var units = this.$store.getters['campaignAdmin/unitsById'](this.units_clone_id);
         if (units === undefined) {
@@ -349,7 +350,7 @@ export default {
             .then(response => {
               var flatData = response;
               flatData.forEach(function (unit) {
-                unit.id = -1;
+                unit.id = unit_id--;
                 unit.campaign_id = campaign_id;
               });
               this.units = this.$dbCon.nestData(flatData);
@@ -364,7 +365,7 @@ export default {
 
           var flatData = this.$dbCon.flatData(units);
           flatData.forEach(function (unit) {
-            unit.id = -1;
+            unit.id = unit_id--;
             unit.campaign_id = campaign_id;
           });
           this.units = this.$dbCon.nestData(flatData);
@@ -380,11 +381,14 @@ export default {
     addMission: function () {
 
       var now = new Date();
+      var year = now.getFullYear();
+      var month = now.getMonth() + 1;
+      var day = now.getDate();
       this.$store.commit('campaignAdmin/addMission',
         {
           name: 'New Mission',
           campaign_id: this.campaign_id,
-          real_date: now.getFullYear()+"-"+now.getMonth()+"-"+now.getDate(),
+          real_date: year+"-"+month+"-"+day,
           hist_date: "1939-09-01 00:00",
           mission_status: 0
         });
@@ -440,11 +444,19 @@ export default {
          // ------------------------------------------------------------------------
          // Sending updated deployed units to the backend
          // ------------------------------------------------------------------------
-          return this.$dbCon.insertUpdateData(this.$options.name, {table: "deployed_unit", payload: flatData})
+        return this.$dbCon.insertUpdateData(this.$options.name, {table: "deployed_unit", payload: flatData})
 
       }).then(response => {
 
          this.dbStatus += " Unit update: " + response.message;
+         var flatData = this.$dbCon.flatData(this.$refs.tree.getRawData());
+         for(var i = 0; i < response.insert_id.length; i++ ){
+
+           var index = flatData.findIndex(item => item.id === response.insert_id[i].old_id);
+           flatData[index].id = response.insert_id[i].new_id;
+
+         }
+         this.units = this.$dbCon.nestData(flatData);
         // ------------------------------------------------------------------------
         // Deleting marked deployed units in the database
         // ------------------------------------------------------------------------

@@ -7,7 +7,8 @@
       v-bind:key="briefing.id"
       v-bind="{routeName: 'Briefing', routeParams: {briefing_faction: briefing.faction}}"
     >
-      {{ factionStatus[briefing.faction].long }}
+      <template v-if="briefing.faction === 0">General</template>
+      <template v-else>{{ factionStatus[briefing.faction].long }}</template>
     </DivLinkButton>
   </div>
 </template>

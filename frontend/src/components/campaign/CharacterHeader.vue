@@ -1,10 +1,9 @@
 <template>
   <div class="heading">
-      <span>{{ real_date }}</span>
-      <span>{{ name }}</span>
-      <span>({{ hist_date }})</span>
+      <span>{{rank_abreviation}}</span>
+      <span>{{first_name}} {{last_name}}</span>
     <div class="inline float-right">
-      <span>{{ missionStatus[mission_status] }}</span>
+      <span>{{pilotStatus[character_status]}}</span>
     </div>
   </div>
 </template>
@@ -13,29 +12,25 @@
 import statConv from "../../resource/statusConverter"
 
 export default {
-  name: "MissionHeader",
+  name: "CharacterHeader",
   mixins: [statConv],
   props: {
-    id: {
+    first_name: {
+      type: String,
+      default: null
+    },
+    last_name: {
+      type: String,
+      default: null
+    },
+    rank_abreviation: {
+      type: String,
+      default: null
+    },
+    character_status: {
       type: Number,
       default: null
     },
-    name: {
-      type: String,
-      default: null
-    },
-    real_date: {
-      type: String,
-      default: null
-    },
-    hist_date: {
-      type: String,
-      default: null
-    },
-    mission_status: {
-      type: Number,
-      default: null
-    }
   },
 }
 </script>

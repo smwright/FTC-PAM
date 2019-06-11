@@ -3,11 +3,13 @@
     <hr>
     <table>
       <tr>
-        <td>{{ asset_name }}</td>
+        <td>{{ assetById(asset_id).name }}</td>
         <td>{{ amount }}</td>
-        <td v-if="accepted == 1">Approved</td>
-        <td v-else-if="accepted == -1">Rejected</td>
-        <td v-else></td>
+        <td>
+          <ClaimApprovalComp
+            v-bind="{claim_id: this.claim_id, claim_type:'ground'}"
+          ></ClaimApprovalComp>
+        </td>
       </tr>
       <tr>
         <td colspan="3">{{ decodeHTML(description) }}</td>
@@ -18,19 +20,28 @@
 
 <script>
 import stringConv from "../../resource/stringConverter"
+import ClaimApprovalComp from "./ClaimApprovalComp"
+import { mapGetters } from "vuex"
 
 export default {
   name: "ClaimGround",
   mixins: [
     stringConv
   ],
+  components: {
+    ClaimApprovalComp
+  },
   props: {
+    claim_id: {
+      type: Number,
+      default: null,
+    },
     description: {
-      type: String,
+      type: [String, Number],
       default: null
     },
-    asset_name: {
-      type: String,
+    asset_id: {
+      type: Number,
       default: null
     },
     amount: {
@@ -41,6 +52,11 @@ export default {
       type: Number,
       default: 0
     }
+  },
+  computed: {
+    ...mapGetters("missionStore", [
+      "assetById",
+    ])
   }
 }
 </script>

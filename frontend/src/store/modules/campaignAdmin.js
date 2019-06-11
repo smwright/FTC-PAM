@@ -1,6 +1,6 @@
-// initial state
 import Vue from "vue"
 
+// initial state
 const state = {
 
   campaigns: [
@@ -294,7 +294,12 @@ const mutations = {
     if (briefings !== undefined) {
       briefings.text = payload.text;
     } else {
-      payload.id = -1;
+      if(state.briefings.length > 0){
+        var min_id = state.briefings.reduce((min, briefings) => Math.min(min, briefings.id, 0), state.briefings[0].id);
+        payload.id = min_id - 1;
+      } else {
+        payload.id = -1;
+      }
       state.briefings.push(payload);
     }
   },
@@ -335,7 +340,7 @@ const  actions = {
 
     return new Promise(function (resolve, reject) {
 
-      var campaign = context.getters.campaignById(payload.campaign_id);
+      var campaign = JSON.parse(JSON.stringify(context.getters.campaignById(payload.campaign_id)));
       Vue.prototype.$dbCon.insertUpdateData("campaignAdmin on behalf of "+payload.caller,
         {
           table: "campaign",
@@ -404,7 +409,7 @@ const  actions = {
     return new Promise(function (resolve, reject) {
       if (context.state.controllable_assets.length === 0) {
         Vue.prototype.$dbCon.requestViewData("campaignAdmin on behalf of " + payload.caller,
-          {view: "asset_info", controlable: 1})
+          {view: "asset_subtree", parent_name: "Aircraft"})
           .then(response => {
 
             context.commit("setControllableAsset", response);
@@ -567,6 +572,7 @@ const  actions = {
 
           // Updating mission and briefing id's after mission insert in the databse
           for(var i = 0; i < response.insert_id.length; i++) {
+
 
             context.commit('updateValue',
               {

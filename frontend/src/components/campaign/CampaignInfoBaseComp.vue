@@ -49,7 +49,7 @@
       is_primary: Number,
       campaign_status: Number,
       platform: Number,
-      time: String,
+      time: [String, Number],
       units: Number,
       missions: Number,
       sorties: Number,

@@ -14,6 +14,7 @@
 <script>
 import MissionHeader from "./MissionHeader";
 import DivLinkButton from "../basic_comp/DivLinkButton";
+import { mapState } from "vuex"
 
 export default {
   name: 'Mission',
@@ -23,20 +24,32 @@ export default {
   },
   mounted () {
 
-    this.$dbCon.requestViewData(this.$options.name, {view:"campaign_mission_info", campaign_id:this.$route.params.campaign_id})
-      .then(response => {
-        this.campaign_missions = this.$dbCon.nestData(response);
-      })
+    // this.$dbCon.requestViewData(this.$options.name, {view:"campaign_mission_info", campaign_id:this.$route.params.campaign_id})
+    //   .then(response => {
+    //     this.campaign_missions = this.$dbCon.nestData(response);
+    //   })
+    //   .catch(error => {
+    //     console.log(error.message);
+    //   });
+    this.$store.commit('missionStore/clearMissions');
+    this.$store.dispatch('missionStore/loadMissions', {caller: this.$options.name, campaign_id: this.campaign_id})
       .catch(error => {
         console.log(error.message);
       });
+
   },
   data () {
     return {
-      campaign_missions: null,
+      // campaign_missions: null,
       campaign_id: this.$route.params.campaign_id,
     }
   },
+  computed: {
+
+    ...mapState("missionStore", {
+      campaign_missions: state => state.missions
+    })
+  }
 }
 
 

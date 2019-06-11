@@ -2,12 +2,12 @@
   <div class="mainContainer">
     <div>
       <div class="inline">
-        <button v-if="children.length >0" v-on:click.stop="toggleChildUnits">{{showChildUnitsButtonText}}</button>
-        <button v-if="reports.length >0" v-on:click.stop="toggleReports">{{showReportsButtonText}}</button>
+        <button v-show="children.length >0" v-on:click.stop="toggleChildUnits">{{showChildUnitsButtonText}}</button>
+        <button v-show="reports.length >0" v-on:click.stop="toggleReports">{{showReportsButtonText}}</button>
         <span class="heading">{{ name }}</span>
       </div>
     </div>
-    <div v-if="showChildUnits" v-for="child in children">
+    <div v-show="showChildUnits" v-for="child in children">
       <MissionUnitsSideNavBaseComp v-bind="child"></MissionUnitsSideNavBaseComp>
     </div>
     <DivLinkButton
@@ -16,7 +16,7 @@
       v-bind:key="report.report_id"
       v-bind="{routeName: 'Report', routeParams: {report_id: report.report_id}}"
     >
-     {{report.abreviation}} {{report.first_name}} '{{report.callsign}}' {{report.last_name}}
+     {{report.abreviation}} {{ decodeHTML(report.first_name) }} '{{report.callsign}}' {{ decodeHTML(report.last_name) }}
     </DivLinkButton>
   </div>
 </template>
@@ -24,13 +24,17 @@
 <script>
 import MissionUnitsSideNavBaseComp from "./MissionUnitSideNavBaseComp";
 import DivLinkButton from "../basic_comp/DivLinkButton";
+import stringConv from "../../resource/stringConverter"
 
   export default {
     name: "MissionUnitsSideNavBaseComp",
     components: {
       MissionUnitsSideNavBaseComp,
-      DivLinkButton
+      DivLinkButton,
     },
+    mixins: [
+      stringConv
+    ],
     props: {
       id: {
         type: Number,
@@ -47,8 +51,8 @@ import DivLinkButton from "../basic_comp/DivLinkButton";
     data () {
       return {
         reports: [],
-        showChildUnits: false,
-        showChildUnitsButtonText: "+",
+        showChildUnits: true,
+        showChildUnitsButtonText: "-",
         showReports: false,
         showReportsButtonText: "+",
       }

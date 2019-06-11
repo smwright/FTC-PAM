@@ -70,7 +70,7 @@
     <div class="clearfix">
       <div class="inline-table float-left half-width">
         <label>Open</label>
-        <input type="checkbox" id="checkbox" v-model="open" true-value="1" false-value="0">
+        <input type="checkbox" id="open" v-model="open" true-value="1" false-value="0">
       </div>
       <div class="inline-table float-right half-width">
         <span>Open campaigns are accessible for non-acg members.</span>

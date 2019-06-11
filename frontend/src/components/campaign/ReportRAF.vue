@@ -21,7 +21,7 @@
 
     <div>
       <span>Name:</span>
-      <span> {{ abreviation }} {{ first_name }} '{{ callsign }}' {{ last_name }}</span>
+      <span> {{ abreviation }} {{ decodeHTML(first_name) }} '{{ callsign }}' {{ decodeHTML(last_name) }}</span>
     </div>
 
     <div>
@@ -87,6 +87,7 @@
       <hr>
     </div>
 
+    <ReportApprovalComp></ReportApprovalComp>
     <Comment></Comment>
   </div>
 </template>
@@ -96,12 +97,15 @@ import stringConv from "../../resource/stringConverter"
 import statConv from "../../resource/statusConverter"
 import ClaimRAF from "./ClaimRAF"
 import Comment from "./Comment"
+import ReportApprovalComp from "./ReportApprovalComp"
+import { mapState } from "vuex"
 
 export default {
   name: "ReportRAF",
   components: {
     ClaimRAF,
-    Comment
+    Comment,
+    ReportApprovalComp
   },
   mixins: [
     stringConv,
@@ -145,7 +149,7 @@ export default {
       default: null
     },
     markings: {
-      type: String,
+      type: [String, Number],
       default: null
     },
     synopsis: {
@@ -171,35 +175,19 @@ export default {
   },
   mounted () {
 
-    this.$dbCon.requestViewData(this.$options.name, {view:"report_raf", report_id:this.$route.params.report_id})
-      .then(response => {
-        this.report_details = response[0];
-      })
-      .catch(error => {
-        console.log(error.message);
-      });
-    this.$dbCon.requestViewData(this.$options.name, {view:"claim_raf_info", report_id:this.$route.params.report_id})
-      .then(response => {
-        this.aerial_claims = response;
-      })
-      .catch(error => {
-        console.log(error.message);
-      });
-    this.$dbCon.requestViewData(this.$options.name, {view:"claim_ground_info", report_id:this.$route.params.report_id})
-      .then(response => {
-        this.ground_claims = response;
-      })
-      .catch(error => {
-        console.log(error.message);
-      });
   },
   data () {
     return {
-      report_details: {},
-      aerial_claims: {},
-      ground_climas: {}
     }
   },
+  computed: {
+
+    ...mapState("missionStore", {
+      report_details: state => state.report_details,
+      aerial_claims: state => state.aerial_claims,
+      ground_claims: state => state.ground_claims
+    }),
+  }
 }
 </script>
 
