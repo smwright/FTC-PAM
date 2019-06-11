@@ -2,15 +2,12 @@ CREATE
     ALGORITHM = UNDEFINED 
     DEFINER = `root`@`localhost` 
     SQL SECURITY DEFINER
-VIEW `rank_lookup` AS
+VIEW `rank_translation` AS
     SELECT 
-        `rank_translation`.`real_value` AS `real_value`,
-        `rank`.`name` AS `rank_name`,
-        `rank`.`abreviation` AS `abreviation`,
-        `rank`.`value` AS `disp_value`,
-        `rank`.`faction` AS `faction`,
-        `rank`.`image` AS `image`
+        `rank`.`value` AS `real_value`,
+        MIN(`x`.`value`) AS `disp_value`,
+        `x`.`faction` AS `faction`
     FROM
         (`rank`
-        JOIN `rank_translation` ON (((`rank_translation`.`disp_value` = `rank`.`value`)
-            AND (`rank_translation`.`faction` = `rank`.`faction`))))
+        LEFT JOIN `rank` `x` ON ((`x`.`value` >= `rank`.`value`)))
+    GROUP BY `rank`.`value` , `x`.`faction`

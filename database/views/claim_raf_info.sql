@@ -8,7 +8,9 @@ VIEW `claim_raf_info` AS
         `claim`.`report_id` AS `report_id`,
         `claim`.`description` AS `description`,
         `claim`.`accepted` AS `accepted`,
+        `claim`.`accepted_by` AS `accepted_by`,
         `asset`.`name` AS `asset_name`,
+        `claim_raf`.`id` AS `claim_detail_id`,
         `claim_raf`.`enemy_status` AS `enemy_status`,
         `claim_raf`.`shared` AS `shared`
     FROM

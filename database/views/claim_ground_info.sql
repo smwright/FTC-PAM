@@ -8,9 +8,10 @@ VIEW `claim_ground_info` AS
         `claim`.`report_id` AS `report_id`,
         `claim`.`description` AS `description`,
         `claim`.`accepted` AS `accepted`,
-        `asset`.`name` AS `asset_name`,
+        `claim`.`accepted_by` AS `accepted_by`,
+        `claim`.`asset_id` AS `asset_id`,
+        `claim_ground`.`id` AS `claim_detail_id`,
         `claim_ground`.`amount` AS `amount`
     FROM
-        ((`claim`
+        (`claim`
         JOIN `claim_ground` ON ((`claim_ground`.`claim_id` = `claim`.`id`)))
-        JOIN `asset` ON ((`asset`.`id` = `claim`.`asset_id`)))

@@ -278,6 +278,7 @@ CREATE TABLE IF NOT EXISTS `pam`.`claim` (
   `asset_id` INT(11) NOT NULL,
   `description` VARCHAR(500) NULL DEFAULT NULL,
   `accepted` TINYINT(1) NOT NULL,
+  `accepted_by` INT(11) NULL DEFAULT NULL,
   PRIMARY KEY (`id`, `report_id`, `asset_id`))
 ENGINE = InnoDB
 AUTO_INCREMENT = 144
