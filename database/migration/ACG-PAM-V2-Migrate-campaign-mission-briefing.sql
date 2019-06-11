@@ -1,7 +1,7 @@
 INSERT INTO `campaign`
 (`id`,
 `name`,
-`primary`,
+`is_primary`,
 `platform`,
 `campaign_status`,
 `time`,
@@ -33,6 +33,7 @@ FROM `missions`;
 UPDATE `mission` SET `mission_status` = `mission_status` - 1;
 UPDATE `briefings` SET `faction` = 1 WHERE `faction` = 'LW';
 UPDATE `briefings` SET `faction` = 2 WHERE `faction` = 'RAF';
+UPDATE `briefings` SET `faction` = 3 WHERE `faction` = 'VVS';
 
 DELETE FROM `briefings`
 WHERE briefings.missionID NOT IN (SELECT missions.id FROM missions);

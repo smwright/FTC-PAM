@@ -161,7 +161,7 @@ DROP TABLE IF EXISTS `campaign`;
 CREATE TABLE `campaign` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(45) NOT NULL,
-  `primary` tinyint(1) NOT NULL,
+  `is_priority` tinyint(1) NOT NULL,
   `platform` int(11) NOT NULL,
   `campaign_status` int(10) NOT NULL,
   `time` varchar(45) NOT NULL,

@@ -4,7 +4,7 @@ INSERT INTO `member_status_log`
 (`id`,
 `member_id`,
 `member_status`,
-`date`,
+`status_date_in`,
 `comment`)
 SELECT `memberstatuslog`.`id`,
     `memberstatuslog`.`memberID`,
@@ -12,6 +12,9 @@ SELECT `memberstatuslog`.`id`,
     `memberstatuslog`.`date`,
     `memberstatuslog`.`comment`
 FROM `memberstatuslog`;
+
+
+CALL `pam`.`PAM_update_status_date_out`();
 
 UPDATE `member_status_log` SET `member_status` = `member_status` - 1;
 DROP TABLE memberstatus;

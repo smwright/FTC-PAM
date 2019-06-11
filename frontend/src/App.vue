@@ -1,8 +1,9 @@
 <template>
   <div id="app">
-    <div class="navbar">
+    <div class="clearfix">
       <!--Navbar for main navigation.-->
-      <navbar></navbar>
+      <navbar class="float-left navbar"></navbar>
+      <div class="float-right">{{this.$session.get('username')}}</div>
     </div>
     <div class="clearfix">
       <!--Clearfix is used to help align sidenav and main divs horizonatally next to-->
@@ -28,6 +29,9 @@ export default {
   name: 'App',
   components: {
     'navbar': Navbar
+  },
+  mounted() {
+    this.$auth.syncSession(this.$options.name);
   }
 }
 </script>
@@ -73,6 +77,7 @@ tr,td {
 
 .navbar {
   height: 50px;
+  width: calc(80% - 2px); /* Whished widht in % minus 2x border size */
   border: 1px green solid;
 }
 
@@ -98,12 +103,28 @@ tr,td {
 }
 
 /*General quick style aspects*/
-.full-width {
+.full-width{
   width: 100%;
 }
 
-.inline{
+.half-width{
+  width: calc(50% - 2px);
+}
+
+.width-80{
+  width: 80%;
+}
+
+.width-auto{
+  width: auto;
+}
+
+.inline-block{
   display: inline-block;
+}
+
+.table {
+  display: table;
 }
 
 .float-left{
@@ -114,29 +135,96 @@ tr,td {
   float: right;
 }
 
-/*Styles for listing elements (members list, campaigns list, missions list....)*/
-
-.link-list{
-  margin: 10px 2px 10px 2px;
-  cursor: pointer;
-}
-
-.link-list:hover {
-  background: gray;
-}
-
-.link-list-heading{
+.heading{
   font-weight: bold;
   font-size: 1.2em;
 }
 
-.multi-line-link-button {
-  display: inline-block;
+.white-space-pre-line{
+  white-space: pre-line;
 }
 
-.multi-line-link-button span {
-  margin: 10px;
-  width: auto;
+
+/*Clearly visible div to mark placeholders for elements that haven't been added to the pam yet*/
+.to-add{
+  font-weight: bold;
+  color: yellow;
+  border: 2px yellow dashed;
+  background-color: black;
 }
+
+/*Styles for listing elements (members list, campaigns list, missions list....)*/
+
+/*.link-list{*/
+  /*margin: 10px 2px 10px 2px;*/
+  /*cursor: pointer;*/
+/*}*/
+
+/*.link-list:hover {*/
+  /*background: gray;*/
+/*}*/
+
+/*.link-list-heading{*/
+  /*font-weight: bold;*/
+  /*font-size: 1.2em;*/
+/*}*/
+
+/*.multi-line-link-button {*/
+  /*display: inline-block;*/
+/*}*/
+
+/*.multi-line-link-button span {*/
+  /*margin: 10px;*/
+  /*width: auto;*/
+/*}*/
+
+/*CSS FOR draggable-nested-tree*/
+
+DraggableTree div {
+  border: none
+}
+
+.he-tree{
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+
+.tree-node{
+}
+
+.tree-node {
+  border: none
+}
+
+.tree-node-children{
+  border: none
+}
+
+.tree-node-inner{
+  padding: 5px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.tree-node-inner div {
+  border: 1px solid red
+}
+
+.tree-node-inner-back{
+  border: none
+}
+.draggable-placeholder{
+}
+.draggable-placeholder-inner{
+  border: 1px dashed #0088F8;
+  box-sizing: border-box;
+  background: rgba(0, 136, 249, 0.09);
+  color: #0088f9;
+  text-align: center;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
 
 </style>

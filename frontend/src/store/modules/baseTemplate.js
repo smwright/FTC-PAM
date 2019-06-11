@@ -2,13 +2,13 @@
 const state = {}
 
 // getters
-const getters{}
-
-// actions
-const  actions = {}
+const getters = {}
 
 // mutations
 const mutations = {}
+
+// actions
+const  actions = {}
 
 export default {
   namespaced: true,
