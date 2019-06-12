@@ -1,11 +1,11 @@
 <template>
   <div id="app">
-    <div class="clearfix">
+    <div class="clearfix navbar">
       <!--Navbar for main navigation.-->
-      <navbar class="float-left navbar"></navbar>
+      <Navbar class="float-left"></Navbar>
       <div class="float-right">{{this.$session.get('username')}}</div>
     </div>
-    <div class="clearfix">
+    <div class="clearfix contentWrapper">
       <!--Clearfix is used to help align sidenav and main divs horizonatally next to-->
       <!--each other.-->
       <div class="sidenav">
@@ -14,21 +14,26 @@
         <router-view name="sidenav"></router-view>
       </div>
       <div class="main">
+        <!--<EventLog></EventLog>-->
         <!--The main view is where all the content appart from navigation menues goes.-->
         <router-view/>
       </div>
+      <div class="full-main">
+        <router-view name="fullmain"></router-view>
+      </div>
     </div>
-
   </div>
 </template>
 
 <script>
 import Navbar from './components/Navbar'
+import EventLog from './components/EventLog'
 
 export default {
   name: 'App',
   components: {
-    'navbar': Navbar
+    Navbar,
+    EventLog
   },
   mounted() {
     this.$auth.syncSession(this.$options.name);
@@ -38,20 +43,59 @@ export default {
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: Roboto, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /*margin-top: 60px;*/
-  /*max-width: 480px;*/
-  margin: 1%;
+
 }
 
-div {
-  border: 1px red solid;
+@font-face {
+  font-family: "Remingtoned Type";
+  src: url("/static/TypewriterFont.ttf");
 }
 
-h1 {
-  clear: both;
+body {
+  width: 1800px;
+  background:url("http://www.mediafire.com/convkey/abbb/i1nbz888niblfoqzg.jpg");
+  background-color: #FFFFFF;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: 10px;
+  color: #ffffff;
+  font-size: 17px;
+}
+
+.contentWrapper {
+  width: calc(100% - 20px);
+  min-height: 800px;
+  padding: 10px;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 15px;
+  border-color: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.navbar {
+  height: 50px;
+  width: calc(100% - 20px);; /* Whished widht in % minus 2x border size */
+  padding: 10px;
+  list-style: none;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 15px;
+  border-color: rgba(0, 0, 0, 0.4);
+  background: rgba(101, 21, 22, .8);
+  text-align: center;
+  display: table;
+}
+
+h1, h2, h3, h4{
+  color: #F28900;
+  padding: 2px 0px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0))
 }
 
 ul {
@@ -75,10 +119,48 @@ tr,td {
   /*border: 1px solid green;*/
 }
 
-.navbar {
-  height: 50px;
-  width: calc(80% - 2px); /* Whished widht in % minus 2x border size */
-  border: 1px green solid;
+button {
+
+  text-align: center;
+  padding: 5px;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
+  border-color: rgba(0, 0, 0, 0.4);
+  background-color: rgb(255, 255, 255);
+}
+
+button:hover {
+
+  text-align: center;
+  padding: 5px;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
+  color: rgb(255, 255, 255);
+  border-color: #F28900;
+  background-color: rgb(95, 95, 95);
+}
+
+input, textarea {
+
+  border:none;
+  background: rgba(255, 255, 255, 0.5);
+  border-color: #646464;
+  border-radius: 5px;
+  padding: 5px;
+  color: #1b1b1b;
+}
+
+select {
+
+  border: none;
+  background: rgba(255, 255, 255, 0.5);
+  border-color: #646464;
+  border-radius: 2px;
+  padding: 2px;
+  margin: 2px;
+  color: #1b1b1b;
 }
 
 .clearfix::after {
@@ -89,8 +171,10 @@ tr,td {
 
 .sidenav {
   float: left;
-  width: calc(20% - 2px); /* Whished widht in % minus 2x border size */
-  border: 1px blue solid;
+  min_width: calc(20% - 7px);
+  width: calc(20% - 7px); /* Whished widht in % minus 2x border size */
+  padding-right: 5px;
+  /*border: 1px blue solid;*/
 }
 
 .sidenav a{
@@ -99,7 +183,50 @@ tr,td {
 
 .main {
   float: left;
-  width: calc(80% - 2px); /* Whished widht in % minus 2x border size */
+  width: calc(80% - 7px); /* Whished widht in % minus 2x border size */
+  padding-left: 5px;
+}
+
+.container {
+  margin: 10px 2px 10px 2px;
+  padding: 10px;
+  border-style: solid;
+  border-width: 0px;
+  border-radius: 15px;
+  border-color: rgba(0, 0, 0, 0.0);
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.side-nav-heading {
+
+  color: #F28900;
+  padding: 5px;
+  border-radius: 10px;
+  text-align: center;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0))
+
+}
+
+.div-button{
+
+  width: calc(100% - 26px);
+  margin: 10px 2px 10px 2px;
+  padding: 10px;
+  cursor: pointer;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 15px;
+  border-color: rgba(0, 0, 0, 0.0);
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.div-button:hover {
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 15px;
+  border-color: #F28900;
+  background: rgba(0, 0, 0, 0.4);
+
 }
 
 /*General quick style aspects*/
@@ -113,6 +240,10 @@ tr,td {
 
 .width-80{
   width: 80%;
+}
+
+.width-30{
+  width: 30%;
 }
 
 .width-auto{
@@ -144,48 +275,66 @@ tr,td {
   white-space: pre-line;
 }
 
+/*Style for typewriter on paper look*/
 
-/*Clearly visible div to mark placeholders for elements that haven't been added to the pam yet*/
-.to-add{
-  font-weight: bold;
-  color: yellow;
-  border: 2px yellow dashed;
-  background-color: black;
+.typed-on-paper {
+  background: rgb(243, 231, 146);
+  border-radius: 2px;
+  padding: 30px;
+  color: #1b1b1b;
+  font-family: "Remingtoned Type";
+  box-shadow: 10px 10px 10px rgba(10,10,10,0.5);
 }
 
-/*Styles for listing elements (members list, campaigns list, missions list....)*/
+.typed-on-paper button {
 
-/*.link-list{*/
-  /*margin: 10px 2px 10px 2px;*/
-  /*cursor: pointer;*/
-/*}*/
+  background: rgba(0, 0, 0, 0);
+  border-color: #646464;
+  color: #1b1b1b;
+  font-family: "Remingtoned Type";
+}
 
-/*.link-list:hover {*/
-  /*background: gray;*/
-/*}*/
+.typed-on-paper button:hover {
 
-/*.link-list-heading{*/
-  /*font-weight: bold;*/
-  /*font-size: 1.2em;*/
-/*}*/
+  background: rgba(255, 255, 255, 0.5);
+  border-color: #646464;
+  color: #1b1b1b;
+  font-family: "Remingtoned Type";
+}
 
-/*.multi-line-link-button {*/
-  /*display: inline-block;*/
-/*}*/
+.typed-on-paper textarea,
+.typed-on-paper input {
 
-/*.multi-line-link-button span {*/
-  /*margin: 10px;*/
-  /*width: auto;*/
-/*}*/
+  border:none;
+  background: rgba(255, 255, 255, 0.5);
+  border-color: #646464;
+  border-radius: 5px;
+  padding: 5px;
+  color: #1b1b1b;
+  font-family: "Remingtoned Type";
+}
+
+.typed-on-paper select {
+
+  border: none;
+  background: rgba(255, 255, 255, 0.5);
+  border-color: #646464;
+  border-radius: 2px;
+  padding: 2px;
+  margin: 2px;
+  color: #1b1b1b;
+  font-family: "Remingtoned Type";
+}
+
 
 /*CSS FOR draggable-nested-tree*/
 
 DraggableTree div {
-  border: none
+  border: none;
 }
 
 .he-tree{
-  border: 1px solid #ccc;
+  /*border: 1px solid #ccc;*/
   padding: 20px;
 }
 
@@ -201,13 +350,13 @@ DraggableTree div {
 }
 
 .tree-node-inner{
-  padding: 5px;
-  border: 1px solid #ccc;
+  /*padding: 5px;*/
+  /*border: 1px solid #ccc;*/
   cursor: pointer;
 }
 
 .tree-node-inner div {
-  border: 1px solid red
+  /*border: 1px solid red*/
 }
 
 .tree-node-inner-back{
@@ -216,10 +365,10 @@ DraggableTree div {
 .draggable-placeholder{
 }
 .draggable-placeholder-inner{
-  border: 1px dashed #0088F8;
+  /*border: 1px dashed #0088F8;*/
   box-sizing: border-box;
   background: rgba(0, 136, 249, 0.09);
-  color: #0088f9;
+  /*color: #0088f9;*/
   text-align: center;
   padding: 0;
   display: flex;

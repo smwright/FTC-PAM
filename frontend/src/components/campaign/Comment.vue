@@ -1,17 +1,17 @@
 <template>
   <div>
     <template v-if="isAdmin">
-      <div>
+      <div class="top-bottom-margin">
         <button
           v-bind:disabled="this.button_disabled"
           v-on:click="sendComment"
         >Send comment</button>
       </div>
-      <div>
+      <div class="top-bottom-margin">
         <textarea v-model="comment" class="textarea-style"></textarea>
       </div>
     </template>
-    <div v-for="comment in comment_info">
+    <div class="top-bottom-margin" v-for="comment in comment_info">
       <span>{{ comment.comment_date }}:</span>
       <span>Comment by {{ comment.commentator }}</span>
       <button
@@ -90,6 +90,10 @@ export default {
 .textarea-style{
   width: 98%;
   height: 10em;
+}
+
+.top-bottom-margin{
+  margin: 5px 0px;
 }
 
 </style>

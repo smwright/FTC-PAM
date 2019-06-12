@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <!--Part for display-->
     <SwitchableDiv>
       <template slot="buttonStateA">
@@ -54,7 +54,7 @@
         </div>
       </template>
       <template slot="contentStateB">
-        <div class="clearfix red">
+        <div class="clearfix">
           <div class="img-container inline-block float-left">
             <img :src="e_data.image"/>
           </div>
@@ -91,7 +91,7 @@
 
             <div>
               <span class="heading">Description:</span>
-              <textarea v-model="e_data.description" v-on:input="checkForUnsaved()"></textarea>
+              <textarea class="textarea-style" v-model="e_data.description" v-on:input="checkForUnsaved()"></textarea>
             </div>
 
           </div>
@@ -207,17 +207,27 @@ export default {
 
 <style scoped>
 
-  .img-container {
-    min-width: 100px;
-    min-height: 100px;
-  }
+div{
+  margin: 2px;
+}
 
-  img {
-    max-width: 100px;
-    max-height: 100px;
-  }
+button {
+  margin: 2px;
+}
 
-  .red {
-    background-color: yellow;
-  }
+.img-container {
+  min-width: 100px;
+  min-height: 100px;
+}
+
+img {
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.textarea-style{
+  width: 98%;
+  height: 10em;
+}
+
 </style>

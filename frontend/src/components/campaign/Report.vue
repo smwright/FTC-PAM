@@ -3,29 +3,30 @@
     <!--This part is for showing the report edit elements-->
 
     <template v-if="this.show_edit_display">
-      <div class="clearfix">
+      <div class="clearfix container margin-left-right">
         <button v-if="this.show_edit_button" v-on:click="toggleEdit" class="float-right">Exit edit</button>
         <button v-if="this.show_edit_button" v-on:click="sendReport" class="float-right">Send report</button>
       </div>
-      <template v-if="report_loaded">
+
+      <div class="typed-on-paper" v-if="report_loaded">
         <EditReportLW v-if="report_info.faction==1" v-bind="report_info"></EditReportLW>
         <!--<ReportRAF v-else-if="report_info.faction==2" v-bind="report_info"></ReportRAF>-->
         <EditReportVVS v-else-if="report_info.faction==3" v-bind="report_info"></EditReportVVS>
-      </template>
+      </div>
     </template>
 
     <!--This part is for showing the report -->
 
     <template v-else>
-      <div class="clearfix">
+      <div class="clearfix container">
         <button v-if="this.show_edit_button" v-on:click="toggleEdit" class="float-right">Edit report</button>
       </div>
       <!--<template v-if="report_info != undefined && report_details != undefined">-->
-      <template v-if="report_loaded">
+      <div class="typed-on-paper" v-if="report_loaded">
         <ReportLW v-if="report_info.faction==1" v-bind="report_info"></ReportLW>
         <ReportRAF v-else-if="report_info.faction==2" v-bind="report_info"></ReportRAF>
         <ReportVVS v-else-if="report_info.faction==3" v-bind="report_info"></ReportVVS>
-      </template>
+      </div>
       <template v-else>
         Loading report...
       </template>
@@ -133,5 +134,9 @@ export default {
 </script>
 
 <style scoped>
+
+.margin-left-right button{
+  margin: 0px 5px;
+}
 
 </style>

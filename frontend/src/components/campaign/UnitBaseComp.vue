@@ -77,7 +77,41 @@ export default {
 </script>
 
 <style scoped>
- .left-10px-margin {
-   margin: 0px 0px 0px 10px;
- }
+
+.left-10px-margin {
+ margin: 0px 0px 0px 10px;
+}
+
+.div-button{
+
+  width: calc(100% - 26px);
+  margin: 10px 2px 10px 2px;
+  padding: 10px;
+  cursor: pointer;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 15px;
+  border-color: rgba(0, 0, 0, 0.0);
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.div-button:hover {
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 15px;
+  border-color: #F28900;
+  background: rgba(0, 0, 0, 0.4);
+
+
+.info-container {
+  margin: 0px 2px 10px 2px;
+  padding: 0px 10px 10px 10px;
+  border-style: solid;
+  border-width: 1px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border-color: #F28900;
+  background: rgba(0, 0, 0, 0.1);
+}
+}
 </style>

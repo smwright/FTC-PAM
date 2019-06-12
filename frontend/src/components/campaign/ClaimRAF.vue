@@ -34,6 +34,14 @@ export default {
     ClaimApprovalComp
   },
   props: {
+    claim_id: {
+      type: Number,
+      default: null
+    },
+    claim_detail_id: {
+      type: Number,
+      default: null
+    },
     asset_name: {
       type: String,
       default: null
@@ -60,8 +68,5 @@ export default {
 </script>
 
 <style scoped>
-td {
-  width: 150px;
-  border: blue 1px solid;
-}
+
 </style>

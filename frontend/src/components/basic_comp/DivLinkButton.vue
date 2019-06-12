@@ -34,13 +34,4 @@ export default {
 
 <style scoped>
 
-.div-button{
-  margin: 10px 2px 10px 2px;
-  cursor: pointer;
-}
-
-.div-button:hover {
-  background: gray;
-}
-
 </style>

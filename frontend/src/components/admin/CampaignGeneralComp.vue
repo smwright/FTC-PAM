@@ -1,7 +1,6 @@
 <template>
   <div>
-    <div>{{ this.$props.campaign_id }}</div>
-    <div class="clearfix">
+    <div class="clearfix container">
       <div class="inline-table float-left half-width">
         <label>Name</label>
         <input v-model="campaign_name">
@@ -11,7 +10,7 @@
       </div>
     </div>
 
-    <div class="clearfix">
+    <div class="clearfix container">
       <div class="inline-table float-left half-width">
         <label>Primary</label>
         <input type="checkbox" id="checkbox" v-model="primary" true-value="1" false-value="0">
@@ -22,7 +21,7 @@
       </div>
     </div>
 
-    <div class="clearfix">
+    <div class="clearfix container">
       <div class="inline-table float-left half-width">
         <div>
           <label>Platform:</label>
@@ -38,7 +37,7 @@
       </div>
     </div>
 
-    <div class="clearfix">
+    <div class="clearfix container">
       <div class="inline-table float-left half-width">
         <label>Campaign status</label>
         <select v-model="campaign_status">
@@ -57,7 +56,7 @@
       </div>
     </div>
 
-    <div class="clearfix">
+    <div class="clearfix container">
       <div class="inline-table float-left half-width">
         <label>Time:</label>
         <input v-model="time">
@@ -67,7 +66,7 @@
       </div>
     </div>
 
-    <div class="clearfix">
+    <div class="clearfix container">
       <div class="inline-table float-left half-width">
         <label>Open</label>
         <input type="checkbox" id="open" v-model="open" true-value="1" false-value="0">
@@ -77,29 +76,29 @@
       </div>
     </div>
 
-    <div class="clearfix">
-      <div class="inline-table float-left half-width">
-        <div>
-          <label>Campaign link:</label>
-          <select v-model="campaign_link">
-            <option v-bind:value="null"></option>
-            <option
-              v-for="(l_campaign) in $store.state.campaignAdmin.campaigns"
-              v-if="l_campaign.id !== campaign_id"
-              v-bind:value="l_campaign.id"
-            >
-              {{ l_campaign.name }}
-            </option>
-          </select>
-        </div>
-      </div>
-      <div class="inline-table float-right half-width">
-            <span>Link the campaign to an existing campaign. This will allow members to reuse characters of the linked
-            campaign in this campaign.</span>
-      </div>
-    </div>
+    <!--<div class="clearfix container">-->
+      <!--<div class="inline-table float-left half-width">-->
+        <!--<div>-->
+          <!--<label>Campaign link:</label>-->
+          <!--<select v-model="campaign_link">-->
+            <!--<option v-bind:value="null"></option>-->
+            <!--<option-->
+              <!--v-for="(l_campaign) in $store.state.campaignAdmin.campaigns"-->
+              <!--v-if="l_campaign.id !== campaign_id"-->
+              <!--v-bind:value="l_campaign.id"-->
+            <!--&gt;-->
+              <!--{{ l_campaign.name }}-->
+            <!--</option>-->
+          <!--</select>-->
+        <!--</div>-->
+      <!--</div>-->
+      <!--<div class="inline-table float-right half-width">-->
+            <!--<span>Link the campaign to an existing campaign. This will allow members to reuse characters of the linked-->
+            <!--campaign in this campaign.</span>-->
+      <!--</div>-->
+    <!--</div>-->
 
-    <div class="clearfix">
+    <div class="clearfix container">
       <div class="inline-table float-left half-width">
         <div>
           <label>Description</label>
@@ -112,7 +111,7 @@
       </div>
     </div>
 
-    <div class="clearfix">
+    <div class="clearfix container">
       <div class="inline-table float-left half-width">
         <label>Image</label>
         <input v-model="image">

@@ -1,68 +1,75 @@
 <template>
   <div class="clearfix">
-    <div>
+    <div class="container">
       <button v-on:click="addAsset">Add asset</button>
       <button v-on:click="loadAsset">Fetch data</button>
       <button v-on:click="sendData">Save changes</button>
       <div>{{ dbStatus }}</div>
     </div>
-    <div class="inline-block float-left">
+    <div class="float-left container split-div">
 
       <TreeWrapper ref="tree" v-bind:treedata="assets">
         <template slot-scope="tree">
-          <div class="inline-block float-left">
-            <button v-if="tree.data.children && tree.data.children.length"
-                    v-on:click="tree.store.toggleOpen(tree.data)" >
-              {{tree.data.open ? '-' : '+'}}
-            </button>
+          <div class="typed-on-paper tree-card">
+
+            <div class="inline-block float-left">
+              <button v-if="tree.data.children && tree.data.children.length"
+                      v-on:click="tree.store.toggleOpen(tree.data)" >
+                {{tree.data.open ? '-' : '+'}}
+              </button>
+            </div>
+            <div class="inline-block">
+
+              <SwitchableDiv>
+                <template slot="buttonStateA">
+                  <button>
+                    {{ tree.data.name }}
+                  </button>
+                </template>
+                <template slot="contentStateA">
+                  <div>
+                    {{ factionStatus[tree.data.faction].long }}
+                  </div>
+                  <div>
+                    <span v-if="tree.data.controlable">Controllable</span>
+                  </div>
+                </template>
+
+                <template slot="buttonStateB">
+                  <button>
+                    {{ tree.data.name }}
+                  </button>
+                </template>
+                <template slot="contentStateB">
+                  <div>
+                    <input v-model="tree.data.name">
+                  </div>
+                  <div>
+                    <select v-model="tree.data.faction">
+                      <option v-for="(faction, index) in factionStatus" v-bind:value="index">
+                        {{ faction.long }}
+                      </option>
+                    </select>
+                  </div>
+                  <div>
+                    <span>Controllable</span>
+                    <input type="checkbox" id="checkbox" v-model="tree.data.controlable">
+                  </div>
+                  <div class="float-right">
+                    <button v-on:click="deleteAsset(tree.data)">Delete</button>
+                  </div>
+                </template>
+              </SwitchableDiv>
+
+            </div>
           </div>
-          <div class="inline-block">
 
-            <SwitchableDiv>
-              <template slot="buttonStateA">
-                <div>
-                  {{ tree.data.name }}
-                </div>
-              </template>
-              <template slot="contentStateA">
-                <div>
-                  {{ factionStatus[tree.data.faction].long }}
-                </div>
-                <div>
-                  <span v-if="tree.data.controlable">Controllable</span>
-                </div>
-              </template>
-
-              <template slot="buttonStateB">
-                {{ tree.data.name }}
-              </template>
-              <template slot="contentStateB">
-                <div>
-                  <input v-model="tree.data.name">
-                </div>
-                <div>
-                  <select v-model="tree.data.faction">
-                    <option v-for="(faction, index) in factionStatus" v-bind:value="index">
-                      {{ faction.long }}
-                    </option>
-                  </select>
-                </div>
-                <div>
-                  <span>Controllable</span>
-                  <input type="checkbox" id="checkbox" v-model="tree.data.controlable">
-                </div>
-                <div class="float-right">
-                  <button v-on:click="deleteAsset(tree.data)">Delete</button>
-                </div>
-              </template>
-            </SwitchableDiv>
-
-          </div>
         </template>
       </TreeWrapper>
 
     </div>
-    <div class="table">
+
+    <div class="float-left container split-div">
 
       <h3>
         Assets:
@@ -118,9 +125,6 @@
         Use this button to save the changes and send them to the database. Deleted assets or asset-groups are still stored
         in the database until the changes are send to the database.
       </p>
-
-
-
 
     </div>
   </div>
@@ -220,5 +224,17 @@ export default {
 
 <style scoped>
 
+.split-div{
+  width: calc(50% - 24px);
+}
+
+.tree-card{
+  width: 400px;
+  padding: 10px;
+}
+
+.tree-card div{
+  margin: 2px;
+}
 
 </style>
