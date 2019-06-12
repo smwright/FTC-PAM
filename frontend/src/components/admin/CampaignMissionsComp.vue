@@ -4,9 +4,8 @@
 
       <SwitchableDiv>
         <template slot="buttonStateA">
-          <div class="div-button">
-            <p>{{ this.mission_id }}</p>
             <MissionHeader
+              class="div-button"
               v-bind="{
               real_date: real_date,
               name: mission_name,
@@ -15,95 +14,95 @@
              }"
             >
             </MissionHeader>
-          </div>
         </template>
         <template slot="contentStateA">
 
         </template>
 
         <template slot="buttonStateB">
-          <div class="div-button">
             <MissionHeader
+              class="div-button"
               v-bind="{
               real_date: real_date,
-              mission_name: mission_name,
+              name: mission_name,
               hist_date: hist_date,
               mission_status: mission_status
              }"
             >
             </MissionHeader>
-          </div>
         </template>
         <template slot="contentStateB">
-
-          <!--Name-->
-          <div>
-            <label>Name</label>
-            <input v-model="mission_name">
-          </div>
-
-          <!--Scheduled date-->
-          <div>
-            <label>Scheduled date:</label>
-            <date-picker
-              v-model="real_date"
-              lang="en"
-              type="datetime"
-              format="YYYY-MM-DD"
-              value-type="format"
-              v-bind:clearable="false">
-            </date-picker>
-          </div>
-
-          <!--Historic date-->
-          <div>
-            <label>Historic date:</label>
-            <date-picker
-              v-model="hist_date"
-              lang="en"
-              type="datetime"
-              format="YYYY-MM-DD HH:mm"
-              value-type="format"
-              v-bind:time-picker-options="{ start: '00:00', step: '00:10', end: '23:30' }"
-              v-bind:clearable="false">
-            </date-picker>
-          </div>
-
-          <!--Campaign status-->
-          <div>
-            <label>Campaign status</label>
-            <select v-model="mission_status">
-              <option v-for="(m_status, index) in missionStatus" v-bind:value="index">
-                {{ m_status }}
-              </option>
-            </select>
-          </div>
-
-          <!--Briefings-->
-          <HideableDiv v-bind:changing-button="true">
-            <template slot="buttonHidden">
-              <button>Show briefing form</button>
-            </template>
-            <template slot="buttonVisible">
-              <button>Hide briefing form</button>
-            </template>
+          <div class="container">
+            <!--Name-->
             <div>
-              <template v-for="(faction, index) in factionStatus">
-                <input type="radio" v-bind:value="index" v-model="briefing_faction">
-                <label v-if="index === 0">General</label>
-                <label>{{faction.long}}</label>
+              <label>Name</label>
+              <input v-model="mission_name">
+            </div>
+
+            <!--Scheduled date-->
+            <div>
+              <label>Scheduled date:</label>
+              <date-picker
+                v-model="real_date"
+                lang="en"
+                type="datetime"
+                format="YYYY-MM-DD"
+                value-type="format"
+                v-bind:clearable="false">
+              </date-picker>
+            </div>
+
+            <!--Historic date-->
+            <div>
+              <label>Historic date:</label>
+              <date-picker
+                v-model="hist_date"
+                lang="en"
+                type="datetime"
+                format="YYYY-MM-DD HH:mm"
+                value-type="format"
+                v-bind:time-picker-options="{ start: '00:00', step: '00:10', end: '23:30' }"
+                v-bind:clearable="false">
+              </date-picker>
+            </div>
+
+            <!--Campaign status-->
+            <div>
+              <label>Campaign status</label>
+              <select v-model="mission_status">
+                <option v-for="(m_status, index) in missionStatus" v-bind:value="index">
+                  {{ m_status }}
+                </option>
+              </select>
+            </div>
+
+            <!--Briefings-->
+            <HideableDiv v-bind:changing-button="true">
+              <template slot="buttonHidden">
+                <button>Show briefing form</button>
               </template>
-              <span>b-id: {{ selected_briefing }}</span>
-            </div>
-            <div>
-              <textarea v-model="mission_briefing" class="textarea-style"></textarea>
-            </div>
-          </HideableDiv>
+              <template slot="buttonVisible">
+                <button>Hide briefing form</button>
+              </template>
+              <div>
+                <template v-for="(faction, index) in factionStatus">
+                  <input type="radio" v-bind:value="index" v-model="briefing_faction">
+                  <label v-if="index === 0">General</label>
+                  <label>{{faction.long}}</label>
+                </template>
+                <span>b-id: {{ selected_briefing }}</span>
+              </div>
+              <div>
+                <textarea v-model="mission_briefing" class="textarea-style"></textarea>
+              </div>
+            </HideableDiv>
 
-          <!--Delete button-->
-          <div class="clearfix">
-            <button class="float-right" v-on:click="deleteMission">Delete mission</button>
+            <!--Delete button-->
+            <div class="clearfix">
+              <button class="float-right" v-on:click="deleteMission">Delete mission</button>
+            </div>
           </div>
+
 
         </template>
 
@@ -266,18 +265,9 @@ export default {
 </script>
 
 <style scoped>
-.textarea-style{
-  width: 80%;
-  height: 20em;
-}
 
-.div-button{
-  margin: 10px 2px 10px 2px;
-  cursor: pointer;
-}
-
-.div-button:hover {
-  background: gray;
+div {
+  margin: 2px 0px;
 }
 
 </style>

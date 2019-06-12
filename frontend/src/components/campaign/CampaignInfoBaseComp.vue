@@ -22,7 +22,7 @@
     <div>
       <span>Average participants per mission: {{ avg_attendance }}</span>
     </div>
-    <div v-if="description !== null">
+    <div class="button-margin" v-if="description !== null">
       <HideableDiv v-bind:changing-button="true">
         <template slot="buttonVisible">
           <button>Hide description</button>
@@ -30,7 +30,7 @@
         <template slot="buttonHidden">
           <button>Show description</button>
         </template>
-        <div>{{description}}</div>
+        <div class="button-margin" >{{description}}</div>
       </HideableDiv>
     </div>
   </div>
@@ -63,5 +63,9 @@
 </script>
 
 <style scoped>
+
+.button-margin{
+  margin: 5px 0px 5px 0px;
+}
 
 </style>

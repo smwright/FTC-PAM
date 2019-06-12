@@ -1,3 +1,5 @@
+import Vue from 'vue'
+
 // initial state
 const state = {
   count: 0
@@ -6,7 +8,8 @@ const state = {
 // getters
 const getters = {
   doubleCount (state) {
-    return state.count * 2
+    // return state.count * 2;
+    return Vue.prototype.$dbCon.testConnection();
   }
 }
 

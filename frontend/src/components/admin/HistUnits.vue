@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div>
+    <div class="container">
       <button v-on:click="addUnit">Add unit</button>
     </div>
     <HistUnitsBaseComp

@@ -115,6 +115,10 @@
 
 <style scoped>
 
+td{
+  padding: 2px 5px;
+}
+
 .textarea-style{
   width: 98%;
   height: 10em;

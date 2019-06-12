@@ -2,7 +2,7 @@
 
 //Set true if developing.
 $dev = true;
-$dev_user = "Moss";
+$dev_user = "Thaine";
 
 $params = json_decode( file_get_contents( 'php://input' ), true );
 
@@ -32,7 +32,9 @@ switch ($params['action']){
     $res_array['admin'] = FALSE;
 
     if($dev){
-        $username = $dev_user;
+        if($dev_user != 'Visitor'){
+            $username = $dev_user;
+        }
     } else {
         include_once(dirname(__FILE__).'/phpbbx.php');
         $username = $user->data['username_clean'];

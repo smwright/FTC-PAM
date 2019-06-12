@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="typed-on-paper">
     <div v-if="campaign_unit_stats != null">
       <table>
         <thead>
@@ -156,5 +156,7 @@
 </script>
 
 <style scoped>
+
+
 
 </style>

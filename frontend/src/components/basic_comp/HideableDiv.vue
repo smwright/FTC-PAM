@@ -1,9 +1,9 @@
 <template>
   <div>
-    <div class="inline-block full-width" v-if="this.changingButton" v-show="this.isVisible" v-on:click.stop="toggleVisible()">
+    <div v-if="this.changingButton" v-show="this.isVisible" v-on:click.stop="toggleVisible()">
       <slot name="buttonVisible"></slot>
     </div>
-    <div class="inline-block full-width" v-show="!this.changingButton || !this.isVisible" v-on:click.stop="toggleVisible()">
+    <div v-show="!this.changingButton || !this.isVisible" v-on:click.stop="toggleVisible()">
       <slot name="buttonHidden"></slot>
     </div>
     <div class="inline-block full-width" v-show="this.isVisible">
@@ -42,15 +42,6 @@ export default {
 <style scoped>
 .inline-block {
   display: inline-block;
-}
-
-.div-button{
-  margin: 10px 2px 10px 2px;
-  cursor: pointer;
-}
-
-.div-button:hover {
-  background: gray;
 }
 
 </style>

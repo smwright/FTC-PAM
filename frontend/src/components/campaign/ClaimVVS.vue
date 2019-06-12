@@ -2,7 +2,7 @@
   <div>
     <hr>
     <table>
-      <tr>
+      <tr class="header-row">
         <td>Time:</td>
         <td>Place:</td>
         <td>Aircraft:</td>
@@ -19,7 +19,7 @@
         <td>{{ assetById(asset_id).name }}</td>
         <td></td>
       </tr>
-      <tr>
+      <tr class="header-row">
         <td>Group claim:</td>
         <td>Witness:</td>
         <td>Confirmed:</td>
@@ -107,6 +107,14 @@
 </script>
 
 <style scoped>
+
+td{
+  padding: 2px 5px;
+}
+
+.header-row td{
+  font-weight: bold;
+}
 
 </style>
 
