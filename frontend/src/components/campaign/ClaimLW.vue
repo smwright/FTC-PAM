@@ -2,7 +2,7 @@
   <div>
     <hr>
     <table>
-      <tr>
+      <tr class="header-row">
         <td>Time:</td>
         <td>Place:</td>
         <td>Aircraft:</td>
@@ -20,7 +20,7 @@
           ></ClaimApprovalComp>
         </td>
       </tr>
-      <tr>
+      <tr class="header-row">
         <td>Type of destruction:</td>
         <td>Type of impact on the ground:</td>
         <td>Fate of crew:</td>
@@ -122,5 +122,13 @@ export default {
 </script>
 
 <style scoped>
+
+td{
+  padding: 2px 5px;
+}
+
+.header-row td{
+  font-weight: bold;
+}
 
 </style>

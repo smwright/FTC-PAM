@@ -1,13 +1,11 @@
 <template>
   <div>
-    <div>
+    <div class="container">
       <MissionHeader v-bind="missionById(this.$route.params.mission_id)"></MissionHeader>
+      <button class="margin-top-bottom" v-if="show_add_report_button" v-on:click="addReport">Add report</button>
     </div>
-    <div>
-      <p>Mission information and buttons:</p>
-      <button v-if="show_add_report_button" v-on:click="addReport">Add report</button>
-
-    </div>
+    <!--<div class="container">-->
+    <!--</div>-->
     <router-view name="mission_lobby_content"></router-view>
   </div>
 </template>
@@ -66,5 +64,9 @@ export default {
 </script>
 
 <style scoped>
+
+.margin-top-bottom{
+  margin: 5px 0px;
+}
 
 </style>

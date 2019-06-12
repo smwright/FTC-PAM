@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="heading">Briefing</div>
+    <div class="side-nav-heading heading">Briefing</div>
     <DivLinkButton
       class="heading"
       v-for="briefing in briefing_info"

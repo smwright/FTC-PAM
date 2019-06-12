@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div>
+    <div class="container">
       <button v-on:click="changeTab('general')">General</button>
       <button v-on:click="changeTab('missions')">Missions</button>
       <button v-on:click="changeTab('units')">Units</button>
@@ -21,7 +21,9 @@
       <!------------------>
       <div v-show="tabToShow === 'missions'">
 
-        <button v-on:click="addMission">Add mission</button>
+        <div class="container">
+          <button v-on:click="addMission">Add mission</button>
+        </div>
 
         <CampaignMission
          v-for="mission in missionsByCampaignId(this.campaign_id)"
@@ -34,8 +36,8 @@
 
       <!-- GENERAL UNITS -->
       <!------------------>
-      <div class="clearfix" v-show="tabToShow === 'units'">
-        <div>
+      <div v-show="tabToShow === 'units'">
+        <div class="container">
           <button v-on:click="addUnit">Add unit</button>
           <label>Clone units from </label>
           <select v-model="units_clone_id">
@@ -50,25 +52,26 @@
           <button v-on:click="cloneUnits">Clone units</button>
         </div>
 
-        <div class="inline-block float-left">
+        <!--<div class="inline-block float-left">-->
+        <div class="float-left split-div container">
           <TreeWrapper ref="tree" v-bind:treedata="units">
             <template slot-scope="tree">
-              <div v-on:click="setActiveNode(tree.data)">
+              <div class="typed-on-paper tree-card clearfix" v-on:click="setActiveNode(tree.data)">
 
-                <div class="inline-block float-left">
+                <div class="float-left button-div">
                   <button v-if="tree.data.children && tree.data.children.length"
                           v-on:click="tree.store.toggleOpen(tree.data)" >
                     {{tree.data.open ? '-' : '+'}}
                   </button>
                 </div>
-                <div class="inline.block">
-                  <div>
-                    ID: {{ tree.data.id }}
-                    h-ID: {{ tree.data.hist_unit_id}}
-                    a-ID: {{ tree.data.acg_unit_id}}
-                    c-ID: {{ tree.data.campaign_id}}
+                <div class="float-left">
+                  <!--<div>-->
+                    <!--ID: {{ tree.data.id }}-->
+                    <!--h-ID: {{ tree.data.hist_unit_id}}-->
+                    <!--a-ID: {{ tree.data.acg_unit_id}}-->
+                    <!--c-ID: {{ tree.data.campaign_id}}-->
 
-                  </div>
+                  <!--</div>-->
                   <div>
                     {{ depl_unit_header(acgUnitsById(tree.data.acg_unit_id), histUnitsById(tree.data.hist_unit_id)) }}
                   </div>
@@ -107,13 +110,13 @@
           </TreeWrapper>
         </div>
 
-        <div class="table">
-          Description
+        <div class="float-left container split-div">
+          <h2>Description</h2>
+          <!--<div>-->
+            <!--{{ active_node }}-->
+          <!--</div>-->
           <div>
-            {{ active_node }}
-          </div>
-          <div>
-            <p>Current pilots in unit:</p>
+            <h3>Current pilots in unit:</h3>
             <ul>
               <li v-for="member in currentMembersById(active_node.acg_unit_id)">
                 {{ member.callsign }}
@@ -531,5 +534,26 @@ export default {
 </script>
 
 <style scoped>
+
+.split-div{
+  width: calc(50% - 24px);
+}
+
+.tree-card{
+  width: 400px;
+  padding: 10px;
+}
+
+.tree-card div{
+  margin: 2px;
+}
+
+.button-div{
+  width: 10%;
+}
+
+.button-div button {
+  width: 100%;
+}
 
 </style>

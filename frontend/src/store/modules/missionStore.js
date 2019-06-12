@@ -1214,7 +1214,7 @@ const  actions = {
 
     var accept_parcel = {
       id: context.state.report.report_id,
-      accepted: !context.state.report.accepted,
+      accepted: context.state.report.accepted ? 0 : 1,
       accepted_by: (context.state.report.accepted) ? null : payload.member_id
     }
     Vue.prototype.$dbCon.insertUpdateData("missionStore on behalf of "+payload.caller,

@@ -268,6 +268,10 @@
 
 <style scoped>
 
+div {
+  margin: 5px 0;
+}
+
 .textarea-style{
   width: 98%;
   height: 10em;

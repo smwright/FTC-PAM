@@ -257,4 +257,8 @@ import { mapGetters } from "vuex"
 
 <style scoped>
 
+td{
+  padding: 2px 5px;
+}
+
 </style>

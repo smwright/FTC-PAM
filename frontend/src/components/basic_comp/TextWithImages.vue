@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="typed-on-paper">
     <template v-for="text_object in processed_text_array">
       <template v-if="text_object.type === 'text'">
         <p>

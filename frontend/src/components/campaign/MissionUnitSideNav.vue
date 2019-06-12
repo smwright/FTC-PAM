@@ -1,8 +1,8 @@
 <template>
   <div>
     <BriefingSideNav></BriefingSideNav>
-    <div class="heading">Mission synopsis and reports</div>
-    <div v-for="child in campaign_units">
+    <div class="side-nav-heading heading">Mission synopsis and reports</div>
+    <div class="mission-unit-container" v-for="child in campaign_units">
       <MissionUnitsSideNavBaseComp v-bind="child"></MissionUnitsSideNavBaseComp>
     </div>
   </div>
@@ -42,5 +42,9 @@ export default {
 </script>
 
 <style scoped>
+
+.mission-unit-container{
+  padding: 10px 2px;
+}
 
 </style>

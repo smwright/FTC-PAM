@@ -81,12 +81,6 @@
       <hr>
     </div>
 
-    <div v-if="accepted">
-      <span>Report accepted by:</span>
-      <span>{{ examiner_callsign }}</span>
-      <hr>
-    </div>
-
     <ReportApprovalComp></ReportApprovalComp>
     <Comment></Comment>
   </div>

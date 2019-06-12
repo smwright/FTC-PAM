@@ -50,7 +50,7 @@
       <hr>
     </div>
 
-    <div>
+    <div class="top-bottom-margin">
       <hr>
       Claims:
       <ClaimLW
@@ -60,7 +60,7 @@
       ></ClaimLW>
     </div>
 
-    <div>
+    <div class="top-bottom-margin">
       <hr>
       Ground Claims:
       <ClaimGround
@@ -70,7 +70,7 @@
       ></ClaimGround>
     </div>
 
-    <div>
+    <div class="top-bottom-margin">
       <span>Synopsis:</span><br>
       <p class="white-space-pre-line">{{ decodeHTML(report_info.synopsis) }}</p>
     </div>
@@ -129,5 +129,9 @@ export default {
 </script>
 
 <style scoped>
+
+.top-bottom-margin {
+  margin: 5px 0px;
+}
 
 </style>

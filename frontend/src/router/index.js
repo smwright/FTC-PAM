@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import * as auth from '@/resource/auth.js'
 
 //About aCG
+import EmptySideNav from '@/components/EmptySideNav'
 import AboutUs from '@/components/AboutACGAboutUs'
 import AboutACGSideNav from '@/components/AboutACGSideNav'
 import Ranks from '@/components/AboutACGRanks'
@@ -46,7 +47,9 @@ const router = new VueRouter({
     {
       path: '/',
       name: 'Home',
-      component: Home
+      components: {
+        fullmain: Home,
+      }
     },
     {
       path: '/about-acg',
@@ -72,7 +75,10 @@ const router = new VueRouter({
     {
       path: '/campaign-list',
       name: 'CampaignList',
-      component: CampaignList
+      components: {
+        default: CampaignList,
+        sidenav: EmptySideNav
+      }
     },
     {
       path: '/campaign-info/:campaign_id',

@@ -1,7 +1,7 @@
 <template>
-  <div class="home">
+  <div clas="home">
     <h1>
-    Welcome to Air Combat Group awesome
+    Welcome to Air Combat Group
     </h1>
     <p>
     Air Combat Group consists of both Allied and Axis squadrons under a single operational
@@ -71,10 +71,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  clear: both;
+
+div{
+  width: 100%;
+  text-align: center;
 }
+
 </style>
