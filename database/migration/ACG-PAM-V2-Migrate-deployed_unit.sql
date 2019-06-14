@@ -385,3 +385,47 @@ CALL `depl_unit_add_node`(1, @campaign_ID, 3, 29 + @BoB_unit_shift, NULL, NULL);
 CALL `depl_unit_add_node`(1, @campaign_ID, 5, 30 + @BoB_unit_shift, NULL, NULL);
 CALL `depl_unit_add_node`(1, @campaign_ID, 17, 36 + @BoB_unit_shift, NULL, NULL);
 CALL `depl_unit_add_node`(1, @campaign_ID, 16, 33 + @BoB_unit_shift, NULL, NULL);
+
+
+-- Campaign 10
+SET @campaign_ID = 10;
+-- IN depl_unit_parent_id INT,
+-- IN depl_unit_campaign_id INT,
+-- IN depl_acg_unit_id INT,
+-- IN depl_hist_unit_id INT,
+-- IN depl_asset_id INT,
+-- IN depl_report_type INT
+
+-- unit-id	hist_unit	acg_unit
+-- 18		27-2		610 (12)
+-- 21		208-1		ZG (9)
+-- 22		233-1		111 (10)
+-- 24		34-3		615 (4)
+-- 25		495-2		501 (2)
+-- 26		15./JG27	5th (6)
+-- 28		126-PVO		32 (14)
+-- 30		10./LG2		4th (5)
+-- 33		11./JG51	9th (16)
+-- 35		495-1		7th (8)
+-- 36		4./ZG26		6th (7)
+-- 37       5./KG3      Stab (11)
+-- 38		62 ShAP		64 (3)
+-- 39       9./JG51		1st (17)
+-- 40       8./JG51     8th (13)
+
+CALL `depl_unit_add_node`(NULL, @campaign_ID, NULL, 1, NULL, NULL);
+CALL `depl_unit_add_node`(1, @campaign_ID, 12, 18 + @BoB_unit_shift, NULL, NULL);
+CALL `depl_unit_add_node`(1, @campaign_ID, 9, 21 + @BoB_unit_shift, NULL, NULL);
+CALL `depl_unit_add_node`(1, @campaign_ID, 10, 22 + @BoB_unit_shift, NULL, NULL);
+CALL `depl_unit_add_node`(1, @campaign_ID, 4, 24 + @BoB_unit_shift, NULL, NULL);
+CALL `depl_unit_add_node`(1, @campaign_ID, 2, 25 + @BoB_unit_shift, NULL, NULL);
+CALL `depl_unit_add_node`(1, @campaign_ID, 6, 26 + @BoB_unit_shift, NULL, NULL);
+CALL `depl_unit_add_node`(1, @campaign_ID, 14, 28 + @BoB_unit_shift, NULL, NULL);
+CALL `depl_unit_add_node`(1, @campaign_ID, 5, 30 + @BoB_unit_shift, NULL, NULL);
+CALL `depl_unit_add_node`(1, @campaign_ID, 16, 33 + @BoB_unit_shift, NULL, NULL);
+CALL `depl_unit_add_node`(1, @campaign_ID, 8, 35 + @BoB_unit_shift, NULL, NULL);
+CALL `depl_unit_add_node`(1, @campaign_ID, 7, 36 + @BoB_unit_shift, NULL, NULL);
+CALL `depl_unit_add_node`(1, @campaign_ID, 11, 37 + @BoB_unit_shift, NULL, NULL);
+CALL `depl_unit_add_node`(1, @campaign_ID, 3, 38 + @BoB_unit_shift, NULL, NULL);
+CALL `depl_unit_add_node`(1, @campaign_ID, 17, 39 + @BoB_unit_shift, NULL, NULL);
+CALL `depl_unit_add_node`(1, @campaign_ID, 13, 40 + @BoB_unit_shift, NULL, NULL);

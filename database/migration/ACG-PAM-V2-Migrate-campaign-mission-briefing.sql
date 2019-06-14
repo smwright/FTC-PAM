@@ -15,6 +15,29 @@ SELECT `campaigns`.`id`,
     FALSE    
 FROM `campaigns`;
 
+INSERT INTO `campaign`
+(`id`,
+`name`,
+`is_primary`,
+`platform`,
+`campaign_status`,
+`time`,
+`open`)
+SELECT 10,
+    `campaigns`.`name`,
+    TRUE,
+    0,
+    2,
+    "1900 UTC",
+    FALSE    
+FROM `campaigns` WHERE id = 9;
+
+UPDATE `pam`.`campaign`
+SET
+`name` = "Operation Taifun 2"
+WHERE `id` = 9;
+
+
 INSERT INTO `mission`
 (`id`,
 `name`,
@@ -51,6 +74,11 @@ SELECT
 FROM `briefings`;
 
 -- Add briefings from old missions table
+
+-- Split TYPHOON into three parts
+UPDATE `mission` SET `campaign_id` = 7 WHERE id >= 158 AND id <= 163;
+UPDATE `mission` SET `campaign_id` = 9 WHERE id >= 177 AND id <= 182;
+UPDATE `mission` SET `campaign_id` = campaign_id + 1 WHERE id > 182;
 
 DROP TABLE `briefings`;
 DROP TABLE `missions`;

@@ -8,7 +8,7 @@ DECLARE finished INTEGER DEFAULT 0;
 
 DECLARE update_cursor CURSOR FOR
 	
-	SELECT memberID, date FROM memberstatuslog;
+	SELECT member_id, status_date_in FROM member_status_log;
 
 DECLARE CONTINUE HANDLER
 FOR NOT FOUND SET finished = 1;
@@ -26,12 +26,12 @@ update_status: LOOP
 	
 	
 	UPDATE 
-	memberstatuslog AS dest, 
-	(SELECT memberstatuslog.date FROM memberstatuslog
-	WHERE memberID = memberID_bfr AND date > statusDate_bfr
-	ORDER BY date ASC LIMIT 1) AS src
-	SET dest.dateOut = src.date
-	WHERE dest.memberID = memberID_bfr and dest.date = statusDate_bfr;
+	member_status_log AS dest, 
+	(SELECT member_status_log.status_date_in FROM member_status_log
+	WHERE member_id = memberID_bfr AND status_date_in > statusDate_bfr
+	ORDER BY status_date_in ASC LIMIT 1) AS src
+	SET dest.status_date_out = src.status_date_in
+	WHERE dest.member_id = memberID_bfr and dest.status_date_in = statusDate_bfr;
 
 END LOOP update_status;
 
