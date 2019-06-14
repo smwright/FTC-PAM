@@ -192,11 +192,9 @@ CREATE TABLE IF NOT EXISTS `pam`.`deployed_unit` (
   `report_type` INT(11) NULL DEFAULT NULL,
   `lft` INT(11) NOT NULL,
   `rgt` INT(11) NOT NULL,
-  PRIMARY KEY (`id`, `campaign_id`, `hist_unit_id`, `acg_unit_id`),
+  PRIMARY KEY (`id`, `campaign_id`, `hist_unit_id`),
   INDEX `fk_deployedunits_campaigns1_idx` (`campaign_id` ASC),
-  INDEX `fk_deployedunits_acgunits1_idx` (`acg_unit_id` ASC),
   INDEX `fk_deployedunits_histunits1_idx` (`hist_unit_id` ASC),
-  INDEX `fk_deployed_unit_asset1_idx` (`asset_id` ASC),
   CONSTRAINT `fk_deployedunits_campaigns1`
     FOREIGN KEY (`campaign_id`)
     REFERENCES `pam`.`campaign` (`id`)
@@ -205,11 +203,6 @@ CREATE TABLE IF NOT EXISTS `pam`.`deployed_unit` (
   CONSTRAINT `fk_deployedunits_histunits1`
     FOREIGN KEY (`hist_unit_id`)
     REFERENCES `pam`.`hist_unit` (`id`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_deployed_unit_acg_unit1`
-    FOREIGN KEY (`acg_unit_id`)
-    REFERENCES `pam`.`acg_unit` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB

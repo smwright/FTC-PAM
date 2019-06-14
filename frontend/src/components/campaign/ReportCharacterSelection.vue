@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="heading">CHARACTER SELECTION</div>
-    <p>Choose one of the characters below for your report. More info to be put here....</p>
+    <p class="container">Choose one of the characters below for your report. More info to be put here....</p>
     <!--<p>Unit: {{ JSON.stringify(user_unit) }}</p>-->
     <!--<p>Mission:  {{ missionById(this.$route.params.mission_id) }}</p>-->
 
@@ -40,21 +40,21 @@ export default {
   components: {
     CharacterHeader
   },
-  mounted () {
+  async mounted () {
 
     // Load character info
     this.$store.dispatch('characterStore/loadCharacters',
-      {caller: this.$options.name, member_id: this.$auth.getUserId(this.$options.name)})
-      .then(response => {
-        return this.$auth.getUserUnit(this.$options.name, this.$route.params.campaign_id)
+      {caller: this.$options.name, member_id: await this.$auth.getUserId(this.$options.name)})
+      .then(async response => {
+        return await this.$auth.getUserUnit(this.$options.name, this.$route.params.campaign_id)
       })
-      .then(response => {
+      .then(async response => {
         // this.user_unit = response[0];
         this.depl_unit_id = response[0].depl_unit_id;
         this.faction = response[0].faction;
         this.mission_hist_date = this.missionById(this.$route.params.mission_id).hist_date;
-        this.user_id = this.$auth.getUserId(this.$options.name);
-        this.callsign = this.$auth.getUserCallsign(this.$options.name);
+        this.user_id = await this.$auth.getUserId(this.$options.name);
+        this.callsign = await this.$auth.getUserCallsign(this.$options.name);
 
         return this.$dbCon.requestViewData(this.$options.name,
           {view: "mission_member_rank", member_id: this.user_id, mission_id: this.$route.params.mission_id,
@@ -178,12 +178,5 @@ export default {
 </script>
 
 <style scoped>
-.div-button{
-  margin: 10px 2px 10px 2px;
-  cursor: pointer;
-}
 
-.div-button:hover {
-  background: gray;
-}
 </style>

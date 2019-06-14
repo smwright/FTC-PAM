@@ -14,7 +14,7 @@ SELECT `transfers`.`id`,
     `transfers`.`transferDate`
 FROM `transfers`;
 
-CALL `pam`.`PAM_update_transfers_date_out`();
+CALL `pam`.`PAM_update_transfer_date_out`();
 DROP TABLE transfers;
 
 DROP TEMPORARY TABLE transfersUpdate;

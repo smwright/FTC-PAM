@@ -1,4 +1,4 @@
-CREATE DEFINER=`cl45-acg-pam`@`%` PROCEDURE `PAM_update_transfers_date_out`()
+CREATE DEFINER=`cl45-acg-pam`@`%` PROCEDURE `PAM_update_transfer_date_out`()
     NO SQL
 BEGIN
 
@@ -8,7 +8,7 @@ DECLARE finished INTEGER DEFAULT 0;
 
 DECLARE update_cursor CURSOR FOR
 	
-	SELECT memberID, transferDate FROM transfers;
+	SELECT member_id, transfer_date_in FROM transfer;
 
 DECLARE CONTINUE HANDLER
 FOR NOT FOUND SET finished = 1;
@@ -26,12 +26,12 @@ update_transfers: LOOP
 	
 	
 	UPDATE 
-	transfers AS dest, 
-	(SELECT transfers.transferDate FROM transfers
-	WHERE memberID = memberID_bfr AND transferDate > transferDate_bfr
-	ORDER BY transferDate ASC LIMIT 1) AS src
-	SET dest.transferDateOut = src.transferDate
-	WHERE dest.memberID = memberID_bfr and dest.transferDate = transferDate_bfr;
+	transfer AS dest, 
+	(SELECT transfer.transfer_date_in FROM transfer
+	WHERE member_id = memberID_bfr AND transfer_date_in > transferDate_bfr
+	ORDER BY transfer_date_in ASC LIMIT 1) AS src
+	SET dest.transfer_date_out = src.transfer_date_in
+	WHERE dest.member_id = memberID_bfr and dest.transfer_date_in = transferDate_bfr;
 
 END LOOP update_transfers;
 
