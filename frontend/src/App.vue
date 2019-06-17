@@ -51,12 +51,12 @@ export default {
 
 @font-face {
   font-family: "Remingtoned Type";
-  src: url("/static/TypewriterFont.ttf");
+  src: url("/acg-pam-2/TypewriterFont.ttf");
 }
 
 body {
   width: 1800px;
-  background:url("http://www.mediafire.com/convkey/abbb/i1nbz888niblfoqzg.jpg");
+  background:url("/acg-pam-2/background.jpg");
   background-color: #FFFFFF;
   background-repeat: no-repeat;
   background-position: center top;

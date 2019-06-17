@@ -1,60 +1,27 @@
 CREATE 
     ALGORITHM = UNDEFINED 
-    DEFINER = `root`@`localhost` 
     SQL SECURITY DEFINER
 VIEW `campaign_list` AS
     SELECT 
-        `pam`.`campaign`.`id` AS `id`,
-        `pam`.`campaign`.`name` AS `name`,
-        `pam`.`campaign`.`is_primary` AS `is_primary`,
-        `pam`.`campaign`.`platform` AS `platform`,
-        `pam`.`campaign`.`campaign_status` AS `campaign_status`,
-        `pam`.`campaign`.`time` AS `time`,
-        `pam`.`campaign`.`open` AS `open`,
-        `pam`.`campaign`.`campaign_link` AS `campaign_link`,
-        `pam`.`campaign`.`description` AS `description`,
-        `pam`.`campaign`.`image` AS `image`,
-        `unit_table`.`units` AS `units`,
-        `sortie_table`.`sorties` AS `sorties`,
-        `participant_table`.`participants` AS `participants`,
-        `mission_table`.`missions` AS `missions`,
-        ROUND((`sortie_table`.`sorties` / `mission_table`.`missions`),
+        `campaign`.`id` AS `id`,
+        `campaign`.`name` AS `name`,
+        `campaign`.`is_primary` AS `is_primary`,
+        `campaign`.`platform` AS `platform`,
+        `campaign`.`campaign_status` AS `campaign_status`,
+        `campaign`.`time` AS `time`,
+        `campaign`.`open` AS `open`,
+        `campaign`.`campaign_link` AS `campaign_link`,
+        `campaign`.`description` AS `description`,
+        `campaign`.`image` AS `image`,
+        `campaign_unit_stats`.`units` AS `units`,
+        `campaign_sorties`.`sorties` AS `sorties`,
+        `campaign_participants`.`participants` AS `participants`,
+        `campaign_missions`.`missions` AS `missions`,
+        ROUND((`campaign_sorties`.`sorties` / `campaign_missions`.`missions`),
                 0) AS `avg_attendance`
     FROM
-        ((((`pam`.`campaign`
-        LEFT JOIN (SELECT 
-            `pam`.`deployed_unit`.`campaign_id` AS `campaign_id`,
-                COUNT(`pam`.`deployed_unit`.`acg_unit_id`) AS `units`
-        FROM
-            `pam`.`deployed_unit`
-        WHERE
-            (`pam`.`deployed_unit`.`acg_unit_id` IS NOT NULL)
-        GROUP BY `pam`.`deployed_unit`.`campaign_id`) `unit_table` ON ((`unit_table`.`campaign_id` = `pam`.`campaign`.`id`)))
-        LEFT JOIN (SELECT 
-            `pam`.`campaign`.`id` AS `id`,
-                COUNT(`pam`.`report`.`id`) AS `sorties`
-        FROM
-            ((`pam`.`campaign`
-        LEFT JOIN `pam`.`mission` ON ((`pam`.`mission`.`campaign_id` = `pam`.`campaign`.`id`)))
-        LEFT JOIN `pam`.`report` ON ((`pam`.`report`.`mission_id` = `pam`.`mission`.`id`)))
-        WHERE
-            (`pam`.`report`.`accepted` = 1)
-        GROUP BY `pam`.`campaign`.`id`) `sortie_table` ON ((`sortie_table`.`id` = `pam`.`campaign`.`id`)))
-        LEFT JOIN (SELECT 
-            `pam`.`campaign`.`id` AS `id`,
-                COUNT(DISTINCT `pam`.`career_character`.`personified_by`) AS `participants`
-        FROM
-            (((`pam`.`campaign`
-        LEFT JOIN `pam`.`mission` ON ((`pam`.`mission`.`campaign_id` = `pam`.`campaign`.`id`)))
-        LEFT JOIN `pam`.`report` ON ((`pam`.`report`.`mission_id` = `pam`.`mission`.`id`)))
-        LEFT JOIN `pam`.`career_character` ON ((`pam`.`career_character`.`id` = `pam`.`report`.`character_id`)))
-        WHERE
-            (`pam`.`report`.`accepted` = 1)
-        GROUP BY `pam`.`campaign`.`id`) `participant_table` ON ((`participant_table`.`id` = `pam`.`campaign`.`id`)))
-        LEFT JOIN (SELECT 
-            `pam`.`campaign`.`id` AS `id`,
-                COUNT(`pam`.`mission`.`id`) AS `missions`
-        FROM
-            (`pam`.`campaign`
-        LEFT JOIN `pam`.`mission` ON ((`pam`.`mission`.`campaign_id` = `pam`.`campaign`.`id`)))
-        GROUP BY `pam`.`campaign`.`id`) `mission_table` ON ((`mission_table`.`id` = `pam`.`campaign`.`id`)))
+        ((((`campaign`
+        LEFT JOIN campaign_unit_stats ON ((campaign_unit_stats.`campaign_id` = `campaign`.`id`)))
+        LEFT JOIN campaign_sorties ON ((campaign_sorties.`id` = `campaign`.`id`)))
+        LEFT JOIN campaign_participants ON ((campaign_participants.`id` = `campaign`.`id`)))
+        LEFT JOIN campaign_missions ON ((`campaign_missions`.`id` = `campaign`.`id`)))

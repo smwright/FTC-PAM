@@ -48,13 +48,15 @@ module.exports = {
   },
 
   build: {
-    // Template for index.html
-    index: path.resolve(__dirname, '../dist/index.html'),
+    // Template for index.php
+    index: path.resolve(__dirname, '../dist/index.php'),
 
     // Paths
+    publicPath: '/acg-pam-2/',
     assetsRoot: path.resolve(__dirname, '../dist'),
-    assetsSubDirectory: 'static',
-    assetsPublicPath: '/',
+    assetsSubDirectory: '',
+    assetsPublicPath: '/acg-pam-2/',
+    proxyTable: {},
 
     /**
      * Source Maps

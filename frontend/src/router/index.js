@@ -211,8 +211,8 @@ const router = new VueRouter({
 router.beforeEach( (to, from, next) => {
   if(to.matched.some(record => record.meta.requiresAdmin)) {
 
-    var vue_inst = this.a.app;
-    var isAdmin = vue_inst.$auth.isAdmin(this.name);
+    // var vue_inst = this.a.app;
+    var isAdmin = Vue.prototype.$auth.isAdmin(this.name);
     console.log("Route requires admin rights: " + from.name + " -> " + to.name);
     console.log("Permission granted: " + isAdmin);
     if(isAdmin){
