@@ -1,14 +1,27 @@
 <?php
+include_once(dirname(__FILE__).'/dbx.php');
+
+// Getting info from phpBB forum session
+define('IN_PHPBB', true);
+$phpbb_root_path = (defined('PHPBB_ROOT_PATH')) ? PHPBB_ROOT_PATH : dirname(dirname(__FILE__)).'/forum/';
+$phpEx = substr(strrchr(__FILE__, '.'), 1);
+include($phpbb_root_path . 'common.' . $phpEx);
+$request->enable_super_globals();
+// Start session management
+$user->session_begin();
+$auth->acl($user->data);
+$user->setup();
 
 //Set true if developing.
-$dev = true;
+$dev = false;
 $dev_user = "Thaine";
 
 $params = json_decode( file_get_contents( 'php://input' ), true );
+//echo("USER: ".$user->data['username_clean']);
 
 switch ($params['action']){
     case 'syncSession':
-        getForumSessionInfo();
+        getForumSessionInfo($user);
         break;
     default:
         header('HTTP/1.1 403 Forbidden');
@@ -16,7 +29,7 @@ switch ($params['action']){
 
 }
 
- function getForumSessionInfo() {
+ function getForumSessionInfo($user) {
  /* *****************************************************************************
      Login via phpBB forum. Code from:
      http://www.3cc.org/blog/2010/03/integrating-your-existing-site-into-phpbb3/
@@ -36,7 +49,7 @@ switch ($params['action']){
             $username = $dev_user;
         }
     } else {
-        include_once(dirname(__FILE__).'/phpbbx.php');
+//        include_once(dirname(dirname(__FILE__)).'/phpbbx.php');
         $username = $user->data['username_clean'];
     }
 
@@ -55,7 +68,7 @@ switch ($params['action']){
 
 function getUserInfo($username) {
 
-    include_once(dirname(__FILE__).'/dbx.php');
+
     $dbx = getDBx();
     $sql = "SELECT id, username, callsign, admin FROM acg_member WHERE username = '$username'";
     $result = mysqli_query($dbx, $sql);

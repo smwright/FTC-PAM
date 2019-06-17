@@ -46,25 +46,6 @@ function whitelist_table($name) {
         "report_submission_depl_units"
     ];
 
-//    switch ($name){
-//        case "campaign_list":
-//            $result = $name;
-//            break;
-//        case "campaign_info_unit":
-//            $result = $name;
-//            break;
-//        case "campaign_unit_member_info":
-//            $result = $name;
-//            break;
-//        case "campaign_unit_plane_asset_status":
-//            $result = $name;
-//            break;
-//        default:
-//            header('HTTP/1.1 403 Forbidden');
-//            echo("Table not listed: $name");
-//    }
-//    return $result;
-
     if(in_array($name, $available_views)){
         return $name;
     } else {
@@ -72,10 +53,6 @@ function whitelist_table($name) {
         header('HTTP/1.1 403 Forbidden');
     }
 }
-
-// retrieving parameter array
-//$requestBody = file_get_contents("php://input");
-//$param = json_decode($requestBody,true);
 
 //retrieving database connection
 $dbx = getDBx();
@@ -122,6 +99,7 @@ if(filter_has_var(INPUT_GET, "view")) {
 //    echo var_dump($var_types);
 //    echo var_dump($var_array);
     call_user_func_array('mysqli_stmt_bind_param', $params);
+//    echo var_dump($stmt);
     mysqli_stmt_execute($stmt);
 //    echo var_dump($stmt);
     $result = mysqli_stmt_get_result($stmt);

@@ -710,10 +710,6 @@ SET character_set_client = utf8;
 SET character_set_client = @saved_cs_client;
 
 --
--- Dumping routines for database 'pam'
---
-
---
 -- Final view structure for view `asset_info`
 --
 
@@ -1406,4 +1402,4 @@ SET character_set_client = @saved_cs_client;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-06-14 21:54:53
+-- Dump completed on 2019-06-15 10:07:04
