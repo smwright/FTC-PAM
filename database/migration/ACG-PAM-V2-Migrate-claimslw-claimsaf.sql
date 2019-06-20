@@ -15,7 +15,7 @@ SELECT `claimslw`.`id`,
     `claimslw`.`accepted`
 FROM `claimslw`;
 
-INSERT INTO `pam`.`claim_lw`
+INSERT INTO `claim_lw`
 (`id`,
 `claim_id`,
 `claim_time`,
@@ -54,7 +54,7 @@ SELECT `claimsraf`.`id` + @last_id,
     `claimsraf`.`accepted`
 FROM `claimsraf`;
 
-INSERT INTO `pam`.`claim_raf`
+INSERT INTO `claim_raf`
 (`id`,
 `claim_id`,
 `enemy_status`,
@@ -82,7 +82,7 @@ SELECT `claimsvvs`.`id` + @last_id,
     `claimsvvs`.`accepted`
 FROM `claimsvvs`;
 
-INSERT INTO `pam`.`claim_vvs`
+INSERT INTO `claim_vvs`
 (`id`,
 `claim_id`,
 `claim_time`,
@@ -137,7 +137,7 @@ UPDATE `claimsground` SET `object` = 10 + @max_id WHERE `object` = 10;
 UPDATE `claimsground` SET `object` = 11 + @max_id WHERE `object` = 11;
 UPDATE `claimsground` SET `object` = 12 + @max_id WHERE `object` = 12;
 
-INSERT INTO `pam`.`claim`
+INSERT INTO `claim`
 (`id`,
 `report_id`,
 `asset_id`,
@@ -150,7 +150,7 @@ SELECT `claimsground`.`id` + @last_id,
     `claimsground`.`accepted`
 FROM `claimsground`;
 
-INSERT INTO `pam`.`claim_ground`
+INSERT INTO `claim_ground`
 (`id`,
 `claim_id`,
 `amount`)

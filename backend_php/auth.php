@@ -1,20 +1,23 @@
 <?php
 include_once(dirname(__FILE__).'/dbx.php');
 
-// Getting info from phpBB forum session
-define('IN_PHPBB', true);
-$phpbb_root_path = (defined('PHPBB_ROOT_PATH')) ? PHPBB_ROOT_PATH : dirname(dirname(__FILE__)).'/forum/';
-$phpEx = substr(strrchr(__FILE__, '.'), 1);
-include($phpbb_root_path . 'common.' . $phpEx);
-$request->enable_super_globals();
-// Start session management
-$user->session_begin();
-$auth->acl($user->data);
-$user->setup();
-
 //Set true if developing.
-$dev = false;
+$dev = true;
 $dev_user = "Thaine";
+
+if(!$dev){
+    // Getting info from phpBB forum session
+    define('IN_PHPBB', true);
+    $phpbb_root_path = (defined('PHPBB_ROOT_PATH')) ? PHPBB_ROOT_PATH : dirname(dirname(__FILE__)).'/forum/';
+    $phpEx = substr(strrchr(__FILE__, '.'), 1);
+    include($phpbb_root_path . 'common.' . $phpEx);
+    $request->enable_super_globals();
+    // Start session management
+    $user->session_begin();
+    $auth->acl($user->data);
+    $user->setup();
+}
+
 
 $params = json_decode( file_get_contents( 'php://input' ), true );
 //echo("USER: ".$user->data['username_clean']);

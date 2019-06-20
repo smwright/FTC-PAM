@@ -39,7 +39,7 @@ import he from 'he'
 
 export default {
   name: 'Home',
-  mounted () {
+  async mounted () {
 
     console.log("Testing PHP connection")
     this.$dbCon.requestViewData(this.$options.name, {view: "campaign_list"})
@@ -59,7 +59,7 @@ export default {
     this.$store.commit('test/increment')
     console.log("Calling getter: " + this.$store.getters['test/doubleCount'])
 
-    this.$auth.syncSession(this.$options.name);
+    await this.$auth.syncSession(this.$options.name);
     console.log("he-version: "+he.version);
 
   },

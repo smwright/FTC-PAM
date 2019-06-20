@@ -98,6 +98,8 @@ if(filter_has_var(INPUT_GET, "view")) {
 //    echo var_dump($query);
 //    echo var_dump($var_types);
 //    echo var_dump($var_array);
+//    $func = 'mysqli_stmt_bind_param';
+//    $func(...$params);
     call_user_func_array('mysqli_stmt_bind_param', $params);
 //    echo var_dump($stmt);
     mysqli_stmt_execute($stmt);

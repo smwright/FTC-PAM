@@ -22,7 +22,7 @@ INSERT INTO `promotion`
 (`id`,
 `member_id`,
 `rank_value`,
-`date`,
+`promotion_date`,
 `comment`)
 SELECT `promotions`.`id`,
     `promotions`.`memberID`,

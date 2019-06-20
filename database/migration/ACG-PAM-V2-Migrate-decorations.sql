@@ -1,4 +1,5 @@
 DELETE FROM decorations WHERE decorations.characterID NOT IN (SELECT career_character.id FROM career_character);
+DELETE FROM decorations WHERE decorations.awardedBy NOT IN (SELECT acg_member.id FROM acg_member);
 
 INSERT INTO `decoration`
 (`id`,
