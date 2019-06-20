@@ -7,7 +7,8 @@
           <!--{{ this.decodeHTML(briefing_info.text) }}-->
         </template>
         <template v-else>
-          {{ this.encryptBriefing(briefing_info.text, 5) }}
+          <TextWithImage v-bind:original_text="this.decodeHTML(this.encryptBriefing(briefing_info.text, 5))"></TextWithImage>
+          <!--{{ this.encryptBriefing(briefing_info.text, 5) }}-->
         </template>
       </div>
   </div>
