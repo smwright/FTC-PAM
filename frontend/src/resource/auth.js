@@ -38,7 +38,7 @@ auth.install = function (Vue, options) {
         auth.session.set('admin', response['admin']);
         console.log(caller + " Auth: Session data-> "+JSON.stringify(auth.session.getAll()))
       } catch(error) {
-        console.log(error.message);
+        console.log("auth.js SYNC SESSION ERROR: "+JSON.stringify(error));
       }
     },
 

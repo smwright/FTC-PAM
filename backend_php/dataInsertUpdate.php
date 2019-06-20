@@ -123,23 +123,28 @@ if(array_key_exists("table", $params)) {
             //INSERTING
             $insert_counter++;
             $insert_bind_array = array_merge(array($insert_stmt, $parcel_types_insert), $parcel_values_ref);
-            call_user_func_array('mysqli_stmt_bind_param', $insert_bind_array);
+            $func = 'mysqli_stmt_bind_param';
+            $func(...$insert_bind_array);
+//            call_user_func_array('mysqli_stmt_bind_param', $insert_bind_array);
             if (mysqli_stmt_execute($insert_stmt)) {
                 $insert_success += mysqli_stmt_affected_rows($insert_stmt);
                 $insert_array[] = array("old_id" => (int)$id, "new_id" => mysqli_stmt_insert_id($insert_stmt));
             } else {
-                $error_str .= mysqli_error($dbx).", ";
+                $error_str .= "id: $id ".mysqli_error($dbx).", ";
             }
         } else if ($id >= 0) {
             //UPDATING
             $update_counter++;
             $parcel_values_ref[] = &$id;
             $update_bind_array = array_merge(array($update_stmt, $parcel_types_update), $parcel_values_ref);
-            call_user_func_array('mysqli_stmt_bind_param', $update_bind_array);
+            $func = 'mysqli_stmt_bind_param';
+            $func(...$update_bind_array);
+//            call_user_func_array('mysqli_stmt_bind_param', $update_bind_array);
             if (mysqli_stmt_execute($update_stmt)) {
                 $update_success += mysqli_stmt_affected_rows($update_stmt);
             } else {
-                $error_str .= mysqli_error($dbx).", ";
+                $error_str .= "id: $id ".mysqli_error($dbx).", ";
+//                $error_str .= "id: $id , ";
             }
         }
     }

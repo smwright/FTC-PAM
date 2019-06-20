@@ -126,6 +126,10 @@ export default {
       type: Number,
       default: null,
     },
+    type: {
+      type: Number,
+      default: null,
+    },
     description: {
       type: String,
       default: null
@@ -143,6 +147,7 @@ export default {
         name: this.name,
         code: this.code,
         faction: this.faction,
+        type: this.type,
         description: this.description,
         image: this.image
       },
@@ -168,7 +173,7 @@ export default {
        this.$dbCon.insertUpdateData(this.$options.name, {table:"hist_unit", payload:[this.e_data]})
         .then(response => {
           console.log("Response: " + JSON.stringify(response));
-          this.dbStatus += response;
+          this.dbStatus += "Hist unit update: "+response.message;
         })
         .catch(error => {
           console.log(error.message);
@@ -187,7 +192,7 @@ export default {
         this.$dbCon.deleteData(this.$options.name, {table:"hist_unit", payload:[{id: this.e_data.id}]})
           .then(response => {
             console.log("Response: " + JSON.stringify(response));
-            this.dbStatus += response;
+            this.dbStatus += "Hist unit update: "+response.message;
           })
           .then(
             // call the parent component to remove the unit from hist_unit array

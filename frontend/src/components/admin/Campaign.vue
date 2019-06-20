@@ -234,10 +234,19 @@ export default {
     updateCampaignID: async function (id) {
 
       this.campaign_id = Number(id);
-      await this.$store.dispatch('campaignAdmin/loadACGUnits', { caller: this.$options.name});
-      await this.$store.dispatch('campaignAdmin/loadHistUnits', { caller: this.$options.name});
-      await this.$store.dispatch('campaignAdmin/loadControllableAssets', { caller: this.$options.name});
-      await this.$store.dispatch('campaignAdmin/loadUnitMembers', { caller: this.$options.name})
+      try {
+
+        await this.$store.dispatch('campaignAdmin/loadACGUnits', { caller: this.$options.name});
+        await this.$store.dispatch('campaignAdmin/loadHistUnits', { caller: this.$options.name});
+        await this.$store.dispatch('campaignAdmin/loadControllableAssets', { caller: this.$options.name});
+        await this.$store.dispatch('campaignAdmin/loadUnitMembers', { caller: this.$options.name})
+
+      } catch (e) {
+
+        console.log("UPDATE Campaign "+JSON.stringify(e));
+
+      }
+
 
       var units = this.$store.getters['campaignAdmin/unitsById'](this.campaign_id);
       if (units === undefined) {
@@ -308,13 +317,14 @@ export default {
     addUnit: function () {
 
       var flatData = this.$dbCon.flatData(this.$refs.tree.getRawData());
-      var min_id = flatData.reduce((min, unit) => Math.min(min, unit.id, 0), state.unit.id);
+      var min_id = flatData.reduce((min, unit) => Math.min(min, unit.id, 0), 0);
       var node =
         {
           acg_unit_id: null,
           asset_id: null,
           campaign_id: this.campaign_id,
-          hist_unit_id: min_id - 1,
+          hist_unit_id: null,
+          id: min_id - 1,
           report_type: null
         };
       this.$refs.tree.addNode(node);

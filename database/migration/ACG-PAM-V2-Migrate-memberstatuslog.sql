@@ -14,7 +14,7 @@ SELECT `memberstatuslog`.`id`,
 FROM `memberstatuslog`;
 
 
-CALL `pam`.`PAM_update_status_date_out`();
+CALL `PAM_update_status_date_out`();
 
 UPDATE `member_status_log` SET `member_status` = `member_status` - 1;
 DROP TABLE memberstatus;

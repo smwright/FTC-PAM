@@ -9,7 +9,7 @@ UPDATE mission SET campaign_id = 9 WHERE id >= 177;
 UPDATE mission SET campaign_id = 10 WHERE id >= 183;
 
 -- Correction of report.squadronID because of additional BoB historical units
--- UPDATE reports SET squadronID = squadronID + 7 WHERE squadronID > 17
+UPDATE reports SET squadronID = squadronID + 7 WHERE squadronID > 17;
 
 INSERT INTO `report`
 (`id`,
@@ -49,12 +49,5 @@ UPDATE `report`
 SET
 `asset_status` = asset_status - 1,
 `pilot_status` = pilot_status - 1;
-
--- Moving reports from 8th in campaign 10 to correct unit
-UPDATE `pam`.`report`
-SET
-`deployed_unit_id` = 40
-WHERE `mission_id` = 183 AND `deployed_unit_id` = 19;
-
 
 DROP TABLE `reports`;

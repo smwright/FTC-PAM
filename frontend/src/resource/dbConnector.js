@@ -15,8 +15,29 @@ var dbConnector = {
             resolve(response.data);
           })
           .catch(error => {
-            var reason = this.createERROR(error);
-            reject(reason);
+            var errorStr;
+            errorStr = `dbConnector.createGETPromise call to ${url} with param ${JSON.stringify(param)}`;
+            if (error.response) {
+              // The request was made and the server responded with a status code
+              // that falls out of the range of 2xx
+              errorStr += " response error.";
+              errorStr += ` Response data: ${error.response.data}`;
+              errorStr += ` Response status: ${error.response.status}`;
+              errorStr += ` Response headers: ${error.response.headers}`;
+              errorStr += ` Response headers: ${error.message}`;
+            } else if (error.request) {
+              // The request was made but no response was receive
+              // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
+              // http.ClientRequest in node.js
+              errorStr += " request error.";
+              errorStr += " "+error.request;
+            } else {
+              // Something happened in setting up the request that triggered an Error
+              errorStr += " error.";
+              errorStr += " "+error.message;
+            }
+            errorStr += " "+error.config;
+            reject(errorStr);
           })
       })
     return resultData;
@@ -32,39 +53,60 @@ var dbConnector = {
             resolve(response.data);
           })
           .catch(error => {
-            var reason = this.createERROR(error);
-            reject(reason);
+            var errorStr;
+            errorStr = `dbConnector.createGETPromise call to ${url} with param ${JSON.stringify(param)}`;
+            if (error.response) {
+              // The request was made and the server responded with a status code
+              // that falls out of the range of 2xx
+              errorStr += " response error.";
+              errorStr += ` Response data: ${error.response.data}`;
+              errorStr += ` Response status: ${error.response.status}`;
+              errorStr += ` Response headers: ${error.response.headers}`;
+              errorStr += ` Response headers: ${error.message}`;
+            } else if (error.request) {
+              // The request was made but no response was receive
+              // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
+              // http.ClientRequest in node.js
+              errorStr += " request error.";
+              errorStr += " "+error.request;
+            } else {
+              // Something happened in setting up the request that triggered an Error
+              errorStr += " error.";
+              errorStr += " "+error.message;
+            }
+            errorStr += " "+error.config;
+            reject(errorStr);
           })
       })
     return resultData;
   },
 
-  createERROR: function (error) {
-
-    var errorStr;
-    errorStr = `dbConnector.createGETPromise call to ${url} with param ${JSON.stringify(param)}`;
-    if (error.response) {
-      // The request was made and the server responded with a status code
-      // that falls out of the range of 2xx
-      errorStr += " response error.";
-      errorStr += ` Response data: ${error.response.data}`;
-      errorStr += ` Response status: ${error.response.status}`;
-      errorStr += ` Response headers: ${error.response.headers}`;
-      errorStr += ` Response headers: ${error.message}`;
-    } else if (error.request) {
-      // The request was made but no response was receive
-      // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
-      // http.ClientRequest in node.js
-      errorStr += " request error.";
-      errorStr += " "+error.request;
-    } else {
-      // Something happened in setting up the request that triggered an Error
-      errorStr += " error.";
-      errorStr += " "+error.message;
-    }
-    errorStr += " "+error.config;
-    return new Error(errorStr);
-  }
+  // createERROR: function (error) {
+  //
+  //   var errorStr;
+  //   errorStr = `dbConnector.createGETPromise call to ${url} with param ${JSON.stringify(param)}`;
+  //   if (error.response) {
+  //     // The request was made and the server responded with a status code
+  //     // that falls out of the range of 2xx
+  //     errorStr += " response error.";
+  //     errorStr += ` Response data: ${error.response.data}`;
+  //     errorStr += ` Response status: ${error.response.status}`;
+  //     errorStr += ` Response headers: ${error.response.headers}`;
+  //     errorStr += ` Response headers: ${error.message}`;
+  //   } else if (error.request) {
+  //     // The request was made but no response was receive
+  //     // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
+  //     // http.ClientRequest in node.js
+  //     errorStr += " request error.";
+  //     errorStr += " "+error.request;
+  //   } else {
+  //     // Something happened in setting up the request that triggered an Error
+  //     errorStr += " error.";
+  //     errorStr += " "+error.message;
+  //   }
+  //   errorStr += " "+error.config;
+  //   return new Error(errorStr);
+  // }
 }
 
 // dbConnector.install routine for Vue installation
