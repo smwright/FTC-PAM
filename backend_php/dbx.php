@@ -38,7 +38,7 @@ function getDBx () {
 //    } else {
 //        return $conn;
 //    }
-}
+//}
 
 function getForumDBx(){
 
