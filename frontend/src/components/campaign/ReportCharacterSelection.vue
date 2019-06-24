@@ -95,9 +95,6 @@ export default {
   methods: {
     selectCharacter: async function (character) {
 
-      console.log("SELECT TRIGGERED");
-      console.log(JSON.stringify(character)+ " SELECTED");
-
       // creating new character if necessary
       if(character === null || character.character_id < 0) {
         console.log("Creating new character");

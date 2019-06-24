@@ -2,7 +2,7 @@
   <div>
     <BriefingSideNav></BriefingSideNav>
     <div class="side-nav-heading heading">Mission synopsis and reports</div>
-    <div class="mission-unit-container" v-for="child in campaign_units">
+    <div class="mission-unit-container" v-for="child in unitsTree">
       <MissionUnitsSideNavBaseComp v-bind="child"></MissionUnitsSideNavBaseComp>
     </div>
   </div>
@@ -11,6 +11,7 @@
 <script>
 import MissionUnitsSideNavBaseComp from "./MissionUnitSideNavBaseComp";
 import BriefingSideNav from "./BriefingSideNav"
+import { mapGetters} from "vuex"
 
 export default {
   name: "MissionUnitSideNav",
@@ -20,22 +21,30 @@ export default {
   },
   data () {
     return {
-      campaign_units: null,
+      // campaign_units: null,
     }
   },
   mounted () {
 
-    this.loadUnits(this.$route.params.campaign_id);
+    this.loadUnits();
+  },
+  computed: {
+
+    ...mapGetters("missionStore", [
+      "unitsTree",
+    ])
   },
   methods: {
-    loadUnits: function (campaign_id) {
-      this.$dbCon.requestViewData(this.$options.name, {view: "campaign_info_unit", campaign_id: campaign_id})
-        .then(response => {
-          this.campaign_units = this.$dbCon.nestData(response);
-        })
-        .catch(error => {
-          console.log(error.message);
-        });
+    loadUnits: function () {
+      this.$store.commit('missionStore/clearReports');
+      this.$store.dispatch('missionStore/loadUnits',
+        {
+          caller: this.$options.name,
+          campaign_id: this.$route.params.campaign_id
+        }
+      ).catch(error => {
+        console.log(error.message);
+      });
     }
   }
 }
