@@ -4,7 +4,7 @@
       <div class="inline">
         <button v-show="children.length >0" v-on:click.stop="toggleChildUnits">{{showChildUnitsButtonText}}</button>
         <button v-show="hasReports" v-on:click.stop="toggleReports">{{showReportsButtonText}}</button>
-        <span class="heading">{{ name }}</span>
+        <span class="heading">{{ hist_unit_name }}</span>
       </div>
     </div>
     <div class="unit-name" v-show="showChildUnits" v-for="child in children">
@@ -12,7 +12,7 @@
     </div>
     <DivLinkButton
       v-if="showReports"
-      v-for="report in reports"
+      v-for="report in reportsByUnit(depl_unit_id)"
       v-bind:key="report.report_id"
       v-bind:class="{ acceptedReport: report.accepted }"
       v-bind="{routeName: 'Report', routeParams: {report_id: report.report_id}}"
@@ -26,6 +26,7 @@
 import MissionUnitsSideNavBaseComp from "./MissionUnitSideNavBaseComp";
 import DivLinkButton from "../basic_comp/DivLinkButton";
 import stringConv from "../../resource/stringConverter"
+import { mapState, mapGetters} from "vuex"
 
   export default {
     name: "MissionUnitsSideNavBaseComp",
@@ -37,11 +38,11 @@ import stringConv from "../../resource/stringConverter"
       stringConv
     ],
     props: {
-      id: {
+      depl_unit_id: {
         type: Number,
         default: null
       },
-      name: String,
+      hist_unit_name: String,
       children: {
         type: Array,
         default: function () {
@@ -51,7 +52,7 @@ import stringConv from "../../resource/stringConverter"
     },
     data () {
       return {
-        reports: [],
+
         hasReports: false,
         showChildUnits: true,
         showChildUnitsButtonText: "-",
@@ -63,10 +64,11 @@ import stringConv from "../../resource/stringConverter"
 
       this.loadReports();
     },
-    watch: {
-      '$route.params.mission_id': function () {
-        this.loadReports();
-      }
+    computed: {
+
+      ...mapGetters("missionStore", [
+        "reportsByUnit",
+      ])
     },
     methods: {
 
@@ -87,16 +89,20 @@ import stringConv from "../../resource/stringConverter"
         }
       },
       loadReports: function(){
-        if(this.$props.children.length === 0)
-          this.$dbCon.requestViewData(this.$options.name, {view:"mission_report_nav_list", mission_id:this.$route.params.mission_id,
-          depl_unit_id:this.$props.id})
-            .then(response => {
-              this.hasReports = response.length > 0;
-              this.reports = this.$dbCon.nestData(response);
-            })
-            .catch(error => {
-              console.log(error.message);
-            });
+
+        this.$store.dispatch('missionStore/loadReports',
+          {
+            caller: this.$options.name,
+            mission_id:this.$route.params.mission_id,
+            depl_unit_id:this.$props.depl_unit_id
+          })
+          .then(response => {
+             this.hasReports = response;
+             // this.reports = this.$dbCon.nestData(response);
+          })
+          .catch(error => {
+            console.log(error.message);
+          });
       }
     },
   }

@@ -13,7 +13,8 @@ const state = {
   comments: [],
   units: [],
   assets: [],
-  members: []
+  members: [],
+  reports: [],
 
 }
 
@@ -61,6 +62,26 @@ const getters = {
     } else {
       return return_asset;
     }
+  },
+
+  unitsTree: (state) => {
+
+    return Vue.prototype.$dbCon.nestData(state.units);
+  },
+
+  reportsByUnit: (state) => (id_inn) => {
+
+    var reports = state.reports.find(
+      function (report) {
+        return report.depl_unit_id == id_inn;
+      }
+    );
+    if(reports !== undefined){
+      return reports.reports;
+    } else {
+      return [];
+    }
+
   },
 
   unitsByFaction: (state) => (faction_inn) => {
@@ -153,7 +174,6 @@ const getters = {
       });
   },
 
-
 }
 
 // mutations
@@ -176,6 +196,22 @@ const mutations = {
       }
     }
 
+  },
+
+  setReports (state, payload) {
+
+    var index = state.reports.findIndex(item => item.depl_unit_id === payload.depl_unit_id)
+    if(index === -1){
+      state.reports.push(payload);
+    } else {
+      state.reports.splice(index, 1, payload);
+    }
+
+  },
+
+  clearReports (state, payload) {
+
+    state.reports = [];
   },
 
   setReport (state, payload) {
@@ -397,6 +433,33 @@ const  actions = {
 
   },
 
+  loadReports (context, payload) {
+
+    return new Promise(function (resolve, reject) {
+
+      Vue.prototype.$dbCon.requestViewData("missionStore on behalf of " + payload.caller,
+        {
+          view: "mission_report_nav_list",
+          mission_id: payload.mission_id,
+          depl_unit_id: payload.depl_unit_id
+        })
+        .then(response => {
+
+          context.commit("setReports",
+            {
+              depl_unit_id: payload.depl_unit_id,
+              reports: response
+            });
+          resolve(response.length > 0);
+
+        })
+        .catch(error => {
+
+          reject(error.message);
+        })
+    })
+  },
+
   loadReport (context, payload) {
 
     return new Promise( async function (resolve, reject) {
@@ -540,7 +603,7 @@ const  actions = {
     return new Promise(function (resolve, reject) {
 
       Vue.prototype.$dbCon.requestViewData("missionStore on behalf of " + payload.caller,
-        {view: "report_submission_depl_units", campaign_id: payload.campaign_id})
+        {view: "campaign_info_unit", campaign_id: payload.campaign_id})
         .then(response => {
 
           context.commit("setUnits", response);
@@ -765,6 +828,15 @@ const  actions = {
           await context.dispatch("deleteGroundClaims", payload);
         }
 
+        // ------------------------------------------------------------------------
+        // reload reports into missionStore
+        // ------------------------------------------------------------------------
+        context.dispatch("loadReports",
+          {
+            caller: "missionStore - Report Accept/Reject",
+            mission_id: context.state.report.mission_id,
+            depl_unit_id: context.state.report.depl_unit_id,
+          });
         resolve();
 
       } catch (e) {
@@ -1237,6 +1309,13 @@ const  actions = {
             array_name: "report",
             update_column_name: "accepted_by",
             update_column_value: accept_parcel.accepted_by
+          });
+
+        context.dispatch("loadReports",
+          {
+            caller: "missionStore - Report Accept/Reject",
+            mission_id: context.state.report.mission_id,
+            depl_unit_id: context.state.report.depl_unit_id,
           });
 
       })
