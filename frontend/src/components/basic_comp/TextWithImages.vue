@@ -64,7 +64,7 @@ export default {
           this.addContent("img", string_to_search.substring(start_pos, stop_pos));
           // this.processed_text_array.push({type: "img", context: string_to_search.substring(start_pos, stop_pos), pos:[start_pos, stop_pos]});
           start_pos = stop_pos + image_stop_tag.length;
-          stop_pos = string_to_search.indexOf(image_stop_tag, start_pos);
+          stop_pos = string_to_search.indexOf(image_start_tag, start_pos);
         }
         this.addContent("text", string_to_search.substring(start_pos));
         // this.processed_text_array.push({type: "text", context: string_to_search.substring(start_pos), pos:[start_pos, stop_pos]});
