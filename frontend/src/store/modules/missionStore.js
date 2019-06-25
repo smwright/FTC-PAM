@@ -1,5 +1,4 @@
 import Vue from "vue"
-import he from 'he'
 
 // initial state
 const state = {
@@ -1245,7 +1244,7 @@ const  actions = {
         .then(response => {
 
           var message =
-            "[url=http://aircombatgroup.co.uk/acg-pam-2"
+            "[url=http://aircombatgroup.co.uk/acg-pam-2/#"
             +payload.path
             +"]This is an automatic created message. Your report for mission "
             +context.state.report.mission_id
@@ -1258,7 +1257,7 @@ const  actions = {
             {
               sender: payload.member_id,
               receiver: context.state.report.member_id,
-              message: he.encode(message),
+              message: message,
               subject: "Comment received"
             })
             .then(response => {

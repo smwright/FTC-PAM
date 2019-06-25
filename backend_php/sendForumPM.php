@@ -7,13 +7,19 @@
  */
 
 include_once(dirname(__FILE__).'/dbx.php');
-include_once(dirname(__FILE__)."phpbbx.php");
-//$phpbb_root_path = (defined('PHPBB_ROOT_PATH')) ? PHPBB_ROOT_PATH : dirname(dirname(dirname(__FILE__))).'/forum/';
-//$phpEx = substr(strrchr(__FILE__, '.'), 1);
+
+// Getting info from phpBB forum session
+define('IN_PHPBB', true);
+$phpbb_root_path = (defined('PHPBB_ROOT_PATH')) ? PHPBB_ROOT_PATH : dirname(dirname(__FILE__)).'/forum/';
+$phpEx = substr(strrchr(__FILE__, '.'), 1);
+include($phpbb_root_path . 'common.' . $phpEx);
 
 $params = json_decode( file_get_contents( 'php://input' ), true );
-//echo "sendForumPM.php received -> ".$params["message"];
-sendphpbbpm_fromID($params["message"], $params["sender"], $params["receiver"], $params["subject"]);
+sendphpbbpm_fromID(
+    htmlspecialchars($params["message"]),
+    $params["sender"],
+    $params["receiver"],
+    $params["subject"]);
 
 // NEED TO WRITE ROUTINES TO SEND MESSAGE!!!
 
@@ -32,6 +38,8 @@ function getForumUserIdFromID($memberId){
         "WHERE phpbb_users.username_clean = '$username'";
     $query = mysqli_query($dbxForum, $sql);
     $result = mysqli_fetch_assoc($query);
+
+
     return $result["user_id"];
 }
 
@@ -47,8 +55,6 @@ function sendphpbbpm_fromID($pmmessage, $pamuserid_sender, $pamuserid_receiver, 
 
     define('IN_PHPBB', true);
     include_once(dirname(dirname(__FILE__)).'/forum/includes/functions_privmsgs.php');
-//    include_once(dirname(dirname(dirname(__FILE__))).'/forum/includes/functions_content.php');
-//    include_once(dirname(dirname(dirname(__FILE__))).'/forum/includes/utf/utf_tools.php');
 
     $userid_sender = getForumUserIdFromID($pamuserid_sender);
     $userid_receiver = getForumUserIdFromID($pamuserid_receiver);
@@ -58,8 +64,7 @@ function sendphpbbpm_fromID($pmmessage, $pamuserid_sender, $pamuserid_receiver, 
     $allow_bbcode = $allow_smilies = true;
     $allow_urls = true;
 
-
-//    $result = generate_text_for_storage($message, $uid, $bitfield, $options, $allow_bbcode, $allow_urls, $allow_smilies);
+    $result = generate_text_for_storage($message, $uid, $bitfield, $options, $allow_bbcode, $allow_urls, $allow_smilies);
 
     $pm_data = array(
         'from_user_id'       => $userid_sender,
