@@ -5,16 +5,16 @@
         <div class="inline-block full-width div-button">
           <div class="float-left">
             <button v-if="children.length >0" v-on:click.stop="toggleChildUnits">{{showChildUnitsButtonText}}</button>
-            <span>{{ id }}</span>
-            <span class="heading">{{ name }}</span>
+            <!--<span>{{ depl_unit_id }}</span>-->
+            <span class="heading">{{ hist_unit_name }}</span>
           </div>
           <div class="float-right">
-            <span class="heading">{{ unit_code }}</span>
+            <span class="heading">{{ hist_unit_code }}</span>
           </div>
         </div>
       </template>
       <UnitMembersComp
-        v-bind:id="id"
+        v-bind:id="depl_unit_id"
         v-bind:acg_unit_id="acg_unit_id"
       >
       </UnitMembersComp>
@@ -36,7 +36,7 @@ export default {
     HideableDiv
   },
   props: {
-    id: {
+    depl_unit_id: {
       type: Number,
       default: null
     },
@@ -44,14 +44,14 @@ export default {
       type: Number,
       default: null
     },
-    name: String,
+    hist_unit_name: String,
     children: {
       type: Array,
       default: function () {
         return [];
       }
     },
-    unit_code: {
+    hist_unit_code: {
       type: String,
       default: ""
     }
