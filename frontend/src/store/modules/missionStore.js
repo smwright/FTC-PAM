@@ -1,5 +1,4 @@
 import Vue from "vue"
-import he from 'he'
 
 // initial state
 const state = {
@@ -929,12 +928,26 @@ const  actions = {
 
             if(aerial_claims[i].witness_id !== null) {
 
-              var send_resp = await Vue.prototype.$dbCon.sendForumPM("missionStore on behalf of "+payload.caller,
+              var message = "[url=http://aircombatgroup.co.uk/acg-pam-2/#"
+                +payload.path
+                +"This is an automatic created message. "
+                +context.state.report.callsign
+                +" appealed to you as a witness for the claim in mission "
+                +context.state.report.mission_id
+                +"."
+                +"[/url]";
+
+              Vue.prototype.$dbCon.sendForumPM("missionStore on behalf of "+payload.caller,
                 {
-                  receiver: aerial_claims[i].witness_id,
-                  message: "THIS IS THE MESSAGE",
-                });
-              console.log(JSON.stringify(send_resp));
+                  sender: payload.member_id,
+                  receiver: context.state.report.member_id,
+                  message: message,
+                  subject: "Comment received"
+                })
+                .then(response => {
+
+                  console.log(JSON.stringify(response));
+                })
             }
           }
 
@@ -988,12 +1001,26 @@ const  actions = {
 
             if(aerial_claims[i].witness_id !== null) {
 
-              var send_resp = await Vue.prototype.$dbCon.sendForumPM("missionStore on behalf of "+payload.caller,
+              var message = "[url=http://aircombatgroup.co.uk/acg-pam-2/#"
+                +payload.path
+                +"This is an automatic created message. "
+                +context.state.report.callsign
+                +" appealed to you as a witness for the claim in mission "
+                +context.state.report.mission_id
+                +"."
+                +"[/url]";
+
+              Vue.prototype.$dbCon.sendForumPM("missionStore on behalf of "+payload.caller,
                 {
-                  receiver: aerial_claims[i].witness_id,
-                  message: "THIS IS THE MESSAGE",
-                });
-              console.log(JSON.stringify(send_resp));
+                  sender: payload.member_id,
+                  receiver: context.state.report.member_id,
+                  message: message,
+                  subject: "Comment received"
+                })
+                .then(response => {
+
+                  console.log(JSON.stringify(response));
+                })
             }
 
           }
@@ -1245,7 +1272,7 @@ const  actions = {
         .then(response => {
 
           var message =
-            "[url=http://aircombatgroup.co.uk/acg-pam-2"
+            "[url=http://aircombatgroup.co.uk/acg-pam-2/#"
             +payload.path
             +"]This is an automatic created message. Your report for mission "
             +context.state.report.mission_id
@@ -1258,7 +1285,7 @@ const  actions = {
             {
               sender: payload.member_id,
               receiver: context.state.report.member_id,
-              message: he.encode(message),
+              message: message,
               subject: "Comment received"
             })
             .then(response => {

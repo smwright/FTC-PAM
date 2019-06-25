@@ -48,9 +48,9 @@ function getForumDBx(){
     $database = "cl45-forum-o5j";
 
     $conn = mysqli_connect($servername, $username, $password, $database);
-    if ($mysqli->connect_errno) {
-        echo "Failed to connect to MySQL: " . $mysqli->connect_error;
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
     } else {
-        return $mysqli;
+        return $conn;
     }
 }

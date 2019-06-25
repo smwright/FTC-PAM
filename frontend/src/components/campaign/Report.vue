@@ -123,7 +123,11 @@ export default {
 
     sendReport: function () {
 
-      this.$store.dispatch('missionStore/sendReport', {caller: this.$options.name})
+      this.$store.dispatch('missionStore/sendReport',
+        {
+          caller: this.$options.name,
+          path: this.$route.path
+        })
         .catch(error => {
           console.log(error.message);
         });
