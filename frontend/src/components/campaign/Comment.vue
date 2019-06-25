@@ -66,7 +66,8 @@ export default {
           caller: this.$options.name,
           member_id: await this.$auth.getUserId(),
           comment_date: year+"-"+month+"-"+day,
-          comment_text: this.comment
+          comment_text: this.comment,
+          path: this.$route.path
         })
         .then(response => {
           this.comment = "";
