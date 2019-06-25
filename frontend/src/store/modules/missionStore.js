@@ -930,7 +930,7 @@ const  actions = {
 
               var message = "[url=http://aircombatgroup.co.uk/acg-pam-2/#"
                 +payload.path
-                +"This is an automatic created message. "
+                +"]This is an automatic created message. "
                 +context.state.report.callsign
                 +" appealed to you as a witness for the claim in mission "
                 +context.state.report.mission_id
@@ -939,8 +939,8 @@ const  actions = {
 
               Vue.prototype.$dbCon.sendForumPM("missionStore on behalf of "+payload.caller,
                 {
-                  sender: payload.member_id,
-                  receiver: context.state.report.member_id,
+                  sender: context.state.report.member_id,
+                  receiver: aerial_claims[i].witness_id,
                   message: message,
                   subject: "Comment received"
                 })
@@ -1003,7 +1003,7 @@ const  actions = {
 
               var message = "[url=http://aircombatgroup.co.uk/acg-pam-2/#"
                 +payload.path
-                +"This is an automatic created message. "
+                +"]This is an automatic created message. "
                 +context.state.report.callsign
                 +" appealed to you as a witness for the claim in mission "
                 +context.state.report.mission_id
@@ -1012,8 +1012,8 @@ const  actions = {
 
               Vue.prototype.$dbCon.sendForumPM("missionStore on behalf of "+payload.caller,
                 {
-                  sender: payload.member_id,
-                  receiver: context.state.report.member_id,
+                  sender: context.state.report.member_id,
+                  receiver: aerial_claims[i].witness_id,
                   message: message,
                   subject: "Comment received"
                 })
