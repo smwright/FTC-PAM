@@ -12,8 +12,8 @@ include_once(dirname(__FILE__)."phpbbx.php");
 //$phpEx = substr(strrchr(__FILE__, '.'), 1);
 
 $params = json_decode( file_get_contents( 'php://input' ), true );
-echo "sendForumPM.php received -> ".$params["message"];
-
+//echo "sendForumPM.php received -> ".$params["message"];
+sendphpbbpm_fromID($params["message"], $params["sender"], $params["receiver"], $params["subject"]);
 
 // NEED TO WRITE ROUTINES TO SEND MESSAGE!!!
 
@@ -46,7 +46,7 @@ function sendphpbbpm_fromID($pmmessage, $pamuserid_sender, $pamuserid_receiver, 
     $username_sender = strtolower($result["username"]);
 
     define('IN_PHPBB', true);
-    include_once(dirname(dirname(dirname(__FILE__))).'/forum/includes/functions_privmsgs.php');
+    include_once(dirname(dirname(__FILE__)).'/forum/includes/functions_privmsgs.php');
 //    include_once(dirname(dirname(dirname(__FILE__))).'/forum/includes/functions_content.php');
 //    include_once(dirname(dirname(dirname(__FILE__))).'/forum/includes/utf/utf_tools.php');
 
