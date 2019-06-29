@@ -25,7 +25,7 @@
           <div class="div-button" v-on:click="selectCharacter(character)">
             <CharacterHeader v-bind="character"></CharacterHeader>
             <div v-if="character.last_mission_hist_date != undefined">
-              <span>Last sortie on {{ character.last_mission_hist_date }}</span>
+              <span>Last sortie on {{ character.last_mission_hist_date }} for {{ character.hist_unit_name }}.</span>
             </div>
           </div>
         </template>
