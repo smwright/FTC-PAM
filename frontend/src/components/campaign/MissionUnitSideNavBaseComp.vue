@@ -90,19 +90,22 @@ import { mapState, mapGetters} from "vuex"
       },
       loadReports: function(){
 
-        this.$store.dispatch('missionStore/loadReports',
-          {
-            caller: this.$options.name,
-            mission_id:this.$route.params.mission_id,
-            depl_unit_id:this.$props.depl_unit_id
-          })
-          .then(response => {
-             this.hasReports = response;
-             // this.reports = this.$dbCon.nestData(response);
-          })
-          .catch(error => {
-            console.log(error.message);
-          });
+        if(this.$props.depl_unit_id !== null){
+
+          this.$store.dispatch('missionStore/loadReports',
+            {
+              caller: this.$options.name,
+              mission_id:this.$route.params.mission_id,
+              depl_unit_id:this.$props.depl_unit_id
+            })
+            .then(response => {
+               this.hasReports = response;
+               // this.reports = this.$dbCon.nestData(response);
+            })
+            .catch(error => {
+              console.log(error.message);
+            });
+        }
       }
     },
   }

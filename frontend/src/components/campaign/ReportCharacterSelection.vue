@@ -1,7 +1,17 @@
 <template>
   <div>
     <div class="heading">CHARACTER SELECTION</div>
-    <p class="container">Choose one of the characters below for your report. More info to be put here....</p>
+    <div class="container">
+      <p>Choose one of the characters below or create a new character for your report. What characters are available to
+      you depends on a set of criteria.</p>
+      <ul>
+        <li>The character has to be alive and not captured.</li>
+        <li>The character has to be of the same faction as the faction of your assigned unit for this campaign.</li>
+        <li>The character has not flown a sortie for a mission with a later historic date than this mission.</li>
+      </ul>
+      <p>If you have a character that fulfils the criteria mentioned above and that has already flown a sortie for your
+      assigned unit for this campaign, then this is the only available character.</p>
+    </div>
     <!--<p>Unit: {{ JSON.stringify(user_unit) }}</p>-->
     <!--<p>Mission:  {{ missionById(this.$route.params.mission_id) }}</p>-->
 
@@ -15,7 +25,7 @@
           <div class="div-button" v-on:click="selectCharacter(character)">
             <CharacterHeader v-bind="character"></CharacterHeader>
             <div v-if="character.last_mission_hist_date != undefined">
-              <span>Last sortie on {{ character.last_mission_hist_date }}</span>
+              <span>Last sortie on {{ character.last_mission_hist_date }} for {{ character.hist_unit_name }}.</span>
             </div>
           </div>
         </template>
