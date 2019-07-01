@@ -1,6 +1,5 @@
 <template>
   <div class="CampaignInfoMain">
-    <p>Here you find info about a particular campaign.</p>
     <div class="container">
       <CampaignInfoBaseComp v-bind="campaign"></CampaignInfoBaseComp>
     </div>

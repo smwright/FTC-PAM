@@ -1,6 +1,5 @@
 <template>
   <div class="CampaignInfoMissions">
-    <p>Here you find a list of all missions of the campaign {{campaign_id}}.</p>
     <DivLinkButton
       v-for="(mission) in campaign_missions"
       v-bind:key="mission.id"
@@ -24,13 +23,6 @@ export default {
   },
   mounted () {
 
-    // this.$dbCon.requestViewData(this.$options.name, {view:"campaign_mission_info", campaign_id:this.$route.params.campaign_id})
-    //   .then(response => {
-    //     this.campaign_missions = this.$dbCon.nestData(response);
-    //   })
-    //   .catch(error => {
-    //     console.log(error.message);
-    //   });
     this.$store.commit('missionStore/clearMissions');
     this.$store.dispatch('missionStore/loadMissions', {caller: this.$options.name, campaign_id: this.campaign_id})
       .catch(error => {

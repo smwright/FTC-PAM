@@ -1,14 +1,27 @@
 <template>
   <div>
-    <p>Here you find a list of all ACG campaigns. The list contains future, current
-    and past campaigns. There's only one primary campaign at any time. The number
-    of side campaigns at any time is not limited.</p>
-    <DivLinkButton
-      v-for="campaign in campaigns"
-      v-bind:key="campaign.id"
-      v-bind="{routeName: 'Campaign', routeParams: {campaign_id: campaign.id}}">
-      <CampaignInfoBaseComp v-bind="campaign"></CampaignInfoBaseComp>
-    </DivLinkButton>
+    <p class="container">Here you find a list of all ACG campaigns. The list contains future, current
+    and past campaigns.</p>
+    <template>
+      <h3>Ongoing campaigns</h3>
+      <DivLinkButton
+        v-for="campaign in campaigns"
+        v-if="campaign.campaign_status == 1"
+        v-bind:key="campaign.id"
+        v-bind="{routeName: 'Missions', routeParams: {campaign_id: campaign.id}}">
+        <CampaignInfoBaseComp v-bind="campaign"></CampaignInfoBaseComp>
+      </DivLinkButton>
+    </template>
+    <template>
+      <h3>Finished and future campaigns</h3>
+      <DivLinkButton
+        v-for="campaign in campaigns"
+        v-if="campaign.campaign_status != 1"
+        v-bind:key="campaign.id"
+        v-bind="{routeName: 'Missions', routeParams: {campaign_id: campaign.id}}">
+        <CampaignInfoBaseComp v-bind="campaign"></CampaignInfoBaseComp>
+      </DivLinkButton>
+    </template>
   </div>
 </template>
 
@@ -24,16 +37,23 @@ export default {
   },
   mounted () {
 
-    this.$dbCon.requestViewData(this.$options.name, {view: "campaign_list"})
+    this.$dbCon.requestViewData(this.$options.name,
+      {view: "campaign_list"})
       .then(response => {
         this.campaigns = response;
+        // return this.$dbCon.requestViewData(this.$options.name,
+        //   {view: "campaign_list", campaign_status: 1})
       })
+      // .then(response => {
+      //   this.ongoing_campaigns = response;
+      // })
       .catch(error => {
         console.log(error.message);
       });
   },
   data () {
     return {
+      // ongoing_campaigns: null,
       campaigns: null,
     }
   },

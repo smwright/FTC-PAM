@@ -1,5 +1,6 @@
 CREATE 
     ALGORITHM = UNDEFINED 
+    DEFINER = `root`@`localhost` 
     SQL SECURITY DEFINER
 VIEW `campaign_list` AS
     SELECT 
@@ -21,7 +22,8 @@ VIEW `campaign_list` AS
                 0) AS `avg_attendance`
     FROM
         ((((`campaign`
-        LEFT JOIN campaign_unit_stats ON ((campaign_unit_stats.`campaign_id` = `campaign`.`id`)))
-        LEFT JOIN campaign_sorties ON ((campaign_sorties.`id` = `campaign`.`id`)))
-        LEFT JOIN campaign_participants ON ((campaign_participants.`id` = `campaign`.`id`)))
-        LEFT JOIN campaign_missions ON ((`campaign_missions`.`id` = `campaign`.`id`)))
+        LEFT JOIN `campaign_unit_stats` ON ((`campaign_unit_stats`.`campaign_id` = `campaign`.`id`)))
+        LEFT JOIN `campaign_sorties` ON ((`campaign_sorties`.`id` = `campaign`.`id`)))
+        LEFT JOIN `campaign_participants` ON ((`campaign_participants`.`id` = `campaign`.`id`)))
+        LEFT JOIN `campaign_missions` ON ((`campaign_missions`.`id` = `campaign`.`id`)))
+    ORDER BY `campaign`.`id` DESC

@@ -3,7 +3,7 @@
     <div>
       <div class="inline">
         <button v-show="children.length >0" v-on:click.stop="toggleChildUnits">{{showChildUnitsButtonText}}</button>
-        <button v-show="hasReports" v-on:click.stop="toggleReports">{{showReportsButtonText}}</button>
+        <button v-show="reportsByUnit(depl_unit_id).length > 0" v-on:click.stop="toggleReports">{{showReportsButtonText}}</button>
         <span class="heading">{{ hist_unit_name }}</span>
       </div>
     </div>
@@ -53,7 +53,7 @@ import { mapState, mapGetters} from "vuex"
     data () {
       return {
 
-        hasReports: false,
+        // hasReports: false,
         showChildUnits: true,
         showChildUnitsButtonText: "-",
         showReports: false,
@@ -65,6 +65,11 @@ import { mapState, mapGetters} from "vuex"
       this.loadReports();
     },
     computed: {
+
+      // hasReports: function () {
+      //
+      //   return this.reportsByUnit(dep_unit_id).length > 0;
+      // },
 
       ...mapGetters("missionStore", [
         "reportsByUnit",
@@ -99,7 +104,7 @@ import { mapState, mapGetters} from "vuex"
               depl_unit_id:this.$props.depl_unit_id
             })
             .then(response => {
-               this.hasReports = response;
+               // this.hasReports = response;
                // this.reports = this.$dbCon.nestData(response);
             })
             .catch(error => {

@@ -12,3 +12,4 @@ VIEW `campaign_mission_info` AS
         `mission`.`mission_status` AS `mission_status`
     FROM
         `mission`
+    ORDER BY `mission`.`real_date` DESC
