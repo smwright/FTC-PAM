@@ -132,8 +132,8 @@ const getters = {
 
     return state.assets.filter(
       function (asset) {
-        return asset.parent_name === "Vehicle" ||
-          asset.parent_name === "Structure" ||
+        return asset.parent_name === "Vehicle" |
+          asset.parent_name === "Structure" |
           asset.name === "Aircraft";
       }
     )
@@ -831,9 +831,9 @@ const  actions = {
         // ------------------------------------------------------------------------
         // reload reports into missionStore
         // ------------------------------------------------------------------------
-        context.dispatch("loadReports",
+        await context.dispatch("loadReports",
           {
-            caller: "missionStore - Report Accept/Reject",
+            caller: "missionStore - Report submit",
             mission_id: context.state.report.mission_id,
             depl_unit_id: context.state.report.depl_unit_id,
           });
