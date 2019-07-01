@@ -94,12 +94,30 @@
     <div>
       <hr>
       <span>Pilot status:</span>
-      <span>{{ pilotStatus[report_info.pilot_status] }}</span>
+      <span>
+        <select v-model="report_pilot_status">
+          <option
+            v-for="(pilot_status, index) in pilotStatus"
+            v-bind:value="index"
+          >
+            {{pilot_status}}
+          </option>
+        </select>
+      </span>
     </div>
 
     <div>
       <span>Aircraft status:</span>
-      <span>{{ assetStatus[report_info.asset_status] }}</span>
+      <span>
+        <select v-model="report_asset_status">
+          <option
+            v-for="(asset_status, index) in assetStatus"
+            v-bind:value="index"
+          >
+            {{asset_status}}
+          </option>
+        </select>
+      </span>
       <hr>
     </div>
 
@@ -204,6 +222,36 @@
             {
               array_name: "report",
               update_column_name: "markings",
+              update_column_value: value
+            });
+        }
+      },
+
+      report_pilot_status: {
+        get () {
+          var pilot_status = this.report_info.pilot_status;
+          return pilot_status === undefined ? 0 : pilot_status;
+        },
+        set (value) {
+          this.$store.commit('missionStore/updateReportValue',
+            {
+              array_name: "report",
+              update_column_name: "pilot_status",
+              update_column_value: value
+            });
+        }
+      },
+
+      report_asset_status: {
+        get () {
+          var asset_status = this.report_info.asset_status;
+          return asset_status === undefined ? 0 : asset_status;
+        },
+        set (value) {
+          this.$store.commit('missionStore/updateReportValue',
+            {
+              array_name: "report",
+              update_column_name: "asset_status",
               update_column_value: value
             });
         }
