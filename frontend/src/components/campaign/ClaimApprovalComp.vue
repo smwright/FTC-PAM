@@ -79,13 +79,21 @@ export default {
 
     acceptRejectClaim: async function (accept) {
 
+      if(this.claim_type === 'aerial'){
+
+        var claim_table = "aerial_claims"
+      } else if(this.claim_type === 'ground'){
+
+        var claim_table = "ground_claims"
+      }
+
       this.$store.dispatch('missionStore/acceptRejectClaim',
         {
           caller: this.$options.name,
           id: this.claim_id,
           accepted: accept,
           member_id: await this.$auth.getUserId(),
-          claim_table: "aerial_claims"
+          claim_table: claim_table
         });
     }
   }

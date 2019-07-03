@@ -121,7 +121,6 @@
       <hr>
     </div>
 
-    <Comment></Comment>
   </div>
 </template>
 

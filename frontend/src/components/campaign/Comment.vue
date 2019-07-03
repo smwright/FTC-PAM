@@ -34,12 +34,13 @@ export default {
   mixins: [stringConv],
   mounted () {
 
+    this.checkAdmin();
   },
   data () {
     return {
       // comment_info: null
       comment: null,
-      isAdmin: this.$auth.isAdmin(this.$options.name)
+      isAdmin: false
     }
   },
   computed: {
@@ -54,6 +55,11 @@ export default {
     }),
   },
   methods: {
+
+    checkAdmin: async function () {
+
+      this.isAdmin = await this.$auth.isAdmin(this.$options.name);
+    },
 
     sendComment: async function() {
 
