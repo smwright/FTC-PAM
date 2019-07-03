@@ -661,6 +661,7 @@ const  actions = {
 
     return new Promise(async function (resolve, reject) {
 
+
       var now = new Date();
       var year = now.getFullYear();
       var month = now.getMonth() + 1;
@@ -837,7 +838,7 @@ const  actions = {
             mission_id: context.state.report.mission_id,
             depl_unit_id: context.state.report.depl_unit_id,
           });
-        resolve();
+        resolve("Report send.");
 
       } catch (e) {
 
