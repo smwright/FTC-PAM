@@ -1,9 +1,10 @@
 <template>
-  <div class="mainContainer">
+  <div class="mainContainer" >
     <div>
-      <div class="inline">
+      <div class="inline" v-bind:class="{ axis: isAxis, allied: isAllied }">
         <button v-show="children.length >0" v-on:click.stop="toggleChildUnits">{{showChildUnitsButtonText}}</button>
         <button v-show="reportsByUnit(depl_unit_id).length > 0" v-on:click.stop="toggleReports">{{showReportsButtonText}}</button>
+        <img class="unitEmblem" :src="image"/>
         <span class="heading">{{ hist_unit_name }}</span>
       </div>
     </div>
@@ -49,6 +50,15 @@ import { mapState, mapGetters} from "vuex"
           return [];
         }
       },
+      faction: {
+        type: Number,
+        default: null
+      },
+      image: {
+        type: String,
+        default: null
+      }
+
     },
     data () {
       return {
@@ -70,6 +80,15 @@ import { mapState, mapGetters} from "vuex"
       //
       //   return this.reportsByUnit(dep_unit_id).length > 0;
       // },
+      isAxis: function () {
+
+        return this.faction === 1;
+      },
+
+      isAllied: function () {
+
+        return this.faction === 2 || this.faction ===3;
+      },
 
       ...mapGetters("missionStore", [
         "reportsByUnit",
@@ -119,14 +138,33 @@ import { mapState, mapGetters} from "vuex"
 <style scoped>
 
 .unit-name {
-  margin: 5px 0px;
+  margin: 10px 0px;
 }
 
 .mainContainer {
   margin: 0px 0px 0px 5px;
+
 }
 
 .acceptedReport {
   background-color: rgba(0,255,0,0.25);
 }
+
+.axis {
+  background-color: rgba(0,0,102,0.25);
+  padding: 4px;
+  border-radius: 15px;
+}
+
+.allied {
+  background-color: rgba(153,0,0,0.25);
+  padding: 4px;
+  border-radius: 15px;
+}
+
+.unitEmblem {
+  height: 37px;
+  vertical-align: middle;
+}
+
 </style>
