@@ -42,13 +42,16 @@ export default {
   async mounted () {
 
     console.log("Testing PHP connection")
+    this.$store.commit('logger/addEntry', {message: "Testing PHP connection"})
     this.$dbCon.requestViewData(this.$options.name, {view: "campaign_list"})
-      .then(function(response){
+      .then((response) => {
         console.log("PHP connection test, response received.");
+        this.$store.commit('logger/addEntry', {message: "PHP connection test, response received."});
         console.log(response);
       })
-      .catch(function (error) {
+      .catch((error) => {
         console.log("PHP connection test, error ");
+        this.$store.commit('logger/addEntry', {message: "PHP connection test, error."});
         console.log(error.message);
 
       });
