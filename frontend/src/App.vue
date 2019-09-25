@@ -1,39 +1,53 @@
 <template>
   <div id="app">
-    <div class="clearfix navbar">
-      <!--Navbar for main navigation.-->
-      <Navbar class="float-left"></Navbar>
-      <div class="float-right">{{this.$session.get('username')}}</div>
-    </div>
-    <div class="clearfix contentWrapper">
-      <!--Clearfix is used to help align sidenav and main divs horizonatally next to-->
-      <!--each other.-->
-      <div class="sidenav">
-        <!--The sidenav view is used on some pages for a vertical navigation menu.-->
-        <!--For example unit- or flight-school-topic-navigation.-->
-        <router-view name="sidenav"></router-view>
-      </div>
-      <div class="main">
-        <!--<EventLog></EventLog>-->
-        <!--The main view is where all the content appart from navigation menues goes.-->
-        <router-view/>
-      </div>
-      <div class="full-main">
-        <router-view name="fullmain"></router-view>
+    <div id="header">
+      <div class="clearfix navbar">
+        <!--Navbar for main navigation.-->
+        <div class="clearfix">
+          <Navbar class="float-left"></Navbar>
+          <div class="float-right">{{this.$session.get('username')}}</div>
+        </div>
+        <Logger class="logger float-right"></Logger>
       </div>
     </div>
+
+    <div id="body">
+      <div class="clearfix contentWrapper">
+        <!--Clearfix is used to help align sidenav and main divs horizonatally next to-->
+        <!--each other.-->
+        <div class="sidenav">
+          <!--The sidenav view is used on some pages for a vertical navigation menu.-->
+          <!--For example unit- or flight-school-topic-navigation.-->
+          <router-view name="sidenav"></router-view>
+        </div>
+        <div class="main">
+          <!--The main view is where all the content appart from navigation menues goes.-->
+          <router-view/>
+        </div>
+        <div class="full-main">
+          <router-view name="fullmain"></router-view>
+        </div>
+      </div>
+    </div>
+
+    <div id="footer">
+      <div class="navbar">
+
+      </div>
+    </div>
+
   </div>
 </template>
 
 <script>
 import Navbar from './components/Navbar'
-import EventLog from './components/EventLog'
+import Logger from './components/Logger'
 
 export default {
   name: 'App',
   components: {
     Navbar,
-    EventLog
+    Logger
   },
   mounted() {
     this.$auth.syncSession(this.$options.name);
@@ -43,10 +57,27 @@ export default {
 
 <style>
 #app {
+  min-height: 100%;
+  position: relative;
+
   font-family: Roboto, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+}
+
+#body {
+  height:100%;
+  /*padding: 10px;*/
+  padding-bottom: 82px; /* Height of footer */
+  /*overflow: scroll;*/
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 82px
 }
 
 @font-face {
@@ -54,33 +85,32 @@ export default {
   src: url("/acg-pam-2/TypewriterFont.ttf");
 }
 
+/*div{*/
+  /*border: 1px solid yellow;*/
+/*}*/
+
+html {
+  height: 100%;
+}
+
 body {
-  width: 1800px;
+  /*width: 1800px;*/
   background:url("/acg-pam-2/background.jpg");
   background-color: #FFFFFF;
   background-repeat: no-repeat;
   background-position: center top;
   background-size: cover;
   background-attachment: fixed;
-  padding: 10px;
+  height: 100%;
+  /*padding: 10px;*/
   color: #ffffff;
   font-size: 17px;
 }
 
-.contentWrapper {
-  width: calc(100% - 20px);
-  min-height: 800px;
-  padding: 10px;
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 15px;
-  border-color: rgba(0, 0, 0, 0.4);
-  background: rgba(0, 0, 0, 0.5);
-}
-
 .navbar {
+  /*position: fixed;*/
   height: 50px;
-  width: calc(100% - 20px);; /* Whished widht in % minus 2x border size */
+  width: calc(100% - 20px); /* Whished widht in % minus 2x border size */
   padding: 10px;
   list-style: none;
   border-style: solid;
@@ -90,6 +120,33 @@ body {
   background: rgba(101, 21, 22, .8);
   text-align: center;
   display: table;
+}
+
+.logger {
+  width: 60%;
+  padding: 2px;
+  border-style: solid;
+  border-width: 0px;
+  border-radius: 15px;
+  border-color: rgba(0, 0, 0, 0.0);
+  background: rgba(0, 0, 0, 0.1);
+
+}
+
+.contentWrapper {
+  width: calc(100% - 20px);
+  /*height: 100%;*/
+  /*min-height: 800px;*/
+  padding: 10px;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 15px;
+  border-color: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.fixed {
+  position: fixed;
 }
 
 h1, h2, h3, h4{
@@ -117,6 +174,10 @@ tr,td {
   margin: 0;
   padding: 0px 5px 0px 5px;
   /*border: 1px solid green;*/
+}
+
+th {
+  padding: 0px 5px;
 }
 
 button {
@@ -150,6 +211,11 @@ input, textarea {
   border-radius: 5px;
   padding: 5px;
   color: #1b1b1b;
+  max-width: 99%;
+}
+
+textarea {
+  width: 75%;
 }
 
 select {
