@@ -12,7 +12,7 @@
         v-bind:member_id="member_id"
       ></MemberGeneralComp>
       <MemberCharacterComp
-
+        v-show="tabToShow === 'characters'"
       >
       </MemberCharacterComp>
     </div>
@@ -127,6 +127,8 @@ export default {
         ).catch(error => {
           console.log(error.message);
         });
+      } else {
+        this.$store.commit('characterStore/resetCharacters')
       }
     },
 
