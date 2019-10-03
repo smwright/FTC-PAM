@@ -26,6 +26,7 @@ import ReportCharacterSelection from '../components/campaign/ReportCharacterSele
 //Administration
 import AdminIndex from '../components/admin/AdminIndex'
 import AdminMainSideNav from '../components/admin/AdminMainSideNav'
+import AdminMember from '../components/admin/Member'
 import AdminCampaign from '../components/admin/Campaign'
 import AdminHistUnit from '../components/admin/HistUnits'
 import Assets from '../components/admin/Assets'
@@ -148,6 +149,15 @@ const router = new VueRouter({
       name: 'Admin',
       components: {
         default: AdminIndex,
+        sidenav: AdminMainSideNav
+      },
+      meta: {requiresAdmin: true},
+    },
+    {
+      path: '/admin/member/:member_id',
+      name: 'AdminMember',
+      components: {
+        default: AdminMember,
         sidenav: AdminMainSideNav
       },
       meta: {requiresAdmin: true},

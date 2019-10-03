@@ -15,7 +15,8 @@ VIEW `character_latest_report` AS
         `mission`.`hist_date` AS `last_mission_hist_date`,
         `mission_member_rank`.`rank_name` AS `rank_name`,
         `mission_member_rank`.`abreviation` AS `rank_abreviation`,
-        `mission_member_rank`.`image` AS `rank_image`
+        `mission_member_rank`.`image` AS `rank_image`,
+        `mission_member_rank`.`disp_value` AS `disp_value`
     FROM
         ((`character_latest_report_date`
         JOIN (`career_character`
