@@ -1,17 +1,23 @@
 <template>
   <div>
 
-    <!--<DivLinkButton>-->
-      <!--<div class="heading">Members</div>-->
-    <!--</DivLinkButton>-->
+    <!--       -->
+    <!--MEMBERS-->
+    <!--       -->
+    <HideableDiv>
+      <template slot="buttonHidden">
+        <div class="div-button heading">Members</div>
+      </template>
+      <MemberAdminSideNav></MemberAdminSideNav>
+    </HideableDiv>
+
+    <!--         -->
+    <!--CAMPAIGNS-->
+    <!--         -->
     <HideableDiv>
       <template slot="buttonHidden">
         <div class="div-button heading">Campaigns</div>
       </template>
-      <!--<DivLinkButton v-bind="{routeName: 'AdminCampaign', routeParams: {campaign_id: 0} }">-->
-        <!--New campaign-->
-      <!--</DivLinkButton>-->
-      <!--<br>-->
       <DivLinkButton
         class="campaign-buttons"
         v-for="campaign in campaigns"
@@ -22,10 +28,16 @@
       </DivLinkButton>
     </HideableDiv>
 
+    <!--       -->
+    <!--HISTORICAL UNITS-->
+    <!--       -->
     <DivLinkButton v-bind="{routeName: 'AdminHistUnit'}">
       <div class="heading">Historical Units</div>
     </DivLinkButton>
 
+    <!--       -->
+    <!--ASSETS-->
+    <!--       -->
     <DivLinkButton v-bind="{routeName: 'Asset'}">
       <div class="heading">Assets</div>
     </DivLinkButton>
@@ -36,14 +48,17 @@
 import { mapState } from "vuex"
 import DivLinkButton from "../basic_comp/DivLinkButton"
 import HideableDiv from "../basic_comp/HideableDiv"
+import MemberAdminSideNav from "./MemberAdminSideNav"
 
 export default {
   name: "AdminMainSideNav",
   components: {
     DivLinkButton,
-    HideableDiv
+    HideableDiv,
+    MemberAdminSideNav
   },
     mounted () {
+    //Loads campaigns if there's only the NEW CAMPAIGN is in campaign store
     if (this.$store.state.campaignAdmin.campaigns.length == 1){
       this.$store.dispatch('campaignAdmin/loadCampaigns', {caller: this.$options.name});
     }
@@ -52,7 +67,8 @@ export default {
   computed: {
     ...mapState('campaignAdmin', {
       campaigns: state => state.campaigns
-    })
+    }),
+
   },
 
 }

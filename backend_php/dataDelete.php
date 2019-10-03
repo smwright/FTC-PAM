@@ -24,7 +24,10 @@ function whitelist_table($name) {
         "claim_raf" => array("id"),
         "claim_vvs" => array("id"),
         "claim_ground" => array("id"),
-        "comment" => array("id")
+        "comment" => array("id"),
+        "member_status_log" => array("id"),
+        "promotion" => array("id"),
+        "transfer" => array("id")
     );
 
 

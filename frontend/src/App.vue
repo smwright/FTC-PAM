@@ -295,6 +295,19 @@ select {
 
 }
 
+.div-button-inactive{
+
+  width: calc(100% - 26px);
+  margin: 10px 2px 10px 2px;
+  padding: 10px;
+  cursor: pointer;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 15px;
+  border-color: rgba(0, 0, 0, 0.0);
+  background: rgba(0, 0, 0, 0.1);
+}
+
 /*General quick style aspects*/
 .full-width{
   width: 100%;
@@ -308,12 +321,44 @@ select {
   width: 80%;
 }
 
+.width-70{
+  width: 70%;
+}
+
+.width-60{
+  width: 60%;
+}
+
 .width-30{
   width: 30%;
 }
 
+.width-20{
+  width: 20%;
+}
+
+.width-10{
+  width: 10%;
+}
+
+.width-5{
+  width: 5%;
+}
+
 .width-auto{
   width: auto;
+}
+
+.text-align-left{
+  text-align: left;
+}
+
+.text-align-center{
+  text-align: center;
+}
+
+.text-align-righh{
+  text-align: right;
 }
 
 .inline-block{
