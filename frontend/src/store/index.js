@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 import createLogger from '../../node_modules/vuex/dist/logger'
 import test from './modules/test'
 import campaignAdmin from './modules/campaignAdmin'
+import memberAdmin from './modules/memberAdmin'
 import characterStore from './modules/characterStore'
 import missionStore from './modules/missionStore'
 import logger from './modules/logger'
@@ -16,6 +17,7 @@ export default new Vuex.Store({
   modules: {
     test,
     campaignAdmin,
+    memberAdmin,
     characterStore,
     missionStore,
     logger
@@ -30,13 +32,14 @@ if (module.hot) {
   // accept actions and mutations as hot modules
   module.hot.accept([
 
-    './modules/test',
+    // './modules/test',
     // './modules/campaignAdmin'
   ], () => {
     // require the updated modules
     // have to add .default here due to babel 6 module output
     const test = require('./modules/test').default;
     const campaignAdmin = require('./modules/campaignAdmin');
+    const memberAdmin = require('./modules/memberAdmin');
     const missionStore = require('./modules/missionStore');
     const characterStore = require('./modules/characterStore');
     const logger = require('./modules/logger')
@@ -45,6 +48,7 @@ if (module.hot) {
       modules: {
         test: test,
         campaignAdmin: campaignAdmin,
+        memberAdmin: memberAdmin,
         missionStore: missionStore,
         characterStore: characterStore,
         logger: logger

@@ -3,7 +3,8 @@ import Vue from "vue"
 // initial state
 const state = {
 
-  characters: []
+  characters: [],
+  decorations: []
 
 }
 
@@ -37,8 +38,25 @@ const getters = {
     // Add new character entry and return characters
     characters.push({character_id: -1, first_name: "NEW CHARACTER"});
     return characters;
-  }
+  },
 
+  decorationsById: (state) => (id) => {
+
+    return state.decorations.find(
+      function (decoration) {
+        return decoration.decoration_id === id;
+      }
+    )
+  },
+
+  decorationsByCharacterId: (state) => (id) => {
+
+     return state.decorations.filter(
+       function (decoration) {
+         return decoration.character_id === id;
+       }
+     )
+  }
 
 }
 
@@ -48,7 +66,43 @@ const mutations = {
   setCharacters (state, payload) {
 
     state.characters = payload;
-  }
+  },
+
+  setDecorations (state, payload) {
+
+    for(var i = 0; i < payload.length; i++){
+
+      var index = state.decorations.findIndex(item => item.decoration_id === payload[i].decoration_id);
+      if(index === -1){
+        state.decorations.push(payload[i]);
+      } else {
+        state.decorations.splice(index, 1, payload[i]);
+      }
+    }
+  },
+
+  resetDecorations (state, payload) {
+
+    state.decorations = [];
+  },
+
+  updateValue (state, payload) {
+
+    // Needed values:
+    // array_name: Name of the array to update
+    // id_column_name: Name of the property to identify the object to be updated
+    // id_column_value: Value of the property to identify the object to be updated
+    // update_column_name: Name of the property to be updated
+    // update_column_value: New value of the property
+
+    var result_array = state[payload.array_name].filter(
+      function (search_array) {
+        return search_array[payload.id_column_name] === payload.id_column_value;
+      });
+    for(var i = 0; i < result_array.length; i++) {
+      result_array[i][payload.update_column_name] = payload.update_column_value;
+    }
+  },
 
 }
 
@@ -56,6 +110,7 @@ const mutations = {
 const  actions = {
 
   loadCharacters (context, payload) {
+
 
     return new Promise(function (resolve, reject) {
 
@@ -70,6 +125,27 @@ const  actions = {
 
           reject(error.message);
         })
+    })
+  },
+
+  loadDecorations (context, payload) {
+
+    return new Promise(function (resolve, reject) {
+
+      context.commit("resetDecorations");
+
+      Vue.prototype.$dbCon.requestViewData("characterStore on behalf of " + payload.caller,
+        {view: "decoration_info", member_id: payload.member_id})
+        .then(response => {
+
+          context.commit("setDecorations", response);
+          resolve();
+        })
+        .catch(error => {
+
+          reject(error.message);
+        })
+
     })
   },
 
@@ -90,10 +166,51 @@ const  actions = {
         reject(e);
 
       }
-      // var name = null;
     })
-  }
+  },
 
+  awardRevokeDecoration (context, payload) {
+
+    var award_parcel = {
+      id: payload.id,
+      awarded: payload.awarded,
+      awarded_by: payload.member_id
+    };
+
+    var decoration = context.getters.decorationsById(payload.id);
+    award_parcel.comment = decoration.decoration_comment;
+
+    Vue.prototype.$dbCon.insertUpdateData("characterStore on behalf of "+payload.caller,
+      {
+        table: "decoration",
+        payload: [award_parcel]
+      })
+      .then(response => {
+
+        context.commit('updateValue',
+          {
+            array_name: "decorations",
+            id_column_name: "decoration_id",
+            id_column_value: payload.id,
+            update_column_name: "awarded",
+            update_column_value: payload.awarded
+          });
+        context.commit('updateValue',
+          {
+            array_name: "decorations",
+            id_column_name: "decoration_id",
+            id_column_value: payload.id,
+            update_column_name: "awarded_by",
+            update_column_value: payload.member_id
+          });
+
+      })
+      .catch(error => {
+
+        console.log(error.message);
+      })
+
+  }
 }
 
 export default {

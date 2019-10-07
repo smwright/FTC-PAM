@@ -31,19 +31,24 @@ function whitelist_table($name) {
         "claim_ground_info",
         "comment_info",
         "current_unit_members",
+        "decoration_info",
         "member_info_with_last_status",
+        "member_status_log_info",
         "mission_report_nav_list",
         "mission_member_faction",
         "mission_member_rank",
         "random_first_name",
         "random_last_name",
+        "rank_lookup",
         "report_info",
         "report_detail_raf",
         "report_detail_lw",
         "hist_unit_info",
         "depl_unit_info",
         "hist_unit",
-        "report_submission_depl_units"
+        "promotion_info",
+        "report_submission_depl_units",
+        "transfer_info"
     ];
 
     if(in_array($name, $available_views)){
@@ -98,6 +103,7 @@ if(filter_has_var(INPUT_GET, "view")) {
 //    echo var_dump($query);
 //    echo var_dump($var_types);
 //    echo var_dump($var_array);
+//    echo var_dump($params);
 //    $func = 'mysqli_stmt_bind_param';
 //    $func(...$params);
     call_user_func_array('mysqli_stmt_bind_param', $params);
@@ -105,7 +111,7 @@ if(filter_has_var(INPUT_GET, "view")) {
     mysqli_stmt_execute($stmt);
 //    echo var_dump($stmt);
     $result = mysqli_stmt_get_result($stmt);
-
+//echo var_dump($result);
     if (mysqli_num_rows($result)>0) {
         echo (json_encode(mysqli_fetch_all($result, MYSQLI_ASSOC),JSON_NUMERIC_CHECK));
     } else {
