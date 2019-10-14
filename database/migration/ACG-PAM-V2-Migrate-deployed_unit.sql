@@ -429,3 +429,86 @@ CALL `depl_unit_add_node`(1, @campaign_ID, 11, 37 + @BoB_unit_shift, NULL, NULL)
 CALL `depl_unit_add_node`(1, @campaign_ID, 3, 38 + @BoB_unit_shift, NULL, NULL);
 CALL `depl_unit_add_node`(1, @campaign_ID, 17, 39 + @BoB_unit_shift, NULL, NULL);
 CALL `depl_unit_add_node`(1, @campaign_ID, 13, 40 + @BoB_unit_shift, NULL, NULL);
+
+
+-- Campaign 11
+SET @campaign_ID = 11;
+-- IN depl_unit_parent_id INT,
+-- IN depl_unit_campaign_id INT,
+-- IN depl_acg_unit_id INT,
+-- IN depl_hist_unit_id INT,
+-- IN depl_asset_id INT,
+-- IN depl_report_type INT
+
+-- unit-id	hist_unit	acg_unit
+-- 18		27-2		610 (12)
+-- 22		233-1		111 (10)
+-- 24		34-3		615 (4)
+-- 25		495-2		501 (2)
+-- 29		27-1		64 (3)
+-- 35		495-1		7th (8)
+-- 36		4./ZG26		9th (16)
+-- 37       5./KG3      Stab (11)
+-- 38		62 ShAP		32 (14)
+-- 39       9./JG51		1st (17)
+-- 40       8./JG51     8th (13)
+-- 41		10./JG51	6th (7)
+-- 42		5./JG51		5th (6)
+-- 43		7./JG51		4th (5)
+
+CALL `depl_unit_add_node`(NULL, @campaign_ID, NULL, 1, NULL, NULL);
+CALL `depl_unit_add_node`(1, @campaign_ID, 12, 18 + @BoB_unit_shift, NULL, NULL);
+CALL `depl_unit_add_node`(1, @campaign_ID, 10, 22 + @BoB_unit_shift, NULL, NULL);
+CALL `depl_unit_add_node`(1, @campaign_ID, 4, 24 + @BoB_unit_shift, NULL, NULL);
+CALL `depl_unit_add_node`(1, @campaign_ID, 2, 25 + @BoB_unit_shift, NULL, NULL);
+CALL `depl_unit_add_node`(1, @campaign_ID, 3, 29 + @BoB_unit_shift, NULL, NULL);
+CALL `depl_unit_add_node`(1, @campaign_ID, 8, 35 + @BoB_unit_shift, NULL, NULL);
+CALL `depl_unit_add_node`(1, @campaign_ID, 16, 36 + @BoB_unit_shift, NULL, NULL);
+CALL `depl_unit_add_node`(1, @campaign_ID, 11, 37 + @BoB_unit_shift, NULL, NULL);
+CALL `depl_unit_add_node`(1, @campaign_ID, 14, 38 + @BoB_unit_shift, NULL, NULL);
+CALL `depl_unit_add_node`(1, @campaign_ID, 17, 39 + @BoB_unit_shift, NULL, NULL);
+CALL `depl_unit_add_node`(1, @campaign_ID, 13, 40 + @BoB_unit_shift, NULL, NULL);
+CALL `depl_unit_add_node`(1, @campaign_ID, 7, 41 + @BoB_unit_shift, NULL, NULL);
+CALL `depl_unit_add_node`(1, @campaign_ID, 6, 42 + @BoB_unit_shift, NULL, NULL);
+CALL `depl_unit_add_node`(1, @campaign_ID, 5, 43 + @BoB_unit_shift, NULL, NULL);
+
+-- Campaign 12
+SET @campaign_ID = 12;
+-- IN depl_unit_parent_id INT,
+-- IN depl_unit_campaign_id INT,
+-- IN depl_acg_unit_id INT,
+-- IN depl_hist_unit_id INT,
+-- IN depl_asset_id INT,
+-- IN depl_report_type INT
+
+-- unit-id	hist_unit	acg_unit
+-- 22		233-1		111 (10)
+-- 24		34-3		615 (4)
+-- 25		495-2		501 (2)
+-- 28		126-PVO		32 (14)
+-- 29		27-1		64 (3)
+-- 33		11./JG51	9th (16)
+-- 35		495-1		7th (8)
+-- 36		4./ZG26		5th (6)
+-- 37       5./KG3      Stab (11)
+-- 38		62 ShAP		610 (12)
+-- 39       9./JG51		1st (17)
+-- 40       8./JG51     8th (13)
+-- 41		10./JG51	6th (7)
+-- 43		7./JG51		4th (5)
+
+CALL `depl_unit_add_node`(NULL, @campaign_ID, NULL, 1, NULL, NULL);
+CALL `depl_unit_add_node`(1, @campaign_ID, 10, 22 + @BoB_unit_shift, NULL, NULL);
+CALL `depl_unit_add_node`(1, @campaign_ID, 4, 24 + @BoB_unit_shift, NULL, NULL);
+CALL `depl_unit_add_node`(1, @campaign_ID, 2, 25 + @BoB_unit_shift, NULL, NULL);
+CALL `depl_unit_add_node`(1, @campaign_ID, 14, 28 + @BoB_unit_shift, NULL, NULL);
+CALL `depl_unit_add_node`(1, @campaign_ID, 3, 29 + @BoB_unit_shift, NULL, NULL);
+CALL `depl_unit_add_node`(1, @campaign_ID, 16, 33 + @BoB_unit_shift, NULL, NULL);
+CALL `depl_unit_add_node`(1, @campaign_ID, 8, 35 + @BoB_unit_shift, NULL, NULL);
+CALL `depl_unit_add_node`(1, @campaign_ID, 6, 36 + @BoB_unit_shift, NULL, NULL);
+CALL `depl_unit_add_node`(1, @campaign_ID, 11, 37 + @BoB_unit_shift, NULL, NULL);
+CALL `depl_unit_add_node`(1, @campaign_ID, 12, 38 + @BoB_unit_shift, NULL, NULL);
+CALL `depl_unit_add_node`(1, @campaign_ID, 17, 39 + @BoB_unit_shift, NULL, NULL);
+CALL `depl_unit_add_node`(1, @campaign_ID, 13, 40 + @BoB_unit_shift, NULL, NULL);
+CALL `depl_unit_add_node`(1, @campaign_ID, 7, 41 + @BoB_unit_shift, NULL, NULL);
+CALL `depl_unit_add_node`(1, @campaign_ID, 5, 43 + @BoB_unit_shift, NULL, NULL);

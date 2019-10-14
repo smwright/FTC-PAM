@@ -5,7 +5,7 @@ INSERT INTO `decoration`
 (`id`,
 `character_id`,
 `award_id`,
-`date`,
+`award_date`,
 `comment`,
 `awarded`,
 `awarded_by`,
