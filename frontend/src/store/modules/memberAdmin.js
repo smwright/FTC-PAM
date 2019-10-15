@@ -232,7 +232,7 @@ const  actions = {
 
     return new Promise(function (resolve, reject) {
       if (context.state.acg_units.length === 0) {
-        Vue.prototype.$dbCon.requestViewData("campaignAdmin on behalf of " + payload.caller, {view: "acg_unit"})
+        Vue.prototype.$dbCon.requestViewData("memberAdmin on behalf of " + payload.caller, {view: "acg_unit"})
           .then(response => {
 
             context.commit("setACGUnit", response);

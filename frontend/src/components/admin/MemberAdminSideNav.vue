@@ -62,7 +62,7 @@ export default {
       this.$store.dispatch('memberAdmin/loadACGUnits', {caller: this.$options.name});
     }
 
-    if (this.$store.state.memberAdmin.acg_units.length == 0){
+    if (this.$store.state.memberAdmin.members.length == 1){
       this.$store.dispatch('memberAdmin/loadMembers', {caller: this.$options.name});
     }
 
