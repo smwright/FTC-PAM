@@ -8,7 +8,7 @@ module.exports = {
   dev: {
 
     // Paths
-    assetsSubDirectory: './static',
+    assetsSubDirectory: './assets',
     assetsPublicPath: '/',
     proxyTable: {
       '/pam': {
@@ -55,7 +55,7 @@ module.exports = {
     publicPath: '/acg-pam-2/',
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: '',
-    assetsPublicPath: '/acg-pam-2/',
+    assetsPublicPath: '/acg-pam-2',
     proxyTable: {},
 
     /**
