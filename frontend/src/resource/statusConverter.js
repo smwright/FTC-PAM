@@ -9,7 +9,7 @@ export default {
         [
           "Active", //0
           "Dismissed", //1
-          "Relieved from duty", //2
+          "On leave", //2
           "Passed away" //3
         ],
 
