@@ -82,7 +82,7 @@ export default {
 
 @font-face {
   font-family: "Remingtoned Type";
-  src: url("TypewriterFont.ttf");
+  src: url("/assets/fonts/TypewriterFont.ttf");
 }
 
 /*div{*/
@@ -95,7 +95,7 @@ html {
 
 body {
   /*width: 1800px;*/
-  background:url("images/background.jpg");
+  background:url("/assets/images/background.jpg");
   background-color: #FFFFFF;
   background-repeat: no-repeat;
   background-position: center top;
