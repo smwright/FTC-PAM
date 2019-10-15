@@ -6,7 +6,7 @@
           <!--Use CamelCase for route names.-->
           <li><router-link :to="{name: 'Home'}">Home</router-link></li>
           <li><a href="http://www.aircombatgroup.co.uk/forum" >Forums</a></li>
-          <!--<li><router-link :to="{name: 'ACGInfo'}">About ACG</router-link></li>-->
+          <li><router-link :to="{name: 'ACGInfo'}">About ACG</router-link></li>
           <li><router-link :to="{name: 'CampaignList'}">Campaigns</router-link></li>
           <li><router-link :to="{name: 'Admin'}">Administration</router-link></li>
           <!--<li v-if="isAdmin()"><router-link :to="{name: 'Admin'}">Administration</router-link></li>-->
