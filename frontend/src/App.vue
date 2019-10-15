@@ -82,7 +82,7 @@ export default {
 
 @font-face {
   font-family: "Remingtoned Type";
-  src: url("/acg-pam-2/TypewriterFont.ttf");
+  src: url("TypewriterFont.ttf");
 }
 
 /*div{*/
@@ -95,7 +95,7 @@ html {
 
 body {
   /*width: 1800px;*/
-  background:url("/acg-pam-2/background.jpg");
+  background:url("images/background.jpg");
   background-color: #FFFFFF;
   background-repeat: no-repeat;
   background-position: center top;
@@ -349,6 +349,10 @@ select {
   width: auto;
 }
 
+.padding-10{
+  padding: 10px;
+}
+
 .text-align-left{
   text-align: left;
 }
@@ -437,6 +441,21 @@ select {
   font-family: "Remingtoned Type";
 }
 
+.typed-on-paper h1 {
+  font-size: inherit;
+  font-weight: bolder;
+  color: inherit;
+  background-image: none;
+}
+
+.typed-on-paper th {
+  font-weight: normal;
+}
+
+.typed-on-paper hr {
+  border: 1px solid black;
+
+}
 
 /*CSS FOR draggable-nested-tree*/
 
