@@ -2,12 +2,12 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import * as auth from '@/resource/auth.js'
 
-//About aCG
 import EmptySideNav from '@/components/EmptySideNav'
-import AboutUs from '@/components/AboutACGAboutUs'
-import AboutACGSideNav from '@/components/AboutACGSideNav'
-import Ranks from '@/components/AboutACGRanks'
 
+//ACG Info
+import ACGInfoIndex from '@/components/acg_info/ACGInfoIndex'
+import ACGInfoSideNav from '../components/acg_info/ACGInfoSideNav'
+import MemberProfile from '../components/acg_info/MemberProfile'
 
 //Campaign
 import CampaignList from '../components/campaign/CampaignList'
@@ -53,26 +53,34 @@ const router = new VueRouter({
       }
     },
     {
-      path: '/about-acg',
-      name: 'AboutACG',
+      path: '/acg-info',
+      name: 'ACGInfo',
       redirect: {name: 'AboutUs'}
     },
     {
-      path: '/about-acg/about-us',
+      path: '/about-acg/',
       name: 'AboutUs',
       components: {
-        default: AboutUs,
-        sidenav: AboutACGSideNav
+        default: ACGInfoIndex,
+        sidenav: ACGInfoSideNav
       }
     },
     {
-      path: '/about-acg/ranks',
-      name: 'Ranks',
+      path: '/about-acg/member/:member_id',
+      name: 'AboutACGMember',
       components: {
-        default: Ranks,
-        sidenav: AboutACGSideNav
-      }
+        default: MemberProfile,
+        sidenav: ACGInfoSideNav
+      },
     },
+    // {
+    //   path: '/about-acg/ranks',
+    //   name: 'Ranks',
+    //   components: {
+    //     default: Ranks,
+    //     sidenav: AboutACGSideNav
+    //   }
+    // },
     {
       path: '/campaign-list',
       name: 'CampaignList',

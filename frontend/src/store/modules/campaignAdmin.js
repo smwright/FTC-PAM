@@ -310,7 +310,11 @@ const  actions = {
 
   loadCampaigns (context, payload) {
 
-    Vue.prototype.$dbCon.requestViewData("campaignAdmin on behalf of "+payload.caller, {view: "campaign"})
+    Vue.prototype.$dbCon.requestViewData("campaignAdmin on behalf of "+payload.caller,
+      {
+        view: "campaign",
+        order: "ORDER BY id DESC"
+      })
       .then(response => {
 
         context.commit("setCampaigns", response);

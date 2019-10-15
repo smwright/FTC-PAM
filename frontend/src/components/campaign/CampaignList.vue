@@ -6,7 +6,7 @@
       <h3>Ongoing campaigns</h3>
       <DivLinkButton
         v-for="campaign in campaigns"
-        v-if="campaign.campaign_status == 1"
+        v-if="campaign.campaign_status <= 1"
         v-bind:key="campaign.id"
         v-bind="{routeName: 'Missions', routeParams: {campaign_id: campaign.id}}">
         <CampaignInfoBaseComp v-bind="campaign"></CampaignInfoBaseComp>
@@ -16,7 +16,7 @@
       <h3>Finished and future campaigns</h3>
       <DivLinkButton
         v-for="campaign in campaigns"
-        v-if="campaign.campaign_status != 1"
+        v-if="campaign.campaign_status > 1"
         v-bind:key="campaign.id"
         v-bind="{routeName: 'Missions', routeParams: {campaign_id: campaign.id}}">
         <CampaignInfoBaseComp v-bind="campaign"></CampaignInfoBaseComp>

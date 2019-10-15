@@ -4,6 +4,7 @@ import createLogger from '../../node_modules/vuex/dist/logger'
 import test from './modules/test'
 import campaignAdmin from './modules/campaignAdmin'
 import memberAdmin from './modules/memberAdmin'
+import memberInfo from './modules/memberInfo'
 import characterStore from './modules/characterStore'
 import missionStore from './modules/missionStore'
 import logger from './modules/logger'
@@ -18,6 +19,7 @@ export default new Vuex.Store({
     test,
     campaignAdmin,
     memberAdmin,
+    memberInfo,
     characterStore,
     missionStore,
     logger
@@ -40,6 +42,7 @@ if (module.hot) {
     const test = require('./modules/test').default;
     const campaignAdmin = require('./modules/campaignAdmin');
     const memberAdmin = require('./modules/memberAdmin');
+    const memberInfo = require('./modules/memberInfo');
     const missionStore = require('./modules/missionStore');
     const characterStore = require('./modules/characterStore');
     const logger = require('./modules/logger')
@@ -49,6 +52,7 @@ if (module.hot) {
         test: test,
         campaignAdmin: campaignAdmin,
         memberAdmin: memberAdmin,
+        memberInfo: memberInfo,
         missionStore: missionStore,
         characterStore: characterStore,
         logger: logger

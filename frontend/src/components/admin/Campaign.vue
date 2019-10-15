@@ -6,7 +6,6 @@
       <button v-on:click="changeTab('units')">Units</button>
       <button v-on:click="sendData">Save campaign</button>
       <button v-on:click="fetchData">Fetch campaign</button>
-      <div>{{ dbStatus }}</div>
     </div>
     <div>
       <!-- GENERAL INFO -->
@@ -167,7 +166,6 @@ export default {
           id: null,
           acg_unit_id: null
         },
-      dbStatus: "",
       units_clone_id: null
 
     }
@@ -411,7 +409,7 @@ export default {
 
       // method for storing the campaign data in the backend and updating the vuex-stores
 
-      this.dbStatus = "";
+      var dbStatus;
       // ------------------------------------------------------------------------
       // Calling vuex-store action to send the basic campaign data to the backend
       // ------------------------------------------------------------------------
@@ -423,7 +421,8 @@ export default {
       ).then(response => {
 
         // Displaying status received from backend in status message.
-        this.dbStatus += "Campaign update: " + response.message;
+        dbStatus = "Campaign update: " + response.message;
+        this.$store.commit('logger/addEntry', {message: dbStatus});
 
         var flatData = this.$dbCon.flatData(this.$refs.tree.getRawData());
         // Campaign_id == -1, meaning a new campaign was created. The deployed units, missions and briefings
@@ -461,7 +460,8 @@ export default {
 
       }).then(response => {
 
-         this.dbStatus += " Unit update: " + response.message;
+         dbStatus = " Unit update: " + response.message;
+
          var flatData = this.$dbCon.flatData(this.$refs.tree.getRawData());
          for(var i = 0; i < response.insert_id.length; i++ ){
 
@@ -477,7 +477,8 @@ export default {
 
       }).then(response => {
 
-         this.dbStatus += response.message;
+         dbStatus += response.message;
+         this.$store.commit('logger/addEntry', {message: dbStatus});
          this.units_for_delete = []
 
         // ------------------------------------------------------------------------
@@ -492,7 +493,7 @@ export default {
       ).then(response => {
 
         // Displaying status received from backend in status message.
-        this.dbStatus += "Mission update: " + response.message;
+        dbStatus = "Mission update: " + response.message;
         // ------------------------------------------------------------------------
         // Deleting marked missions in the database
         // ------------------------------------------------------------------------
@@ -504,7 +505,8 @@ export default {
       ).then(response => {
 
           // Displaying status received from backend in status message.
-          this.dbStatus += response.message;
+          dbStatus += response.message;
+          this.$store.commit('logger/addEntry', {message: dbStatus});
         // ------------------------------------------------------------------------
         // Sending missions to the backend
         // ------------------------------------------------------------------------
@@ -517,7 +519,7 @@ export default {
       ).then(response => {
 
           // Displaying status received from backend in status message.
-          this.dbStatus += "Briefing update: " + response.message;
+          dbStatus = "Briefing update: " + response.message;
         // ------------------------------------------------------------------------
         // Deleting marked briefings in the database
         // ------------------------------------------------------------------------
@@ -529,7 +531,8 @@ export default {
         }
       ).then(response => {
 
-          this.dbStatus += response.message;
+          dbStatus += response.message;
+          this.$store.commit('logger/addEntry', {message: dbStatus});
           console.log(this.$parent.$options.name+": Pushing to -> {name: AdminCampaign, params: campaign_id: "+this.campaign_id+"}");
           this.$router.push({name: "AdminCampaign", params: {campaign_id: this.campaign_id}});
         }

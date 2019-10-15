@@ -31,7 +31,8 @@
         <td>{{ claimLWTypeOfDestruction[type_of_destruction] }}</td>
         <td>{{ claimLWTypeOfImpact[type_of_impact] }}</td>
         <td>{{ claimLWFateOfCrew[fate_of_crew] }}</td>
-        <td v-if="witness_id !== null">{{ memberById(witness_id).callsign }}</td>
+        <td v-if="witness_id !== null && witness_id > 0">{{ memberById(witness_id).callsign }}</td>
+        <td v-else-if="witness_id !== null && witness_id == -1">Ground confirmation</td>
         <td v-else></td>
         <td>
           <ClaimConfirmationComp
