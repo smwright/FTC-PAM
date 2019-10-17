@@ -1,9 +1,9 @@
 <template>
   <div>
-  <div class="header">
+    <div class="headerHome">
     <h1>Welcome to the Air Combat Group</h1>
   </div>
-    <div class="home">
+    <div class="homeText">
       <p>
       The Air Combat Group consists of both Allied and Axis squadrons under a single operational umbrella flying with full realism settings. We are an English and German speaking group located in Europe, the Americas and Australia and meet on our own Teamspeak 3 and Discord servers. Our pilots are interested in the history of World War II air combat on all fronts, seeking immersive air combat in the theatres of the time through historical campaign and other online activities. By supporting both sides of the conflict we can create parity in theatre and achieve common ground across the group, ultimately we seek to mirror the numbers flying on each side and support increasingly large campaigns.
     </p>
@@ -13,7 +13,7 @@
     <p>
       If this sounds of interest to you we are welcoming to new pilots of any standard or experience, even if you've never flown before - all you need is a decent PC with IL-2 Sturmovik: Cliffs of Dover or IL-2 Sturmovik: Battle of Stalingrad (depending on the campaign being run) and a headset/microphone. Just hop onto our TS3 comms at anytime, weekends are best, and join in the fun.
     </p>
-    <iframe id="ytplayer" type="text/html" width="930" height="518" src="https://www.youtube.com/embed/v6u4JxgE2S4?autoplay=1&origin=http://aircombatgroup.co.uk"
+    <iframe id="ytplayer" type="text/html" width="930" height="518" src="https://www.youtube.com/embed/v6u4JxgE2S4?autoplay=0&origin=http://aircombatgroup.co.uk"
             frameborder="0"></iframe>
   </div>
   </div>
@@ -62,18 +62,6 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
-.home{
-  width: 60%;
-  text-align: justify;
-  margin-left: auto;
-  margin-right: auto;
-}
 
-.header{
-  width: 60%;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
 
 </style>
