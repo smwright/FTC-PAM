@@ -24,6 +24,12 @@ function whitelist_table($name) {
         "campaign_unit_member_info",
         "campaign_unit_plane_asset_status",
         "campaign_mission_info",
+        "character_campaign_sorties_pilot_asset_status",
+        "character_campaign_claim_raf",
+        "character_campaign_claim_lw",
+        "character_campaign_claim_vvs_group",
+        "character_campaign_claim_vvs_pers",
+        "character_campaign_claim_ground",
         "character_latest_report",
         "claim_raf_info",
         "claim_lw_info",
@@ -32,8 +38,10 @@ function whitelist_table($name) {
         "comment_info",
         "current_unit_members",
         "decoration_info",
+        "member_campaign_attendance",
         "member_info_with_last_status",
         "member_status_log_info",
+        "member_promotion_info",
         "mission_report_nav_list",
         "mission_member_faction",
         "mission_member_rank",
@@ -81,6 +89,7 @@ if(filter_has_var(INPUT_GET, "view")) {
 
         if($var_name == "order"){
             $order_string = $var_value;
+            continue;
         }
 
         if($counter == 2){

@@ -2,10 +2,10 @@
   <div>
     <p>Use this pages to administer ACG members, units and campaigns.</p>
 
-    <!--<div>-->
-      <!--<h3>Members</h3>-->
-      <!--<p>Add or edit members</p>-->
-    <!--</div>-->
+    <div>
+      <h3>Members</h3>
+      <p>Add or edit members</p>
+    </div>
     <div>
       <h3>Campaigns</h3>
       <p>Create or edit campaigns</p>

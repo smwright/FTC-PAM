@@ -232,7 +232,7 @@ const  actions = {
 
     return new Promise(function (resolve, reject) {
       if (context.state.acg_units.length === 0) {
-        Vue.prototype.$dbCon.requestViewData("campaignAdmin on behalf of " + payload.caller, {view: "acg_unit"})
+        Vue.prototype.$dbCon.requestViewData("memberAdmin on behalf of " + payload.caller, {view: "acg_unit"})
           .then(response => {
 
             context.commit("setACGUnit", response);
@@ -347,21 +347,17 @@ const  actions = {
 
     return new Promise(function (resolve, reject) {
 
-      if (context.state.acg_units.length === 0){
-        Vue.prototype.$dbCon.requestViewData("memberAdmin on behalf of " + payload.caller,
-          {view: "rank_lookup", member_id: payload.member_id})
-          .then(response => {
+      Vue.prototype.$dbCon.requestViewData("memberAdmin on behalf of " + payload.caller,
+        {view: "rank_lookup", member_id: payload.member_id})
+        .then(response => {
 
-            context.commit("setRankLookup", response);
-            resolve();
+          context.commit("setRankLookup", response);
+          resolve();
 
-          })
-          .catch(error => {
-            reject(error.message);
-          });
-      } else {
-        resolve();
-      }
+        })
+        .catch(error => {
+          reject(error.message);
+        });
     })
   },
 

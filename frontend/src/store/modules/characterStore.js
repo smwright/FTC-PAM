@@ -81,6 +81,11 @@ const mutations = {
     }
   },
 
+  resetCharacters (state, payload) {
+
+    state.characters = [];
+  },
+
   resetDecorations (state, payload) {
 
     state.decorations = [];

@@ -3,13 +3,13 @@
     <table  class="full-width small-font">
       <tr>
         <td class="width20">{{ getEntry(-1).datetime }}</td>
-        <td class="width70">{{ getEntry(-1).message }}</td>
+        <td class="width70 text-align-left">{{ getEntry(-1).message }}</td>
         <td class="width10"><button class="no-padding" v-on:click="showPrevious">▲</button></td>
       </tr>
       <tr>
-        <td>{{ getEntry(0).datetime }}</td>
-        <td>{{ getEntry(0).message }}</td>
-        <td><button  class="no-padding" v-on:click="showNext">▼</button></td>
+        <td class="width20">{{ getEntry(0).datetime }}</td>
+        <td class="width70 text-align-left">{{ getEntry(0).message }}</td>
+        <td class="width10"><button  class="no-padding" v-on:click="showNext">▼</button></td>
       </tr>
     </table>
   </div>
