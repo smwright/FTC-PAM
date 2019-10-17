@@ -7,7 +7,12 @@ import EmptySideNav from '@/components/EmptySideNav'
 //ACG Info
 import ACGInfoIndex from '@/components/acg_info/ACGInfoIndex'
 import ACGInfoSideNav from '../components/acg_info/ACGInfoSideNav'
-import MemberProfile from '../components/acg_info/MemberProfile'
+
+//ACG Members
+import MemberIndex from '../components/acg_member/MemberIndex'
+import MemberInfoSideNav from '../components/acg_member/MemberInfoSideNav'
+import MemberProfile from '../components/acg_member/MemberProfile'
+import CharacterProfile from '../components/acg_member/CharacerProfile'
 
 //Campaign
 import CampaignList from '../components/campaign/CampaignList'
@@ -53,24 +58,34 @@ const router = new VueRouter({
       }
     },
     {
-      path: '/acg-info',
-      name: 'ACGInfo',
-      redirect: {name: 'AboutUs'}
-    },
-    {
       path: '/about-acg/',
-      name: 'AboutUs',
+      name: 'AboutACG',
       components: {
-        default: ACGInfoIndex,
-        sidenav: ACGInfoSideNav
+        fullmain: ACGInfoIndex,
       }
     },
     {
-      path: '/about-acg/member/:member_id',
+      path: '/members/',
+      name: 'Members',
+      components: {
+        default: MemberIndex,
+        sidenav: MemberInfoSideNav
+      },
+    },
+    {
+      path: '/members/:member_id',
       name: 'AboutACGMember',
       components: {
         default: MemberProfile,
-        sidenav: ACGInfoSideNav
+        sidenav: MemberInfoSideNav
+      },
+    },
+    {
+      path: '/members/:member_id/character/:character_id',
+      name: 'AboutACGCharacter',
+      components: {
+        default: CharacterProfile,
+        sidenav: MemberInfoSideNav
       },
     },
     // {

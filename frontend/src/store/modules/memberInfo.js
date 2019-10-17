@@ -9,6 +9,7 @@ const state = {
   member_status_log: [],
   transfer_log: [],
   promotion_log: [],
+  member_characters: [],
   member_campaign_attendance: [],
   character_sorties_stats: [],
   character_claim_raf: [],
@@ -16,10 +17,27 @@ const state = {
   character_claim_vvs_group: [],
   character_claim_vvs_pers: [],
   character_claim_ground: [],
+  character_decorations: []
 };
 
 // getters
 const getters = {
+
+  findByKey: (state) => (table, keyName, keyValue) => {
+
+    return state[table].find(
+      function (item) {
+        return item[keyName] === keyValue;
+      });
+  },
+
+  filterByKey: (state) => (table, keyName, keyValue) => {
+
+    return state[table].filter(
+      function (item) {
+        return item[keyName] === keyValue;
+      });
+  },
 
   membersByUnitId: (state) => (id_inn, showActive, showOnLeave, showDismissed, showPassedAway, searchString) => {
 
@@ -132,7 +150,10 @@ const getters = {
       if(character_id === null){
         stats_array = state.character_sorties_stats;
       } else {
-
+        stats_array = state.character_sorties_stats.filter(
+          function (item) {
+            return item.character_id === character_id;
+          });
       }
 
       var result_array = {
@@ -227,7 +248,8 @@ const getters = {
     }
 
     return result_array;
-  }
+  },
+
 }
 
 // mutations
@@ -286,7 +308,7 @@ const  actions = {
               array_name: payload.data_array_name,
               array_data: response
             });
-          resolve();
+          resolve(response);
 
         })
         .catch(error => {

@@ -317,6 +317,10 @@ select {
   width: calc(50% - 2px);
 }
 
+.width-90{
+  width: 90%;
+}
+
 .width-80{
   width: 80%;
 }
@@ -327,6 +331,10 @@ select {
 
 .width-60{
   width: 60%;
+}
+
+.width-40{
+  width: 40%;
 }
 
 .width-30{
@@ -455,6 +463,18 @@ select {
 .typed-on-paper hr {
   border: 1px solid black;
 
+}
+
+.axis {
+  background-color: rgba(0,0,102,0.25);
+  padding: 4px;
+  border-radius: 15px;
+}
+
+.allied {
+  background-color: rgba(153,0,0,0.25);
+  padding: 4px;
+  border-radius: 15px;
 }
 
 /*CSS FOR draggable-nested-tree*/

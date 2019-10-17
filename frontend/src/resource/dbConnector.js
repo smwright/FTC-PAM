@@ -54,15 +54,15 @@ var dbConnector = {
           })
           .catch(error => {
             var errorStr;
-            errorStr = `dbConnector.createGETPromise call to ${url} with param ${JSON.stringify(param)}`;
+            errorStr = `dbConnector.createPOSTPromise call to ${url} with param ${JSON.stringify(param)}`;
             if (error.response) {
               // The request was made and the server responded with a status code
               // that falls out of the range of 2xx
               errorStr += " response error.";
               errorStr += ` Response data: ${error.response.data}`;
               errorStr += ` Response status: ${error.response.status}`;
-              errorStr += ` Response headers: ${error.response.headers}`;
-              errorStr += ` Response headers: ${error.message}`;
+              errorStr += ` Response headers: `+ JSON.stringify(error.response.headers);
+              errorStr += ` Response headers: `+ JSON.stringify(error.message);
             } else if (error.request) {
               // The request was made but no response was receive
               // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
@@ -192,6 +192,12 @@ dbConnector.install =  function(Vue, options) {
     sendForumPM: function(caller, param) {
 
       var url = "sendForumPM.php";
+      return dbConnector.createPOSTPromise(caller, url, param);
+    },
+
+    checkDecorations: function(caller, param) {
+
+      var url = "decorationsChecks.php";
       return dbConnector.createPOSTPromise(caller, url, param);
     }
   }
