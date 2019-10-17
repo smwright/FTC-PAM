@@ -14,7 +14,10 @@ VIEW `decoration_info` AS
         `decoration`.`awarded_by` AS `awarded_by_id`,
         `acg_member`.`callsign` AS `awarded_by_callsign`,
         `decoration`.`recommendation_date` AS `recommendation_date`,
-        `award`.`name` AS `award_name`
+        `award`.`name` AS `award_name`,
+        `award`.`abreviation` AS `award_abr`,
+        `award`.`image` AS `award_image`,
+        `award`.`faction` AS `faction`
     FROM
         (((`decoration`
         LEFT JOIN `award` ON ((`decoration`.`award_id` = `award`.`id`)))

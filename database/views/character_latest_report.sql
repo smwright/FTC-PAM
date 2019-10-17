@@ -12,6 +12,7 @@ VIEW `character_latest_report` AS
         `report`.`pilot_status` AS `character_status`,
         `hist_unit`.`faction` AS `faction`,
         `hist_unit`.`name` AS `hist_unit_name`,
+        `hist_unit`.`image` AS `hist_unit_image`,
         `mission`.`hist_date` AS `last_mission_hist_date`,
         `mission_member_rank`.`rank_name` AS `rank_name`,
         `mission_member_rank`.`abreviation` AS `rank_abreviation`,

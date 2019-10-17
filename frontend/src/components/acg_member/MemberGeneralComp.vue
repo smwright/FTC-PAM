@@ -59,7 +59,7 @@
         </tr>
         <tr v-for="promotion in promotion_log">
           <td>{{ promotion.promotion_date }}</td>
-          <td>{{ promotion.rank_name }}</td>
+          <td>{{ promotion.rank_name }} ( {{ promotion.rank_value }} )</td>
           <td>{{ decodeHTML(promotion.comment) }}</td>
         </tr>
       </table>

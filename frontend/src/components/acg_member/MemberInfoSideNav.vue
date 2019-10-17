@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import { mapState } from "vuex"
+import { mapState, mapGetters } from "vuex"
 import DivLinkButton from "../basic_comp/DivLinkButton"
 import MemberInfoSideNavComp from "./MemberInfoSideNavComp"
 
@@ -78,7 +78,7 @@ export default {
 
     ...mapState('memberInfo', {
       acg_units: state => state.acg_units
-    })
+    }),
   },
   methods: {
 
