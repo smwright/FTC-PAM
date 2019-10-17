@@ -307,6 +307,48 @@ function checkLWDecorations($characterID, $missionID, $dbx){
     $conf = $row["conf"];
     $unconf = $row["unconf"];
 
+    //Get stats for character of Battle of Moscow missions
+    $sql = "SELECT COUNT(report.id) AS sorties, SUM(report.pilot_status = 0) AS pilotOK, ".
+        "SUM(report.pilot_status = 1) AS pilotWND, SUM(report.asset_status = 2) AS aeroLST ".
+        "FROM report LEFT JOIN mission ON report.mission_id = mission.id ".
+        "WHERE report.character_id = $characterID AND report.accepted = 1 AND mission.id <= $missionID ".
+        "AND (hist_date >= '1941-10-15 00:00:00' AND hist_date <= '1942-04-15 23:59:59')";
+    $result = mysqli_query($dbx, $sql);
+    $row = mysqli_fetch_assoc($result);
+
+
+    $sortiesBOM = $row["sorties"];
+    $aeroLostBOM = $row["aeroLST"];
+    $pilotOKBOM = $row["pilotOK"];
+    $pilotWoundedBOM = $row["pilotWND"];
+
+    //Get stats for character of non Battle of Moscow missions
+    $sql = "SELECT COUNT(report.id) AS sorties, SUM(report.pilot_status = 0) AS pilotOK, ".
+        "SUM(report.pilot_status = 1) AS pilotWND, SUM(report.asset_status = 2) AS aeroLST ".
+        "FROM report LEFT JOIN mission ON report.mission_id = mission.id ".
+        "WHERE report.character_id = $characterID AND report.accepted = 1 AND mission.id <= $missionID ".
+        "AND (hist_date < '1941-10-15 00:00:00' AND hist_date > '1942-04-15 23:59:59')";
+    $result = mysqli_query($dbx, $sql);
+    $row = mysqli_fetch_assoc($result);
+
+
+    $sortiesnonBOM = $row["sorties"];
+    $aeroLostnonBOM = $row["aeroLST"];
+    $pilotOKnonBOM = $row["pilotOK"];
+    $pilotWoundednonBOM = $row["pilotWND"];
+
+    $sorties = $sortiesBOM + $sortiesnonBOM;
+    $aeroLost = $aeroLostBOM + $aeroLostnonBOM;
+    $pilotOK = $pilotOKBOM + $pilotOKnonBOM;
+    $pilotWounded = $pilotWoundedBOM + $pilotWoundednonBOM;
+
+//Get days survived on the front
+    $sql = "SELECT frontdays FROM character_mission_frontdays WHERE author_id = $character_id AND mission_id = $mission_id";
+    $result = mysqli_query($dbx, $sql);
+    $row = mysqli_fetch_assoc($result);
+
+    $daysSurvivedOnTheFrontBoM = $row["frontdays"];
+
     $sql = "SELECT COUNT(DISTINCT report.id) AS swgv ".
         "FROM report LEFT JOIN claim ON claim.report_id = report.id ".
         "LEFT JOIN claim_ground ON claim.id = claim_ground.claim_id ".
@@ -415,6 +457,15 @@ function checkLWDecorations($characterID, $missionID, $dbx){
     addRemoveDecoration($medalAbr, $criteria, $decorationsArray, $awardedArray,
         $awardArray, $characterID, $missionDate, $dbx);
 
+    //Medaille Winterschlacht im Osten
+    $medalAbr = "OFM";
+    $criteriaA = $sortiesBOM > 14;
+    $criteriaB = $pilotWoundedBOM == 1;
+    $criteriaC = $daysSurvivedOnTheFrontBoM > 29;
+    $criteria = ($criteriaA | $criteriaB | $criteriaC);
+    addRemoveDecoration($medalAbr, $criteria, $decorationsArray, $awardedArray,
+        $awardArray, $characterID, $missionDate, $dbx);
+
 }
 
 function checkVVSDecorations($characterID, $missionID, $dbx){
@@ -460,6 +511,48 @@ function checkVVSDecorations($characterID, $missionID, $dbx){
     $aeroLost = $row["aeroLST"];
     $pilotOK = $row["pilotOK"];
     $pilotWounded = $row["pilotWND"];
+
+    //Get stats for character of Battle of Moscow missions
+    $sql = "SELECT COUNT(report.id) AS sorties, SUM(report.pilot_status = 0) AS pilotOK, ".
+        "SUM(report.pilot_status = 1) AS pilotWND, SUM(report.asset_status = 2) AS aeroLST ".
+        "FROM report LEFT JOIN mission ON report.mission_id = mission.id ".
+        "WHERE report.character_id = $characterID AND report.accepted = 1 AND mission.id <= $missionID ".
+        "AND (hist_date >= '1941-10-15 00:00:00' AND hist_date <= '1942-04-15 23:59:59')";
+    $result = mysqli_query($dbx, $sql);
+    $row = mysqli_fetch_assoc($result);
+
+
+    $sortiesBOM = $row["sorties"];
+    $aeroLostBOM = $row["aeroLST"];
+    $pilotOKBOM = $row["pilotOK"];
+    $pilotWoundedBOM = $row["pilotWND"];
+
+    //Get stats for character of non Battle of Moscow missions
+    $sql = "SELECT COUNT(report.id) AS sorties, SUM(report.pilot_status = 0) AS pilotOK, ".
+        "SUM(report.pilot_status = 1) AS pilotWND, SUM(report.asset_status = 2) AS aeroLST ".
+        "FROM report LEFT JOIN mission ON report.mission_id = mission.id ".
+        "WHERE report.character_id = $characterID AND report.accepted = 1 AND mission.id <= $missionID ".
+        "AND (hist_date < '1941-10-15 00:00:00' AND hist_date > '1942-04-15 23:59:59')";
+    $result = mysqli_query($dbx, $sql);
+    $row = mysqli_fetch_assoc($result);
+
+
+    $sortiesnonBOM = $row["sorties"];
+    $aeroLostnonBOM = $row["aeroLST"];
+    $pilotOKnonBOM = $row["pilotOK"];
+    $pilotWoundednonBOM = $row["pilotWND"];
+
+    $sorties = $sortiesBOM + $sortiesnonBOM;
+    $aeroLost = $aeroLostBOM + $aeroLostnonBOM;
+    $pilotOK = $pilotOKBOM + $pilotOKnonBOM;
+    $pilotWounded = $pilotWoundedBOM + $pilotWoundednonBOM;
+
+//Get days survived on the front
+    $sql = "SELECT frontdays FROM character_mission_frontdays WHERE author_id = $character_id AND mission_id = $mission_id";
+    $result = mysqli_query($dbx, $sql);
+    $row = mysqli_fetch_assoc($result);
+
+    $daysSurvivedOnTheFrontBoM = $row["frontdays"];
 
     $sql = "SELECT SUM(claim_vvs.confirmed=1) AS conf, SUM(claim_vvs.confirmed=0) AS unconf ".
         "FROM claim LEFT JOIN report ON claim.report_id = report.id
@@ -573,7 +666,9 @@ function checkVVSDecorations($characterID, $missionID, $dbx){
 
     //Medal "For the Defence of Moscow"
     $medalAbr = "MFTDOM_VVS";
-    $criteria = $sorties > 14;
+    $criteriaA = $sortiesBOM > 14;
+    $criteriaB = $daysSurvivedOnTheFrontBoM > 30;
+    $criteria = ($criteriaA | $criteriaB);
     addRemoveDecoration($medalAbr, $criteria, $decorationsArray, $awardedArray,
         $awardArray, $characterID, $missionDate, $dbx);
 
