@@ -13,7 +13,7 @@
     <p>
       If this sounds of interest to you we are welcoming to new pilots of any standard or experience, even if you've never flown before - all you need is a decent PC with IL-2 Sturmovik: Cliffs of Dover or IL-2 Sturmovik: Battle of Stalingrad (depending on the campaign being run) and a headset/microphone. Just hop onto our TS3 comms at anytime, weekends are best, and join in the fun.
     </p>
-    <iframe id="ytplayer" type="text/html" width="930" height="518" src="https://www.youtube.com/embed/v6u4JxgE2S4?autoplay=0&origin=http://aircombatgroup.co.uk"
+    <iframe id="ytplayer" type="text/html" width="778" height="400" src="https://www.youtube.com/embed/v6u4JxgE2S4?autoplay=0&origin=http://aircombatgroup.co.uk"
             frameborder="0"></iframe>
   </div>
   </div>
