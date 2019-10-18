@@ -150,18 +150,6 @@ import { mapState, mapGetters} from "vuex"
   background-color: rgba(0,255,0,0.25);
 }
 
-.axis {
-  background-color: rgba(0,0,102,0.25);
-  padding: 4px;
-  border-radius: 15px;
-}
-
-.allied {
-  background-color: rgba(153,0,0,0.25);
-  padding: 4px;
-  border-radius: 15px;
-}
-
 .unitEmblem {
   height: 37px;
   vertical-align: middle;

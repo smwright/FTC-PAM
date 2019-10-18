@@ -2,7 +2,7 @@
   <div>
     <div class="container">
       <button v-on:click="changeTab('general')">General Info</button>
-      <!--<button v-on:click="changeTab('characters')">Characters</button>-->
+      <button v-on:click="changeTab('characters')">Characters</button>
     </div>
 
     <div>
@@ -10,17 +10,22 @@
         v-show="tabToShow === 'general'"
         v-bind:member_id="member_id"
       ></MemberGeneralComp>
+      <MemberCharactersComp
+        v-show="tabToShow === 'characters'"
+      ></MemberCharactersComp>
     </div>
   </div>
 </template>
 
 <script>
 import MemberGeneralComp from "./MemberGeneralComp"
+import MemberCharactersComp from "./MemberCharactersComp"
 
 export default {
   name: "MemberProfile",
   components: {
     MemberGeneralComp,
+    MemberCharactersComp
   },
   mounted () {
 
@@ -178,6 +183,31 @@ export default {
               member_id: this.member_id
             },
             data_array_name: "character_claim_ground"
+          }
+        ).catch(error => {
+          console.log(error.message);
+        });
+        this.$store.dispatch('memberInfo/loadStoreData',
+          {
+            caller: this.$options.name,
+            call_object: {
+              view: "character_latest_report",
+              member_id: this.member_id,
+              order: "ORDER BY character_id"
+            },
+            data_array_name: "member_characters"
+          }
+        ).catch(error => {
+          console.log(error.message);
+        });
+        this.$store.dispatch('memberInfo/loadStoreData',
+          {
+            caller: this.$options.name,
+            call_object: {
+              view: "decoration_info",
+              member_id: this.member_id
+            },
+            data_array_name: "character_decorations"
           }
         ).catch(error => {
           console.log(error.message);
