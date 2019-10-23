@@ -9,7 +9,7 @@ VIEW `depl_unit_info` AS
         `deployed_unit`.`acg_unit_id` AS `acg_unit_id`,
         `deployed_unit`.`hist_unit_id` AS `hist_unit_id`,
         `deployed_unit`.`asset_id` AS `asset_id`,
-        `deployed_unit`.`report_type` AS `report_type`,
+        `deployed_unit`.`unit_type` AS `unit_type`,
         `deployed_unit`.`lft` AS `lft`,
         `deployed_unit`.`rgt` AS `rgt`
     FROM
