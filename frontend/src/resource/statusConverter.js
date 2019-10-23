@@ -142,7 +142,7 @@ export default {
           "Dead" //2
         ],
 
-      histUnitType:
+      deplUnitType:
       [
         "Fighter", //0
         "Bomber", //1
