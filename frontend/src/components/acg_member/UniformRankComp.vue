@@ -109,7 +109,7 @@ export default {
 }
 
 .uniform-container {
-  width: 340px;
+  width: 360px;
 }
 
 </style>
