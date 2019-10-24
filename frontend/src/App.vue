@@ -524,6 +524,17 @@ DraggableTree div {
   display: flex;
   align-items: center;
 }
+.homeText{
+  width: 50%;
+  text-align: justify;
+  margin-left: auto;
+  margin-right: auto;
+}
 
-
+.headerHome{
+  width: 50%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
 </style>

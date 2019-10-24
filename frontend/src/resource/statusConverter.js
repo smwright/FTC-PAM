@@ -140,7 +140,17 @@ export default {
           "Not observed", //0
           "Parachuted", //1
           "Dead" //2
-        ]
+        ],
+
+      deplUnitType:
+      [
+        "Fighter", //0
+        "Bomber", //1
+        "Ground Attack", //2
+        "Heavy Fighter", //3
+        "Transport", //4
+        "Recon" //5
+      ]
     }
   }
 }

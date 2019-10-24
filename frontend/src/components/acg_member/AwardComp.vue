@@ -50,7 +50,7 @@ export default {
         award_image !== "MedalAB" &&
         award_image !== "MedalFBA.png" &&
         award_image !== "MedalFBAgd.png" &&
-        award_image !== "Aviation_Badge.png")
+        award_image !== "MedalAB_VVS.png")
       {
         return baseURL + "medals_big/" + award_image;
       }

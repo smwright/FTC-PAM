@@ -11,7 +11,7 @@ VIEW `campaign_info_unit` AS
         `deployed_unit`.`acg_unit_id` AS `acg_unit_id`,
         `deployed_unit`.`hist_unit_id` AS `hist_unit_id`,
         `deployed_unit`.`asset_id` AS `asset_id`,
-        `deployed_unit`.`report_type` AS `report_type`,
+        `deployed_unit`.`unit_type` AS `unit_type`,
         `hist_unit`.`name` AS `hist_unit_name`,
         `hist_unit`.`code` AS `hist_unit_code`,
         `hist_unit`.`faction` AS `faction`,
