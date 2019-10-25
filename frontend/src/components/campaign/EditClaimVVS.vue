@@ -41,6 +41,11 @@
         </td>
         <td></td>
       </tr>
+      <tr>
+        <td colspan="3">
+          <textarea v-model="claim_description" class="textarea-style"></textarea>
+        </td>
+      </tr>
     </table>
     <br>
   </div>
@@ -150,6 +155,23 @@
               id_column_name: "claim_id",
               id_column_value: this.claim_id,
               update_column_name: "witness_id",
+              update_column_value: value
+            });
+        }
+      },
+
+      claim_description: {
+        get() {
+          var claim = this.$store.getters['missionStore/groundClaimById'](this.claim_id );
+          return (claim !== undefined) ? claim.description : null;
+        },
+        set(value) {
+          this.$store.commit('missionStore/updateClaimValue',
+            {
+              array_name: "aerial_claims",
+              id_column_name: "claim_id",
+              id_column_value: this.claim_id,
+              update_column_name: "description",
               update_column_value: value
             });
         }

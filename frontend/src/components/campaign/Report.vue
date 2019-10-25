@@ -11,7 +11,7 @@
 
       <div class="typed-on-paper" v-if="report_loaded">
         <EditReportLW v-if="report_info.faction==1" v-bind="report_info"></EditReportLW>
-        <!--<ReportRAF v-else-if="report_info.faction==2" v-bind="report_info"></ReportRAF>-->
+        <EditReportRAF v-else-if="report_info.faction==2" v-bind="report_info"></EditReportRAF>
         <EditReportVVS v-else-if="report_info.faction==3" v-bind="report_info"></EditReportVVS>
       </div>
     </template>
@@ -40,6 +40,7 @@ import ReportLW from "./ReportLW"
 import ReportRAF from "./ReportRAF"
 import ReportVVS from "./ReportVVS"
 import EditReportLW from "./EditReportLW"
+import EditReportRAF from "./EditReportRAF"
 import EditReportVVS from "./EditReportVVS"
 import { mapState, mapGetters } from "vuex"
 
@@ -50,6 +51,7 @@ export default {
     ReportRAF,
     ReportVVS,
     EditReportLW,
+    EditReportRAF,
     EditReportVVS
   },
   mounted () {

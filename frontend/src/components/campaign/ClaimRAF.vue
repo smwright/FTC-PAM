@@ -51,7 +51,7 @@ export default {
       default: null
     },
     shared: {
-      type: Number,
+      type: [String, Number],
       default: 0
     },
     accepted: {
