@@ -969,6 +969,7 @@ const  actions = {
 
             aerial_claim_specific.push({
               id: aerial_claims[i].claim_detail_id,
+              claim_id: aerial_claims[i].claim_id,
               enemy_status: aerial_claims[i].enemy_status,
               shared: aerial_claims[i].shared,
             });
@@ -997,7 +998,7 @@ const  actions = {
               place: aerial_claims[i].place,
               group_claim: aerial_claims[i].group_claim,
               confirmed: 0,
-              witness: aerial_claims[i].witness_id
+              witness: aerial_claims[i].witness_id,
             });
 
             if(aerial_claims[i].witness_id !== null) {

@@ -85,7 +85,7 @@ export default {
       if (this.faction === 3) {
 
         if(awards.find(function (item) {return item.award_abr === "AB_VVS"})) {
-          return baseURL + "medals_big/Aviation_Badge.png";
+          return baseURL + "medals_big/MedalAB_VVS.png";
         }
       }
 
@@ -109,7 +109,7 @@ export default {
 }
 
 .uniform-container {
-  width: 340px;
+  width: 360px;
 }
 
 </style>

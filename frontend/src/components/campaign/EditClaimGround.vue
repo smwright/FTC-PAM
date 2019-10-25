@@ -3,7 +3,7 @@
     <hr>
     <table>
       <tr>
-        <td>
+        <td class="width-20">
           <select v-model="claim_asset">
             <option
               v-for="target in groundTargets"
@@ -13,7 +13,7 @@
             </option>
           </select>
         </td>
-        <td>
+        <td class="width-10">
           <button v-bind:disabled="claim_amount === 1" v-on:click="claim_amount--"> < </button>
           {{ claim_amount }}
           <button v-on:click="claim_amount++"> > </button>
@@ -121,7 +121,7 @@ td{
 
 .textarea-style{
   width: 98%;
-  height: 10em;
+  height: 5em;
 }
 
 </style>
