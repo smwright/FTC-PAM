@@ -6,7 +6,10 @@
           <!--Use CamelCase for route names.-->
           <li><router-link :to="{name: 'Home'}">Home</router-link></li>
           <li><a href="http://www.aircombatgroup.co.uk/forum" >Forums</a></li>
-          <li><router-link :to="{name: 'AboutACG'}">About ACG</router-link></li>
+          <li><router-link :to="{name: 'AboutACG'}">About Us</router-link></li>
+          <li><a href="https://www.aircombatgroup.co.uk/field_book.pdf" >Field Book</a></li>
+          <li><router-link :to="{name: 'ACGHistory'}">History</router-link></li>
+          <li><router-link :to="{name: 'ACGJoining'}">Joining</router-link></li>
           <li><router-link :to="{name: 'ACGComms'}">Communications</router-link></li>
           <li><router-link :to="{name: 'Members'}">Members</router-link></li>
           <li><router-link :to="{name: 'CampaignList'}">Campaigns</router-link></li>

@@ -7,6 +7,8 @@ import EmptySideNav from '@/components/EmptySideNav'
 //ACG Info
 import ACGInfoIndex from '@/components/acg_info/ACGInfoIndex'
 import ACGComms from '@/components/acg_info/ACGComms'
+import ACGHistory from '@/components/acg_info/ACGHistory'
+import ACGJoining from '@/components/acg_info/ACGJoining'
 import ACGInfoSideNav from '../components/acg_info/ACGInfoSideNav'
 
 //ACG Members
@@ -70,6 +72,20 @@ const router = new VueRouter({
       name: 'ACGComms',
       components: {
         fullmain: ACGComms,
+      }
+    },
+    {
+      path: '/history/',
+      name: 'ACGHistory',
+      components: {
+        fullmain: ACGHistory,
+      }
+    },
+    {
+      path: '/joining/',
+      name: 'ACGJoining',
+      components: {
+        fullmain: ACGJoining,
       }
     },
     {
