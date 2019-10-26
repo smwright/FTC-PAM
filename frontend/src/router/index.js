@@ -6,6 +6,7 @@ import EmptySideNav from '@/components/EmptySideNav'
 
 //ACG Info
 import ACGInfoIndex from '@/components/acg_info/ACGInfoIndex'
+import ACGComms from '@/components/acg_info/ACGComms'
 import ACGInfoSideNav from '../components/acg_info/ACGInfoSideNav'
 
 //ACG Members
@@ -62,6 +63,13 @@ const router = new VueRouter({
       name: 'AboutACG',
       components: {
         fullmain: ACGInfoIndex,
+      }
+    },
+    {
+      path: '/communications/',
+      name: 'ACGComms',
+      components: {
+        fullmain: ACGComms,
       }
     },
     {

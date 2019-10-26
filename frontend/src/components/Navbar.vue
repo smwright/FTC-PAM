@@ -7,6 +7,7 @@
           <li><router-link :to="{name: 'Home'}">Home</router-link></li>
           <li><a href="http://www.aircombatgroup.co.uk/forum" >Forums</a></li>
           <li><router-link :to="{name: 'AboutACG'}">About ACG</router-link></li>
+          <li><router-link :to="{name: 'ACGComms'}">Communications</router-link></li>
           <li><router-link :to="{name: 'Members'}">Members</router-link></li>
           <li><router-link :to="{name: 'CampaignList'}">Campaigns</router-link></li>
           <li><router-link :to="{name: 'Admin'}">Administration</router-link></li>
