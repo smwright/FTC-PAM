@@ -64,12 +64,5 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
-.facebookBox{
-
-  position: fixed;
-  display: inline-block;
-  margin-top: 4%;
-  margin-left: 1.35%;
-}
 
 </style>

@@ -32,7 +32,7 @@
 
     <div id="footer">
       <div class="navbar">
-
+      Our page is under construction. Please report bugs on our forum.
       </div>
     </div>
 
@@ -119,6 +119,21 @@ body {
   border-color: rgba(0, 0, 0, 0.4);
   background: rgba(101, 21, 22, .8);
   text-align: center;
+  display: table;
+}
+
+.navbarFooterSocialMediaIcons {
+  /*position: fixed;*/
+  height: 50px;
+  width: calc(100% - 20px); /* Whished widht in % minus 2x border size */
+  padding: 10px;
+  list-style: none;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 15px;
+  border-color: rgba(0, 0, 0, 0.4);
+  background: rgba(101, 21, 22, .8);
+  text-align: left;
   display: table;
 }
 
@@ -536,5 +551,29 @@ DraggableTree div {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
+}
+
+.fa {
+  padding: 5px;
+  font-size: 20px;
+  width: 20px;
+  text-align: center;
+  text-decoration: none;
+  margin: 0px 0px;
+  border-radius: 50%;
+}
+
+.fa:hover {
+  opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-youtube {
+  background: #bb0000;
+  color: white;
 }
 </style>
