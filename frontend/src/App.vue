@@ -29,25 +29,25 @@
         </div>
       </div>
     </div>
-
     <div id="footer">
       <div class="navbar">
-      Our page is under construction. Please report bugs on our forum.
+        Our page is under construction. Please report bugs on our forum.
       </div>
     </div>
-
   </div>
 </template>
 
 <script>
 import Navbar from './components/Navbar'
 import Logger from './components/Logger'
+import Footer from './components/Footer'
 
 export default {
   name: 'App',
   components: {
     Navbar,
-    Logger
+    Logger,
+    Footer
   },
   mounted() {
     this.$auth.syncSession(this.$options.name);
