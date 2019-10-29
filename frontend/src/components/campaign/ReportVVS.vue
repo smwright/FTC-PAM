@@ -33,7 +33,8 @@
 
     <div>
       <span>Synopsis:</span><br>
-      <p class="white-space-pre-line">{{ decodeHTML(report_info.synopsis) }}</p>
+      <TextWithImage class="white-space-pre-line" v-bind:original_text="decodeHTML(report_info.synopsis)"></TextWithImage>
+      <!--<p class="white-space-pre-line">{{ decodeHTML(report_info.synopsis) }}</p>-->
     </div>
 
     <div>

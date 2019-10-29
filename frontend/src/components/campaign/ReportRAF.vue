@@ -46,7 +46,8 @@
 
     <div>
       <span>Synopsis:</span><br>
-      <p class="white-space-pre-line">{{ decodeHTML(report_info.synopsis) }}</p>
+      <TextWithImage class="white-space-pre-line" v-bind:original_text="decodeHTML(report_info.synopsis)"></TextWithImage>
+      <!--<p class="white-space-pre-line">{{ decodeHTML(report_info.synopsis) }}</p>-->
     </div>
 
     <div>
@@ -89,6 +90,7 @@
 <script>
 import stringConv from "../../resource/stringConverter"
 import statConv from "../../resource/statusConverter"
+import TextWithImage from "../basic_comp/TextWithImages"
 import ClaimRAF from "./ClaimRAF"
 import Comment from "./Comment"
 import ReportApprovalComp from "./ReportApprovalComp"
@@ -99,7 +101,8 @@ export default {
   components: {
     ClaimRAF,
     Comment,
-    ReportApprovalComp
+    ReportApprovalComp,
+    TextWithImage
   },
   mixins: [
     stringConv,

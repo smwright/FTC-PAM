@@ -3,11 +3,11 @@
     <div class="heading">Briefing</div>
       <div v-if="briefing_info !== null" class="white-space-pre-line">
         <template v-if="is_authorized | briefing_info.faction == 0">
-          <TextWithImage v-bind:original_text="this.decodeHTML(briefing_info.text)"></TextWithImage>
+          <TextWithImage class="typed-on-paper" v-bind:original_text="this.decodeHTML(briefing_info.text)"></TextWithImage>
           <!--{{ this.decodeHTML(briefing_info.text) }}-->
         </template>
         <template v-else>
-          <TextWithImage v-bind:original_text="this.decodeHTML(this.encryptBriefing(briefing_info.text, 5))"></TextWithImage>
+          <TextWithImage class="typed-on-paper" v-bind:original_text="this.decodeHTML(this.encryptBriefing(briefing_info.text, 5))"></TextWithImage>
           <!--{{ this.encryptBriefing(briefing_info.text, 5) }}-->
         </template>
       </div>
