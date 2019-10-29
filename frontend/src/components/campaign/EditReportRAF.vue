@@ -311,7 +311,7 @@ export default {
 
     report_serial_no: {
       get () {
-        return this.report_info.serial_no;
+        return this.report_details.serial_no;
       },
       set (value) {
         this.$store.commit('missionStore/updateReportValue',
