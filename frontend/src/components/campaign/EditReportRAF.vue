@@ -104,7 +104,7 @@
     </div>
 
     <div>
-      <span>Synopsis:</span><br>
+      <span>Synopsis (Optional): Images can be included by using [img]image-url[/img]</span><br>
       <textarea v-model="report_synopsis" class="textarea-style"></textarea>
     </div>
 
