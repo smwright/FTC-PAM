@@ -27,6 +27,7 @@
           </select>
         </td>
         <td class="width-10">
+          <span>shared:</span>
           <input type="checkbox" id="shared" v-model="shared" true-value=1 false-value=0>
         </td>
         <td></td>
