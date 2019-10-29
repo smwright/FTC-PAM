@@ -4,11 +4,18 @@
           <!--Use <router-link :to="{...}">...</router-link> format for links.-->
           <!--Please reference the routes by name.-->
           <!--Use CamelCase for route names.-->
-          <li><router-link :to="{name: 'Home'}">Home</router-link></li>
+
+          <li><router-link :to="{name: 'AboutACG'}">About Us</router-link></li>
+          <li><router-link :to="{name: 'ACGHistory'}">History</router-link></li>
+          <li><router-link :to="{name: 'ACGJoining'}">Joining</router-link></li>
+          <li><router-link :to="{name: 'ACGComms'}">Communications</router-link></li>
           <li><a href="http://www.aircombatgroup.co.uk/forum" >Forums</a></li>
-          <li><router-link :to="{name: 'AboutACG'}">About ACG</router-link></li>
-          <li><router-link :to="{name: 'Members'}">Members</router-link></li>
+          <nav class="navigationListHomeButton">
+          <li><router-link :to="{name: 'Home'}">Home</router-link></li>
+          </nav>
           <li><router-link :to="{name: 'CampaignList'}">Campaigns</router-link></li>
+          <li><router-link :to="{name: 'Members'}">Members</router-link></li>
+          <li><a href="https://www.aircombatgroup.co.uk/field_book.pdf" >Field Book</a></li>
           <li><router-link :to="{name: 'Admin'}">Administration</router-link></li>
           <!--<li v-if="isAdmin()"><router-link :to="{name: 'Admin'}">Administration</router-link></li>-->
           <!--<li><router-link :to="{name: 'FlightSchool'}">FlightSchool</router-link></li>-->
@@ -29,7 +36,8 @@ export default {
 .navigationList {
   list-style: none;
   text-align: center;
-  display: table;
+  display: inline-block;
+  margin-left: 11%;
 }
 
 .navigationList li {
@@ -44,6 +52,16 @@ export default {
   text-decoration: none;
   margin-top: 13px;
   font-size: 19px;
+  font-weight: bold;
+  color: #FFF6FD;
+}
+
+.navigationListHomeButton li a {
+  display: block;
+  padding: 0px 10px;
+  text-decoration: none;
+  margin-top: 13px;
+  font-size: 30px;
   font-weight: bold;
   color: #FFF6FD;
 }
