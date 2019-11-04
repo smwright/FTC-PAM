@@ -114,7 +114,7 @@ import statConv from "../../resource/statusConverter"
 
     claim_description: {
       get() {
-        var claim = this.$store.getters['missionStore/groundClaimById'](this.claim_id );
+        var claim = this.$store.getters['missionStore/aerialClaimById'](this.claim_id );
         return (claim !== undefined) ? claim.description : null;
       },
       set(value) {

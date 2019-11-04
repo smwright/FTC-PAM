@@ -84,6 +84,7 @@
 <script>
 import statConv from "../../resource/statusConverter"
 import stringConv from "../../resource/stringConverter"
+import TextWithImage from "../basic_comp/TextWithImages"
 import ClaimLW from "./ClaimLW"
 import ClaimGround from "./ClaimGround"
 import Comment from "./Comment"
@@ -96,6 +97,7 @@ export default {
     ClaimLW,
     ClaimGround,
     Comment,
+    TextWithImage,
     ReportApprovalComp
   },
   mixins: [
