@@ -77,6 +77,7 @@
 <script>
   import stringConv from "../../resource/stringConverter"
   import statConv from "../../resource/statusConverter"
+  import TextWithImage from "../basic_comp/TextWithImages"
   import ClaimVVS from "./ClaimVVS"
   import ClaimGround from "./ClaimGround"
   import Comment from "./Comment"
@@ -89,6 +90,7 @@
       ClaimVVS,
       ClaimGround,
       Comment,
+      TextWithImage,
       ReportApprovalComp
     },
     mixins: [

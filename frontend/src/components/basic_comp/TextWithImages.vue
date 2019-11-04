@@ -42,11 +42,15 @@ export default {
 
     parseText: function () {
 
+      let text_to_process = this.original_text;
       this.processed_text_array = [];
       var image_start_tag = "[img]";
       var image_stop_tag = "[/img]";
       var start_pos = 0;
-      var string_to_search = this.original_text.substring(0);
+      if(text_to_process === null | text_to_process === undefined) {
+        text_to_process = "";
+      }
+      var string_to_search = text_to_process.substring(0);
       var stop_pos = string_to_search.indexOf(image_start_tag, start_pos);
 
       if(stop_pos === -1){

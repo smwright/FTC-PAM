@@ -4,7 +4,6 @@
 
     <template v-if="this.show_edit_display">
       <div class="clearfix container margin-left-right">
-        <span>{{ dbStatus }}</span>
         <button v-if="this.show_edit_button" v-on:click="toggleEdit" class="float-right">Exit edit</button>
         <button v-if="this.show_edit_button" v-on:click="sendReport" class="float-right">Send report</button>
       </div>
@@ -64,7 +63,7 @@ export default {
       report_loaded: false,
       edit_display: false,
       user_id: null,
-      dbStatus: "",
+
     }
   },
   computed: {
@@ -133,7 +132,7 @@ export default {
           path: this.$route.path
         })
         .then(response => {
-          this.dbStatus = response;
+
         })
         .catch(error => {
           console.log(error.message);
