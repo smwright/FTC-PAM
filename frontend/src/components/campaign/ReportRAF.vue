@@ -92,6 +92,7 @@ import stringConv from "../../resource/stringConverter"
 import statConv from "../../resource/statusConverter"
 import TextWithImage from "../basic_comp/TextWithImages"
 import ClaimRAF from "./ClaimRAF"
+import ClaimGround from "./ClaimGround"
 import Comment from "./Comment"
 import ReportApprovalComp from "./ReportApprovalComp"
 import { mapState, mapGetters } from "vuex"
@@ -100,6 +101,7 @@ export default {
   name: "ReportRAF",
   components: {
     ClaimRAF,
+    ClaimGround,
     Comment,
     ReportApprovalComp,
     TextWithImage
