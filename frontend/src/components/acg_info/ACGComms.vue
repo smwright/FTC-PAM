@@ -22,7 +22,7 @@
       <p>Should you experience any problems please post in our forums and we'll be happy to help you out.</p>
 
       <iframe src="https://discordapp.com/widget?id=261587898996883458&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
-      <iframe name="ts3monitor.com" allowtransparency="true" width="350" height="500" frameborder="0" style="border:0px solid #;" scrolling="auto" src="http://monitor.ts3monitor.com/?t=iframe&i=94.250.222.150&p=10043&q=10011&c=&b=C9C9C9&si=16&s=14&ih=0&it=0"></iframe>    </div>
+      <iframe name="ts3monitor.com" allowtransparency="true" width="350" height="500" frameborder="0" style="border:0px solid #;" scrolling="auto" src="https://monitor.ts3monitor.com/?t=iframe&i=94.250.222.150&p=10043&q=10011&c=&b=C9C9C9&si=16&s=14&ih=0&it=0"></iframe>    </div>
   </div>
 </template>
 
