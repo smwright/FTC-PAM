@@ -1,6 +1,23 @@
 <template>
   <div>
-    <template v-for="award in filterByKey('character_decorations', 'character_id', character_id)">
+    <template v-if="extended_info">
+      <table>
+        <tr v-for="award in filterByKey('character_decorations', 'character_id', character_id)">
+          <td>
+            <img
+              v-bind:class="{ medalSmall: small_awards }"
+              v-bind:src="awardImage(award.award_image)"
+              v-bind:title="award.award_name"
+            />
+          </td>
+          <td>
+            {{ award.decoration_date }}
+          </td>
+        </tr>
+      </table>
+
+    </template>
+    <template v-else v-for="award in filterByKey('character_decorations', 'character_id', character_id)">
       <img
         v-bind:class="{ medalSmall: small_awards }"
         v-bind:src="awardImage(award.award_image)"
@@ -18,22 +35,19 @@ export default {
   name: "AwardComp",
   props: {
     character_id: {
-      type: Number,
+      type: [Number, String],
       default: 0
     },
     small_awards: {
       type: Boolean,
       default: false
+    },
+    extended_info: {
+      type: Boolean,
+      default: false
     }
   },
   computed: {
-
-    // ...mapState("memberInfo", {
-    //
-    //   status_log: state => state.member_status_log,
-    //   transfer_log: state => state.transfer_log,
-    //   promotion_log: state => state.promotion_log
-    // }),
 
     ...mapGetters("memberInfo", [
       "filterByKey"

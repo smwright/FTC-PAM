@@ -659,6 +659,7 @@ const  actions = {
 
   sendReport (context, payload) {
 
+    context.commit("logger/addEntry", {message: "Sending report"}, {root: true});
     return new Promise(async function (resolve, reject) {
 
 
@@ -696,7 +697,8 @@ const  actions = {
                 }]
             });
 
-           console.log("Character: "+response.message);
+           // console.log("Character: "+response.message);
+          context.commit("logger/addEntry", {message: "Character: "+response.message}, {root: true});
            // update character_id with id from created character
            report.character_id = response.insert_id[0].new_id;
         }
@@ -716,7 +718,8 @@ const  actions = {
             payload: [report]
           })
 
-        console.log("Report: "+response.message);
+        // console.log("Report: "+response.message);
+        context.commit("logger/addEntry", {message: "Report: "+response.message}, {root: true});
 
         // update report_id in state
         if(report.id < 0){
@@ -773,7 +776,9 @@ const  actions = {
               table: "report_detail_lw",
               payload: [report_details]
             });
-          console.log(" Report detail LW: "+response.message);
+          // console.log(" Report detail LW: "+response.message);
+          context.commit("logger/addEntry", {message: "Report detail LW: "+response.message}, {root: true});
+
 
         } else if (report.faction == 2) {
 
@@ -785,7 +790,9 @@ const  actions = {
               table: "report_detail_raf",
               payload: [report_details]
             });
-          console.log(" Report detail RAF: "+response.message);
+          // console.log(" Report detail RAF: "+response.message);
+          context.commit("logger/addEntry", {message: "Report detail RAF: "+response.message}, {root: true});
+
 
         } else if (report.faction == 3) {
 
@@ -838,7 +845,8 @@ const  actions = {
             mission_id: context.state.report.mission_id,
             depl_unit_id: context.state.report.depl_unit_id,
           });
-        resolve("Report send.");
+        alert("Report send, check logger for further info.")
+        resolve();
 
       } catch (e) {
 
@@ -886,7 +894,7 @@ const  actions = {
             table: "claim",
             payload: aerial_claim_general
           });
-        console.log("Claim: "+claim_general_response.message);
+        // console.log("Claim: "+claim_general_response.message);
 
         // update claim_id in state
         for(var i = 0; i < claim_general_response.insert_id.length; i++){
@@ -957,7 +965,7 @@ const  actions = {
               table: "claim_lw",
               payload: aerial_claim_specific
             });
-          console.log("Claim spec: "+claim_specific_response.message);
+          // console.log("Claim spec: "+claim_specific_response.message);
 
         } else if (context.state.report.faction == 2) {
 
@@ -981,7 +989,7 @@ const  actions = {
               table: "claim_raf",
               payload: aerial_claim_specific
             });
-          console.log("Claim spec: "+claim_specific_response.message);
+          // console.log("Claim spec: "+claim_specific_response.message);
 
         } else if (context.state.report.faction == 3) {
 
@@ -1032,9 +1040,14 @@ const  actions = {
               table: "claim_vvs",
               payload: aerial_claim_specific
             });
-          console.log("Claim spec: "+claim_specific_response.message);
+          // console.log("Claim spec: "+claim_specific_response.message);
+
 
         }
+
+        context.commit("logger/addEntry",
+          {message: "Claim: "+claim_general_response.message+" Claim detail: "+claim_specific_response.message},
+          {root: true});
 
         for(var i = 0; i < claim_specific_response.insert_id.length; i++){
 
@@ -1096,7 +1109,6 @@ const  actions = {
             table: "claim",
             payload: ground_claim_general
           });
-        console.log("Claim: "+claim_general_response.message);
 
         // update claim_id in state
         for(var i = 0; i < claim_general_response.insert_id.length; i++){
@@ -1132,7 +1144,10 @@ const  actions = {
             table: "claim_ground",
             payload: ground_claim_specific
           });
-        console.log("Claim spec: "+claim_specific_response.message);
+        // console.log("Claim spec: "+claim_specific_response.message);
+        context.commit("logger/addEntry",
+          {message: "Claim: "+claim_general_response.message+" Claim detail: "+claim_specific_response.message},
+          {root: true});
 
         for(var i = 0; i < claim_specific_response.insert_id.length; i++){
 
@@ -1204,8 +1219,11 @@ const  actions = {
             {table:"claim_vvs", payload: claim_detail_ids});
         }
 
-        console.log("Claim: "+claim_response.message);
-        console.log("Claim detail: "+claim_detail_response.message);
+        // console.log("Claim: "+claim_response.message);
+        // console.log("Claim detail: "+claim_detail_response.message);
+        context.commit("logger/addEntry",
+          {message: "Claim: "+claim_response.message+" Claim detail: "+claim_detail_response.message},
+          {root: true});
 
         context.commit('resetDeleteAerialClaims')
         resolve();
@@ -1240,8 +1258,12 @@ const  actions = {
         claim_detail_response = await Vue.prototype.$dbCon.deleteData("missionStore on behalf of "+payload.caller,
           {table:"claim_ground", payload: claim_detail_ids});
 
-        console.log("Claim: "+claim_response.message);
-        console.log("Claim detail: "+claim_detail_response.message);
+        // console.log("Claim: "+claim_response.message);
+        // console.log("Claim detail: "+claim_detail_response.message);
+        context.commit("logger/addEntry",
+          {message: "Claim: "+claim_response.message+" Claim detail: "+claim_detail_response.message},
+          {root: true});
+
 
         context.commit('resetDeleteGroundClaims')
         resolve();

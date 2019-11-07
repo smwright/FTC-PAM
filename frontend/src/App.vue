@@ -7,7 +7,7 @@
           <Navbar class="float-left"></Navbar>
           <div class="float-right">{{this.$session.get('username')}}</div>
         </div>
-        <Logger class="logger float-right"></Logger>
+        <Logger class="logger"></Logger>
       </div>
     </div>
 
@@ -140,6 +140,7 @@ body {
 .logger {
   width: 60%;
   padding: 2px;
+  margin: auto;
   border-style: solid;
   border-width: 0px;
   border-radius: 15px;
@@ -422,6 +423,11 @@ select {
   color: #1b1b1b;
   font-family: "Remingtoned Type";
   box-shadow: 10px 10px 10px rgba(10,10,10,0.5);
+}
+
+.typed-on-paper-link:hover {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 2px;
 }
 
 .typed-on-paper button {
