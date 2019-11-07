@@ -17,7 +17,9 @@ const state = {
   character_claim_vvs_group: [],
   character_claim_vvs_pers: [],
   character_claim_ground: [],
-  character_decorations: []
+  character_decorations: [],
+  character_transfers: [],
+  reports: []
 };
 
 // getters
@@ -148,11 +150,15 @@ const getters = {
 
       var stats_array;
       if(character_id === null){
-        stats_array = state.character_sorties_stats;
-      } else {
-        stats_array = state.character_sorties_stats.filter(
+        stats_array = state.reports.filter(
           function (item) {
-            return item.character_id === character_id;
+            return item.accepted === 1;
+          });
+      } else {
+        stats_array = state.reports.filter(
+          function (item) {
+            return item.character_id === character_id
+              && item.accepted === 1;
           });
       }
 
@@ -168,50 +174,107 @@ const getters = {
 
       for(var i=0; i < stats_array.length; i++) {
 
-        result_array.sorties += stats_array[i].sorties;
-        result_array.pilot_ok += stats_array[i].pilot_ok;
-        result_array.pilot_wounded += stats_array[i].pilot_wounded;
-        result_array.pilot_pow += stats_array[i].pilot_pow;
-        result_array.pilot_kia += stats_array[i].pilot_kia;
-        result_array.asset_ok += stats_array[i].asset_ok;
-        result_array.asset_damaged += stats_array[i].asset_damaged;
-        result_array.asset_lost += stats_array[i].asset_lost;
+        result_array.sorties += stats_array[i].accepted;
+        result_array.pilot_ok += (stats_array[i].pilot_status === 0)? 1 : 0;
+        result_array.pilot_wounded += (stats_array[i].pilot_status === 1)? 1 : 0;
+        result_array.pilot_pow += (stats_array[i].pilot_status === 2)? 1 : 0;
+        result_array.pilot_kia += (stats_array[i].pilot_status === 3)? 1 : 0;
+        result_array.asset_ok += (stats_array[i].asset_status === 0)? 1 : 0;
+        result_array.asset_damaged += (stats_array[i].asset_status === 1)? 1 : 0;
+        result_array.asset_lost += (stats_array[i].asset_status === 2)? 1 : 0;
       }
 
       return result_array;
 
   },
 
-  claimStats: (state) => (character_id, type) => {
+  claimStats: (state) => (character_id, report_id, type) => {
 
     var stats_array, result_array;
-    if(character_id === null){
+    if(character_id !== null){
 
       switch (type) {
         case "raf":
-          stats_array = state.character_claim_raf;
-          result_array = {destroyed: 0, probables: 0, damaged: 0};
+          stats_array = state.character_claim_raf.filter(
+            function (item) {
+              return item.character_id === character_id;
+            });
+          result_array = {Destroyed: 0, Probable: 0, Damaged: 0};
           break;
         case "lw":
-          stats_array = state.character_claim_lw;
-          result_array = {conf: 0, unconf: 0};
+          stats_array = state.character_claim_lw.filter(
+            function (item) {
+              return item.character_id === character_id;
+            });
+          result_array = {Confirmed: 0, Unconfirmed: 0};
           break;
         case "vvs_pers":
-          stats_array = state.character_claim_vvs_pers;
-          result_array = {conf: 0, unconf: 0};
+          stats_array = state.character_claim_vvs_pers.filter(
+            function (item) {
+              return item.character_id === character_id;
+            });
+          result_array = {Confirmed: 0, Unconfirmed: 0};
           break;
         case "vvs_group":
-          stats_array = state.character_claim_vvs_group;
-          result_array = {conf: 0, unconf: 0};
+          stats_array = state.character_claim_vvs_group.filter(
+            function (item) {
+              return item.character_id === character_id;
+            });
+          result_array = {Confirmed: 0, Unconfirmed: 0};
           break;
         case "ground":
-          stats_array = state.character_claim_ground;
+          stats_array = state.character_claim_ground.filter(
+            function (item) {
+              return item.character_id === character_id;
+            });
           result_array = {};
+          break;
+        case "ground_total":
+          stats_array = state.character_claim_ground.filter(
+            function (item) {
+              return item.character_id === character_id;
+            });
+          result_array = {Victories: 0};
           break;
         default:
       }
     } else {
 
+      switch (type) {
+        case "raf":
+          stats_array = state.character_claim_raf;
+          result_array = {Destroyed: 0, Probable: 0, Damaged: 0};
+          break;
+        case "lw":
+          stats_array = state.character_claim_lw;
+          result_array = {Confirmed: 0, Unconfirmed: 0};
+          break;
+        case "vvs_pers":
+          stats_array = state.character_claim_vvs_pers;
+          result_array = {Confirmed: 0, Unconfirmed: 0};
+          break;
+        case "vvs_group":
+          stats_array = state.character_claim_vvs_group;
+          result_array = {Confirmed: 0, Unconfirmed: 0};
+          break;
+        case "ground":
+          stats_array = state.character_claim_ground;
+          result_array = {};
+          break;
+        case "ground_total":
+          stats_array = state.character_claim_ground;
+          result_array = {Victories: 0};
+          break;
+        default:
+      }
+    }
+
+    if(report_id !== null){
+
+      stats_array = stats_array.filter(
+        function (item) {
+          return item.report_id === report_id;
+        });
     }
 
     if(stats_array.length == 0){
@@ -223,32 +286,70 @@ const getters = {
     if(type == "raf") {
 
       for(var i=0; i < stats_array.length; i++){
-        result_array.destroyed += stats_array[i].destroyed;
-        result_array.probables += stats_array[i].probables;
-        result_array.damaged += stats_array[i].damaged;
+        result_array.Destroyed += stats_array[i].destroyed;
+        result_array.Probable += stats_array[i].probables;
+        result_array.Damaged += stats_array[i].damaged;
       }
-    } else if(type == "lw" | type == "vvs_pers" | type == "vvs_group") {
+    } else if(type == "lw" | type == "vvs_pers") {
 
       for(var i=0; i < stats_array.length; i++){
-        result_array.conf += stats_array[i].conf;
-        result_array.unconf += stats_array[i].unconf;
+        result_array.Confirmed += stats_array[i].conf;
+        result_array.Unconfirmed += stats_array[i].unconf;
       }
+    } else if(type == "vvs_group") {
+
+      let mission_array = [];
+      for(var i=0; i < stats_array.length; i++){
+
+        // Group claims are only counted once per mission for each member/character
+        if(!mission_array.includes(stats_array[i].mission_id)){
+          result_array.Confirmed += stats_array[i].conf;
+          result_array.Unconfirmed += stats_array[i].unconf;
+          mission_array.push(stats_array[i].mission_id);
+        }
+
+      }
+
     } else if(type == "ground") {
 
-      for(var i=0; i<stats_array.length; i++){
+      for (var i = 0; i < stats_array.length; i++) {
 
 
         var key = stats_array[i].asset_name;
-        if(key in result_array){
+        if (key in result_array) {
           result_array[key] += stats_array[i].amount;
         } else {
           result_array[key] = stats_array[i].amount;
         }
       }
+    } else if(type == "ground_total") {
+
+      for(var i=0; i<stats_array.length; i++){
+        result_array.Victories += stats_array[i].amount;
+      }
     }
 
     return result_array;
   },
+
+  reportStats: (state) => (character_id) => {
+
+    var stats_array;
+    if (character_id === null) {
+      stats_array = state.reports.filter(
+        function (item) {
+          return item.accepted === 1;
+        });
+    } else {
+      stats_array = state.reports.filter(
+        function (item) {
+          return item.character_id === character_id
+            && item.accepted === 1;
+        });
+    }
+
+    return stats_array;
+  }
 
 }
 
@@ -287,7 +388,11 @@ const mutations = {
     // array_name: Name of the array to set
     // array_data: Date to store in the array
     state[payload.array_name] = payload.array_data;
-  }
+  },
+
+  resetTable: (state) => (table) => {
+    state[table] = [];
+  },
 }
 
 // actions

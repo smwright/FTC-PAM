@@ -4,7 +4,7 @@
       <table>
         <tr>
           <td>Sorties:</td>
-          <td>{{ sortiePilotAssetStats(null).sorties }}</td>
+          <td>{{ sortiePilotAssetStats(character_id).sorties }}</td>
         </tr>
       </table>
       <div class="clearfix">
@@ -12,21 +12,21 @@
           <table>
             <tr><td>Pilot status</td></tr>
             <tr><td colspan="2"><hr></td></tr>
-            <tr v-if="sortiePilotAssetStats(null).pilot_ok > 0">
+            <tr v-if="sortiePilotAssetStats(character_id).pilot_ok > 0">
               <td>OK:</td>
-              <td>{{ sortiePilotAssetStats(null).pilot_ok }}</td>
+              <td>{{ sortiePilotAssetStats(character_id).pilot_ok }}</td>
             </tr>
-            <tr v-if="sortiePilotAssetStats(null).pilot_wounded > 0">
+            <tr v-if="sortiePilotAssetStats(character_id).pilot_wounded > 0">
               <td>Wounded:</td>
-              <td>{{ sortiePilotAssetStats(null).pilot_wounded }}</td>
+              <td>{{ sortiePilotAssetStats(character_id).pilot_wounded }}</td>
             </tr>
-            <tr v-if="sortiePilotAssetStats(null).pilot_pow > 0">
+            <tr v-if="sortiePilotAssetStats(character_id).pilot_pow > 0">
               <td>POW:</td>
-              <td>{{ sortiePilotAssetStats(null).pilot_pow }}</td>
+              <td>{{ sortiePilotAssetStats(character_id).pilot_pow }}</td>
             </tr>
-            <tr v-if="sortiePilotAssetStats(null).pilot_kia > 0">
+            <tr v-if="sortiePilotAssetStats(character_id).pilot_kia > 0">
               <td>KIA:</td>
-              <td>{{ sortiePilotAssetStats(null).pilot_kia }}</td>
+              <td>{{ sortiePilotAssetStats(character_id).pilot_kia }}</td>
             </tr>
           </table>
         </div>
@@ -34,17 +34,17 @@
           <table>
             <tr><td>Aircraft status</td></tr>
             <tr><td colspan="2"><hr></td></tr>
-            <tr v-if="sortiePilotAssetStats(null).asset_ok > 0">
+            <tr v-if="sortiePilotAssetStats(character_id).asset_ok > 0">
               <td>OK:</td>
-              <td>{{ sortiePilotAssetStats(null).asset_ok }}</td>
+              <td>{{ sortiePilotAssetStats(character_id).asset_ok }}</td>
             </tr>
-            <tr v-if="sortiePilotAssetStats(null).asset_damaged > 0">
+            <tr v-if="sortiePilotAssetStats(character_id).asset_damaged > 0">
               <td>Damaged:</td>
-              <td>{{ sortiePilotAssetStats(null).asset_damaged }}</td>
+              <td>{{ sortiePilotAssetStats(character_id).asset_damaged }}</td>
             </tr>
-            <tr v-if="sortiePilotAssetStats(null).asset_lost > 0">
+            <tr v-if="sortiePilotAssetStats(character_id).asset_lost > 0">
               <td>Lost:</td>
-              <td>{{ sortiePilotAssetStats(null).asset_lost }}</td>
+              <td>{{ sortiePilotAssetStats(character_id).asset_lost }}</td>
             </tr>
           </table>
         </div>
@@ -57,6 +57,12 @@ import { mapGetters } from "vuex"
 
 export default {
   name: "SortiePilotAssetStatsComp",
+  props: {
+    character_id: {
+      type: [Number, String],
+      default: null
+    }
+  },
   computed: {
 
     ...mapGetters("memberInfo", [

@@ -13,7 +13,7 @@
           dismissed: (member.member_status === 1), onleave: (member.member_status === 2)}"
 
         v-bind:key="member.id"
-        v-bind="{routeName: 'AboutACGMember', routeParams: {member_id: member.member_id}}"
+        v-bind="{routeName: 'MemberGeneral', routeParams: {member_id: member.member_id}}"
       >
         {{ member.callsign }}
       </DivLinkButton>

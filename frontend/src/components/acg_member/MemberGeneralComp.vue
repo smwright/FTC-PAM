@@ -3,10 +3,10 @@
 
     <div class="padding-10">
       <table>
-        <tr><td>Name:</td><td>{{ memberById(member_id).callsign }}</td></tr>
-        <tr><td>Status:</td><td>{{ memberStatus[memberById(member_id).member_status] }}</td></tr>
+        <tr><td>Name:</td><td>{{ memberById(this.$route.params.member_id).callsign }}</td></tr>
+        <tr><td>Status:</td><td>{{ memberStatus[memberById(this.$route.params.member_id).member_status] }}</td></tr>
         <tr><td>Length of service:</td><td>{{ lengthOfService }}</td></tr>
-        <tr><td>Current unit:</td><td>{{ currentACGUnitById(member_id).name }}</td></tr>
+        <tr><td>Current unit:</td><td>{{ currentACGUnitById(this.$route.params.member_id).name }}</td></tr>
       </table>
     </div>
 
@@ -87,12 +87,12 @@ export default {
     ClaimStats,
     MemberCampaignAttendance
   },
-  props: {
-    member_id: {
-      type: Number,
-      default: 0
-    }
-  },
+  // props: {
+  //   member_id: {
+  //     type: Number,
+  //     default: 0
+  //   }
+  // },
   computed: {
 
     ...mapState("memberInfo", {

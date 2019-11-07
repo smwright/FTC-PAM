@@ -1,31 +1,29 @@
 <template>
   <div>
     <div class="container">
-      <button v-on:click="changeTab('general')">General Info</button>
-      <button v-on:click="changeTab('characters')">Characters</button>
+      <LinkButton
+        v-bind="{routeName: 'MemberGeneral', routeParams: {member_id: this.member_id}}">
+        General Info
+      </LinkButton>
+      <LinkButton
+        v-bind="{routeName: 'MemberCharacters', routeParams: {member_id: this.member_id}}">
+        Characters
+      </LinkButton>
+
     </div>
 
-    <div>
-      <MemberGeneralComp
-        v-show="tabToShow === 'general'"
-        v-bind:member_id="member_id"
-      ></MemberGeneralComp>
-      <MemberCharactersComp
-        v-show="tabToShow === 'characters'"
-      ></MemberCharactersComp>
-    </div>
+    <router-view name="subcontent"></router-view>
+
   </div>
 </template>
 
 <script>
-import MemberGeneralComp from "./MemberGeneralComp"
-import MemberCharactersComp from "./MemberCharactersComp"
+import LinkButton from "../basic_comp/LinkButton"
 
 export default {
   name: "MemberProfile",
   components: {
-    MemberGeneralComp,
-    MemberCharactersComp
+    LinkButton
   },
   mounted () {
 
@@ -35,7 +33,7 @@ export default {
     return {
 
       member_id: 0,
-      tabToShow: "general"
+      // tabToShow: "general"
     }
   },
   beforeRouteUpdate (to, from, next) {
@@ -119,10 +117,10 @@ export default {
           {
             caller: this.$options.name,
             call_object: {
-              view: "character_campaign_sorties_pilot_asset_status",
+              view: "report_info",
               member_id: this.member_id
             },
-            data_array_name: "character_sorties_stats"
+            data_array_name: "reports"
           }
         ).catch(error => {
           console.log(error.message);
@@ -131,7 +129,7 @@ export default {
           {
             caller: this.$options.name,
             call_object: {
-              view: "character_campaign_claim_raf",
+              view: "character_claim_raf",
               member_id: this.member_id
             },
             data_array_name: "character_claim_raf"
@@ -143,7 +141,7 @@ export default {
           {
             caller: this.$options.name,
             call_object: {
-              view: "character_campaign_claim_lw",
+              view: "character_claim_lw",
               member_id: this.member_id
             },
             data_array_name: "character_claim_lw"
@@ -155,7 +153,7 @@ export default {
           {
             caller: this.$options.name,
             call_object: {
-              view: "character_campaign_claim_vvs_group",
+              view: "character_claim_vvs_group",
               member_id: this.member_id
             },
             data_array_name: "character_claim_vvs_group"
@@ -167,7 +165,7 @@ export default {
           {
             caller: this.$options.name,
             call_object: {
-              view: "character_campaign_claim_vvs_pers",
+              view: "character_claim_vvs_pers",
               member_id: this.member_id
             },
             data_array_name: "character_claim_vvs_pers"
@@ -179,7 +177,7 @@ export default {
           {
             caller: this.$options.name,
             call_object: {
-              view: "character_campaign_claim_ground",
+              view: "character_claim_ground",
               member_id: this.member_id
             },
             data_array_name: "character_claim_ground"
