@@ -1,13 +1,49 @@
 <template>
   <div>
     <div>
-      <span>Squadron:</span>
-      <span>{{ reportUnit.hist_unit_name }}</span>
+      <br>
+      <span class="bigLeft">SECRET.</span>
+      <span class="bigRight">FORM "F"</span>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div>
+      <span class="biggerCenter">COMBAT REPORT.</span>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div>
+      <span class="bigLeft">Sector Serial No.</span>
+      <span class="bigCenterLettersA">(A)</span>
+      <span class="bigContentRight"> J.1 </span>
     </div>
 
     <div>
-      <span>Squadron:</span>
-      <span>
+      <span class="bigLeft">Serial Number of Order Detailing Flight or Squadron to Patrol</span>
+      <span class="bigCenterLettersB">(B)</span>
+      <span class="bigContentRight"> NIL </span>
+    </div>
+
+    <div>
+      <span class="bigLeft">Date</span>
+      <span class="bigCenterLettersC">(C)</span>
+      <span class="bigContentRight">{{ decodeHTML(report_info.mission_hist_date) }} </span>
+    </div>
+
+    <div>
+      <span class="bigLeft">Flight, Squadron</span>
+      <span class="bigCenterLettersD">(D)</span>
+      <span class="bigContentRight">
+         <select v-model="report_flight">
+          <option
+            v-for="(flight, index) in flightStatus"
+            v-bind:value="index"
+          >
+            {{flight}}
+          </option>
+        </select>,
         <select v-model="report_unit">
           <option
             v-for="d_unit in unitsByFaction(2)"
@@ -16,27 +52,55 @@
             {{ d_unit.depl_unit_id}} - {{ d_unit.hist_unit_name }}
           </option>
         </select>
+        ({{ reportUnit.hist_unit_code }})
       </span>
     </div>
-
     <div>
-      <span>Squadron code:</span>
-      <span>{{ reportUnit.hist_unit_code }}</span>
+      <span class="bigLeft">Number of Enemy Aircraft</span>
+      <span class="bigCenterLettersE">(E)</span>
     </div>
-
     <div>
-      <span>Flight:</span>
-      <span>
-         <select v-model="report_flight">
-          <option
-            v-for="(flight, index) in flightStatus"
-            v-bind:value="index"
-          >
-            {{flight}}
-          </option>
-        </select>
-      </span>
-
+      <span class="bigLeft">Type of Enemy Aircraft</span>
+      <span class="bigCenterLettersF">(F)</span>
+    </div>
+    <div>
+      <span class="bigLeft">Time Attack was Delivered</span>
+      <span class="bigCenterLettersG">(G)</span>
+    </div>
+    <div>
+      <span class="bigLeft">Place Attack was Delivered</span>
+      <span class="bigCenterLettersH">(H)</span>
+    </div>
+    <div>
+      <span class="bigLeft">Height of Enemy</span>
+      <span class="bigCenterLettersJ">(J)</span>
+    </div>
+    <br>
+    <div>
+      <span class="bigLeft">Enemy Casualties</span>
+      <span class="bigCenterLettersK">(K)</span>
+    </div>
+    <div>
+      <span class="bigLeft">Our Casualties</span>
+      <span class="bigCenterAircraft">Aircraft</span>
+      <span class="bigCenterLettersL">(L)</span>
+    </div>
+    <div>
+      <span class="bigCenterPersonnel">Personnel</span>
+      <span class="bigCenterLettersM">(M)</span>
+    </div>
+    <div>
+      <span class="bigLeft">GENERAL REPORT</span>
+      <span class="bigCenterLettersR">(R)</span>
+      <br>
+      <br>
+      <textarea v-model="report_synopsis" class="textarea-style"></textarea>
+    </div>
+    <br>
+    <div class="bigRight">
+      <span>Approved by:</span>
+    </div>
+    <div class="bigLeft">
       <span>Section:</span>
       <span>
          <select v-model="report_section">
@@ -62,20 +126,19 @@
       </span>
     </div>
 
-    <div>
-      <span>Name:</span>
-      <span> {{ decodeHTML(report_info.rank_name) }}
+    <div class="bigLeft">
+      <span> {{ decodeHTML(report_info.abreviation) }}
         {{ decodeHTML(report_info.first_name) }} '{{ report_info.callsign }}' {{ decodeHTML(report_info.last_name) }}</span>
     </div>
 
-    <div>
+    <div class="bigLeft">
       <span>Base:</span>
       <span>
         <input v-model="report_aerodrome">
       </span>
     </div>
 
-    <div>
+    <div class="bigLeft">
       <span>Type:</span>
       <span>
         <select v-model="report_aircraft">
@@ -89,7 +152,7 @@
       </span>
     </div>
 
-    <div>
+    <div class="bigLeft">
       <span>Markings:</span>
       <span>
         <input v-model="report_markings">
@@ -97,21 +160,15 @@
     </div>
 
     <div>
-      <span>Serial Nr.:</span>
+      <span class="bigLeft">Serial Nr.:</span>
       <span>
         <input v-model="report_serial_no">
       </span>
     </div>
-
-    <div>
-      <span>Synopsis (Optional): Images can be included by using [img]image-url[/img]</span><br>
-      <textarea v-model="report_synopsis" class="textarea-style"></textarea>
-    </div>
-
+    <br>
     <div>
       <button v-on:click="addAerialClaim">Add aerial claim</button>
     </div>
-
     <div>
       <hr>
       Claims:
@@ -417,5 +474,124 @@ div {
   width: 98%;
   height: 10em;
 }
+
+
+.bigRight {
+  float: right;
+  font-size: large;
+  margin-right: 8%;
+}
+
+.bigLeft {
+  font-size: large;
+  margin-left: 8%;
+}
+
+.bigCenterLettersA {
+  font-size: large;
+  margin-left: 48%;
+}
+
+.bigCenterLettersB {
+  font-size: large;
+  margin-left: 70%;
+}
+
+.bigCenterLettersC {
+  font-size: large;
+  margin-left: 58%;
+}
+
+.bigCenterLettersD {
+  font-size: large;
+  margin-left: 48.3%;
+}
+
+.bigCenterLettersE {
+  font-size: large;
+  margin-left: 40.7%;
+}
+
+.bigCenterLettersF {
+  font-size: large;
+  margin-left: 43.5%;
+}
+
+.bigCenterLettersG {
+  font-size: large;
+  margin-left: 40.7%;
+}
+
+.bigCenterLettersH {
+  font-size: large;
+  margin-left: 40.3%;
+}
+
+.bigCenterLettersJ {
+  font-size: large;
+  margin-left: 48.7%;
+}
+
+.bigCenterLettersK {
+  font-size: large;
+  margin-left: 47.9%;
+}
+
+.bigCenterLettersL {
+  font-size: large;
+  margin-left: 23.8%;
+}
+
+.bigCenterAircraft {
+  font-size: large;
+  margin-left: 20%;
+}
+
+.bigCenterLettersM {
+  font-size: large;
+  margin-left: 22%;
+}
+
+.bigCenterLettersR {
+  font-size: large;
+  margin-left: 46.8%;
+}
+
+.bigCenterPersonnel {
+  font-size: large;
+  margin-left: 40%;
+}
+
+.synopsisText {
+  text-align: left;
+  font-size: large;
+  margin-left: 8%;
+  margin-right: 8%;
+}
+
+.biggerCenter {
+  font-size: x-large;
+  text-decoration: underline;
+  margin-left: 40%;
+}
+
+.bigContentRight {
+  font-size: large;
+  position: absolute;
+  margin-left: 2%;
+}
+
+.bigContentLeft {
+  font-size: large;
+  position: absolute;
+  margin-left: 1%;
+}
+
+.bigContentCenter{
+  font-size: large;
+  position: absolute;
+  margin-left: 15%;
+}
+
 
 </style>

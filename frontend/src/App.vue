@@ -416,12 +416,28 @@ select {
 /*Style for typewriter on paper look*/
 
 .typed-on-paper {
-  background: rgb(243, 231, 146);
+  background: rgb(243, 231, 160);
   border-radius: 2px;
   padding: 30px;
   color: #1b1b1b;
   font-family: "Remingtoned Type";
   box-shadow: 10px 10px 10px rgba(10,10,10,0.5);
+}
+
+.bigSignatureLeft {
+  font-size: xx-large;
+  text-decoration: black;
+  margin-left: 8%;
+  font-weight: bold;
+  font-family: "Dawning of a New Day";
+}
+
+.bigSignatureRight {
+  font-size: xx-large;
+  text-decoration: black;
+  margin-left: 8%;
+  font-weight: bold;
+  font-family: "Dawning of a New Day";
 }
 
 .typed-on-paper button {
