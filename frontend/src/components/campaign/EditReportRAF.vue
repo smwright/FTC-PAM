@@ -58,36 +58,60 @@
     <div>
       <span class="bigLeft">Number of Enemy Aircraft</span>
       <span class="bigCenterLettersE">(E)</span>
+        <span class="bigContentRight">
+        <input v-model="report_enemy_ac_number">
+        </span>
     </div>
     <div>
       <span class="bigLeft">Type of Enemy Aircraft</span>
       <span class="bigCenterLettersF">(F)</span>
+      <span class="bigContentRight">
+        <input v-model="report_enemy_ac_type">
+        </span>
     </div>
     <div>
       <span class="bigLeft">Time Attack was Delivered</span>
       <span class="bigCenterLettersG">(G)</span>
+      <span class="bigContentRight">
+        <input v-model="report_time_attack_delivered">
+        </span>
     </div>
     <div>
       <span class="bigLeft">Place Attack was Delivered</span>
       <span class="bigCenterLettersH">(H)</span>
+      <span class="bigContentRight">
+        <input v-model="report_place_attack_delivered">
+        </span>
     </div>
     <div>
       <span class="bigLeft">Height of Enemy</span>
       <span class="bigCenterLettersJ">(J)</span>
+      <span class="bigContentRight">
+        <input v-model="report_enemy_height">
+        </span>
     </div>
     <br>
     <div>
       <span class="bigLeft">Enemy Casualties</span>
       <span class="bigCenterLettersK">(K)</span>
+      <span class="bigContentRight">
+        <input v-model="report_enemy_casualty">
+        </span>
     </div>
     <div>
       <span class="bigLeft">Our Casualties</span>
       <span class="bigCenterAircraft">Aircraft</span>
       <span class="bigCenterLettersL">(L)</span>
+      <span class="bigContentRight">
+        <input v-model="report_our_casualty_ac">
+        </span>
     </div>
     <div>
       <span class="bigCenterPersonnel">Personnel</span>
       <span class="bigCenterLettersM">(M)</span>
+      <span class="bigContentRight">
+        <input v-model="report_our_casualty_personnel">
+        </span>
     </div>
     <div>
       <span class="bigLeft">GENERAL REPORT</span>
@@ -336,6 +360,119 @@ export default {
       }
     },
 
+    report_enemy_ac_number: {
+      get () {
+        return this.report_info.enemy_ac_number;
+      },
+      set (value) {
+        this.$store.commit('missionStore/updateReportValue',
+          {
+            array_name: "report",
+            update_column_name: "enemy_ac_number",
+            update_column_value: value
+          });
+      }
+    },
+
+
+    report_enemy_ac_type: {
+      get () {
+        return this.report_info.enemy_ac_type;
+      },
+      set (value) {
+        this.$store.commit('missionStore/updateReportValue',
+          {
+            array_name: "report",
+            update_column_name: "enemy_ac_type",
+            update_column_value: value
+          });
+      }
+    },
+
+    report_time_attack_delivered: {
+      get () {
+        return this.report_info.time_attack_delivered;
+      },
+      set (value) {
+        this.$store.commit('missionStore/updateReportValue',
+          {
+            array_name: "report",
+            update_column_name: "time_attack_delivered",
+            update_column_value: value
+          });
+      }
+    },
+
+    report_place_attack_delivered: {
+      get () {
+        return this.report_info.place_attack_delivered;
+      },
+      set (value) {
+        this.$store.commit('missionStore/updateReportValue',
+          {
+            array_name: "report",
+            update_column_name: "place_attack_delivered",
+            update_column_value: value
+          });
+      }
+    },
+
+    report_enemy_height: {
+      get () {
+        return this.report_info.enemy_height;
+      },
+      set (value) {
+        this.$store.commit('missionStore/updateReportValue',
+          {
+            array_name: "report",
+            update_column_name: "enemy_height",
+            update_column_value: value
+          });
+      }
+    },
+
+    report_enemy_casualty: {
+      get () {
+        return this.report_info.enemy_casualty;
+      },
+      set (value) {
+        this.$store.commit('missionStore/updateReportValue',
+          {
+            array_name: "report",
+            update_column_name: "enemy_casualty",
+            update_column_value: value
+          });
+      }
+    },
+
+    report_our_casualty_ac: {
+      get () {
+        return this.report_info.our_casualty_ac;
+      },
+      set (value) {
+        this.$store.commit('missionStore/updateReportValue',
+          {
+            array_name: "report",
+            update_column_name: "our_casualty_ac",
+            update_column_value: value
+          });
+      }
+    },
+
+    report_our_casualty_personnel: {
+      get () {
+        return this.report_info.our_casualty_personnel;
+      },
+      set (value) {
+        this.$store.commit('missionStore/updateReportValue',
+          {
+            array_name: "report",
+            update_column_name: "our_casualty_personnel",
+            update_column_value: value
+          });
+      }
+    },
+
     report_aircraft: {
       get () {
         return this.report_info.asset_id;
@@ -469,8 +606,9 @@ div {
 }
 
 .textarea-style{
-  width: 98%;
-  height: 10em;
+  width: 85%;
+  height: 12em;
+  margin-left: 8%;
 }
 
 

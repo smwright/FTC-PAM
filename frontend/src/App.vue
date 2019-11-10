@@ -432,10 +432,14 @@ select {
   font-family: "Dawning of a New Day";
 }
 
+.paperworkPrePrinted {
+  font-family: "Times New Roman";
+}
+
 .bigSignatureRight {
   font-size: xx-large;
   text-decoration: black;
-  margin-left: 8%;
+  margin-left: 60%;
   font-weight: bold;
   font-family: "Dawning of a New Day";
 }

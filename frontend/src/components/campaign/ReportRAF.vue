@@ -43,42 +43,50 @@
     <div>
       <span class="bigLeft">Number of Enemy Aircraft</span>
       <span class="bigCenterLettersE">(E)</span>
+      <span class="bigContentRight"> {{ report_info.enemy_ac_number }} </span>
     </div>
     <br>
     <div>
       <span class="bigLeft">Type of Enemy Aircraft</span>
       <span class="bigCenterLettersF">(F)</span>
+      <span class="bigContentRight"> {{ report_info.enemy_ac_type }} </span>
     </div>
     <br>
     <div>
       <span class="bigLeft">Time Attack was Delivered</span>
       <span class="bigCenterLettersG">(G)</span>
+      <span class="bigContentRight"> {{ report_info.time_attack_delivered }} </span>
     </div>
     <br>
     <div>
       <span class="bigLeft">Place Attack was Delivered</span>
       <span class="bigCenterLettersH">(H)</span>
+      <span class="bigContentRight"> {{ report_info.place_attack_delivered }} </span>
     </div>
     <br>
     <div>
       <span class="bigLeft">Height of Enemy</span>
       <span class="bigCenterLettersJ">(J)</span>
+      <span class="bigContentRight"> {{ report_info.enemy_height }} </span>
     </div>
     <br>
     <div>
       <span class="bigLeft">Enemy Casualties</span>
       <span class="bigCenterLettersK">(K)</span>
+      <span class="bigContentRight"> {{ report_info.enemy_casualty }} </span>
     </div>
     <br>
     <div>
       <span class="bigLeft">Our Casualties</span>
       <span class="bigCenterAircraft">Aircraft</span>
       <span class="bigCenterLettersL">(L)</span>
+      <span class="bigContentRight"> {{ report_info.our_casualty_ac }} </span>
     </div>
     <br>
     <div>
       <span class="bigCenterPersonnel">Personnel</span>
       <span class="bigCenterLettersM">(M)</span>
+      <span class="bigContentRight"> {{ report_info.our_casualty_personnel }} </span>
     </div>
     <br>
     <div>
