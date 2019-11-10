@@ -21,21 +21,21 @@
     </div>
 
     <div>
-      <span class="bigLeft">Serial Number of Order Detailing Flight or Squadron to Patrol</span>
-      <span class="bigCenterLettersB">(B)</span>
-      <span class="bigContentRight"> NIL </span>
+      <span style="line-height: 27px" class="bigLeft">Serial Number of Order Detailing Flight or Squadron to Patrol</span>
+      <span style="line-height: 27px" class="bigCenterLettersB">(B)</span>
+      <span style="line-height: 27px" class="bigContentRight"> NIL </span>
     </div>
 
     <div>
-      <span class="bigLeft">Date</span>
-      <span class="bigCenterLettersC">(C)</span>
-      <span class="bigContentRight">{{ decodeHTML(report_info.mission_hist_date) }} </span>
+      <span style="line-height: 27px" class="bigLeft">Date</span>
+      <span style="line-height: 27px" class="bigCenterLettersC">(C)</span>
+      <span style="line-height: 27px" class="bigContentRight">{{ decodeHTML(report_info.mission_hist_date) }} </span>
     </div>
 
     <div>
-      <span class="bigLeft">Flight, Squadron</span>
-      <span class="bigCenterLettersD">(D)</span>
-      <span class="bigContentRight">
+      <span style="line-height: 27px" class="bigLeft">Flight, Squadron</span>
+      <span style="line-height: 27px" class="bigCenterLettersD">(D)</span>
+      <span style="line-height: 27px" class="bigContentRight">
          <select v-model="report_flight">
           <option
             v-for="(flight, index) in flightStatus"
@@ -56,66 +56,65 @@
       </span>
     </div>
     <div>
-      <span class="bigLeft">Number of Enemy Aircraft</span>
-      <span class="bigCenterLettersE">(E)</span>
-        <span class="bigContentRight">
+      <span style="line-height: 27px" class="bigLeft">Number of Enemy Aircraft</span>
+      <span style="line-height: 27px" class="bigCenterLettersE">(E)</span>
+        <span style="line-height: 27px" class="bigContentRight">
         <input v-model="report_enemy_ac_number">
         </span>
     </div>
     <div>
-      <span class="bigLeft">Type of Enemy Aircraft</span>
-      <span class="bigCenterLettersF">(F)</span>
-      <span class="bigContentRight">
+      <span style="line-height: 27px" class="bigLeft">Type of Enemy Aircraft</span>
+      <span style="line-height: 27px" class="bigCenterLettersF">(F)</span>
+      <span style="line-height: 27px" class="bigContentRight">
         <input v-model="report_enemy_ac_type">
         </span>
     </div>
     <div>
-      <span class="bigLeft">Time Attack was Delivered</span>
-      <span class="bigCenterLettersG">(G)</span>
-      <span class="bigContentRight">
+      <span style="line-height: 27px" class="bigLeft">Time Attack was Delivered</span>
+      <span style="line-height: 27px" class="bigCenterLettersG">(G)</span>
+      <span style="line-height: 27px" class="bigContentRight">
         <input v-model="report_time_attack_delivered">
         </span>
     </div>
     <div>
-      <span class="bigLeft">Place Attack was Delivered</span>
-      <span class="bigCenterLettersH">(H)</span>
-      <span class="bigContentRight">
+      <span style="line-height: 27px" class="bigLeft">Place Attack was Delivered</span>
+      <span style="line-height: 27px" class="bigCenterLettersH">(H)</span>
+      <span style="line-height: 27px" class="bigContentRight">
         <input v-model="report_place_attack_delivered">
         </span>
     </div>
     <div>
-      <span class="bigLeft">Height of Enemy</span>
-      <span class="bigCenterLettersJ">(J)</span>
-      <span class="bigContentRight">
+      <span style="line-height: 27px" class="bigLeft">Height of Enemy</span>
+      <span style="line-height: 27px" class="bigCenterLettersJ">(J)</span>
+      <span style="line-height: 27px" class="bigContentRight">
         <input v-model="report_enemy_height">
         </span>
     </div>
-    <br>
     <div>
-      <span class="bigLeft">Enemy Casualties</span>
-      <span class="bigCenterLettersK">(K)</span>
-      <span class="bigContentRight">
+      <span style="line-height: 27px" class="bigLeft">Enemy Casualties</span>
+      <span style="line-height: 27px" class="bigCenterLettersK">(K)</span>
+      <span style="line-height: 27px" class="bigContentRight">
         <input v-model="report_enemy_casualty">
         </span>
     </div>
     <div>
-      <span class="bigLeft">Our Casualties</span>
-      <span class="bigCenterAircraft">Aircraft</span>
-      <span class="bigCenterLettersL">(L)</span>
-      <span class="bigContentRight">
+      <span style="line-height: 27px" class="bigLeft">Our Casualties</span>
+      <span style="line-height: 27px" class="bigCenterAircraft">Aircraft</span>
+      <span style="line-height: 27px" class="bigCenterLettersL">(L)</span>
+      <span style="line-height: 27px" class="bigContentRight">
         <input v-model="report_our_casualty_ac">
         </span>
     </div>
     <div>
-      <span class="bigCenterPersonnel">Personnel</span>
-      <span class="bigCenterLettersM">(M)</span>
-      <span class="bigContentRight">
+      <span style="line-height: 27px" class="bigCenterPersonnel">Personnel</span>
+      <span style="line-height: 27px" class="bigCenterLettersM">(M)</span>
+      <span style="line-height: 27px" class="bigContentRight">
         <input v-model="report_our_casualty_personnel">
         </span>
     </div>
     <div>
-      <span class="bigLeft">GENERAL REPORT</span>
-      <span class="bigCenterLettersR">(R)</span>
+      <span style="line-height: 27px" class="bigLeft">GENERAL REPORT</span>
+      <span style="line-height: 27px" class="bigCenterLettersR">(R)</span>
       <br>
       <br>
       <textarea v-model="report_synopsis" class="textarea-style"></textarea>
@@ -601,9 +600,9 @@ export default {
 
 <style scoped>
 
-div {
-  margin: 5px 0;
-}
+  div {
+    margin: 5px 0;
+  }
 
 .textarea-style{
   width: 85%;
