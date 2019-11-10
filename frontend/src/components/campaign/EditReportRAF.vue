@@ -167,9 +167,6 @@
     </div>
     <br>
     <div>
-      <button v-on:click="addAerialClaim">Add aerial claim</button>
-    </div>
-    <div>
       <hr>
       Claims:
       <EditClaimRAF
@@ -178,9 +175,8 @@
         v-bind="aerial_claim"
       ></EditClaimRAF>
     </div>
-
     <div>
-      <button v-on:click="addGroundClaim">Add ground claim</button>
+      <button v-on:click="addAerialClaim">Add aerial claim</button>
     </div>
 
     <div>
@@ -192,7 +188,9 @@
         v-bind="ground_claim"
       ></EditClaimGround>
     </div>
-
+    <div>
+      <button v-on:click="addGroundClaim">Add ground claim</button>
+    </div>
     <div>
       <hr>
       <span>Pilot status:</span>
