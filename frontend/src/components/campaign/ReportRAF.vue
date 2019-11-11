@@ -313,21 +313,20 @@
 
   .bigContentRight {
     font-size: large;
-    position: absolute;
+    position: relative;
     margin-left: 2%;
   }
 
   .bigContentLeft {
     font-size: large;
-    position: absolute;
+    position: relative;
     margin-left: 1%;
   }
 
-  .bigContentCenter{
+  .bigContentCenter {
     font-size: large;
-    position: absolute;
+    position: relative;
     margin-left: 19%;
   }
-
 
 </style>

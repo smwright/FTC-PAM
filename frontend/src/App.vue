@@ -60,7 +60,7 @@ export default {
   min-height: 100%;
   position: relative;
 
-  font-family: Roboto, Arial, sans-serif;
+  font-family: Roboto, Arial, sans-serif, Remingtoned Type, Dawning of a New Day;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
@@ -83,6 +83,14 @@ export default {
 @font-face {
   font-family: "Remingtoned Type";
   src: url("/assets/fonts/TypewriterFont.ttf");
+  src: local("Remingtoned Type");
+}
+
+@font-face {
+  font-family: "Dawning of a New Day";
+  src: url("/assets/fonts/DawningofaNewDay.ttf");
+  src: local("Dawning of a New Day");
+
 }
 
 /*div{*/
@@ -430,10 +438,6 @@ select {
   margin-left: 8%;
   font-weight: bold;
   font-family: "Dawning of a New Day";
-}
-
-.paperworkPrePrinted {
-  font-family: "Times New Roman";
 }
 
 .bigSignatureRight {

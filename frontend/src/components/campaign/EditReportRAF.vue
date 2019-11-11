@@ -1,11 +1,9 @@
 <template>
   <div>
     <div>
-      <br>
       <span class="bigLeft">SECRET.</span>
       <span class="bigRight">FORM "F"</span>
     </div>
-    <br>
     <br>
     <br>
     <div>
@@ -601,7 +599,7 @@ export default {
 <style scoped>
 
   div {
-    margin: 5px 0;
+    margin: 1% 0%;
   }
 
 .textarea-style{
