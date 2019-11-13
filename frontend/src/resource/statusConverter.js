@@ -152,7 +152,21 @@ export default {
         "Heavy Fighter", //3
         "Transport", //4
         "Recon" //5
-      ]
+      ],
+
+      report_enemy_ac_number:
+        [
+          "NIL", //0
+          "less than 3", //1
+          "less than 10", //2
+          "less than 20", //3
+          "20+", //4
+          "30+", //5
+          "40+", //6
+          "50+", //7
+          "60+", //8
+          "100+" //9
+        ]
     }
   }
 }

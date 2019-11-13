@@ -56,8 +56,15 @@
     <div>
       <span style="line-height: 27px" class="bigLeft">Number of Enemy Aircraft</span>
       <span style="line-height: 27px" class="bigCenterLettersE">(E)</span>
-        <span style="line-height: 27px" class="bigContentRight">
-        <input v-model="report_enemy_ac_number">
+      <span style="line-height: 27px" class="bigContentRight">
+         <select v-model="enemy_ac_number">
+          <option
+            v-for="(enemy_ac_number, index) in report_enemy_ac_number"
+            v-bind:value="index"
+          >
+            {{enemy_ac_number}}
+          </option>
+        </select>
         </span>
     </div>
     <div>
@@ -179,69 +186,7 @@
         <input v-model="report_markings">
       </span>
     </div>
-
-    <div>
-      <span class="bigLeft">Serial Nr.:</span>
-      <span>
-        <input v-model="report_serial_no">
-      </span>
-    </div>
     <br>
-    <div>
-      <hr>
-      Claims:
-      <EditClaimRAF
-        v-for="aerial_claim in aerial_claims"
-        v-bind:key="aerial_claim.claim_id"
-        v-bind="aerial_claim"
-      ></EditClaimRAF>
-    </div>
-    <div>
-      <button v-on:click="addAerialClaim">Add aerial claim</button>
-    </div>
-
-    <div>
-      <hr>
-      Ground Claims:
-      <EditClaimGround
-        v-for="ground_claim in ground_claims"
-        v-bind:key="ground_claim.claim_id"
-        v-bind="ground_claim"
-      ></EditClaimGround>
-    </div>
-    <div>
-      <button v-on:click="addGroundClaim">Add ground claim</button>
-    </div>
-    <div>
-      <hr>
-      <span>Pilot status:</span>
-      <span>
-        <select v-model="report_pilot_status">
-          <option
-            v-for="(pilot_status, index) in pilotStatus"
-            v-bind:value="index"
-          >
-            {{pilot_status}}
-          </option>
-        </select>
-      </span>
-    </div>
-
-    <div>
-      <span>Aircraft status:</span>
-      <span>
-        <select v-model="report_asset_status">
-          <option
-            v-for="(asset_status, index) in assetStatus"
-            v-bind:value="index"
-          >
-            {{asset_status}}
-          </option>
-        </select>
-      </span>
-      <hr>
-    </div>
-
   </div>
 
 </template>
@@ -357,14 +302,16 @@ export default {
       }
     },
 
+
     report_enemy_ac_number: {
       get () {
-        return this.report_info.enemy_ac_number;
+        var enemy_ac_number = this.report_details.enemy_ac_number;
+        return enemy_ac_number === undefined ? 9 : enemy_ac_number;
       },
       set (value) {
         this.$store.commit('missionStore/updateReportValue',
           {
-            array_name: "report",
+            array_name: "report_details",
             update_column_name: "enemy_ac_number",
             update_column_value: value
           });

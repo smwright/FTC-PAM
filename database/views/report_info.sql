@@ -16,6 +16,17 @@ VIEW `report_info` AS
         `report`.`date_submitted` AS `date_submitted`,
         `report`.`accepted` AS `accepted`,
         `report`.`accepted_by` AS `accepted_by`,
+        `report`.`enemy_ac_number` AS `enemy_ac_number`,
+        `report`.`enemy_ac_type` AS `enemy_ac_type`,
+        `report`.`time_attack_delivered` AS `time_attack_delivered`,
+        `report`.`place_attack_delivered` AS `place_attack_delivered`,
+        `report`.`enemy_height` AS `enemy_height`,
+        `report`.`enemy_casualty` AS `enemy_casualty`,
+        `report`.`our_casualty_ac` AS `our_casualty_ac`,
+        `report`.`our_casualty_personnel` AS `our_casualty_personnel`,
+	`mission`.`hist_date` AS `mission_hist_date`,
+        `mission`.`real_date` AS `mission_real_date`,
+        `mission`.`name` AS `mission_name`,
         `career_character`.`id` AS `character_id`,
         `career_character`.`first_name` AS `first_name`,
         `career_character`.`last_name` AS `last_name`,
@@ -28,6 +39,7 @@ VIEW `report_info` AS
         `mission_member_rank`.`image` AS `image`
     FROM
         ((((((`report`
+	LEFT JOIN `mission` ON ((`mission`.`id` = `cl45-acg-pam-2`.`report`.`mission_id`)))
         LEFT JOIN `deployed_unit` ON ((`deployed_unit`.`id` = `report`.`deployed_unit_id`)))
         LEFT JOIN `hist_unit` ON ((`hist_unit`.`id` = `deployed_unit`.`hist_unit_id`)))
         LEFT JOIN `career_character` ON ((`career_character`.`id` = `report`.`character_id`)))

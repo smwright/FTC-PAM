@@ -7,11 +7,14 @@
         <button v-if="this.show_edit_button" v-on:click="toggleEdit" class="float-right">Exit edit</button>
         <button v-if="this.show_edit_button" v-on:click="sendReport" class="float-right">Send report</button>
       </div>
-
       <div class="typed-on-paper" v-if="report_loaded">
         <EditReportLW v-if="report_info.faction==1" v-bind="report_info"></EditReportLW>
         <EditReportRAF v-else-if="report_info.faction==2" v-bind="report_info"></EditReportRAF>
         <EditReportVVS v-else-if="report_info.faction==3" v-bind="report_info"></EditReportVVS>
+      </div>
+      <br>
+      <div class="typed-on-paper" v-if="report_loaded">
+        <EditClaimSlipRAF v-if="report_info.faction==2" v-bind="report_info"></EditClaimSlipRAF>
       </div>
     </template>
 
@@ -27,6 +30,11 @@
         <ReportRAF v-else-if="report_info.faction==2" v-bind="report_info"></ReportRAF>
         <ReportVVS v-else-if="report_info.faction==3" v-bind="report_info"></ReportVVS>
       </div>
+      <br>
+      <div class="typed-on-paper" v-if="report_loaded">
+        <ClaimSlipRAF v-if="report_info.faction==2" v-bind="report_info"></ClaimSlipRAF>
+      </div>
+
       <template v-else>
         Loading report...
       </template>
@@ -42,10 +50,14 @@ import EditReportLW from "./EditReportLW"
 import EditReportRAF from "./EditReportRAF"
 import EditReportVVS from "./EditReportVVS"
 import { mapState, mapGetters } from "vuex"
+import ClaimSlipRAF from "./ClaimSlipRAF";
+import EditClaimSlipRAF from "./EditClaimSlipRAF";
 
 export default {
   name: "Report",
   components: {
+    EditClaimSlipRAF,
+    ClaimSlipRAF,
     ReportLW,
     ReportRAF,
     ReportVVS,

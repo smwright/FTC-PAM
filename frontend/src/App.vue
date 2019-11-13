@@ -443,7 +443,7 @@ select {
 .bigSignatureRight {
   font-size: xx-large;
   text-decoration: black;
-  margin-left: 60%;
+  margin-left: 20%;
   font-weight: bold;
   font-family: "Dawning of a New Day";
 }

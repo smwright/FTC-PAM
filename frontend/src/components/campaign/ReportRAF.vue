@@ -101,17 +101,28 @@
       <ReportApprovalComp></ReportApprovalComp>
     </div>
     <div>
-      <span class="bigSignatureLeft"> {{ decodeHTML(report_info.abreviation) }}  {{ decodeHTML(report_info.first_name) }} {{ decodeHTML(report_info.last_name) }} </span>
+      <span class="bigSignatureLeft">
+        {{ decodeHTML(report_info.abreviation) }}
+        {{ decodeHTML(report_info.first_name) }}
+        {{ decodeHTML(report_info.last_name) }}
+      </span>
     </div>
     <div>
       <span class="bigLeft">
         {{ sectionStatus[report_details.section] }} /
         {{ sectionPosStatus[report_details.section_pos] }}
       </span>
-      <span class="bigContentCenter">R.A.F. {{ decodeHTML(report_info.base) }} </span>
+      <span class="bigContentCenter">
+        R.A.F. {{ decodeHTML(report_info.base) }}
+      </span>
     </div>
     <div>
-      <span class="bigLeft"> {{ decodeHTML(report_info.abreviation) }} {{ decodeHTML(report_info.first_name) }} '{{ report_info.callsign }}' {{ decodeHTML(report_info.last_name) }}</span>
+      <span class="bigLeft">
+        {{ decodeHTML(report_info.abreviation) }}
+        {{ decodeHTML(report_info.first_name) }}
+        '{{ report_info.callsign }}'
+        {{ decodeHTML(report_info.last_name) }}
+      </span>
     </div>
     <div>
       <span class="bigLeft">{{ reportAsset.name }}</span>
@@ -119,44 +130,8 @@
     <div>
       <span class="bigLeft">{{ decodeHTML(report_info.markings) }}</span>
     </div>
-
-    <div>
-      <span class="bigLeft">{{ report_details.serial_no }}</span>
-    </div>
     <br>
     <br>
-    <div>
-      <hr>
-      Claims:
-      <ClaimRAF
-        v-for="aerial_claim in aerial_claims"
-        v-bind:key="aerial_claim.claim_id"
-        v-bind="aerial_claim"
-      ></ClaimRAF>
-    </div>
-
-    <div>
-      <hr>
-      Ground Claims:
-      <ClaimGround
-        v-for="ground_claim in ground_claims"
-        v-bind:key="ground_claim.claim_id"
-        v-bind="ground_claim"
-      ></ClaimGround>
-    </div>
-
-    <div>
-      <hr>
-      <span>Pilot status:</span>
-      <span>{{ pilotStatus[report_info.pilot_status] }}</span>
-    </div>
-
-    <div>
-      <span>Aircraft status:</span>
-      <span>{{ assetStatus[report_info.asset_status] }}</span>
-      <hr>
-    </div>
-    <Comment></Comment>
   </div>
 </template>
 
