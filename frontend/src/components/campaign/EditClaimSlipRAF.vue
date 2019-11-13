@@ -99,6 +99,37 @@
     },
     computed: {
 
+      report_pilot_status: {
+        get () {
+          var pilot_status = this.report_info.pilot_status;
+          return pilot_status === undefined ? 0 : pilot_status;
+        },
+        set (value) {
+          this.$store.commit('missionStore/updateReportValue',
+            {
+              array_name: "report",
+              update_column_name: "pilot_status",
+              update_column_value: value
+            });
+        }
+      },
+
+      report_asset_status: {
+        get () {
+          var asset_status = this.report_info.asset_status;
+          return asset_status === undefined ? 0 : asset_status;
+        },
+        set (value) {
+          this.$store.commit('missionStore/updateReportValue',
+            {
+              array_name: "report",
+              update_column_name: "asset_status",
+              update_column_value: value
+            });
+        }
+      },
+
+
       ...mapState("missionStore", {
         report_info: state => state.report,
         report_details: state => state.report_details,

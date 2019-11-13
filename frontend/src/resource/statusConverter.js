@@ -154,7 +154,7 @@ export default {
         "Recon" //5
       ],
 
-      report_enemy_ac_number:
+      numberEnemyACStatus:
         [
           "NIL", //0
           "less than 3", //1

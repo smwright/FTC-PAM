@@ -16,82 +16,91 @@
     <br>
     <br>
     <br>
-    <div>
-      <span class="bigLeft">Sector Serial No.</span>
-      <span class="bigCenterLettersA">(A)</span>
-      <span class="bigContentRight"> J.1 </span>
-    </div>
-    <br>
-    <div>
-      <span class="bigLeft">Serial Number of Order Detailing Flight or Squadron to Patrol</span>
-      <span class="bigCenterLettersB">(B)</span>
-      <span class="bigContentRight"> NIL </span>
-    </div>
-    <br>
-    <div>
-      <span class="bigLeft">Date</span>
-      <span class="bigCenterLettersC">(C)</span>
-      <span class="bigContentRight">{{ decodeHTML(report_info.mission_hist_date) }} </span>
-    </div>
-    <br>
-    <div>
-      <span class="bigLeft">Flight, Squadron</span>
-      <span class="bigCenterLettersD">(D)</span>
-      <span class="bigContentRight">{{ flightStatus[report_details.flight] }}, {{ reportUnit.hist_unit_name }} ({{ reportUnit.hist_unit_code }})</span>
-    </div>
-    <br>
-    <div>
-      <span class="bigLeft">Number of Enemy Aircraft</span>
-      <span class="bigCenterLettersE">(E)</span>
-      <span class="bigContentRight"> {{ report_info.enemy_ac_number }} </span>
-    </div>
-    <br>
-    <div>
-      <span class="bigLeft">Type of Enemy Aircraft</span>
-      <span class="bigCenterLettersF">(F)</span>
-      <span class="bigContentRight"> {{ report_info.enemy_ac_type }} </span>
-    </div>
-    <br>
-    <div>
-      <span class="bigLeft">Time Attack was Delivered</span>
-      <span class="bigCenterLettersG">(G)</span>
-      <span class="bigContentRight"> {{ report_info.time_attack_delivered }} </span>
-    </div>
-    <br>
-    <div>
-      <span class="bigLeft">Place Attack was Delivered</span>
-      <span class="bigCenterLettersH">(H)</span>
-      <span class="bigContentRight"> {{ report_info.place_attack_delivered }} </span>
-    </div>
-    <br>
-    <div>
-      <span class="bigLeft">Height of Enemy</span>
-      <span class="bigCenterLettersJ">(J)</span>
-      <span class="bigContentRight"> {{ report_info.enemy_height }} </span>
-    </div>
-    <br>
-    <div>
-      <span class="bigLeft">Enemy Casualties</span>
-      <span class="bigCenterLettersK">(K)</span>
-      <span class="bigContentRight"> {{ report_info.enemy_casualty }} </span>
-    </div>
-    <br>
-    <div>
-      <span class="bigLeft">Our Casualties</span>
-      <span class="bigCenterAircraft">Aircraft</span>
-      <span class="bigCenterLettersL">(L)</span>
-      <span class="bigContentRight"> {{ report_info.our_casualty_ac }} </span>
-    </div>
-    <br>
-    <div>
-      <span class="bigCenterPersonnel">Personnel</span>
-      <span class="bigCenterLettersM">(M)</span>
-      <span class="bigContentRight"> {{ report_info.our_casualty_personnel }} </span>
-    </div>
-    <br>
-    <div>
-      <span class="bigLeft">GENERAL REPORT</span>
-      <span class="bigCenterLettersR">(R)</span>
+    <div class="rTable">
+      <div class="rTableRow">
+        <div class="rTableCellLeft">Sector Serial No.</div>
+        <div class="rTableCellCenter"></div>
+        <div class="rTableCellLetter">(A)</div>
+        <div class="rTableCellRight">J.1</div>
+      </div>
+      <div class="rTableRow">
+        <div class="rTableCellLeft">Serial Number of Order Detailing Flight or Squadron to Patrol</div>
+        <div class="rTableCellCenter"></div>
+        <div class="rTableCellLetter"></div>
+        <div class="rTableCellRight"></div>
+      </div>
+      <div class="rTableRow">
+        <div class="rTableCellLeft"></div>
+        <div class="rTableCellCenter"></div>
+        <div class="rTableCellLetter">(B)</div>
+        <div class="rTableCellRight">NIL</div>
+      </div>
+      <div class="rTableRow">
+        <div class="rTableCellLeft">Date</div>
+        <div class="rTableCellCenter"></div>
+        <div class="rTableCellLetter">(C)</div>
+        <div class="rTableCellRight"> {{ decodeHTML(report_info.mission_hist_date) }} </div>
+      </div>
+      <div class="rTableRow">
+        <div class="rTableCellLeft">Flight, Squadron</div>
+        <div class="rTableCellCenter"></div>
+        <div class="rTableCellLetter">(D)</div>
+        <div class="rTableCellRight"> {{ flightStatus[report_details.flight] }}, {{ reportUnit.hist_unit_name }} ({{ reportUnit.hist_unit_code }}) </div>
+      </div>
+      <div class="rTableRow">
+        <div class="rTableCellLeft">Number of Enemy Aircraft</div>
+        <div class="rTableCellCenter"></div>
+        <div class="rTableCellLetter">(E)</div>
+        <div class="rTableCellRight"> {{ numberEnemyACStatus[report_details.number_enemy_ac] }} </div>
+      </div>
+      <div class="rTableRow">
+        <div class="rTableCellLeft">Type of Enemy Aircraft</div>
+        <div class="rTableCellCenter"></div>
+        <div class="rTableCellLetter">(F)</div>
+        <div class="rTableCellRight"> {{ report_details.type_enemy_ac }} </div>
+      </div>
+      <div class="rTableRow">
+        <div class="rTableCellLeft">Time Attack was Delivered</div>
+        <div class="rTableCellCenter"></div>
+        <div class="rTableCellLetter">(G)</div>
+        <div class="rTableCellRight"> {{ report_details.time_attack_delivered }} </div>
+      </div>
+      <div class="rTableRow">
+        <div class="rTableCellLeft">Place Attack was Delivered</div>
+        <div class="rTableCellCenter"></div>
+        <div class="rTableCellLetter">(H)</div>
+        <div class="rTableCellRight"> {{ report_details.place_attack_delivered }} </div>
+      </div>
+      <div class="rTableRow">
+        <div class="rTableCellLeft">Height of Enemy</div>
+        <div class="rTableCellCenter"></div>
+        <div class="rTableCellLetter">(J)</div>
+        <div class="rTableCellRight"> {{ report_details.enemy_height }} </div>
+      </div>
+      <div class="rTableRow">
+        <div class="rTableCellLeft">Enemy Casualties</div>
+        <div class="rTableCellCenter"></div>
+        <div class="rTableCellLetter">(K)</div>
+        <div class="rTableCellRight"> {{ report_details.enemy_casualty }} </div>
+      </div>
+      <div class="rTableRow">
+        <div class="rTableCellLeft">Our Casualties</div>
+        <div class="rTableCellCenter">Aircraft</div>
+        <div class="rTableCellLetter">(L)</div>
+        <div class="rTableCellRight"> {{ report_details.our_casualty_ac }} </div>
+      </div>
+      <div class="rTableRow">
+        <div class="rTableCellLeft"></div>
+        <div class="rTableCellCenter">Personnel</div>
+        <div class="rTableCellLetter">(M)</div>
+        <div class="rTableCellRight"> {{ report_details.our_casualty_personnel }} </div>
+      </div>
+      <div class="rTableRow">
+        <div class="rTableCellLeft">GENERAL REPORT</div>
+        <div class="rTableCellCenter"></div>
+        <div class="rTableCellLetter">(R)</div>
+        <div class="rTableCellRight"></div>
+      </div>
     </div>
     <div class="synopsisText">
       <TextWithImage class="white-space-pre-line" v-bind:original_text="decodeHTML(report_info.synopsis)"></TextWithImage>
@@ -187,121 +196,73 @@
 
 <style scoped>
 
-  .bigRight {
-    float: right;
-    font-size: large;
-    margin-right: 8%;
-  }
-
-  .bigLeft {
-    font-size: large;
+  .rTable {
+    display: table;
     margin-left: 8%;
+    margin-right: 2%;
+    width: 90%;
   }
-
-  .bigCenterLettersA {
+  .rTableRow {
+    display: table-row;
+  }
+  .rTableCellLeft {
+    display: table-cell;
     font-size: large;
-    margin-left: 48%;
-  }
+    padding-top: 0.8%;
+    width: 55%;
+    padding-bottom: 0.8%;
+    /* border: 1px solid #999999;*/
+   }
 
-  .bigCenterLettersB {
+   .rTableCellLetter {
+     display: table-cell;
+     font-size: large;
+     padding-top: 0.8%;
+     padding-bottom: 0.8%;
+     width: 3%;
+     /*border: 1px solid #999999;*/
+   }
+
+   .rTableCellRight {
+     display: table-cell;
+     font-size: large;
+     padding-top: 0.8%;
+     padding-bottom: 0.8%;
+     width: 27%;
+     /*border: 1px solid #999999;*/
+}
+
+  .rTableCellCenter {
+    display: table-cell;
     font-size: large;
-    margin-left: 69.1%;
-  }
+    padding-top: 0.8%;
+    padding-bottom: 0.8%;
+    width: 15%;
+  /*border: 1px solid #999999;*/
+}
 
-  .bigCenterLettersC {
-    font-size: large;
-    margin-left: 57.3%;
-  }
+.bigRight {
+float: right;
+font-size: large;
+margin-right: 8%;
+}
 
-  .bigCenterLettersD {
-    font-size: large;
-    margin-left: 48.5%;
-  }
+.bigLeft {
+font-size: large;
+margin-left: 8%;
+}
 
-  .bigCenterLettersE {
-    font-size: large;
-    margin-left: 41.8%;
-  }
+.biggerCenter {
+font-size: x-large;
+text-decoration: underline;
+margin-left: 40%;
+}
 
-  .bigCenterLettersF {
-    font-size: large;
-    margin-left: 43.8%;
-  }
-
-  .bigCenterLettersG {
-    font-size: large;
-    margin-left: 41.5%;
-  }
-
-  .bigCenterLettersH {
-    font-size: large;
-    margin-left: 40.8%;
-  }
-
-  .bigCenterLettersJ {
-    font-size: large;
-    margin-left: 49.1%;
-  }
-
-  .bigCenterLettersK {
-    font-size: large;
-    margin-left: 48.2%;
-  }
-
-  .bigCenterLettersL {
-    font-size: large;
-    margin-left: 23.5%;
-  }
-
-  .bigCenterAircraft {
-    font-size: large;
-    margin-left: 20%;
-  }
-
-  .bigCenterLettersM {
-    font-size: large;
-    margin-left: 22.8%;
-  }
-
-  .bigCenterLettersR {
-    font-size: large;
-    margin-left: 50%;
-  }
-
-  .bigCenterPersonnel {
-    font-size: large;
-    margin-left: 39.3%;
-  }
-
-  .synopsisText {
-    text-align: left;
-    font-size: large;
-    margin-left: 8%;
-    margin-right: 8%;
-  }
-
-  .biggerCenter {
-    font-size: x-large;
-    text-decoration: underline;
-    margin-left: 40%;
-  }
-
-  .bigContentRight {
-    font-size: large;
-    position: relative;
-    margin-left: 2%;
-  }
-
-  .bigContentLeft {
-    font-size: large;
-    position: relative;
-    margin-left: 1%;
-  }
-
-  .bigContentCenter {
-    font-size: large;
-    position: relative;
-    margin-left: 19%;
-  }
+.synopsisText {
+  text-align: left;
+  font-size: large;
+  margin-left: 8%;
+  margin-right: 8%;
+}
 
 </style>

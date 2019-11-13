@@ -1,9 +1,11 @@
 <template>
   <div>
     <div>
+      <br>
       <span class="bigLeft">SECRET.</span>
       <span class="bigRight">FORM "F"</span>
     </div>
+    <br>
     <br>
     <br>
     <div>
@@ -12,117 +14,139 @@
     <br>
     <br>
     <br>
-    <div>
-      <span class="bigLeft">Sector Serial No.</span>
-      <span class="bigCenterLettersA">(A)</span>
-      <span class="bigContentRight"> J.1 </span>
-    </div>
-
-    <div>
-      <span style="line-height: 27px" class="bigLeft">Serial Number of Order Detailing Flight or Squadron to Patrol</span>
-      <span style="line-height: 27px" class="bigCenterLettersB">(B)</span>
-      <span style="line-height: 27px" class="bigContentRight"> NIL </span>
-    </div>
-
-    <div>
-      <span style="line-height: 27px" class="bigLeft">Date</span>
-      <span style="line-height: 27px" class="bigCenterLettersC">(C)</span>
-      <span style="line-height: 27px" class="bigContentRight">{{ decodeHTML(report_info.mission_hist_date) }} </span>
-    </div>
-
-    <div>
-      <span style="line-height: 27px" class="bigLeft">Flight, Squadron</span>
-      <span style="line-height: 27px" class="bigCenterLettersD">(D)</span>
-      <span style="line-height: 27px" class="bigContentRight">
-         <select v-model="report_flight">
+    <br>
+    <br>
+    <div class="rTable">
+      <div class="rTableRow">
+        <div class="rTableCellTop">Sector Serial No.</div>
+        <div class="rTableCellTop"></div>
+        <div class="rTableCellTop">(A)</div>
+        <div class="rTableCellTop">J.1</div>
+      </div>
+      <div class="rTableRow">
+        <div class="rTableCellTop">Serial Number of Order Detailing Flight or Squadron to Patrol</div>
+        <div class="rTableCellTop"></div>
+        <div class="rTableCellTop"></div>
+        <div class="rTableCellTop"></div>
+      </div>
+      <div class="rTableRow">
+        <div class="rTableCellTop"></div>
+        <div class="rTableCellTop"></div>
+        <div class="rTableCellTop">(B)</div>
+        <div class="rTableCellTop">NIL</div>
+      </div>
+      <div class="rTableRow">
+        <div class="rTableCellTop">Date</div>
+        <div class="rTableCellTop"></div>
+        <div class="rTableCellTop">(C)</div>
+        <div class="rTableCellTop"> {{ decodeHTML(report_info.mission_hist_date) }} </div>
+      </div>
+      <div class="rTableRow">
+        <div class="rTableCellTop">Flight, Squadron</div>
+        <div class="rTableCellCenter"></div>
+        <div class="rTableCellLetter">(D)</div>
+        <div class="rTableCellRight">
+          <select v-model="report_flight">
+            <option
+              v-for="(flight, index) in flightStatus"
+              v-bind:value="index"
+            >
+              {{flight}}
+            </option>
+          </select>,
+          <select v-model="report_unit">
+            <option
+              v-for="d_unit in unitsByFaction(2)"
+              v-bind:value="d_unit.depl_unit_id">
+              {{ d_unit.depl_unit_id}} - {{ d_unit.hist_unit_name }}
+            </option>
+          </select>
+          ({{ reportUnit.hist_unit_code }})
+        </div>
+      </div>
+      <div class="rTableRow">
+        <div class="rTableCellLeft">Number of Enemy Aircraft</div>
+        <div class="rTableCellCenter"></div>
+        <div class="rTableCellLetter">(E)</div>
+        <div class="rTableCellRight">
+          <select v-model="report_number_enemy_ac">
           <option
-            v-for="(flight, index) in flightStatus"
-            v-bind:value="index"
-          >
-            {{flight}}
-          </option>
-        </select>,
-        <select v-model="report_unit">
-          <option
-            v-for="d_unit in unitsByFaction(2)"
-            v-bind:value="d_unit.depl_unit_id"
-          >
-            {{ d_unit.depl_unit_id}} - {{ d_unit.hist_unit_name }}
+            v-for="(number_enemy_ac, index) in numberEnemyACStatus"
+            v-bind:value="index">
+            {{number_enemy_ac}}
           </option>
         </select>
-        ({{ reportUnit.hist_unit_code }})
-      </span>
+        </div>
+      </div>
+      <div class="rTableRow">
+        <div class="rTableCellLeft">Type of Enemy Aircraft</div>
+        <div class="rTableCellCenter"></div>
+        <div class="rTableCellLetter">(F)</div>
+        <div class="rTableCellRight">
+          <input v-model="report_type_enemy_ac">
+        </div>
+      </div>
+      <div class="rTableRow">
+        <div class="rTableCellLeft">Time Attack was Delivered</div>
+        <div class="rTableCellCenter"></div>
+        <div class="rTableCellLetter">(G)</div>
+        <div class="rTableCellRight">
+          <input v-model="report_time_attack_delivered">
+        </div>
+      </div>
+      <div class="rTableRow">
+        <div class="rTableCellLeft">Place Attack was Delivered</div>
+        <div class="rTableCellCenter"></div>
+        <div class="rTableCellLetter">(H)</div>
+        <div class="rTableCellRight">
+          <input v-model="report_place_attack_delivered">
+        </div>
+      </div>
+      <div class="rTableRow">
+        <div class="rTableCellLeft">Height of Enemy</div>
+        <div class="rTableCellCenter"></div>
+        <div class="rTableCellLetter">(J)</div>
+        <div class="rTableCellRight">
+          <input v-model="report_enemy_height">
+        </div>
+      </div>
+      <div class="rTableRow">
+        <div class="rTableCellLeft">Enemy Casualties</div>
+        <div class="rTableCellCenter"></div>
+        <div class="rTableCellLetter">(K)</div>
+        <div class="rTableCellRight">
+          <input v-model="report_enemy_casualty">
+        </div>
+      </div>
+      <div class="rTableRow">
+        <div class="rTableCellLeft">Our Casualties</div>
+        <div class="rTableCellCenter">Aircraft</div>
+        <div class="rTableCellLetter">(L)</div>
+        <div class="rTableCellRight">
+          <input v-model="report_our_casualty_ac">
+        </div>
+      </div>
+      <div class="rTableRow">
+        <div class="rTableCellLeft"></div>
+        <div class="rTableCellCenter">Personnel</div>
+        <div class="rTableCellLetter">(M)</div>
+        <div class="rTableCellRight">
+          <input v-model="report_our_casualty_personnel">
+        </div>
+      </div>
+      <div class="rTableRow">
+        <div class="rTableCellLeft">GENERAL REPORT</div>
+        <div class="rTableCellCenter"></div>
+        <div class="rTableCellLetter">(R)</div>
+        <div class="rTableCellRight"></div>
+      </div>
     </div>
+    <br>
     <div>
-      <span style="line-height: 27px" class="bigLeft">Number of Enemy Aircraft</span>
-      <span style="line-height: 27px" class="bigCenterLettersE">(E)</span>
-      <span style="line-height: 27px" class="bigContentRight">
-         <select v-model="enemy_ac_number">
-          <option
-            v-for="(enemy_ac_number, index) in report_enemy_ac_number"
-            v-bind:value="index"
-          >
-            {{enemy_ac_number}}
-          </option>
-        </select>
-        </span>
-    </div>
-    <div>
-      <span style="line-height: 27px" class="bigLeft">Type of Enemy Aircraft</span>
-      <span style="line-height: 27px" class="bigCenterLettersF">(F)</span>
-      <span style="line-height: 27px" class="bigContentRight">
-        <input v-model="report_enemy_ac_type">
-        </span>
-    </div>
-    <div>
-      <span style="line-height: 27px" class="bigLeft">Time Attack was Delivered</span>
-      <span style="line-height: 27px" class="bigCenterLettersG">(G)</span>
-      <span style="line-height: 27px" class="bigContentRight">
-        <input v-model="report_time_attack_delivered">
-        </span>
-    </div>
-    <div>
-      <span style="line-height: 27px" class="bigLeft">Place Attack was Delivered</span>
-      <span style="line-height: 27px" class="bigCenterLettersH">(H)</span>
-      <span style="line-height: 27px" class="bigContentRight">
-        <input v-model="report_place_attack_delivered">
-        </span>
-    </div>
-    <div>
-      <span style="line-height: 27px" class="bigLeft">Height of Enemy</span>
-      <span style="line-height: 27px" class="bigCenterLettersJ">(J)</span>
-      <span style="line-height: 27px" class="bigContentRight">
-        <input v-model="report_enemy_height">
-        </span>
-    </div>
-    <div>
-      <span style="line-height: 27px" class="bigLeft">Enemy Casualties</span>
-      <span style="line-height: 27px" class="bigCenterLettersK">(K)</span>
-      <span style="line-height: 27px" class="bigContentRight">
-        <input v-model="report_enemy_casualty">
-        </span>
-    </div>
-    <div>
-      <span style="line-height: 27px" class="bigLeft">Our Casualties</span>
-      <span style="line-height: 27px" class="bigCenterAircraft">Aircraft</span>
-      <span style="line-height: 27px" class="bigCenterLettersL">(L)</span>
-      <span style="line-height: 27px" class="bigContentRight">
-        <input v-model="report_our_casualty_ac">
-        </span>
-    </div>
-    <div>
-      <span style="line-height: 27px" class="bigCenterPersonnel">Personnel</span>
-      <span style="line-height: 27px" class="bigCenterLettersM">(M)</span>
-      <span style="line-height: 27px" class="bigContentRight">
-        <input v-model="report_our_casualty_personnel">
-        </span>
-    </div>
-    <div>
-      <span style="line-height: 27px" class="bigLeft">GENERAL REPORT</span>
-      <span style="line-height: 27px" class="bigCenterLettersR">(R)</span>
-      <br>
-      <br>
-      <textarea v-model="report_synopsis" class="textarea-style"></textarea>
+      <textarea style="
+      margin-left: 8%;
+      height: 20em;
+      width: 83%" v-model="report_synopsis" class="textarea-style"></textarea>
     </div>
     <br>
     <div class="bigRight">
@@ -303,31 +327,31 @@ export default {
     },
 
 
-    report_enemy_ac_number: {
+    report_number_enemy_ac: {
       get () {
-        var enemy_ac_number = this.report_details.enemy_ac_number;
-        return enemy_ac_number === undefined ? 9 : enemy_ac_number;
+        var number_enemy_ac = this.report_details.number_enemy_ac;
+        return number_enemy_ac === undefined ? 9 : number_enemy_ac;
       },
       set (value) {
         this.$store.commit('missionStore/updateReportValue',
           {
             array_name: "report_details",
-            update_column_name: "enemy_ac_number",
+            update_column_name: "number_enemy_ac",
             update_column_value: value
           });
       }
     },
 
 
-    report_enemy_ac_type: {
+    report_type_enemy_ac: {
       get () {
-        return this.report_info.enemy_ac_type;
+        return this.report_details.type_enemy_ac;
       },
       set (value) {
         this.$store.commit('missionStore/updateReportValue',
           {
-            array_name: "report",
-            update_column_name: "enemy_ac_type",
+            array_name: "report_details",
+            update_column_name: "type_enemy_ac",
             update_column_value: value
           });
       }
@@ -335,12 +359,12 @@ export default {
 
     report_time_attack_delivered: {
       get () {
-        return this.report_info.time_attack_delivered;
+        return this.report_details.time_attack_delivered;
       },
       set (value) {
         this.$store.commit('missionStore/updateReportValue',
           {
-            array_name: "report",
+            array_name: "report_details",
             update_column_name: "time_attack_delivered",
             update_column_value: value
           });
@@ -349,12 +373,12 @@ export default {
 
     report_place_attack_delivered: {
       get () {
-        return this.report_info.place_attack_delivered;
+        return this.report_details.place_attack_delivered;
       },
       set (value) {
         this.$store.commit('missionStore/updateReportValue',
           {
-            array_name: "report",
+            array_name: "report_details",
             update_column_name: "place_attack_delivered",
             update_column_value: value
           });
@@ -363,12 +387,12 @@ export default {
 
     report_enemy_height: {
       get () {
-        return this.report_info.enemy_height;
+        return this.report_details.enemy_height;
       },
       set (value) {
         this.$store.commit('missionStore/updateReportValue',
           {
-            array_name: "report",
+            array_name: "report_details",
             update_column_name: "enemy_height",
             update_column_value: value
           });
@@ -377,12 +401,12 @@ export default {
 
     report_enemy_casualty: {
       get () {
-        return this.report_info.enemy_casualty;
+        return this.report_details.enemy_casualty;
       },
       set (value) {
         this.$store.commit('missionStore/updateReportValue',
           {
-            array_name: "report",
+            array_name: "report_details",
             update_column_name: "enemy_casualty",
             update_column_value: value
           });
@@ -391,12 +415,12 @@ export default {
 
     report_our_casualty_ac: {
       get () {
-        return this.report_info.our_casualty_ac;
+        return this.report_details.our_casualty_ac;
       },
       set (value) {
         this.$store.commit('missionStore/updateReportValue',
           {
-            array_name: "report",
+            array_name: "report_details",
             update_column_name: "our_casualty_ac",
             update_column_value: value
           });
@@ -405,12 +429,12 @@ export default {
 
     report_our_casualty_personnel: {
       get () {
-        return this.report_info.our_casualty_personnel;
+        return this.report_details.our_casualty_personnel;
       },
       set (value) {
         this.$store.commit('missionStore/updateReportValue',
           {
-            array_name: "report",
+            array_name: "report_details",
             update_column_name: "our_casualty_personnel",
             update_column_value: value
           });
@@ -545,133 +569,79 @@ export default {
 
 <style scoped>
 
-  div {
-    margin: 1% 0%;
+  .rTable {
+    display: table;
+    margin-left: 8%;
+    margin-right: 2%;
+    width: 90%;
+  }
+  .rTableRow {
+    display: table-row;
+  }
+  .rTableCellLeft {
+    display: table-cell;
+    font-size: large;
+    padding-top: 0.5%;
+    width: 55%;
+    padding-bottom: 0.5%;
+    /* border: 1px solid #999999;*/
   }
 
-.textarea-style{
-  width: 85%;
-  height: 12em;
-  margin-left: 8%;
-}
+  .rTableCellLetter {
+    display: table-cell;
+    font-size: large;
+    padding-top: 0.48%;
+    padding-bottom: 0.48%;
+    width: 3%;
+    /*border: 1px solid #999999;*/
+  }
 
+  .rTableCellRight {
+    display: table-cell;
+    font-size: large;
+    padding-top: 0.48%;
+    padding-bottom: 0.48%;
+    width: 27%;
+    /*border: 1px solid #999999;*/
+  }
 
-.bigRight {
-  float: right;
-  font-size: large;
-  margin-right: 8%;
-}
+  .rTableCellTop {
+    display: table-cell;
+    font-size: large;
+    padding-top: 0.8%;
+    padding-bottom: 0.8%;
+    /*border: 1px solid #999999;*/
+  }
 
-.bigLeft {
-  font-size: large;
-  margin-left: 8%;
-}
+  .rTableCellCenter {
+    display: table-cell;
+    font-size: large;
+    padding-top: 0.48%;
+    padding-bottom: 0.48%;
+    width: 15%;
+    /*border: 1px solid #999999;*/
+  }
 
-.bigCenterLettersA {
-  font-size: large;
-  margin-left: 48%;
-}
+  .bigRight {
+    float: right;
+    font-size: large;
+    margin-right: 8%;
+  }
 
-.bigCenterLettersB {
-  font-size: large;
-  margin-left: 70%;
-}
+  .bigLeft {
+    font-size: large;
+    margin-left: 8%;
+  }
 
-.bigCenterLettersC {
-  font-size: large;
-  margin-left: 58%;
-}
+  .biggerCenter {
+    font-size: x-large;
+    text-decoration: underline;
+    margin-left: 40%;
+  }
 
-.bigCenterLettersD {
-  font-size: large;
-  margin-left: 48.3%;
-}
-
-.bigCenterLettersE {
-  font-size: large;
-  margin-left: 40.7%;
-}
-
-.bigCenterLettersF {
-  font-size: large;
-  margin-left: 43.5%;
-}
-
-.bigCenterLettersG {
-  font-size: large;
-  margin-left: 40.7%;
-}
-
-.bigCenterLettersH {
-  font-size: large;
-  margin-left: 40.3%;
-}
-
-.bigCenterLettersJ {
-  font-size: large;
-  margin-left: 48.7%;
-}
-
-.bigCenterLettersK {
-  font-size: large;
-  margin-left: 47.9%;
-}
-
-.bigCenterLettersL {
-  font-size: large;
-  margin-left: 23.8%;
-}
-
-.bigCenterAircraft {
-  font-size: large;
-  margin-left: 20%;
-}
-
-.bigCenterLettersM {
-  font-size: large;
-  margin-left: 22%;
-}
-
-.bigCenterLettersR {
-  font-size: large;
-  margin-left: 46.8%;
-}
-
-.bigCenterPersonnel {
-  font-size: large;
-  margin-left: 40%;
-}
-
-.synopsisText {
-  text-align: left;
-  font-size: large;
-  margin-left: 8%;
-  margin-right: 8%;
-}
-
-.biggerCenter {
-  font-size: x-large;
-  text-decoration: underline;
-  margin-left: 40%;
-}
-
-.bigContentRight {
-  font-size: large;
-  position: absolute;
-  margin-left: 2%;
-}
-
-.bigContentLeft {
-  font-size: large;
-  position: absolute;
-  margin-left: 1%;
-}
-
-.bigContentCenter{
-  font-size: large;
-  position: absolute;
-  margin-left: 15%;
-}
-
-
+  .synopsisText {
+    text-align: left;
+    font-size: large;
+    margin-left: 8%;
+  }
 </style>
