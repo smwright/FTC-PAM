@@ -1,9 +1,9 @@
 <template>
-  <div>
-    <div class="commsHeader">
+  <div class="width-80 margin-auto">
+    <div class="text-align-center">
       <h1>Join us on our Comms!</h1>
     </div>
-    <div class="commsText">
+    <div class="text-align-justify">
       <p>Our 150 slot TeamSpeak 3 server is where the ACG Campaign takes place.
         We gather here about half an hour before each Campaign mission to partake in one of ACG's oldest traditions, the pre-flight banter.
         This is our primary voice communication platform that we use for any group flying that we do.
@@ -21,8 +21,13 @@
       <p>Paste the invite link into the Join Server window and join in. You can also use Discord in your browser by clicking the invite link, provided you login using a verified email address.</p>
       <p>Should you experience any problems please post in our forums and we'll be happy to help you out.</p>
 
-      <iframe src="https://discordapp.com/widget?id=261587898996883458&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
-      <iframe name="ts3monitor.com" allowtransparency="true" width="350" height="500" frameborder="0" style="border:0px solid #;" scrolling="auto" src="https://monitor.ts3monitor.com/?t=iframe&i=94.250.222.150&p=10043&q=10011&c=&b=C9C9C9&si=16&s=14&ih=0&it=0"></iframe>    </div>
+      <div class="container">
+        <div class="text-align-center">
+          <iframe src="https://discordapp.com/widget?id=261587898996883458&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
+          <iframe name="ts3monitor.com" allowtransparency="true" width="350" height="500" frameborder="0" style="border:0px solid #;" scrolling="auto" src="https://monitor.ts3monitor.com/?t=iframe&i=94.250.222.150&p=10043&q=10011&c=&b=C9C9C9&si=16&s=14&ih=0&it=0"></iframe>    </div>
+
+        </div>
+      </div>
   </div>
 </template>
 
@@ -36,18 +41,5 @@ export default {
 </script>
 
 <style scoped>
-  .commsHeader {
-    width: 50%;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .commsText {
-    width: 50%;
-    text-align: justify;
-    margin-left: auto;
-    margin-right: auto;
-  }
 
 </style>

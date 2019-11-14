@@ -66,7 +66,17 @@ const router = new VueRouter({
       path: '/about-acg/',
       name: 'AboutACG',
       components: {
-        fullmain: ACGInfoIndex,
+        default: ACGInfoIndex,
+        sidenav: ACGInfoSideNav
+      }
+
+    },
+    {
+      path: '/history/',
+      name: 'ACGHistory',
+      components: {
+        default: ACGHistory,
+        sidenav: ACGInfoSideNav
       }
     },
     {
@@ -74,13 +84,6 @@ const router = new VueRouter({
       name: 'ACGComms',
       components: {
         fullmain: ACGComms,
-      }
-    },
-    {
-      path: '/history/',
-      name: 'ACGHistory',
-      components: {
-        fullmain: ACGHistory,
       }
     },
     {
@@ -292,10 +295,11 @@ router.beforeEach( async (to, from, next) => {
     if(isAdmin){
       next();
     } else {
-      next('/')
+      next(false)
     }
+  } else {
+    next()
   }
-  next()
 })
 
 export default router;
