@@ -98,7 +98,7 @@ export default {
 /*}*/
 
 html {
-  height: 100%;
+  /*height: 100%;*/
   background:url("/assets/images/background.jpg");
   /*background-color: #FFFFFF;*/
   background-repeat: no-repeat;
@@ -107,59 +107,14 @@ html {
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-
   background-size: cover;
-  height: 100%;
 
 }
 
 body {
   min-width: 1020px;
-  /*background:url("/assets/images/background.jpg");*/
-  /*background-color: #FFFFFF;*/
-  /*background-repeat: no-repeat;*/
-  /*background-position: center center;*/
-  /*background-attachment: fixed;*/
-
-  /*-webkit-background-size: cover;*/
-  /*-moz-background-size: cover;*/
-  /*-o-background-size: cover;*/
-
-  /*background-size: cover;*/
-  height: 100%;
-  /*padding: 10px;*/
   color: #ffffff;
-  /*font-size: 17px;*/
-}
 
-/*.navbar {*/
-  /*!*position: fixed;*!*/
-  /*height: 50px;*/
-  /*width: calc(100% - 20px); !* Whished widht in % minus 2x border size *!*/
-  /*padding: 10px;*/
-  /*list-style: none;*/
-  /*border-style: solid;*/
-  /*border-width: 1px;*/
-  /*border-radius: 15px;*/
-  /*border-color: rgba(0, 0, 0, 0.4);*/
-  /*background: rgba(101, 21, 22, .8);*/
-  /*text-align: center;*/
-  /*display: table;*/
-/*}*/
-
-.navbarFooterSocialMediaIcons {
-  /*position: fixed;*/
-  height: 50px;
-  width: calc(100% - 20px); /* Whished widht in % minus 2x border size */
-  padding: 10px;
-  list-style: none;
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 15px;
-  border-color: rgba(0, 0, 0, 0.4);
-  background: rgba(101, 21, 22, .8);
-  text-align: left;
-  display: table;
 }
 
 .contentWrapper {
