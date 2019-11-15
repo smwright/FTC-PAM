@@ -1,7 +1,8 @@
 <template>
   <div class="clearfix">
     <span>Approved by:</span>
-    <span class="bigSignatureRight" v-if="report_info.accepted && report_info.accepted_by !== null">{{ memberById(report_info.accepted_by).callsign }}</span>
+    <br>
+    <span class="bigSignature" v-if="report_info.accepted && report_info.accepted_by !== null">{{ memberById(report_info.accepted_by).callsign }}</span>
     <br>
     <br>
     <button
@@ -17,7 +18,7 @@
 import { mapState, mapGetters } from "vuex"
 
 export default {
-  name: "ReportApprovalComp",
+  name: "ReportApprovalCompRAF",
   mounted ()  {
 
     this.checkAdmin();

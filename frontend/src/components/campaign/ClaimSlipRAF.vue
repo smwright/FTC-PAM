@@ -41,7 +41,7 @@
   import ClaimRAF from "./ClaimRAF"
   import ClaimGround from "./ClaimGround"
   import Comment from "./Comment"
-  import ReportApprovalComp from "./ReportApprovalComp"
+  import ReportApprovalCompRAF from "./ReportApprovalCompRAF"
   import { mapState, mapGetters } from "vuex"
 
   export default {
@@ -50,7 +50,7 @@
       ClaimRAF,
       ClaimGround,
       Comment,
-      ReportApprovalComp,
+      ReportApprovalCompRAF,
       TextWithImage
     },
     mixins: [

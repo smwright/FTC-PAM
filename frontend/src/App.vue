@@ -433,18 +433,9 @@ select {
   box-shadow: 10px 10px 10px rgba(10,10,10,0.5);
 }
 
-.bigSignatureLeft {
+.bigSignature {
   font-size: xx-large;
   text-decoration: black;
-  margin-left: 8%;
-  font-weight: bold;
-  font-family: "Dawning of a New Day";
-}
-
-.bigSignatureRight {
-  font-size: xx-large;
-  text-decoration: black;
-  margin-left: 20%;
   font-weight: bold;
   font-family: "Dawning of a New Day";
 }

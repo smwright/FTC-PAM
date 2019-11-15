@@ -107,10 +107,10 @@
       <!--<p class="white-space-pre-line">{{ decodeHTML(report_info.synopsis) }}</p>-->
     </div>
     <div class="bigRight">
-      <ReportApprovalComp></ReportApprovalComp>
+      <ReportApprovalCompRAF></ReportApprovalCompRAF>
     </div>
     <div>
-      <span class="bigSignatureLeft">
+      <span style="margin-left: 8%" class="bigSignature">
         {{ decodeHTML(report_info.abreviation) }}
         {{ decodeHTML(report_info.first_name) }}
         {{ decodeHTML(report_info.last_name) }}
@@ -151,7 +151,7 @@
   import ClaimRAF from "./ClaimRAF"
   import ClaimGround from "./ClaimGround"
   import Comment from "./Comment"
-  import ReportApprovalComp from "./ReportApprovalComp"
+  import ReportApprovalCompRAF from "./ReportApprovalCompRAF"
   import { mapState, mapGetters } from "vuex"
 
   export default {
@@ -160,7 +160,7 @@
       ClaimRAF,
       ClaimGround,
       Comment,
-      ReportApprovalComp,
+      ReportApprovalCompRAF,
       TextWithImage
     },
     mixins: [

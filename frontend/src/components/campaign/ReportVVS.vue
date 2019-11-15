@@ -69,7 +69,7 @@
       <hr>
     </div>
 
-    <ReportApprovalComp></ReportApprovalComp>
+    <ReportApprovalCompVVS></ReportApprovalCompVVS>
     <Comment></Comment>
   </div>
 </template>
@@ -81,7 +81,7 @@
   import ClaimVVS from "./ClaimVVS"
   import ClaimGround from "./ClaimGround"
   import Comment from "./Comment"
-  import ReportApprovalComp from "./ReportApprovalComp"
+  import ReportApprovalCompVVS from "./ReportApprovalCompVVS"
   import { mapState, mapGetters } from "vuex"
 
   export default {
@@ -91,7 +91,7 @@
       ClaimGround,
       Comment,
       TextWithImage,
-      ReportApprovalComp
+      ReportApprovalCompVVS
     },
     mixins: [
       stringConv,

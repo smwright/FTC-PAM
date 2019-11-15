@@ -76,7 +76,7 @@
       <!--<p class="white-space-pre-line">{{ decodeHTML(report_info.synopsis) }}</p>-->
     </div>
 
-    <ReportApprovalComp></ReportApprovalComp>
+    <ReportApprovalCompLW></ReportApprovalCompLW>
     <Comment></Comment>
   </div>
 </template>
@@ -88,7 +88,7 @@ import TextWithImage from "../basic_comp/TextWithImages"
 import ClaimLW from "./ClaimLW"
 import ClaimGround from "./ClaimGround"
 import Comment from "./Comment"
-import ReportApprovalComp from "./ReportApprovalComp"
+import ReportApprovalCompLW from "./ReportApprovalCompLW"
 import { mapState, mapGetters } from "vuex"
 
 export default {
@@ -98,7 +98,7 @@ export default {
     ClaimGround,
     Comment,
     TextWithImage,
-    ReportApprovalComp
+    ReportApprovalCompLW
   },
   mixins: [
     stringConv,
