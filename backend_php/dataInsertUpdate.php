@@ -44,7 +44,7 @@ function whitelist_table($name) {
         "report" => array("mission_id", "character_id", "deployed_unit_id", "base", "asset_id", "markings", "synopsis",
             "asset_status", "pilot_status", "date_submitted", "accepted", "accepted_by"),
         "report_detail_lw" => array("report_id", "swarm", "swarm_pos"),
-        "report_detail_raf" => array("report_id", "flight", "section", "section_pos", "serial_no", "enemy_ac_number", "enemy_ac_type", "time_attack_delivered",
+        "report_detail_raf" => array("report_id", "flight", "section", "section_pos", "serial_no", "number_enemy_ac", "type_enemy_ac", "time_attack_delivered",
             "place_attack_delivered", "enemy_height", "enemy_casualty", "our_casualty_ac", "our_casualty_personnel"),
         "transfer" => array("member_id", "acg_unit_id", "transfer_date_in", "transfer_date_out"),
 

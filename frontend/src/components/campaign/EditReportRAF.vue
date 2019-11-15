@@ -18,13 +18,13 @@
     <br>
     <div class="rTable">
       <div class="rTableRow">
-        <div class="rTableCellTop">Sector Serial No.</div>
+        <div title="This is not a field you will have to fill in, it is the serial number of the sector your squadron belongs to." class="rTableCellTop">Sector Serial No.</div>
         <div class="rTableCellTop"></div>
         <div class="rTableCellTop">(A)</div>
         <div class="rTableCellTop">J.1</div>
       </div>
       <div class="rTableRow">
-        <div class="rTableCellTop">Serial Number of Order Detailing Flight or Squadron to Patrol</div>
+        <div title="This not a field you will have to fill in. It is the number of the order your Squadron received from Fighter Command." class="rTableCellTop">Serial Number of Order Detailing Flight or Squadron to Patrol</div>
         <div class="rTableCellTop"></div>
         <div class="rTableCellTop"></div>
         <div class="rTableCellTop"></div>
@@ -36,16 +36,16 @@
         <div class="rTableCellTop">NIL</div>
       </div>
       <div class="rTableRow">
-        <div class="rTableCellTop">Date</div>
+        <div title="This is the pre-selected date the mission took place." class="rTableCellTop">Date</div>
         <div class="rTableCellTop"></div>
         <div class="rTableCellTop">(C)</div>
         <div class="rTableCellTop"> {{ decodeHTML(report_info.mission_hist_date) }} </div>
       </div>
       <div class="rTableRow">
-        <div class="rTableCellTop">Flight, Squadron</div>
+        <div title="Here you fill in the Flight you flew in for that mission and your Squadron (is usually pre-selected). Your squadron code is also pre-selected." class="rTableCellTop">Flight, Squadron</div>
         <div class="rTableCellCenter"></div>
         <div class="rTableCellLetter">(D)</div>
-        <div class="rTableCellRight">
+        <div title="This field is mandatory in ACG" class="rTableCellRight">
           <select v-model="report_flight">
             <option
               v-for="(flight, index) in flightStatus"
@@ -65,10 +65,10 @@
         </div>
       </div>
       <div class="rTableRow">
-        <div class="rTableCellLeft">Number of Enemy Aircraft</div>
+        <div title="Here pilots were required to state approximately how many enemy a/c they sighted during their operational sortie. This is a drop down menu with options ranging from 'less than 3' to '100+' with the NIL option to state that none were sighted." class="rTableCellLeft">Number of Enemy Aircraft</div>
         <div class="rTableCellCenter"></div>
         <div class="rTableCellLetter">(E)</div>
-        <div class="rTableCellRight">
+        <div title="This field is optional in ACG" class="rTableCellRight">
           <select v-model="report_number_enemy_ac">
           <option
             v-for="(number_enemy_ac, index) in numberEnemyACStatus"
@@ -79,31 +79,31 @@
         </div>
       </div>
       <div class="rTableRow">
-        <div class="rTableCellLeft">Type of Enemy Aircraft</div>
+        <div title="Here pilots inserted the approximate types of enemy a/c that they spotted during their operational sortie." class="rTableCellLeft">Type of Enemy Aircraft</div>
         <div class="rTableCellCenter"></div>
         <div class="rTableCellLetter">(F)</div>
-        <div class="rTableCellRight">
+        <div title="This field is optional in ACG" class="rTableCellRight">
           <input v-model="report_type_enemy_ac">
         </div>
       </div>
       <div class="rTableRow">
-        <div class="rTableCellLeft">Time Attack was Delivered</div>
+        <div title="Here pilots inserted the time at which they made contact with the enemy and went 'Tally Ho!'." class="rTableCellLeft">Time Attack was Delivered</div>
         <div class="rTableCellCenter"></div>
         <div class="rTableCellLetter">(G)</div>
-        <div class="rTableCellRight">
+        <div title="This field is optional in ACG" class="rTableCellRight">
           <input v-model="report_time_attack_delivered">
         </div>
       </div>
       <div class="rTableRow">
-        <div class="rTableCellLeft">Place Attack was Delivered</div>
+        <div title="Here pilots inserted the approximate location at which they made contact with the enemy." class="rTableCellLeft">Place Attack was Delivered</div>
         <div class="rTableCellCenter"></div>
         <div class="rTableCellLetter">(H)</div>
-        <div class="rTableCellRight">
+        <div title="This field is optional in ACG" class="rTableCellRight">
           <input v-model="report_place_attack_delivered">
         </div>
       </div>
       <div class="rTableRow">
-        <div class="rTableCellLeft">Height of Enemy</div>
+        <div title="Here pilots inserted the approximate altitude at which the enemy a/c's were at when they made contact with the pilot's squadron or flight." class="rTableCellLeft">Height of Enemy</div>
         <div class="rTableCellCenter"></div>
         <div class="rTableCellLetter">(J)</div>
         <div class="rTableCellRight">
@@ -111,31 +111,31 @@
         </div>
       </div>
       <div class="rTableRow">
-        <div class="rTableCellLeft">Enemy Casualties</div>
+        <div title="Here pilots inserted approximate the casualties that their squadron inflicted as a unit." class="rTableCellLeft">Enemy Casualties</div>
         <div class="rTableCellCenter"></div>
         <div class="rTableCellLetter">(K)</div>
-        <div class="rTableCellRight">
+        <div title="This field is optional in ACG" class="rTableCellRight">
           <input v-model="report_enemy_casualty">
         </div>
       </div>
       <div class="rTableRow">
         <div class="rTableCellLeft">Our Casualties</div>
-        <div class="rTableCellCenter">Aircraft</div>
+        <div title="Here pilots stated what aircraft their squadron lost during the fight. This does not include damaged aircraft." class="rTableCellCenter">Aircraft</div>
         <div class="rTableCellLetter">(L)</div>
-        <div class="rTableCellRight">
+        <div title="This field is optional in ACG" class="rTableCellRight">
           <input v-model="report_our_casualty_ac">
         </div>
       </div>
       <div class="rTableRow">
         <div class="rTableCellLeft"></div>
-        <div class="rTableCellCenter">Personnel</div>
+        <div title="Here pilots stated what pilot casualties their squadron took during the sortie. 'Sgt Smith MIA' for example, or NIL for none." class="rTableCellCenter">Personnel</div>
         <div class="rTableCellLetter">(M)</div>
-        <div class="rTableCellRight">
+        <div title="This field is optional in ACG" class="rTableCellRight">
           <input v-model="report_our_casualty_personnel">
         </div>
       </div>
       <div class="rTableRow">
-        <div class="rTableCellLeft">GENERAL REPORT</div>
+        <div title="This is where you typed a synopsis of how the mission went from your perspective. This field is optional in ACG." class="rTableCellLeft">GENERAL REPORT</div>
         <div class="rTableCellCenter"></div>
         <div class="rTableCellLetter">(R)</div>
         <div class="rTableCellRight"></div>
@@ -149,10 +149,11 @@
       width: 83%" v-model="report_synopsis" class="textarea-style"></textarea>
     </div>
     <br>
+    <br>
     <div class="bigRight">
       <span>Approved by:</span>
     </div>
-    <div class="bigLeft">
+    <div title="Here you must insert the Section and position you flew in during the mission. This field is mandatory in ACG." class="bigLeft">
       <span>Section:</span>
       <span>
          <select v-model="report_section">
@@ -178,19 +179,16 @@
       </span>
     </div>
 
-    <div class="bigLeft">
+    <div title="Here you must indicate your base from which you took off. This field is mandatory in ACG." class="bigLeft">
       <span> {{ decodeHTML(report_info.abreviation) }}
         {{ decodeHTML(report_info.first_name) }} '{{ report_info.callsign }}' {{ decodeHTML(report_info.last_name) }}</span>
-    </div>
-
-    <div class="bigLeft">
-      <span>Base:</span>
-      <span>
-        <input v-model="report_aerodrome">
+      <span style="font-size: large;margin-left: 25%">Base:</span>
+      <span style="font-size: large">
+        R.A.F <input v-model="report_aerodrome">
       </span>
     </div>
 
-    <div class="bigLeft">
+    <div title="This is where you must indicate the aircraft you flew. This field is mandatory." class="bigLeft">
       <span>Type:</span>
       <span>
         <select v-model="report_aircraft">
@@ -204,7 +202,7 @@
       </span>
     </div>
 
-    <div class="bigLeft">
+    <div title="Here you must indicate your aircraft's code letter. Please use capital letters. This field is mandatory." class="bigLeft">
       <span>Markings:</span>
       <span>
         <input v-model="report_markings">
@@ -572,8 +570,8 @@ export default {
   .rTable {
     display: table;
     margin-left: 8%;
-    margin-right: 2%;
-    width: 90%;
+    margin-right: 0%;
+    width: 92%;
   }
   .rTableRow {
     display: table-row;
@@ -582,7 +580,7 @@ export default {
     display: table-cell;
     font-size: large;
     padding-top: 0.5%;
-    width: 55%;
+    width: 52%;
     padding-bottom: 0.5%;
     /* border: 1px solid #999999;*/
   }
@@ -601,7 +599,7 @@ export default {
     font-size: large;
     padding-top: 0.48%;
     padding-bottom: 0.48%;
-    width: 27%;
+    width: 30%;
     /*border: 1px solid #999999;*/
   }
 
@@ -639,9 +637,32 @@ export default {
     margin-left: 40%;
   }
 
-  .synopsisText {
-    text-align: left;
-    font-size: large;
-    margin-left: 8%;
+  /* Tooltip container */
+  .tooltip {
+    position: relative;
+    display: inline-block;
   }
+
+  /* Tooltip text */
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #1a1a1a;
+    color: #d6d6d6;
+    text-align: center;
+    top: -5px;
+    left: 105%;
+    padding: 10px 5px;
+    border-radius: 6px;
+
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+  }
+
+  /* Show the tooltip text when you mouse over the tooltip container */
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+
 </style>

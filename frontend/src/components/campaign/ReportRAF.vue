@@ -121,7 +121,7 @@
         {{ sectionStatus[report_details.section] }} /
         {{ sectionPosStatus[report_details.section_pos] }}
       </span>
-      <span class="bigContentCenter">
+      <span  style="font-size: large;margin-left: 30%">
         R.A.F. {{ decodeHTML(report_info.base) }}
       </span>
     </div>
@@ -199,8 +199,8 @@
   .rTable {
     display: table;
     margin-left: 8%;
-    margin-right: 2%;
-    width: 90%;
+    margin-right: 0%;
+    width: 92%;
   }
   .rTableRow {
     display: table-row;
@@ -208,17 +208,17 @@
   .rTableCellLeft {
     display: table-cell;
     font-size: large;
-    padding-top: 0.8%;
-    width: 55%;
-    padding-bottom: 0.8%;
+    padding-top: 0.85%;
+    width: 52%;
+    padding-bottom: 0.85%;
     /* border: 1px solid #999999;*/
    }
 
    .rTableCellLetter {
      display: table-cell;
      font-size: large;
-     padding-top: 0.8%;
-     padding-bottom: 0.8%;
+     padding-top: 0.85%;
+     padding-bottom: 0.85%;
      width: 3%;
      /*border: 1px solid #999999;*/
    }
@@ -226,39 +226,39 @@
    .rTableCellRight {
      display: table-cell;
      font-size: large;
-     padding-top: 0.8%;
-     padding-bottom: 0.8%;
-     width: 27%;
+     padding-top: 0.85%;
+     padding-bottom: 0.85%;
+     width: 30%;
      /*border: 1px solid #999999;*/
 }
 
   .rTableCellCenter {
     display: table-cell;
     font-size: large;
-    padding-top: 0.8%;
-    padding-bottom: 0.8%;
+    padding-top: 0.85%;
+    padding-bottom: 0.85%;
     width: 15%;
   /*border: 1px solid #999999;*/
 }
 
-.bigRight {
-float: right;
-font-size: large;
-margin-right: 8%;
+  .bigRight {
+    float: right;
+    font-size: large;
+    margin-right: 8%;
 }
 
-.bigLeft {
-font-size: large;
-margin-left: 8%;
+  .bigLeft {
+    font-size: large;
+    margin-left: 8%;
 }
 
-.biggerCenter {
-font-size: x-large;
-text-decoration: underline;
-margin-left: 40%;
+  .biggerCenter {
+    font-size: x-large;
+    text-decoration: underline;
+    margin-left: 40%;
 }
 
-.synopsisText {
+  .synopsisText {
   text-align: left;
   font-size: large;
   margin-left: 8%;

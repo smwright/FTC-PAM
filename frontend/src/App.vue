@@ -247,6 +247,7 @@ select {
   background: rgba(255, 255, 255, 0.5);
   border-color: #646464;
   border-radius: 2px;
+  font-size: large;
   padding: 2px;
   margin: 2px;
   color: #1b1b1b;
@@ -471,6 +472,7 @@ select {
   background: rgba(255, 255, 255, 0.5);
   border-color: #646464;
   border-radius: 5px;
+  font-size: large;
   padding: 5px;
   color: #1b1b1b;
   font-family: "Remingtoned Type";
