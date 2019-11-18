@@ -1,7 +1,7 @@
 <template>
   <div>
     <hr>
-    <div>
+    <div style="float: right">
       <button v-on:click="deleteClaim">X</button>
     </div>
     <table>
@@ -76,7 +76,6 @@
           ></vSelect>
         </td>
       </tr>
-
     </table>
     <br>
   </div>

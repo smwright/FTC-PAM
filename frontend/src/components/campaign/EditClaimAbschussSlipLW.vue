@@ -2,6 +2,30 @@
   <div>
     <div>
       <hr>
+      Aerial Claims:
+      <EditClaimLW
+        v-for="aerial_claim in aerial_claims"
+        v-bind:key="aerial_claim.claim_id"
+        v-bind:claim_id="aerial_claim.claim_id"
+      ></EditClaimLW>
+      <div>
+        <button v-on:click="addAerialClaim">Add aerial claim</button>
+      </div>
+    </div>
+        <div>
+      <hr>
+      Ground Claims:
+      <EditClaimGround
+        v-for="ground_claim in ground_claims"
+        v-bind:key="ground_claim.claim_id"
+        v-bind="ground_claim"
+      ></EditClaimGround>
+          <div>
+            <button v-on:click="addGroundClaim">Add ground claim</button>
+          </div>
+    </div>
+    <div>
+      <hr>
       <span>Pilot status:</span>
       <span>
         <select v-model="report_pilot_status">
@@ -29,35 +53,8 @@
       </span>
       <hr>
     </div>
-
-    <div>
-      <button v-on:click="addAerialClaim">Add aerial claim</button>
-    </div>
-
-    <div>
-      <hr>
-      Claims:
-      <EditClaimLW
-        v-for="aerial_claim in aerial_claims"
-        v-bind:key="aerial_claim.claim_id"
-        v-bind:claim_id="aerial_claim.claim_id"
-      ></EditClaimLW>
-    </div>
-
-    <div>
-      <button v-on:click="addGroundClaim">Add ground claim</button>
-    </div>
-
-    <div>
-      <hr>
-      Ground Claims:
-      <EditClaimGround
-        v-for="ground_claim in ground_claims"
-        v-bind:key="ground_claim.claim_id"
-        v-bind="ground_claim"
-      ></EditClaimGround>
-    </div>
   </div>
+
 
 </template>
 
