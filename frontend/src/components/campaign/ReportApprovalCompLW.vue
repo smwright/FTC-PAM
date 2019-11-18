@@ -1,9 +1,21 @@
 <template>
-  <div class="clearfix">
-    <span>Approved by:</span>
-    <span class="bigSignatureRight" v-if="report_info.accepted && report_info.accepted_by !== null">{{ memberById(report_info.accepted_by).callsign }}</span>
-    <br>
-    <br>
+  <div>
+    <div>
+      <span class="bigSignature" v-if="report_info.accepted && report_info.accepted_by !== null">
+        <img style="position:absolute;width:17%;" src="https://imgur.com/QOZReUf.png"/>
+       {{ memberById(report_info.accepted_by).callsign }}
+      </span>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+    </div>
     <button
       v-if="isAdmin"
       class="float-right"

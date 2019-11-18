@@ -93,6 +93,27 @@ export default {
 
 }
 
+@font-face {
+  font-family: "GNUTypewriter";
+  src: url("/assets/fonts/gtw.ttf");
+  src: local("GNUTypewriter");
+
+}
+
+@font-face {
+  font-family: "Deutschische";
+  src: url("/assets/fonts/Deutschische.otf");
+  src: local("Deutschische");
+
+}
+
+@font-face {
+  font-family: "DSWallau";
+  src: url("/assets/fonts/DSWallau.ttf");
+  src: local("DSWallau");
+
+}
+
 /*div{*/
   /*border: 1px solid yellow;*/
 /*}*/
@@ -425,7 +446,7 @@ select {
 /*Style for typewriter on paper look*/
 
 .typed-on-paper {
-  background: rgb(243, 231, 160);
+  background: #ecd7b0;
   border-radius: 2px;
   padding: 30px;
   color: #1b1b1b;
@@ -438,6 +459,23 @@ select {
   text-decoration: black;
   font-weight: bold;
   font-family: "Dawning of a New Day";
+}
+
+
+.cyrillicTypewriter {
+  text-decoration: black;
+  font-family: "GNUTypewriter";
+}
+
+
+.Deutschische {
+  text-decoration: black;
+  font-family: "Deutschische";
+}
+
+.dsWallau {
+  text-decoration: black;
+  font-family: "DSWallau";
 }
 
 .typed-on-paper button {

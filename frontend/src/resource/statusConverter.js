@@ -56,7 +56,7 @@ export default {
           {short: "", long: ""}, //0
           {short: "LW", long:"Luftwaffe"}, //1
           {short: "RAF", long:"Royal Air Force"}, //2
-          {short: "VVS", long:"Voyenno-Vozdushnye Sily Rossii"} //3
+          {short: "VVS", long:"Военно-воздушные силы РККА"} //3
         ],
 
       flightStatus:

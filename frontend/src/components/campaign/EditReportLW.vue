@@ -1,45 +1,12 @@
 <template>
   <div>
-    <div>
-      <span>Name:</span>
-      <span>{{ decodeHTML(first_name) }} '{{ callsign }}' {{ decodeHTML(last_name) }}</span>
-    </div>
-
-    <div>
-      <span>Rank:</span>
-      <span>{{ decodeHTML(rank_name) }}</span>
-    </div>
-
-    <div>
-      <span>Squadron:</span>
-      <span>
-        <select v-model="report_unit">
-          <option
-            v-for="d_unit in unitsByFaction(1)"
-            v-bind:value="d_unit.depl_unit_id"
-          >
-            {{ d_unit.depl_unit_id}} - {{ d_unit.hist_unit_name }}
-          </option>
-        </select>
-      </span>
-    </div>
-
-    <div>
-      <span>Swarm:</span>
-      <span>
-         <select v-model="report_swarm">
-          <option
-            v-for="(swarm, index) in swarmStatus"
-            v-bind:value="index"
-          >
-            {{swarm}}
-          </option>
-        </select>
-      </span>
-
-      <span>Swarm Pos.:</span>
-      <span>
-         <select v-model="report_swarm_pos">
+    <br>
+    <br>
+    <br>
+    <div class="big">
+      <span style="float: left"> {{ decodeHTML(report_info.last_name) }}, {{ decodeHTML(report_info.rank_name) }}
+        <br>
+        <select title="Here you must fill in the position in which you flew in the Swarm." v-model="report_swarm_pos">
           <option
             v-for="(swarm_pos, index) in swarmPosStatus"
             v-bind:value="index"
@@ -47,13 +14,24 @@
             {{swarm_pos}}
           </option>
         </select>
-      </span>
-    </div>
-
-    <div>
-      <span>Type:</span>
-      <span>
-        <select v-model="report_aircraft">
+        <select title="Here you must fill in which Swarm you flew in." v-model="report_swarm">
+          <option
+            v-for="(swarm, index) in swarmStatus"
+            v-bind:value="index"
+          >
+            {{swarm}}
+          </option>
+        </select>,
+        <select title="Here you must fill in your unit." v-model="report_unit">
+          <option
+            v-for="d_unit in unitsByFaction(1)"
+            v-bind:value="d_unit.depl_unit_id"
+          >
+            {{ d_unit.depl_unit_id}} - {{ d_unit.hist_unit_name }}
+          </option>
+        </select>
+        <br>
+        <select title="Here you must fill in your aircraft." v-model="report_aircraft">
           <option
             v-for="aircraft in assetByFactionControllable(1, 1)"
             v-bind:value="aircraft.id"
@@ -61,85 +39,46 @@
             {{ aircraft.name }}
           </option>
         </select>
+        /
+        <input title="Here you must fill in the markings of your aircraft." v-model="report_markings">
+      </span>
+      <span style="float: right"> <input title="Here you must fill in the base which you took off from." v-model="report_aerodrome"> am {{ decodeHTML(report_info.mission_hist_date) }} </span>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="biggerCenter">
+      <span style="text-decoration: underline">G e f e c h t s b e r i c h t</span>
+    </div>
+    <br>
+    <br>
+    <div class="bigLWText">
+      <span>Zum Feindflug des {{ decodeHTML(report_info.abreviation) }} {{ decodeHTML(report_info.last_name) }} am {{ decodeHTML(report_info.mission_hist_date) }}.</span>
+    </div>
+    <div class="bigLWText">
+      <textarea title="Here you can fill in a short synopsis for your sortie. If you are claiming any victories in the section below, this field is mandatory. You may insert screenshots with the [img][/img] tags." v-model="report_synopsis" class="textarea-style"></textarea>
+    </div>
+    <div>
+      <span style="margin-left: 15%" class="bigSignature">
+        {{ decodeHTML(report_info.abreviation) }}
+        {{ decodeHTML(report_info.first_name) }}
+        {{ decodeHTML(report_info.last_name) }}
       </span>
     </div>
-
     <div>
-      <span>Markings:</span>
-      <span>
-        <input v-model="report_markings">
+      <span class="bigLeft">
+        {{ decodeHTML(report_info.first_name) }}
+        '{{ report_info.callsign }}'
+        {{ decodeHTML(report_info.last_name) }},
+        {{ decodeHTML(report_info.rank_name) }}
       </span>
     </div>
-
-    <div>
-      <span>Aerodrome:</span>
-      <span>
-        <input v-model="report_aerodrome">
-      </span>
-    </div>
-
-    <div>
-      <hr>
-      <span>Pilot status:</span>
-      <span>
-        <select v-model="report_pilot_status">
-          <option
-            v-for="(pilot_status, index) in pilotStatus"
-            v-bind:value="index"
-          >
-            {{pilot_status}}
-          </option>
-        </select>
-      </span>
-    </div>
-
-    <div>
-      <span>Aircraft status:</span>
-      <span>
-        <select v-model="report_asset_status">
-          <option
-            v-for="(asset_status, index) in assetStatus"
-            v-bind:value="index"
-          >
-            {{asset_status}}
-          </option>
-        </select>
-      </span>
-      <hr>
-    </div>
-
-    <div>
-      <button v-on:click="addAerialClaim">Add aerial claim</button>
-    </div>
-
-    <div>
-      <hr>
-      Claims:
-      <EditClaimLW
-        v-for="aerial_claim in aerial_claims"
-        v-bind:key="aerial_claim.claim_id"
-        v-bind:claim_id="aerial_claim.claim_id"
-      ></EditClaimLW>
-    </div>
-
-    <div>
-      <button v-on:click="addGroundClaim">Add ground claim</button>
-    </div>
-
-    <div>
-      <hr>
-      Ground Claims:
-      <EditClaimGround
-        v-for="ground_claim in ground_claims"
-        v-bind:key="ground_claim.claim_id"
-        v-bind="ground_claim"
-      ></EditClaimGround>
-    </div>
-
-    <div>
-      <span>Synopsis (Optional): Images can be included by using [img]image-url[/img]</span><br>
-      <textarea v-model="report_synopsis" class="textarea-style"></textarea>
-    </div>
+    <br>
+    <br>
+    <br>
   </div>
 </template>
 
@@ -373,7 +312,37 @@ div {
 
 .textarea-style{
   width: 98%;
-  height: 10em;
+  height: 20em;
+}
+
+
+.biggerCenter {
+  font-size: x-large;
+  text-decoration: underline;
+  text-align: center;
+}
+
+.bigRight {
+  float: right;
+  font-size: large;
+  margin-right: 15%;
+}
+
+.bigLeft {
+  font-size: large;
+  margin-left: 15%;
+}
+
+.big{
+  font-size: large;
+  margin-left: 8%;
+  margin-right: 8%;
+}
+
+.bigLWText {
+  font-size: large;
+  margin-left: 15%;
+  margin-right: 15%;
 }
 
 </style>

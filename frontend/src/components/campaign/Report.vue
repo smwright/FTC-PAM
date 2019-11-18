@@ -14,7 +14,8 @@
       </div>
       <br>
       <div class="typed-on-paper" v-if="report_loaded">
-        <EditClaimSlipRAF v-if="report_info.faction==2" v-bind="report_info"></EditClaimSlipRAF>
+        <EditClaimAbschussSlipLW v-if="report_info.faction==1" v-bind="report_info"></EditClaimAbschussSlipLW>
+        <EditClaimSlipRAF v-else-if="report_info.faction==2" v-bind="report_info"></EditClaimSlipRAF>
       </div>
     </template>
 
@@ -32,7 +33,8 @@
       </div>
       <br>
       <div class="typed-on-paper" v-if="report_loaded">
-        <ClaimSlipRAF v-if="report_info.faction==2" v-bind="report_info"></ClaimSlipRAF>
+        <ClaimAbschussSlipLW v-if="report_info.faction==1" v-bind="report_info"></ClaimAbschussSlipLW>
+        <ClaimSlipRAF v-else-if="report_info.faction==2" v-bind="report_info"></ClaimSlipRAF>
       </div>
 
       <template v-else>
@@ -52,10 +54,14 @@ import EditReportVVS from "./EditReportVVS"
 import { mapState, mapGetters } from "vuex"
 import ClaimSlipRAF from "./ClaimSlipRAF";
 import EditClaimSlipRAF from "./EditClaimSlipRAF";
+import ClaimAbschussSlipLW from "./ClaimAbschussSlipLW";
+import EditClaimAbschussSlipLW from "./EditClaimAbschussSlipLW";
 
 export default {
   name: "Report",
   components: {
+    EditClaimAbschussSlipLW,
+    ClaimAbschussSlipLW,
     EditClaimSlipRAF,
     ClaimSlipRAF,
     ReportLW,
