@@ -390,7 +390,7 @@ const mutations = {
     state[payload.array_name] = payload.array_data;
   },
 
-  resetTable: (state) => (table) => {
+  resetTable (state, table) {
     state[table] = [];
   },
 }

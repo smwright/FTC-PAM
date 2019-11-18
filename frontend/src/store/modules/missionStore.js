@@ -179,6 +179,11 @@ const getters = {
 // mutations
 const mutations = {
 
+  resetTable (state, table) {
+
+    state[table] = [];
+  },
+
   clearMissions (state, payload) {
 
     state.missions = [];
