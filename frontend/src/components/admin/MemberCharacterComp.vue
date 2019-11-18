@@ -9,7 +9,10 @@
 
     <div v-for="character in characters">
 
-      <SwitchableDiv v-if="decorationsByCharacterId(character.character_id).length > 0">
+      <SwitchableDiv
+        v-if="decorationsByCharacterId(character.character_id).length > 0"
+        v-bind:startstate="unawardedDecorationsByCharacterId(character.character_id).length > 0"
+      >
         <template slot="buttonStateA">
           <CharacterHeader class="div-button" v-bind="character"></CharacterHeader>
         </template>
@@ -62,7 +65,8 @@ export default {
     }),
 
     ...mapGetters("characterStore", [
-      "decorationsByCharacterId"
+      "decorationsByCharacterId",
+      "unawardedDecorationsByCharacterId"
     ])
   }
 }

@@ -23,7 +23,6 @@ if(array_key_exists("character_id", $params)) {
 
     $characterID = filter_var($params["character_id"], FILTER_SANITIZE_STRING);
     $faction = filter_var($params["faction"], FILTER_SANITIZE_STRING);
-
     checkDecorations($characterID, $faction, $dbx);
 }
 
@@ -41,6 +40,7 @@ function checkDecorations($characterID, $faction, $dbx){
     $row = mysqli_fetch_assoc($result);
     $mxmid = $row["mxmid"];
     $mnmid = $row["mnmid"];
+
 
     if($faction == 2){
         for($missionID = $mnmid; $missionID <= $mxmid; $missionID++){
@@ -84,7 +84,7 @@ function checkRAFDecorations($characterID, $missionID, $dbx){
 
     //Get all awards
     $sql = "SELECT id, abreviation FROM award ".
-        "WHERE faction = 'RAF'";
+        "WHERE faction = 2";
     $result = mysqli_query($dbx, $sql);
     while($row = mysqli_fetch_array($result)){
         $awardArray["$row[1]"] = $row[0];
@@ -128,7 +128,7 @@ function checkRAFDecorations($characterID, $missionID, $dbx){
         "WHERE career_character.id = $characterID";
     $querry = mysqli_query($dbx, $sql);
     $result = mysqli_fetch_assoc($querry);
-    $memberID = $result["personifiedBy"];
+    $memberID = $result["personified_by"];
     $rankValue = getRankValueAtMission($memberID, $missionID, $dbx);
 
     $sql = "SELECT SUM(destrtable.pointsdestr) AS destr FROM report ".
@@ -181,14 +181,8 @@ function checkRAFDecorations($characterID, $missionID, $dbx){
         $awardArray, $characterID, $missionDate, $dbx);
 
     //Victory Medal with Battle of Britain Clasp
-    $medalAbr = "VM";
+    $medalAbr = "VMBOB";
     $criteria = $succesfulReturnsBOB > 3;
-    addRemoveDecoration($medalAbr, $criteria, $decorationsArray, $awardedArray,
-        $awardArray, $characterID, $missionDate, $dbx);
-
-    //Victory Medal with Battle of Britain Clasp
-    $medalAbr = "VM";
-    $criteria = $succesfulReturns > 3;
     addRemoveDecoration($medalAbr, $criteria, $decorationsArray, $awardedArray,
         $awardArray, $characterID, $missionDate, $dbx);
 
@@ -277,24 +271,24 @@ function checkLWDecorations($characterID, $missionID, $dbx){
 
     //Get all award
     $sql = "SELECT id, abreviation FROM award ".
-        "WHERE faction = 'LW'";
+        "WHERE faction = 1";
     $result = mysqli_query($dbx, $sql);
     while($row = mysqli_fetch_array($result)){
         $awardArray["$row[1]"] = $row[0];
     }
 
     //Get stats for character
-    $sql = "SELECT report.character_id, COUNT(report.id) AS sorties, SUM(report.pilot_status = 0) AS pilotOK, ".
-        "SUM(report.pilot_status = 1) AS pilotWND, SUM(report.asset_status = 2) AS aeroLST ".
-        "FROM report LEFT JOIN mission ON report.mission_id = mission.id ".
-        "WHERE report.character_id = $characterID AND report.accepted = 1 AND mission.id <= $missionID";
-    $result = mysqli_query($dbx, $sql);
-    $row = mysqli_fetch_assoc($result);
-
-    $sorties = $row["sorties"];
-    $aeroLost = $row["aeroLST"];
-    $pilotOK = $row["pilotOK"];
-    $pilotWounded = $row["pilotWND"];
+//    $sql = "SELECT report.character_id, COUNT(report.id) AS sorties, SUM(report.pilot_status = 0) AS pilotOK, ".
+//        "SUM(report.pilot_status = 1) AS pilotWND, SUM(report.asset_status = 2) AS aeroLST ".
+//        "FROM report LEFT JOIN mission ON report.mission_id = mission.id ".
+//        "WHERE report.character_id = $characterID AND report.accepted = 1 AND mission.id <= $missionID";
+//    $result = mysqli_query($dbx, $sql);
+//    $row = mysqli_fetch_assoc($result);
+//
+//    $sorties = $row["sorties"];
+//    $aeroLost = $row["aeroLST"];
+//    $pilotOK = $row["pilotOK"];
+//    $pilotWounded = $row["pilotWND"];
 
     $sql = "SELECT SUM(claim_lw.confirmed=1) AS conf, SUM(claim_lw.confirmed=0) AS unconf ".
         "FROM claim LEFT JOIN report ON claim.report_id = report.id
@@ -342,8 +336,8 @@ function checkLWDecorations($characterID, $missionID, $dbx){
     $pilotOK = $pilotOKBOM + $pilotOKnonBOM;
     $pilotWounded = $pilotWoundedBOM + $pilotWoundednonBOM;
 
-//Get days survived on the front
-    $sql = "SELECT frontdays FROM character_mission_frontdays WHERE author_id = $character_id AND mission_id = $mission_id";
+    //Get days survived on the front
+    $sql = "SELECT frontdays FROM character_mission_frontdays WHERE author_id = $characterID AND mission_id = $missionID";
     $result = mysqli_query($dbx, $sql);
     $row = mysqli_fetch_assoc($result);
 
@@ -493,7 +487,7 @@ function checkVVSDecorations($characterID, $missionID, $dbx){
 
     //Get all awards
     $sql = "SELECT id, abreviation FROM award ".
-        "WHERE faction = 'VVS'";
+        "WHERE faction = 3";
     $result = mysqli_query($dbx, $sql);
     while($row = mysqli_fetch_array($result)){
         $awardArray["$row[1]"] = $row[0];
@@ -548,7 +542,7 @@ function checkVVSDecorations($characterID, $missionID, $dbx){
     $pilotWounded = $pilotWoundedBOM + $pilotWoundednonBOM;
 
 //Get days survived on the front
-    $sql = "SELECT frontdays FROM character_mission_frontdays WHERE author_id = $character_id AND mission_id = $mission_id";
+    $sql = "SELECT frontdays FROM character_mission_frontdays WHERE author_id = $characterID AND mission_id = $missionID";
     $result = mysqli_query($dbx, $sql);
     $row = mysqli_fetch_assoc($result);
 
