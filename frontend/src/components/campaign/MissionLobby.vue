@@ -2,7 +2,7 @@
   <div>
     <div class="container">
       <MissionHeader v-bind="missionById(this.$route.params.mission_id)"></MissionHeader>
-      <button class="margin-top-bottom" v-if="show_add_report_button" v-on:click="addReport">Add report</button>
+      <button class="margin-top-bottom" v-if="show_add_report_button" v-on:click="addReport">Add new report</button>
     </div>
     <!--<div class="container">-->
     <!--</div>-->
