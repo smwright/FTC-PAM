@@ -2,7 +2,7 @@
   <div>
     <div>
       <span class="bigSignature" v-if="report_info.accepted && report_info.accepted_by !== null">
-        <img style="position:absolute;width:17%;" src="https://imgur.com/QOZReUf.png"/>
+        <img style="position:absolute;width:17%;" src="/assets/images/webpage_images/lw-stamp.png"/>
        {{ memberById(report_info.accepted_by).callsign }}
       </span>
       <br>

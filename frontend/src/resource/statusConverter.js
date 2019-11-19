@@ -144,14 +144,14 @@ export default {
           "Dead" //2
         ],
 
-      deplUnitType:
+      deplUnitTypeStatus:
       [
-        "Fighter", //0
-        "Bomber", //1
-        "Ground Attack", //2
-        "Heavy Fighter", //3
-        "Transport", //4
-        "Recon" //5
+        {allies: "Fighter", axis: "Jagdgeschwader"}, //0
+        {allies: "Bomber", axis: "Sturzkampf-, Kampfgeschwader"}, //1
+        {allies: "Ground Attack", axis: "Schlachtgeschwader"}, //2
+        {allies: "Heavy Fighter", axis: "Zerstoerergeschwader"},//3
+        {allies: "Transport", axis: "Luftlandegeschwader"}, //4
+        {allies: "Recon", axis: "Aufklaerungsgeschwader"} //5
       ],
 
       numberEnemyACStatus:
