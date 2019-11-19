@@ -1,9 +1,7 @@
 <template>
   <div>
     <br>
-    <hr>
     <div>
-      Aerial Claims:
       <ClaimLW
         v-for="aerial_claim in aerial_claims"
         v-bind:key="aerial_claim.claim_id"
@@ -12,8 +10,6 @@
     </div>
 
     <div class="top-bottom-margin">
-      <hr>
-      Ground Claims:
       <ClaimGround
         v-for="ground_claim in ground_claims"
         v-bind:key="ground_claim.claim_id"

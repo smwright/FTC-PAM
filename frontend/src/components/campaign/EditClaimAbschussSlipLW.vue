@@ -1,8 +1,6 @@
 <template>
   <div>
     <div>
-      <hr>
-      Aerial Claims:
       <EditClaimLW
         v-for="aerial_claim in aerial_claims"
         v-bind:key="aerial_claim.claim_id"
@@ -12,9 +10,8 @@
         <button v-on:click="addAerialClaim">Add aerial claim</button>
       </div>
     </div>
-        <div>
-      <hr>
-      Ground Claims:
+    <br>
+    <div>
       <EditClaimGround
         v-for="ground_claim in ground_claims"
         v-bind:key="ground_claim.claim_id"

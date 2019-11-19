@@ -1,6 +1,5 @@
 <template>
   <div>
-    <hr>
     <div style="float: right">
       <button v-on:click="deleteClaim">X</button>
     </div>
