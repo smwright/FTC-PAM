@@ -102,9 +102,9 @@ export default {
 }
 
 @font-face {
-  font-family: "GNUTypewriter";
-  src: url("/assets/fonts/gtw.ttf");
-  src: local("GNUTypewriter");
+  font-family: "TrueTypewriter PolygLOTT";
+  src: url("/assets/fonts/TTWPGOTT.ttf");
+  src: local("TrueTypewriter PolygLOTT");
 
 }
 
@@ -443,15 +443,17 @@ select {
 
 .bigSignature {
   font-size: xx-large;
-  text-decoration: black;
+  opacity: 80%;
+  color: #000F55;
   font-weight: bold;
   font-family: "Dawning of a New Day";
 }
 
 
-.cyrillicTypewriter {
+.polyglottTypewriter {
   text-decoration: black;
-  font-family: "GNUTypewriter";
+  font-size: larger;
+  font-family: "TrueTypewriter PolyglOTT";
 }
 
 

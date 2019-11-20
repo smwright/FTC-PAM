@@ -106,7 +106,7 @@
         <div title="Here pilots inserted the approximate altitude at which the enemy a/c's were at when they made contact with the pilot's squadron or flight." class="rTableCellLeft">Height of Enemy</div>
         <div class="rTableCellCenter"></div>
         <div class="rTableCellLetter">(J)</div>
-        <div class="rTableCellRight">
+        <div title="This field is optional in ACG" class="rTableCellRight">
           <input v-model="report_enemy_height">
         </div>
       </div>
@@ -151,10 +151,8 @@
     <br>
     <br>
     <div class="bigRight">
-      <span>Approved by:</span>
     </div>
     <div title="Here you must insert the Section and position you flew in during the mission. This field is mandatory in ACG." class="bigLeft">
-      <span>Section:</span>
       <span>
          <select v-model="report_section">
           <option
@@ -166,7 +164,6 @@
         </select>
       </span>
 
-      <span>Pos:</span>
       <span>
          <select v-model="report_section_pos">
           <option
@@ -182,14 +179,12 @@
     <div title="Here you must indicate your base from which you took off. This field is mandatory in ACG." class="bigLeft">
       <span> {{ decodeHTML(report_info.abreviation) }}
         {{ decodeHTML(report_info.first_name) }} '{{ report_info.callsign }}' {{ decodeHTML(report_info.last_name) }}</span>
-      <span style="font-size: large;margin-left: 25%">Base:</span>
-      <span style="font-size: large">
+      <span style="font-size: large;margin-left: 25%">
         R.A.F <input v-model="report_aerodrome">
       </span>
     </div>
 
     <div title="This is where you must indicate the aircraft you flew. This field is mandatory." class="bigLeft">
-      <span>Type:</span>
       <span>
         <select v-model="report_aircraft">
           <option
@@ -203,7 +198,6 @@
     </div>
 
     <div title="Here you must indicate your aircraft's code letter. Please use capital letters. This field is mandatory." class="bigLeft">
-      <span>Markings:</span>
       <span>
         <input v-model="report_markings">
       </span>
