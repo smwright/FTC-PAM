@@ -15,7 +15,9 @@ import ACGInfoSideNav from '../components/acg_info/ACGInfoSideNav'
 import MemberIndex from '../components/acg_member/MemberIndex'
 import MemberInfoSideNav from '../components/acg_member/MemberInfoSideNav'
 import MemberProfile from '../components/acg_member/MemberProfile'
-import CharacterProfile from '../components/acg_member/CharacerProfile'
+import MemberGeneral from '../components/acg_member/MemberGeneralComp'
+import MemberCharacters from '../components/acg_member/MemberCharactersComp'
+import CharacterProfile from '../components/acg_member/CharacterProfile'
 
 //Campaign
 import CampaignList from '../components/campaign/CampaignList'
@@ -64,7 +66,17 @@ const router = new VueRouter({
       path: '/about-acg/',
       name: 'AboutACG',
       components: {
-        fullmain: ACGInfoIndex,
+        default: ACGInfoIndex,
+        sidenav: ACGInfoSideNav
+      }
+
+    },
+    {
+      path: '/history/',
+      name: 'ACGHistory',
+      components: {
+        default: ACGHistory,
+        sidenav: ACGInfoSideNav
       }
     },
     {
@@ -75,19 +87,16 @@ const router = new VueRouter({
       }
     },
     {
-      path: '/history/',
-      name: 'ACGHistory',
-      components: {
-        fullmain: ACGHistory,
-      }
-    },
-    {
       path: '/joining/',
       name: 'ACGJoining',
       components: {
         fullmain: ACGJoining,
       }
     },
+
+    // ---------------------------------------------------
+    // Members
+    // ---------------------------------------------------
     {
       path: '/members/',
       name: 'Members',
@@ -103,23 +112,34 @@ const router = new VueRouter({
         default: MemberProfile,
         sidenav: MemberInfoSideNav
       },
+      children: [
+        {
+          path: 'general',
+          name: 'MemberGeneral',
+          components: {
+            subcontent: MemberGeneral
+          }
+        },
+        {
+          path: 'characters',
+          name: 'MemberCharacters',
+          components: {
+            subcontent: MemberCharacters
+          }
+        },
+        {
+          path: 'characters/:character_id',
+          name: 'CharacterGeneral',
+          components: {
+            subcontent: CharacterProfile
+          }
+        },
+      ]
     },
-    {
-      path: '/members/:member_id/character/:character_id',
-      name: 'AboutACGCharacter',
-      components: {
-        default: CharacterProfile,
-        sidenav: MemberInfoSideNav
-      },
-    },
-    // {
-    //   path: '/about-acg/ranks',
-    //   name: 'Ranks',
-    //   components: {
-    //     default: Ranks,
-    //     sidenav: AboutACGSideNav
-    //   }
-    // },
+
+    // ---------------------------------------------------
+    // Campaign
+    // ---------------------------------------------------
     {
       path: '/campaign-list',
       name: 'CampaignList',
@@ -275,10 +295,11 @@ router.beforeEach( async (to, from, next) => {
     if(isAdmin){
       next();
     } else {
-      next('/')
+      next(false)
     }
+  } else {
+    next()
   }
-  next()
 })
 
 export default router;

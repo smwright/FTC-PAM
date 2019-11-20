@@ -23,11 +23,15 @@
   export default {
     name: "SwitchableDiv",
     props: {
+      startstate: {
+        type: [Number, Boolean],
+        default: 0
+      }
 
     },
     data () {
       return {
-        divstate: 0
+        divstate: this.startstate
       }
     },
     methods: {

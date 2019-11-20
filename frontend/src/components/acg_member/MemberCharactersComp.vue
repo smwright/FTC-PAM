@@ -1,11 +1,11 @@
 <template>
   <div class="container">
     <DivLinkButton
-      v-for="character in characters"
+      v-for="(character) in characters"
       v-bind:class="{ axis: isAxis(character.faction), allied: isAllied(character.faction) }"
       v-bind:key="character.character_id"
-      v-bind="{routeName: 'AboutACGCharacter',
-        routeParams: {member_id: character.member_id, character_id: character.character_id }}"
+      v-bind="{routeName: 'CharacterGeneral',
+        routeParams: {character_id: character.character_id }}"
     >
         <div class="clearfix">
           <div class="inline-block float-left width-80">
@@ -19,6 +19,12 @@
               <span> Status: {{ pilotStatus[character.character_status] }}</span>
               <span> | Sorties: {{ sortiePilotAssetStats(character.character_id).sorties }}</span>
               <span> | Unit: {{ character.hist_unit_name }}</span>
+              <span> |
+                <ClaimStats
+                  v-bind:character_id="character.character_id"
+                  v-bind:compact_style="true"
+                ></ClaimStats>
+              </span>
             </div>
 
             <div class="clearfix">
@@ -56,6 +62,7 @@ import DivLinkButton from "../basic_comp/DivLinkButton"
 import CharacterHeader from "../campaign/CharacterHeader"
 import UniformRankComp from "./UniformRankComp"
 import AwardComp from "./AwardComp"
+import ClaimStats from "./ClaimStatsComp"
 import {mapState, mapGetters} from "vuex"
 import statConv from "../../resource/statusConverter"
 
@@ -65,7 +72,8 @@ export default {
     DivLinkButton,
     CharacterHeader,
     UniformRankComp,
-    AwardComp
+    AwardComp,
+    ClaimStats
   },
   mixins: [statConv],
   computed: {
@@ -91,12 +99,6 @@ export default {
 
       return faction === 2 || faction ===3;
     },
-
-    // unitEmblem: function (unit_image) {
-    //
-    //   var baseURL = "/assets/images/";
-    //   return baseURL + "unit_emblems/" + unit_image;
-    // },
   }
 }
 </script>

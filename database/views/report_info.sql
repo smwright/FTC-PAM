@@ -6,6 +6,7 @@ VIEW `report_info` AS
     SELECT 
         `report`.`id` AS `report_id`,
         `report`.`mission_id` AS `mission_id`,
+        `mission`.`campaign_id` AS `campaign_id`,
         `report`.`deployed_unit_id` AS `depl_unit_id`,
         `report`.`asset_id` AS `asset_id`,
         `report`.`base` AS `base`,
@@ -33,13 +34,16 @@ VIEW `report_info` AS
         `acg_member`.`id` AS `member_id`,
         `acg_member`.`callsign` AS `callsign`,
         `hist_unit`.`faction` AS `faction`,
+        `mission`.`hist_date` AS `mission_hist_date`,
+        `mission`.`real_date` AS `mission_real_date`,
+        `mission`.`name` AS `mission_name`,
         `mission_member_rank`.`real_value` AS `rank_value`,
         `mission_member_rank`.`rank_name` AS `rank_name`,
         `mission_member_rank`.`abreviation` AS `abreviation`,
         `mission_member_rank`.`image` AS `image`
     FROM
-        ((((((`report`
-	LEFT JOIN `mission` ON ((`mission`.`id` = `cl45-acg-pam-2`.`report`.`mission_id`)))
+        (((((((`report`
+        LEFT JOIN `mission` ON ((`mission`.`id` = `report`.`mission_id`)))
         LEFT JOIN `deployed_unit` ON ((`deployed_unit`.`id` = `report`.`deployed_unit_id`)))
         LEFT JOIN `hist_unit` ON ((`hist_unit`.`id` = `deployed_unit`.`hist_unit_id`)))
         LEFT JOIN `career_character` ON ((`career_character`.`id` = `report`.`character_id`)))

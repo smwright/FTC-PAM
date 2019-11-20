@@ -1,10 +1,9 @@
 <template>
-  <div>
-    <div>
-    <div class="headerHome">
-    <h1>Welcome to the Air Combat Group</h1>
-  </div>
-    <div class="homeText">
+  <div class="width-80 margin-auto">
+    <div class="text-align-center">
+      <h1>Welcome to the Air Combat Group</h1>
+    </div>
+    <div class="text-align-justify">
       <p>
       The Air Combat Group consists of both Allied and Axis squadrons under a single operational umbrella flying with full realism settings. We are an English and German speaking group located in Europe, the Americas and Australia and meet on our own Teamspeak 3 and Discord servers. Our pilots are interested in the history of World War II air combat on all fronts, seeking immersive air combat in the theatres of the time through historical campaign and other online activities. By supporting both sides of the conflict we can create parity in theatre and achieve common ground across the group, ultimately we seek to mirror the numbers flying on each side and support increasingly large campaigns.
     </p>
@@ -17,10 +16,7 @@
     <iframe id="ytplayer" type="text/html" width="100%" height="400px" src="https://www.youtube.com/embed/v6u4JxgE2S4?autoplay=0&origin=http://aircombatgroup.co.uk"
             frameborder="0"></iframe>
     </div>
-    </div>
   </div>
-
-
 </template>
 
 <script>
@@ -31,16 +27,16 @@ export default {
   async mounted () {
 
     console.log("Testing PHP connection")
-    this.$store.commit('logger/addEntry', {message: "Testing PHP connection"})
+    // this.$store.commit('logger/addEntry', {message: "Testing PHP connection"})
     this.$dbCon.requestViewData(this.$options.name, {view: "campaign_list"})
       .then((response) => {
         console.log("PHP connection test, response received.");
-        this.$store.commit('logger/addEntry', {message: "PHP connection test, response received."});
+        // this.$store.commit('logger/addEntry', {message: "PHP connection test, response received."});
         console.log(response);
       })
       .catch((error) => {
         console.log("PHP connection test, error ");
-        this.$store.commit('logger/addEntry', {message: "PHP connection test, error."});
+        // this.$store.commit('logger/addEntry', {message: "PHP connection test, error."});
         console.log(error.message);
 
       });

@@ -56,7 +56,17 @@ const getters = {
          return decoration.character_id === id;
        }
      )
+  },
+
+  unawardedDecorationsByCharacterId: (state) => (id) => {
+
+    return state.decorations.filter(
+      function (decoration) {
+        return decoration.character_id === id && decoration.awarded === 0;
+      }
+    )
   }
+
 
 }
 

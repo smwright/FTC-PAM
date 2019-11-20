@@ -175,6 +175,15 @@ export default {
 
       this.$store.commit('missionStore/setReportDetails',
         report_detail);
+      this.$store.commit('missionStore/resetTable',
+        "aerial_claims");
+      this.$store.commit('missionStore/resetTable',
+        "ground_claims");
+      this.$store.commit('missionStore/resetTable',
+        "aerial_claims_for_delete");
+      this.$store.commit('missionStore/resetTable',
+        "ground_claims_for_delete");
+
 
       console.log(this.$options.name+": Pushing to -> {name: Report, params: {report_id: -1}");
       this.$router.push({name: "Report", params: {report_id: -1}});

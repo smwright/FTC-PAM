@@ -1,14 +1,7 @@
 <template>
   <div id="app">
     <div id="header">
-      <div class="clearfix navbar">
-        <!--Navbar for main navigation.-->
-        <div class="clearfix">
-          <Navbar class="float-left"></Navbar>
-          <div class="float-right">{{this.$session.get('username')}}</div>
-        </div>
-        <Logger class="logger float-right"></Logger>
-      </div>
+        <Navbar class=""></Navbar>
     </div>
 
     <div id="body">
@@ -30,7 +23,7 @@
       </div>
     </div>
     <div id="footer">
-      <div class="navbar">
+      <div class="text-align-center padding-10">
         Our page is under construction. Please report bugs on our forum.
       </div>
     </div>
@@ -66,6 +59,16 @@ export default {
 
 }
 
+#header {
+  /*height: 50px;*/
+  width: 100%;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 15px;
+  border-color: rgba(0, 0, 0, 0.4);
+  background: rgba(101, 21, 22, .8);
+}
+
 #body {
   height:100%;
   /*padding: 10px;*/
@@ -77,7 +80,12 @@ export default {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 82px
+  height: 82px;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 15px;
+  border-color: rgba(0, 0, 0, 0.4);
+  background: rgba(101, 21, 22, .8);
 }
 
 @font-face {
@@ -119,61 +127,22 @@ export default {
 /*}*/
 
 html {
-  height: 100%;
+  /*height: 100%;*/
+  background:url("/assets/images/background.jpg");
+  /*background-color: #FFFFFF;*/
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
 }
 
 body {
-  /*width: 1800px;*/
-  background:url("/assets/images/background.jpg");
-  background-color: #FFFFFF;
-  background-repeat: no-repeat;
-  background-position: center top;
-  background-size: cover;
-  background-attachment: fixed;
-  height: 100%;
-  /*padding: 10px;*/
+  min-width: 1020px;
   color: #ffffff;
-  font-size: 17px;
-}
-
-.navbar {
-  /*position: fixed;*/
-  height: 50px;
-  width: calc(100% - 20px); /* Whished widht in % minus 2x border size */
-  padding: 10px;
-  list-style: none;
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 15px;
-  border-color: rgba(0, 0, 0, 0.4);
-  background: rgba(101, 21, 22, .8);
-  text-align: center;
-  display: table;
-}
-
-.navbarFooterSocialMediaIcons {
-  /*position: fixed;*/
-  height: 50px;
-  width: calc(100% - 20px); /* Whished widht in % minus 2x border size */
-  padding: 10px;
-  list-style: none;
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 15px;
-  border-color: rgba(0, 0, 0, 0.4);
-  background: rgba(101, 21, 22, .8);
-  text-align: left;
-  display: table;
-}
-
-.logger {
-  width: 60%;
-  padding: 2px;
-  border-style: solid;
-  border-width: 0px;
-  border-radius: 15px;
-  border-color: rgba(0, 0, 0, 0.0);
-  background: rgba(0, 0, 0, 0.1);
 
 }
 
@@ -354,6 +323,11 @@ select {
 }
 
 /*General quick style aspects*/
+
+.full-height{
+  height: 100%;
+}
+
 .full-width{
   width: 100%;
 }
@@ -406,6 +380,10 @@ select {
   padding: 10px;
 }
 
+.margin-auto{
+  margin: auto;
+}
+
 .text-align-left{
   text-align: left;
 }
@@ -414,8 +392,12 @@ select {
   text-align: center;
 }
 
-.text-align-righh{
+.text-align-right{
   text-align: right;
+}
+
+.text-align-justify{
+  text-align: justify;
 }
 
 .inline-block{
@@ -452,6 +434,11 @@ select {
   color: #1b1b1b;
   font-family: "Remingtoned Type";
   box-shadow: 10px 10px 10px rgba(10,10,10,0.5);
+}
+
+.typed-on-paper-link:hover {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 2px;
 }
 
 .bigSignature {
@@ -593,19 +580,6 @@ DraggableTree div {
   padding: 0;
   display: flex;
   align-items: center;
-}
-.homeText{
-  width: 50%;
-  text-align: justify;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.headerHome{
-  width: 50%;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .fa {
