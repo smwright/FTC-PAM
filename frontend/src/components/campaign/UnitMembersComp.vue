@@ -1,6 +1,6 @@
 <template>
   <div class="typed-on-paper">
-    <div v-if="campaign_unit_stats != null">
+    <div v-if="campaign_unit_stats.length > 0">
       <table>
         <thead>
           <tr>
@@ -15,33 +15,33 @@
         <tbody>
         <tr>
           <td>Sorties:</td>
-          <td>{{campaign_unit_stats.sorties}}</td>
+          <td>{{campaign_unit_stats[0].sorties}}</td>
           <td>Ok:</td>
-          <td>{{campaign_unit_stats.pilot_ok}}</td>
+          <td>{{campaign_unit_stats[0].pilot_ok}}</td>
           <td>OK:<td>
-          <td>{{campaign_unit_stats.asset_ok}}</td>
+          <td>{{campaign_unit_stats[0].asset_ok}}</td>
         </tr>
         <tr>
           <td></td>
           <td></td>
           <td>Wounded:</td>
-          <td>{{campaign_unit_stats.pilot_wounded}}</td>
+          <td>{{campaign_unit_stats[0].pilot_wounded}}</td>
           <td>Damaged:<td>
-          <td>{{campaign_unit_stats.asset_damaged}}</td>
+          <td>{{campaign_unit_stats[0].asset_damaged}}</td>
         </tr>
         <tr>
           <td></td>
           <td></td>
           <td>POW:</td>
-          <td>{{campaign_unit_stats.pilot_pow}}</td>
+          <td>{{campaign_unit_stats[0].pilot_pow}}</td>
           <td>Lost:<td>
-          <td>{{campaign_unit_stats.asset_lost}}</td>
+          <td>{{campaign_unit_stats[0].asset_lost}}</td>
         </tr>
         <tr>
           <td></td>
           <td></td>
           <td>KIA:</td>
-          <td>{{campaign_unit_stats.pilot_kia}}</td>
+          <td>{{campaign_unit_stats[0].pilot_kia}}</td>
           <td><td>
           <td></td>
         </tr>
@@ -101,58 +101,50 @@
 </template>
 
 <script>
+import { mapState, mapGetters } from "vuex"
 
-  export default {
-    name: "UnitMembersComp",
-    props: {
-      id: {
-        type: Number,
-        default: 0
-      },
-      acg_unit_id: {
-        type: Number,
-        default: 0
+export default {
+  name: "UnitMembersComp",
+  props: {
+    depl_unit_id: {
+      type: Number,
+      default: 0
+    },
+    acg_unit_id: {
+      type: Number,
+      default: 0
+    }
+  },
+  computed: {
+
+    campaign_unit_stats: function() {
+
+      return this.filterByKey("campaign_unit_plane_asset_status", "depl_unit_id", this.depl_unit_id);
+    },
+
+    campaign_unit_member: function() {
+
+      return this.filterByKey("campaign_unit_member_info", "depl_unit_id", this.depl_unit_id);
+    },
+
+    ...mapGetters("missionStore", [
+
+      "filterByKey"
+
+    ])
+
+  },
+  methods: {
+
+    showName: function(index){
+      if(index > 0){
+        return this.campaign_unit_member[index].callsign != this.campaign_unit_member[index-1].callsign;
+      } else {
+        return true
       }
     },
-    created () {
-
-      this.$dbCon.requestViewData(this.$options.name, {view:"campaign_unit_plane_asset_status", campaign_id:this.$route.params.campaign_id,
-        depl_unit_id:this.$props.id})
-        .then(response => {
-          this.campaign_unit_stats = response[0];
-        })
-        .catch(error => {
-          console.log(error.message);
-        });
-
-      if(this.$props.acg_unit_id != null){
-        this.$dbCon.requestViewData(this.$options.name, {view:"campaign_unit_member_info", campaign_id:this.$route.params.campaign_id,
-          depl_unit_id:this.$props.id})
-          .then(response => {
-            this.campaign_unit_member = response;
-          })
-          .catch(error => {
-            console.log(error.message);
-          });
-      }
-    },
-    data () {
-      return {
-        campaign_unit_stats: null,
-        campaign_unit_member: null
-      }
-    },
-    methods: {
-
-      showName: function(index){
-        if(index > 0){
-          return this.campaign_unit_member[index].callsign != this.campaign_unit_member[index-1].callsign;
-        } else {
-          return true
-        }
-      },
-    },
-  }
+  },
+}
 </script>
 
 <style scoped>

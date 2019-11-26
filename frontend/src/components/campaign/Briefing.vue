@@ -28,11 +28,17 @@ export default {
 
     this.loadBriefing();
   },
-  watch: {
-    '$route.params.briefing_faction': function () {
-      this.loadBriefing();
-    }
+  beforeRouteUpdate (to, from, next) {
+    // called when the route that renders this component has changed,
+    // but this component is reused in the new route.
+    // For example, for a route with dynamic params `/foo/:id`, when we
+    // navigate between `/foo/1` and `/foo/2`, the same `Foo` component instance
+    // will be reused, and this hook will be called when that happens.
+    // has access to `this` component instance.
+    this.loadBriefing;
+    next();
   },
+
   data () {
     return {
       briefing_info: null,
@@ -55,9 +61,12 @@ export default {
 
     checkAuthentication: function () {
 
+      console.log("CHECKING "+this.briefing_info.mission_status);
+
       if(this.briefing_info.mission_status == 2) {
         this.is_authorized = true;
       } else {
+        console.log("AUTH: "+this.$auth.session.getAll())
         this.$auth.getFaction(this.$options.name, this.$route.params.mission_id)
           .then(response => {
             this.is_authorized = response[0].faction === this.$route.params.briefing_faction;

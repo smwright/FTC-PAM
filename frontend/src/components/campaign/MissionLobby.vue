@@ -1,11 +1,9 @@
 <template>
   <div>
     <div class="container">
-      <MissionHeader v-bind="missionById(this.$route.params.mission_id)"></MissionHeader>
-      <button class="margin-top-bottom" v-if="show_add_report_button" v-on:click="addReport">Add report</button>
+      <MissionHeader v-bind="missionById"></MissionHeader>
+      <button class="margin-top-bottom" v-if="show_add_report_button" v-on:click="addReport">Add new report</button>
     </div>
-    <!--<div class="container">-->
-    <!--</div>-->
     <router-view name="mission_lobby_content"></router-view>
   </div>
 </template>
@@ -21,32 +19,46 @@ export default {
   },
   mounted () {
 
-    // Load mission info
-    this.$store.dispatch('missionStore/loadMission', {caller: this.$options.name, mission_id: this.$route.params.mission_id})
-      .then(response => {
-
-        // Load user info
-        return this.$auth.getUserStatus(this.$options.name);
-      })
-      .then(response => {
-
-        this.show_add_report_button = (response === 0 && this.missionStatusById(this.$route.params.mission_id) === 1);
-      })
-      .catch(error => {
+    if(this.findByKey("missions", "id", this.$route.params.mission_id) === undefined){
+      this.$store.dispatch('missionStore/loadStoreData',
+        {
+          caller: this.$options.name,
+          call_object: {
+            view: "campaign_mission_info",
+            campaign_id: this.$route.params.campaign_id
+          },
+          data_array_name: "missions"
+        }
+      ).catch(error => {
         console.log(error.message);
       });
-
-  },
-  data () {
-    return {
-      show_add_report_button: false
     }
+
   },
   computed: {
 
+    missionById: function() {
+
+      return this.findByKey("missions", "id", this.$route.params.mission_id);
+    },
+
+    show_add_report_button: async function() {
+
+      var user_status = false;
+      this.$auth.getUserStatus(this.$options.name)
+        .then(response => {
+          user_status = response === 0;
+        })
+        .catch(error => {
+          console.log(error.message);
+        });
+      return (user_status && this.findByKey("missions", "id", this.$route.params.mission_id).mission_status === 1);
+
+
+    },
+
     ...mapGetters("missionStore", [
-      "missionById",
-      "missionStatusById"
+      "findByKey",
     ])
   },
   methods: {
