@@ -23,16 +23,21 @@ export default {
   },
   mounted () {
 
-    this.$store.commit('missionStore/clearMissions');
-    this.$store.dispatch('missionStore/loadMissions', {caller: this.$options.name, campaign_id: this.campaign_id})
-      .catch(error => {
-        console.log(error.message);
-      });
-
+    this.$store.dispatch('missionStore/loadStoreData',
+      {
+        caller: this.$options.name,
+        call_object: {
+          view: "campaign_mission_info",
+          campaign_id: this.campaign_id
+        },
+        data_array_name: "missions"
+      }
+    ).catch(error => {
+      console.log(error.message);
+    });
   },
   data () {
     return {
-      // campaign_missions: null,
       campaign_id: this.$route.params.campaign_id,
     }
   },

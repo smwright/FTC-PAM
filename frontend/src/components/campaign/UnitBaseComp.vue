@@ -6,6 +6,7 @@
           <div class="float-left">
             <button v-if="children.length >0" v-on:click.stop="toggleChildUnits">{{showChildUnitsButtonText}}</button>
             <!--<span>{{ depl_unit_id }}</span>-->
+            <img class="unitEmblem" :src="image"/>
             <span class="heading">{{ hist_unit_name }}</span>
           </div>
           <div class="float-right">
@@ -14,7 +15,7 @@
         </div>
       </template>
       <UnitMembersComp
-        v-bind:id="depl_unit_id"
+        v-bind:depl_unit_id="depl_unit_id"
         v-bind:acg_unit_id="acg_unit_id"
       >
       </UnitMembersComp>
@@ -54,6 +55,10 @@ export default {
     hist_unit_code: {
       type: String,
       default: ""
+    },
+    image: {
+      type: String,
+      default: null
     }
   },
   data () {
@@ -101,6 +106,7 @@ export default {
   border-radius: 15px;
   border-color: #F28900;
   background: rgba(0, 0, 0, 0.4);
+}
 
 
 .info-container {
@@ -113,5 +119,10 @@ export default {
   border-color: #F28900;
   background: rgba(0, 0, 0, 0.1);
 }
+
+.unitEmblem {
+  height: 50px;
+  vertical-align: middle;
 }
+
 </style>

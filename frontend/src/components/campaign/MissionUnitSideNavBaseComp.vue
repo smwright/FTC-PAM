@@ -3,7 +3,7 @@
     <div>
       <div class="inline" v-bind:class="{ axis: isAxis, allied: isAllied }">
         <button v-show="children.length >0" v-on:click.stop="toggleChildUnits">{{showChildUnitsButtonText}}</button>
-        <button v-show="reportsByUnit(depl_unit_id).length > 0" v-on:click.stop="toggleReports">{{showReportsButtonText}}</button>
+        <button v-show="reports.length > 0" v-on:click.stop="toggleReports">{{showReportsButtonText}}</button>
         <img class="unitEmblem" :src="image"/>
         <span class="heading">{{ hist_unit_name }}</span>
       </div>
@@ -13,12 +13,15 @@
     </div>
     <DivLinkButton
       v-if="showReports"
-      v-for="report in reportsByUnit(depl_unit_id)"
+      v-for="report in reports"
       v-bind:key="report.report_id"
       v-bind:class="{ acceptedReport: report.accepted }"
       v-bind="{routeName: 'Report', routeParams: {report_id: report.report_id}}"
     >
      {{report.abreviation}} {{ decodeHTML(report.first_name) }} '{{report.callsign}}' {{ decodeHTML(report.last_name) }}
+      <span v-if="report.accepted" class="float-right">
+        &#10004;
+      </span>
     </DivLinkButton>
   </div>
 </template>
@@ -63,23 +66,19 @@ import { mapState, mapGetters} from "vuex"
     data () {
       return {
 
-        // hasReports: false,
         showChildUnits: true,
         showChildUnitsButtonText: "-",
         showReports: false,
         showReportsButtonText: "+",
       }
     },
-    mounted () {
-
-      this.loadReports();
-    },
     computed: {
 
-      // hasReports: function () {
-      //
-      //   return this.reportsByUnit(dep_unit_id).length > 0;
-      // },
+      reports: function () {
+
+        return this.filterByKey("reports", "depl_unit_id", this.depl_unit_id);
+      },
+
       isAxis: function () {
 
         return this.faction === 1;
@@ -91,7 +90,7 @@ import { mapState, mapGetters} from "vuex"
       },
 
       ...mapGetters("missionStore", [
-        "reportsByUnit",
+        "filterByKey"
       ])
     },
     methods: {
@@ -112,25 +111,6 @@ import { mapState, mapGetters} from "vuex"
           this.showReportsButtonText = "+"
         }
       },
-      loadReports: function(){
-
-        if(this.$props.depl_unit_id !== null){
-
-          this.$store.dispatch('missionStore/loadReports',
-            {
-              caller: this.$options.name,
-              mission_id:this.$route.params.mission_id,
-              depl_unit_id:this.$props.depl_unit_id
-            })
-            .then(response => {
-               // this.hasReports = response;
-               // this.reports = this.$dbCon.nestData(response);
-            })
-            .catch(error => {
-              console.log(error.message);
-            });
-        }
-      }
     },
   }
 </script>

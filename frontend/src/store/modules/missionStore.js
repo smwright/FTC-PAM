@@ -3,7 +3,12 @@ import Vue from "vue"
 // initial state
 const state = {
 
+  campaign: {},
+  campaign_units: [],
   missions: [],
+  campaign_unit_plane_asset_status: [],
+  campaign_unit_member_info: [],
+  reports: [],
   report: {},
   report_details: {},
   aerial_claims: [],
@@ -14,13 +19,35 @@ const state = {
   units: [],
   assets: [],
   members: [],
-  reports: [],
 
-}
+
+};
 
 // getters
 const getters = {
 
+  findByKey: (state) => (table, keyName, keyValue) => {
+
+    // console.log("Serching "+keyName+" = "+keyValue+" in "+table);
+    return state[table].find(
+      function (item) {
+        return item[keyName] == keyValue;
+      });
+  },
+
+  filterByKey: (state) => (table, keyName, keyValue) => {
+
+    // console.log("Serching "+keyName+" = "+keyValue+" in "+table);
+    return state[table].filter(
+      function (item) {
+        return item[keyName] == keyValue;
+      });
+  },
+
+  nestedData: (state) => (table) => {
+
+    return Vue.prototype.$dbCon.nestData(state[table]);
+  },
 
   missionById: (state) => (id_inn) => {
 
@@ -71,6 +98,7 @@ const getters = {
 
   reportsByUnit: (state) => (id_inn) => {
 
+    console.log("Searching for reports of depl_uni = "+id_inn);
     var reports = state.reports.find(
       function (report) {
         return report.depl_unit_id == id_inn;
@@ -179,23 +207,17 @@ const getters = {
 // mutations
 const mutations = {
 
-  clearMissions (state, payload) {
+  setDataArray (state, payload) {
 
-    state.missions = [];
+    // Needed values:
+    // array_name: Name of the array to set
+    // array_data: Date to store in the array
+    state[payload.array_name] = payload.array_data;
   },
 
-  setMissions (state, payload) {
+  clearDataArray (state, payload) {
 
-    for(var i = 0; i < payload.length; i++ ){
-
-      var index = state.missions.findIndex(item => item.id === payload[i].id)
-      if(index === -1){
-        state.missions.push(payload[i]);
-      } else {
-        state.missions.splice(index, 1, payload[i]);
-      }
-    }
-
+    state[payload.array_name] = [];
   },
 
   setReports (state, payload) {
@@ -229,12 +251,7 @@ const mutations = {
     state.aerial_claims = [];
     for(var i = 0; i < payload.length; i++ ){
 
-      // var index = state.aerial_claims.findIndex(item => item.id === payload[i].claim_id)
-      // if(index === -1){
         state.aerial_claims.push(payload[i]);
-      // } else {
-      //   state.aerial_claims.splice(index, 1, payload[i]);
-      // }
     }
   },
 
@@ -243,12 +260,7 @@ const mutations = {
     state.ground_claims = [];
     for(var i = 0; i < payload.length; i++ ){
 
-      // var index = state.ground_claims.findIndex(item => item.id === payload[i].claim_id)
-      // if(index === -1){
         state.ground_claims.push(payload[i]);
-      // } else {
-      //   state.ground_claims.splice(index, 1, payload[i]);
-      // }
     }
   },
 
@@ -257,12 +269,7 @@ const mutations = {
     state.comments = [];
     for(var i = 0; i < payload.length; i++ ){
 
-      // var index = state.comments.findIndex(item => item.id === payload[i].claim_id)
-      // if(index === -1){
         state.comments.push(payload[i]);
-      // } else {
-      //   state.ground_claims.splice(index, 1, payload[i]);
-      // }
     }
   },
 
@@ -383,54 +390,28 @@ const mutations = {
 // actions
 const  actions = {
 
-  loadMission (context, payload) {
+  loadStoreData(context, payload) {
 
+    // payload.caller: Name of the calling component,
+    // payload.call_object: Object specifying the view/table to be loaded, plus additional variables that
+    //                      customise the database call, i.e. filtering, ordering, ...
+    // payload.data_array_name: Name of the array in the store to save the data
     return new Promise(function (resolve, reject) {
-
-      var mission = state.missions.find(
-        function (missions) {
-          return missions.id === payload.mission_id;
-        });
-
-      if (mission === undefined) {
-        Vue.prototype.$dbCon.requestViewData("missionStore on behalf of " + payload.caller,
-          {view: "campaign_mission_info", id: payload.mission_id })
-          .then(response => {
-
-            context.commit("setMissions", response);
-            resolve();
-
-          })
-          .catch(error => {
-
-            reject(error.message);
-          });
-      } else {
-        resolve();
-      }
-
-    })
-  },
-
-  loadMissions (context, payload) {
-
-    return new Promise(function (resolve, reject) {
-
-      Vue.prototype.$dbCon.requestViewData("missionStore on behalf of " + payload.caller,
-        {view: "campaign_mission_info", campaign_id: payload.campaign_id })
+      Vue.prototype.$dbCon.requestViewData("memberInfo on behalf of " + payload.caller, payload.call_object)
         .then(response => {
 
-          context.commit("setMissions", response);
-          resolve();
+          context.commit("setDataArray",
+            {
+              array_name: payload.data_array_name,
+              array_data: response
+            });
+          resolve(response);
 
         })
         .catch(error => {
-
           reject(error.message);
         });
-
     })
-
   },
 
   loadReports (context, payload) {

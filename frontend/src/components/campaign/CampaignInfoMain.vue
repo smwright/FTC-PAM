@@ -8,25 +8,34 @@
 </template>
 
 <script>
+import { mapState, mapGetters } from "vuex"
 import CampaignInfoBaseComp from "./CampaignInfoBaseComp";
 
 export default {
   name: 'CampaignInfoMain',
   components: {CampaignInfoBaseComp},
   mounted () {
-    this.$dbCon.requestViewData(this.$options.name, {view:"campaign_list", id:this.$route.params.campaign_id})
-      .then(response => {
-        this.campaign = response[0];
-      })
-      .catch(error => {
-        console.log(error.message);
-      });
+
+    this.$store.dispatch('missionStore/loadStoreData',
+      {
+        caller: this.$options.name,
+        call_object: {
+          view: "campaign_list",
+          id: this.$route.params.campaign_id
+        },
+        data_array_name: "campaign"
+      }
+    ).catch(error => {
+      console.log(error.message);
+    });
   },
-  data () {
-    return {
-      campaign: null
-    }
-  }
+  computed: {
+
+    ...mapState("missionStore", {
+
+      campaign: state => state.campaign,
+    }),
+  },
 }
 
 
