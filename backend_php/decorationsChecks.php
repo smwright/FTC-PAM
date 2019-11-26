@@ -248,7 +248,6 @@ function checkRAFDecorations($characterID, $missionID, $dbx){
 
 function checkLWDecorations($characterID, $missionID, $dbx){
 
-    $dbx = getDBx();
     //Get date of mission
     $sql = "SELECT mission.real_date FROM mission WHERE mission.id = $missionID";
     $result = mysqli_query($dbx, $sql);
@@ -321,7 +320,7 @@ function checkLWDecorations($characterID, $missionID, $dbx){
         "SUM(report.pilot_status = 1) AS pilotWND, SUM(report.asset_status = 2) AS aeroLST ".
         "FROM report LEFT JOIN mission ON report.mission_id = mission.id ".
         "WHERE report.character_id = $characterID AND report.accepted = 1 AND mission.id <= $missionID ".
-        "AND (hist_date < '1941-10-15 00:00:00' AND hist_date > '1942-04-15 23:59:59')";
+        "AND (hist_date < '1941-10-15 00:00:00' OR hist_date > '1942-04-15 23:59:59')";
     $result = mysqli_query($dbx, $sql);
     $row = mysqli_fetch_assoc($result);
 
