@@ -227,11 +227,15 @@ const mutations = {
 
   setReports (state, payload) {
 
-    var index = state.reports.findIndex(item => item.depl_unit_id === payload.depl_unit_id)
-    if(index === -1){
-      state.reports.push(payload);
-    } else {
-      state.reports.splice(index, 1, payload);
+    var index;
+    for(var i = 0; i < payload.length; i++ ){
+
+      index = state.reports.findIndex(item => item.report_id === payload[i].report_id)
+      if(index === -1){
+        state.reports.push(payload[i]);
+      } else {
+        state.reports.splice(index, 1, payload[i]);
+      }
     }
 
   },
@@ -431,11 +435,7 @@ const  actions = {
         })
         .then(response => {
 
-          context.commit("setReports",
-            {
-              depl_unit_id: payload.depl_unit_id,
-              reports: response
-            });
+          context.commit("setReports", response);
           resolve(response.length > 0);
 
         })
