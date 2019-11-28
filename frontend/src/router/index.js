@@ -29,6 +29,7 @@ import CampaignInfoUnits from '../components/campaign/Unit'
 import CampaignInfoSideNav from '../components/campaign/SideNav'
 import CampaignInfoMissionUnitsSideNav from '../components/campaign/MissionUnitSideNav'
 import Report from '../components/campaign/Report'
+import CampaignMissionSynop from '../components/campaign/Synop'
 
 //Report submission
 import ReportCharacterSelection from '../components/campaign/ReportCharacterSelection'
@@ -189,7 +190,7 @@ const router = new VueRouter({
               path: 'synop/:depl_unit_id',
               name: 'MissionSynop',
               components: {
-                mission_lobby_content: CampaignInfoMissionBriefing
+                mission_lobby_content: CampaignMissionSynop
               }
             },
             {

@@ -46,6 +46,7 @@ export default {
     updateMissionID: function (m_id) {
 
       if(this.filterByKey("campaign_units", "campaign_id", this.$route.params.campaign_id).length === 0){
+
         this.$store.dispatch('missionStore/loadStoreData',
           {
             caller: this.$options.name,
@@ -61,7 +62,7 @@ export default {
       }
 
       if(this.filterByKey("reports", "mission_id", this.$route.params.mission_id).length === 0){
-        console.log("loading reports");
+
         this.$store.dispatch('missionStore/loadStoreData',
           {
             caller: this.$options.name,
