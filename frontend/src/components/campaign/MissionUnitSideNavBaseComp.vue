@@ -1,13 +1,15 @@
 <template>
   <div class="mainContainer" >
-    <div>
-      <div class="inline" v-bind:class="{ axis: isAxis, allied: isAllied }">
-        <button v-show="children.length >0" v-on:click.stop="toggleChildUnits">{{showChildUnitsButtonText}}</button>
+      <DivLinkButton
+        class="inline"
+        v-bind:class="{ axis: isAxis, allied: isAllied }"
+        v-bind="{routeName: 'MissionSynop', routeParams: {depl_unit_id: depl_unit_id}}"
+      >
+        <button v-show="children.length > 0" v-on:click.stop="toggleChildUnits">{{showChildUnitsButtonText}}</button>
         <button v-show="reports.length > 0" v-on:click.stop="toggleReports">{{showReportsButtonText}}</button>
         <img class="unitEmblem" :src="image"/>
         <span class="heading">{{ hist_unit_name }}</span>
-      </div>
-    </div>
+      </DivLinkButton>
     <div class="unit-name" v-show="showChildUnits" v-for="child in children">
       <MissionUnitsSideNavBaseComp v-bind="child"></MissionUnitsSideNavBaseComp>
     </div>
