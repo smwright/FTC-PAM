@@ -26,7 +26,7 @@ export default {
   mixins: [stringConv],
   mounted () {
 
-    this.loadBriefing();
+    this.loadBriefing(this.$route.params.mission_id, this.$route.params.briefing_faction);
   },
   beforeRouteUpdate (to, from, next) {
     // called when the route that renders this component has changed,
@@ -35,7 +35,7 @@ export default {
     // navigate between `/foo/1` and `/foo/2`, the same `Foo` component instance
     // will be reused, and this hook will be called when that happens.
     // has access to `this` component instance.
-    this.loadBriefing;
+    this.loadBriefing(to.params.mission_id, to.params.briefing_faction);
     next();
   },
 
@@ -47,29 +47,29 @@ export default {
   },
   methods: {
 
-    loadBriefing: function () {
+    loadBriefing: function (mission_id, faction) {
+
       this.$dbCon.requestViewData(this.$options.name,
-        {view:"briefing_info", mission_id:this.$route.params.mission_id, faction:this.$route.params.briefing_faction})
-        .then(response => {
-          this.briefing_info = response[0];
-          this.checkAuthentication();
-        })
-        .catch(error => {
-          console.log(error.message);
-        });
+      {view:"briefing_info", mission_id: mission_id, faction: faction})
+      .then(response => {
+
+        this.briefing_info = response[0];
+        this.checkAuthentication(mission_id, faction);
+      })
+      .catch(error => {
+        console.log(error.message);
+      });
     },
 
-    checkAuthentication: function () {
-
-      console.log("CHECKING "+this.briefing_info.mission_status);
+    checkAuthentication: function (mission_id, faction) {
 
       if(this.briefing_info.mission_status == 2) {
         this.is_authorized = true;
       } else {
-        console.log("AUTH: "+this.$auth.session.getAll())
-        this.$auth.getFaction(this.$options.name, this.$route.params.mission_id)
+
+        this.$auth.getFaction(this.$options.name, mission_id)
           .then(response => {
-            this.is_authorized = response[0].faction === this.$route.params.briefing_faction;
+            this.is_authorized = response[0].faction === faction;
           })
           .catch(error => {
             console.log(error.message);
