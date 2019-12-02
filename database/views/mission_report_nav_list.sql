@@ -7,15 +7,18 @@ VIEW `mission_report_nav_list` AS
         `report`.`mission_id` AS `mission_id`,
         `report`.`deployed_unit_id` AS `depl_unit_id`,
         `report`.`id` AS `report_id`,
+        `report`.`date_submitted` AS `date_submitted`,
         `career_character`.`first_name` AS `first_name`,
         `career_character`.`last_name` AS `last_name`,
         `acg_member`.`callsign` AS `callsign`,
+        `accepting_member`.`callsign` AS `accepting_member`,
         `mission_member_rank`.`abreviation` AS `abreviation`,
         `report`.`accepted` AS `accepted`
     FROM
-        (((((`report`
+        ((((((`report`
         JOIN `career_character` ON ((`career_character`.`id` = `report`.`character_id`)))
         JOIN `acg_member` ON ((`acg_member`.`id` = `career_character`.`personified_by`)))
+        LEFT JOIN `acg_member` `accepting_member` ON ((`accepting_member`.`id` = `report`.`accepted_by`)))
         JOIN `deployed_unit` ON ((`deployed_unit`.`id` = `report`.`deployed_unit_id`)))
         JOIN `hist_unit` ON ((`hist_unit`.`id` = `deployed_unit`.`hist_unit_id`)))
         JOIN `mission_member_rank` ON (((`mission_member_rank`.`mission_id` = `report`.`mission_id`)
