@@ -369,7 +369,7 @@ function checkLWDecorations($characterID, $missionID, $dbx){
 
     //Check for Verwundetenabzeichen in schwarz
     $medalAbr = "VA II";
-    $criteria = $pilotWounded == 1;
+    $criteria = $pilotWounded > 0;
     addRemoveDecoration($medalAbr, $criteria, $decorationsArray, $awardedArray,
         $awardArray, $characterID, $missionDate, $dbx);
 
