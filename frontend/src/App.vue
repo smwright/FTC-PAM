@@ -309,6 +309,30 @@ select {
 
 }
 
+.div-button-half{
+
+  width: calc(50% - 30px);
+  height: 7em;
+  margin: 10px 2px 10px 2px;
+  padding: 10px;
+  cursor: pointer;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 15px;
+  border-color: rgba(0, 0, 0, 0.0);
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.div-button-half:hover {
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 15px;
+  border-color: #F28900;
+  background: rgba(0, 0, 0, 0.4);
+
+}
+
+
 .div-button-inactive{
 
   width: calc(100% - 26px);
@@ -419,6 +443,12 @@ select {
 .heading{
   font-weight: bold;
   font-size: 1.2em;
+}
+
+
+.headingBigger{
+  font-size: xx-large;
+  font-weight: bold;
 }
 
 .white-space-pre-line{
@@ -582,29 +612,5 @@ DraggableTree div {
   padding: 0;
   display: flex;
   align-items: center;
-}
-
-.fa {
-  padding: 5px;
-  font-size: 20px;
-  width: 20px;
-  text-align: center;
-  text-decoration: none;
-  margin: 0px 0px;
-  border-radius: 50%;
-}
-
-.fa:hover {
-  opacity: 0.7;
-}
-
-.fa-facebook {
-  background: #3B5998;
-  color: white;
-}
-
-.fa-youtube {
-  background: #bb0000;
-  color: white;
 }
 </style>

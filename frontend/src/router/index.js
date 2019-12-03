@@ -9,6 +9,7 @@ import ACGInfoIndex from '@/components/acg_info/ACGInfoIndex'
 import ACGComms from '@/components/acg_info/ACGComms'
 import ACGHistory from '@/components/acg_info/ACGHistory'
 import ACGJoining from '@/components/acg_info/ACGJoining'
+import ACGRanks from '@/components/acg_info/ACGRanks'
 import ACGInfoSideNav from '../components/acg_info/ACGInfoSideNav'
 
 //ACG Members
@@ -43,10 +44,16 @@ import Assets from '../components/admin/Assets'
 
 
 //Flight school components
-import FlightSchoolSideNav from '@/components/FlightSchoolSideNav'
-import FlightSchoolMain from '@/components/FlightSchoolMain'
-import FlightSchoolFirstLesson from '@/components/FlightSchoolFirstLesson'
-import FlightSchoolSecondLesson from '@/components/FlightSchoolSecondLesson'
+import FlightSchoolSideNav from '@/components/flight_school/FlightSchoolSideNav'
+import FlightSchoolMain from '@/components/flight_school/FlightSchoolMain'
+import FlightSchoolRAF from '@/components/flight_school/FlightSchoolRAF'
+import FlightSchoolLW from '@/components/flight_school/FlightSchoolLW'
+import FlightSchoolVVS from '@/components/flight_school/FlightSchoolVVS'
+import FlightSchoolUSAAF from '@/components/flight_school/FlightSchoolUSAAF'
+import FlightSchoolRAI from '@/components/flight_school/FlightSchoolRAI'
+import FlightSchoolBasicNavigation from '@/components/flight_school/FlightSchoolBasicNavigation'
+import FlightSchoolAdvancedNavigation from '@/components/flight_school/FlightSchoolAdvancedNavigation'
+
 
 import Home from '@/components/Home'
 
@@ -79,6 +86,16 @@ const router = new VueRouter({
         sidenav: ACGInfoSideNav
       }
     },
+
+    {
+      path: '/ranks/',
+      name: 'ACGRanks',
+      components: {
+        default: ACGRanks,
+        sidenav: ACGInfoSideNav
+      }
+    },
+
     {
       path: '/communications/',
       name: 'ACGComms',
@@ -260,28 +277,69 @@ const router = new VueRouter({
     {
       // Main entry of the flight school
       path: '/flight-school',
-      name: 'FlightSchool',
+      name: 'FlightSchoolMain',
       components: {
         default: FlightSchoolMain,
         sidenav: FlightSchoolSideNav
-      },
-      children: [
+      }
+    },
+
         {
-          path: '/flight-school/first-lesson',
-          name: 'FirstLesson',
+          path: '/flight-school/basic-navigation',
+          name: 'FlightSchoolBasicNavigation',
           components: {
-            lessoncontainer: FlightSchoolFirstLesson
+            default: FlightSchoolBasicNavigation,
+            sidenav: FlightSchoolSideNav
           }
         },
         {
-          path: '/flight-school/second-lesson',
-          name: 'SecondLesson',
+          path: '/flight-school/advanced-navigation',
+          name: 'FlightSchoolAdvancedNavigation',
           components: {
-            lessoncontainer: FlightSchoolSecondLesson
+            default: FlightSchoolAdvancedNavigation,
+            sidenav: FlightSchoolSideNav
+          }
+        },
+        {
+          path: '/flight-school/royal-air-force',
+          name: 'FlightSchoolRAF',
+          components: {
+            default: FlightSchoolRAF,
+            sidenav: FlightSchoolSideNav
+          }
+        },
+        {
+          path: '/flight-school/luftwaffe',
+          name: 'FlightSchoolLW',
+          components: {
+            default: FlightSchoolLW,
+            sidenav: FlightSchoolSideNav
+          }
+        },
+        {
+          path: '/flight-school/soviet-air-forces',
+          name: 'FlightSchoolVVS',
+          components: {
+            default: FlightSchoolVVS,
+            sidenav: FlightSchoolSideNav
+          }
+        },
+        {
+          path: '/flight-school/united-states-army-air-force',
+          name: 'FlightSchoolUSAAF',
+          components: {
+            default: FlightSchoolUSAAF,
+            sidenav: FlightSchoolSideNav
+          }
+        },
+        {
+          path: '/flight-school/regia-aeronautica-italiana',
+          name: 'FlightSchoolRAI',
+          components: {
+            default: FlightSchoolRAI,
+            sidenav: FlightSchoolSideNav
           }
         }
-      ]
-    },
   ]
 })
 

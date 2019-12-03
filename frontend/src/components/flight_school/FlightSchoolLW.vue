@@ -2,13 +2,13 @@
   <!--Put the html and content for the lessons and the flight school lessons here.-->
   <!--Please put every piece of the lesson page in proper html elements:-->
   <!--<p></p>, <h1></h1>, etc...-->
-  <p>Thsi is the first lesson.</p>
+  <p>Thsi is the second lesson.</p>
 </template>
 
 <script>
 export default {
   // Same name as file-name. Change the name when altering the file-name
-  name: 'FlightSchoolFirstLesson',
+  name: 'FlightSchoolLW',
   // Data needed in component, probably not necessary 
   data () {
     return {

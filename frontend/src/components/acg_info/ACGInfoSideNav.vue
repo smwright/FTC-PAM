@@ -1,11 +1,23 @@
 <template>
   <div>
     <DivLinkButton v-bind="{routeName: 'AboutACG'}">
-      <div class="heading">About us</div>
+      <div class="heading">About Us</div>
     </DivLinkButton>
 
     <DivLinkButton v-bind="{routeName: 'ACGHistory'}">
       <div class="heading">History</div>
+    </DivLinkButton>
+
+    <DivLinkButton v-bind="{routeName: 'AboutACGCampaign'}">
+      <div class="heading">Campaign</div>
+    </DivLinkButton>
+
+    <DivLinkButton v-bind="{routeName: 'ACGRanks'}">
+      <div class="heading">Ranks</div>
+    </DivLinkButton>
+
+    <DivLinkButton v-bind="{routeName: 'ACGMedals'}">
+      <div class="heading">Medals</div>
     </DivLinkButton>
 
     <div
