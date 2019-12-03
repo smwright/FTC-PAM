@@ -1,10 +1,10 @@
 <template>
-  <div class="clearfix">
-    <span>Approved by:</span>
-    <span class="bigSignatureRight" v-if="report_info.accepted && report_info.accepted_by !== null">{{ memberById(report_info.accepted_by).callsign }}</span>
+  <div style="position: relative">
+    <span class="bigSignature" style="float: right;margin-right: 15%" v-if="report_info.accepted && report_info.accepted_by !== null">{{ memberById(report_info.accepted_by).callsign }}</span>
     <br>
     <br>
-    <button
+    <br>
+    <button style="margin-right: 8%"
       v-if="isAdmin"
       class="float-right"
       v-on:click="acceptRejectReport"

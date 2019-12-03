@@ -1,44 +1,39 @@
 <template>
-  <div class="cyrillicTypewriter">
+  <div class="polyglottTypewriter">
     <div class="biggerCenter">
       <span>ОТЧЕТ О БОЕВОМ ВЫЛЕТЕ.</span>
     </div>
-    <div>
-      <span>Squadron:</span>
-      <span>{{ reportUnit.hist_unit_name }}</span>
-    </div>
-
-    <div>
-      <span>Squadron code:</span>
-      <span>{{ reportUnit.hist_unit_code }}</span>
-    </div>
-
-    <div>
-      <span>Name:</span>
-      <span> {{ decodeHTML(report_info.rank_name) }}
-        {{ decodeHTML(report_info.first_name) }} '{{ report_info.callsign }}' {{ decodeHTML(report_info.last_name) }}</span>
-    </div>
-
-    <div>
-      <span>Base:</span>
-      <span>{{ decodeHTML(report_info.base) }}</span>
-    </div>
-
-    <div>
-      <span>Type:</span>
-      <span>{{ reportAsset.name }}</span>
-    </div>
-
-    <div>
-      <span>Markings:</span>
-      <span>{{ decodeHTML(report_info.markings) }}</span>
-    </div>
-
-    <div>
-      <span>Synopsis:</span><br>
+    <div style="margin-left: 8%;margin-right: 8%">
       <TextWithImage class="white-space-pre-line" v-bind:original_text="decodeHTML(report_info.synopsis)"></TextWithImage>
       <!--<p class="white-space-pre-line">{{ decodeHTML(report_info.synopsis) }}</p>-->
     </div>
+    <div class="bigRight">
+      <ReportApprovalCompVVS></ReportApprovalCompVVS>
+    </div>
+    <div>
+      <span style="margin-left: 8%" class="bigSignature">
+        {{ decodeHTML(report_info.rank_name) }}
+        {{ decodeHTML(report_info.first_name) }}
+        {{ decodeHTML(report_info.last_name) }}
+      </span>
+    </div>
+    <div style="margin-left: 8%;margin-right: 8%">
+      <span> {{ decodeHTML(report_info.rank_name) }}
+        {{ decodeHTML(report_info.first_name) }} '{{ report_info.callsign }}' {{ decodeHTML(report_info.last_name) }}
+      </span>
+    </div>
+    <div style="margin-left: 8%;margin-right: 8%">
+      <span>{{ reportAsset.name }}</span>
+      <span>{{ decodeHTML(report_info.markings) }}</span>
+    </div>
+    <div style="margin-left: 8%;margin-right: 8%">
+      <span>{{ reportUnit.hist_unit_name }}</span>,
+      <span>{{ reportUnit.hist_unit_code }}</span>
+    </div>
+    <div style="margin-left: 8%;margin-right: 8%">
+      <span>{{ decodeHTML(report_info.base) }}, {{ decodeHTML(report_info.mission_hist_date) }}</span>
+    </div>
+
 
     <div>
       <hr>
@@ -72,7 +67,7 @@
       <hr>
     </div>
 
-    <ReportApprovalCompVVS></ReportApprovalCompVVS>
+
     <Comment></Comment>
   </div>
 </template>
@@ -133,6 +128,13 @@
     font-size: x-large;
     text-align: center
   }
+
+  .bigRight {
+    float: right;
+    font-size: large;
+    margin-right: 8%;
+  }
+
 
 </style>
 

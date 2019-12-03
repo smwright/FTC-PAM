@@ -2,7 +2,7 @@
   <div class="clearfix">
     <br>
     <span class="bigSignature" v-if="report_info.accepted && report_info.accepted_by !== null">
-      <img style="position:absolute;width:7%;left: 75%" src="/assets/images/webpage_images/raf-stamp.png"/>
+      <img style="position:absolute;width:9%;left: 75%" src="../../assets/images/webpage_images/raf-stamp.png"/>
       {{ memberById(report_info.accepted_by).callsign }}
     </span>
     <br>
