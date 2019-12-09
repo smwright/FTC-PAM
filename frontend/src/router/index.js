@@ -47,6 +47,7 @@ import Assets from '../components/admin/Assets'
 import FlightSchoolSideNav from '@/components/flight_school/FlightSchoolSideNav'
 import FlightSchoolMain from '@/components/flight_school/FlightSchoolMain'
 import FlightSchoolRAF from '@/components/flight_school/FlightSchoolRAF'
+import FlightSchoolRAFVocabulary from '@/components/flight_school/FlightSchoolRAFVocabulary'
 import FlightSchoolLW from '@/components/flight_school/FlightSchoolLW'
 import FlightSchoolVVS from '@/components/flight_school/FlightSchoolVVS'
 import FlightSchoolUSAAF from '@/components/flight_school/FlightSchoolUSAAF'
@@ -308,6 +309,14 @@ const router = new VueRouter({
             sidenav: FlightSchoolSideNav
           }
         },
+    {
+      path: '/flight-school/royal-air-force/wartime-vocabulary',
+      name: 'FlightSchoolRAFVocabulary',
+      components: {
+        default: FlightSchoolRAFVocabulary,
+        sidenav: FlightSchoolSideNav
+      }
+    },
         {
           path: '/flight-school/luftwaffe',
           name: 'FlightSchoolLW',

@@ -2,7 +2,6 @@
   <div class="flightSchool">
     <div class="text-align-center">
     <h1>Flight School</h1>
-      <img style="align-self: center;width: 70%; border-radius: 35px;" src="../../assets/images/flight_school_images/flight-school-header.jpg"/>
       <p>Welcome to the ACG Flight School! Here you can find various tutorials and other stuff which will help you to improve your flying and fighting skills. </p>
     </div>
     <div class="text-align-center">
@@ -57,7 +56,62 @@
         <span>This guide made by Marco from ATAG shows you how to easily recognise the type of an aircraft at a glance. Look out for the characteristic features of each aircraft and you will find that you will quickly be able to identify them!</span>
       </div>
     </div>
+    <div class="div-button-half float-left" v-on:click="routeTo('https://www.youtube.com/watch?v=C4-TvPxLioY&list=PLnyigzFtHeNqmQMVhq1Shl972CPX4O-0B')">
+      <div class="inline-block">
+        <img class="buttonImageThumbnail" src="../../assets/images/flight_school_images/general/requiem_flight.jpg"/>
+        <img title="IL-2 Sturmovik: Great Battles" class="buttonPlatformImage" src="../../assets/images/flight_school_images/il2_gb_logo.png"/>
+        <span class="buttonTitles">Flight by Requiem</span>
+        <br>
+        <span>This series of lessons by Requiem on YouTube teaches you the basic prenciples of flying in IL-2 Sturmovik: Great Battles.</span>
+      </div>
+    </div>
+    <div class="div-button-half float-right" v-on:click="routeTo('https://www.youtube.com/watch?v=UoADOlgfW6Q&list=PLnyigzFtHeNq7NoAEMS9KSnQcTd7LOsAC')">
+      <div class="inline-block">
+        <img class="buttonImageThumbnail" src="../../assets/images/flight_school_images/general/requiem_engines.jpg"/>
+        <img title="IL-2 Sturmovik: Great Battles" class="buttonPlatformImage" src="../../assets/images/flight_school_images/il2_gb_logo.png"/>
+        <span class="buttonTitles">Engines by Requiem</span>
+        <br>
+        <span>This second series of lessons by Requiem on YouTube teaches you how to properly manage your engine in IL-2 Sturmovik: Great Battles.</span>
+      </div>
+    </div>
+    <div class="div-button-half float-left" v-on:click="routeTo('https://www.youtube.com/watch?v=zbyGOd6NwME&list=PLnyigzFtHeNr9zTkpxyD0ksFD3CwLa2UE')">
+      <div class="inline-block">
+        <img class="buttonImageThumbnail" src="../../assets/images/flight_school_images/general/requiem_maneuvers.jpg"/>
+        <img title="IL-2 Sturmovik: Great Battles" class="buttonPlatformImage" src="../../assets/images/flight_school_images/il2_gb_logo.png"/>
+        <span class="buttonTitles">Maneuvers by Requiem</span>
+        <br>
+        <span>This third series of lessons by Requiem on YouTube teaches you the basic principles of fighter pilot maneuvers in IL-2 Sturmovik: Great Battles.</span>
+      </div>
+    </div>
+    <div class="div-button-half float-right" v-on:click="routeTo('https://www.youtube.com/watch?v=1jDeJDL9jTE&list=PLnyigzFtHeNooN19kyhiT2UqojQPacCcE')">
+      <div class="inline-block">
+        <img class="buttonImageThumbnail" src="../../assets/images/flight_school_images/general/requiem_weapons.jpg"/>
+        <img title="IL-2 Sturmovik: Great Battles" class="buttonPlatformImage" src="../../assets/images/flight_school_images/il2_gb_logo.png"/>
+        <span class="buttonTitles">Weapons by Requiem</span>
+        <br>
+        <span>This fourth series of lessons by Requiem on YouTube teaches you how to use special weapons against air and ground targets in IL-2 Sturmovik: Great Battles.</span>
+      </div>
+    </div>
+    <div class="div-button-half float-left" v-on:click="routeTo('https://www.youtube.com/watch?v=rckFuhV3BlM&list=PLnyigzFtHeNo8h6EJLrer4zIDfCHCo8XY')">
+      <div class="inline-block">
+        <img class="buttonImageThumbnail" src="../../assets/images/flight_school_images/general/requiem_dogfights.jpg"/>
+        <img title="IL-2 Sturmovik: Great Battles" class="buttonPlatformImage" src="../../assets/images/flight_school_images/il2_gb_logo.png"/>
+        <span class="buttonTitles">Dogfighting by Requiem</span>
+        <br>
+        <span>This fifth series of lessons by Requiem on YouTube teaches you how become competitive in dogfights against other players in IL-2 Sturmovik: Great Battles.</span>
+      </div>
+    </div>
+    <div class="div-button-half float-right" v-on:click="routeTo('https://www.youtube.com/watch?v=PZpS0SLZJVU&list=PLnyigzFtHeNpq6ozRQaIfU_fgOs9mBKH4')">
+      <div class="inline-block">
+        <img class="buttonImageThumbnail" src="../../assets/images/flight_school_images/general/requiem_shooting.jpg"/>
+        <img title="IL-2 Sturmovik: Great Battles" class="buttonPlatformImage" src="../../assets/images/flight_school_images/il2_gb_logo.png"/>
+        <span class="buttonTitles">Shooting by Requiem</span>
+        <br>
+        <span>This sixth series of lessons by Requiem on YouTube teaches you how to use the various gunsights and how to land deflecive shots on enemy aircraft in IL-2 Sturmovik: Great Battles.</span>
+      </div>
+    </div>
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <br><br><br><br><br><br><br><br>
     <div class="text-align-center">
       <h2>Controls</h2>
