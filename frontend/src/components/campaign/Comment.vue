@@ -16,7 +16,6 @@
       <span>Comment by {{ comment.commentator }}</span>
       <button
         v-if="isAdmin"
-        class="float-right"
         v-on:click="deleteComment(comment.comment_id)"
       >Delete</button>
       <p>{{ decodeHTML(comment.comment_text) }}</p>
