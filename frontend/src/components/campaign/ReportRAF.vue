@@ -51,49 +51,65 @@
         <div class="rTableCellLeft">Number of Enemy Aircraft</div>
         <div class="rTableCellCenter"></div>
         <div class="rTableCellLetter">(E)</div>
-        <div class="rTableCellRight"> {{ numberEnemyACStatus[report_details.number_enemy_ac] }} </div>
+<!--        <div class="rTableCellRight"> {{ numberEnemyACStatus[report_details.number_enemy_ac] }} </div>-->
+        <div style="font-size: smaller" class="rTableCellRight"> . . . . . . . . . . . . . . . . . . . .</div>
+
       </div>
       <div class="rTableRow">
         <div class="rTableCellLeft">Type of Enemy Aircraft</div>
         <div class="rTableCellCenter"></div>
         <div class="rTableCellLetter">(F)</div>
-        <div class="rTableCellRight"> {{ report_details.type_enemy_ac }} </div>
+<!--        <div class="rTableCellRight"> {{ report_details.type_enemy_ac }} </div>-->
+        <div style="font-size: smaller" class="rTableCellRight"> . . . . . . . . . . . . . . . . . . . .</div>
+
       </div>
       <div class="rTableRow">
         <div class="rTableCellLeft">Time Attack was Delivered</div>
         <div class="rTableCellCenter"></div>
         <div class="rTableCellLetter">(G)</div>
-        <div class="rTableCellRight"> {{ report_details.time_attack_delivered }} </div>
+<!--        <div class="rTableCellRight"> {{ report_details.time_attack_delivered }} </div>-->
+        <div style="font-size: smaller" class="rTableCellRight"> . . . . . . . . . . . . . . . . . . . .</div>
+
       </div>
       <div class="rTableRow">
         <div class="rTableCellLeft">Place Attack was Delivered</div>
         <div class="rTableCellCenter"></div>
         <div class="rTableCellLetter">(H)</div>
-        <div class="rTableCellRight"> {{ report_details.place_attack_delivered }} </div>
+<!--        <div class="rTableCellRight"> {{ report_details.place_attack_delivered }} </div>-->
+        <div style="font-size: smaller" class="rTableCellRight"> . . . . . . . . . . . . . . . . . . . .</div>
+
       </div>
       <div class="rTableRow">
         <div class="rTableCellLeft">Height of Enemy</div>
         <div class="rTableCellCenter"></div>
         <div class="rTableCellLetter">(J)</div>
-        <div class="rTableCellRight"> {{ report_details.enemy_height }} </div>
+<!--        <div class="rTableCellRight"> {{ report_details.enemy_height }} </div>-->
+        <div style="font-size: smaller" class="rTableCellRight"> . . . . . . . . . . . . . . . . . . . .</div>
+
       </div>
       <div class="rTableRow">
         <div class="rTableCellLeft">Enemy Casualties</div>
         <div class="rTableCellCenter"></div>
         <div class="rTableCellLetter">(K)</div>
-        <div class="rTableCellRight"> {{ report_details.enemy_casualty }} </div>
+<!--        <div class="rTableCellRight"> {{ report_details.enemy_casualty }} </div>-->
+        <div style="font-size: smaller" class="rTableCellRight"> . . . . . . . . . . . . . . . . . . . .</div>
+
       </div>
       <div class="rTableRow">
         <div class="rTableCellLeft">Our Casualties</div>
         <div class="rTableCellCenter">Aircraft</div>
         <div class="rTableCellLetter">(L)</div>
-        <div class="rTableCellRight"> {{ report_details.our_casualty_ac }} </div>
+<!--        <div class="rTableCellRight"> {{ report_details.our_casualty_ac }} </div>-->
+        <div style="font-size: smaller" class="rTableCellRight"> . . . . . . . . . . . . . . . . . . . .</div>
+
       </div>
       <div class="rTableRow">
         <div class="rTableCellLeft"></div>
         <div class="rTableCellCenter">Personnel</div>
         <div class="rTableCellLetter">(M)</div>
-        <div class="rTableCellRight"> {{ report_details.our_casualty_personnel }} </div>
+<!--        <div class="rTableCellRight"> {{ report_details.our_casualty_personnel }} </div>-->
+        <div style="font-size: smaller" class="rTableCellRight"> . . . . . . . . . . . . . . . . . . . .</div>
+
       </div>
       <div class="rTableRow">
         <div class="rTableCellLeft">GENERAL REPORT</div>

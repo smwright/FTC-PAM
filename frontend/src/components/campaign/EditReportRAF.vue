@@ -53,7 +53,7 @@
             >
               {{flight}}
             </option>
-          </select>,
+          </select>
           <select v-model="report_unit">
             <option
               v-for="d_unit in unitsByFaction(2)"
@@ -68,71 +68,87 @@
         <div title="Here pilots were required to state approximately how many enemy a/c they sighted during their operational sortie. This is a drop down menu with options ranging from 'less than 3' to '100+' with the NIL option to state that none were sighted." class="rTableCellLeft">Number of Enemy Aircraft</div>
         <div class="rTableCellCenter"></div>
         <div class="rTableCellLetter">(E)</div>
-        <div title="This field is optional in ACG" class="rTableCellRight">
-          <select v-model="report_number_enemy_ac">
-          <option
-            v-for="(number_enemy_ac, index) in numberEnemyACStatus"
-            v-bind:value="index">
-            {{number_enemy_ac}}
-          </option>
-        </select>
-        </div>
+<!--        <div title="This field is optional in ACG" class="rTableCellRight">-->
+<!--          <select v-model="report_number_enemy_ac">-->
+<!--          <option-->
+<!--            v-for="(number_enemy_ac, index) in numberEnemyACStatus"-->
+<!--            v-bind:value="index">-->
+<!--            {{number_enemy_ac}}-->
+<!--          </option>-->
+<!--        </select>-->
+<!--        </div>-->
+        <div style="font-size: smaller" class="rTableCellRight"> . . . . . . . . . . . . . . . . . . . .</div>
+
       </div>
       <div class="rTableRow">
         <div title="Here pilots inserted the approximate types of enemy a/c that they spotted during their operational sortie." class="rTableCellLeft">Type of Enemy Aircraft</div>
         <div class="rTableCellCenter"></div>
         <div class="rTableCellLetter">(F)</div>
-        <div title="This field is optional in ACG" class="rTableCellRight">
-          <input v-model="report_type_enemy_ac">
-        </div>
+<!--        <div title="This field is optional in ACG" class="rTableCellRight">-->
+<!--          <input v-model="report_type_enemy_ac">-->
+<!--        </div>-->
+        <div style="font-size: smaller" class="rTableCellRight"> . . . . . . . . . . . . . . . . . . . .</div>
+
       </div>
       <div class="rTableRow">
         <div title="Here pilots inserted the time at which they made contact with the enemy and went 'Tally Ho!'." class="rTableCellLeft">Time Attack was Delivered</div>
         <div class="rTableCellCenter"></div>
         <div class="rTableCellLetter">(G)</div>
-        <div title="This field is optional in ACG" class="rTableCellRight">
-          <input v-model="report_time_attack_delivered">
-        </div>
+<!--        <div title="This field is optional in ACG" class="rTableCellRight">-->
+<!--          <input v-model="report_time_attack_delivered">-->
+<!--        </div>-->
+        <div style="font-size: smaller" class="rTableCellRight"> . . . . . . . . . . . . . . . . . . . .</div>
+
       </div>
       <div class="rTableRow">
         <div title="Here pilots inserted the approximate location at which they made contact with the enemy." class="rTableCellLeft">Place Attack was Delivered</div>
         <div class="rTableCellCenter"></div>
         <div class="rTableCellLetter">(H)</div>
-        <div title="This field is optional in ACG" class="rTableCellRight">
-          <input v-model="report_place_attack_delivered">
-        </div>
+<!--        <div title="This field is optional in ACG" class="rTableCellRight">-->
+<!--          <input v-model="report_place_attack_delivered">-->
+<!--        </div>-->
+        <div style="font-size: smaller" class="rTableCellRight"> . . . . . . . . . . . . . . . . . . . .</div>
+
       </div>
       <div class="rTableRow">
         <div title="Here pilots inserted the approximate altitude at which the enemy a/c's were at when they made contact with the pilot's squadron or flight." class="rTableCellLeft">Height of Enemy</div>
         <div class="rTableCellCenter"></div>
         <div class="rTableCellLetter">(J)</div>
-        <div title="This field is optional in ACG" class="rTableCellRight">
-          <input v-model="report_enemy_height">
-        </div>
+<!--        <div title="This field is optional in ACG" class="rTableCellRight">-->
+<!--          <input v-model="report_enemy_height">-->
+<!--        </div>-->
+        <div style="font-size: smaller" class="rTableCellRight"> . . . . . . . . . . . . . . . . . . . .</div>
+
       </div>
       <div class="rTableRow">
         <div title="Here pilots inserted approximate the casualties that their squadron inflicted as a unit." class="rTableCellLeft">Enemy Casualties</div>
         <div class="rTableCellCenter"></div>
         <div class="rTableCellLetter">(K)</div>
-        <div title="This field is optional in ACG" class="rTableCellRight">
-          <input v-model="report_enemy_casualty">
-        </div>
+<!--        <div title="This field is optional in ACG" class="rTableCellRight">-->
+<!--          <input v-model="report_enemy_casualty">-->
+<!--        </div>-->
+        <div style="font-size: smaller" class="rTableCellRight"> . . . . . . . . . . . . . . . . . . . .</div>
+
       </div>
       <div class="rTableRow">
         <div class="rTableCellLeft">Our Casualties</div>
         <div title="Here pilots stated what aircraft their squadron lost during the fight. This does not include damaged aircraft." class="rTableCellCenter">Aircraft</div>
         <div class="rTableCellLetter">(L)</div>
-        <div title="This field is optional in ACG" class="rTableCellRight">
-          <input v-model="report_our_casualty_ac">
-        </div>
+<!--        <div title="This field is optional in ACG" class="rTableCellRight">-->
+<!--          <input v-model="report_our_casualty_ac">-->
+<!--        </div>-->
+        <div style="font-size: smaller" class="rTableCellRight"> . . . . . . . . . . . . . . . . . . . .</div>
+
       </div>
       <div class="rTableRow">
         <div class="rTableCellLeft"></div>
         <div title="Here pilots stated what pilot casualties their squadron took during the sortie. 'Sgt Smith MIA' for example, or NIL for none." class="rTableCellCenter">Personnel</div>
         <div class="rTableCellLetter">(M)</div>
-        <div title="This field is optional in ACG" class="rTableCellRight">
-          <input v-model="report_our_casualty_personnel">
-        </div>
+<!--        <div title="This field is optional in ACG" class="rTableCellRight">-->
+<!--          <input v-model="report_our_casualty_personnel">-->
+<!--        </div>-->
+        <div style="font-size: smaller" class="rTableCellRight"> . . . . . . . . . . . . . . . . . . . .</div>
+
       </div>
       <div class="rTableRow">
         <div class="rTableCellLeft">GENERAL REPORT</div>
@@ -597,7 +613,7 @@ export default {
     display: table-cell;
     font-size: large;
     padding-top: 0.48%;
-    padding-bottom: 0.48%;
+    padding-bottom: 1.2%;
     width: 30%;
     /*border: 1px solid #999999;*/
   }
