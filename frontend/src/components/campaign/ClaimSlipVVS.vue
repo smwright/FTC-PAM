@@ -1,17 +1,17 @@
 <template>
-  <div>
-    <hr>
-    <span>Aerial Claims:</span>
+  <div class="polyglottTypewriter">
     <div>
-      <ClaimLW
+      <hr>
+      <span>Aerial Claims:</span>
+      <ClaimVVS
         v-for="aerial_claim in aerial_claims"
         v-bind:key="aerial_claim.claim_id"
         v-bind="aerial_claim"
-      ></ClaimLW>
+      ></ClaimVVS>
     </div>
-    <hr>
-    <span>Ground Claims:</span>
-    <div class="top-bottom-margin">
+    <div>
+      <hr>
+      <span>Ground Claims:</span>
       <ClaimGround
         v-for="ground_claim in ground_claims"
         v-bind:key="ground_claim.claim_id"
@@ -23,7 +23,6 @@
       <span>Pilot status:</span>
       <span>{{ pilotStatus[report_info.pilot_status] }}</span>
     </div>
-
     <div>
       <span>Aircraft status:</span>
       <span>{{ assetStatus[report_info.asset_status] }}</span>
@@ -36,15 +35,15 @@
 <script>
   import stringConv from "../../resource/stringConverter"
   import statConv from "../../resource/statusConverter"
-  import ClaimLW from "./ClaimLW"
+  import ClaimVVS from "./ClaimVVS"
   import ClaimGround from "./ClaimGround"
   import Comment from "./Comment"
   import { mapState, mapGetters } from "vuex"
 
   export default {
-    name: "ClaimAbschussSlipLW",
+    name: "ClaimSlipVVS",
     components: {
-      ClaimLW,
+      ClaimVVS,
       ClaimGround,
       Comment
     },
@@ -81,14 +80,4 @@
 
 <style scoped>
 
-  .biggerCenter {
-    text-align: center;
-    font-size: xx-large;
-  }
-
-  .big{
-    font-size: large;
-    margin-left: 8%;
-    margin-right: 8%;
-  }
 </style>

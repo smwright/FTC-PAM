@@ -135,7 +135,7 @@
         </div>
       </div>
       <div class="rTableRow">
-        <div title="This is where you typed a synopsis of how the mission went from your perspective. This field is optional in ACG." class="rTableCellLeft">GENERAL REPORT</div>
+        <div class="rTableCellLeft">GENERAL REPORT</div>
         <div class="rTableCellCenter"></div>
         <div class="rTableCellLetter">(R)</div>
         <div class="rTableCellRight"></div>
@@ -146,11 +146,16 @@
       <textarea style="
       margin-left: 8%;
       height: 20em;
-      width: 83%" v-model="report_synopsis" class="textarea-style"></textarea>
+      width: 83%" v-model="report_synopsis" title="This is where you type a synopsis of how the mission went from your perspective. This field is optional in ACG. Images can be included by using [img]image-url[/img]" class="textarea-style"></textarea>
     </div>
     <br>
     <br>
-    <div class="bigRight">
+    <div>
+      <span style="margin-left: 8%" class="bigSignature">
+        {{ decodeHTML(report_info.abreviation) }}
+        {{ decodeHTML(report_info.first_name) }}
+        {{ decodeHTML(report_info.last_name) }}
+      </span>
     </div>
     <div title="Here you must insert the Section and position you flew in during the mission. This field is mandatory in ACG." class="bigLeft">
       <span>

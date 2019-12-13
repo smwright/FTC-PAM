@@ -22,7 +22,7 @@
     <br>
     <br>
     <div class="bigLWText">
-      <span>Zum Feindflug des {{ decodeHTML(report_info.abreviation) }} {{ decodeHTML(report_info.last_name) }} am {{ decodeHTML(report_info.mission_hist_date) }}.</span>
+      <span>Zum Feindflug des {{ decodeHTML(report_info.abreviation) }} {{ decodeHTML(report_info.last_name) }}, verfasst im Felde am {{ decodeHTML(report_info.mission_hist_date) }}. Wenn nichts hier folgt, ist nichts zu berichten.</span>
     </div>
     <div class="bigLWText">
       <TextWithImage class="white-space-pre-line" v-bind:original_text="decodeHTML(report_info.synopsis)"></TextWithImage>

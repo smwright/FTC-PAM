@@ -1,6 +1,6 @@
 <template>
   <div>
-    <!--This part is for showing the report edit elements-->
+    <!--This part is for showing the report and claim slip edit elements-->
 
     <template v-if="this.show_edit_display">
       <div class="clearfix container margin-left-right">
@@ -16,10 +16,11 @@
       <div class="typed-on-paper" v-if="report_loaded">
         <EditClaimAbschussSlipLW v-if="report_info.faction==1" v-bind="report_info"></EditClaimAbschussSlipLW>
         <EditClaimSlipRAF v-else-if="report_info.faction==2" v-bind="report_info"></EditClaimSlipRAF>
+        <EditClaimSlipVVS v-else-if="report_info.faction==3" v-bind="report_info"></EditClaimSlipVVS>
       </div>
     </template>
 
-    <!--This part is for showing the report -->
+    <!--This part is for showing the report and claim slip -->
 
     <template v-else>
       <div class="clearfix container">
@@ -35,6 +36,8 @@
       <div class="typed-on-paper" v-if="report_loaded">
         <ClaimAbschussSlipLW v-if="report_info.faction==1" v-bind="report_info"></ClaimAbschussSlipLW>
         <ClaimSlipRAF v-else-if="report_info.faction==2" v-bind="report_info"></ClaimSlipRAF>
+        <ClaimSlipVVS v-else-if="report_info.faction==3" v-bind="report_info"></ClaimSlipVVS>
+
       </div>
 
       <template v-else>
@@ -51,11 +54,15 @@ import ReportVVS from "./ReportVVS"
 import EditReportLW from "./EditReportLW"
 import EditReportRAF from "./EditReportRAF"
 import EditReportVVS from "./EditReportVVS"
+import ClaimSlipRAF from "./ClaimSlipRAF"
+import EditClaimSlipRAF from "./EditClaimSlipRAF"
+import ClaimAbschussSlipLW from "./ClaimAbschussSlipLW"
+import EditClaimAbschussSlipLW from "./EditClaimAbschussSlipLW"
+import ClaimSlipVVS from "./ClaimSlipVVS"
+import EditClaimSlipVVS from "./EditClaimSlipVVS"
 import { mapState, mapGetters } from "vuex"
-import ClaimSlipRAF from "./ClaimSlipRAF";
-import EditClaimSlipRAF from "./EditClaimSlipRAF";
-import ClaimAbschussSlipLW from "./ClaimAbschussSlipLW";
-import EditClaimAbschussSlipLW from "./EditClaimAbschussSlipLW";
+
+
 
 export default {
   name: "Report",
@@ -69,7 +76,9 @@ export default {
     ReportVVS,
     EditReportLW,
     EditReportRAF,
-    EditReportVVS
+    EditReportVVS,
+    ClaimSlipVVS,
+    EditClaimSlipVVS
   },
   mounted () {
 

@@ -1,6 +1,8 @@
 <template>
   <div style="position: relative">
-    <span class="bigSignature" style="float: right;margin-right: 15%" v-if="report_info.accepted && report_info.accepted_by !== null">{{ memberById(report_info.accepted_by).callsign }}</span>
+    <span class="bigSignature" style="float: right;margin-right: 15%" v-if="report_info.accepted && report_info.accepted_by !== null">{{ memberById(report_info.accepted_by).callsign }}
+        <img style="position:absolute;width:100%;left:50%" src="../../assets/images/webpage_images/vvs-stamp.png"/>
+    </span>
     <br>
     <br>
     <br>

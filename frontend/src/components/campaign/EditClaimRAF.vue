@@ -1,7 +1,6 @@
 <template>
   <div>
-    <hr>
-    <div>
+    <div style="float: right">
       <button v-on:click="deleteClaim">X</button>
     </div>
     <table>
@@ -43,9 +42,11 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex"
 import stringConv from "../../resource/stringConverter"
 import statConv from "../../resource/statusConverter"
+import vSelect from 'vue-select'
+import 'vue-select/dist/vue-select.css'
+import { mapGetters } from "vuex"
 
   export default {
   name: "EditClaimRAF",
@@ -53,6 +54,9 @@ import statConv from "../../resource/statusConverter"
     statConv,
     stringConv
   ],
+    components: {
+    vSelect
+    },
   props: {
     claim_id: {
       type: Number,

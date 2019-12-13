@@ -1,28 +1,28 @@
 <template>
-  <div>
+  <div class="polyglottTypewriter">
     <div>
       <hr>
       <span>Aerial Claims:</span>
-      <EditClaimLW
+      <EditClaimVVS
         v-for="aerial_claim in aerial_claims"
         v-bind:key="aerial_claim.claim_id"
-        v-bind:claim_id="aerial_claim.claim_id"
-      ></EditClaimLW>
-      <div>
-        <button v-on:click="addAerialClaim">Add aerial claim</button>
-      </div>
+        v-bind="aerial_claim"
+      ></EditClaimVVS>
     </div>
-    <hr>
-    <span>Ground Claims:</span>
     <div>
+      <button v-on:click="addAerialClaim">Add aerial claim</button>
+    </div>
+    <div>
+      <hr>
+      <span>Ground Claims:</span>
       <EditClaimGround
         v-for="ground_claim in ground_claims"
         v-bind:key="ground_claim.claim_id"
         v-bind="ground_claim"
       ></EditClaimGround>
-          <div>
-            <button v-on:click="addGroundClaim">Add ground claim</button>
-          </div>
+    </div>
+    <div>
+      <button v-on:click="addGroundClaim">Add ground claim</button>
     </div>
     <div>
       <hr>
@@ -53,23 +53,25 @@
       </span>
       <hr>
     </div>
-  </div>
 
+  </div>
 
 </template>
 
 <script>
   import stringConv from "../../resource/stringConverter"
   import statConv from "../../resource/statusConverter"
-  import EditClaimLW from "./EditClaimLW"
+  import EditClaimVVS from "./EditClaimVVS"
   import EditClaimGround from "./EditClaimGround"
+  import Comment from "./Comment"
   import { mapState, mapGetters } from "vuex"
 
   export default {
-    name: "EditClaimAbschussSlipLW",
+    name: "EditClaimSlipVVS",
     components: {
-      EditClaimLW,
-      EditClaimGround
+      EditClaimVVS,
+      EditClaimGround,
+      Comment
     },
     mixins: [
       stringConv,
@@ -148,14 +150,8 @@
           {
             report_id: this.report_info.report_id,
             asset_id: null,
-            claim_time: null,
-            place: null,
-            opponent: null,
-            fate_of_crew: 0,
-            type_of_destruction: 0,
-            type_of_impact: 0,
-            confirmed: 0,
-            witness_id: null
+            enemy_status: 0,
+            shared: 0
           });
       },
 

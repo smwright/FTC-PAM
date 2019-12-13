@@ -82,14 +82,16 @@
 
 <script>
 import statConv from "../../resource/statusConverter"
+import stringConv from "../../resource/stringConverter"
 import vSelect from 'vue-select'
-import 'vue-select/dist/vue-select.css';
+import 'vue-select/dist/vue-select.css'
 import { mapGetters } from "vuex"
 
   export default {
     name: "EditClaimLW",
     mixins: [
-      statConv
+      statConv,
+      stringConv
     ],
     components: {
       vSelect

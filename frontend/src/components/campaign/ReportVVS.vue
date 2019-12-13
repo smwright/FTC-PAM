@@ -3,10 +3,13 @@
     <div class="biggerCenter">
       <span>ОТЧЕТ О БОЕВОМ ВЫЛЕТЕ.</span>
     </div>
+    <br>
     <div style="margin-left: 8%;margin-right: 8%">
+      <span>Ниже следует отчет подписавшегося внизу пилота который выполнял боевое задание {{ decodeHTML(report_info.mission_hist_date) }} защищая Советский Союз. Если ниже сообщение отсутствует, то сообщать не о чем.</span>
       <TextWithImage class="white-space-pre-line" v-bind:original_text="decodeHTML(report_info.synopsis)"></TextWithImage>
       <!--<p class="white-space-pre-line">{{ decodeHTML(report_info.synopsis) }}</p>-->
     </div>
+    <br>
     <div class="bigRight">
       <ReportApprovalCompVVS></ReportApprovalCompVVS>
     </div>
@@ -33,42 +36,6 @@
     <div style="margin-left: 8%;margin-right: 8%">
       <span>{{ decodeHTML(report_info.base) }}, {{ decodeHTML(report_info.mission_hist_date) }}</span>
     </div>
-
-
-    <div>
-      <hr>
-      Claims:
-      <ClaimVVS
-        v-for="aerial_claim in aerial_claims"
-        v-bind:key="aerial_claim.claim_id"
-        v-bind="aerial_claim"
-      ></ClaimVVS>
-    </div>
-
-    <div>
-      <hr>
-      Ground Claims:
-      <ClaimGround
-        v-for="ground_claim in ground_claims"
-        v-bind:key="ground_claim.claim_id"
-        v-bind="ground_claim"
-      ></ClaimGround>
-    </div>
-
-    <div>
-      <hr>
-      <span>Pilot status:</span>
-      <span>{{ pilotStatus[report_info.pilot_status] }}</span>
-    </div>
-
-    <div>
-      <span>Aircraft status:</span>
-      <span>{{ assetStatus[report_info.asset_status] }}</span>
-      <hr>
-    </div>
-
-
-    <Comment></Comment>
   </div>
 </template>
 
@@ -76,18 +43,12 @@
   import stringConv from "../../resource/stringConverter"
   import statConv from "../../resource/statusConverter"
   import TextWithImage from "../basic_comp/TextWithImages"
-  import ClaimVVS from "./ClaimVVS"
-  import ClaimGround from "./ClaimGround"
-  import Comment from "./Comment"
   import ReportApprovalCompVVS from "./ReportApprovalCompVVS"
   import { mapState, mapGetters } from "vuex"
 
   export default {
     name: "ReportVVS",
     components: {
-      ClaimVVS,
-      ClaimGround,
-      Comment,
       TextWithImage,
       ReportApprovalCompVVS
     },

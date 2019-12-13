@@ -2,7 +2,7 @@
   <div>
     <div>
       <hr>
-      Claims:
+      Aerial Claims:
       <EditClaimRAF
         v-for="aerial_claim in aerial_claims"
         v-bind:key="aerial_claim.claim_id"
@@ -12,7 +12,6 @@
     <div>
       <button v-on:click="addAerialClaim">Add aerial claim</button>
     </div>
-
     <div>
       <hr>
       Ground Claims:

@@ -2,17 +2,16 @@
   <div>
     <div>
       <hr>
-      Claims:
+      <span>Aerial Claims:</span>
       <ClaimRAF
         v-for="aerial_claim in aerial_claims"
         v-bind:key="aerial_claim.claim_id"
         v-bind="aerial_claim"
       ></ClaimRAF>
     </div>
-
     <div>
       <hr>
-      Ground Claims:
+      <span>Ground Claims:</span>
       <ClaimGround
         v-for="ground_claim in ground_claims"
         v-bind:key="ground_claim.claim_id"
@@ -37,11 +36,9 @@
 <script>
   import stringConv from "../../resource/stringConverter"
   import statConv from "../../resource/statusConverter"
-  import TextWithImage from "../basic_comp/TextWithImages"
   import ClaimRAF from "./ClaimRAF"
   import ClaimGround from "./ClaimGround"
   import Comment from "./Comment"
-  import ReportApprovalCompRAF from "./ReportApprovalCompRAF"
   import { mapState, mapGetters } from "vuex"
 
   export default {
@@ -49,9 +46,7 @@
     components: {
       ClaimRAF,
       ClaimGround,
-      Comment,
-      ReportApprovalCompRAF,
-      TextWithImage
+      Comment
     },
     mixins: [
       stringConv,

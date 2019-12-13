@@ -56,10 +56,10 @@
     <br>
     <br>
     <div class="bigLWText">
-      <span>Zum Feindflug des {{ decodeHTML(report_info.abreviation) }} {{ decodeHTML(report_info.last_name) }} am {{ decodeHTML(report_info.mission_hist_date) }}.</span>
+      <span>Zum Feindflug des {{ decodeHTML(report_info.abreviation) }} {{ decodeHTML(report_info.last_name) }}, verfasst im Felde am {{ decodeHTML(report_info.mission_hist_date) }}. Wenn hier nichts folgt, ist nichts zu berichten.</span>
     </div>
     <div class="bigLWText">
-      <textarea title="Here you can fill in a short synopsis for your sortie. If you are claiming any victories in the section below, this field is mandatory. You may insert screenshots with the [img][/img] tags." v-model="report_synopsis" class="textarea-style"></textarea>
+      <textarea title="Here you can fill in a short synopsis for your sortie. If you are claiming any victories in the section below, this field is mandatory. You may insert screenshots with the [img]img-url[/img] tags." v-model="report_synopsis" class="textarea-style"></textarea>
     </div>
     <div>
       <span style="margin-left: 15%" class="bigSignature">
