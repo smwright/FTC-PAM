@@ -29,7 +29,11 @@
       <span>{{ assetStatus[report_info.asset_status] }}</span>
       <hr>
     </div>
+    <div style="float: right;margin-right: 8%">
+      <ReportApprovalCompLW></ReportApprovalCompLW>
+    </div>
     <Comment></Comment>
+
   </div>
 </template>
 
@@ -38,6 +42,7 @@
   import statConv from "../../resource/statusConverter"
   import ClaimLW from "./ClaimLW"
   import ClaimGround from "./ClaimGround"
+  import ReportApprovalCompLW from "./ReportApprovalCompLW"
   import Comment from "./Comment"
   import { mapState, mapGetters } from "vuex"
 
@@ -45,6 +50,7 @@
     name: "ClaimAbschussSlipLW",
     components: {
       ClaimLW,
+      ReportApprovalCompLW,
       ClaimGround,
       Comment
     },

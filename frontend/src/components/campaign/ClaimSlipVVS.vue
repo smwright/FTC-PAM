@@ -28,6 +28,9 @@
       <span>{{ assetStatus[report_info.asset_status] }}</span>
       <hr>
     </div>
+    <div style="float: right;margin-right: 8%">
+    <ReportApprovalCompVVS></ReportApprovalCompVVS>
+    </div>
     <Comment></Comment>
   </div>
 </template>
@@ -39,10 +42,12 @@
   import ClaimGround from "./ClaimGround"
   import Comment from "./Comment"
   import { mapState, mapGetters } from "vuex"
+  import ReportApprovalCompVVS from "./ReportApprovalCompVVS";
 
   export default {
     name: "ClaimSlipVVS",
     components: {
+      ReportApprovalCompVVS,
       ClaimVVS,
       ClaimGround,
       Comment

@@ -95,7 +95,7 @@ export default {
 <style scoped>
 
 .textarea-style{
-  width: 98%;
+  width: 50%;
   height: 10em;
 }
 
