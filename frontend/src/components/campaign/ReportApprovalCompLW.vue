@@ -1,26 +1,38 @@
 <template>
-  <div>
-    <div>
-      <span class="bigSignature" v-if="report_info.accepted && report_info.accepted_by !== null">
-        <img style="position:absolute;width:17%;" src="../../assets/images/webpage_images/lw-stamp.png"/>
-       {{ memberById(report_info.accepted_by).callsign }}
-      </span>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-      <br>
-    </div>
-    <button
-      v-if="isAdmin"
-      class="float-right"
-      v-on:click="acceptRejectReport"
-    >{{ acceptButtonText }}</button>
+  <div
+    class="approval-area"
+    v-on:mouseover="mouseover"
+    v-on:mouseleave="mouseleave"
+  >
+
+    <template v-if="isAdmin">
+      <div
+        class="bigSignature"
+        v-if="report_info.accepted && report_info.accepted_by !== null"
+      >
+        <img class="stamp" src="../../assets/images/webpage_images/lw-stamp.png"/>
+        <button
+          v-if="isMouseOver"
+          class="approve-button"
+          v-on:click="acceptRejectReport"
+        >Revoke</button>
+        <span v-else class="signature">{{ memberById(report_info.accepted_by).callsign }}</span>
+      </div>
+      <div v-else>
+        <button class="approve-button" v-on:click="acceptRejectReport">Approve</button>
+      </div>
+    </template>
+
+    <template v-else>
+      <div
+        class="bigSignature"
+        v-if="report_info.accepted && report_info.accepted_by !== null"
+      >
+        <img class="stamp" src="../../assets/images/webpage_images/lw-stamp.png"/>
+        <span class="signature">{{ memberById(report_info.accepted_by).callsign }}</span>
+      </div>
+    </template>
+
   </div>
 </template>
 
@@ -37,7 +49,8 @@
     data () {
       return {
 
-        isAdmin: false
+        isAdmin: false,
+        isMouseOver: false,
       }
     },
     computed: {
@@ -61,6 +74,14 @@
     },
     methods: {
 
+      mouseover: function() {
+        this.isMouseOver = true;
+      },
+
+      mouseleave: function() {
+        this.isMouseOver = false;
+      },
+
       checkAdmin: async function () {
 
         this.isAdmin = await this.$auth.isAdmin(this.$options.name);
@@ -81,4 +102,30 @@
 
 <style scoped>
 
+.approval-area{
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.signature {
+  position: absolute;
+  left: 10%;
+  top: 40%;
+  width: 100%;
+  text-align: center;
+}
+
+.approve-button{
+  position: absolute;
+  left: 0%;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+}
+
+.stamp{
+  max-width: 200px;
+  max-height: 200px;
+}
 </style>

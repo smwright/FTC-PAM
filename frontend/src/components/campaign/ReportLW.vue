@@ -28,34 +28,23 @@
       <TextWithImage class="white-space-pre-line" v-bind:original_text="decodeHTML(report_info.synopsis)"></TextWithImage>
       <!--<p class="white-space-pre-line">{{ decodeHTML(report_info.synopsis) }}</p>-->
     </div>
-    <div class="bigRight">
-      <ReportApprovalCompLW></ReportApprovalCompLW>
-    </div>
-    <div>
-      <span style="margin-left: 15%" class="bigSignature">
+
+    <div class="bigLWText clearfix">
+      <div class="bigSignature">
         {{ decodeHTML(report_info.abreviation) }}
         {{ decodeHTML(report_info.first_name) }}
         {{ decodeHTML(report_info.last_name) }}
-      </span>
-    </div>
-    <div>
-      <span class="bigLeft">
+      </div>
+      <div>
         {{ decodeHTML(report_info.first_name) }}
         '{{ report_info.callsign }}'
         {{ decodeHTML(report_info.last_name) }},
         {{ decodeHTML(report_info.rank_name) }}
-      </span>
+      </div>
+
+      <ReportApprovalCompLW class="float-right"></ReportApprovalCompLW>
     </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
+
   </div>
 </template>
 
