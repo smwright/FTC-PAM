@@ -10,7 +10,7 @@
         class="bigSignature"
         v-if="report_info.accepted && report_info.accepted_by !== null"
       >
-        <img class="stamp" src="../../assets/images/webpage_images/lw-stamp.png"/>
+        <img class="stamp" v-bind:src="this.stampImage"/>
         <button
           v-if="isMouseOver"
           class="approve-button"
@@ -28,7 +28,7 @@
         class="bigSignature"
         v-if="report_info.accepted && report_info.accepted_by !== null"
       >
-        <img class="stamp" src="../../assets/images/webpage_images/lw-stamp.png"/>
+        <img class="stamp" v-bind:src="this.stampImage"/>
         <span class="signature">{{ memberById(report_info.accepted_by).callsign }}</span>
       </div>
     </template>
@@ -41,7 +41,13 @@
   import { mapState, mapGetters } from "vuex"
 
   export default {
-    name: "ReportApprovalCompLW",
+    name: "ReportApprovalComp",
+    props: {
+      stampImage: {
+        type: String,
+        default: null
+      }
+    },
     mounted ()  {
 
       this.checkAdmin();

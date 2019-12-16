@@ -29,9 +29,6 @@
       <span>{{ assetStatus[report_info.asset_status] }}</span>
       <hr>
     </div>
-    <div style="float: right;margin-right: 8%">
-      <ReportApprovalCompRAF></ReportApprovalCompRAF>
-    </div>
     <Comment></Comment>
   </div>
 </template>
@@ -43,12 +40,10 @@
   import ClaimGround from "./ClaimGround"
   import Comment from "./Comment"
   import { mapState, mapGetters } from "vuex"
-  import ReportApprovalCompRAF from "./ReportApprovalCompRAF";
 
   export default {
     name: "ClaimSlipRAF",
     components: {
-      ReportApprovalCompRAF,
       ClaimRAF,
       ClaimGround,
       Comment

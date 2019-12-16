@@ -34,7 +34,7 @@
       </div>
       <br>
       <div class="typed-on-paper" v-if="report_loaded">
-        <ClaimAbschussSlipLW v-if="report_info.faction==1" v-bind="report_info"></ClaimAbschussSlipLW>
+        <ClaimSlipLW v-if="report_info.faction==1" v-bind="report_info"></ClaimSlipLW>
         <ClaimSlipRAF v-else-if="report_info.faction==2" v-bind="report_info"></ClaimSlipRAF>
         <ClaimSlipVVS v-else-if="report_info.faction==3" v-bind="report_info"></ClaimSlipVVS>
 
@@ -56,8 +56,8 @@ import EditReportRAF from "./EditReportRAF"
 import EditReportVVS from "./EditReportVVS"
 import ClaimSlipRAF from "./ClaimSlipRAF"
 import EditClaimSlipRAF from "./EditClaimSlipRAF"
-import ClaimAbschussSlipLW from "./ClaimAbschussSlipLW"
-import EditClaimAbschussSlipLW from "./EditClaimAbschussSlipLW"
+import ClaimSlipLW from "./ClaimSlipLW"
+import EditClaimSlipLW from "./EditClaimSlipLW"
 import ClaimSlipVVS from "./ClaimSlipVVS"
 import EditClaimSlipVVS from "./EditClaimSlipVVS"
 import { mapState, mapGetters } from "vuex"
@@ -67,8 +67,8 @@ import { mapState, mapGetters } from "vuex"
 export default {
   name: "Report",
   components: {
-    EditClaimAbschussSlipLW,
-    ClaimAbschussSlipLW,
+    EditClaimSlipLW,
+    ClaimSlipLW,
     EditClaimSlipRAF,
     ClaimSlipRAF,
     ReportLW,

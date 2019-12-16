@@ -122,41 +122,48 @@
       <TextWithImage class="white-space-pre-line" v-bind:original_text="decodeHTML(report_info.synopsis)"></TextWithImage>
       <!--<p class="white-space-pre-line">{{ decodeHTML(report_info.synopsis) }}</p>-->
     </div>
-    <div class="bigRight">
-      <ReportApprovalCompRAF></ReportApprovalCompRAF>
+
+    <!--Report Footer-->
+    <div class="bigLeft clearfix">
+
+      <!--Pilot signature and info-->
+      <div class="float-left">
+        <div class="bigSignature">
+          {{ decodeHTML(report_info.abreviation) }}
+          {{ decodeHTML(report_info.first_name) }}
+          {{ decodeHTML(report_info.last_name) }}
+        </div>
+        <div>
+         {{ sectionStatus[report_details.section] }} /
+         {{ sectionPosStatus[report_details.section_pos] }}
+        </div>
+        <div>
+          {{ decodeHTML(report_info.abreviation) }}
+          {{ decodeHTML(report_info.first_name) }}
+          '{{ report_info.callsign }}'
+          {{ decodeHTML(report_info.last_name) }}
+        </div>
+        <div>
+          {{ reportAsset.name }}
+        </div>
+        <div>
+          {{ decodeHTML(report_info.markings) }}
+        </div>
+      </div>
+
+      <!--AAR approval stamp and signature-->
+      <ReportApprovalComp
+        class="float-right"
+        v-bind="{stampImage:'/assets/images/webpage_images/raf-stamp.png'}"
+      ></ReportApprovalComp>
+
     </div>
-    <div>
-      <span style="margin-left: 8%" class="bigSignature">
-        {{ decodeHTML(report_info.abreviation) }}
-        {{ decodeHTML(report_info.first_name) }}
-        {{ decodeHTML(report_info.last_name) }}
-      </span>
+
+    <!--Airfield info-->
+    <div class="text-align-center">
+      R.A.F. {{ decodeHTML(report_info.base) }}
     </div>
-    <div>
-      <span class="bigLeft">
-        {{ sectionStatus[report_details.section] }} /
-        {{ sectionPosStatus[report_details.section_pos] }}
-      </span>
-      <span  style="font-size: large;margin-left: 30%">
-        R.A.F. {{ decodeHTML(report_info.base) }}
-      </span>
-    </div>
-    <div>
-      <span class="bigLeft">
-        {{ decodeHTML(report_info.abreviation) }}
-        {{ decodeHTML(report_info.first_name) }}
-        '{{ report_info.callsign }}'
-        {{ decodeHTML(report_info.last_name) }}
-      </span>
-    </div>
-    <div>
-      <span class="bigLeft">{{ reportAsset.name }}</span>
-    </div>
-    <div>
-      <span class="bigLeft">{{ decodeHTML(report_info.markings) }}</span>
-    </div>
-    <br>
-    <br>
+
   </div>
 </template>
 
@@ -167,7 +174,7 @@
   import ClaimRAF from "./ClaimRAF"
   import ClaimGround from "./ClaimGround"
   import Comment from "./Comment"
-  import ReportApprovalCompRAF from "./ReportApprovalCompRAF"
+  import ReportApprovalComp from "./ReportApprovalComp"
   import { mapState, mapGetters } from "vuex"
 
   export default {
@@ -176,7 +183,7 @@
       ClaimRAF,
       ClaimGround,
       Comment,
-      ReportApprovalCompRAF,
+      ReportApprovalComp,
       TextWithImage
     },
     mixins: [
@@ -221,40 +228,32 @@
   .rTableRow {
     display: table-row;
   }
-  .rTableCellLeft {
+
+  .rTableRow div{
+    padding-top: 0.85%;
+    padding-bottom: 0.85%;
     display: table-cell;
     font-size: large;
-    padding-top: 0.85%;
+  }
+
+  .rTableCellLeft {
+
     width: 52%;
-    padding-bottom: 0.85%;
-    /* border: 1px solid #999999;*/
    }
 
    .rTableCellLetter {
-     display: table-cell;
-     font-size: large;
-     padding-top: 0.85%;
-     padding-bottom: 0.85%;
+
      width: 3%;
-     /*border: 1px solid #999999;*/
    }
 
    .rTableCellRight {
-     display: table-cell;
-     font-size: large;
-     padding-top: 0.85%;
-     padding-bottom: 0.85%;
+
      width: 30%;
-     /*border: 1px solid #999999;*/
 }
 
   .rTableCellCenter {
-    display: table-cell;
-    font-size: large;
-    padding-top: 0.85%;
-    padding-bottom: 0.85%;
+
     width: 15%;
-  /*border: 1px solid #999999;*/
 }
 
   .bigRight {

@@ -9,33 +9,40 @@
       <TextWithImage class="white-space-pre-line" v-bind:original_text="decodeHTML(report_info.synopsis)"></TextWithImage>
       <!--<p class="white-space-pre-line">{{ decodeHTML(report_info.synopsis) }}</p>-->
     </div>
-    <br>
-    <div class="bigRight">
-      <ReportApprovalCompVVS></ReportApprovalCompVVS>
+
+    <div class="reportContainer clearfix">
+      <div class="float-left">
+        <div class="bigSignature">
+          {{ decodeHTML(report_info.rank_name) }}
+          {{ decodeHTML(report_info.first_name) }}
+          {{ decodeHTML(report_info.last_name) }}
+        </div>
+        <div>
+          {{ decodeHTML(report_info.rank_name) }}
+          {{ decodeHTML(report_info.first_name) }}
+          '{{ report_info.callsign }}'
+          {{ decodeHTML(report_info.last_name) }}
+        </div>
+        <div>
+          {{ reportAsset.name }}
+          {{ decodeHTML(report_info.markings) }}
+        </div>
+        <div>
+          {{ reportUnit.hist_unit_name }},
+          {{ reportUnit.hist_unit_code }}
+        </div>
+        <div>
+          {{ decodeHTML(report_info.base) }},
+          {{ decodeHTML(report_info.mission_hist_date) }}
+        </div>
+      </div>
+
+      <ReportApprovalComp
+      class="float-right"
+      v-bind="{stampImage:'/assets/images/webpage_images/vvs-stamp.png'}"
+      ></ReportApprovalComp>
     </div>
-    <div>
-      <span style="margin-left: 8%" class="bigSignature">
-        {{ decodeHTML(report_info.rank_name) }}
-        {{ decodeHTML(report_info.first_name) }}
-        {{ decodeHTML(report_info.last_name) }}
-      </span>
-    </div>
-    <div style="margin-left: 8%;margin-right: 8%">
-      <span> {{ decodeHTML(report_info.rank_name) }}
-        {{ decodeHTML(report_info.first_name) }} '{{ report_info.callsign }}' {{ decodeHTML(report_info.last_name) }}
-      </span>
-    </div>
-    <div style="margin-left: 8%;margin-right: 8%">
-      <span>{{ reportAsset.name }}</span>
-      <span>{{ decodeHTML(report_info.markings) }}</span>
-    </div>
-    <div style="margin-left: 8%;margin-right: 8%">
-      <span>{{ reportUnit.hist_unit_name }}</span>,
-      <span>{{ reportUnit.hist_unit_code }}</span>
-    </div>
-    <div style="margin-left: 8%;margin-right: 8%">
-      <span>{{ decodeHTML(report_info.base) }}, {{ decodeHTML(report_info.mission_hist_date) }}</span>
-    </div>
+
   </div>
 </template>
 
@@ -43,14 +50,14 @@
   import stringConv from "../../resource/stringConverter"
   import statConv from "../../resource/statusConverter"
   import TextWithImage from "../basic_comp/TextWithImages"
-  import ReportApprovalCompVVS from "./ReportApprovalCompVVS"
+  import ReportApprovalComp from "./ReportApprovalComp"
   import { mapState, mapGetters } from "vuex"
 
   export default {
     name: "ReportVVS",
     components: {
       TextWithImage,
-      ReportApprovalCompVVS
+      ReportApprovalComp
     },
     mixins: [
       stringConv,
@@ -84,6 +91,11 @@
 </script>
 
 <style scoped>
+
+  .reportContainer {
+    margin-left: 8%;
+    margin-right: 8%;
+  }
 
   .biggerCenter {
     font-size: x-large;

@@ -42,7 +42,10 @@
         {{ decodeHTML(report_info.rank_name) }}
       </div>
 
-      <ReportApprovalCompLW class="float-right"></ReportApprovalCompLW>
+      <ReportApprovalComp
+        class="float-right"
+        v-bind="{stampImage:'/assets/images/webpage_images/lw-stamp.png'}"
+      ></ReportApprovalComp>
     </div>
 
   </div>
@@ -55,7 +58,7 @@ import TextWithImage from "../basic_comp/TextWithImages"
 import ClaimLW from "./ClaimLW"
 import ClaimGround from "./ClaimGround"
 import Comment from "./Comment"
-import ReportApprovalCompLW from "./ReportApprovalCompLW"
+import ReportApprovalComp from "./ReportApprovalComp"
 import { mapState, mapGetters } from "vuex"
 
 export default {
@@ -65,7 +68,7 @@ export default {
     ClaimGround,
     Comment,
     TextWithImage,
-    ReportApprovalCompLW
+    ReportApprovalComp
   },
   mixins: [
     stringConv,
