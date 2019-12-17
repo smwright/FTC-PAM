@@ -1,44 +1,27 @@
 <template>
-  <div>
-    <div>
-      <span>Squadron:</span>
-      <span>{{ reportUnit.hist_unit_name }}</span>
+  <div class="polyglottTypewriter">
+    <div class="biggerCenter">
+      <span>ОТЧЕТ О БОЕВОМ ВЫЛЕТЕ.</span>
     </div>
-
+    <br>
+    <div style="margin-left: 8%;margin-right: 8%">
+      <span>Ниже следует отчет подписавшегося внизу пилота который выполнял боевое задание {{ decodeHTML(report_info.mission_hist_date) }} защищая Советский Союз. Если ниже сообщение отсутствует, то сообщать не о чем.</span>
+      <textarea title="This is where you type a synopsis of how the mission went from your perspective. This field is optional in ACG. Images can be included by using [img]image-url[/img]" v-model="report_synopsis" class="textarea-style"></textarea>
+    </div>
+    <br>
     <div>
-      <span>Squadron:</span>
-      <span>
-        <select v-model="report_unit">
-          <option
-            v-for="d_unit in unitsByFaction(3)"
-            v-bind:value="d_unit.depl_unit_id"
-          >
-            {{ d_unit.depl_unit_id}} - {{ d_unit.hist_unit_name }}
-          </option>
-        </select>
+      <span style="margin-left: 8%" class="bigSignature">
+        {{ decodeHTML(report_info.rank_name) }}
+        {{ decodeHTML(report_info.first_name) }}
+        {{ decodeHTML(report_info.last_name) }}
       </span>
     </div>
-
-    <div>
-      <span>Squadron code:</span>
-      <span>{{ reportUnit.hist_unit_code }}</span>
-    </div>
-
-    <div>
-      <span>Name:</span>
+    <div style="margin-left: 8%;margin-right: 8%">
       <span> {{ decodeHTML(report_info.rank_name) }}
-        {{ decodeHTML(report_info.first_name) }} '{{ report_info.callsign }}' {{ decodeHTML(report_info.last_name) }}</span>
-    </div>
-
-    <div>
-      <span>Base:</span>
-      <span>
-        <input v-model="report_aerodrome">
+        {{ decodeHTML(report_info.first_name) }} '{{ report_info.callsign }}' {{ decodeHTML(report_info.last_name) }}
       </span>
     </div>
-
-    <div>
-      <span>Type:</span>
+    <div style="margin-left: 8%;margin-right: 8%">
       <span>
         <select v-model="report_aircraft">
           <option
@@ -49,77 +32,31 @@
           </option>
         </select>
       </span>
-    </div>
-
-    <div>
-      <span>Markings:</span>
       <span>
         <input v-model="report_markings">
       </span>
     </div>
-
-    <div>
-      <span>Synopsis (Optional): Images can be included by using [img]image-url[/img]</span><br>
-      <textarea v-model="report_synopsis" class="textarea-style"></textarea>
-    </div>
-
-    <div>
-      <button v-on:click="addAerialClaim">Add aerial claim</button>
-    </div>
-
-    <div>
-      <hr>
-      Claims:
-      <EditClaimVVS
-        v-for="aerial_claim in aerial_claims"
-        v-bind:key="aerial_claim.claim_id"
-        v-bind="aerial_claim"
-      ></EditClaimVVS>
-    </div>
-
-    <div>
-      <button v-on:click="addGroundClaim">Add ground claim</button>
-    </div>
-
-    <div>
-      <hr>
-      Ground Claims:
-      <EditClaimGround
-        v-for="ground_claim in ground_claims"
-        v-bind:key="ground_claim.claim_id"
-        v-bind="ground_claim"
-      ></EditClaimGround>
-    </div>
-
-    <div>
-      <hr>
-      <span>Pilot status:</span>
+    <div style="margin-left: 8%;margin-right: 8%">
       <span>
-        <select v-model="report_pilot_status">
+        <select v-model="report_unit">
           <option
-            v-for="(pilot_status, index) in pilotStatus"
-            v-bind:value="index"
+            v-for="d_unit in unitsByFaction(3)"
+            v-bind:value="d_unit.depl_unit_id"
           >
-            {{pilot_status}}
+            {{ d_unit.depl_unit_id}} - {{ d_unit.hist_unit_name }}
           </option>
         </select>
+      </span>,
+      <span>{{ reportUnit.hist_unit_code }}</span>
+    </div>
+
+    <div style="margin-left: 8%;margin-right: 8%">
+      <span>
+        <input v-model="report_aerodrome">
+        , {{ decodeHTML(report_info.mission_hist_date) }}
       </span>
     </div>
 
-    <div>
-      <span>Aircraft status:</span>
-      <span>
-        <select v-model="report_asset_status">
-          <option
-            v-for="(asset_status, index) in assetStatus"
-            v-bind:value="index"
-          >
-            {{asset_status}}
-          </option>
-        </select>
-      </span>
-      <hr>
-    </div>
 
   </div>
 </template>
@@ -127,17 +64,12 @@
 <script>
   import stringConv from "../../resource/stringConverter"
   import statConv from "../../resource/statusConverter"
-  import EditClaimVVS from "./EditClaimVVS"
-  import EditClaimGround from "./EditClaimGround"
-  import Comment from "./Comment"
   import { mapState, mapGetters } from "vuex"
 
   export default {
     name: "EditReportVVS",
     components: {
-      EditClaimVVS,
-      EditClaimGround,
-      Comment
+
     },
     mixins: [
       stringConv,
@@ -226,36 +158,6 @@
         }
       },
 
-      report_pilot_status: {
-        get () {
-          var pilot_status = this.report_info.pilot_status;
-          return pilot_status === undefined ? 0 : pilot_status;
-        },
-        set (value) {
-          this.$store.commit('missionStore/updateReportValue',
-            {
-              array_name: "report",
-              update_column_name: "pilot_status",
-              update_column_value: value
-            });
-        }
-      },
-
-      report_asset_status: {
-        get () {
-          var asset_status = this.report_info.asset_status;
-          return asset_status === undefined ? 0 : asset_status;
-        },
-        set (value) {
-          this.$store.commit('missionStore/updateReportValue',
-            {
-              array_name: "report",
-              update_column_name: "asset_status",
-              update_column_value: value
-            });
-        }
-      },
-
       report_synopsis: {
         get () {
           return this.report_info.synopsis;
@@ -321,8 +223,23 @@ div {
 
 .textarea-style{
   width: 98%;
-  height: 10em;
+  height: 15em;
+  font-family: "TrueTypewriter PolyglOTT";
 }
+
+
+.biggerCenter {
+  font-size: x-large;
+  text-align: center
+}
+
+.bigRight {
+  float: right;
+  font-size: large;
+  margin-right: 8%;
+}
+
+
 
 </style>
 

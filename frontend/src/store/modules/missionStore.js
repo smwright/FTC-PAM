@@ -831,7 +831,7 @@ const  actions = {
             mission_id: context.state.report.mission_id,
             depl_unit_id: context.state.report.depl_unit_id,
           });
-        alert("Report send, check logger for further info.")
+        alert("Report sent, check logger for further info.")
         resolve();
 
       } catch (e) {

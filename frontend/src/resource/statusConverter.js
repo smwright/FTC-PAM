@@ -56,7 +56,7 @@ export default {
           {short: "", long: ""}, //0
           {short: "LW", long:"Luftwaffe"}, //1
           {short: "RAF", long:"Royal Air Force"}, //2
-          {short: "VVS", long:"Voyenno-Vozdushnye Sily Rossii"} //3
+          {short: "VVS", long:"Voyenno-vozdushnyye sily RKKA"} //3
         ],
 
       flightStatus:
@@ -144,15 +144,29 @@ export default {
           "Dead" //2
         ],
 
-      deplUnitType:
+      deplUnitTypeStatus:
       [
-        "Fighter", //0
-        "Bomber", //1
-        "Ground Attack", //2
-        "Heavy Fighter", //3
-        "Transport", //4
-        "Recon" //5
-      ]
+        {allies: "Fighter", axis: "Jagdgeschwader"}, //0
+        {allies: "Bomber", axis: "Sturzkampf-, Kampfgeschwader"}, //1
+        {allies: "Ground Attack", axis: "Schlachtgeschwader"}, //2
+        {allies: "Heavy Fighter", axis: "Zerstoerergeschwader"},//3
+        {allies: "Transport", axis: "Luftlandegeschwader"}, //4
+        {allies: "Recon", axis: "Aufklaerungsgeschwader"} //5
+      ],
+
+      numberEnemyACStatus:
+        [
+          "NIL", //0
+          "less than 3", //1
+          "less than 10", //2
+          "less than 20", //3
+          "20+", //4
+          "30+", //5
+          "40+", //6
+          "50+", //7
+          "60+", //8
+          "100+" //9
+        ]
     }
   }
 }

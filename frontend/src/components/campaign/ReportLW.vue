@@ -1,83 +1,53 @@
 <template>
   <div>
-    <div>
-      <span>Name:</span>
-      <span>{{ decodeHTML(report_info.first_name) }} '{{ report_info.callsign }}' {{ decodeHTML(report_info.last_name) }}</span>
+    <br>
+    <br>
+    <br>
+    <div class="big">
+      <span style="float: left"> {{ decodeHTML(report_info.last_name) }}, {{ decodeHTML(report_info.rank_name) }}
+        <br>
+        {{ swarmPosStatus[report_details.swarm_pos] }} {{ swarmStatus[report_details.swarm] }}, {{ reportUnit.hist_unit_name }}
+        <br>
+        {{ reportAsset.name }} / {{ decodeHTML(report_info.markings) }}
+      </span>
+      <span style="float: right"> {{ decodeHTML(report_info.base) }} am {{ decodeHTML(report_info.mission_hist_date) }} </span>
     </div>
-
-    <div>
-      <span>Rank:</span>
-      <span>{{ decodeHTML(report_info.rank_name) }}</span>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="biggerCenter">
+      <span style="text-decoration: underline">G e f e c h t s b e r i c h t</span>
     </div>
-
-    <div>
-      <span>Squadron:</span>
-      <span>{{ reportUnit.hist_unit_name }}</span>
+    <br>
+    <br>
+    <div class="bigLWText">
+      <span>Zum Feindflug des {{ decodeHTML(report_info.abreviation) }} {{ decodeHTML(report_info.last_name) }}, verfasst im Felde am {{ decodeHTML(report_info.mission_hist_date) }}. Wenn nichts hier folgt, ist nichts zu berichten.</span>
     </div>
-
-    <div>
-      <span>Swarm:</span>
-      <span>{{ swarmStatus[report_details.swarm] }}</span>
-
-      <span>Swarm Pos.:</span>
-      <span>{{ swarmPosStatus[report_details.swarm_pos] }}</span>
-    </div>
-
-    <div>
-      <span>Type:</span>
-      <span>{{ reportAsset.name }}</span>
-    </div>
-
-    <div>
-      <span>Markings:</span>
-      <span>{{ decodeHTML(report_info.markings) }}</span>
-    </div>
-
-    <div>
-      <span>Aerodrome:</span>
-      <span>{{ decodeHTML(report_info.base) }}</span>
-    </div>
-
-    <div>
-      <hr>
-      <span>Pilot status:</span>
-      <span>{{ pilotStatus[report_info.pilot_status] }}</span>
-    </div>
-
-    <div>
-      <span>Aircraft status:</span>
-      <span>{{ assetStatus[report_info.asset_status] }}</span>
-      <hr>
-    </div>
-
-    <div class="top-bottom-margin">
-      <hr>
-      Claims:
-      <ClaimLW
-        v-for="aerial_claim in aerial_claims"
-        v-bind:key="aerial_claim.claim_id"
-        v-bind="aerial_claim"
-      ></ClaimLW>
-    </div>
-
-    <div class="top-bottom-margin">
-      <hr>
-      Ground Claims:
-      <ClaimGround
-        v-for="ground_claim in ground_claims"
-        v-bind:key="ground_claim.claim_id"
-        v-bind="ground_claim"
-      ></ClaimGround>
-    </div>
-
-    <div class="top-bottom-margin">
-      <span>Synopsis:</span><br>
+    <div class="bigLWText">
       <TextWithImage class="white-space-pre-line" v-bind:original_text="decodeHTML(report_info.synopsis)"></TextWithImage>
       <!--<p class="white-space-pre-line">{{ decodeHTML(report_info.synopsis) }}</p>-->
     </div>
 
-    <ReportApprovalComp></ReportApprovalComp>
-    <Comment></Comment>
+    <div class="bigLWText clearfix">
+      <div class="bigSignature">
+        {{ decodeHTML(report_info.abreviation) }}
+        {{ decodeHTML(report_info.first_name) }}
+        {{ decodeHTML(report_info.last_name) }}
+      </div>
+      <div>
+        {{ decodeHTML(report_info.first_name) }}
+        '{{ report_info.callsign }}'
+        {{ decodeHTML(report_info.last_name) }},
+        {{ decodeHTML(report_info.rank_name) }}
+      </div>
+
+      <ReportApprovalComp
+        class="float-right"
+        v-bind="{stampImage:'/assets/images/webpage_images/lw-stamp.png'}"
+      ></ReportApprovalComp>
+    </div>
+
   </div>
 </template>
 
@@ -137,4 +107,32 @@ export default {
   margin: 5px 0px;
 }
 
+.biggerCenter {
+  font-size: x-large;
+  text-decoration: underline;
+  text-align: center;
+}
+
+.bigRight {
+  float: right;
+  font-size: large;
+  margin-right: 15%;
+}
+
+.bigLeft {
+  font-size: large;
+  margin-left: 15%;
+}
+
+.big{
+  font-size: large;
+  margin-left: 8%;
+  margin-right: 8%;
+}
+
+.bigLWText {
+  font-size: large;
+  margin-left: 15%;
+  margin-right: 15%;
+}
 </style>

@@ -53,7 +53,7 @@ export default {
   min-height: 100%;
   position: relative;
 
-  font-family: Roboto, Arial, sans-serif;
+  font-family: Roboto, Arial, sans-serif, Remingtoned Type, Dawning of a New Day;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
@@ -91,6 +91,35 @@ export default {
 @font-face {
   font-family: "Remingtoned Type";
   src: url("/assets/fonts/TypewriterFont.ttf");
+  src: local("Remingtoned Type");
+}
+
+@font-face {
+  font-family: "Dawning of a New Day";
+  src: url("/assets/fonts/DawningofaNewDay.ttf");
+  src: local("Dawning of a New Day");
+
+}
+
+@font-face {
+  font-family: "TrueTypewriter PolygLOTT";
+  src: url("/assets/fonts/TTWPGOTT.ttf");
+  src: local("TrueTypewriter PolygLOTT");
+
+}
+
+@font-face {
+  font-family: "Deutschische";
+  src: url("/assets/fonts/Deutschische.otf");
+  src: local("Deutschische");
+
+}
+
+@font-face {
+  font-family: "DSWallau";
+  src: url("/assets/fonts/DSWallau.ttf");
+  src: local("DSWallau");
+
 }
 
 /*div{*/
@@ -208,6 +237,7 @@ select {
   background: rgba(255, 255, 255, 0.5);
   border-color: #646464;
   border-radius: 2px;
+  font-size: large;
   padding: 2px;
   margin: 2px;
   color: #1b1b1b;
@@ -398,7 +428,7 @@ select {
 /*Style for typewriter on paper look*/
 
 .typed-on-paper {
-  background: rgb(243, 231, 146);
+  background: #ecd7b0;
   border-radius: 2px;
   padding: 30px;
   color: #1b1b1b;
@@ -409,6 +439,32 @@ select {
 .typed-on-paper-link:hover {
   background: rgba(255, 255, 255, 0.5);
   border-radius: 2px;
+}
+
+.bigSignature {
+  font-size: xx-large;
+  opacity: 80%;
+  color: #000F55;
+  font-weight: bold;
+  font-family: "Dawning of a New Day";
+}
+
+
+.polyglottTypewriter {
+  text-decoration: black;
+  font-size: larger;
+  font-family: "TrueTypewriter PolyglOTT";
+}
+
+
+.Deutschische {
+  text-decoration: black;
+  font-family: "Deutschische";
+}
+
+.dsWallau {
+  text-decoration: black;
+  font-family: "DSWallau";
 }
 
 .typed-on-paper button {
@@ -434,6 +490,7 @@ select {
   background: rgba(255, 255, 255, 0.5);
   border-color: #646464;
   border-radius: 5px;
+  font-size: large;
   padding: 5px;
   color: #1b1b1b;
   font-family: "Remingtoned Type";

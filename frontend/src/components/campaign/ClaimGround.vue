@@ -1,6 +1,5 @@
 <template>
   <div>
-    <hr>
     <table>
       <tr>
         <td>{{ assetById(asset_id).name }}</td>

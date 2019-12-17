@@ -11,7 +11,6 @@
             v-bind="{claim_id: this.claim_id, claim_type:'aerial'}"
           ></ClaimApprovalComp>
         </td>
-
       </tr>
       <tr>
         <td>{{ claim_time }}</td>
@@ -36,7 +35,6 @@
           ></ClaimConfirmationComp>
         </td>
       </tr>
-
     </table>
     <br>
   </div>
