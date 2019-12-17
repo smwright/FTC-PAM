@@ -55,7 +55,7 @@ const getters = {
     if(parent !== undefined){
       return state[table].filter(
         function (item) {
-          return parent.lft < item.lft && item.rgt > parent.rgt;
+          return (parent.lft < item.lft & item.rgt < parent.rgt);
         });
     } else {
       return [];
