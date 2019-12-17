@@ -49,6 +49,19 @@ const getters = {
     return Vue.prototype.$dbCon.nestData(state[table]);
   },
 
+  subTree: (state, getters) => (table, keyName, keyValue) => {
+
+    let parent = getters.findByKey(table, keyName, keyValue);
+    if(parent !== undefined){
+      return state[table].filter(
+        function (item) {
+          return parent.lft < item.lft && item.rgt > parent.rgt;
+        });
+    } else {
+      return [];
+    }
+  },
+
   missionById: (state) => (id_inn) => {
 
     var mission = state.missions.find(

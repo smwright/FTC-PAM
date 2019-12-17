@@ -2,6 +2,14 @@
   <div class="">
     MISSION-SYNOP {{ this.$route.params.depl_unit_id }}
     {{ reports.length }}
+    <div class="typed-on-paper">
+      <ul>
+        <li v-for="unit in subunits">
+          {{ unit.hist_unit_name }}
+        </li>
+      </ul>
+
+    </div>
     <SynopReports
       v-if="reports.length > 0"
       class="typed-on-paper"
@@ -21,9 +29,15 @@ export default {
   },
   computed: {
 
+
     reports: function () {
 
       return this.filterByKey("reports", "depl_unit_id", this.$route.params.depl_unit_id);
+    },
+
+    subunits: function () {
+
+      return this.subTree("campaign_units", "depl_unit_id", this.$route.params.depl_unit_id)
     },
 
     ...mapState("missionStore", {
@@ -31,7 +45,8 @@ export default {
     }),
 
     ...mapGetters("missionStore", [
-      "filterByKey"
+      "filterByKey",
+      "subTree"
     ])
   },
 }
