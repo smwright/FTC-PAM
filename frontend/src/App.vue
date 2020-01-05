@@ -443,7 +443,7 @@ select {
 
 .bigSignature {
   font-size: xx-large;
-  opacity: 80%;
+  opacity: 0.8;
   color: #000F55;
   font-weight: bold;
   font-family: "Dawning of a New Day";
