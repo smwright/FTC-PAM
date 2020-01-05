@@ -1,7 +1,6 @@
 <template>
   <div>
-    <hr>
-    <div>
+    <div style="float: right">
       <button v-on:click="deleteClaim">X</button>
     </div>
     <table>
@@ -76,7 +75,6 @@
           ></vSelect>
         </td>
       </tr>
-
     </table>
     <br>
   </div>
@@ -84,14 +82,16 @@
 
 <script>
 import statConv from "../../resource/statusConverter"
+import stringConv from "../../resource/stringConverter"
 import vSelect from 'vue-select'
-import 'vue-select/dist/vue-select.css';
+import 'vue-select/dist/vue-select.css'
 import { mapGetters } from "vuex"
 
   export default {
     name: "EditClaimLW",
     mixins: [
-      statConv
+      statConv,
+      stringConv
     ],
     components: {
       vSelect

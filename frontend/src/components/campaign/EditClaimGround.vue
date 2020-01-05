@@ -1,6 +1,5 @@
 <template>
   <div>
-    <hr>
     <table>
       <tr>
         <td class="width-20">
@@ -18,10 +17,10 @@
           {{ claim_amount }}
           <button v-on:click="claim_amount++"> > </button>
         </td>
-        <td><button v-on:click="deleteClaim">X</button></td>
+        <td><button style="float: right;" v-on:click="deleteClaim">X</button></td>
       </tr>
       <tr>
-        <td colspan="3">
+        <td class="width-90">
           <textarea v-model="claim_description" class="textarea-style"></textarea>
         </td>
       </tr>

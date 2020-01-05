@@ -1,5 +1,5 @@
 <template>
-  <div class="width-80 margin-auto">
+  <div class="width-60 margin-auto">
     <div class="text-align-center">
       <h1>Welcome to the Air Combat Group</h1>
     </div>

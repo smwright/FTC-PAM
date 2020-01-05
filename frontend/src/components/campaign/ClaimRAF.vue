@@ -23,6 +23,7 @@
 import stringConv from "../../resource/stringConverter"
 import statConv from "../../resource/statusConverter"
 import ClaimApprovalComp from "./ClaimApprovalComp"
+import { mapGetters } from "vuex"
 
 export default {
   name: "ClaimRAF",
@@ -62,8 +63,13 @@ export default {
       type: String,
       default: null
     }
+  },
+  computed: {
+    ...mapGetters("missionStore", [
+      "assetById",
+      "memberById"
+    ])
   }
-
 }
 </script>
 
