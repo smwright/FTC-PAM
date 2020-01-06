@@ -91,34 +91,34 @@ export default {
 @font-face {
   font-family: "Remingtoned Type";
   src: url("/assets/fonts/TypewriterFont.ttf");
-  src: local("Remingtoned Type");
+  /*src: local("Remingtoned Type");*/
 }
 
 @font-face {
   font-family: "Dawning of a New Day";
   src: url("/assets/fonts/DawningofaNewDay.ttf");
-  src: local("Dawning of a New Day");
+  /*src: local("Dawning of a New Day");*/
 
 }
 
 @font-face {
   font-family: "TrueTypewriter PolygLOTT";
   src: url("/assets/fonts/TTWPGOTT.ttf");
-  src: local("TrueTypewriter PolygLOTT");
+  /*src: local("TrueTypewriter PolygLOTT");*/
 
 }
 
 @font-face {
   font-family: "Deutschische";
   src: url("/assets/fonts/Deutschische.otf");
-  src: local("Deutschische");
+  /*src: local("Deutschische");*/
 
 }
 
 @font-face {
   font-family: "DSWallau";
   src: url("/assets/fonts/DSWallau.ttf");
-  src: local("DSWallau");
+  /*src: local("DSWallau");*/
 
 }
 
