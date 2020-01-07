@@ -546,6 +546,7 @@
           {
             caller: this.$options.name,
             promotion_id: id,
+            member_id: this.member_id
           }
         ).then(response => {
 

@@ -560,6 +560,12 @@ const  actions = {
           table: "promotion",
           payload: [insert_promotion]
         });
+
+      Vue.prototype.$dbCon.adjustForum("missionStore on behalf of "+payload.caller,
+        {
+          updateForumRank: payload.member_id
+        });
+
       resolve(response);
 
     })
@@ -573,6 +579,11 @@ const  actions = {
         {
           table: "promotion",
           payload: [{id: payload.promotion_id}]
+        });
+
+      Vue.prototype.$dbCon.adjustForum("missionStore on behalf of "+payload.caller,
+        {
+          updateForumRank: payload.member_id
         });
 
       resolve(delete_response.message);

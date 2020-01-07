@@ -199,7 +199,13 @@ dbConnector.install =  function(Vue, options) {
 
       var url = "decorationsChecks.php";
       return dbConnector.createPOSTPromise(caller, url, param);
-    }
+    },
+
+    adjustForum: function(caller, param) {
+
+      var url = "forumAdjust.php";
+      return dbConnector.createPOSTPromise(caller, url, param);
+    },
   }
 
 }
