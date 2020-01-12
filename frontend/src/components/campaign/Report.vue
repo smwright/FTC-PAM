@@ -14,7 +14,7 @@
       </div>
       <br>
       <div class="typed-on-paper" v-if="report_loaded">
-        <EditClaimAbschussSlipLW v-if="report_info.faction==1" v-bind="report_info"></EditClaimAbschussSlipLW>
+        <EditClaimSlipLW v-if="report_info.faction==1" v-bind="report_info"></EditClaimSlipLW>
         <EditClaimSlipRAF v-else-if="report_info.faction==2" v-bind="report_info"></EditClaimSlipRAF>
         <EditClaimSlipVVS v-else-if="report_info.faction==3" v-bind="report_info"></EditClaimSlipVVS>
       </div>
