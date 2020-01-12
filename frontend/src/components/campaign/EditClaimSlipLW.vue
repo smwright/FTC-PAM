@@ -66,7 +66,7 @@
   import { mapState, mapGetters } from "vuex"
 
   export default {
-    name: "EditClaimAbschussSlipLW",
+    name: "EditClaimSlipLW",
     components: {
       EditClaimLW,
       EditClaimGround
