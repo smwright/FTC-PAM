@@ -6,7 +6,12 @@
     <br>
     <div style="margin-left: 8%;margin-right: 8%">
       <span>Ниже следует отчет подписавшегося внизу пилота который выполнял боевое задание {{ decodeHTML(report_info.mission_hist_date) }} защищая Советский Союз. Если ниже сообщение отсутствует, то сообщать не о чем.</span>
-      <textarea title="This is where you type a synopsis of how the mission went from your perspective. This field is optional in ACG. Images can be included by using [img]image-url[/img]" v-model="report_synopsis" class="textarea-style"></textarea>
+      <textarea
+        title="This is where you type a synopsis of how the mission went from your perspective. This field is optional in
+         ACG. Images can be included by using [img]image-url[/img]"
+        placeholder="Synopsis (optional)"
+        v-model="report_synopsis" class="textarea-style"
+      ></textarea>
     </div>
     <br>
     <div>
@@ -24,6 +29,7 @@
     <div style="margin-left: 8%;margin-right: 8%">
       <span>
         <select v-model="report_aircraft">
+          <option :value="null" disabled>Select aircraft</option>
           <option
             v-for="aircraft in assetByFactionControllable(3, 1)"
             v-bind:value="aircraft.id"
@@ -33,7 +39,10 @@
         </select>
       </span>
       <span>
-        <input v-model="report_markings">
+        <input
+          v-model="report_markings"
+          placeholder="Markings"
+        >
       </span>
     </div>
     <div style="margin-left: 8%;margin-right: 8%">
@@ -52,7 +61,10 @@
 
     <div style="margin-left: 8%;margin-right: 8%">
       <span>
-        <input v-model="report_aerodrome">
+        <input
+          v-model="report_aerodrome"
+          placeholder="Airfield"
+        >
         , {{ decodeHTML(report_info.mission_hist_date) }}
       </span>
     </div>

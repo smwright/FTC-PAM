@@ -159,10 +159,11 @@
     </div>
     <br>
     <div>
-      <textarea style="
-      margin-left: 8%;
-      height: 20em;
-      width: 83%" v-model="report_synopsis" title="This is where you type a synopsis of how the mission went from your perspective. This field is optional in ACG. Images can be included by using [img]image-url[/img]" class="textarea-style"></textarea>
+      <textarea
+        style="margin-left: 8%; height: 20em; width: 83%"
+        placeholder="Synopsis (optional)"
+        v-model="report_synopsis"
+        title="This is where you type a synopsis of how the mission went from your perspective. This field is optional in ACG. Images can be included by using [img]image-url[/img]" class="textarea-style"></textarea>
     </div>
     <br>
     <br>
@@ -201,13 +202,18 @@
       <span> {{ decodeHTML(report_info.abreviation) }}
         {{ decodeHTML(report_info.first_name) }} '{{ report_info.callsign }}' {{ decodeHTML(report_info.last_name) }}</span>
       <span style="font-size: large;margin-left: 25%">
-        R.A.F <input v-model="report_aerodrome">
+        R.A.F
+        <input
+          placeholder="Airfield"
+          v-model="report_aerodrome"
+        >
       </span>
     </div>
 
     <div title="This is where you must indicate the aircraft you flew. This field is mandatory." class="bigLeft">
       <span>
         <select v-model="report_aircraft">
+          <option :value="null" disabled>Select aircraft</option>
           <option
             v-for="aircraft in assetByFactionControllable(2, 1)"
             v-bind:value="aircraft.id"
@@ -220,7 +226,10 @@
 
     <div title="Here you must indicate your aircraft's code letter. Please use capital letters. This field is mandatory." class="bigLeft">
       <span>
-        <input v-model="report_markings">
+        <input
+          placeholder="Markings"
+          v-model="report_markings"
+        >
       </span>
     </div>
     <br>
