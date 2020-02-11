@@ -32,6 +32,7 @@
         </select>
         <br>
         <select title="Here you must fill in your aircraft." v-model="report_aircraft">
+          <option :value="null" disabled>Select aircraft</option>
           <option
             v-for="aircraft in assetByFactionControllable(1, 1)"
             v-bind:value="aircraft.id"
@@ -40,9 +41,20 @@
           </option>
         </select>
         /
-        <input title="Here you must fill in the markings of your aircraft." v-model="report_markings">
+        <input
+          title="Here you must fill in the markings of your aircraft."
+          placeholder="Markings"
+          v-model="report_markings"
+        >
       </span>
-      <span style="float: right"> <input title="Here you must fill in the base which you took off from." v-model="report_aerodrome"> am {{ decodeHTML(report_info.mission_hist_date) }} </span>
+      <span style="float: right">
+        <input
+          title="Here you must fill in the base which you took off from."
+          placeholder="Airfield"
+          v-model="report_aerodrome"
+        >
+        am {{ decodeHTML(report_info.mission_hist_date) }}
+      </span>
     </div>
     <br>
     <br>
@@ -59,7 +71,13 @@
       <span>Zum Feindflug des {{ decodeHTML(report_info.abreviation) }} {{ decodeHTML(report_info.last_name) }}, verfasst im Felde am {{ decodeHTML(report_info.mission_hist_date) }}. Wenn hier nichts folgt, ist nichts zu berichten.</span>
     </div>
     <div class="bigLWText">
-      <textarea title="Here you can fill in a short synopsis for your sortie. If you are claiming any victories in the section below, this field is mandatory. You may insert screenshots with the [img]img-url[/img] tags." v-model="report_synopsis" class="textarea-style"></textarea>
+      <textarea
+        title="Here you can fill in a short synopsis for your sortie. If you are claiming any victories in the section below,
+         this field is mandatory. You may insert screenshots with the [img]img-url[/img] tags."
+        placeholder="Synopsis (optional)"
+        v-model="report_synopsis"
+        class="textarea-style"
+      ></textarea>
     </div>
     <div>
       <span style="margin-left: 15%" class="bigSignature">
