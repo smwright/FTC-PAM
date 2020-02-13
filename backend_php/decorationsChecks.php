@@ -346,7 +346,7 @@ function checkLWDecorations($characterID, $missionID, $dbx){
         "FROM report LEFT JOIN claim ON claim.report_id = report.id ".
         "LEFT JOIN claim_ground ON claim.id = claim_ground.claim_id ".
         "WHERE character_id = $characterID AND report.accepted=1 AND claim.accepted = 1 ".
-        "AND report.mission_id <= $missionID";
+        "AND claim_ground.id IS NOT NULL AND report.mission_id <= $missionID";
     $result = mysqli_query($dbx, $sql);
     $row = mysqli_fetch_assoc($result);
 
