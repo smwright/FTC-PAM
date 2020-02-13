@@ -19,7 +19,7 @@ const state = {
   units: [],
   assets: [],
   members: [],
-
+  pilot_fates: [],
 
 };
 
@@ -60,6 +60,18 @@ const getters = {
     } else {
       return [];
     }
+  },
+
+  subTreeItems: (state, getters) => (table, lft, rgt, include_parent) => {
+
+    return state[table].filter(
+      function (item) {
+        if(include_parent){
+          return (lft <= item.lft & item.rgt <= rgt);
+        } else {
+          return (lft < item.lft & item.rgt < rgt);
+        }
+      });
   },
 
   missionById: (state) => (id_inn) => {

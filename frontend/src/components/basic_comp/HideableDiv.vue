@@ -1,3 +1,25 @@
+<!--
+  HideableDiv:
+
+  Usage:
+  <template>
+    ...
+    <HideableDiv
+      v-bind:changing-button="true|false default:false"
+      v-bind:startVisible="true|false default:false"
+     >
+      <template slot="buttonVisible">
+        BUTTON ELEMENT WHEN VISIBLE
+      </template>
+      <template slot="buttonHidden">
+        BUTTON ELEMENT WHEN HIDDEN
+      </template>
+      DIV INHOLD
+    </HideableDiv>
+
+  </template>
+-->
+
 <template>
   <div>
     <div v-if="this.changingButton" v-show="this.isVisible" v-on:click.stop="toggleVisible()">
