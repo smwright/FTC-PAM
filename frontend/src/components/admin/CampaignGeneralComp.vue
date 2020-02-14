@@ -41,16 +41,23 @@
       <div class="inline-table float-left half-width">
         <label>Campaign status</label>
         <select v-model="campaign_status">
-          <option v-for="(c_status, index) in campaignStatus" v-bind:value="index">
+          <option
+            v-for="(c_status, index) in campaignStatus"
+            v-bind:value="index"
+            v-bind:disabled="index === 1 && ongoing_status_occupied"
+          >
             {{ c_status }}
           </option>
         </select>
+        <div
+          v-if="ongoing_primary_campaign !== undefined"
+        >Current ongoing primary campaign: {{ ongoing_primary_campaign.name }}</div>
       </div>
       <div class="inline-table float-right half-width">
         <ul>
           <li><b>In preparation:</b> Used for future campaigns in the planning phase.</li>
-          <li><b>Ongoing:</b> Used for active campaigns. There can only be on ongoing primary campaign at all
-            time</li>
+          <li><b>Ongoing:</b> Used for active campaigns. <b>There can only be on ongoing primary campaign at all
+            time</b></li>
           <li><b>Finished:</b> Past and finished campaigns.</li>
         </ul>
       </div>
@@ -128,6 +135,7 @@
 </template>
 
 <script>
+import { mapGetters} from "vuex"
 import statConv from "../../resource/statusConverter"
 
 export default {
@@ -192,6 +200,11 @@ export default {
             update_column_value: value
           });
       }
+    },
+
+    ongoing_status_occupied: function () {
+
+      return this.ongoing_primary_campaign !== undefined;
     },
 
     campaign_status: {
@@ -296,6 +309,10 @@ export default {
           });
       }
     },
+
+    ...mapGetters("campaignAdmin", [
+      "ongoing_primary_campaign"
+    ])
 
   }
 
