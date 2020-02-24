@@ -644,6 +644,14 @@ const  actions = {
     })
   },
 
+  synchronizeForum (context, payload) {
+
+    Vue.prototype.$dbCon.adjustForum("missionStore on behalf of "+payload.caller,
+      {
+        synchronizeForumToCampaign: payload.campaign_id
+      });
+  }
+
 }
 
 
