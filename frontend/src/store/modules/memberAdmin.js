@@ -418,6 +418,12 @@ const  actions = {
           table: "member_status_log",
           payload: status_array
         });
+
+      Vue.prototype.$dbCon.adjustForum("memberAdmin on behalf of "+payload.caller,
+        {
+          updateForumGroup: payload.member_id
+        });
+
       resolve(response);
 
     })
@@ -454,6 +460,11 @@ const  actions = {
         {
           table:"member_status_log",
           payload: [delete_status]
+        });
+
+      Vue.prototype.$dbCon.adjustForum("memberAdmin on behalf of "+payload.caller,
+        {
+          updateForumGroup: payload.member_id
         });
 
       resolve(update_response.message+", "+delete_response.message);
@@ -499,6 +510,12 @@ const  actions = {
           table: "transfer",
           payload: transfer_array
         });
+
+      Vue.prototype.$dbCon.adjustForum("memberAdmin on behalf of "+payload.caller,
+        {
+          updateForumGroup: payload.member_id
+        });
+
       resolve(response);
 
     })
@@ -537,6 +554,11 @@ const  actions = {
           payload: [delete_transfer]
         });
 
+      Vue.prototype.$dbCon.adjustForum("memberAdmin on behalf of "+payload.caller,
+        {
+          updateForumGroup: payload.member_id
+        });
+
       resolve(update_response.message+", "+delete_response.message);
 
     })
@@ -560,6 +582,12 @@ const  actions = {
           table: "promotion",
           payload: [insert_promotion]
         });
+
+      Vue.prototype.$dbCon.adjustForum("missionStore on behalf of "+payload.caller,
+        {
+          updateForumRank: payload.member_id
+        });
+
       resolve(response);
 
     })
@@ -573,6 +601,11 @@ const  actions = {
         {
           table: "promotion",
           payload: [{id: payload.promotion_id}]
+        });
+
+      Vue.prototype.$dbCon.adjustForum("missionStore on behalf of "+payload.caller,
+        {
+          updateForumRank: payload.member_id
         });
 
       resolve(delete_response.message);

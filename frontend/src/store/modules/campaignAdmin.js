@@ -125,7 +125,16 @@ const getters = {
         return member.acg_unit_id === id_inn;
       }
     )
-  }
+  },
+
+  ongoing_primary_campaign: (state) => {
+
+    return state.campaigns.find(
+      function (campaign) {
+        return (campaign.is_primary && campaign.campaign_status == 1);
+      });
+  },
+
 
 }
 
@@ -303,6 +312,25 @@ const mutations = {
       state.briefings.push(payload);
     }
   },
+
+  updateStatus (state, payload) {
+
+    if(payload.campaign_status == 1){
+
+      var ongoing_primary_campaign = state.campaigns.find(
+        function (campaign) {
+          return (campaign.is_primary
+            && campaign.campaign_status == 1
+            && campaign.id !== payload.campaign_id
+          );
+        });
+      if(ongoing_primary_campaign !== undefined) {
+        alert("There can only be one ongoing primary campaign at all time. \r\n"+
+        ongoing_primary_campaign.name + " is currently ongoing. \r\n" +
+        "Please change it's status before switching this campaign to ongoing.");
+      }
+    }
+  }
 }
 
 // actions
@@ -615,6 +643,14 @@ const  actions = {
         });
     })
   },
+
+  synchronizeForum (context, payload) {
+
+    Vue.prototype.$dbCon.adjustForum("missionStore on behalf of "+payload.caller,
+      {
+        synchronizeForumToCampaign: payload.campaign_id
+      });
+  }
 
 }
 
