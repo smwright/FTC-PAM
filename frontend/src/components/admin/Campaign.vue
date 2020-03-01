@@ -1,11 +1,14 @@
 <template>
   <div>
     <div class="container">
+      <span>Categories:</span>
       <button v-on:click="changeTab('general')">General</button>
       <button v-on:click="changeTab('missions')">Missions</button>
       <button v-on:click="changeTab('units')">Units</button>
+      <span>Actions:</span>
       <button v-on:click="sendData">Save campaign</button>
       <button v-on:click="fetchData">Fetch campaign</button>
+      <button v-on:click="synchronizeForum">Synchronize forum</button>
     </div>
     <div>
       <!-- GENERAL INFO -->
@@ -182,7 +185,8 @@ export default {
       "histUnitsById",
       "acgUnitsById",
       "currentMembersById",
-      "missionsByCampaignId"
+      "missionsByCampaignId",
+      "ongoing_primary_campaign"
     ])
 
   },
@@ -470,6 +474,7 @@ export default {
 
          }
          this.units = this.$dbCon.nestData(flatData);
+
         // ------------------------------------------------------------------------
         // Deleting marked deployed units in the database
         // ------------------------------------------------------------------------
@@ -538,6 +543,18 @@ export default {
         }
       ).catch(error => {
           console.log(error.message);
+      });
+    },
+
+    synchronizeForum: function () {
+
+      this.$store.dispatch('campaignAdmin/synchronizeForum',
+        {
+          caller: this.$options.name,
+          campaign_id: this.campaign_id
+        }
+      ).catch(error => {
+        console.log(error.message);
       });
     }
 

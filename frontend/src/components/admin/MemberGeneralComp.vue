@@ -428,6 +428,7 @@
         this.$store.dispatch('memberAdmin/deleteStatus',
           {
             caller: this.$options.name,
+            member_id: this.member_id,
             status_id: id,
           }
         ).then(response => {
@@ -491,6 +492,7 @@
           {
             caller: this.$options.name,
             transfer_id: id,
+            member_id: this.member_id
           }
         ).then(response => {
 
@@ -546,6 +548,7 @@
           {
             caller: this.$options.name,
             promotion_id: id,
+            member_id: this.member_id
           }
         ).then(response => {
 

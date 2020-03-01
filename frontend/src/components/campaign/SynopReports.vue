@@ -1,5 +1,6 @@
 <template>
   <div>
+    <div class="heading">After action reports</div>
     <table>
       <tr>
         <th colspan="2">Pilot</th>
@@ -21,7 +22,7 @@
         <td>{{ decodeHTML(report.first_name) }} '{{report.callsign}}' {{ decodeHTML(report.last_name) }}</td>
         <td>{{ report.date_submitted }}</td>
         <td v-if="report.accepted == 1">Approved</td>
-        <td v-else >Pedning approval</td>
+        <td v-else >Pending approval</td>
         <td>{{ report.accepting_member }}</td>
       </TRLinkButton>
     </table>

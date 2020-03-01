@@ -19,7 +19,7 @@ const state = {
   units: [],
   assets: [],
   members: [],
-
+  pilot_fates: [],
 
 };
 
@@ -47,6 +47,31 @@ const getters = {
   nestedData: (state) => (table) => {
 
     return Vue.prototype.$dbCon.nestData(state[table]);
+  },
+
+  subTree: (state, getters) => (table, keyName, keyValue) => {
+
+    let parent = getters.findByKey(table, keyName, keyValue);
+    if(parent !== undefined){
+      return state[table].filter(
+        function (item) {
+          return (parent.lft < item.lft & item.rgt < parent.rgt);
+        });
+    } else {
+      return [];
+    }
+  },
+
+  subTreeItems: (state, getters) => (table, lft, rgt, include_parent) => {
+
+    return state[table].filter(
+      function (item) {
+        if(include_parent){
+          return (lft <= item.lft & item.rgt <= rgt);
+        } else {
+          return (lft < item.lft & item.rgt < rgt);
+        }
+      });
   },
 
   missionById: (state) => (id_inn) => {
