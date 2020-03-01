@@ -17,6 +17,7 @@ function whitelist_table($name) {
         "asset_subtree",
         "briefing",
         "briefing_info",
+        "BoX_Character_Status",
         "campaign",
         "campaign_list",
         "campaign_info_unit",

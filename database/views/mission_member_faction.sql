@@ -6,6 +6,10 @@ VIEW `mission_member_faction` AS
     SELECT 
         `transfer`.`member_id` AS `member_id`,
         `mission`.`id` AS `mission_id`,
+        `deployed_unit`.`id` AS `depl_unit_id`,
+        `deployed_unit`.`acg_unit_id` AS `acg_unit_id`,
+        `deployed_unit`.`lft` AS `lft`,
+        `deployed_unit`.`rgt` AS `rgt`,
         `hist_unit`.`faction` AS `faction`
     FROM
         (((`transfer`

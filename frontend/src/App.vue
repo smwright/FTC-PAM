@@ -277,6 +277,11 @@ select {
   background: rgba(0, 0, 0, 0.1);
 }
 
+.container-transparent {
+  margin: 10px 2px 10px 2px;
+  padding: 10px;
+}
+
 .side-nav-heading {
 
   color: #F28900;
