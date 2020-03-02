@@ -36,7 +36,7 @@ function whitelist_table($name) {
         "claim_ground" => array("claim_id", "amount"),
         "comment" => array("report_id", "member_id", "comment_date", "comment_text"),
         "decoration" => array("date", "comment", "awarded", "awarded_by"),
-        "deployed_unit" => array("campaign_id", "acg_unit_id", "hist_unit_id", "asset_id", "report_type", "lft", "rgt"),
+        "deployed_unit" => array("campaign_id", "acg_unit_id", "hist_unit_id", "asset_id", "unit_type", "lft", "rgt"),
         "hist_unit" => array("name", "code", "faction", "type", "description", "image"),
         "member_status_log" => array("member_id", "member_status", "status_date_in", "status_date_out", "comment"),
         "mission" => array("name", "campaign_id", "real_date", "hist_date", "mission_status"),
