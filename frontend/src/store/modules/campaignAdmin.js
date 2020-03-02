@@ -26,7 +26,7 @@ const state = {
         acg_unit_id : null,
         hist_unit_id : 1,
         asset_id : null,
-        report_type : null,
+        unit_type : null,
         lft : 1,
         rgt : 2
       }]
