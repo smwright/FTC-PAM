@@ -107,9 +107,9 @@ function updateMemberForumGroup($memberId, $dbx){
     $forum_group_id = $result["forum_group_id"];
     $faction = $result["faction"];
     //FOR DEVELOPMENT
-    $image_filename = "http://localhost:8080".$result["hist_unit_image"];
+//    $image_filename = "http://localhost:8080".$result["hist_unit_image"];
     //FOR DEPLOYMENT
-//    $image_filename = "../frontend/src".$row["hist_unit_image"];
+    $image_filename = "http://aircombatgroup.co.uk".$result["hist_unit_image"];
 
     $avatar_target_width = 50;
     list($width, $height) = getimagesize($image_filename);
@@ -262,9 +262,9 @@ function synchronizeForumToCampaign($campaignId, $dbx){
 function adjustForumGroup($row, $dbx){
 
     //FOR DEVELOPMENT
-    $image_filename = "http://localhost:8080".$row["hist_unit_image"];
+//    $image_filename = "http://localhost:8080".$result["hist_unit_image"];
     //FOR DEPLOYMENT
-//    $image_filename = "../frontend/src".$row["hist_unit_image"];
+    $image_filename = "http://aircombatgroup.co.uk".$result["hist_unit_image"];
 
     $avatar_target_width = 50;
     list($width, $height) = getimagesize($image_filename);
