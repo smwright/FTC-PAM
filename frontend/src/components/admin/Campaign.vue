@@ -327,7 +327,7 @@ export default {
           campaign_id: this.campaign_id,
           hist_unit_id: null,
           id: min_id - 1,
-          report_type: null
+          unit_type: null
         };
       this.$refs.tree.addNode(node);
     },

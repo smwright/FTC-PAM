@@ -103,16 +103,18 @@ function updateMemberForumGroup($memberId, $dbx){
     $result = mysqli_fetch_assoc($query);
     $username = strtolower($result["username"]);
     $member_status = $result["member_status"];
-    $acg_unit_id = $result["username"];
+    $acg_unit_id = $result["acg_unit_id"];
     $forum_group_id = $result["forum_group_id"];
     $faction = $result["faction"];
     //FOR DEVELOPMENT
     $image_filename = "http://localhost:8080".$result["hist_unit_image"];
+    $image_filename_sizecheck = "http://localhost:8080".$result["hist_unit_image"];
     //FOR DEPLOYMENT
-//    $image_filename = "../frontend/src".$row["hist_unit_image"];
+//    $image_filename = "http://aircombatgroup.co.uk".$result["hist_unit_image"];
+//    $image_filename_sizecheck = "../".$result["hist_unit_image"];
 
     $avatar_target_width = 50;
-    list($width, $height) = getimagesize($image_filename);
+    list($width, $height) = getimagesize($image_filename_sizecheck);
     $scaling_factor = $avatar_target_width/$width;
     $scaled_width = (int)($width*$scaling_factor);
     $scaled_height = (int)($height*$scaling_factor);
@@ -262,12 +264,14 @@ function synchronizeForumToCampaign($campaignId, $dbx){
 function adjustForumGroup($row, $dbx){
 
     //FOR DEVELOPMENT
-    $image_filename = "http://localhost:8080".$row["hist_unit_image"];
+    $image_filename = "http://localhost:8080".$result["hist_unit_image"];
+    $image_filename_sizecheck = "http://localhost:8080".$result["hist_unit_image"];
     //FOR DEPLOYMENT
-//    $image_filename = "../frontend/src".$row["hist_unit_image"];
+//    $image_filename = "http://aircombatgroup.co.uk".$result["hist_unit_image"];
+//    $image_filename_sizecheck = "../".$result["hist_unit_image"];
 
     $avatar_target_width = 50;
-    list($width, $height) = getimagesize($image_filename);
+    list($width, $height) = getimagesize($image_filename_sizecheck);
     $scaling_factor = $avatar_target_width/$width;
     $scaled_width = (int)($width*$scaling_factor);
     $scaled_height = (int)($height*$scaling_factor);
