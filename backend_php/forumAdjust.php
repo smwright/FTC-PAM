@@ -206,6 +206,17 @@ function updateMemberForumGroup($memberId, $dbx){
             "`user_avatar_height` = $scaled_height ".
             "WHERE `user_id` = $forum_user_id";
         $result_array[] = executeSQL($sql, $dbxForum);
+
+        $sql = "UPDATE phpbb_topics SET ".
+            "`topic_first_poster_colour` = '$colour' ".
+            "WHERE `topic_poster` = $forum_user_id";
+        $result_array[] = executeSQL($sql, $dbxForum);
+
+        $sql = "UPDATE phpbb_topics SET ".
+            "`topic_last_poster_colour` = '$colour' ".
+            "WHERE `topic_last_poster_id` = $forum_user_id";
+        $result_array[] = executeSQL($sql, $dbxForum);
+
         updateMemberForumRank($memberId, $dbx);
 
     } else {
@@ -226,6 +237,17 @@ function updateMemberForumGroup($memberId, $dbx){
             "`user_avatar_height` = 0 ".
             "WHERE `user_id` = $forum_user_id";
         $result_array[] = executeSQL($sql, $dbxForum);
+
+        $sql = "UPDATE phpbb_topics SET ".
+            "`topic_first_poster_colour` = '228B22' ".
+            "WHERE `topic_poster` = $forum_user_id";
+        $result_array[] = executeSQL($sql, $dbxForum);
+
+        $sql = "UPDATE phpbb_topics SET ".
+            "`topic_last_poster_colour` = '228B22' ".
+            "WHERE `topic_last_poster_id` = $forum_user_id";
+        $result_array[] = executeSQL($sql, $dbxForum);
+
         deleteMemberForumRank($memberId, $dbx);
     }
 
@@ -338,6 +360,19 @@ function adjustForumGroup($row, $dbx){
         "AND group_id = $opposing_faction_group";
 //    $result = mysqli_query($dbxForum, $sql);
     $result_array[] = executeSQL($sql, $dbxForum);
+
+    $sql = "UPDATE phpbb_topics SET ".
+        "`topic_first_poster_colour` = '$colour' ".
+        "WHERE `topic_poster` IN ".
+        "(SELECT user_id FROM phpbb_user_group WHERE group_id = $forum_group_id) ";
+    $result_array[] = executeSQL($sql, $dbxForum);
+
+    $sql = "UPDATE phpbb_topics SET ".
+        "`topic_last_poster_colour` = '$colour' ".
+        "WHERE `topic_last_poster_id` IN ".
+        "(SELECT user_id FROM phpbb_user_group WHERE group_id = $forum_group_id) ";
+    $result_array[] = executeSQL($sql, $dbxForum);
+
     echo (json_encode($result_array));
     mysqli_close($dbxForum);
 }
