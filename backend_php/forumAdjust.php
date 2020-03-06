@@ -107,11 +107,11 @@ function updateMemberForumGroup($memberId, $dbx){
     $forum_group_id = $result["forum_group_id"];
     $faction = $result["faction"];
     //FOR DEVELOPMENT
-    $image_filename = "http://localhost:8080".$result["hist_unit_image"];
-    $image_filename_sizecheck = "http://localhost:8080".$result["hist_unit_image"];
+//    $image_filename = "http://localhost:8080".$result["hist_unit_image"];
+//    $image_filename_sizecheck = "http://localhost:8080".$result["hist_unit_image"];
     //FOR DEPLOYMENT
-//    $image_filename = "http://aircombatgroup.co.uk".$result["hist_unit_image"];
-//    $image_filename_sizecheck = "../".$result["hist_unit_image"];
+    $image_filename = "http://aircombatgroup.co.uk".$result["hist_unit_image"];
+    $image_filename_sizecheck = "../".$result["hist_unit_image"];
 
     $avatar_target_width = 50;
     list($width, $height) = getimagesize($image_filename_sizecheck);
@@ -286,11 +286,11 @@ function synchronizeForumToCampaign($campaignId, $dbx){
 function adjustForumGroup($row, $dbx){
 
     //FOR DEVELOPMENT
-    $image_filename = "http://localhost:8080".$result["hist_unit_image"];
-    $image_filename_sizecheck = "http://localhost:8080".$result["hist_unit_image"];
+//    $image_filename = "http://localhost:8080".$row["hist_unit_image"];
+//    $image_filename_sizecheck = "http://localhost:8080".$row["hist_unit_image"];
     //FOR DEPLOYMENT
-//    $image_filename = "http://aircombatgroup.co.uk".$result["hist_unit_image"];
-//    $image_filename_sizecheck = "../".$result["hist_unit_image"];
+    $image_filename = "http://aircombatgroup.co.uk".$row["hist_unit_image"];
+    $image_filename_sizecheck = "../".$row["hist_unit_image"];
 
     $avatar_target_width = 50;
     list($width, $height) = getimagesize($image_filename_sizecheck);
@@ -353,9 +353,18 @@ function adjustForumGroup($row, $dbx){
     // Adjust user faction groups
     // '14', 'Allies'
     // '15', 'Axis'
-    $sql = "UPDATE phpbb_user_group` SET ".
+
+    $result = [];
+    $sql = "SELECT user_id FROM phpbb_user_group WHERE group_id = $forum_group_id";
+    $query = mysqli_query($dbxForum, $sql);
+    while($row = mysqli_fetch_array($query)){
+        $result[] = (int)$row['user_id'];
+    }
+    $unit_forum_user_id = implode (", ", $result);
+
+    $sql = "UPDATE phpbb_user_group SET ".
         "`group_id` = $own_faction_group ".
-        "WHERE `user_id` IN ".
+        "WHERE `user_id` IN ($unit_forum_user_id)".
         "(SELECT user_id FROM phpbb_user_group WHERE group_id = $forum_group_id) ".
         "AND group_id = $opposing_faction_group";
 //    $result = mysqli_query($dbxForum, $sql);
