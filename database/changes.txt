@@ -2,3 +2,8 @@ THIS FILE LISTS ALL DATABASE CHANGES IN SPECIFIC DEVELOPMENT BRANCHES:
 
 -FEAT-forum-adjust
     rank: add forum_id
+
+-FEAT-AAR-adjustment
+    asset: add claimable
+    asset-info: add claimable
+    asset-subtree: add claimable

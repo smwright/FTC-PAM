@@ -8,7 +8,7 @@
         <td class="width-20">
           <select v-model="claim_aircraft">
             <option
-              v-for="aircraft in assetByFaction(-2)"
+              v-for="aircraft in assetByFactionClaimable(-2, 1)"
               v-bind:value="aircraft.id"
             >
               {{ aircraft.name }}
@@ -134,7 +134,7 @@ import { mapGetters } from "vuex"
     },
 
     ...mapGetters("missionStore", [
-      "assetByFaction"
+      "assetByFactionClaimable"
     ])
   },
   methods: {

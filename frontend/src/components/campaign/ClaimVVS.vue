@@ -27,7 +27,7 @@
       <tr>
         <td v-if="group_claim">X</td>
         <td v-else></td>
-        <td v-if="witness_id !== null">{{ memberById(witness_id).callsign }}</td>
+        <td v-if="witness_id !== null && witness_id > 0">{{ memberById(witness_id).callsign }}</td>
         <td v-else></td>
         <td>
           <ClaimConfirmationComp
@@ -37,6 +37,7 @@
       </tr>
     </table>
     <br>
+    <div colspan="4">{{ decodeHTML(description) }}</div>
   </div>
 </template>
 
@@ -93,6 +94,10 @@
       accepted: {
         type: Number,
         default: 0
+      },
+      description: {
+        type: String,
+        default: null
       }
     },
     computed: {

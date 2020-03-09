@@ -4,8 +4,15 @@
 
     <template v-if="this.show_edit_display">
       <div class="clearfix container margin-left-right">
-        <button v-if="this.show_edit_button" v-on:click="toggleEdit" class="float-right">Exit edit</button>
-        <button v-if="this.show_edit_button" v-on:click="sendReport" class="float-right">Send report</button>
+
+        <div class="float-right">
+          <button v-if="this.show_edit_button" v-on:click="toggleEdit" class="float-right">Exit edit</button>
+          <button v-if="this.show_edit_button" v-on:click="sendReport" class="float-right">Send report</button>
+        </div>
+        <div class="info-text float-right">
+          {{ info_text }}
+        </div>
+
       </div>
       <div class="typed-on-paper" v-if="report_loaded">
         <EditReportLW v-if="report_info.faction==1" v-bind="report_info"></EditReportLW>
@@ -90,6 +97,9 @@ export default {
       report_loaded: false,
       edit_display: false,
       user_id: null,
+      send_button_text: "Send Report",
+      info_text: "",
+      send_button_active: true
 
     }
   },
@@ -153,12 +163,15 @@ export default {
 
     sendReport: function () {
 
+      this.info_text = "Sending...";
       this.$store.dispatch('missionStore/sendReport',
         {
           caller: this.$options.name,
           path: this.$route.path
         })
         .then(response => {
+
+          this.info_text = response;
 
         })
         .catch(error => {
@@ -174,6 +187,11 @@ export default {
 
 .margin-left-right button{
   margin: 0px 5px;
+}
+
+.info-text{
+  text-align: center;
+  padding: 5px;
 }
 
 </style>

@@ -15,7 +15,7 @@
         <td>
           <select v-model="claim_aircraft">
             <option
-              v-for="aircraft in assetByFaction(-3)"
+              v-for="aircraft in assetByFactionClaimable(-3, 1)"
               v-bind:value="aircraft.id"
             >
               {{ aircraft.name }}
@@ -177,7 +177,7 @@
       },
 
       ...mapGetters("missionStore", [
-        "assetByFaction",
+        "assetByFactionClaimable",
         "activeMembers"
       ])
     },
