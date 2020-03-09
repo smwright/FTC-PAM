@@ -23,7 +23,7 @@ function whitelist_table($name) {
     $available_tables = array(
 
         "acg_member" => array("username", "callsign", "admin"),
-        "asset" => array("name", "faction", "controlable", "lft", "rgt"),
+        "asset" => array("name", "faction", "controlable", "claimable", "lft", "rgt"),
         "briefing" => array("mission_id", "faction", "text"),
         "campaign" => array("name", "is_primary", "platform", "campaign_status", "time", "open", "campaign_link",
             "description", "image"),

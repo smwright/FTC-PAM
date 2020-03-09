@@ -171,6 +171,23 @@ const getters = {
     }
   },
 
+  assetByFactionClaimable: (state) => (faction_inn, claimable) => {
+
+    if(faction_inn > 0){
+      return state.assets.filter(
+        function (asset) {
+          return asset.faction === faction_inn && asset.parent_name === "Aircraft" && asset.claimable === claimable;
+        }
+      )
+    } else {
+      return state.assets.filter(
+        function (asset) {
+          return asset.faction !== Math.abs(faction_inn) && asset.parent_name === "Aircraft" && asset.claimable === claimable;
+        }
+      )
+    }
+  },
+
   assetByFactionControllable: (state) => (faction_inn, controlable) => {
 
     return state.assets.filter(
@@ -185,9 +202,9 @@ const getters = {
 
     return state.assets.filter(
       function (asset) {
-        return asset.parent_name === "Vehicle" |
+        return (asset.parent_name === "Vehicle" |
           asset.parent_name === "Structure" |
-          asset.name === "Aircraft";
+          asset.name === "Aircraft") & asset.claimable;
       }
     )
   },
@@ -856,8 +873,7 @@ const  actions = {
             mission_id: context.state.report.mission_id,
             depl_unit_id: context.state.report.depl_unit_id,
           });
-        alert("Report sent, check logger for further info.")
-        resolve();
+        resolve("Report sent, check logger for further info.");
 
       } catch (e) {
 
