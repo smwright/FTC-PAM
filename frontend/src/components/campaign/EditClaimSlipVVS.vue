@@ -150,8 +150,11 @@
           {
             report_id: this.report_info.report_id,
             asset_id: null,
-            enemy_status: 0,
-            shared: 0
+            claim_time: null,
+            place: null,
+            group_claim: 0,
+            confirmed: 0,
+            witness_id: null
           });
       },
 
