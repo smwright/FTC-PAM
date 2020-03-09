@@ -32,6 +32,7 @@
                   </div>
                   <div>
                     <span v-if="tree.data.controlable">Controllable</span>
+                    <span v-if="tree.data.claimable">Claimable</span>
                   </div>
                 </template>
 
@@ -53,7 +54,11 @@
                   </div>
                   <div>
                     <span>Controllable</span>
-                    <input type="checkbox" id="checkbox" v-model="tree.data.controlable">
+                    <input type="checkbox" id="checkbox-contr" v-model="tree.data.controlable" true-value=1 false-value=0>
+                  </div>
+                  <div>
+                    <span>Claimable</span>
+                    <input type="checkbox" id="checkbox-claim" v-model="tree.data.claimable" true-value=1 false-value=0>
                   </div>
                   <div class="float-right">
                     <button v-on:click="deleteAsset(tree.data)">Delete</button>
@@ -86,7 +91,8 @@
       <p>
         Use the tree on the left to organize ACG assets. Assets can be dragged and dropped to form groups. Click on the
         name of each asset to edit it. Each asset can be given a name and faction. Each asset can be marked as
-        controllable, which means it will be available as the pilots aircraft in the After Action Reports.
+        controllable, which means it will be available as the pilots aircraft in the After Action Reports. Each asset can
+        be marked as claimable, which means it will be available as a claimed aircraft in the After Action Reports.
       </p>
 
       <p>
@@ -164,7 +170,8 @@ export default {
           id: -1,
           name: "New Asset",
           faction: 0,
-          controlable: 0
+          controlable: 0,
+          claimable: 0
         };
 
       this.$refs.tree.addNode(node);
