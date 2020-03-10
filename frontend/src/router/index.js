@@ -48,6 +48,9 @@ import FlightSchoolSideNav from '@/components/flight_school/FlightSchoolSideNav'
 import FlightSchoolMain from '@/components/flight_school/FlightSchoolMain'
 import FlightSchoolRAF from '@/components/flight_school/FlightSchoolRAF'
 import FlightSchoolRAFVocabulary from '@/components/flight_school/FlightSchoolRAFVocabulary'
+import FlightSchoolRAFRanks from '@/components/flight_school/FlightSchoolRAFRanks'
+import FlightSchoolRAFAlphabet from '@/components/flight_school/FlightSchoolRAFAlphabet'
+import FlightSchoolRAFOrganisation from '@/components/flight_school/FlightSchoolRAFOrganisation'
 import FlightSchoolLW from '@/components/flight_school/FlightSchoolLW'
 import FlightSchoolVVS from '@/components/flight_school/FlightSchoolVVS'
 import FlightSchoolUSAAF from '@/components/flight_school/FlightSchoolUSAAF'
@@ -284,7 +287,6 @@ const router = new VueRouter({
         sidenav: FlightSchoolSideNav
       }
     },
-
         {
           path: '/flight-school/basic-navigation',
           name: 'FlightSchoolBasicNavigation',
@@ -301,12 +303,12 @@ const router = new VueRouter({
             sidenav: FlightSchoolSideNav
           }
         },
-        {
-          path: '/flight-school/royal-air-force',
-          name: 'FlightSchoolRAF',
-          components: {
-            default: FlightSchoolRAF,
-            sidenav: FlightSchoolSideNav
+    {
+      path: '/flight-school/royal-air-force',
+      name: 'FlightSchoolRAF',
+      components: {
+        default: FlightSchoolRAF,
+        sidenav: FlightSchoolSideNav
           }
         },
     {
@@ -317,6 +319,31 @@ const router = new VueRouter({
         sidenav: FlightSchoolSideNav
       }
     },
+    {
+      path: '/flight-school/royal-air-force/phonetic-alphabet',
+      name: 'FlightSchoolRAFAlphabet',
+      components: {
+        default: FlightSchoolRAFAlphabet,
+        sidenav: FlightSchoolSideNav
+      }
+    },
+    {
+      path: '/flight-school/royal-air-force/ranks',
+      name: 'FlightSchoolRAFRanks',
+      components: {
+        default: FlightSchoolRAFRanks,
+        sidenav: FlightSchoolSideNav
+      }
+    },
+    {
+      path: '/flight-school/royal-air-force/organisation',
+      name: 'FlightSchoolRAFOrganisation',
+      components: {
+        default: FlightSchoolRAFOrganisation,
+        sidenav: FlightSchoolSideNav
+      }
+    },
+
         {
           path: '/flight-school/luftwaffe',
           name: 'FlightSchoolLW',

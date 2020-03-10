@@ -2,7 +2,7 @@
   <div class="flightSchool">
     <div>
     <h1 class="text-align-center">Ranks and Appointments</h1>
-    <p class="text-align-center">The RAF is not always logical and can sound, to the unfamiliar, like the rules of cricket as described on a novelty tea towel, so here is a short aide memoire.<br>This how things worked in the real RAF during and around 1940. In ACG we do ranks slightly differently and we don't expect you to address ranks formally, of course. For more information on the ACG ranking system, visit this page.</p>
+    <p class="text-align-center">The RAF is not always logical and can sound, to the unfamiliar, like the rules of cricket as described on a novelty tea towel, so here is a short aide memoire.<br>This is how things worked in the real RAF during and around 1940. In ACG we do ranks slightly differently and we don't expect you to address ranks formally, of course. For more information on the ACG ranking system, visit this page.</p>
       <table border="1">
         <tr>
           <th><img src="../../assets/images/raf_ranks/RankLAC.png"/></th>
