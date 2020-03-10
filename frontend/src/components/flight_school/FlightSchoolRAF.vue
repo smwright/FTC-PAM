@@ -14,15 +14,32 @@
       <img title="IL-2 Sturmovik: Cliffs of Dover 'Blitz'" class="buttonPlatformImage" src="../../assets/images/flight_school_images/il2_cliffs_logo.png"/>
       <span class="buttonTitles">TF Wiki Flight Manuals</span>
       <br>
-      <span>Ths is the Wiki page of Team Fusion (the people developing the game), where you can find all information about the aircraft included in IL-2 Sturmovik: Cliffs of Dover 'Blitz'. </span>
+      <span>This is the Wiki page of Team Fusion (the people developing the game), where you can find all information about the aircraft included in IL-2 Sturmovik: Cliffs of Dover 'Blitz'. </span>
     </div>
   </div>
+    <div class="div-button-half float-right" v-on:click="navigate_to('https://forum.il2sturmovik.com/topic/25993-aircraft-flight-and-technical-specifications-and-operational-details/')">
+      <div class="inline-block">
+        <img class="buttonImageThumbnail" src="../../assets/images/flight_school_images/raf/TF-Manuals.jpg"/>
+        <img title="IL-2 Sturmovik: Cliffs of Dover 'Blitz'" class="buttonPlatformImage" src="../../assets/images/flight_school_images/il2_gb_logo.png"/>
+        <span class="buttonTitles">Aircraft Specifications</span>
+        <br>
+        <span>Ths is the IL-2 Great Battles Forum page for all aircraft included in the IL-2 Great Battles series. Scroll down to find the specifications for all RAF Aircraft included in the Battle of Bodenplatte expansion. </span>
+      </div>
+    </div>
+    <DivLinkButton class="div-button-half float-left" v-bind="{routeName: 'FlightSchoolRAFOrganisation'}">
+      <div class="inline-block">
+        <img class="buttonImageThumbnail" src="../../assets/images/flight_school_images/raf/organisation.jpg"/>
+        <span class="buttonTitles">Organisation</span>
+        <br>
+        <span>The RAF is not always logical and can sound, to the unfamiliar, like the rules of cricket as described on a novelty tea towel, so here is a short aide memoire.</span>
+      </div>
+    </DivLinkButton>
     <DivLinkButton class="div-button-half float-right" v-bind="{routeName: 'FlightSchoolRAFRanks'}">
       <div class="inline-block">
         <img class="buttonImageThumbnail" src="../../assets/images/flight_school_images/navigation/raf_rank.jpg"/>
         <span class="buttonTitles">Ranks & Appointments</span>
         <br>
-        <span>The RAF is not always logical and can sound, to the unfamiliar, like the rules of cricket as described on a novelty tea towel, so here is a short aide memoire.</span>
+        <span>Here you will get to know the RAF ranks, what tasks are reserved for each and how to address them properly. Of course these are all only for reference in our virtual flying world, but we like to know a few things to aid authenticity.</span>
       </div>
     </DivLinkButton>
     <DivLinkButton class="div-button-half float-left" v-bind="{routeName: 'FlightSchoolRAFAlphabet'}">
@@ -41,6 +58,10 @@
         <span>Speak like the RAF personnel of the day with this guide to codewords and slang. Here is a list of the most common terms and meanings known. Some try to use this language in missions; for immersion purposes of course! </span>
       </div>
     </DivLinkButton>
+    <div class="text-align-center">
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <h2>Practice</h2>
+    </div>
     <div class="div-button-half float-right" v-on:click="navigate_to('https://www.youtube.com/watch?v=A4_nZHmdk9I&list=PLlUs-9KA-ShKV4wCgJbizzkGMbt8RCX9-')">
       <div class="inline-block">
         <img class="buttonImageThumbnail" src="../../assets/images/flight_school_images/navigation/Gunsight.jpg"/>
@@ -59,7 +80,7 @@
         <span>This lesson by Requiem on YouTube teaches you how to use the RAF reflector sight effectively in IL-2 Sturmovik: Great Battles.</span>
       </div>
     </div>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br>
     <div class="text-align-center">
       <h2>Hurricane Mk. I Rotol (100 octane)</h2>
     </div>
