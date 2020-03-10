@@ -75,14 +75,14 @@
       <div class="inline-block">
         <img class="buttonImageThumbnail" src="../../assets/images/flight_school_images/general/gunnery.jpg"/>
         <img title="IL-2 Sturmovik: Great Battles" class="buttonPlatformImage" src="../../assets/images/flight_school_images/il2_gb_logo.png"/>
-        <span class="buttonTitles">Reflector by Requiem</span>
+        <span class="buttonTitles">Reflector Sight</span>
         <br>
         <span>This lesson by Requiem on YouTube teaches you how to use the RAF reflector sight effectively in IL-2 Sturmovik: Great Battles.</span>
       </div>
     </div>
     <br><br><br><br><br><br><br><br>
     <div class="text-align-center">
-      <h2>Hurricane Mk. I Rotol (100 octane)</h2>
+      <h2>Hawker Hurricane</h2>
     </div>
     <div class="div-button-half float-left" v-on:click="navigate_to('https://youtu.be/Dv4lWBIjkq8')">
       <div class="inline-block">
@@ -90,7 +90,7 @@
         <img title="IL-2 Sturmovik: Cliffs of Dover 'Blitz'" class="buttonPlatformImage" src="../../assets/images/flight_school_images/il2_cliffs_logo.png"/>
         <span class="buttonTitles">Start-up & Warm-up</span>
         <br>
-        <span>A tutorial from Spud demonstrating the fit and proper method of pre-flight checks. Note this version is slightly outdated, but the basic principles still apply.</span>
+        <span>A tutorial from Spud demonstrating the fit and proper method of pre-flight checks in the Mk.I. Note this version is slightly outdated, but the basic principles still apply.</span>
       </div>
     </div>
     <div class="div-button-half float-right" v-on:click="navigate_to('https://youtu.be/sItxHmWZdlI')">
@@ -99,7 +99,7 @@
         <img title="IL-2 Sturmovik: Cliffs of Dover 'Blitz'" class="buttonPlatformImage" src="../../assets/images/flight_school_images/il2_cliffs_logo.png"/>
         <span class="buttonTitles">Scramble Procedure</span>
         <br>
-        <span>Want to get off the ground in a rush to go and deal the Boche some of what he deserves? Follow this tutorial from 'Bunny' to find out how. </span>
+        <span>Want to get off the ground in the Mk.I in a rush to go and deal the Boche some of what he deserves? Follow this tutorial from 'Bunny' to find out how. </span>
       </div>
     </div>
     <div class="div-button-half float-left" v-on:click="navigate_to('https://youtu.be/SyEx8x7umVc')">
@@ -108,7 +108,7 @@
         <img title="IL-2 Sturmovik: Cliffs of Dover 'Blitz'" class="buttonPlatformImage" src="../../assets/images/flight_school_images/il2_cliffs_logo.png"/>
         <span class="buttonTitles">Landing Procedure</span>
         <br>
-        <span>Want to know how to put the Hurricane down in a perfect 3-point landing? Follow this tutorial from 'Dickie' to find out how to to get it right every time and impress the boss! </span>
+        <span>Want to know how to put the Hurricane Mk.I down in a perfect 3-point landing? Follow this tutorial from 'Dickie' to find out how to to get it right every time and impress the boss! </span>
       </div>
     </div>
     <div class="div-button-half float-right" v-on:click="navigate_to('https://youtu.be/BI4kQU1gvIs')">
@@ -117,12 +117,12 @@
         <img title="IL-2 Sturmovik: Cliffs of Dover 'Blitz'" class="buttonPlatformImage" src="../../assets/images/flight_school_images/il2_cliffs_logo.png"/>
         <span class="buttonTitles">Fast Landing Procedure</span>
         <br>
-        <span>Want to know how to put the Hurricane down in a rush after some combat? Follow this tutorial from 'Bunny' to find out how not to prang your precious kite! </span>
+        <span>Want to know how to put the Hurricane Mk.I down in a rush after some combat? Follow this tutorial from 'Bunny' to find out how not to prang your precious kite! </span>
       </div>
     </div>
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     <div class="text-align-center">
-      <h2>Spitfire Mk. Ia (100 octane)</h2>
+      <h2>Supermarine Spitfire</h2>
     </div>
     <div class="div-button-half float-left" v-on:click="navigate_to('https://youtu.be/b7WeKDbwZJU')">
       <div class="inline-block">
@@ -130,7 +130,7 @@
         <img title="IL-2 Sturmovik: Cliffs of Dover 'Blitz'" class="buttonPlatformImage" src="../../assets/images/flight_school_images/il2_cliffs_logo.png"/>
         <span class="buttonTitles">Start-up & Takeoff</span>
         <br>
-        <span>Keen to get your weapon into the skies to smash Jerry? Follow this tutorial from 'Dickie' to find out how to strap in and launch into the big blue. </span>
+        <span>Keen to get your Spitfire Mk.I  into the skies to smash Jerry? Follow this tutorial from 'Dickie' to find out how to strap in and launch into the big blue. </span>
       </div>
     </div>
     <div class="div-button-half float-right" v-on:click="navigate_to('https://youtu.be/OI1qi-tGi7E')">
@@ -139,7 +139,69 @@
         <img title="IL-2 Sturmovik: Cliffs of Dover 'Blitz'" class="buttonPlatformImage" src="../../assets/images/flight_school_images/il2_cliffs_logo.png"/>
         <span class="buttonTitles">Landing Procedure</span>
         <br>
-        <span>Want to know how to put the Spitfire down gently? Follow this tutorial from 'Dickie' to find out how not to prang your precious kite! </span>
+        <span>Want to know how to put the Spitfire Mk.I down gently? Follow this tutorial from 'Dickie' to find out how not to prang your precious kite! </span>
+      </div>
+    </div>
+    <div class="div-button-half float-left" v-on:click="navigate_to('https://www.youtube.com/watch?v=Povrm28nExA')">
+      <div class="inline-block">
+        <img class="buttonImageThumbnail" src="../../assets/images/flight_school_images/raf/spit-mk5b.jpg"/>
+        <img title="IL-2 Sturmovik: Great Battles" class="buttonPlatformImage" src="../../assets/images/flight_school_images/il2_gb_logo.png"/>
+        <span class="buttonTitles">Mk.Vb Basics</span>
+        <br>
+        <span>This tutorial by Requiem will teach all that you need to know about the Spitfire Mk.V in the Great Battles series.</span>
+      </div>
+    </div>
+    <div class="div-button-half float-right" v-on:click="navigate_to('https://www.youtube.com/watch?v=OhYpyQgYy3M')">
+      <div class="inline-block">
+        <img class="buttonImageThumbnail" src="../../assets/images/flight_school_images/raf/spit-mk9.jpeg"/>
+        <img title="IL-2 Sturmovik: Great Battles" class="buttonPlatformImage" src="../../assets/images/flight_school_images/il2_gb_logo.png"/>
+        <span class="buttonTitles">Mk.IX Basics</span>
+        <br>
+        <span>This tutorial by Requiem will teach all that you need to know about the Spitfire Mk.IX in the Great Battles series.</span>
+      </div>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <div class="text-align-center">
+      <h2>Bristol Blenheim</h2>
+    </div>
+    <div class="div-button-half float-left" v-on:click="navigate_to('https://www.youtube.com/watch?v=MYZyxG3bERU')">
+      <div class="inline-block">
+        <img class="buttonImageThumbnail" src="../../assets/images/flight_school_images/raf/bristol-blenheim-basics.jpg"/>
+        <img title="IL-2 Sturmovik: Cliffs of Dover 'Blitz'" class="buttonPlatformImage" src="../../assets/images/flight_school_images/il2_cliffs_logo.png"/>
+        <span class="buttonTitles">Blenheim Basics</span>
+        <br>
+        <span>Want to know how to operate the Blenheim Mk.IV and strike back at Jerry? Follow these tutorials by PhilStyle to find out how to turn those suicide attacks into milk runs! </span>
+      </div>
+    </div>
+    <div class="div-button-half float-right" v-on:click="navigate_to('https://www.youtube.com/watch?v=uSc9TS6p54Q')">
+      <div class="inline-block">
+        <img class="buttonImageThumbnail" src="../../assets/images/flight_school_images/raf/bristol-blenheim-bombing.jpg"/>
+        <img title="IL-2 Sturmovik: Cliffs of Dover 'Blitz'" class="buttonPlatformImage" src="../../assets/images/flight_school_images/il2_cliffs_logo.png"/>
+        <span class="buttonTitles">Bombsight</span>
+        <br>
+        <span>Flying around is one thing, you need to be accurate in order to give Goering a firm kick in the shin. Watch the next video to discover how.  </span>
+      </div>
+    </div>
+    <br><br><br><br><br><br><br><br>
+    <div class="text-align-center">
+      <h2>Hawker Tempest</h2>
+    </div>
+    <div class="div-button-half float-left" v-on:click="navigate_to('https://www.youtube.com/watch?v=5nsTW7ndL90')">
+      <div class="inline-block">
+        <img class="buttonImageThumbnail" src="../../assets/images/flight_school_images/raf/tempest.jpg"/>
+        <img title="IL-2 Sturmovik: Great Battles" class="buttonPlatformImage" src="../../assets/images/flight_school_images/il2_gb_logo.png"/>
+        <span class="buttonTitles">Tempest Basics</span>
+        <br>
+        <span>This tutorial by Requiem will teach everything you need to know about the Hawker Tempest in the Great Battles series. This one packs a punch!</span>
+      </div>
+    </div>
+    <div class="div-button-half float-right" v-on:click="navigate_to('https://www.youtube.com/watch?v=qL7nJXtrX_c')">
+      <div class="inline-block">
+        <img class="buttonImageThumbnail" src="../../assets/images/flight_school_images/raf/dogfighting-tempest.jpg"/>
+        <img title="IL-2 Sturmovik: Great Battles" class="buttonPlatformImage" src="../../assets/images/flight_school_images/il2_gb_logo.png"/>
+        <span class="buttonTitles">Dogfighting</span>
+        <br>
+        <span>If you are keen to shoot up some Bosche plane, this video by Requiem will teach some techniques on how to get the upper hand in a furball.</span>
       </div>
     </div>
   </div>
