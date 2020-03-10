@@ -17,30 +17,30 @@
       <span>Ths is the Wiki page of Team Fusion (the people developing the game), where you can find all information about the aircraft included in IL-2 Sturmovik: Cliffs of Dover 'Blitz'. </span>
     </div>
   </div>
-    <div class="div-button-half float-right" v-bind="{routeName: 'FlightSchoolRAFVocabulary'}">
+    <DivLinkButton class="div-button-half float-right" v-bind="{routeName: 'FlightSchoolRAFRanks'}">
       <div class="inline-block">
         <img class="buttonImageThumbnail" src="../../assets/images/flight_school_images/navigation/raf_rank.jpg"/>
-        <span class="buttonTitles">Ranks & Organisation</span>
+        <span class="buttonTitles">Ranks & Appointments</span>
         <br>
         <span>The RAF is not always logical and can sound, to the unfamiliar, like the rules of cricket as described on a novelty tea towel, so here is a short aide memoire.</span>
       </div>
-    </div>
-    <div class="div-button-half float-left" v-bind="{routeName: 'FlightSchoolRAFVocabulary'}">
+    </DivLinkButton>
+    <DivLinkButton class="div-button-half float-left" v-bind="{routeName: 'FlightSchoolRAFAlphabet'}">
       <div class="inline-block">
         <img class="buttonImageThumbnail" src="../../assets/images/flight_school_images/navigation/raf_alphabet.jpg"/>
         <span class="buttonTitles">Phonetic Alphabet</span>
         <br>
         <span>Learn the The Royal Air Force's phonetic alphabet of World War II, particularly with the arrival of the Americans in 1943, which makes things a little tricky to be authentic, but we try our best to stick with the 1940 version. </span>
       </div>
-    </div>
-    <div class="div-button-half float-right" v-bind="{routeName: 'FlightSchoolRAFVocabulary'}">
+    </DivLinkButton>
+    <DivLinkButton class="div-button-half float-right" v-bind="{routeName: 'FlightSchoolRAFVocabulary'}">
       <div class="inline-block">
         <img class="buttonImageThumbnail" src="../../assets/images/flight_school_images/navigation/raf_vocabulary.png"/>
         <span class="buttonTitles">Wartime Vocabulary</span>
         <br>
         <span>Speak like the RAF personnel of the day with this guide to codewords and slang. Here is a list of the most common terms and meanings known. Some try to use this language in missions; for immersion purposes of course! </span>
       </div>
-    </div>
+    </DivLinkButton>
     <div class="div-button-half float-right" v-on:click="navigate_to('https://www.youtube.com/watch?v=A4_nZHmdk9I&list=PLlUs-9KA-ShKV4wCgJbizzkGMbt8RCX9-')">
       <div class="inline-block">
         <img class="buttonImageThumbnail" src="../../assets/images/flight_school_images/navigation/Gunsight.jpg"/>

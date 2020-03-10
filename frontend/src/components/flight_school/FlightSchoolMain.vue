@@ -2,7 +2,8 @@
   <div class="flightSchool">
     <div class="text-align-center">
     <h1>Flight School</h1>
-      <p>Welcome to the ACG Flight School! Here you can find various tutorials and other stuff which will help you to improve your flying and fighting skills. </p>
+      <p>Welcome to the ACG Flight School! Here you can find various tutorials and other stuff which will help you to improve your flying and fighting skills. These guides have either been created by ACG members or collected from around the internet to form a comprehensive library of information that any budding virtual pilot can use to get themselves into the sky and return to base safely. </p>
+      <p>On the left hand side of the Flight School pages, there will always be the sidebar which lists the categories of tutorials which you can find on here. These are split according to factions. On this page you will find all kinds of tutorials that will help you with any aspect of virtual flying, regardless of the faction you choose to fly with.</p>
     </div>
     <div class="text-align-center">
       <h2>Theory</h2>
