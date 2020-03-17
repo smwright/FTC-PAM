@@ -27,7 +27,7 @@
             v-for="d_unit in unitsByFaction(1)"
             v-bind:value="d_unit.depl_unit_id"
           >
-            {{ d_unit.depl_unit_id}} - {{ d_unit.hist_unit_name }}
+            {{ d_unit.hist_unit_name }}
           </option>
         </select>
         <br>
