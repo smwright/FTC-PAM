@@ -12,8 +12,8 @@
         <div class="info-text float-right">
           {{ info_text }}
         </div>
-
       </div>
+
       <div class="typed-on-paper" v-if="report_loaded">
         <EditReportLW v-if="report_info.faction==1" v-bind="report_info"></EditReportLW>
         <EditReportRAF v-else-if="report_info.faction==2" v-bind="report_info"></EditReportRAF>
@@ -99,7 +99,7 @@ export default {
       user_id: null,
       send_button_text: "Send Report",
       info_text: "",
-      send_button_active: true
+      send_button_active: true,
 
     }
   },
@@ -175,7 +175,8 @@ export default {
 
         })
         .catch(error => {
-          console.log(error.message);
+          this.info_text = "ERROR: "+error;
+
         });
     }
 

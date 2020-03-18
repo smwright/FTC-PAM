@@ -53,7 +53,7 @@ export default {
 }
 
 .navbar {
-  height: 90px;
+  min-height: 90px;
   width: calc(100% - 20px); /* Whished widht in % minus 2x border size */
   padding: 10px;
 }

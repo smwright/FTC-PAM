@@ -15,6 +15,7 @@ function whitelist_table($name) {
     $available_tables = array(
 
         "asset" => array("id"),
+        "career_character" => array("id"),
         "deployed_unit" => array("id"),
         "hist_unit" => array("id"),
         "mission" => array("id"),

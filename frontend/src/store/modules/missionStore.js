@@ -700,6 +700,8 @@ const  actions = {
 
       //Cloning report from state for final adjustments
       var report = JSON.parse(JSON.stringify(context.state.report));
+      let new_character = (report.character_id < 0);
+
       //Cloning report_details from state for final adjustments
       if(context.state.report_details !== undefined){
 
@@ -711,24 +713,39 @@ const  actions = {
         // ------------------------------------------------------------------------
         // create new character in database
         // ------------------------------------------------------------------------
-        if(report.character_id < 0){
+        if(new_character){
 
-           response = await Vue.prototype.$dbCon.insertUpdateData("missionStore on behalf of "+payload.caller,
-            {
-              table: "career_character",
-              payload: [
-                {
-                  id: -1,
-                  personified_by: report.member_id,
-                  first_name: report.first_name,
-                  last_name: report.last_name
-                }]
-            });
+          try{
+
+            response = await Vue.prototype.$dbCon.insertUpdateData("missionStore on behalf of "+payload.caller,
+              {
+                table: "career_character",
+                payload: [
+                  {
+                    id: -1,
+                    personified_by: report.member_id,
+                    first_name: report.first_name,
+                    last_name: report.last_name
+                  }]
+              });
+          } catch (err) {
+
+            context.commit("logger/addEntry", {message: "ERROR: Character: "+ err}, {root: true});
+            reject(err);
+            return
+          }
+
+          if(response.error != ""){
+
+            context.commit("logger/addEntry", {message: "ERROR: Character: "+ response.message}, {root: true});
+            reject(response.error);
+            return
+          }
 
            // console.log("Character: "+response.message);
           context.commit("logger/addEntry", {message: "Character: "+response.message}, {root: true});
            // update character_id with id from created character
-           report.character_id = response.insert_id[0].new_id;
+          report.character_id = response.insert_id[0].new_id;
         }
 
         // ------------------------------------------------------------------------
@@ -737,16 +754,53 @@ const  actions = {
         report.id = report.report_id;
         report.date_submitted = year+"-"+month+"-"+day;
         report.accepted = 0;
-        report.deployed_unit_id = report.depl_unit_id;
+        // report.deployed_unit_id = report.depl_unit_id;
         report.accepted_by = null;
 
-        response = await Vue.prototype.$dbCon.insertUpdateData("missionStore on behalf of "+payload.caller,
-          {
-            table: "report",
-            payload: [report]
-          })
+        try {
 
-        // console.log("Report: "+response.message);
+          response = await Vue.prototype.$dbCon.insertUpdateData("missionStore on behalf of "+payload.caller,
+            {
+              table: "report",
+              payload: [report]
+            });
+        } catch (err) {
+
+          if(new_character){
+            // ------------------------------------------------------------------------
+            // deleting new character
+            // ------------------------------------------------------------------------
+
+            let c_response = await Vue.prototype.$dbCon.deleteData("missionStore on behalf of "+payload.caller,
+              {table:"career_character", payload: [{id: report.character_id}]});
+            context.commit("logger/addEntry", {message: "Character: "+ c_response.message}, {root: true});
+
+          }
+
+          context.commit("logger/addEntry", {message: "ERROR: Report: "+ response.message}, {root: true});
+          reject(err);
+          return
+        }
+
+
+        if(response.error != ""){
+
+          if(new_character){
+            // ------------------------------------------------------------------------
+            // deleting new character
+            // ------------------------------------------------------------------------
+
+            let c_response = await Vue.prototype.$dbCon.deleteData("missionStore on behalf of "+payload.caller,
+              {table:"career_character", payload: [{id: report.character_id}]});
+            context.commit("logger/addEntry", {message: "Character: "+ c_response.message}, {root: true});
+
+          }
+
+          context.commit("logger/addEntry", {message: "ERROR: Report: "+ response.message}, {root: true});
+          reject(response.error);
+          return
+        }
+
         context.commit("logger/addEntry", {message: "Report: "+response.message}, {root: true});
 
         // update report_id in state
