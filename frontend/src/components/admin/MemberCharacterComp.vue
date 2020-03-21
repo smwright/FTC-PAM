@@ -31,6 +31,7 @@
                   v-bind:decoration_id="decoration.decoration_id"
                   v-bind:award_name="decoration.award_name"
                   v-bind:awarded="decoration.awarded"
+                  v-bind:award_image="decoration.award_image"
                 ></CharacterDecorationComp>
 
               </template>

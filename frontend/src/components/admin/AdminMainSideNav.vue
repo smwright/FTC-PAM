@@ -1,16 +1,28 @@
 <template>
   <div>
 
+    <!--<div class="side-nav-heading heading">Unit & member administration</div>-->
+    <!--         -->
+    <!--ACG-UNITS-->
+    <!--         -->
+    <!--<HideableDiv>-->
+      <!--<template slot="buttonHidden">-->
+        <!--<div class="div-button heading">ACG Units</div>-->
+      <!--</template>-->
+      <!--<UnitAdminSideNav></UnitAdminSideNav>-->
+    <!--</HideableDiv>-->
+
     <!--       -->
     <!--MEMBERS-->
     <!--       -->
     <HideableDiv>
       <template slot="buttonHidden">
-        <div class="div-button heading">Members</div>
+        <div class="div-button heading">ACG units & members</div>
       </template>
       <MemberAdminSideNav></MemberAdminSideNav>
     </HideableDiv>
 
+    <!--<div class="side-nav-heading heading">Campaign setup</div>-->
     <!--         -->
     <!--CAMPAIGNS-->
     <!--         -->
@@ -35,6 +47,8 @@
       <div class="heading">Historical Units</div>
     </DivLinkButton>
 
+
+    <!--<div class="side-nav-heading heading">Utilities</div>-->
     <!--       -->
     <!--ASSETS-->
     <!--       -->
@@ -45,41 +59,48 @@
 </template>
 
 <script>
-import { mapState } from "vuex"
-import DivLinkButton from "../basic_comp/DivLinkButton"
-import HideableDiv from "../basic_comp/HideableDiv"
-import MemberAdminSideNav from "./MemberAdminSideNav"
+  import { mapState } from "vuex"
+  import DivLinkButton from "../basic_comp/DivLinkButton"
+  import HideableDiv from "../basic_comp/HideableDiv"
+  import MemberAdminSideNav from "./MemberAdminSideNav"
+  import UnitAdminSideNav from "./UnitAdminSideNav"
 
-export default {
-  name: "AdminMainSideNav",
-  components: {
-    DivLinkButton,
-    HideableDiv,
-    MemberAdminSideNav
-  },
+  export default {
+    name: "AdminMainSideNav",
+    components: {
+      DivLinkButton,
+      HideableDiv,
+      MemberAdminSideNav,
+      UnitAdminSideNav
+    },
     mounted () {
-    //Loads campaigns if there's only the NEW CAMPAIGN is in campaign store
-    if (this.$store.state.campaignAdmin.campaigns.length == 1){
-      this.$store.dispatch('campaignAdmin/loadCampaigns', {caller: this.$options.name});
-    }
+      //Loads campaigns if there's only the NEW CAMPAIGN is in campaign store
+      if (this.$store.state.campaignAdmin.campaigns.length == 1){
+        this.$store.dispatch('campaignAdmin/loadCampaigns', {caller: this.$options.name});
+      }
 
-  },
-  computed: {
-    ...mapState('campaignAdmin', {
-      campaigns: state => state.campaigns
-    }),
+      //Loads campaigns if there's only the NEW CAMPAIGN is in campaign store
+      if (this.$store.state.campaignAdmin.campaigns.length == 1){
+        this.$store.dispatch('campaignAdmin/loadCampaigns', {caller: this.$options.name});
+      }
 
-  },
+    },
+    computed: {
+      ...mapState('campaignAdmin', {
+        campaigns: state => state.campaigns
+      }),
 
-}
+    },
+
+  }
 </script>
 
 <style scoped>
 
-.campaign-buttons{
-  font-size: 1em;
-  margin: 2px 0px 0px 15px;
-  width: calc(100% - 15px - 26px);
-}
+  .campaign-buttons{
+    font-size: 1em;
+    margin: 2px 0px 0px 15px;
+    width: calc(100% - 15px - 26px);
+  }
 
 </style>

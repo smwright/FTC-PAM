@@ -4,8 +4,26 @@
       <template
         v-if="membersByUnitId(id,showActive,showOnLeave,showDismissed,showPassedAway,searchString).length > 0"
         slot="buttonHidden">
-        <div class="unit-buttons div-button">{{ name }}</div>
+        <div class="unit-buttons div-button clearfix">
+          <span>
+            {{ name }}
+          </span>
+          <DivLinkButton
+            class="float-right admin-buttons"
+            v-bind="{routeName: 'AdminUnit', routeParams: {unit_id: id}}"
+          >
+            Unit Administration
+
+          </DivLinkButton>
+        </div>
       </template>
+        <!--<DivLinkButton-->
+          <!--class="member-buttons"-->
+          <!--v-bind="{routeName: 'AdminUnit', routeParams: {unit_id: id}}"-->
+        <!--&gt;-->
+          <!--Unit Administration-->
+
+        <!--</DivLinkButton>-->
         <DivLinkButton
           class="member-buttons"
           v-for="member in membersByUnitId(id,showActive,showOnLeave,showDismissed,showPassedAway,searchString)"
@@ -98,6 +116,15 @@ export default {
   padding-top: 5px;
   padding-bottom: 5px;
   width: calc(100% - 20px - 26px);
+}
+
+.admin-buttons{
+  width: 50%;
+  min-width: 110px;
+  margin: 0px;
+  padding: 5px;
+  color: white;
+  text-align: center;
 }
 
 .active{

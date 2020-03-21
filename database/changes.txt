@@ -2,3 +2,8 @@ THIS FILE LISTS ALL DATABASE CHANGES IN SPECIFIC DEVELOPMENT BRANCHES:
 
 -FEAT-forum-adjust
     rank: add forum_id
+
+-FEAT-unit-admin
+    decoration_info
+    character_latest_report
+    character_latest_report_date
