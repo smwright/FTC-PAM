@@ -4,12 +4,22 @@ import Vue from "vue"
 const state = {
 
   characters: [],
-  decorations: []
+  decorations: [],
+  reports: []
 
 }
 
 // getters
 const getters = {
+
+  filterByKey: (state) => (table, keyName, keyValue) => {
+
+    // console.log("Serching "+keyName+" = "+keyValue+" in "+table);
+    return state[table].filter(
+      function (item) {
+        return item[keyName] == keyValue;
+      });
+  },
 
   selectableCharacters: (state) => (depl_unit_id, faction, mission_hist_date) => {
 

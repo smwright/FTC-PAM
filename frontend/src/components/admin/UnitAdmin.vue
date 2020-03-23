@@ -57,7 +57,6 @@ export default {
     },
 
     updateUnitID: function (id) {
-      console.log("UPDATING UNIT");
 
       this.unit_id = Number(id);
       if(id >= 0) {
@@ -71,6 +70,17 @@ export default {
               awarded: 0
             },
             data_array_name: "decorations"
+          });
+
+        this.$store.dispatch('characterStore/loadStoreData',
+          {
+            caller: this.$options.name,
+            call_object: {
+              view: "report_info",
+              acg_unit_id: id,
+              accepted: 0
+            },
+            data_array_name: "reports"
           });
 
       }

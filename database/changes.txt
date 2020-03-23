@@ -7,3 +7,4 @@ THIS FILE LISTS ALL DATABASE CHANGES IN SPECIFIC DEVELOPMENT BRANCHES:
     decoration_info
     character_latest_report
     character_latest_report_date
+    report_info
