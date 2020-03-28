@@ -282,6 +282,24 @@ const mutations = {
 
   },
 
+  clearReportsOfUnit (state, payload) {
+
+    let report_id_array = state.reports.filter(
+      function (item) {
+        return item.depl_unit_id == payload.depl_unit_id;
+      });
+
+    for (var i = 0; i < report_id_array.length; i++) {
+
+      let index = state.reports.findIndex(item => item.report_id === report_id_array[i].report_id)
+      if(index !== -1){
+        state.reports.splice(index, 1);
+      }
+    }
+
+
+  },
+
   clearReports (state, payload) {
 
     state.reports = [];
@@ -477,6 +495,7 @@ const  actions = {
         })
         .then(response => {
 
+          context.commit("clearReportsOfUnit", {depl_unit_id: payload.depl_unit_id});
           context.commit("setReports", response);
           resolve(response.length > 0);
 
@@ -754,7 +773,7 @@ const  actions = {
         report.id = report.report_id;
         report.date_submitted = year+"-"+month+"-"+day;
         report.accepted = 0;
-        // report.deployed_unit_id = report.depl_unit_id;
+        report.deployed_unit_id = report.depl_unit_id;
         report.accepted_by = null;
 
         try {
@@ -1425,6 +1444,106 @@ const  actions = {
 
         console.log(error.message);
       })
+  },
+
+  deleteReport(context, payload) {
+
+    context.commit("logger/addEntry", {message: "Deleting report"}, {root: true});
+    return new Promise(async function (resolve, reject) {
+
+      var response;
+
+      try {
+
+        let report = context.state.report;
+
+        // ------------------------------------------------------------------------
+        // deleting claims in database
+        // ------------------------------------------------------------------------
+        let claim_id_array = context.state.aerial_claims.filter(
+          function (item) {
+            return item.report_id == report.report_id;
+          });
+
+        for (var i = 0; i < claim_id_array.length; i++) {
+
+          context.commit('deleteAerialClaim', {id: claim_id_array[i].claim_id});
+        }
+
+        claim_id_array = context.state.ground_claims.filter(
+          function (item) {
+            return item.report_id == report.report_id;
+          });
+
+        for (var i = 0; i < claim_id_array.length; i++) {
+
+          context.commit('deleteGroundClaim', {id: claim_id_array[i].claim_id});
+        }
+
+        if(context.state.aerial_claims_for_delete.length > 0){
+
+          await context.dispatch("deleteAerialClaims", payload);
+        }
+
+        if(context.state.ground_claims_for_delete.length > 0){
+
+          await context.dispatch("deleteGroundClaims", payload);
+        }
+
+        if (report.faction == 1) {
+
+          // ------------------------------------------------------------------------
+          // Deleting LW specific details
+          // ------------------------------------------------------------------------
+          response = await Vue.prototype.$dbCon.deleteData("missionStore on behalf of "+payload.caller,
+            {table:"report_detail_lw", payload: [{id: state.report_details.id}]});
+
+          context.commit("logger/addEntry", {message: "Report detail LW: "+response.message}, {root: true});
+
+
+        } else if (report.faction == 2) {
+
+          // ------------------------------------------------------------------------
+          // Deleting RAF specific details
+          // ------------------------------------------------------------------------
+          response = await Vue.prototype.$dbCon.deleteData("missionStore on behalf of "+payload.caller,
+            {table:"report_detail_raf", payload: [{id: state.report_details.id}]});
+
+          context.commit("logger/addEntry", {message: "Report detail RAF: "+response.message}, {root: true});
+
+
+        } else if (report.faction == 3) {
+
+
+        }
+
+        // ------------------------------------------------------------------------
+        // Deleting report
+        // ------------------------------------------------------------------------
+        response = await Vue.prototype.$dbCon.deleteData("missionStore on behalf of "+payload.caller,
+          {table:"report", payload: [{id: report.report_id}]});
+
+        context.commit("logger/addEntry", {message: "Report: "+response.message}, {root: true});
+
+        // ------------------------------------------------------------------------
+        // reload reports into missionStore
+        // ------------------------------------------------------------------------
+        await context.dispatch("loadReports",
+          {
+            caller: "missionStore - Report submit",
+            mission_id: context.state.report.mission_id,
+            depl_unit_id: context.state.report.depl_unit_id,
+          });
+        resolve("Report deleted, check logger for further info.");
+
+      } catch (e) {
+
+        console.log(JSON.stringify(e))
+        reject(e);
+      }
+    })
+
+
   },
 
   acceptRejectReport(context, payload) {

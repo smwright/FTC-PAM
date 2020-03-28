@@ -8,6 +8,19 @@
         <div class="float-right">
           <button v-if="this.show_edit_button" v-on:click="toggleEdit" class="float-right">Exit edit</button>
           <button v-if="this.show_edit_button" v-on:click="sendReport" class="float-right">Send report</button>
+          <HideableDiv
+            ref="safety"
+            class="float-right"
+            v-bind:changing-button="true"
+          >
+            <template slot="buttonVisible">
+              <button>Cancel</button>
+            </template>
+            <template slot="buttonHidden">
+              <button>Delete report</button>
+            </template>
+            <button v-on:click="deleteReport">Confirm delete</button>
+          </HideableDiv>
         </div>
         <div class="info-text float-right">
           {{ info_text }}
@@ -67,8 +80,8 @@ import ClaimSlipLW from "./ClaimSlipLW"
 import EditClaimSlipLW from "./EditClaimSlipLW"
 import ClaimSlipVVS from "./ClaimSlipVVS"
 import EditClaimSlipVVS from "./EditClaimSlipVVS"
+import HideableDiv from "../basic_comp/HideableDiv"
 import { mapState, mapGetters } from "vuex"
-
 
 
 export default {
@@ -85,7 +98,8 @@ export default {
     EditReportRAF,
     EditReportVVS,
     ClaimSlipVVS,
-    EditClaimSlipVVS
+    EditClaimSlipVVS,
+    HideableDiv
   },
   mounted () {
 
@@ -172,6 +186,24 @@ export default {
         .then(response => {
 
           this.info_text = response;
+
+        })
+        .catch(error => {
+          this.info_text = "ERROR: "+error;
+
+        });
+    },
+
+    deleteReport: function () {
+      this.info_text = "Deleting...";
+      this.$store.dispatch('missionStore/deleteReport',
+        {
+          caller: this.$options.name,
+        })
+        .then(response => {
+
+          this.info_text = response;
+          this.$refs.safety.toggleVisible();
 
         })
         .catch(error => {
