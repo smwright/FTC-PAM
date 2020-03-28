@@ -8,7 +8,7 @@
       Add member
     </DivLinkButton>
     <div class="container narrow">
-      <label>Search:</label>
+      <label>Search member:</label>
       <input v-model="searchString">
     </div>
     <div

@@ -1,27 +1,37 @@
 <template>
-  <div>
-    <div>
-      <span class="inline-block width-5">{{ decoration_id }}</span>
-      <span class="inline-block width-60">{{ award_name }}</span>
-      <span class="inline-block width-20">
-        <date-picker
-          v-model="decoration_date"
-          lang="en"
-          type="date"
-          format="YYYY-MM-DD"
-          value-type="format"
-          v-bind:clearable="false">
-        </date-picker>
-      </span>
-      <span class="inline-block width-5" >
-        <button v-if="awarded" v-on:click="awardRevokeDecoration(0)">Revoke</button>
-        <button v-else v-on:click="awardRevokeDecoration(1)">Award</button>
-      </span>
+  <div class="clearfix">
+    <div class="float-left width-10">
+      <img
+        v-if="award_image != ''"
+        class="medalSmall"
+        v-bind:src="awardImage(award_image)"
+        v-bind:title="award_name"
+      />
     </div>
-    <div>
-      <span class="full-width">
-        <textarea v-model="decoration_comment" class="textarea-style full-width"></textarea>
-      </span>
+    <div class="float-right width-90">
+      <div>
+        <span class="inline-block width-5">{{ decoration_id }}</span>
+        <span class="inline-block width-60">{{ award_name }}</span>
+        <span class="inline-block width-20">
+          <date-picker
+            v-model="decoration_date"
+            lang="en"
+            type="date"
+            format="YYYY-MM-DD"
+            value-type="format"
+            v-bind:clearable="false">
+          </date-picker>
+        </span>
+        <span class="inline-block width-5" >
+          <button v-if="awarded" v-on:click="awardRevokeDecoration(0)">Revoke</button>
+          <button v-else v-on:click="awardRevokeDecoration(1)">Award</button>
+        </span>
+      </div>
+      <div>
+        <span class="full-width">
+          <textarea v-model="decoration_comment" class="textarea-style full-width"></textarea>
+        </span>
+      </div>
     </div>
   </div>
 </template>
@@ -44,6 +54,14 @@
         default: ""
       },
       awarded: {
+        type: Number,
+        default: 0
+      },
+      award_image: {
+        type: String,
+        default: ""
+      },
+      rank_disp_value: {
         type: Number,
         default: 0
       }
@@ -99,6 +117,21 @@
             member_id: await this.$auth.getUserId(),
             awarded: awarded
           });
+      },
+
+      awardImage: function (award_image) {
+
+        var baseURL = "/assets/images/";
+        if(award_image === "MedalAB") {
+          if(this.rank_disp_value < 8){
+
+            award_image = "MedalABFabric.png";
+          } else {
+
+            award_image = "MedalABBrass.png";
+          }
+        }
+        return baseURL + "medals_big/" + award_image;
       }
 
     }
@@ -106,5 +139,12 @@
 </script>
 
 <style scoped>
+
+  .medalSmall {
+    padding:2px;
+    max-height: 90px;
+    max-width: 100px;
+    vertical-align: middle;
+  }
 
 </style>

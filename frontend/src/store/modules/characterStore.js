@@ -4,12 +4,22 @@ import Vue from "vue"
 const state = {
 
   characters: [],
-  decorations: []
+  decorations: [],
+  reports: []
 
 }
 
 // getters
 const getters = {
+
+  filterByKey: (state) => (table, keyName, keyValue) => {
+
+    // console.log("Serching "+keyName+" = "+keyValue+" in "+table);
+    return state[table].filter(
+      function (item) {
+        return item[keyName] == keyValue;
+      });
+  },
 
   selectableCharacters: (state) => (depl_unit_id, faction, mission_hist_date) => {
 
@@ -73,6 +83,14 @@ const getters = {
 // mutations
 const mutations = {
 
+  setDataArray (state, payload) {
+
+    // Needed values:
+    // array_name: Name of the array to set
+    // array_data: Date to store in the array
+    state[payload.array_name] = payload.array_data;
+  },
+
   setCharacters (state, payload) {
 
     state.characters = payload;
@@ -123,6 +141,30 @@ const mutations = {
 
 // actions
 const  actions = {
+
+  loadStoreData(context, payload) {
+
+    // payload.caller: Name of the calling component,
+    // payload.call_object: Object specifying the view/table to be loaded, plus additional variables that
+    //                      customise the database call, i.e. filtering, ordering, ...
+    // payload.data_array_name: Name of the array in the store to save the data
+    return new Promise(function (resolve, reject) {
+      Vue.prototype.$dbCon.requestViewData("unitAdmin on behalf of " + payload.caller, payload.call_object)
+        .then(response => {
+
+          context.commit("setDataArray",
+            {
+              array_name: payload.data_array_name,
+              array_data: response
+            });
+          resolve(response);
+
+        })
+        .catch(error => {
+          reject(error.message);
+        });
+    })
+  },
 
   loadCharacters (context, payload) {
 

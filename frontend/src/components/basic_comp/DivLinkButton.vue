@@ -1,5 +1,5 @@
 <template>
-  <div class="div-button" v-on:click="routeTo()">
+  <div class="div-button" v-on:click.stop="routeTo()">
     <slot></slot>
   </div>
 </template>

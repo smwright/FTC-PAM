@@ -10,16 +10,23 @@
     <div v-for="character in characters">
 
       <SwitchableDiv
-        v-if="decorationsByCharacterId(character.character_id).length > 0"
         v-bind:startstate="unawardedDecorationsByCharacterId(character.character_id).length > 0"
       >
         <template slot="buttonStateA">
-          <CharacterHeader class="div-button" v-bind="character"></CharacterHeader>
+          <div class="div-button">
+            <CharacterHeader  v-bind="character"></CharacterHeader>
+            <span>ID: {{ character.character_id }}</span>
+            <span>| Reports: {{ character_reports(character.character_id).length }} </span>
+          </div>
         </template>
         <template slot="contentStateA"></template>
 
         <template slot="buttonStateB">
-          <CharacterHeader class="div-button" v-bind="character"></CharacterHeader>
+          <div class="div-button">
+            <CharacterHeader v-bind="character"></CharacterHeader>
+            <span>ID: {{character.character_id }}</span>
+            <span>| Reports: {{ character_reports(character.character_id).length }} </span>
+          </div>
         </template>
         <template slot="contentStateB">
           <div class="container">
@@ -31,6 +38,7 @@
                   v-bind:decoration_id="decoration.decoration_id"
                   v-bind:award_name="decoration.award_name"
                   v-bind:awarded="decoration.awarded"
+                  v-bind:award_image="decoration.award_image"
                 ></CharacterDecorationComp>
 
               </template>
@@ -38,8 +46,6 @@
           </div>
         </template>
       </SwitchableDiv>
-      <CharacterHeader v-else class="div-button-inactive" v-bind="character"></CharacterHeader>
-
     </div>
   </div>
 </template>
@@ -66,8 +72,16 @@ export default {
 
     ...mapGetters("characterStore", [
       "decorationsByCharacterId",
-      "unawardedDecorationsByCharacterId"
+      "unawardedDecorationsByCharacterId",
+      "filterByKey"
     ])
+  },
+  methods: {
+
+    character_reports: function(character_id) {
+
+      return this.filterByKey("reports", "character_id", character_id);
+    }
   }
 }
 </script>
@@ -75,6 +89,10 @@ export default {
 <style scoped>
 
 div {
+  margin: 2px 0px;
+}
+
+span {
   margin: 2px 0px;
 }
 
