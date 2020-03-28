@@ -15,6 +15,7 @@ function whitelist_table($name) {
     $available_tables = array(
 
         "asset" => array("id"),
+        "career_character" => array("id"),
         "deployed_unit" => array("id"),
         "hist_unit" => array("id"),
         "mission" => array("id"),
@@ -27,6 +28,9 @@ function whitelist_table($name) {
         "comment" => array("id"),
         "member_status_log" => array("id"),
         "promotion" => array("id"),
+        "report" => array("id"),
+        "report_detail_lw" => array("id"),
+        "report_detail_raf" => array("id"),
         "transfer" => array("id")
     );
 

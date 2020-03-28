@@ -282,6 +282,24 @@ const mutations = {
 
   },
 
+  clearReportsOfUnit (state, payload) {
+
+    let report_id_array = state.reports.filter(
+      function (item) {
+        return item.depl_unit_id == payload.depl_unit_id;
+      });
+
+    for (var i = 0; i < report_id_array.length; i++) {
+
+      let index = state.reports.findIndex(item => item.report_id === report_id_array[i].report_id)
+      if(index !== -1){
+        state.reports.splice(index, 1);
+      }
+    }
+
+
+  },
+
   clearReports (state, payload) {
 
     state.reports = [];
@@ -477,6 +495,7 @@ const  actions = {
         })
         .then(response => {
 
+          context.commit("clearReportsOfUnit", {depl_unit_id: payload.depl_unit_id});
           context.commit("setReports", response);
           resolve(response.length > 0);
 
@@ -700,6 +719,8 @@ const  actions = {
 
       //Cloning report from state for final adjustments
       var report = JSON.parse(JSON.stringify(context.state.report));
+      let new_character = (report.character_id < 0);
+
       //Cloning report_details from state for final adjustments
       if(context.state.report_details !== undefined){
 
@@ -711,24 +732,39 @@ const  actions = {
         // ------------------------------------------------------------------------
         // create new character in database
         // ------------------------------------------------------------------------
-        if(report.character_id < 0){
+        if(new_character){
 
-           response = await Vue.prototype.$dbCon.insertUpdateData("missionStore on behalf of "+payload.caller,
-            {
-              table: "career_character",
-              payload: [
-                {
-                  id: -1,
-                  personified_by: report.member_id,
-                  first_name: report.first_name,
-                  last_name: report.last_name
-                }]
-            });
+          try{
+
+            response = await Vue.prototype.$dbCon.insertUpdateData("missionStore on behalf of "+payload.caller,
+              {
+                table: "career_character",
+                payload: [
+                  {
+                    id: -1,
+                    personified_by: report.member_id,
+                    first_name: report.first_name,
+                    last_name: report.last_name
+                  }]
+              });
+          } catch (err) {
+
+            context.commit("logger/addEntry", {message: "ERROR: Character: "+ err}, {root: true});
+            reject(err);
+            return
+          }
+
+          if(response.error != ""){
+
+            context.commit("logger/addEntry", {message: "ERROR: Character: "+ response.message}, {root: true});
+            reject(response.error);
+            return
+          }
 
            // console.log("Character: "+response.message);
           context.commit("logger/addEntry", {message: "Character: "+response.message}, {root: true});
            // update character_id with id from created character
-           report.character_id = response.insert_id[0].new_id;
+          report.character_id = response.insert_id[0].new_id;
         }
 
         // ------------------------------------------------------------------------
@@ -740,13 +776,50 @@ const  actions = {
         report.deployed_unit_id = report.depl_unit_id;
         report.accepted_by = null;
 
-        response = await Vue.prototype.$dbCon.insertUpdateData("missionStore on behalf of "+payload.caller,
-          {
-            table: "report",
-            payload: [report]
-          })
+        try {
 
-        // console.log("Report: "+response.message);
+          response = await Vue.prototype.$dbCon.insertUpdateData("missionStore on behalf of "+payload.caller,
+            {
+              table: "report",
+              payload: [report]
+            });
+        } catch (err) {
+
+          if(new_character){
+            // ------------------------------------------------------------------------
+            // deleting new character
+            // ------------------------------------------------------------------------
+
+            let c_response = await Vue.prototype.$dbCon.deleteData("missionStore on behalf of "+payload.caller,
+              {table:"career_character", payload: [{id: report.character_id}]});
+            context.commit("logger/addEntry", {message: "Character: "+ c_response.message}, {root: true});
+
+          }
+
+          context.commit("logger/addEntry", {message: "ERROR: Report: "+ response.message}, {root: true});
+          reject(err);
+          return
+        }
+
+
+        if(response.error != ""){
+
+          if(new_character){
+            // ------------------------------------------------------------------------
+            // deleting new character
+            // ------------------------------------------------------------------------
+
+            let c_response = await Vue.prototype.$dbCon.deleteData("missionStore on behalf of "+payload.caller,
+              {table:"career_character", payload: [{id: report.character_id}]});
+            context.commit("logger/addEntry", {message: "Character: "+ c_response.message}, {root: true});
+
+          }
+
+          context.commit("logger/addEntry", {message: "ERROR: Report: "+ response.message}, {root: true});
+          reject(response.error);
+          return
+        }
+
         context.commit("logger/addEntry", {message: "Report: "+response.message}, {root: true});
 
         // update report_id in state
@@ -1371,6 +1444,106 @@ const  actions = {
 
         console.log(error.message);
       })
+  },
+
+  deleteReport(context, payload) {
+
+    context.commit("logger/addEntry", {message: "Deleting report"}, {root: true});
+    return new Promise(async function (resolve, reject) {
+
+      var response;
+
+      try {
+
+        let report = context.state.report;
+
+        // ------------------------------------------------------------------------
+        // deleting claims in database
+        // ------------------------------------------------------------------------
+        let claim_id_array = context.state.aerial_claims.filter(
+          function (item) {
+            return item.report_id == report.report_id;
+          });
+
+        for (var i = 0; i < claim_id_array.length; i++) {
+
+          context.commit('deleteAerialClaim', {id: claim_id_array[i].claim_id});
+        }
+
+        claim_id_array = context.state.ground_claims.filter(
+          function (item) {
+            return item.report_id == report.report_id;
+          });
+
+        for (var i = 0; i < claim_id_array.length; i++) {
+
+          context.commit('deleteGroundClaim', {id: claim_id_array[i].claim_id});
+        }
+
+        if(context.state.aerial_claims_for_delete.length > 0){
+
+          await context.dispatch("deleteAerialClaims", payload);
+        }
+
+        if(context.state.ground_claims_for_delete.length > 0){
+
+          await context.dispatch("deleteGroundClaims", payload);
+        }
+
+        if (report.faction == 1) {
+
+          // ------------------------------------------------------------------------
+          // Deleting LW specific details
+          // ------------------------------------------------------------------------
+          response = await Vue.prototype.$dbCon.deleteData("missionStore on behalf of "+payload.caller,
+            {table:"report_detail_lw", payload: [{id: state.report_details.id}]});
+
+          context.commit("logger/addEntry", {message: "Report detail LW: "+response.message}, {root: true});
+
+
+        } else if (report.faction == 2) {
+
+          // ------------------------------------------------------------------------
+          // Deleting RAF specific details
+          // ------------------------------------------------------------------------
+          response = await Vue.prototype.$dbCon.deleteData("missionStore on behalf of "+payload.caller,
+            {table:"report_detail_raf", payload: [{id: state.report_details.id}]});
+
+          context.commit("logger/addEntry", {message: "Report detail RAF: "+response.message}, {root: true});
+
+
+        } else if (report.faction == 3) {
+
+
+        }
+
+        // ------------------------------------------------------------------------
+        // Deleting report
+        // ------------------------------------------------------------------------
+        response = await Vue.prototype.$dbCon.deleteData("missionStore on behalf of "+payload.caller,
+          {table:"report", payload: [{id: report.report_id}]});
+
+        context.commit("logger/addEntry", {message: "Report: "+response.message}, {root: true});
+
+        // ------------------------------------------------------------------------
+        // reload reports into missionStore
+        // ------------------------------------------------------------------------
+        await context.dispatch("loadReports",
+          {
+            caller: "missionStore - Report submit",
+            mission_id: context.state.report.mission_id,
+            depl_unit_id: context.state.report.depl_unit_id,
+          });
+        resolve("Report deleted, check logger for further info.");
+
+      } catch (e) {
+
+        console.log(JSON.stringify(e))
+        reject(e);
+      }
+    })
+
+
   },
 
   acceptRejectReport(context, payload) {
