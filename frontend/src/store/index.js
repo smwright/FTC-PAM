@@ -7,6 +7,7 @@ import memberAdmin from './modules/memberAdmin'
 import memberInfo from './modules/memberInfo'
 import characterStore from './modules/characterStore'
 import missionStore from './modules/missionStore'
+import unitAdmin from './modules/unitAdmin'
 import logger from './modules/logger'
 
 Vue.use(Vuex)
@@ -22,6 +23,7 @@ export default new Vuex.Store({
     memberInfo,
     characterStore,
     missionStore,
+    unitAdmin,
     logger
   },
   strict: debug,
@@ -45,6 +47,7 @@ if (module.hot) {
     const memberInfo = require('./modules/memberInfo');
     const missionStore = require('./modules/missionStore');
     const characterStore = require('./modules/characterStore');
+    const unitAdmin = require('./modules/unitAdmin');
     const logger = require('./modules/logger')
     // swap in the new actions and mutations
     store.hotUpdate({
@@ -55,6 +58,7 @@ if (module.hot) {
         memberInfo: memberInfo,
         missionStore: missionStore,
         characterStore: characterStore,
+        unitAdmin: unitAdmin,
         logger: logger
       }
     })

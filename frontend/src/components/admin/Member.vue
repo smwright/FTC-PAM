@@ -117,12 +117,26 @@ export default {
           }
         ).then(response => {
 
-            return this.$store.dispatch('characterStore/loadDecorations',
+            this.$store.dispatch('characterStore/loadDecorations',
               {
                 caller: this.$options.name,
                 member_id: this.member_id
               }
-            );
+            ).catch(error => {
+              console.log(error.message);
+            });
+
+            this.$store.dispatch('characterStore/loadStoreData',
+              {
+                caller: this.$options.name,
+                call_object: {
+                  view: "report_info",
+                  member_id: this.member_id,
+                },
+                data_array_name: "reports"
+              }).catch(error => {
+              console.log(error.message);
+            });
           }
         ).catch(error => {
           console.log(error.message);
