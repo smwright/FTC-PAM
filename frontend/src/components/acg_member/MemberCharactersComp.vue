@@ -11,8 +11,8 @@
           <div class="inline-block float-left width-80">
 
             <div class="heading character-header">
-              <span>{{character.rank_abreviation}}</span>
-              <span>{{character.first_name}} {{character.last_name}}</span>
+              <span>{{ decodeHTML(character.rank_abreviation) }}</span>
+              <span>{{ decodeHTML(character.first_name) }} {{ decodeHTML(character.last_name) }}</span>
             </div>
 
             <div class="character-header">
@@ -58,6 +58,7 @@
 </template>
 
 <script>
+import stringConv from "../../resource/stringConverter"
 import DivLinkButton from "../basic_comp/DivLinkButton"
 import CharacterHeader from "../campaign/CharacterHeader"
 import UniformRankComp from "./UniformRankComp"
@@ -75,7 +76,10 @@ export default {
     AwardComp,
     ClaimStats
   },
-  mixins: [statConv],
+  mixins: [
+    stringConv,
+    statConv
+  ],
   computed: {
 
     ...mapState("memberInfo", {
