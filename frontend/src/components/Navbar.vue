@@ -13,12 +13,21 @@
               <!--Please reference the routes by name.-->
               <!--Use CamelCase for route names.-->
               <li><router-link :to="{name: 'Home'}">Home</router-link></li>
+              <li>|</li>
               <li><router-link :to="{name: 'AboutACG'}">About ACG</router-link></li>
+              <li>|</li>
               <li><router-link :to="{name: 'ACGJoining'}">Joining</router-link></li>
+              <li>|</li>
               <li><router-link :to="{name: 'ACGComms'}">Communications</router-link></li>
+              <li>|</li>
               <li><a href="http://www.aircombatgroup.co.uk/forum" >Forums</a></li>
+              <li>|</li>
               <li><router-link :to="{name: 'CampaignList'}">Campaigns</router-link></li>
+              <li>|</li>
+              <li><router-link :to="{name: 'Units'}">Units</router-link></li>
+              <li>|</li>
               <li><router-link :to="{name: 'Members'}">Members</router-link></li>
+              <li>|</li>
               <li><router-link :to="{name: 'Admin'}">Administration</router-link></li>
               <!--<li v-if="isAdmin()"><router-link :to="{name: 'Admin'}">Administration</router-link></li>-->
               <!--<li><router-link :to="{name: 'FlightSchool'}">FlightSchool</router-link></li>-->

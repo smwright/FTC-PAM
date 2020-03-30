@@ -5,6 +5,7 @@ import test from './modules/test'
 import campaignAdmin from './modules/campaignAdmin'
 import memberAdmin from './modules/memberAdmin'
 import memberInfo from './modules/memberInfo'
+import unitInfo from './modules/unitInfo'
 import characterStore from './modules/characterStore'
 import missionStore from './modules/missionStore'
 import unitAdmin from './modules/unitAdmin'
@@ -21,6 +22,7 @@ export default new Vuex.Store({
     campaignAdmin,
     memberAdmin,
     memberInfo,
+    unitInfo,
     characterStore,
     missionStore,
     unitAdmin,
@@ -45,6 +47,7 @@ if (module.hot) {
     const campaignAdmin = require('./modules/campaignAdmin');
     const memberAdmin = require('./modules/memberAdmin');
     const memberInfo = require('./modules/memberInfo');
+    const unitInfo = require('./modules/unitInfo');
     const missionStore = require('./modules/missionStore');
     const characterStore = require('./modules/characterStore');
     const unitAdmin = require('./modules/unitAdmin');
@@ -56,6 +59,7 @@ if (module.hot) {
         campaignAdmin: campaignAdmin,
         memberAdmin: memberAdmin,
         memberInfo: memberInfo,
+        unitInfo: unitInfo,
         missionStore: missionStore,
         characterStore: characterStore,
         unitAdmin: unitAdmin,

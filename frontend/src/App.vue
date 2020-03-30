@@ -24,7 +24,7 @@
     </div>
     <div id="footer">
       <div class="text-align-center padding-10">
-        Our page is under construction. Please report bugs on our forum.
+        Air Combat Group
       </div>
     </div>
   </div>
@@ -541,6 +541,21 @@ select {
   border-radius: 15px;
 }
 
+.luftwaffe {
+  background-color: rgba(0,0,102,0.25);
+  border-radius: 15px;
+}
+
+.vvs {
+  background-color: rgba(100,0,0,0.25);
+  border-radius: 15px;
+}
+
+.raf {
+  background-color: rgba(200, 0, 0, 0.25);
+  border-radius: 15px;
+}
+
 /*CSS FOR draggable-nested-tree*/
 
 DraggableTree div {
@@ -611,5 +626,14 @@ DraggableTree div {
 .fa-youtube {
   background: #bb0000;
   color: white;
+}
+
+.unit-buttons{
+  color: #F28900;
+  font-size: 1em;
+  margin: 2px 0px 0px 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: calc(100% - 20px - 26px);
 }
 </style>

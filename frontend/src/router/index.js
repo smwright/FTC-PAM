@@ -19,6 +19,10 @@ import MemberGeneral from '../components/acg_member/MemberGeneralComp'
 import MemberCharacters from '../components/acg_member/MemberCharactersComp'
 import CharacterProfile from '../components/acg_member/CharacterProfile'
 
+//ACG Unit
+import UnitInfoSideNav from '../components/acg_unit/UnitInfoSideNav'
+import UnitGeneral from '../components/acg_unit/UnitGeneralComp'
+
 //Campaign
 import CampaignList from '../components/campaign/CampaignList'
 import CampaignInfoMain from '../components/campaign/CampaignInfoMain'
@@ -139,6 +143,35 @@ const router = new VueRouter({
         },
       ]
     },
+
+    // ---------------------------------------------------
+    // Units
+    // ---------------------------------------------------
+    {
+      path: '/units/',
+      name: 'Units',
+      components: {
+        default: UnitGeneral,
+        sidenav: UnitInfoSideNav
+      }
+    },
+    {
+      path: '/units/base/:unit_id',
+      name: 'ACGUnitInfo',
+      components: {
+        default: UnitGeneral,
+        sidenav: UnitInfoSideNav
+      },
+    },
+    {
+      path: '/units/hist/:unit_id',
+      name: 'HistUnitInfo',
+      components: {
+        default: UnitGeneral,
+        sidenav: UnitInfoSideNav
+      },
+    },
+
 
     // ---------------------------------------------------
     // Campaign

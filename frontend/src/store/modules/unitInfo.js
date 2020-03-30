@@ -4,7 +4,7 @@ import Vue from "vue"
 const state = {
 
   acg_units: [],
-  decorations: [],
+  hist_units: []
 
 }
 
@@ -26,6 +26,14 @@ const getters = {
         return item[keyName] == keyValue;
       });
   },
+
+  filterByString: (state) => (table, keyName, searchValue) => {
+
+    return state[table].filter(
+      function (item) {
+        return (searchValue === "" || item[keyName].toLowerCase().includes(searchValue.toLowerCase()));
+      });
+  }
 
 }
 
