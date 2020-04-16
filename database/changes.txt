@@ -13,3 +13,11 @@ THIS FILE LISTS ALL DATABASE CHANGES IN SPECIFIC DEVELOPMENT BRANCHES:
     character_latest_report
     character_latest_report_date
     report_info
+
+-FEAT-unit_info
+    campaign_max_min_ext_date
+    campaign-info_unit
+    campaign_unit_member_max_min_date
+    campaign_unit_member_max_promotion_date
+    campaign_unit_member_info
+    campaign_unit_member_info_current

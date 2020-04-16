@@ -443,7 +443,7 @@ select {
 
 .typed-on-paper-link:hover {
   background: rgba(255, 255, 255, 0.5);
-  border-radius: 2px;
+  border-color: transparent;
 }
 
 .bigSignature {

@@ -22,6 +22,7 @@ import CharacterProfile from '../components/acg_member/CharacterProfile'
 //ACG Unit
 import UnitInfoSideNav from '../components/acg_unit/UnitInfoSideNav'
 import UnitGeneral from '../components/acg_unit/UnitGeneralComp'
+import ACGUnit from '../components/acg_unit/ACGUnit'
 
 //Campaign
 import CampaignList from '../components/campaign/CampaignList'
@@ -159,8 +160,17 @@ const router = new VueRouter({
       path: '/units/base/:unit_id',
       name: 'ACGUnitInfo',
       components: {
-        default: UnitGeneral,
-        sidenav: UnitInfoSideNav
+        default: ACGUnit,
+        sidenav: UnitInfoSideNav,
+        // children: [
+        //   {
+        //     path: 'general',
+        //     name: 'UnitGeneral',
+        //     components: {
+        //       subcontent: MemberGeneral
+        //     }
+        //   },
+        // ]
       },
     },
     {
@@ -194,7 +204,7 @@ const router = new VueRouter({
       children: [
         {
           path: 'units',
-          name: 'Units',
+          name: 'CampaignUnits',
           components: {
             subcontent: CampaignInfoUnits
           }

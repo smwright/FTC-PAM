@@ -23,7 +23,11 @@ function whitelist_table($name) {
         "campaign_info_unit",
         "campaign_member_latest_unit",
         "campaign_unit_member_info",
+        "campaign_unit_member_info_current",
         "campaign_unit_plane_asset_status",
+        "campaign_unit_max_promotions",
+        "campaign_unit_member_status",
+        "campaign_unit_transfers",
         "campaign_mission_info",
         "character_campaign_sorties_pilot_asset_status",
         "character_claim_raf",
@@ -82,6 +86,7 @@ if(filter_has_var(INPUT_GET, "view")) {
     $var_types = "";
     $var_array = [];
     $order_string = "";
+    $where_in_string = "";
     $params = filter_input_array(INPUT_GET);
     foreach ($params as $var_name => $var_value) {
         $counter++;
@@ -94,20 +99,25 @@ if(filter_has_var(INPUT_GET, "view")) {
             continue;
         }
 
+        if($var_name == "where_in"){
+            $where_in_string = $var_value;
+            continue;
+        }
+
         if($counter == 2){
             $query .= " WHERE";
         } else {
             $query .= " AND";
         }
         $query .= " $var_name = ?";
-        if(is_numeric($var_value)) {
+        if(!is_string($var_value)) {
             $var_types .= "i";
         } else if(is_string($var_value)) {
             $var_types .= "s";
         }
         $var_array[$var_name] = &$params[$var_name];
     }
-    $query .= " ".$order_string;
+    $query .= " ".$where_in_string." ".$order_string;
     $stmt = mysqli_prepare($dbx, $query);
     $params = array_merge(array($stmt, $var_types), $var_array);
 //    echo mysqli_character_set_name($dbx);
@@ -118,7 +128,7 @@ if(filter_has_var(INPUT_GET, "view")) {
 //    $func = 'mysqli_stmt_bind_param';
 //    $func(...$params);
     call_user_func_array('mysqli_stmt_bind_param', $params);
-//    echo var_dump($stmt);
+//    if($where_in_string != "") echo var_dump($query);
     mysqli_stmt_execute($stmt);
 //    echo var_dump($stmt);
     $result = mysqli_stmt_get_result($stmt);

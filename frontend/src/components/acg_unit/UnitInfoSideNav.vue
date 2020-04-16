@@ -103,6 +103,18 @@ export default {
     ).catch(error => {
       console.log(error.message);
     });
+
+    this.$store.dispatch('unitInfo/loadStoreData',
+      {
+        caller: this.$options.name,
+        call_object: {
+          view: "rank_lookup",
+        },
+        data_array_name: "rank_lookup"
+      }
+    ).catch(error => {
+      console.log(error.message);
+    });
   },
   data() {
     return {

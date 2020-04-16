@@ -4,42 +4,28 @@ CREATE
     SQL SECURITY DEFINER
 VIEW `campaign_unit_member_info` AS
     SELECT 
-        `Y`.`campaign_id` AS `campaign_id`,
-        `Y`.`depl_unit_id` AS `depl_unit_id`,
-        `Y`.`acg_unit_id` AS `acg_unit_id`,
+        `c`.`campaign_id` AS `campaign_id`,
+        `c`.`c_mn_date` AS `c_mn_date`,
+        `c`.`c_mx_date` AS `c_mx_date`,
+        `c`.`acg_unit_id` AS `acg_unit_id`,
+        `c`.`member_id` AS `member_id`,
         `acg_member`.`callsign` AS `callsign`,
-        `Y`.`member_id` AS `member_id`,
-        `Z`.`event_type` AS `event_type`,
-        `Z`.`event_value` AS `event_value`,
-        `Z`.`date_in` AS `event_date_in`,
-        `Z`.`date_out` AS `event_date_out`,
-        (`Z`.`date_in` BETWEEN `campaign_max_min_date`.`mn_date` AND `campaign_max_min_date`.`mx_date`) AS `show_event_start`,
-        (`Z`.`date_out` BETWEEN `campaign_max_min_date`.`mn_date` AND `campaign_max_min_date`.`mx_date`) AS `show_event_stop`,
-        `rank`.`name` AS `rank_name`,
-        `rank`.`abreviation` AS `rank_abr`,
-        `rank`.`image` AS `image`
+        `tse`.`event_type` AS `event_type`,
+        `tse`.`event_value` AS `event_value`,
+        `tse`.`date_in` AS `date_in`,
+        `tse`.`date_out` AS `date_out`,
+        (`tse`.`date_in` BETWEEN `c`.`c_mn_date` AND `c`.`c_mx_date`) AS `event_in_during_campaign`,
+        (`tse`.`date_out` BETWEEN `c`.`c_mn_date` AND `c`.`c_mx_date`) AS `event_out_during_campaign`,
+        `p`.`rank_value` AS `rank_value`
     FROM
-        ((((((((`campaign_unit_member_max_min_transfer` `Y`
-        JOIN `hist_unit` ON ((`hist_unit`.`id` = `Y`.`hist_unit_id`)))
-        JOIN `acg_member` ON ((`acg_member`.`id` = `Y`.`member_id`)))
-        JOIN `campaign_max_min_date` ON ((`campaign_max_min_date`.`id` = `Y`.`campaign_id`)))
-        LEFT JOIN `transfer_status_events` `Z` ON (((`Z`.`member_id` = `Y`.`member_id`)
-            AND (((`Z`.`event_type` = 'transfer')
-            AND (`Z`.`event_value` = `Y`.`acg_unit_id`))
-            OR (`Z`.`event_type` = 'status'))
-            AND (ISNULL(`Z`.`date_out`)
-            OR (`Z`.`date_out` > `Y`.`min_transfer_date_in`))
-            AND (ISNULL(`Z`.`date_out`)
-            OR (`Z`.`date_out` > `campaign_max_min_date`.`mn_date`))
-            AND IFNULL(1, ((`Z`.`date_in` < `Y`.`max_transfer_date_out`)
-            AND (`Z`.`date_in` < `campaign_max_min_date`.`mx_date`))))))
-        JOIN `campaign_unit_member_latest_promotion_date` `X` ON (((`X`.`campaign_id` = `Y`.`campaign_id`)
-            AND (`X`.`depl_unit_id` = `Y`.`depl_unit_id`)
-            AND (`X`.`member_id` = `Y`.`member_id`))))
-        JOIN `promotion` ON (((`promotion`.`member_id` = `X`.`member_id`)
-            AND (`promotion`.`promotion_date` = `X`.`mx_promotion_date`))))
-        JOIN `rank_translation` ON (((`rank_translation`.`real_value` = `promotion`.`rank_value`)
-            AND (`rank_translation`.`faction` = `hist_unit`.`faction`))))
-        JOIN `rank` ON (((`rank`.`value` = `rank_translation`.`disp_value`)
-            AND (`rank`.`faction` = `hist_unit`.`faction`))))
-    ORDER BY `promotion`.`rank_value` DESC , `Y`.`member_id` , `Z`.`date_in`
+        ((((`campaign_unit_member_max_min_date` `c`
+        JOIN `transfer_status_events` `tse` ON (((`c`.`member_id` = `tse`.`member_id`)
+            AND (`tse`.`date_in` <= `c`.`mn_date`)
+            AND ((`c`.`mx_date` <= `tse`.`date_out`)
+            OR ISNULL(`tse`.`date_out`)))))
+        JOIN `acg_member` ON ((`c`.`member_id` = `acg_member`.`id`)))
+        JOIN `campaign_unit_member_max_promotion_date` `cmp` ON (((`c`.`campaign_id` = `cmp`.`campaign_id`)
+            AND (`c`.`acg_unit_id` = `cmp`.`acg_unit_id`)
+            AND (`c`.`member_id` = `cmp`.`member_id`))))
+        JOIN `promotion` `p` ON (((`cmp`.`member_id` = `p`.`member_id`)
+            AND (`cmp`.`mx_date` = `p`.`promotion_date`))))

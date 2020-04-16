@@ -16,7 +16,7 @@ export default {
   components: {UnitBaseComp},
   mounted () {
 
-    this.$store.dispatch('missionStore/loadStoreData',
+    this.$store.dispatch('unitInfo/loadStoreData',
       {
         caller: this.$options.name,
         call_object: {
@@ -42,14 +42,26 @@ export default {
       console.log(error.message);
     });
 
-    this.$store.dispatch('missionStore/loadStoreData',
+    this.$store.dispatch('unitInfo/loadStoreData',
       {
         caller: this.$options.name,
         call_object: {
           view: "campaign_unit_member_info",
           campaign_id: this.campaign_id
         },
-        data_array_name: "campaign_unit_member_info",
+        data_array_name: "member_info",
+      }
+    ).catch(error => {
+      console.log(error.message);
+    });
+
+    this.$store.dispatch('unitInfo/loadStoreData',
+      {
+        caller: this.$options.name,
+        call_object: {
+          view: "rank_lookup",
+        },
+        data_array_name: "rank_lookup"
       }
     ).catch(error => {
       console.log(error.message);
@@ -64,7 +76,7 @@ export default {
   computed: {
 
 
-    ...mapGetters("missionStore", [
+    ...mapGetters("unitInfo", [
       "nestedData",
     ])
 

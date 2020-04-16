@@ -49,62 +49,25 @@
       </table>
     </div>
     <div v-if="this.$props.acg_unit_id != null">
-      <table>
-        <thead>
-        <tr>
-          <th>Pilots:</th>
-          <th></th>
-          <th></th>
-        </tr>
-        </thead>
-        <tbody>
-          <template v-for="(member, index) in campaign_unit_member">
-            <tr v-if="showName(index)">
-              <td>{{member.rank_abr}}</td>
-              <td>{{member.callsign}}</td>
-              <td></td>
-            </tr>
-            <template v-if="member.event_type === 'transfer'">
-              <tr v-if="member.show_event_start">
-                <td></td>
-                <td></td>
-                <td>Transferred into unit {{member.event_date_in}}.</td>
-              </tr>
-              <tr v-if="member.show_event_end">
-                <td></td>
-                <td></td>
-                <td>Transferred out of unit {{member.event_date_out}}.</td>
-              </tr>
-            </template>
-            <template v-else-if="member.event_type === 'status'">
-              <tr v-if="member.show_event_start & member.event_value === 0">
-                <td></td>
-                <td></td>
-                <td>Joined/Rejoined ACG {{member.event_date_in}}.</td>
-              </tr>
-              <tr v-if="member.show_event_start & member.event_value === 1">
-                <td></td>
-                <td></td>
-                <td>Left ACG {{member.event_date_in}}.</td>
-              </tr>
-              <tr v-if="member.show_event_start & member.event_value === 2">
-                <td></td>
-                <td></td>
-                <td>Went on leave {{member.event_date_in}}.</td>
-              </tr>
-            </template>
-          </template>
-        </tbody>
-      </table>
+      <div class="heading">Unit roster:</div>
+      <Roster
+        v-bind:unit_id="this.acg_unit_id"
+        v-bind:campaign_id="this.$route.params.campaign_id"
+      >
+      </Roster>
     </div>
   </div>
 </template>
 
 <script>
 import { mapState, mapGetters } from "vuex"
+import Roster from "../acg_unit/UnitRoster"
 
 export default {
   name: "UnitMembersComp",
+  components: {
+    Roster
+  },
   props: {
     depl_unit_id: {
       type: Number,
@@ -122,27 +85,25 @@ export default {
       return this.filterByKey("campaign_unit_plane_asset_status", "depl_unit_id", this.depl_unit_id);
     },
 
-    campaign_unit_member: function() {
-
-      return this.filterByKey("campaign_unit_member_info", "depl_unit_id", this.depl_unit_id);
-    },
+    // campaign_unit_member: function() {
+    //
+    //   return this.filterByKey("campaign_unit_member_info", "depl_unit_id", this.depl_unit_id);
+    // },
 
     ...mapGetters("missionStore", [
 
       "filterByKey"
 
-    ])
+    ]),
+
+    // ...mapGetters({
+    //   missionFindByKey: 'missionStore/filterByKey',
+    //   unitFindByKey: 'unitInfo/filterByKey'
+    // })
 
   },
   methods: {
 
-    showName: function(index){
-      if(index > 0){
-        return this.campaign_unit_member[index].callsign != this.campaign_unit_member[index-1].callsign;
-      } else {
-        return true
-      }
-    },
   },
 }
 </script>

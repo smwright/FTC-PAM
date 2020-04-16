@@ -48,6 +48,17 @@ export default {
 
     this.$store.dispatch('memberInfo/loadACGUnits', {caller: this.$options.name});
     this.$store.dispatch('memberInfo/loadMembers', {caller: this.$options.name});
+    this.$store.dispatch('memberInfo/loadStoreData',
+      {
+        caller: this.$options.name,
+        call_object: {
+          view: "rank_lookup",
+        },
+        data_array_name: "rank_lookup"
+      }
+    ).catch(error => {
+      console.log(error.message);
+    });
 
   },
   data() {
