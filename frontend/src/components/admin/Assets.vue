@@ -6,12 +6,17 @@
       <button v-on:click="sendData">Save changes</button>
       <div>{{ dbStatus }}</div>
     </div>
+
+    <AssetGeneralDescription class="container"></AssetGeneralDescription>
+
     <div class="float-left container split-div">
 
       <TreeWrapper ref="tree" v-bind:treedata="assets">
         <template slot-scope="tree">
-          <div class="typed-on-paper tree-card">
-
+          <div
+            class="typed-on-paper tree-card"
+            v-on:click="setActiveNode(tree.data)"
+          >
             <div class="inline-block float-left">
               <button v-if="tree.data.children && tree.data.children.length"
                       v-on:click="tree.store.toggleOpen(tree.data)" >
@@ -68,69 +73,14 @@
 
             </div>
           </div>
-
         </template>
       </TreeWrapper>
 
     </div>
 
-    <div class="float-left container split-div">
+    <div class="float-left split-div">
 
-      <h3>
-        Assets:
-      </h3>
-      <p>
-        Assets include all objects that are used in campaigns, for example plains that can be chosen in reports, or
-        ground targets like tanks, ships and structures. They can be organized in groups and subgroups, thereby each group
-        is an asset itself.
-      </p>
-
-      <h3>
-        Editing assets:
-      </h3>
-      <p>
-        Use the tree on the left to organize ACG assets. Assets can be dragged and dropped to form groups. Click on the
-        name of each asset to edit it. Each asset can be given a name and faction. Each asset can be marked as
-        controllable, which means it will be available as the pilots aircraft in the After Action Reports. Each asset can
-        be marked as claimable, which means it will be available as a claimed aircraft in the After Action Reports.
-      </p>
-
-      <p>
-        <b>The available factions are:</b>
-      </p>
-
-      <ul>
-        <li v-for="(faction, index) in factionStatus">
-          <template v-if="index == 0">
-            Neutral / No faction
-          </template>
-          <template v-else>
-            {{ faction.long }}
-          </template>
-        </li>
-      </ul>
-
-      <p>
-        <b>Adding assets:</b>
-        Use the button on top of the page to add an asset.
-      </p>
-
-      <p>
-        <b>Fetch data:</b>
-        Use this button to reload the assets from the database. All changes will be lost.
-      </p>
-
-      <p>
-        <b>Deleting assets:</b>
-        Assets or assets-groups can be deleted by using the corresponding button. When an asset-group is deleted, all
-        assets in that group will be moved into the parent group.
-      </p>
-
-      <p>
-        <b>Save changes:</b>
-        Use this button to save the changes and send them to the database. Deleted assets or asset-groups are still stored
-        in the database until the changes are send to the database.
-      </p>
+        <AssetEditInstructions class="container"></AssetEditInstructions>
 
     </div>
   </div>
@@ -140,12 +90,16 @@
 import TreeWrapper from "../basic_comp/TreeWrapper"
 import statConv from "../../resource/statusConverter"
 import SwitchableDiv from "../basic_comp/SwitchableDiv"
+import AssetGeneralDescription from "./AssetGeneralDescriptionComp"
+import AssetEditInstructions from "./AssetEditInstructions"
 
 export default {
   name: "Assets",
   components: {
     TreeWrapper,
     SwitchableDiv,
+    AssetGeneralDescription,
+    AssetEditInstructions,
   },
   mixins: [statConv],
   mounted () {
@@ -159,10 +113,21 @@ export default {
       assets_display: null,
       assets_for_delete: [],
       dbStatus: "",
+      active_node: {
+        id: null,
+        x: ""
+      },
+
     }
   },
 
   methods: {
+
+    setActiveNode: function (node) {
+
+      this.active_node.id = node.id;
+      this.active_node.name = node.name;
+    },
 
     addAsset: function () {
       var node =
@@ -188,6 +153,8 @@ export default {
         .catch(error => {
           console.log(error.message);
         });
+
+
     },
 
     deleteAsset: function (node) {
@@ -242,6 +209,11 @@ export default {
 
 .tree-card div{
   margin: 2px;
+}
+
+.tree-card-placeholder {
+  height: 1px;
+  border-bottom-color: yellow;
 }
 
 </style>

@@ -48,6 +48,7 @@ import AdminMember from '../components/admin/Member'
 import AdminCampaign from '../components/admin/Campaign'
 import AdminHistUnit from '../components/admin/HistUnits'
 import Assets from '../components/admin/Assets'
+import RosterAssets from '../components/admin/RosterAsset'
 
 
 //Flight school components
@@ -320,6 +321,16 @@ const router = new VueRouter({
       },
       meta: {requiresAdmin: true},
     },
+    {
+      path: '/admin/rasset',
+      name: 'RosterAsset',
+      components: {
+        default: RosterAssets,
+        sidenav: AdminMainSideNav
+      },
+      meta: {requiresAdmin: true},
+    },
+
     // Flight school routing
     {
       // Main entry of the flight school

@@ -243,6 +243,35 @@ select {
   color: #1b1b1b;
 }
 
+/*vSELECT specific styles*/
+.vs__dropdown-toggle{
+  border: none;
+  background: rgba(255, 255, 255, 0.5);
+  border-color: #646464;
+  border-radius: 2px;
+  /*font-size: large;*/
+  padding: 2px;
+  margin: 2px;
+  color: #1b1b1b;
+}
+
+.vs__dropdown-menu {
+  /*color: #1b1b1b;*/
+  /*background: rgb(95, 95, 95);*/
+  font-size: large;
+
+  /*border-color: #646464;*/
+}
+
+.vs_dropdown-option{
+  background: #F28900;
+}
+
+.vs__dropdown-option--highlight{
+  background-color: #F28900;
+}
+
+
 .clearfix::after {
   content: "";
   clear: both;
@@ -280,6 +309,10 @@ select {
 .container-transparent {
   margin: 10px 2px 10px 2px;
   padding: 10px;
+}
+
+.split-div{
+  width: calc(50% - 24px);
 }
 
 .side-nav-heading {
@@ -562,6 +595,12 @@ DraggableTree div {
   border: none;
 }
 
+.he-tree .tree-node {
+
+  margin-bottom: 10px;
+}
+
+
 .he-tree{
   /*border: 1px solid #ccc;*/
   padding: 20px;
@@ -636,4 +675,6 @@ DraggableTree div {
   padding-bottom: 5px;
   width: calc(100% - 20px - 26px);
 }
+
+
 </style>

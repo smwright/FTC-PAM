@@ -16,8 +16,16 @@ THIS FILE LISTS ALL DATABASE CHANGES IN SPECIFIC DEVELOPMENT BRANCHES:
 
 -FEAT-unit_info
     campaign_max_min_ext_date
+    campaign_unit_member
     campaign-info_unit
     campaign_unit_member_max_min_date
     campaign_unit_member_max_promotion_date
     campaign_unit_member_info
     campaign_unit_member_info_current
+
+    CREATE TABLE `pam`.`roster_asset` (
+      `id` INT NOT NULL,
+      `asset_id` INT NOT NULL,
+      `markings` VARCHAR(45) NOT NULL,
+      `image` VARCHAR(100) NULL,
+      PRIMARY KEY (`id`));

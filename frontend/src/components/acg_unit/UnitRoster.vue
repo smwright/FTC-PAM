@@ -226,8 +226,8 @@ export default {
     sortByDate: function(arr) {
 
       return arr.sort(function(a,b) {
-        let d1 = Date.parse(a.event_date_in);
-        let d2 = Date.parse(b.event_date_in);
+        let d1 = Date.parse(a.date_in);
+        let d2 = Date.parse(b.date_in);
         return d1 - d2;
       })
     },
@@ -251,8 +251,13 @@ export default {
             && item.faction == faction;
         }
       )
+      if(rank_obj) {
 
-      return rank_obj.abreviation;
+        return rank_obj.abreviation;
+      } else {
+
+        console.log("ERRPR "+rank_value+" "+faction);
+      }
     },
 
     eventText: function(event) {
