@@ -2,12 +2,15 @@
   <div>
     <div class="container">
       <button v-on:click="changeTab('general')">General</button>
+      <button v-on:click="changeTab('roster')">Roster</button>
     </div>
     <div>
       <UnitGeneralComp
-        v-show="tabToShow === 'general'"
-      >
-      </UnitGeneralComp>
+        v-show="tabToShow === 'general'"></UnitGeneralComp>
+      <UnitRosterComp
+        v-show="tabToShow === 'roster'"
+        v-bind:acg_unit_id="unit_id"
+      ></UnitRosterComp>
 
     </div>
 
@@ -19,11 +22,14 @@
 
 <script>
 import UnitGeneralComp from "./UnitGeneralComp"
+import UnitRosterComp from "./UnitRosterComp"
+
 
 export default {
   name: "UnitAdmin",
   components: {
-    UnitGeneralComp
+    UnitGeneralComp,
+    UnitRosterComp,
   },
   mounted () {
 
@@ -33,8 +39,9 @@ export default {
   data () {
     return {
 
-      unit_it: 0,
-      tabToShow: "general"
+      unit_id: 0,
+      tabToShow: "roster",
+      selectedAsset: 0
     }
   },
 
@@ -83,6 +90,61 @@ export default {
             data_array_name: "reports"
           });
 
+        this.$store.dispatch('unitAdmin/loadStoreData',
+          {
+            caller: this.$options.name,
+            call_object: {
+              view: "rank_lookup"
+            },
+            data_array_name: "rank_lookup"
+          });
+
+        this.$store.dispatch('unitAdmin/loadStoreData',
+          {
+            caller: this.$options.name,
+            call_object: {
+              view: "campaign_info_unit",
+              acg_unit_id: id,
+            },
+            data_array_name: "campaign_units"
+          });
+
+        this.$store.dispatch('unitAdmin/loadStoreData',
+          {
+            caller: this.$options.name,
+            call_object: {
+              view: "campaign_unit_member_info",
+              acg_unit_id: id,
+            },
+            data_array_name: "member_info"
+          });
+
+        this.$store.dispatch('unitAdmin/loadStoreData',
+          {
+            caller: this.$options.name,
+            call_object: {
+              view: "asset_info",
+            },
+            data_array_name: "assets"
+          });
+
+        this.$store.dispatch('unitAdmin/loadStoreData',
+          {
+            caller: this.$options.name,
+            call_object: {
+              view: "roster_asset_info",
+            },
+            data_array_name: "r_assets"
+          });
+
+        this.$store.dispatch('unitAdmin/loadStoreData',
+          {
+            caller: this.$options.name,
+            call_object: {
+              view: "member_roster_asset",
+            },
+            data_array_name: "member_r_assets"
+          });
       }
     }
   }

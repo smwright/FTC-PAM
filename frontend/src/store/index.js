@@ -5,9 +5,11 @@ import test from './modules/test'
 import campaignAdmin from './modules/campaignAdmin'
 import memberAdmin from './modules/memberAdmin'
 import memberInfo from './modules/memberInfo'
+import unitInfo from './modules/unitInfo'
 import characterStore from './modules/characterStore'
 import missionStore from './modules/missionStore'
 import unitAdmin from './modules/unitAdmin'
+import assetAdmin from './modules/assetAdmin'
 import logger from './modules/logger'
 
 Vue.use(Vuex)
@@ -21,9 +23,11 @@ export default new Vuex.Store({
     campaignAdmin,
     memberAdmin,
     memberInfo,
+    unitInfo,
     characterStore,
     missionStore,
     unitAdmin,
+    assetAdmin,
     logger
   },
   strict: debug,
@@ -45,9 +49,11 @@ if (module.hot) {
     const campaignAdmin = require('./modules/campaignAdmin');
     const memberAdmin = require('./modules/memberAdmin');
     const memberInfo = require('./modules/memberInfo');
+    const unitInfo = require('./modules/unitInfo');
     const missionStore = require('./modules/missionStore');
     const characterStore = require('./modules/characterStore');
     const unitAdmin = require('./modules/unitAdmin');
+    const assetAdmin = require('./modules/assetAdmin');
     const logger = require('./modules/logger')
     // swap in the new actions and mutations
     store.hotUpdate({
@@ -56,9 +62,11 @@ if (module.hot) {
         campaignAdmin: campaignAdmin,
         memberAdmin: memberAdmin,
         memberInfo: memberInfo,
+        unitInfo: unitInfo,
         missionStore: missionStore,
         characterStore: characterStore,
         unitAdmin: unitAdmin,
+        assetAdmin: assetAdmin,
         logger: logger
       }
     })

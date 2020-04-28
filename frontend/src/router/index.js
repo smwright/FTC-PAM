@@ -19,6 +19,11 @@ import MemberGeneral from '../components/acg_member/MemberGeneralComp'
 import MemberCharacters from '../components/acg_member/MemberCharactersComp'
 import CharacterProfile from '../components/acg_member/CharacterProfile'
 
+//ACG Unit
+import UnitInfoSideNav from '../components/acg_unit/UnitInfoSideNav'
+import UnitGeneral from '../components/acg_unit/UnitGeneralComp'
+import ACGUnit from '../components/acg_unit/ACGUnit'
+
 //Campaign
 import CampaignList from '../components/campaign/CampaignList'
 import CampaignInfoMain from '../components/campaign/CampaignInfoMain'
@@ -43,6 +48,7 @@ import AdminMember from '../components/admin/Member'
 import AdminCampaign from '../components/admin/Campaign'
 import AdminHistUnit from '../components/admin/HistUnits'
 import Assets from '../components/admin/Assets'
+import RosterAssets from '../components/admin/RosterAsset'
 
 
 //Flight school components
@@ -141,6 +147,44 @@ const router = new VueRouter({
     },
 
     // ---------------------------------------------------
+    // Units
+    // ---------------------------------------------------
+    {
+      path: '/units/',
+      name: 'Units',
+      components: {
+        default: UnitGeneral,
+        sidenav: UnitInfoSideNav
+      }
+    },
+    {
+      path: '/units/base/:unit_id',
+      name: 'ACGUnitInfo',
+      components: {
+        default: ACGUnit,
+        sidenav: UnitInfoSideNav,
+        // children: [
+        //   {
+        //     path: 'general',
+        //     name: 'UnitGeneral',
+        //     components: {
+        //       subcontent: MemberGeneral
+        //     }
+        //   },
+        // ]
+      },
+    },
+    {
+      path: '/units/hist/:unit_id',
+      name: 'HistUnitInfo',
+      components: {
+        default: UnitGeneral,
+        sidenav: UnitInfoSideNav
+      },
+    },
+
+
+    // ---------------------------------------------------
     // Campaign
     // ---------------------------------------------------
     {
@@ -161,7 +205,7 @@ const router = new VueRouter({
       children: [
         {
           path: 'units',
-          name: 'Units',
+          name: 'CampaignUnits',
           components: {
             subcontent: CampaignInfoUnits
           }
@@ -277,6 +321,16 @@ const router = new VueRouter({
       },
       meta: {requiresAdmin: true},
     },
+    {
+      path: '/admin/rasset',
+      name: 'RosterAsset',
+      components: {
+        default: RosterAssets,
+        sidenav: AdminMainSideNav
+      },
+      meta: {requiresAdmin: true},
+    },
+
     // Flight school routing
     {
       // Main entry of the flight school

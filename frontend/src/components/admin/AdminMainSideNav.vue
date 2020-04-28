@@ -55,6 +55,16 @@
     <DivLinkButton v-bind="{routeName: 'Asset'}">
       <div class="heading">Assets</div>
     </DivLinkButton>
+
+
+    <!--       -->
+    <!--ROSTER ASSETS-->
+    <!--       -->
+    <DivLinkButton v-bind="{routeName: 'RosterAsset'}">
+      <div class="heading">Roster assets</div>
+    </DivLinkButton>
+
+
   </div>
 </template>
 

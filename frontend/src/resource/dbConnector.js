@@ -81,6 +81,47 @@ var dbConnector = {
     return resultData;
   },
 
+  createFilePOSTPromise: function (caller, url, formData) {
+
+    var resultData = new Promise(
+      function (resolve, reject) {
+        axios.post(url, formData, { headers: { 'Content-Type': 'multipart/form-data' }})
+          .then(response => {
+            console.log(caller+` dbConnector.createFilePOSTPromise call to ${url} with param { name: ${formData.getAll("file")[0].name} `
+            + ` path: ${formData.getAll("path")[0] } }`);
+            resolve(response.data);
+          })
+          .catch(error => {
+            var errorStr;
+            errorStr = `dbConnector.createFilePOSTPromise call to ${url} with param { name: ${formData.getAll("file")[0].name} `
+            + ` path: ${formData.getAll("path")[0] } }`;
+            if (error.response) {
+              // The request was made and the server responded with a status code
+              // that falls out of the range of 2xx
+              errorStr += " response error.";
+              errorStr += ` Response data: ${error.response.data}`;
+              errorStr += ` Response status: ${error.response.status}`;
+              errorStr += ` Response headers: `+ JSON.stringify(error.response.headers);
+              errorStr += ` Response headers: `+ JSON.stringify(error.message);
+            } else if (error.request) {
+              // The request was made but no response was receive
+              // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
+              // http.ClientRequest in node.js
+              errorStr += " request error.";
+              errorStr += " "+error.request;
+            } else {
+              // Something happened in setting up the request that triggered an Error
+              errorStr += " error.";
+              errorStr += " "+error.message;
+            }
+            errorStr += " "+error.config;
+            reject(errorStr);
+          })
+      })
+    return resultData;
+  },
+
+
   // createERROR: function (error) {
   //
   //   var errorStr;
@@ -205,6 +246,12 @@ dbConnector.install =  function(Vue, options) {
 
       var url = "forumAdjust.php";
       return dbConnector.createPOSTPromise(caller, url, param);
+    },
+
+    uploadImageFile: function(caller, formData) {
+
+      let url = "fileUpload.php"
+      return dbConnector.createFilePOSTPromise(caller, url, formData);
     },
   }
 
