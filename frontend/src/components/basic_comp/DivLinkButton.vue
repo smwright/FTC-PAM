@@ -1,5 +1,8 @@
 <template>
-  <div class="div-button" v-on:click.stop="routeTo()">
+  <div v-if="active" class="div-button" v-on:click.stop="routeTo()">
+    <slot></slot>
+  </div>
+  <div v-else class="div-button-inactive">
     <slot></slot>
   </div>
 </template>
@@ -19,6 +22,10 @@ export default {
         // Null will cause $route.push to crash during params matching.
         return {};
       }
+    },
+    active: {
+      type: Boolean,
+      default: true
     }
   },
   methods: {

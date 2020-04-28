@@ -352,7 +352,7 @@ select {
   width: calc(100% - 26px);
   margin: 10px 2px 10px 2px;
   padding: 10px;
-  cursor: pointer;
+  /*cursor: pointer;*/
   border-style: solid;
   border-width: 1px;
   border-radius: 15px;
@@ -364,6 +364,10 @@ select {
 
 .full-height{
   height: 100%;
+}
+
+.height-100px{
+  height: 100px;
 }
 
 .full-width{
@@ -416,6 +420,10 @@ select {
 
 .padding-10{
   padding: 10px;
+}
+
+.padding-2-10 {
+  padding: 2px 10px;
 }
 
 .margin-auto{
@@ -587,6 +595,12 @@ select {
 .raf {
   background-color: rgba(200, 0, 0, 0.25);
   border-radius: 15px;
+}
+
+.roster-image {
+
+  width: 425px;
+  height: 163px;
 }
 
 /*CSS FOR draggable-nested-tree*/

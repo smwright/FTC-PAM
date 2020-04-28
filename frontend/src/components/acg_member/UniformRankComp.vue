@@ -84,7 +84,7 @@ export default {
   computed: {
 
     showBig: function () {
-
+      // return true;
       return  this.faction == 0 || this.character_id > 0;
     },
 
@@ -191,10 +191,11 @@ export default {
 
 .uniform-images {
   max-height: 90px;
+  horiz-align: center;
 }
 
 .uniform1 {
-  width: 360px;
+  width: 380px;
 }
 
 .uniform2 {

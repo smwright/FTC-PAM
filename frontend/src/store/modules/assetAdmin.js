@@ -5,6 +5,7 @@ import Vue from 'vue'
 const state = {
 
   assets: [],
+  hist_units: [],
   r_assets: [],
   r_assets_for_delete: []
 }
@@ -168,6 +169,7 @@ const  actions = {
               id: context.state.r_assets[i].id,
               markings: context.state.r_assets[i].markings,
               asset_id: context.state.r_assets[i].asset_id,
+              hist_unit_id: context.state.r_assets[i].hist_unit_id,
               image: formData,
 
             }

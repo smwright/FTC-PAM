@@ -38,6 +38,7 @@ function whitelist_table($name) {
         "decoration" => array("date", "comment", "awarded", "awarded_by"),
         "deployed_unit" => array("campaign_id", "acg_unit_id", "hist_unit_id", "asset_id", "unit_type", "lft", "rgt"),
         "hist_unit" => array("name", "code", "faction", "type", "description", "image"),
+        "member_roster_asset" => array("member_id", "campaign_id", "roster_asset_id"),
         "member_status_log" => array("member_id", "member_status", "status_date_in", "status_date_out", "comment"),
         "mission" => array("name", "campaign_id", "real_date", "hist_date", "mission_status"),
         "promotion" => array("member_id", "rank_value", "promotion_date", "comment"),
@@ -46,7 +47,7 @@ function whitelist_table($name) {
         "report_detail_lw" => array("report_id", "swarm", "swarm_pos"),
         "report_detail_raf" => array("report_id", "flight", "section", "section_pos", "serial_no", "number_enemy_ac", "type_enemy_ac", "time_attack_delivered",
             "place_attack_delivered", "enemy_height", "enemy_casualty", "our_casualty_ac", "our_casualty_personnel"),
-        "roster_asset" => array("asset_id", "markings", "image"),
+        "roster_asset" => array("asset_id", "markings", "image", "hist_unit_id"),
         "transfer" => array("member_id", "acg_unit_id", "transfer_date_in", "transfer_date_out"),
 
     );

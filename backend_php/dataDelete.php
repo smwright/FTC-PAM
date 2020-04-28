@@ -26,6 +26,7 @@ function whitelist_table($name) {
         "claim_vvs" => array("id"),
         "claim_ground" => array("id"),
         "comment" => array("id"),
+        "member_roster_asset" => array("id"),
         "member_status_log" => array("id"),
         "promotion" => array("id"),
         "report" => array("id"),

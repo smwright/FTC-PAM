@@ -1,103 +1,95 @@
 <template>
 
   <div>
-    <!-- CURRENT ROSTER -->
-    <template v-if="this.campaign_id == 0">
 
-      <div class="heading">Active members:</div>
+    <template
+      v-for="(roster_d) in roster_data"
+    >
+      <div v-if="roster_d.title !== undefined" class="heading">{{ roster_d.title }}</div>
       <DivLinkButton
-        v-for="member in active_roster"
-        class="typed-on-paper-link clearfix"
+        v-for="member in roster_d.roster"
+        class="clearfix"
+        v-bind:class="{ 'typed-on-paper-link': active_button }"
         v-bind:key="member.member_id"
-        v-bind="{routeName: 'MemberGeneral', routeParams: {member_id: member.member_id}}"
+        v-bind:active="false"
+        v-bind="{routeName: route_name, routeParams: {member_id: member.member_id}}"
       >
-        <UniformRankComp
-          class="inline-block float-left width-10 sepia"
-          v-bind:rank_real_value="member.rank_value"
-          v-bind:rank_lookup="rank_lookup"
-        >
-        </UniformRankComp>
-        <div
-          class="inline-block float-left padding-10"
-        >
-          <div class="heading">
-            <span>
-              {{member.callsign}}
-            </span>
-          </div>
-          <div>
-            <p>Joined ACG on {{ member.status_date_in }}.
-              In {{ acgName(member.acg_unit_id) }} since {{ member.transfer_date_in }}.</p>
-          </div>
-        </div>
-      </DivLinkButton>
+        <!--v-bind:active="active_button"-->
 
-      <div class="heading">Members on leave:</div>
-      <DivLinkButton
-        v-for="member in rr_roster"
-        class="typed-on-paper-link clearfix"
-        v-bind:key="member.member_id"
-        v-bind="{routeName: 'MemberGeneral', routeParams: {member_id: member.member_id}}"
-      >
-        <UniformRankComp
-          class="inline-block float-left width-10 sepia"
-          v-bind:rank_real_value="member.rank_value"
-          v-bind:rank_lookup="rank_lookup"
-        >
-        </UniformRankComp>
-        <div
-          class="inline-block float-left padding-10"
-        >
-          <div class="heading">
-            <span>
-              {{member.callsign}}
-            </span>
-          </div>
-          <div>
-            <p>Joined ACG on {{ member.status_date_in }}.
-              In {{ acgName(member.acg_unit_id) }} since {{ member.transfer_date_in }}.</p>
-          </div>
-        </div>
-      </DivLinkButton>
+        <div class="clearfix">
 
-    </template>
-    <!-- CAMPAIGN SPECIFIC ROSTER -->
-    <template v-else>
+          <div class="inline-block float-left width-80">
 
-      <DivLinkButton
-        v-for="member in campaign_roster"
-        class="typed-on-paper-link clearfix"
-        v-bind:key="member.member_id"
-        v-bind="{routeName: 'MemberGeneral', routeParams: {member_id: member.member_id}}"
-      >
-        <UniformRankComp
-          class="inline-block float-left width-10 sepia"
-          v-bind:rank_real_value="member.rank_value"
-          v-bind:faction="unitFaction"
-          v-bind:rank_lookup="rank_lookup"
-        >
-        </UniformRankComp>
-        <div
-          class="inline-block float-left padding-10"
-        >
-          <div class="heading">
-            <span>
+            <div class="heading padding-2-10">
+              <span v-if="roster_d.faction !== 0">
               {{ rankAbbreviation(member.rank_value, unitFaction) }}
-            </span>
-            <span>
+              </span>
+              <span>
               {{member.callsign}}
-            </span>
-          </div>
-          <template v-for="event in sortByDate(member.events)">
-            <div>
-              {{ eventText(event) }}
+              </span>
             </div>
-          </template>
+
+            <div class="padding-2-10">
+              <slot name="info1"></slot>
+            </div>
+
+          </div>
+          <div class="clearfix">
+
+            <UniformRankComp
+            class="inline-block float-left container uniform-comp min-height-100px"
+            v-bind:class="{ sepia: sepia_images }"
+            v-bind:rank_real_value="member.rank_value"
+            v-bind:rank_lookup="rank_lookup"
+            v-bind:faction="roster_d.faction"
+            ></UniformRankComp>
+
+            <div class="inline-block padding-10 info-comp min-height-100px">
+              <slot name="info2">
+                <div v-if=" 'events' in member">
+                <template v-for="event in sortByDate(member.events)">
+                <div>
+                {{ eventText(event) }}
+                </div>
+                </template>
+                </div>
+                <div v-else>
+                <p>Joined ACG on {{ member.status_date_in }}.
+                In {{ acgName(member.acg_unit_id) }} since {{ member.transfer_date_in }}.</p>
+                </div>
+              </slot>
+            </div>
+
+            <div
+              class="inline-block float-right"
+            >
+
+              <slot
+                name="roster_image"
+                v-bind:member="{ member }"
+              >
+                <template v-if="hasImage(member)">
+                  <div class="container image-comp">
+                    <img
+                      class="roster-image"
+                      v-bind:class="{ sepia: sepia_images }"
+                      :src="member.image">
+                  </div>
+                </template>
+              </slot>
+
+            </div>
+
+          </div>
+
+
 
         </div>
+
       </DivLinkButton>
 
     </template>
+
   </div>
 
 </template>
@@ -123,8 +115,42 @@ export default {
       type: [Number, String],
       default: 0
     },
+    store_module: {
+      type: [String],
+      default: "unitInfo"
+    },
+    sepia_images: {
+      type: Boolean,
+      default: true
+    },
+    route_name: {
+      type: String,
+      default: "MemberGeneral"
+    },
+    active_button: {
+      type: Boolean,
+      default: true
+    }
   },
   computed: {
+
+    roster_data: function() {
+
+      if(this.campaign_id == 0) {
+
+        let roster_array = [];
+        if(this.active_roster.length > 0) roster_array.push(
+          {title: "Active members:", roster: this.active_roster, faction: 0}
+        );
+        if(this.rr_roster.length > 0) roster_array.push(
+          {title: "Members on leave:", roster: this.rr_roster, faction: 0}
+        );
+        return roster_array;
+
+      } else {
+        return [{type: undefined, roster: this.campaign_roster, faction: this.unitFaction}];
+      }
+    },
 
     active_roster: function() {
 
@@ -170,6 +196,7 @@ export default {
               member_id: roster_info[i].member_id,
               callsign: roster_info[i].callsign,
               rank_value: roster_info[i].rank_value,
+              image: roster_info[i].image,
               events: []
             }
           );
@@ -210,18 +237,42 @@ export default {
       }
     },
 
-    ...mapState("unitInfo", {
-      rank_lookup: state => state.rank_lookup
-    }),
 
-    ...mapGetters("unitInfo", [
-      "findByKey",
-      "filterByKey",
-      "filterByKeys",
-      "filterByString"
-    ])
+    rank_lookup: function () {
+
+      return this.$store.state[this.store_module].rank_lookup;
+    },
+
   },
   methods: {
+
+    findByKey: function (table, keyName, keyValue) {
+
+      // let storePath = this.store_module+"filterByKey"
+      return this.$store.getters[this.store_module+"/findByKey"](table, keyName, keyValue);
+
+    },
+
+    filterByKey: function (table, keyName, keyValue) {
+
+      // let storePath = this.store_module+"filterByKey"
+      return this.$store.getters[this.store_module+"/filterByKey"](table, keyName, keyValue);
+
+    },
+
+    filterByKeys: function (table, filterInput) {
+
+      // let storePath = this.store_module+"filterByKey"
+      return this.$store.getters[this.store_module+"/filterByKeys"](table, filterInput);
+
+    },
+
+    filterByString: function (table, keyName, searchValue) {
+
+      // let storePath = this.store_module+"filterByKey"
+      return this.$store.getters[this.store_module+"/filterByString"](table, keyName, searchValue);
+
+    },
 
     sortByDate: function(arr) {
 
@@ -293,6 +344,11 @@ export default {
       return str;
     },
 
+    hasImage: function (member) {
+
+      return ('image' in member && member.image !== null);
+    }
+
   }
 }
 </script>
@@ -301,6 +357,25 @@ export default {
 
 .sepia {
   filter: sepia(.75);
+}
+
+.uniform-comp {
+  /*width: 380px;*/
+  min-height: 168px;
+}
+
+.image-comp {
+  width: 425px;
+  min-height: 168px;
+}
+
+.info-comp {
+  width: calc(90% - 380px - 24px - 425px - 24px - 24px);
+  min-height: 168px;
+}
+
+.min-height-100px {
+  min-height: 100px;
 }
 
 </style>

@@ -6,7 +6,7 @@
       <span><input v-model="markings"></span>
     </div>
     <div class="clearfix">
-      <label class="float-left heading">Reasing asset type:</label>
+      <label class="float-left heading">Reasign asset type:</label>
       <vSelect
         class="float-left width-70"
         v-model="asset_type_id"
@@ -15,11 +15,21 @@
         label="name"
       ></vSelect>
     </div>
+    <div class="clearfix">
+      <label class="float-left heading">Historical unit:</label>
+      <vSelect
+        class="float-left width-70"
+        v-model="hist_unit_id"
+        v-bind:options="hist_units"
+        v-bind:clearable="false"
+        label="name"
+      ></vSelect>
+    </div>
     <div>
       <label class="heading">Image:</label>
       <div class="clearfix">
         <ImageUpload
-          class="imageLoader float-left"
+          class="roster-image float-left"
           v-model="roster_image"
           savePath="/assets/images/roster_images/"
         >
@@ -99,6 +109,29 @@ export default {
       }
     },
 
+    hist_unit_id: {
+      get() {
+        var asset = this.$store.getters['assetAdmin/findByKey']('r_assets', 'id', this.r_asset_id );
+        if(asset !== undefined) {
+          return this.findByKey("hist_units", "id", asset.hist_unit_id);
+        } else {
+          return {};
+        }
+
+        // return (asset !== undefined) ? asset : "";
+      },
+      set(value) {
+        this.$store.commit('assetAdmin/updateValue',
+          {
+            array_name: "r_assets",
+            id_column_name: "id",
+            id_column_value: this.r_asset_id,
+            update_column_name: "hist_unit_id",
+            update_column_value: value.id
+          });
+      }
+    },
+
     roster_image: {
       get() {
         var asset = this.$store.getters['assetAdmin/findByKey']('r_assets', 'id', this.r_asset_id );
@@ -129,6 +162,7 @@ export default {
 
     ...mapState('assetAdmin', {
       assets: state => state.assets,
+      hist_units: state => state.hist_units
     }),
 
     ...mapGetters("assetAdmin", [
@@ -163,11 +197,11 @@ export default {
 
 <style scoped>
 
-.imageLoader {
+/*.imageLoader {*/
 
-  width: 425px;
-  height: 163px;
-}
+  /*width: 425px;*/
+  /*height: 163px;*/
+/*}*/
 
 div{
   margin: 2px;

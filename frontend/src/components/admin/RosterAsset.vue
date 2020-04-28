@@ -14,7 +14,7 @@
       <button class="float-left" v-on:click="loadAssets">Fetch assets</button>
     </div>
 
-    <div class="float-left split-div">
+    <div class="float-left split-div min-width-500">
       <HideableDiv
         class="margin-5-2"
         v-for="asset in assetsWithRosterAssets"
@@ -69,7 +69,7 @@
       </p>
 
       <p>
-        Each roster asset has 3 properties: Markings, asset type and image.
+        Each roster asset has 4 properties: Markings, asset type, historical unit and image.
       </p>
       <p>
         <b>Markings:</b> Here you can edit the markings of the asset.
@@ -77,6 +77,10 @@
       <p>
         <b>Asset type:</b> Here you can reasign the roster asset to a different asset type. The roster asset will be moved
         to the list entries of it's new asset type immediately.
+      </p>
+      <p>
+        <b>Historical unit:</b> Each roster asset is assigned to a historical unit. The assets can only be assigned for campaigns
+        that field the specified unit. The roster asset doesn't need to be assigned to a member of said unit though.
       </p>
       <p>
         <b>Image:</b> Here you can set the image that will show up on the roster pages. Click on the image area to select
@@ -167,6 +171,7 @@ export default {
           {
             asset_id: this.selectedAsset.id,
             markings: null,
+            hist_unit_id: null,
             image: null
           });
       }
@@ -208,12 +213,28 @@ export default {
       ).catch(error => {
         console.log(error.message);
       });
+
+      this.$store.dispatch('assetAdmin/loadStoreData',
+        {
+          caller: this.$options.name,
+          call_object: {
+            view: "hist_unit",
+          },
+          data_array_name: "hist_units"
+        }
+      ).catch(error => {
+        console.log(error.message);
+      });
     }
   }
 }
 </script>
 
 <style scoped>
+
+.min-width-500 {
+  min-width: 500px;
+}
 
 .margin-2-0 {
   margin: 2px 2px;
