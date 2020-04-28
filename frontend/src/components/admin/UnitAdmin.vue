@@ -40,7 +40,7 @@ export default {
     return {
 
       unit_id: 0,
-      tabToShow: "roster",
+      tabToShow: "general",
       selectedAsset: 0
     }
   },
@@ -104,7 +104,7 @@ export default {
             caller: this.$options.name,
             call_object: {
               view: "campaign_info_unit",
-              acg_unit_id: id,
+              // acg_unit_id: id,
             },
             data_array_name: "campaign_units"
           });
