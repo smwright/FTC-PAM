@@ -142,7 +142,7 @@ const  actions = {
           caller: payload.caller,
           call_object: {
             view: "campaign_info_unit",
-            acg_unit_id: payload.acg_unit_id
+            // acg_unit_id: payload.acg_unit_id
           },
           data_array_name: "campaign_units"
 
