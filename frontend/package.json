@@ -20,6 +20,7 @@
     "nested-set": "^1.0.0-rc0",
     "pug": "^2.0.3",
     "start": "^5.1.0",
+    "tree-helper": "^1.4.14",
     "vue": "^2.5.2",
     "vue-draggable-nested-tree": "^2.2.8",
     "vue-router": "^3.0.1",
@@ -83,5 +84,8 @@
   "jshintConfig": {
     "esversion": 6,
     "asi": true
+  },
+  "peerDependencies": {
+    "he-tree-vue": "^1.2.1"
   }
 }

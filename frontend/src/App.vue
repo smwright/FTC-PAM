@@ -24,7 +24,7 @@
     </div>
     <div id="footer">
       <div class="text-align-center padding-10">
-        Our page is under construction. Please report bugs on our forum.
+        Air Combat Group
       </div>
     </div>
   </div>
@@ -243,6 +243,35 @@ select {
   color: #1b1b1b;
 }
 
+/*vSELECT specific styles*/
+.vs__dropdown-toggle{
+  border: none;
+  background: rgba(255, 255, 255, 0.5);
+  border-color: #646464;
+  border-radius: 2px;
+  /*font-size: large;*/
+  padding: 2px;
+  margin: 2px;
+  color: #1b1b1b;
+}
+
+.vs__dropdown-menu {
+  /*color: #1b1b1b;*/
+  /*background: rgb(95, 95, 95);*/
+  font-size: large;
+
+  /*border-color: #646464;*/
+}
+
+.vs_dropdown-option{
+  background: #F28900;
+}
+
+.vs__dropdown-option--highlight{
+  background-color: #F28900;
+}
+
+
 .clearfix::after {
   content: "";
   clear: both;
@@ -282,6 +311,10 @@ select {
   padding: 10px;
 }
 
+.split-div{
+  width: calc(50% - 24px);
+}
+
 .side-nav-heading {
 
   color: #F28900;
@@ -319,7 +352,7 @@ select {
   width: calc(100% - 26px);
   margin: 10px 2px 10px 2px;
   padding: 10px;
-  cursor: pointer;
+  /*cursor: pointer;*/
   border-style: solid;
   border-width: 1px;
   border-radius: 15px;
@@ -331,6 +364,10 @@ select {
 
 .full-height{
   height: 100%;
+}
+
+.height-100px{
+  height: 100px;
 }
 
 .full-width{
@@ -383,6 +420,10 @@ select {
 
 .padding-10{
   padding: 10px;
+}
+
+.padding-2-10 {
+  padding: 2px 10px;
 }
 
 .margin-auto{
@@ -443,7 +484,7 @@ select {
 
 .typed-on-paper-link:hover {
   background: rgba(255, 255, 255, 0.5);
-  border-radius: 2px;
+  border-color: transparent;
 }
 
 .bigSignature {
@@ -541,11 +582,38 @@ select {
   border-radius: 15px;
 }
 
+.luftwaffe {
+  background-color: rgba(0,0,102,0.25);
+  border-radius: 15px;
+}
+
+.vvs {
+  background-color: rgba(100,0,0,0.25);
+  border-radius: 15px;
+}
+
+.raf {
+  background-color: rgba(200, 0, 0, 0.25);
+  border-radius: 15px;
+}
+
+.roster-image {
+
+  width: 425px;
+  height: 163px;
+}
+
 /*CSS FOR draggable-nested-tree*/
 
 DraggableTree div {
   border: none;
 }
+
+.he-tree .tree-node {
+
+  margin-bottom: 10px;
+}
+
 
 .he-tree{
   /*border: 1px solid #ccc;*/
@@ -612,4 +680,15 @@ DraggableTree div {
   background: #bb0000;
   color: white;
 }
+
+.unit-buttons{
+  color: #F28900;
+  font-size: 1em;
+  margin: 2px 0px 0px 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: calc(100% - 20px - 26px);
+}
+
+
 </style>

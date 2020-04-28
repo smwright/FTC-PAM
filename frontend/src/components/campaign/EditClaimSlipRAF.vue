@@ -151,7 +151,8 @@
             report_id: this.report_info.report_id,
             asset_id: null,
             enemy_status: 0,
-            shared: 0
+            shared: 0,
+            description: null
           });
       },
 

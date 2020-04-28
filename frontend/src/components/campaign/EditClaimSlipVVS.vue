@@ -154,7 +154,8 @@
             place: null,
             group_claim: 0,
             confirmed: 0,
-            witness_id: null
+            witness_id: null,
+            description: null
           });
       },
 

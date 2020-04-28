@@ -1,6 +1,6 @@
 <template >
   <div>
-    <DivLinkButton class="heading" v-bind="{routeName: 'Units', routeParams:{campaign_id: campaign_id}}">
+    <DivLinkButton class="heading" v-bind="{routeName: 'CampaignUnits', routeParams:{campaign_id: campaign_id}}">
       Units
     </DivLinkButton>
     <DivLinkButton class="heading" v-bind="{routeName: 'Missions', routeParams:{campaign_id: campaign_id}}">
