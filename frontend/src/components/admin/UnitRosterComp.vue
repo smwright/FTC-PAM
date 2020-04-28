@@ -144,14 +144,17 @@ export default {
         {
           caller: this.$options.name,
         }
-      ).catch(error => {
+      ).then(reponse => {
+        this.fetchRAssets();
+      })
+      .catch(error => {
         console.log(error.message);
       });
     },
 
     fetchRAssets: function () {
 
-
+      console.log("FETCHINT");
       this.$store.dispatch('unitAdmin/loadStoreData',
         {
           caller: this.$options.name,

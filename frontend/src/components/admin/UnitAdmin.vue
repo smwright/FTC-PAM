@@ -40,7 +40,7 @@ export default {
     return {
 
       unit_id: 0,
-      tabToShow: "roster",
+      tabToShow: "general",
       selectedAsset: 0
     }
   },
