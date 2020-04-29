@@ -11,10 +11,10 @@
         class="clearfix"
         v-bind:class="{ 'typed-on-paper-link': active_button }"
         v-bind:key="member.member_id"
-        v-bind:active="false"
+        v-bind:active="active_button"
         v-bind="{routeName: route_name, routeParams: {member_id: member.member_id}}"
       >
-        <!--v-bind:active="active_button"-->
+
 
         <div class="clearfix">
 
