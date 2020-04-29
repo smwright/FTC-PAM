@@ -244,7 +244,7 @@ select {
 }
 
 /*vSELECT specific styles*/
-.vs__dropdown-toggle{
+.v-select .vs__dropdown-toggle{
   border: none;
   background: rgba(255, 255, 255, 0.5);
   border-color: #646464;
@@ -255,7 +255,7 @@ select {
   color: #1b1b1b;
 }
 
-.vs__dropdown-menu {
+.v-select .vs__dropdown-menu {
   /*color: #1b1b1b;*/
   /*background: rgb(95, 95, 95);*/
   font-size: large;
@@ -263,11 +263,11 @@ select {
   /*border-color: #646464;*/
 }
 
-.vs_dropdown-option{
+.v-select .vs_dropdown-option{
   background: #F28900;
 }
 
-.vs__dropdown-option--highlight{
+.v-select .vs__dropdown-option--highlight{
   background-color: #F28900;
 }
 
