@@ -8,6 +8,14 @@
       <div class="heading">History</div>
     </DivLinkButton>
 
+    <DivLinkButton v-bind="{routeName: 'ACGJoining'}">
+      <div class="heading">Joining ACG</div>
+    </DivLinkButton>
+
+    <DivLinkButton v-bind="{routeName: 'ACGComms'}">
+      <div class="heading">Communications</div>
+    </DivLinkButton>
+
     <div
       class="div-button heading"
       v-on:click="navigate_to('https://www.aircombatgroup.co.uk/field_book.pdf')">

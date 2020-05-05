@@ -57,8 +57,9 @@ import FlightSchoolMain from '@/components/FlightSchoolMain'
 import FlightSchoolFirstLesson from '@/components/FlightSchoolFirstLesson'
 import FlightSchoolSecondLesson from '@/components/FlightSchoolSecondLesson'
 
+//General components
 import Home from '@/components/Home'
-
+import QuickLinks from '@/components/QuickLinks'
 
 Vue.use(VueRouter)
 
@@ -68,7 +69,9 @@ const router = new VueRouter({
       path: '/',
       name: 'Home',
       components: {
-        fullmain: Home,
+        sidenav: QuickLinks,
+        centercontent: Home,
+        rightsidenav: EmptySideNav,
       }
     },
     {
@@ -92,14 +95,16 @@ const router = new VueRouter({
       path: '/communications/',
       name: 'ACGComms',
       components: {
-        fullmain: ACGComms,
+        sidenav: ACGInfoSideNav,
+        default: ACGComms,
       }
     },
     {
       path: '/joining/',
       name: 'ACGJoining',
       components: {
-        fullmain: ACGJoining,
+        sidenav: ACGInfoSideNav,
+        default: ACGJoining,
       }
     },
 

@@ -8,6 +8,7 @@
             <!--<span>{{ depl_unit_id }}</span>-->
             <img class="unitEmblem" :src="image"/>
             <span class="heading">{{ hist_unit_name }}</span>
+            <span v-if="acg_unit_name">  represented by {{ acg_unit_name }}</span>
           </div>
           <div class="float-right">
             <span class="heading">{{ hist_unit_code }}</span>
@@ -43,6 +44,10 @@ export default {
     },
     acg_unit_id: {
       type: Number,
+      default: null
+    },
+    acg_unit_name: {
+      type: [Number, String],
       default: null
     },
     hist_unit_name: String,

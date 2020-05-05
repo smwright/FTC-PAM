@@ -8,6 +8,7 @@
       <div class="clearfix contentWrapper">
         <!--Clearfix is used to help align sidenav and main divs horizonatally next to-->
         <!--each other.-->
+
         <div class="sidenav">
           <!--The sidenav view is used on some pages for a vertical navigation menu.-->
           <!--For example unit- or flight-school-topic-navigation.-->
@@ -17,8 +18,16 @@
           <!--The main view is where all the content appart from navigation menues goes.-->
           <router-view/>
         </div>
-        <div class="full-main">
+
+        <div>
           <router-view name="fullmain"></router-view>
+        </div>
+
+        <div class="center-content">
+          <router-view name="centercontent"></router-view>
+        </div>
+        <div class="sidenav-right">
+          <router-view name="rightsidenav"></router-view>
         </div>
       </div>
     </div>
@@ -162,10 +171,23 @@ body {
   position: fixed;
 }
 
-h1, h2, h3, h4{
+h1, h2{
   color: #F28900;
   padding: 2px 0px;
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0))
+}
+
+h3{
+  color: #F28900;
+  padding: 2px 0px;
+  /*background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0))*/
+}
+
+h4{
+  color: #F28900;
+  margin: 4px;
+  /*padding: 2px 0px;*/
+  /*background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0))*/
 }
 
 ul {
@@ -280,10 +302,13 @@ select {
 
 .sidenav {
   float: left;
+  /*min_width: calc(20% - 7px);*/
+  /*width: calc(20% - 7px); !* Whished widht in % minus 2x border size *!*/
   min_width: calc(20% - 7px);
   width: calc(20% - 7px); /* Whished widht in % minus 2x border size */
   padding-right: 5px;
   /*border: 1px blue solid;*/
+  /*background-color: red;*/
 }
 
 .sidenav a{
@@ -294,6 +319,20 @@ select {
   float: left;
   width: calc(80% - 7px); /* Whished widht in % minus 2x border size */
   padding-left: 5px;
+}
+
+.center-content {
+  float:left;
+  width: calc(60% + 4px);
+  /*background-color: white;*/
+}
+
+.sidenav-right {
+  float: right;
+  min_width: calc(20% - 7px);
+  width: calc(20% - 7px); /* Whished widht in % minus 2x border size */
+  padding-left: 5px;
+  /*background-color: green;*/
 }
 
 .container {
@@ -336,6 +375,13 @@ select {
   border-radius: 15px;
   border-color: rgba(0, 0, 0, 0.0);
   background: rgba(0, 0, 0, 0.1);
+}
+
+.div-button a {
+  text-decoration: none;
+  color: inherit;
+  outline: 0;
+  padding: 0px;
 }
 
 .div-button:hover {
@@ -416,6 +462,10 @@ select {
 
 .width-auto{
   width: auto;
+}
+
+.padding-0-10{
+  padding: 0px 10px;
 }
 
 .padding-10{
