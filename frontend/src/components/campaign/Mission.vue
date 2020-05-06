@@ -1,5 +1,22 @@
 <template>
   <div class="CampaignInfoMissions">
+    <div v-if="campaign" class="container">
+      <p class="text-align-justify">
+        The list below shows all missions of {{ campaign.name }}. Each entry shows the real life date of the mission, it’s
+        name, and the historical date. It also shows the mission status: briefing, debriefing and closed.
+      </p>
+      <ul>
+        <li><b>Briefing:</b> Briefings can only be seen by the associated faction. AARs can not be created or edited.</li>
+        <li><b>Debriefing:</b> Briefings can only be seen by the associated faction. AARs can be created or edited.</li>
+        <li><b>Closed:</b> After debriefing period has ended (usually one week after the mission has ended). Breifings can
+          be seen by all factions. AARs can not be created or edited.</li>
+      </ul>
+      <p class="text-align-justify">
+        Click on any mission to gain access to the briefings (with the limitations mentioned above) and to the AAR's of
+        this mission. Members have to select a mission to gain access to after action report submission and edit
+        functionality.
+      </p>
+    </div>
     <DivLinkButton
       v-for="(mission) in campaign_missions"
       v-bind:key="mission.id"
@@ -44,6 +61,7 @@ export default {
   computed: {
 
     ...mapState("missionStore", {
+      campaign: state => state.campaign[0],
       campaign_missions: state => state.missions
     })
   }
