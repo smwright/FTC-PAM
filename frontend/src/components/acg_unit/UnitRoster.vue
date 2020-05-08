@@ -69,9 +69,9 @@
                 v-bind:member="{ member }"
               >
                 <template v-if="hasImage(member)">
-                  <div class="container image-comp">
+                  <div class="container roster-image">
                     <img
-                      class="roster-image"
+                      class=""
                       v-bind:class="{ sepia: sepia_images }"
                       :src="member.image">
                   </div>

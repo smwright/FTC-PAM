@@ -14,7 +14,7 @@
 
     <div class="roster-image">
       <img
-        class="roster-image"
+        class=""
         v-if="roster_image !== undefined"
         :src="roster_image.image">
     </div>

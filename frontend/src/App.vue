@@ -598,9 +598,21 @@ select {
 }
 
 .roster-image {
-
+  margin-left: auto;
+  margin-right: auto;
   width: 425px;
   height: 163px;
+}
+
+.roster-image img {
+
+  display: block;
+  max-width: 425px;
+  max-height: 163px;
+  width: auto;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /*CSS FOR draggable-nested-tree*/

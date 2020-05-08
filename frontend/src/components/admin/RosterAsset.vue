@@ -85,9 +85,9 @@
       <p>
         <b>Image:</b> Here you can set the image that will show up on the roster pages. Click on the image area to select
         an image file. The image file will be uploaded to the server once you save the assets. Click on clear image to remove
-        the image from the asset. This will only clear the assigned image in the database, howerver the image is not deleted
-        on the server. The images are shown in a format of width: 425px and height 163px. Uploaded images need to fit the
-        format ratio of 425:163 to avoid distortion.
+        the image from the asset. This will only clear the assigned image in the database, however the image is not deleted
+        on the server. The images are shown in a box of width: 425px and height 163px. Uploaded images should fit the
+        ratio of 425:163 to be displayed as large as possible.
       </p>
       <p>
         <b>Delete:</b> This will put the roster asset on the list for assets to be deleted. The roster asset is not deleted

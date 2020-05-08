@@ -7,7 +7,7 @@
   >
     <img
       v-if="value"
-      class="size-100"
+      class=""
       :src="value.getAll('imageURL')"
     >
     <div
