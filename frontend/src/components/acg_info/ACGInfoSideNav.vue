@@ -12,6 +12,10 @@
       <div class="heading">Joining ACG</div>
     </DivLinkButton>
 
+    <DivLinkButton v-bind="{routeName: 'ACGStructure'}">
+      <div class="heading">ACG Structure</div>
+    </DivLinkButton>
+
     <DivLinkButton v-bind="{routeName: 'ACGComms'}">
       <div class="heading">Communications</div>
     </DivLinkButton>
@@ -26,11 +30,13 @@
 
 <script>
 import DivLinkButton from "../basic_comp/DivLinkButton"
+import HideableDiv from "../basic_comp/HideableDiv"
 
 export default {
   name: "ACGInfoSideNav",
   components: {
-    DivLinkButton
+    DivLinkButton,
+    HideableDiv
   },
   methods: {
 
@@ -44,5 +50,11 @@ export default {
 </script>
 
 <style scoped>
+
+.subcontent-buttons{
+  font-size: 1em;
+  margin: 2px 0px 0px 15px;
+  width: calc(100% - 15px - 26px);
+}
 
 </style>
