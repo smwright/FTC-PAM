@@ -89,10 +89,10 @@
         this.$store.dispatch('campaignAdmin/loadCampaigns', {caller: this.$options.name});
       }
 
-      //Loads campaigns if there's only the NEW CAMPAIGN is in campaign store
-      if (this.$store.state.campaignAdmin.campaigns.length == 1){
-        this.$store.dispatch('campaignAdmin/loadCampaigns', {caller: this.$options.name});
-      }
+      // //Loads campaigns if there's only the NEW CAMPAIGN is in campaign store
+      // if (this.$store.state.campaignAdmin.campaigns.length == 1){
+      //   this.$store.dispatch('campaignAdmin/loadCampaigns', {caller: this.$options.name});
+      // }
 
     },
     computed: {

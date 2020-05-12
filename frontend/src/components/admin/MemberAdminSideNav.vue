@@ -31,6 +31,12 @@
       v-on:click="switchShowPassedAway()"
       v-bind:class="{passedAway: showPassedAway}"
     >{{ showPassedAwayButtonText }}</div>
+    <DivLinkButton
+      class="unit-buttons"
+      v-bind="{routeName: 'UnitOverview'}"
+    >
+      Unit overview
+    </DivLinkButton>
     <MemberAdminSideNavComp
       v-for="unit in acg_units"
       v-bind:key="unit.id"
@@ -125,6 +131,13 @@ export default {
 </script>
 
 <style scoped>
+
+.unit-buttons{
+  color: #F28900;
+  font-size: 1em;
+  margin: 2px 0px 0px 15px;
+  width: calc(100% - 15px - 26px);
+}
 
 .narrow{
   font-size: 1em;
