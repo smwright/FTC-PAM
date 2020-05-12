@@ -3,6 +3,8 @@ import Vue from "vue"
 
 const state = {
 
+  member_status: [],
+  member_transfers: [],
   decorations: [],
 
 }
