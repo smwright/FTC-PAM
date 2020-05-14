@@ -354,6 +354,14 @@ select {
   width: calc(50% - 24px);
 }
 
+.split-div-60{
+  width: calc(60% - 24px);
+}
+
+.split-div-40{
+  width: calc(40% - 24px);
+}
+
 .side-nav-heading {
 
   color: #F28900;

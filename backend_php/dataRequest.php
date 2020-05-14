@@ -12,6 +12,7 @@ include_once(dirname(__FILE__).'/dbx.php');
 function whitelist_table($name) {
 
     $available_views = [
+        "acg_member",
         "acg_unit",
         "asset_info",
         "asset_subtree",
@@ -30,6 +31,7 @@ function whitelist_table($name) {
         "campaign_unit_member_status",
         "campaign_unit_transfers",
         "campaign_mission_info",
+        "career_character_info",
         "character_campaign_sorties_pilot_asset_status",
         "character_claim_raf",
         "character_claim_lw",
@@ -57,6 +59,7 @@ function whitelist_table($name) {
         "random_last_name",
         "rank_lookup",
         "report_info",
+        "report_tag_info",
         "report_detail_raf",
         "report_detail_lw",
         "roster_asset",

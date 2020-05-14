@@ -16,6 +16,8 @@
               <li>|</li>
               <li><router-link :to="{name: 'AboutACG'}">About ACG</router-link></li>
               <li>|</li>
+              <li><router-link :to="{name: 'Media'}">Media</router-link></li>
+              <li>|</li>
               <!--<li><router-link :to="{name: 'ACGJoining'}">Joining</router-link></li>-->
               <!--<li>|</li>-->
               <!--<li><router-link :to="{name: 'ACGComms'}">Communications</router-link></li>-->

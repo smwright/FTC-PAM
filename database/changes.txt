@@ -38,3 +38,17 @@ THIS FILE LISTS ALL DATABASE CHANGES IN SPECIFIC DEVELOPMENT BRANCHES:
         `campaign_id` INT(11) NOT NULL,
         `roster_asset_id` INT(11) NOT NULL,
         PRIMARY KEY (`id`));
+
+-FEAT-media
+
+    CREATE TABLE `pam`.`media` (
+      `id` INT NOT NULL AUTO_INCREMENT,
+      `media_url` VARCHAR(200) NOT NULL,
+      `acg_member` VARCHAR(45) NOT NULL,
+      `media_type` VARCHAR(45) NOT NULL,
+      `description` VARCHAR(2000) NULL,
+      `date_submitted` DATE NOT NULL
+      PRIMARY KEY (`id`));
+
+    career_character_info
+    report_tag_info
