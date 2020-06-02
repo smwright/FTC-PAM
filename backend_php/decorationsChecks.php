@@ -290,8 +290,8 @@ function checkLWDecorations($characterID, $missionID, $dbx){
 //    $pilotWounded = $row["pilotWND"];
 
     $sql = "SELECT SUM(claim_lw.confirmed=1) AS conf, SUM(claim_lw.confirmed=0) AS unconf ".
-        "FROM claim LEFT JOIN report ON claim.report_id = report.id
-           LEFT JOIN claim_lw ON claim.id = claim_lw.claim_id ".
+        "FROM claim LEFT JOIN report ON claim.report_id = report.id ".
+        "LEFT JOIN claim_lw ON claim.id = claim_lw.claim_id ".
         "WHERE character_id = $characterID AND report.accepted=1 AND claim.accepted = 1 ".
         "AND report.mission_id <= $missionID";
     $result = mysqli_query($dbx, $sql);
@@ -493,17 +493,17 @@ function checkVVSDecorations($characterID, $missionID, $dbx){
     }
 
     //Get stats for character
-    $sql = "SELECT report.character_id, COUNT(report.id) AS sorties, SUM(report.pilot_status = 0) AS pilotOK, ".
-        "SUM(report.pilot_status = 1) AS pilotWND, SUM(report.asset_status = 2) AS aeroLST ".
-        "FROM report LEFT JOIN mission ON report.mission_id = mission.id ".
-        "WHERE report.character_id = $characterID AND report.accepted = 1 AND mission.id <= $missionID";
-    $result = mysqli_query($dbx, $sql);
-    $row = mysqli_fetch_assoc($result);
-
-    $sorties = $row["sorties"];
-    $aeroLost = $row["aeroLST"];
-    $pilotOK = $row["pilotOK"];
-    $pilotWounded = $row["pilotWND"];
+//    $sql = "SELECT report.character_id, COUNT(report.id) AS sorties, SUM(report.pilot_status = 0) AS pilotOK, ".
+//        "SUM(report.pilot_status = 1) AS pilotWND, SUM(report.asset_status = 2) AS aeroLST ".
+//        "FROM report LEFT JOIN mission ON report.mission_id = mission.id ".
+//        "WHERE report.character_id = $characterID AND report.accepted = 1 AND mission.id <= $missionID";
+//    $result = mysqli_query($dbx, $sql);
+//    $row = mysqli_fetch_assoc($result);
+//
+//    $sorties = $row["sorties"];
+//    $aeroLost = $row["aeroLST"];
+//    $pilotOK = $row["pilotOK"];
+//    $pilotWounded = $row["pilotWND"];
 
     //Get stats for character of Battle of Moscow missions
     $sql = "SELECT COUNT(report.id) AS sorties, SUM(report.pilot_status = 0) AS pilotOK, ".
@@ -540,7 +540,7 @@ function checkVVSDecorations($characterID, $missionID, $dbx){
     $pilotOK = $pilotOKBOM + $pilotOKnonBOM;
     $pilotWounded = $pilotWoundedBOM + $pilotWoundednonBOM;
 
-//Get days survived on the front
+    //Get days survived on the front
     $sql = "SELECT frontdays FROM character_mission_frontdays WHERE author_id = $characterID AND mission_id = $missionID";
     $result = mysqli_query($dbx, $sql);
     $row = mysqli_fetch_assoc($result);
@@ -548,8 +548,8 @@ function checkVVSDecorations($characterID, $missionID, $dbx){
     $daysSurvivedOnTheFrontBoM = $row["frontdays"];
 
     $sql = "SELECT SUM(claim_vvs.confirmed=1) AS conf, SUM(claim_vvs.confirmed=0) AS unconf ".
-        "FROM claim LEFT JOIN report ON claim.report_id = report.id
-           LEFT JOIN claim_vvs ON claim.id = claim_vvs.claim_id ".
+        "FROM claim LEFT JOIN report ON claim.report_id = report.id ".
+        "LEFT JOIN claim_vvs ON claim.id = claim_vvs.claim_id ".
         "WHERE character_id = $characterID AND report.accepted=1 AND claim.accepted = 1 ".
         "AND claim_vvs.group_claim = 0 AND report.mission_id <= $missionID";
     $result = mysqli_query($dbx, $sql);
@@ -558,11 +558,9 @@ function checkVVSDecorations($characterID, $missionID, $dbx){
     $conf = $row["conf"];
     $unconf = $row["unconf"];
 
-    $sql = "SELECT SUM(claim_vvs_info.confirmed=1) AS conf, SUM(claim_vvs_info.confirmed=0) AS unconf ".
-        "FROM claim_vvs_info ".
-        "LEFT JOIN report ON (claim_vvs_info.deployed_unit_id, claim_vvs_info.mission_id) = (report.deployed_unit_id, report.mission_id) ".
-        "WHERE character_id = $characterID AND report.accepted=1 AND claim_vvs_info.accepted = 1 ".
-        "AND report.mission_id <= $missionID";
+    $sql = "SELECT SUM(character_claim_vvs_group.conf) AS conf, SUM(character_claim_vvs_group.unconf) AS unconf ".
+        "FROM character_claim_vvs_group WHERE character_id = $characterID ".
+        "AND mission_id <= $missionID ";
     $result = mysqli_query($dbx, $sql);
     $row = mysqli_fetch_assoc($result);
 
@@ -584,10 +582,10 @@ function checkVVSDecorations($characterID, $missionID, $dbx){
 
     $succesfulReturns = $pilotOK + $pilotWounded;
 
-    $sql = "SELECT IFNULL(MAX(criteriaclaims),0) AS criteria FROM merit_stats ".
-        "WHERE character_id = $characterID AND mission_id <= $missionID";
-    $result = mysqli_query($dbx, $sql);
-    $row = mysqli_fetch_assoc($result);
+//    $sql = "SELECT IFNULL(MAX(criteriaclaims),0) AS criteria FROM merit_stats ".
+//        "WHERE character_id = $characterID AND mission_id <= $missionID";
+//    $result = mysqli_query($dbx, $sql);
+//    $row = mysqli_fetch_assoc($result);
 
     $maxConfPerSortieAllSurvive = $row["criteria"];
 
@@ -616,14 +614,14 @@ function checkVVSDecorations($characterID, $missionID, $dbx){
         $awardArray, $characterID, $missionDate, $dbx);
 
     //Medal "For Battle Merit"
-    $medalAbr = "FBM_VVS";
-    $criteria = $maxConfPerSortieAllSurvive > 6;
-    addRemoveDecoration($medalAbr, $criteria, $decorationsArray, $awardedArray,
-        $awardArray, $characterID, $missionDate, $dbx);
+//    $medalAbr = "FBM_VVS";
+//    $criteria = $maxConfPerSortieAllSurvive > 6;
+//    addRemoveDecoration($medalAbr, $criteria, $decorationsArray, $awardedArray,
+//        $awardArray, $characterID, $missionDate, $dbx);
 
     //Order of Lenin
     $medalAbr = "OOL_VVS";
-    $criteria = $conf & $gconf > 9 & $sorties > 20;
+    $criteria = ($conf & $gconf) > 9 & $sorties > 20;
     addRemoveDecoration($medalAbr, $criteria, $decorationsArray, $awardedArray,
         $awardArray, $characterID, $missionDate, $dbx);
 
