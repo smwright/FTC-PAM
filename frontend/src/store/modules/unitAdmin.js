@@ -11,6 +11,9 @@ const state = {
   member_info: [],
   member_r_assets: [],
   rank_lookup: [],
+  mission_unit_active_members: [],
+  mission_unit_attending_members_count: []
+
 
 }
 

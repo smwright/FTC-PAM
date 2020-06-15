@@ -53,6 +53,8 @@ function whitelist_table($name) {
         "mission_report_nav_list",
         "mission_member_faction",
         "mission_member_rank",
+        "mission_unit_active_members",
+        "mission_unit_attending_members_count",
         "random_first_name",
         "random_last_name",
         "rank_lookup",
