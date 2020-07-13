@@ -4,7 +4,7 @@
       <h1>Join us on our Comms!</h1>
     </div>
     <div class="text-align-justify">
-      <p>Our 150 slot TeamSpeak 3 server is where the ACG Campaign takes place (ip: 94.250.222.150:10006) .
+      <p>Our 150 slot TeamSpeak 3 server is where the ACG Campaign takes place (ip: nyj-ts3.fragnet.net:9987) .
         We gather here about half an hour before each Campaign mission to partake in one of ACG's oldest traditions, the pre-flight banter.
         This is our primary voice communication platform that we use for any group flying that we do.
         You must be on Teamspeak in order to take part in the Campaign.
@@ -24,7 +24,7 @@
       <div class="container">
         <div class="text-align-center">
           <iframe src="https://discordapp.com/widget?id=261587898996883458&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
-          <iframe name="ts3monitor.com" allowtransparency="true" width="350" height="500" frameborder="0" style="border:0px solid #;" scrolling="auto" src="https://monitor.ts3monitor.com/?t=iframe&i=94.250.222.150&p=10006&q=10011&c=&b=C9C9C9&si=16&s=14&ih=0&it=0"></iframe>    </div>
+          <iframe name="ts3monitor.com" allowtransparency="true" width="350" height="500" frameborder="0" style="border:0px solid #;" scrolling="auto" src="https://monitor.ts3monitor.com/?t=iframe&i=nyj-ts3.fragnet.net&p=9987&q=10011&c=&b=C9C9C9&si=16&s=14&ih=0&it=0"></iframe>    </div>
 
         </div>
       </div>
