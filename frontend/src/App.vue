@@ -496,13 +496,26 @@ select {
   text-align: justify;
 }
 
+.vertical-align-middle{
+  vertical-align: middle;
+}
+
 .inline-block{
   display: inline-block;
+}
+
+.inline{
+  display: inline
 }
 
 .table {
   display: table;
 }
+
+.table-cell {
+  display: table-cell;
+}
+
 
 .float-left{
   float: left;

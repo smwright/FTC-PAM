@@ -11,6 +11,9 @@ import ACGHistory from '@/components/acg_info/ACGHistory'
 import ACGJoining from '@/components/acg_info/ACGJoining'
 import ACGInfoSideNav from '../components/acg_info/ACGInfoSideNav'
 import ACGStrucure from '../components/acg_info/ACGStructure'
+import ACGUnits from '../components/acg_info/ACGUnits'
+import ACGRanks from '../components/acg_info/ACGRanks'
+import ACGCampaigns from '../components/acg_info/ACGCampaigns'
 
 //ACG Members
 import MemberIndex from '../components/acg_member/MemberIndex'
@@ -97,6 +100,33 @@ const router = new VueRouter({
       name: 'ACGStructure',
       components: {
         centercontent: ACGStrucure,
+        sidenav: ACGInfoSideNav,
+        rightsidenav: EmptySideNav,
+      }
+    },
+    {
+      path: '/campaigns/',
+      name: 'ACGCampaigns',
+      components: {
+        sidenav: ACGInfoSideNav,
+        centercontent: ACGCampaigns,
+        rightsidenav: EmptySideNav,
+      }
+    },
+    {
+      path: '/acg_units/',
+      name: 'ACGRanks',
+      components: {
+        centercontent: ACGRanks,
+        sidenav: ACGInfoSideNav,
+        rightsidenav: EmptySideNav,
+      }
+    },
+    {
+      path: '/ranks/',
+      name: 'ACGUnits',
+      components: {
+        centercontent: ACGUnits,
         sidenav: ACGInfoSideNav,
         rightsidenav: EmptySideNav,
       }

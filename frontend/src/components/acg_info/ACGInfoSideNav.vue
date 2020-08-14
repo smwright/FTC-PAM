@@ -12,8 +12,20 @@
       <div class="heading">Joining ACG</div>
     </DivLinkButton>
 
+    <DivLinkButton v-bind="{routeName: 'ACGCampaigns'}">
+      <div class="heading">Campaigns</div>
+    </DivLinkButton>
+
     <DivLinkButton v-bind="{routeName: 'ACGStructure'}">
       <div class="heading">ACG Structure</div>
+    </DivLinkButton>
+
+    <DivLinkButton v-bind="{routeName: 'ACGUnits'}">
+      <div class="heading">ACG Units</div>
+    </DivLinkButton>
+
+    <DivLinkButton v-bind="{routeName: 'ACGRanks'}">
+      <div class="heading">Ranks</div>
     </DivLinkButton>
 
     <DivLinkButton v-bind="{routeName: 'ACGComms'}">
