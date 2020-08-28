@@ -365,7 +365,7 @@ function adjustForumGroup($row, $dbx){
     $sql = "UPDATE phpbb_user_group SET ".
         "`group_id` = $own_faction_group ".
         "WHERE `user_id` IN ($unit_forum_user_id)".
-        "(SELECT user_id FROM phpbb_user_group WHERE group_id = $forum_group_id) ".
+//        "(SELECT user_id FROM phpbb_user_group WHERE group_id = $forum_group_id) ".
         "AND group_id = $opposing_faction_group";
 //    $result = mysqli_query($dbxForum, $sql);
     $result_array[] = executeSQL($sql, $dbxForum);
