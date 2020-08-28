@@ -14,6 +14,7 @@ import ACGStrucure from '../components/acg_info/ACGStructure'
 import ACGUnits from '../components/acg_info/ACGUnits'
 import ACGRanks from '../components/acg_info/ACGRanks'
 import ACGCampaigns from '../components/acg_info/ACGCampaigns'
+import ACGCampaignRules from '../components/acg_info/ACGCampaignRules'
 
 //ACG Members
 import MemberIndex from '../components/acg_member/MemberIndex'
@@ -110,6 +111,15 @@ const router = new VueRouter({
       components: {
         sidenav: ACGInfoSideNav,
         centercontent: ACGCampaigns,
+        rightsidenav: EmptySideNav,
+      }
+    },
+    {
+      path: '/campaignrules/',
+      name: 'ACGCampaignsRules',
+      components: {
+        sidenav: ACGInfoSideNav,
+        centercontent: ACGCampaignRules,
         rightsidenav: EmptySideNav,
       }
     },

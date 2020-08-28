@@ -16,6 +16,10 @@
       <div class="heading">Campaigns</div>
     </DivLinkButton>
 
+    <DivLinkButton v-bind="{routeName: 'ACGCampaignsRules'}">
+      <div class="heading">Rules</div>
+    </DivLinkButton>
+
     <DivLinkButton v-bind="{routeName: 'ACGStructure'}">
       <div class="heading">ACG Structure</div>
     </DivLinkButton>
