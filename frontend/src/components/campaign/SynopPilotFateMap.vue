@@ -78,9 +78,9 @@ export default {
       let buff = [];
       let item;
       if(this.fate_data.length > 0 && this.fate_data[0].path_points != null){
-        buff = this.fate_data[0].path_points.match(/(?<=\[).+?(?=\])/g);
+        buff = this.fate_data[0].path_points.match(/\[(.+?)\]/g);
         for(item of buff){
-          coord.push(item.split(",").map(Number));
+          coord.push(item.substring(1, item.length-1).split(",").map(Number));
         }
       }
       return coord;
@@ -90,7 +90,8 @@ export default {
 
       let coord = [];
       if(this.fate_data.length > 0 && this.fate_data[0].last_point != null){
-        coord = this.fate_data[0].last_point.match(/(?<=\[).+?(?=\])/)[0].split(",").map(Number);
+        coord = this.fate_data[0].last_point;
+        coord = coord.substring(1, coord.length-1).split(",").map(Number)
       }
       return coord;
     },
@@ -150,7 +151,7 @@ export default {
           txt: "Crash/Parachute site",
           x: this.walk_coord[0][0]*scaling_factor + 10,
           y: this.walk_coord[0][1]*scaling_factor,
-          font: "20px Dawning of a New Day",
+          font: "22pt Dawning of a New Day",
           color: "#000F55"
         })
 
@@ -174,7 +175,7 @@ export default {
           txt: this.fate_data[0].o_outcome,
           x: this.last_coord[0],
           y: this.last_coord[1],
-          font: "20px Dawning of a New Day",
+          font: "22pt Dawning of a New Day",
           color: "#000F55"
         });
 
