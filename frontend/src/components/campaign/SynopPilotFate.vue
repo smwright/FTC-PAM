@@ -7,36 +7,7 @@
       mission.
     </p>
 
-    <HideableDiv
-      v-bind:changing-button="true"
-    >
-      <template slot="buttonVisible">
-        <button>Hide description</button>
-      </template>
-      <template slot="buttonHidden">
-        <button>Want to know more?...</button>
-      </template>
-      <p>
-        A pilot that chrashlands or parachutes into enemy territory will try to walk home to friendly lines on the shortest
-        distance. He will walk a distance of appr. 5 km per hour. About every 12 minutes a check is performed that determines
-        if the pilot died or was captures.
-      </p>
-      <p>
-        The probability to make it to friendly lines is appr. 50/50 for a distance of 30 km. Injury and cold weather decrease
-        the chances. Capture is determined on how close the pilot is to enemy troups. The closer enemy troups, the higher
-        the chances for capture. A distance of 2 km to enemy troups will resulst in a 50/50 chance. Night hours increase
-        the chances for escape.
-      </p>
-      <!--<p>-->
-        <!--VVS troops that escape enemy territory have an additional risk of being send to the Gulag being suspected a german spy.-->
-      <!--</p>-->
-      <p>
-        Although the fate of the pilots are calculated instantaneously, the results will be displayed with a real life delay.
-        A pilot still trying to escape will show "Alive and walking". For example: Should a pilot need to walk 5 hours to
-        reach friendly lines, his status will show "Alive and walking" for those 5 hours. Unless he dies or is captured
-        along the way.
-      </p>
-    </HideableDiv>
+    <PilotFateDescription></PilotFateDescription>
 
     <div class="container-transparent">
       <table>
@@ -45,13 +16,29 @@
           <th>Flew as:</th>
           <th>Flight Number:</th>
           <th>Status:</th>
+          <th>Map:</th>
         </tr>
-        <tr v-for="fate in fatelist">
+        <TRLinkButton
+          v-for="fate in fatelist"
+          v-bind:key="fate.username+'_'+fate.MissionStartTime+'_'+fate.FlightNumber"
+          class="typed-on-paper-link"
+          v-bind="{routeName: 'FateMap',
+          routeParams: {
+            member_id: fate.member_id,
+            flight_number: fate.FlightNumber
+          }
+        }"
+        >
           <td>{{ fate.username }}</td>
           <td>{{ fate.servername }}</td>
           <td>{{ fate.FlightNumber }}</td>
           <td>{{ fate.ch_status }}</td>
-        </tr>
+          <td>
+            <template v-if="fate.path_points != null && fate.last_point != null">
+              Map available
+            </template>
+          </td>
+        </TRLinkButton>
       </table>
     </div>
 
@@ -90,11 +77,17 @@
 <script>
 import {mapState, mapGetters} from "vuex"
 import HideableDiv from "../basic_comp/HideableDiv"
+import LinkButton from "../basic_comp/LinkButton"
+import PilotFateDescription from "./PilotFateDescription"
+import TRLinkButton from "../basic_comp/TRLinkButton"
 
 export default {
   name: "SynopPilotFate",
   components: {
-    HideableDiv
+    HideableDiv,
+    LinkButton,
+    PilotFateDescription,
+    TRLinkButton
   },
   computed: {
 
@@ -111,6 +104,12 @@ export default {
     phantoms: function () {
 
       return this.filterByKey("pilot_fates", "username", null);
+    },
+
+    has_map_data: function () {
+
+      return this.fate_data.length > 0 && this.fate_data[0].path_points != null
+        && this.fate_data[0].last_point != null;
     },
 
     ...mapGetters("missionStore", [

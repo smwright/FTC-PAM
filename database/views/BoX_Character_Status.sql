@@ -17,27 +17,24 @@ VIEW `BoX_Character_Status` AS
         `box_f`.`MissionStartTime` AS `MissionStartTime`,
         `box_f`.`FlightNumber` AS `FlightNumber`,
         `box_f`.`SurvivalStatus` AS `SurvivalStatus`,
-        `box_lwu`.`Time` AS `Time`,
-        `box_wh`.`Outcome` AS `Outcome`,
-        IFNULL(`box_wh`.`Outcome`,
-                `box_f`.`SurvivalStatus`) AS `ch_status`
+        IFNULL(`box_o`.`Outcome`,
+                `box_f`.`SurvivalStatus`) AS `ch_status`,
+        `box_o`.`PathPts` AS `path_points`,
+        `box_o`.`LastPoint` AS `last_point`,
+        `box_o`.`Status` AS `o_ch_status`,
+        `box_o`.`Outcome` AS `o_outcome`
     FROM
-        (((((((`mission` `pam_m`
+        ((((((`mission` `pam_m`
         LEFT JOIN `BoX_Missions` `box_m` ON ((`pam_m`.`real_date` = CAST(STR_TO_DATE(`box_m`.`MissionStartTime`, '%Y%m%d')
             AS DATE))))
         LEFT JOIN `BoX_Flights` `box_f` ON ((`box_m`.`MissionStartTime` = `box_f`.`MissionStartTime`)))
-        LEFT JOIN `BoX_Latest_Walk_Update` `box_lwu` ON (((`box_lwu`.`MissionStartTime` = `box_f`.`MissionStartTime`)
-            AND (`box_lwu`.`Name` = `box_f`.`Name`)
-            AND (`box_lwu`.`FlightNumber` = `box_f`.`FlightNumber`))))
-        LEFT JOIN `BoX_WalkHome` `box_wh` ON (((`box_wh`.`MissionStartTime` = `box_lwu`.`MissionStartTime`)
-            AND (`box_wh`.`FlightNumber` = `box_lwu`.`FlightNumber`)
-            AND (`box_wh`.`Name` = `box_lwu`.`Name`)
-            AND (`box_wh`.`Time` = `box_lwu`.`Time`))))
-        LEFT JOIN `BoX_Users` `box_u` ON ((`box_u`.`boxname` = `box_f`.`Name`)))
-        LEFT JOIN `acg_member` ON (((`acg_member`.`callsign` = `box_u`.`username`)
-            OR (`acg_member`.`username` = `box_u`.`username`))))
+        LEFT JOIN `BoX_User_Lookup` `box_u` ON ((`box_u`.`boxname` = `box_f`.`Name`)))
+        LEFT JOIN `acg_member` ON ((`acg_member`.`callsign` = `box_u`.`username`)))
         LEFT JOIN `mission_member_faction` ON (((`acg_member`.`id` = `mission_member_faction`.`member_id`)
             AND (`pam_m`.`id` = `mission_member_faction`.`mission_id`))))
+        LEFT JOIN `BoX_Outcome` `box_o` ON (((`box_o`.`MissionStartTime` = `box_f`.`MissionStartTime`)
+            AND (`box_o`.`FlightNumber` = `box_f`.`FlightNumber`)
+            AND (`box_o`.`Name` = `box_f`.`Name`))))
     WHERE
         ((`box_m`.`PublicCampaign` = 'C')
             AND (`box_f`.`Name` <> 'OBJECT')
