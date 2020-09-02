@@ -35,6 +35,7 @@ import CampaignInfoSideNav from '../components/campaign/SideNav'
 import CampaignInfoMissionUnitsSideNav from '../components/campaign/MissionUnitSideNav'
 import Report from '../components/campaign/Report'
 import CampaignMissionSynop from '../components/campaign/Synop'
+import FateMap from '../components/campaign/SynopPilotFateMap'
 
 //Report submission
 import ReportCharacterSelection from '../components/campaign/ReportCharacterSelection'
@@ -240,6 +241,13 @@ const router = new VueRouter({
               }
             },
             {
+              path: 'fatemap/:member_id/:flight_number',
+              name: 'FateMap',
+              components: {
+                mission_lobby_content: FateMap
+              }
+            },
+            {
               path: 'report/:report_id',
               name: 'Report',
               components: {
@@ -252,7 +260,7 @@ const router = new VueRouter({
               components: {
                 mission_lobby_content: ReportCharacterSelection
               }
-            }
+            },
           ]
         },
       ],

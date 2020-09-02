@@ -44,6 +44,20 @@ const getters = {
       });
   },
 
+  filterByKeys: (state) => (table, filterInput) => {
+
+    let filterArray = JSON.parse(JSON.stringify(state[table]));
+    let filterEntries = Object.entries(filterInput);
+    for(let i=0; i<filterEntries.length; i++){
+      filterArray = filterArray.filter(
+        function (item) {
+          return item[filterEntries[i][0]] == filterEntries[i][1];
+        });
+    }
+    return filterArray;
+
+  },
+
   nestedData: (state) => (table) => {
 
     return Vue.prototype.$dbCon.nestData(state[table]);
