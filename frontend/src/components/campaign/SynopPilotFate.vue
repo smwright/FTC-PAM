@@ -34,7 +34,7 @@
           <td>{{ fate.FlightNumber }}</td>
           <td>{{ fate.ch_status }}</td>
           <td>
-            <template v-if="fate.path_points != null && fate.last_point != null">
+            <template v-if="fate.path_points != null || fate.last_point != null">
               Map available
             </template>
           </td>
@@ -61,12 +61,28 @@
             <th>Phantom name:</th>
             <th>Flight Number:</th>
             <th>Status:</th>
+            <th>Map:</th>
           </tr>
-          <tr v-for="phantom in phantoms">
-            <td>{{ phantom.servername }}</td>
-            <td>{{ phantom.FlightNumber }}</td>
-            <td>{{ phantom.ch_status }}</td>
-          </tr>
+          <TRLinkButton
+            v-for="fate in phantoms"
+            v-bind:key="fate.servername+'_'+fate.MissionStartTime+'_'+fate.FlightNumber"
+            class="typed-on-paper-link"
+            v-bind="{routeName: 'FateMap',
+          routeParams: {
+            member_id: fate.member_id,
+            flight_number: fate.FlightNumber
+          }
+        }"
+          >
+            <td>{{ fate.servername }}</td>
+            <td>{{ fate.FlightNumber }}</td>
+            <td>{{ fate.ch_status }}</td>
+            <td>
+              <template v-if="fate.path_points != null || fate.last_point != null">
+                Map available
+              </template>
+            </td>
+          </TRLinkButton>>
         </table>
       </div>
     </HideableDiv>
