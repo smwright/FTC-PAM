@@ -170,16 +170,7 @@ export default {
 
       if(this.last_coord.length > 0){
 
-        comp.push({
-          type: "text",
-          txt: this.fate_data[0].o_outcome,
-          x: this.last_coord[0],
-          y: this.last_coord[1],
-          font: "22pt Dawning of a New Day",
-          color: "#000F55"
-        });
-
-        if(this.last_coord != null){
+       if(this.last_coord != null){
           comp.push({
             type: "circle",
             x: this.last_coord[0],
@@ -195,8 +186,9 @@ export default {
             txt: this.fate_data[0].o_outcome,
             x: this.last_coord[0],
             y: this.last_coord[1],
-            font: "20px Dawning of a New Day"
-          })
+            font: "22pt Dawning of a New Day",
+            color: "#000F55"
+          });
 
         }
       }
