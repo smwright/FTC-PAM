@@ -59,8 +59,8 @@ export default {
 
     has_map_data: function () {
 
-      return this.fate_data.length > 0 && this.fate_data[0].path_points != null
-        && this.fate_data[0].last_point != null;
+      return this.fate_data.length > 0 && (this.fate_data[0].path_points != null
+        || this.fate_data[0].last_point != null);
     },
 
     fate_data: function () {
