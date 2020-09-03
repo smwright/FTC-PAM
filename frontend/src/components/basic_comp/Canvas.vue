@@ -30,7 +30,6 @@ export default {
 
     let c = document.getElementById("canvas_id");
     let ctx = c.getContext("2d");
-    ctx.filter = "sepia(65%)"
     this.vueCanvas = ctx;
 
     let item;
@@ -38,7 +37,7 @@ export default {
 
       switch (item.type) {
         case "image":
-          await this.drawImage(item.url, item.x, item.y, item.width, item.height)
+          await this.drawImage(item.url, item.x, item.y, item.width, item.height, item.filter)
             .catch((e) => { console.log(e); });
           break;
 
@@ -110,18 +109,20 @@ export default {
       this.vueCanvas.fillStyle = colbuffer;
     },
 
-    drawImage: function (url, x, y, width, height) {
+    drawImage: function (url, x, y, width, height, filter) {
 
       let c = this.vueCanvas;
       return new Promise(function(resolve, reject) {
 
         let img = new Image();
         img.onload = function () {
-          console.log("Drawing image");
+          c.filter = filter;
           c.drawImage(img, x, y, width, height);
+          c.filter = "none";
           resolve();
         };
         img.onerror = function () {
+          c.filter = "none";
           reject("Error loading image, src="+url);
         };
         img.src = url;
