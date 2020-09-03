@@ -507,14 +507,56 @@ const  actions = {
 
   sendMissions  (context, payload) {
 
-    return new Promise(function (resolve, reject) {
+    return new Promise(async function (resolve, reject) {
 
       var missions = context.getters.missionsByCampaignId(payload.campaign_id);
-      console.log(JSON.stringify(missions));
+      // console.log(JSON.stringify(missions));
+      let missions_send_array = [];
+      let formData;
+      context.commit("logger/addEntry", {message: "Sending front image"}, {root: true});
+      for(let i=0; i<missions.length; i++){
+
+        formData = missions[i].front_image;
+        if(formData instanceof FormData){
+
+          await Vue.prototype.$dbCon.uploadImageFile("ImageUpload on behalf of "+payload.caller, formData)
+            .then(response => {
+              context.commit("logger/addEntry", {message: response.message}, {root: true});
+              formData = response.path;
+
+              context.commit('updateValue',
+                {
+                  array_name: "missions",
+                  id_column_name: "id",
+                  id_column_value: missions[i].id,
+                  update_column_name: "front_image",
+                  update_column_value: formData,
+                });
+            })
+            .catch(error => {
+              context.commit("logger/addEntry", {message: error.error}, {root: true});
+            })
+        }
+
+        missions_send_array.push(
+          {
+            id: missions[i].id,
+            campaign_id: missions[i].campaign_id,
+            name: missions[i].name,
+            mission_status: missions[i].mission_status,
+            real_date: missions[i].real_date,
+            hist_date: missions[i].hist_date,
+            front_image: formData
+          }
+        )
+
+
+      }
+
       Vue.prototype.$dbCon.insertUpdateData("campaignAdmin on behalf of "+payload.caller,
         {
           table: "mission",
-          payload: missions
+          payload: missions_send_array
         })
         .then(response => {
 
