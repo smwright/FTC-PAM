@@ -40,7 +40,7 @@ function whitelist_table($name) {
         "hist_unit" => array("name", "code", "faction", "type", "description", "image"),
         "member_roster_asset" => array("member_id", "campaign_id", "roster_asset_id"),
         "member_status_log" => array("member_id", "member_status", "status_date_in", "status_date_out", "comment"),
-        "mission" => array("name", "campaign_id", "real_date", "hist_date", "mission_status"),
+        "mission" => array("name", "campaign_id", "real_date", "hist_date", "mission_status", "front_image"),
         "promotion" => array("member_id", "rank_value", "promotion_date", "comment"),
         "report" => array("mission_id", "character_id", "deployed_unit_id", "base", "asset_id", "markings", "synopsis",
             "asset_status", "pilot_status", "date_submitted", "accepted", "accepted_by"),

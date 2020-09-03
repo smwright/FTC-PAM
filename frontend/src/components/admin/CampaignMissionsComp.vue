@@ -97,6 +97,22 @@
               </div>
             </HideableDiv>
 
+            <div>
+              <label class="">Front image:</label>
+              <div class="clearfix">
+                <ImageUpload
+                  class="front-image float-left"
+                  v-model="front_image"
+                  savePath="/assets/images/front_images/"
+                >
+                </ImageUpload>
+                <div class="float-left padding-10">
+                  <p v-if="front_image != null">Image URL: {{ front_image.getAll('imageURL') }}</p>
+                  <button v-on:click="clearFrontImage">Clear image</button>
+                </div>
+              </div>
+            </div>
+
             <!--Delete button-->
             <div class="clearfix">
               <button class="float-right" v-on:click="deleteMission">Delete mission</button>
@@ -118,6 +134,7 @@ import statConv from "../../resource/statusConverter"
 import stringConv from "../../resource/stringConverter"
 import SwitchableDiv from "../basic_comp/SwitchableDiv"
 import MissionHeader from "../campaign/MissionHeader"
+import ImageUpload from "../basic_comp/ImageUpload"
 
 export default {
   name: "CampaignMissionsComp",
@@ -125,7 +142,8 @@ export default {
     SwitchableDiv,
     DatePicker,
     HideableDiv,
-    MissionHeader
+    MissionHeader,
+    ImageUpload
   },
   mixins: [
     statConv,
@@ -208,7 +226,6 @@ export default {
 
     mission_status: {
       get () {
-
         var mission = this.$store.getters['campaignAdmin/missionsById'](this.mission_id);
         return (mission !== undefined) ? mission.mission_status : "";
       },
@@ -242,9 +259,39 @@ export default {
             text: this.encodeHTML(value)
           });
       }
-    }
-  },
+    },
 
+    front_image: {
+      get() {
+        console.log("GEtting msision "+this.mission_id)
+        var mission = this.$store.getters['campaignAdmin/missionsById'](this.mission_id);
+        console.log("M;MSIO "+mission);
+        if(mission.front_image instanceof FormData) {
+
+          return mission.front_image;
+        } else {
+          if(!mission.front_image){
+            return null;
+          } else {
+            let formData = new FormData();
+            formData.append("imageURL", mission.front_image);
+            return formData;
+          }
+        }
+        return null;
+      },
+      set(value) {
+        this.$store.commit('campaignAdmin/updateValue',
+          {
+            array_name: "missions",
+            id_column_name: "id",
+            id_column_value: this.mission_id,
+            update_column_name: "front_image",
+            update_column_value: value
+          });
+      }
+    },
+  },
   methods: {
 
     deleteMission: function () {
@@ -254,6 +301,17 @@ export default {
       }
 
       this.$store.commit('campaignAdmin/deleteMission', {id: this.mission_id});
+    },
+
+    clearFrontImage: function () {
+      this.$store.commit('campaignAdmin/updateValue',
+        {
+          array_name: "missions",
+          id_column_name: "id",
+          id_column_value: this.mission_id,
+          update_column_name: "front_image",
+          update_column_value: null
+        });
     }
   },
 
@@ -268,6 +326,11 @@ export default {
 
 div {
   margin: 2px 0px;
+}
+
+.front-image {
+  width: 425px;
+  min-height: 163px;
 }
 
 </style>

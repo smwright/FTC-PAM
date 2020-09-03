@@ -96,6 +96,12 @@ export default {
       return coord;
     },
 
+    front_image: function () {
+
+      return this.findByKey("missions", "id", this.$route.params.mission_id).front_image;
+
+    },
+
     draw_comp: function () {
 
       //Get scaling ratio
@@ -117,8 +123,25 @@ export default {
         x: 0,
         y: 0,
         width: this.map_width*scaling_factor,
-        height: this.map_height*scaling_factor
+        height: this.map_height*scaling_factor,
+        filter: "sepia(65%)"
       });
+
+      console.log("FRONT_IMAGE" + this.front_image);
+
+      if(this.front_image != null){
+
+        comp.push({
+          type: "image",
+          url: this.front_image,
+          x: 0,
+          y: 0,
+          width: this.map_width*scaling_factor,
+          height: this.map_height*scaling_factor,
+          filter: "opacity(15%) sepia(65%)"
+        });
+      }
+
 
       if(this.walk_coord.length > 0){
 
@@ -197,6 +220,7 @@ export default {
     },
 
     ...mapGetters("missionStore", [
+      "findByKey",
       "filterByKeys"
     ])
   },
