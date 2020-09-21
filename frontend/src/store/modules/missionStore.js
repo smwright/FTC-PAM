@@ -28,7 +28,7 @@ const getters = {
 
   findByKey: (state) => (table, keyName, keyValue) => {
 
-    // console.log("Serching "+keyName+" = "+keyValue+" in "+table);
+    // console.log("Serching "+keyName+" = "+key Value+" in "+table);
     return state[table].find(
       function (item) {
         return item[keyName] == keyValue;
