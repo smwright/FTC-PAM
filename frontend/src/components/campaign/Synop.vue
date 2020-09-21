@@ -6,9 +6,9 @@
       <span class="heading">{{ this.unit.hist_unit_name }} mission synopsis</span>
     </div>
 
-    <!--<SynopGeneral-->
-      <!--class="container-transparent"-->
-    <!--&gt;</SynopGeneral>-->
+    <SynopGeneral
+      class="container-transparent"
+    ></SynopGeneral>
 
     <SynopReports
       class="container-transparent"

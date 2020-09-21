@@ -3,6 +3,10 @@
       <h1>Sorties overview:</h1>
       <table>
         <tr>
+          <td>Participated missions:</td>
+          <td>{{ sortiePilotAssetStats(character_id).attended_missions.length }}</td>
+        </tr>
+        <tr>
           <td>Sorties:</td>
           <td>{{ sortiePilotAssetStats(character_id).sorties }}</td>
         </tr>

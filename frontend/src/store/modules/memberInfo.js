@@ -186,6 +186,8 @@ const getters = {
         asset_damaged: 0,
         asset_lost: 0};
 
+      result_array.attended_missions = Array.from(new Set(stats_array.map(x => x.mission_id)));
+
       for(var i=0; i < stats_array.length; i++) {
 
         result_array.sorties += stats_array[i].accepted;
