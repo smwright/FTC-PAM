@@ -28,7 +28,7 @@ const getters = {
 
   findByKey: (state) => (table, keyName, keyValue) => {
 
-    // console.log("Serching "+keyName+" = "+keyValue+" in "+table);
+    // console.log("Serching "+keyName+" = "+key Value+" in "+table);
     return state[table].find(
       function (item) {
         return item[keyName] == keyValue;
@@ -42,6 +42,20 @@ const getters = {
       function (item) {
         return item[keyName] == keyValue;
       });
+  },
+
+  filterByKeys: (state) => (table, filterInput) => {
+
+    let filterArray = JSON.parse(JSON.stringify(state[table]));
+    let filterEntries = Object.entries(filterInput);
+    for(let i=0; i<filterEntries.length; i++){
+      filterArray = filterArray.filter(
+        function (item) {
+          return item[filterEntries[i][0]] == filterEntries[i][1];
+        });
+    }
+    return filterArray;
+
   },
 
   nestedData: (state) => (table) => {

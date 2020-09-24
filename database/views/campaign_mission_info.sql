@@ -9,7 +9,8 @@ VIEW `campaign_mission_info` AS
         `mission`.`campaign_id` AS `campaign_id`,
         `mission`.`real_date` AS `real_date`,
         `mission`.`hist_date` AS `hist_date`,
-        `mission`.`mission_status` AS `mission_status`
+        `mission`.`mission_status` AS `mission_status`,
+        `mission`.`front_image` AS `front_image`
     FROM
         `mission`
     ORDER BY `mission`.`real_date` DESC

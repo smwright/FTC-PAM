@@ -41,6 +41,20 @@ const getters = {
       });
   },
 
+  filterByKeys: (state) => (table, filterInput) => {
+
+    let filterArray = JSON.parse(JSON.stringify(state[table]));
+    let filterEntries = Object.entries(filterInput);
+    for(let i=0; i<filterEntries.length; i++){
+      filterArray = filterArray.filter(
+        function (item) {
+          return item[filterEntries[i][0]] == filterEntries[i][1];
+        });
+    }
+    return filterArray;
+
+  },
+
   membersByUnitId: (state) => (id_inn, showActive, showOnLeave, showDismissed, showPassedAway, searchString) => {
 
     return state.members.filter(
@@ -171,6 +185,8 @@ const getters = {
         asset_ok: 0,
         asset_damaged: 0,
         asset_lost: 0};
+
+      result_array.attended_missions = Array.from(new Set(stats_array.map(x => x.mission_id)));
 
       for(var i=0; i < stats_array.length; i++) {
 

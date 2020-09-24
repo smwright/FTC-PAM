@@ -8,6 +8,24 @@
 
 include_once(dirname(__FILE__).'/dbx.php');
 
+// Getting info from phpBB forum session
+define('IN_PHPBB', true);
+$phpbb_root_path = (defined('PHPBB_ROOT_PATH')) ? PHPBB_ROOT_PATH : dirname(dirname(__FILE__)).'/forum/';
+$phpEx = substr(strrchr(__FILE__, '.'), 1);
+include($phpbb_root_path . 'common.' . $phpEx);
+$request->enable_super_globals();
+// Start session management
+$user->session_begin();
+$auth->acl($user->data);
+$user->setup();
+
+//define('IN_PHPBB', true);
+//$phpbb_root_path = (defined('PHPBB_ROOT_PATH')) ? PHPBB_ROOT_PATH : dirname(dirname(__FILE__)).'/forum/';
+//$phpEx = substr(strrchr(__FILE__, '.'), 1);
+global $phpbb_root_path, $phpEx;
+include($phpbb_root_path . 'includes/functions_user.' . $phpEx);
+$user->add_lang('acp/groups');
+
 $params = json_decode( file_get_contents( 'php://input' ), true );
 $dbx = getDBx();
 mysqli_set_charset($dbx, "utf8");
@@ -26,7 +44,7 @@ if(array_key_exists("synchronizeForumToCampaign", $params)) {
 if(array_key_exists("updateForumGroup", $params)) {
 
     $memberId = filter_var($params["updateForumGroup"], FILTER_SANITIZE_STRING);
-    updateMemberForumGroup($memberId, $dbx);
+    updateMemberForumGroups($memberId, $dbx);
 }
 
 mysqli_close($dbx);
@@ -87,8 +105,24 @@ function deleteMemberForumRank($memberId, $dbx){
     mysqli_close($dbxForum);
 }
 
-function updateMemberForumGroup($memberId, $dbx){
+function updateMemberForumGroups($memberId, $dbx) {
     // This function adjusts the forum groups of the member to the current unit in the pam.
+
+    $groups_to_be_in = array();
+    $groups_to_not_be_in = array();
+
+    $registered = 2;
+    $newly_registered = 7;
+    $acg_member = 36;
+    $allies = 14;
+    $axis = 15;
+
+    $unit_forum_groups = array();
+    $sql = "SELECT forum_group_id FROM acg_unit WHERE forum_group_id IS NOT NULL";
+    $query = mysqli_query($dbx, $sql);
+    while($row = mysqli_fetch_array($query)){
+        $unit_forum_groups[] = (int)$row['forum_group_id'];
+    }
 
     $sql = "SELECT username, member_status, member_info_with_last_status.acg_unit_id, ".
         "hist_unit.faction, acg_unit.forum_group_id, hist_unit.image AS hist_unit_image ".
@@ -103,30 +137,20 @@ function updateMemberForumGroup($memberId, $dbx){
     $result = mysqli_fetch_assoc($query);
     $username = strtolower($result["username"]);
     $member_status = $result["member_status"];
-    $acg_unit_id = $result["acg_unit_id"];
-    $forum_group_id = $result["forum_group_id"];
+    $user_unit_forum_group = (int)$result["forum_group_id"];
     $faction = $result["faction"];
-    //FOR DEVELOPMENT
-//    $image_filename = "http://localhost:8080".$result["hist_unit_image"];
-//    $image_filename_sizecheck = "http://localhost:8080".$result["hist_unit_image"];
-    //FOR DEPLOYMENT
-    $image_filename = "http://aircombatgroup.co.uk".$result["hist_unit_image"];
-    $image_filename_sizecheck = "../".$result["hist_unit_image"];
+//    //FOR DEVELOPMENT
+    $image_filename = dirname(dirname(__FILE__)).$result["hist_unit_image"];
+//    FOR DEPLOYMENT
+//    $image_filename = "../frontend/src".$result["hist_unit_image"];
 
     $avatar_target_width = 50;
-    list($width, $height) = getimagesize($image_filename_sizecheck);
+    list($width, $height) = getimagesize($image_filename);
+    $image_info = getimagesize($image_filename);
     $scaling_factor = $avatar_target_width/$width;
     $scaled_width = (int)($width*$scaling_factor);
     $scaled_height = (int)($height*$scaling_factor);
-
-    $result = [];
-    $sql = "SELECT forum_group_id FROM acg_unit WHERE forum_group_id IS NOT NULL";
-    $query = mysqli_query($dbx, $sql);
-    while($row = mysqli_fetch_array($query)){
-        $result[] = (int)$row['forum_group_id'];
-    }
-    $unit_forum_groups = implode (", ", $result);
-
+    $image_filename = "http://aircombatgroup.co.uk".$result["hist_unit_image"];
 
     //Connect to forum database and get forum user_id of username.
     $dbxForum = getForumDBx();
@@ -134,103 +158,124 @@ function updateMemberForumGroup($memberId, $dbx){
         "WHERE phpbb_users.username_clean = '$username'";
     $query = mysqli_query($dbxForum, $sql);
     $result = mysqli_fetch_assoc($query);
-    $forum_user_id = $result["user_id"];
+    $forum_user_id = (int)$result["user_id"];
 
-    $result_array = [];
-
-    // Remove member from all groups
-    // Unit groups
-    $sql = "DELETE FROM phpbb_user_group ".
-        "WHERE user_id = $forum_user_id ".
-        "AND group_id IN ($unit_forum_groups)";
-    $result_array[] = executeSQL($sql, $dbxForum);
-
-    // Faction groups, registered users, newly registered users, acg_member
-    $sql = "DELETE FROM phpbb_user_group ".
-        "WHERE user_id = $forum_user_id ".
-        "AND group_id IN (14, 15, 2, 7, 36)";
-    $result_array[] = executeSQL($sql, $dbxForum);
+    $user_forum_groups = array();
+    $sql = "SELECT group_id FROM phpbb_user_group ".
+        "WHERE user_id = $forum_user_id";
+    $query = mysqli_query($dbxForum, $sql);
+    while($row = mysqli_fetch_array($query)){
+        $user_forum_groups[] = (int)$row['group_id'];
+    }
 
     // If active or on leave
     if($member_status != 1){
 
-        // Unit group
-        $sql = "INSERT INTO phpbb_user_group ".
-            "(`group_id`, `user_id`, `group_leader`, `user_pending`) ".
-            "VALUES ($forum_group_id, $forum_user_id, 0, 0)";
-        $result_array[] = executeSQL($sql, $dbxForum);
-
-        // acg member
-        $sql = "INSERT INTO phpbb_user_group ".
-            "(`group_id`, `user_id`, `group_leader`, `user_pending`) ".
-            "VALUES (36, $forum_user_id, 0, 0)";
-        $result_array[] = executeSQL($sql, $dbxForum);
-
         // Faction group
         if($faction == 2){
             // Allies - RAF
-            $own_faction_group = 14;
-            $colour = '990000';
+            $own_faction_group = array(14);
+            $opp_faction_group = array(15);
         } else if($faction == 3) {
             // Allies - VVS
-            $own_faction_group = 14;
-            $colour = '990000';
+            $own_faction_group = array(14);
+            $opp_faction_group = array(15);
         } else if($faction == 1) {
             // Axis - LW
-            $own_faction_group = 15;
-            $colour = '000066';
+            $opp_faction_group = array(14);
+            $own_faction_group = array(15);
         } else {
             // RESERVE UNITS
-            if($forum_group_id == 61){
-                $own_faction_group = 14;
-                $colour = '990000';
-            } else if($forum_group_id == 62){
-                $own_faction_group = 15;
-                $colour = '000066';
+            if($user_unit_forum_group == 61){
+                $own_faction_group = array(14);
+                $opp_faction_group = array(15);
+            } else if($user_unit_forum_group == 62){
+                $opp_faction_group = array(14);
+                $own_faction_group = array(15);
+            } else {
+                $own_faction_group = array();
+                $opp_faction_group = array(14, 15);
             }
         }
 
-        // Faction group
-        $sql = "INSERT INTO phpbb_user_group ".
-            "(`group_id`, `user_id`, `group_leader`, `user_pending`) ".
-            "VALUES ($own_faction_group, $forum_user_id, 0, 0)";
-        $result_array[] = executeSQL($sql, $dbxForum);
 
+        $groups_to_be_in = array($acg_member);
+        if($user_unit_forum_group) array_push($groups_to_be_in, $user_unit_forum_group);
+        $groups_to_be_in = array_merge($groups_to_be_in, $own_faction_group);
+
+        $groups_to_not_be_in = array($registered, $newly_registered);
+        $groups_to_not_be_in = array_merge($groups_to_not_be_in, $opp_faction_group);
+
+        $unit_forum_groups_to_not_be_in = array_diff($unit_forum_groups, array($user_unit_forum_group));
+        $groups_to_not_be_in = array_merge($groups_to_not_be_in, $unit_forum_groups_to_not_be_in);
+
+        $groups_to_be_added = array_diff($groups_to_be_in, $user_forum_groups);
+        $groups_to_be_removed = array_intersect($user_forum_groups, $groups_to_not_be_in);
+
+        foreach ($groups_to_be_removed as $group_id) {
+            echo "Removing $forum_user_id (".gettype($forum_user_id).") from group $group_id (".gettype($forum_user_id).") ";
+            $result = group_user_del($group_id, array($forum_user_id));
+            if(!$result){
+                echo "Done ";
+            } else {
+                var_dump($result);
+            }
+        }
+
+        foreach ($groups_to_be_added as $group_id) {
+            echo "Adding $forum_user_id (".gettype($forum_user_id).") to group $group_id (".gettype($forum_user_id).") ";
+            $result = group_user_add($group_id, array($forum_user_id), false, false, false);
+            if(!$result){
+                echo "Done ";
+            } else {
+                var_dump($result);
+            }
+        }
+
+
+        group_set_user_default($user_unit_forum_group, array($forum_user_id));
         $sql = "UPDATE phpbb_users ".
             "SET ".
-            "`group_id` = $forum_group_id, ".
-            "`user_colour` = '$colour', ".
             "`user_avatar` = '$image_filename', ".
             "`user_avatar_type` = 'avatar.driver.remote', ".
             "`user_avatar_width` = $scaled_width, ".
             "`user_avatar_height` = $scaled_height ".
             "WHERE `user_id` = $forum_user_id";
-        $result_array[] = executeSQL($sql, $dbxForum);
-
-        $sql = "UPDATE phpbb_topics SET ".
-            "`topic_first_poster_colour` = '$colour' ".
-            "WHERE `topic_poster` = $forum_user_id";
-        $result_array[] = executeSQL($sql, $dbxForum);
-
-        $sql = "UPDATE phpbb_topics SET ".
-            "`topic_last_poster_colour` = '$colour' ".
-            "WHERE `topic_last_poster_id` = $forum_user_id";
-        $result_array[] = executeSQL($sql, $dbxForum);
-
+        executeSQL($sql, $dbxForum);
         updateMemberForumRank($memberId, $dbx);
 
     } else {
         // If dismissed
-        // registered user
-        $sql = "INSERT INTO phpbb_user_group ".
-            "(`group_id`, `user_id`, `group_leader`, `user_pending`) ".
-            "VALUES (2, $forum_user_id, 0, 0)";
-        $result_array[] = executeSQL($sql, $dbxForum);
 
+        $groups_to_be_in = array($registered);
+        $groups_to_not_be_in = array($newly_registered, $acg_member, $allies, $axis);
+        $groups_to_not_be_in = array_merge($groups_to_not_be_in, $unit_forum_groups);
+
+        $groups_to_be_added = array_diff($groups_to_be_in, $user_forum_groups);
+        $groups_to_be_removed = array_intersect($user_forum_groups, $groups_to_not_be_in);
+
+        foreach ($groups_to_be_added as $group_id) {
+            echo "Adding $forum_user_id (".gettype($forum_user_id).") to group $group_id (".gettype($forum_user_id).") ";
+            $result = group_user_add($group_id, array($forum_user_id), false, false, false);
+            if(!$result){
+                echo "Done ";
+            } else {
+                var_dump($result);
+            }
+        }
+
+        foreach ($groups_to_be_removed as $group_id) {
+            echo "Removing $forum_user_id (".gettype($forum_user_id).") from group $group_id (".gettype($forum_user_id).") ";
+            $result = group_user_del($group_id, array($forum_user_id));
+            if(!$result){
+                echo "Done ";
+            } else {
+                var_dump($result);
+            }
+        }
+        group_set_user_default($registered, array($forum_user_id));
         $sql = "UPDATE phpbb_users ".
             "SET ".
-            "`group_id` = 2, ".
-            "`user_colour` = '228B22', ".
             "`user_avatar` = '', ".
             "`user_avatar_type` = '', ".
             "`user_avatar_width` = 0, ".
@@ -250,9 +295,6 @@ function updateMemberForumGroup($memberId, $dbx){
 
         deleteMemberForumRank($memberId, $dbx);
     }
-
-    echo (json_encode($result_array));
-
 
 }
 
@@ -287,10 +329,8 @@ function adjustForumGroup($row, $dbx){
 
     //FOR DEVELOPMENT
 //    $image_filename = "http://localhost:8080".$row["hist_unit_image"];
-//    $image_filename_sizecheck = "http://localhost:8080".$row["hist_unit_image"];
     //FOR DEPLOYMENT
-    $image_filename = "http://aircombatgroup.co.uk".$row["hist_unit_image"];
-    $image_filename_sizecheck = "../".$row["hist_unit_image"];
+    $image_filename = "../frontend/src".$row["hist_unit_image"];
 
     $avatar_target_width = 50;
     list($width, $height) = getimagesize($image_filename_sizecheck);
@@ -365,7 +405,7 @@ function adjustForumGroup($row, $dbx){
     $sql = "UPDATE phpbb_user_group SET ".
         "`group_id` = $own_faction_group ".
         "WHERE `user_id` IN ($unit_forum_user_id)".
-        "(SELECT user_id FROM phpbb_user_group WHERE group_id = $forum_group_id) ".
+//        "(SELECT user_id FROM phpbb_user_group WHERE group_id = $forum_group_id) ".
         "AND group_id = $opposing_faction_group";
 //    $result = mysqli_query($dbxForum, $sql);
     $result_array[] = executeSQL($sql, $dbxForum);

@@ -38,21 +38,14 @@ export default {
   },
   mounted () {
 
-    if(this.findByKey("missions", "id", this.$route.params.mission_id) === undefined){
-      this.$store.dispatch('missionStore/loadStoreData',
-        {
-          caller: this.$options.name,
-          call_object: {
-            view: "campaign_mission_info",
-            campaign_id: this.$route.params.campaign_id
-          },
-          data_array_name: "missions"
-        }
-      ).catch(error => {
-        console.log(error.message);
-      });
-    }
+    this.load_mission();
 
+  },
+  data: function () {
+    return {
+
+      show_add_report_button: false
+    }
   },
   computed: {
 
@@ -61,26 +54,51 @@ export default {
       return this.findByKey("missions", "id", this.$route.params.mission_id);
     },
 
-    show_add_report_button: async function() {
-
-      var user_status = false;
-      this.$auth.getUserStatus(this.$options.name)
-        .then(response => {
-          user_status = response === 0;
-        })
-        .catch(error => {
-          console.log(error.message);
-        });
-      return (user_status && this.findByKey("missions", "id", this.$route.params.mission_id).mission_status === 1);
-
-
-    },
-
     ...mapGetters("missionStore", [
       "findByKey",
     ])
   },
   methods: {
+
+    load_mission: async function() {
+
+      if(this.findByKey("missions", "id", this.$route.params.mission_id) === undefined){
+        await this.$store.dispatch('missionStore/loadStoreData',
+          {
+            caller: this.$options.name,
+            call_object: {
+              view: "campaign_mission_info",
+              campaign_id: this.$route.params.campaign_id
+            },
+            data_array_name: "missions"
+          }
+        )
+        .catch(error => {
+          console.log(error.message);
+        });
+
+      }
+      this.check_add_report_button();
+
+    },
+
+    check_add_report_button: async function() {
+
+      console.log("CHECKING");
+
+      var user_status = false;
+      await this.$auth.getUserStatus(this.$options.name)
+        .then(response => {
+          //Member is active (status = 0)
+          user_status = response === 0;
+        })
+        .catch(error => {
+          console.log(error.message);
+        });
+      this.show_add_report_button = user_status &&
+        this.findByKey("missions", "id", this.$route.params.mission_id).mission_status === 1;
+
+    },
 
     addReport: function () {
 
