@@ -690,5 +690,13 @@ DraggableTree div {
   width: calc(100% - 20px - 26px);
 }
 
+.member-buttons{
+  font-size: 1em;
+  margin: 2px 0px 0px 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: calc(100% - 20px - 26px);
+}
+
 
 </style>
