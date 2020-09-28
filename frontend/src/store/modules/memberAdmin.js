@@ -53,6 +53,17 @@ const getters = {
     )
   },
 
+  memberPhantoms: (state) => (searchString) => {
+
+    return state.members.filter(
+      function (member) {
+        return (member.acg_unit_id === null ||
+               member.member_status === null)
+            && (member.callsign.toLowerCase().includes(searchString.toLowerCase()) || searchString === "");
+      }
+    )
+  },
+
   memberById: (state) => (id_inn) => {
 
     return state.members.find(
