@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import * as auth from '@/resource/auth.js'
 
 import EmptySideNav from '@/components/EmptySideNav'
+import MainSideNav from '@/components/MainSideNav'
 
 //ACG Info
 import ACGInfoIndex from '@/components/acg_info/ACGInfoIndex'
@@ -36,6 +37,7 @@ import CampaignInfoMissionUnitsSideNav from '../components/campaign/MissionUnitS
 import Report from '../components/campaign/Report'
 import CampaignMissionSynop from '../components/campaign/Synop'
 import FateMap from '../components/campaign/SynopPilotFateMap'
+import RecommendedReports from '../components/campaign/ReportRecommendations'
 
 //Report submission
 import ReportCharacterSelection from '../components/campaign/ReportCharacterSelection'
@@ -193,7 +195,15 @@ const router = new VueRouter({
       name: 'CampaignList',
       components: {
         default: CampaignList,
-        sidenav: EmptySideNav
+        sidenav: MainSideNav
+      }
+    },
+    {
+      path: '/recrep',
+      name: 'RecommendedReports',
+      components: {
+        default: RecommendedReports,
+        sidenav: MainSideNav
       }
     },
     {
@@ -216,6 +226,13 @@ const router = new VueRouter({
           name: 'Missions',
           components: {
             subcontent: CampaignInfoMission
+          },
+        },
+        {
+          path: 'recrepcamp',
+          name: 'RecommendedReportsCampaign',
+          components: {
+            subcontent: RecommendedReports
           },
         },
         {

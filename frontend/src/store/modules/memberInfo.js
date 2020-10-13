@@ -19,7 +19,9 @@ const state = {
   character_claim_ground: [],
   character_decorations: [],
   character_transfers: [],
-  reports: []
+  reports: [],
+  report_response: []
+
 };
 
 // getters
@@ -362,6 +364,14 @@ const getters = {
           return item.character_id === character_id
             && item.accepted === 1;
         });
+    }
+    for(let i=0; i<stats_array.length; i++){
+
+      let responses = state.report_response.filter(
+        function (report) {
+          return report.report_id == stats_array[i].report_id;
+        });
+      stats_array[i].responses = responses.length;
     }
 
     return stats_array;

@@ -360,6 +360,43 @@ select {
   background: rgba(0, 0, 0, 0.1);
 }
 
+.typed-on-paper .div-button{
+
+  margin: 0;
+  padding: 0px 5px 0px 5px;
+  cursor: pointer;
+  border-style: none;
+  border-width: 1px;
+  border-radius: 2px;
+  border-color: #646464;
+  background: rgba(0, 0, 0, 0);
+  color: #1b1b1b;
+}
+
+.typed-on-paper .div-button:hover {
+  margin: 0;
+  padding: 0px 5px 0px 5px;
+
+  border-width: 1px;
+  border-radius: 2px;
+  border-color: transparent;
+  background: rgba(255, 255, 255, 0.5);
+
+}
+
+.div-button-inactive{
+
+  width: calc(100% - 26px);
+  margin: 10px 2px 10px 2px;
+  padding: 10px;
+  /*cursor: pointer;*/
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 15px;
+  border-color: rgba(0, 0, 0, 0.0);
+  background: rgba(0, 0, 0, 0.1);
+}
+
 /*General quick style aspects*/
 
 .full-height{
@@ -424,6 +461,10 @@ select {
 
 .padding-2-10 {
   padding: 2px 10px;
+}
+
+.padding-10-0 {
+  padding: 10px 0px;
 }
 
 .margin-auto{

@@ -61,6 +61,7 @@ function whitelist_table($name) {
         "report_info",
         "report_detail_raf",
         "report_detail_lw",
+        "report_response_info",
         "roster_asset",
         "roster_asset_info",
         "hist_unit_info",
