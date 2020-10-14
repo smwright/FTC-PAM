@@ -7,6 +7,7 @@
         <tr><td>Status:</td><td>{{ memberStatus[memberById(this.$route.params.member_id).member_status] }}</td></tr>
         <tr><td>Length of service:</td><td>{{ lengthOfService }}</td></tr>
         <tr><td>Current unit:</td><td>{{ currentACGUnitById(this.$route.params.member_id).name }}</td></tr>
+        <tr><td>Badgers earned:</td><td>{{ this.report_response.length }}</td></tr>
       </table>
     </div>
 
@@ -99,7 +100,8 @@ export default {
 
       status_log: state => state.member_status_log,
       transfer_log: state => state.transfer_log,
-      promotion_log: state => state.promotion_log
+      promotion_log: state => state.promotion_log,
+      report_response: state => state.report_response
     }),
 
     ...mapGetters("memberInfo", [

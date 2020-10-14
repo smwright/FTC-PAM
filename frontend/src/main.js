@@ -7,6 +7,8 @@ import store from './store'
 import session from 'vue-session'
 import auth from './resource/auth'
 import dbCon from './resource/dbConnector'
+import VueSimpleMarkdown from 'vue-simple-markdown'
+// import 'vue-simple-markdown/dist/vue-simple-markdown.css'
 
 Vue.config.productionTip = false;
 
@@ -15,6 +17,7 @@ Vue.config.productionTip = false;
 Vue.use(session, {persist: true});
 Vue.use(dbCon, {usePHP: true});
 Vue.use(auth);
+Vue.use(VueSimpleMarkdown);
 // mixins
 // Vue.mixin(auth);
 // Vue.mixin(dbCon);

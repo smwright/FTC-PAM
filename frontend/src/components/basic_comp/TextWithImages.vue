@@ -1,9 +1,16 @@
 <template>
-  <div>
+  <div class="textarea-style">
     <template v-for="text_object in processed_text_array">
       <template v-if="text_object.type === 'text'">
-        <p>
-          {{ text_object.content }}
+        <p class="white-space-pre-line">
+          <template v-if="allow_markdown">
+            <vue-simple-markdown
+              :source="text_object.content"
+            ></vue-simple-markdown>
+          </template>
+          <template v-else>
+            {{ text_object.content }}
+          </template>
         </p>
       </template>
       <template v-else-if="text_object.type === 'img'">
@@ -14,13 +21,22 @@
 </template>
 
 <script>
+// import SimpleMarkdown from 'vue-simple-markdown'
+// import 'vue-simple-markdown/dist/vue-simple-markdown.css'
 
 export default {
   name: "TextWithImages",
+  // components: {
+  //   SimpleMarkdown
+  // },
   props: {
     original_text: {
       type: String,
       default: ""
+    },
+    allow_markdown: {
+      type: Boolean,
+      default: false
     }
   },
   mounted() {

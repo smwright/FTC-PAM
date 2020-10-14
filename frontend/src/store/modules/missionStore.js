@@ -5,6 +5,7 @@ const state = {
 
   campaign: {},
   campaign_units: [],
+  briefings: [],
   missions: [],
   campaign_unit_plane_asset_status: [],
   campaign_unit_member_info: [],
@@ -20,6 +21,7 @@ const state = {
   assets: [],
   members: [],
   pilot_fates: [],
+  report_response: []
 
 };
 
@@ -1688,6 +1690,75 @@ const  actions = {
 
         console.log(error.message);
       })
+  },
+
+  awardRevokeBadgers(context, payload) {
+
+    let response_parcel = {
+      id: -1,
+      report_id: context.state.report.report_id,
+      member_id: payload.member_id
+    }
+
+    let member_report_response = context.getters.filterByKeys("report_response",
+      {
+        report_id: context.state.report.report_id,
+        member_id: payload.member_id
+      }
+    );
+
+    console.log("mrr: "+JSON.stringify(member_report_response));
+    if(member_report_response.length > 0) {
+
+      Vue.prototype.$dbCon.deleteData("missionStore on behalf of "+payload.caller,
+        {table:"report_response", payload: [{id: member_report_response[0].id}]})
+        .then(response => {
+
+          console.log("Badgers reclaiming: " + response.message);
+          context.commit("logger/addEntry", {message: "Badgers reclaiming: "+response.message}, {root: true});
+          context.dispatch("loadStoreData",
+            {
+              caller: "missionStore - Badgers revoking",
+              call_object: {
+                view: "report_response_info",
+                mission_id: context.state.report.mission_id
+              },
+              data_array_name: "report_response"
+            });
+
+        })
+        .catch(error => {
+
+          console.log(error.message);
+        });
+
+    } else {
+
+      Vue.prototype.$dbCon.insertUpdateData("missionStore on behalf of " + payload.caller,
+        {
+          table: "report_response",
+          payload: [response_parcel]
+        })
+        .then(response => {
+
+          console.log("Badgers awarding: " + response.message);
+          context.commit("logger/addEntry", {message: "Badgers awarding: "+response.message}, {root: true});
+          context.dispatch("loadStoreData",
+            {
+              caller: "missionStore - Badgers awarding",
+              call_object: {
+                view: "report_response_info",
+                mission_id: context.state.report.mission_id
+              },
+              data_array_name: "report_response"
+            });
+
+        })
+        .catch(error => {
+
+          console.log(error.message);
+        })
+    }
   }
 
 }
