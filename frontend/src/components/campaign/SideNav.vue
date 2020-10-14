@@ -6,6 +6,9 @@
     <DivLinkButton class="heading" v-bind="{routeName: 'Missions', routeParams:{campaign_id: campaign_id}}">
       Missions
     </DivLinkButton>
+    <DivLinkButton class="heading" v-bind="{routeName: 'RecommendedReportsCampaign', routeParams:{campaign_id: campaign_id}}">
+      Recommended reports
+    </DivLinkButton>
 
 
     <router-view name="sideview_units"></router-view>
@@ -13,7 +16,7 @@
 </template>
 
 <script>
-
+import { mapGetters} from "vuex"
 import DivLinkButton from "../basic_comp/DivLinkButton"
 
 export default {
@@ -21,17 +24,11 @@ export default {
   components: {
     DivLinkButton
   },
-  created () {
-
-  },
   data () {
     return {
       campaign_id: this.$route.params.campaign_id
     }
   },
-  methods: {
-
-  }
 }
 
 

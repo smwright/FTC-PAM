@@ -25,6 +25,7 @@ VIEW `report_info` AS
         `acg_member`.`callsign` AS `callsign`,
         `hist_unit`.`faction` AS `faction`,
         `hist_unit`.`name` AS `hist_unit_name`,
+        `hist_unit`.`image` AS `hist_unit_image`,
         `mission`.`hist_date` AS `mission_hist_date`,
         `mission`.`real_date` AS `mission_real_date`,
         `mission`.`name` AS `mission_name`,
