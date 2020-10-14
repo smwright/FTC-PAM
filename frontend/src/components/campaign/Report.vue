@@ -154,7 +154,8 @@ export default {
     },
 
     show_badgers_button: function () {
-      return (this.report_info.member_id != this.user_id);
+      return (this.report_info.member_id != this.user_id
+       && this.user_id !== 0);
     },
 
     award_badgers_text: function () {
