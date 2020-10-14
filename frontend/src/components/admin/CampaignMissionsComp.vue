@@ -84,16 +84,38 @@
               <template slot="buttonVisible">
                 <button>Hide briefing form</button>
               </template>
-              <div>
-                <template v-for="(faction, index) in factionStatus">
-                  <input type="radio" v-bind:value="index" v-model="briefing_faction">
-                  <label v-if="index === 0">General</label>
-                  <label>{{faction.long}}</label>
-                </template>
-                <span>b-id: {{ selected_briefing }}</span>
+              <div class="clearfix">
+                <div>
+                  <template v-for="(faction, index) in factionStatus">
+                    <input type="radio" v-bind:value="index" v-model="briefing_faction">
+                    <label v-if="index === 0">General</label>
+                    <label>{{faction.long}}</label>
+                  </template>
+                </div>
+                <!--<span>b-id: {{ selected_briefing }}</span>-->
+
+                <HideableDiv v-bind:changing-button="true">
+                  <template slot="buttonHidden">
+                    <button>Show Markdown help</button>
+                  </template>
+                  <template slot="buttonVisible">
+                    <button>Hide Markdown help</button>
+                  </template>
+                  <MarkdownHelp class="typed-on-paper"></MarkdownHelp>
+                </HideableDiv>
+
               </div>
               <div>
-                <textarea v-model="mission_briefing" class="textarea-style"></textarea>
+                <textarea
+                  v-model="mission_briefing"
+                  class="briefing-form textarea-style"></textarea>
+              </div>
+              <div class="briefing-preview">
+                <TextWithImage
+                  class="typed-on-paper"
+                  v-bind:allow_markdown="true"
+                  v-bind:original_text="this.decodeHTML(mission_briefing)"
+                ></TextWithImage>
               </div>
             </HideableDiv>
 
@@ -135,6 +157,8 @@ import stringConv from "../../resource/stringConverter"
 import SwitchableDiv from "../basic_comp/SwitchableDiv"
 import MissionHeader from "../campaign/MissionHeader"
 import ImageUpload from "../basic_comp/ImageUpload"
+import TextWithImage from "../basic_comp/TextWithImages"
+import MarkdownHelp from "../basic_comp/MarkdownHelp"
 
 export default {
   name: "CampaignMissionsComp",
@@ -143,7 +167,9 @@ export default {
     DatePicker,
     HideableDiv,
     MissionHeader,
-    ImageUpload
+    ImageUpload,
+    TextWithImage,
+    MarkdownHelp
   },
   mixins: [
     statConv,
@@ -331,6 +357,17 @@ div {
 .front-image {
   width: 425px;
   min-height: 163px;
+}
+
+.briefing-form {
+  width: 100%;
+  height: 25em;
+}
+
+.briefing-preview {
+  resize: vertical;
+  overflow: auto;
+  height: 50em;
 }
 
 </style>

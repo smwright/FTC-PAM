@@ -92,6 +92,22 @@ export default {
           console.log(error.message);
         });
       }
+
+      if(this.filterByKey("briefings", "mission_id", this.$route.params.mission_id).length === 0){
+
+        this.$store.dispatch('missionStore/loadStoreData',
+          {
+            caller: this.$options.name,
+            call_object: {
+              view: "briefing_info",
+              mission_id: this.$route.params.mission_id
+            },
+            data_array_name: "briefings"
+          }
+        ).catch(error => {
+          console.log(error.message);
+        });
+      }
     }
 
   }

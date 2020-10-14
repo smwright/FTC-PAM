@@ -561,6 +561,13 @@ select {
   background-image: none;
 }
 
+.typed-on-paper h2 {
+  font-size: inherit;
+  font-weight: bolder;
+  color: inherit;
+  background-image: none;
+}
+
 .typed-on-paper th {
   font-weight: normal;
 }
@@ -568,6 +575,10 @@ select {
 .typed-on-paper hr {
   border: 1px solid black;
 
+}
+
+.typed-on-paper ul {
+  list-style-type: circle;
 }
 
 .axis {

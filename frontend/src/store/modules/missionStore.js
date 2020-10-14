@@ -5,6 +5,7 @@ const state = {
 
   campaign: {},
   campaign_units: [],
+  briefings: [],
   missions: [],
   campaign_unit_plane_asset_status: [],
   campaign_unit_member_info: [],
