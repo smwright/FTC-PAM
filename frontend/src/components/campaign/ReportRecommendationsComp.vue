@@ -9,7 +9,9 @@
         v-bind:key="rec.report_id+'_'+rec.member_id"
         v-bind="{routeName: 'Report',
             routeParams: {
-              report_id: rec.report_id
+              report_id: rec.report_id,
+              mission_id: rec.mission_id,
+              campaign_id: rec.campaign_id
             }
           }"
       >
