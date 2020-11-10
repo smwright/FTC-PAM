@@ -613,8 +613,9 @@ function checkVVSDecorations($characterID, $missionID, $dbx){
     $sql = "SELECT MAX(x.conf) AS maxConf, MAX(x.unconf) AS maxUnconf ".
         "FROM ( ".
         "SELECT SUM(claim_vvs.confirmed=1) AS conf, SUM(claim_vvs.confirmed=0) AS unconf ".
-        "FROM claim_vvs LEFT JOIN report ON claim_vvs.report_id = report.id ".
-        "WHERE character_id = $characterID AND report.accepted=1 AND claim_vvs.accepted = 1 ".
+        "FROM claim LEFT JOIN claim_vvs ON claim.id = claim_vvs.claim_id ".
+        "LEFT JOIN report ON claim.report_id = report.id ".
+        "WHERE character_id = $characterID AND report.accepted=1 AND claim.accepted = 1 ".
         "AND claim_vvs.group_claim = 0 AND report.mission_id <= $missionID ".
         "GROUP BY mission_id ) AS x ";
     $result = mysqli_query($dbx, $sql);
@@ -727,6 +728,7 @@ function addRemoveDecoration($medalAbr, $criteria, $decorationsArray, $awardedAr
     if(!in_array($medalAbr, $decorationsArray)){
 
         if($criteria){
+            echo " criteria fulfilled ";
             $awardID = $awardArray[$medalAbr];
             $sql = "INSERT INTO decoration (character_id, award_id, date, awarded, recommendation_date) VALUES ".
                 "($characterID, $awardID, '$missionDate', false, '$missionDate')";
