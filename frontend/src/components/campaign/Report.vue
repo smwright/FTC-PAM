@@ -47,8 +47,8 @@
         <button v-on:click="toggleEdit" class="float-right">Edit report</button>
       </div>
 
-      <div v-if="this.show_badgers_button" class="clearfix container">
-        <div class="float-right">
+      <div class="clearfix container">
+        <div v-if="this.show_badgers_button" class="float-right">
           <button v-on:click="awardRevokeBadgers" class="float-right">{{ this.award_badgers_text.button_text }}</button>
           <span class="float-right padding-2-10">{{ this.award_badgers_text.info_text }}</span>
         </div>
@@ -154,7 +154,8 @@ export default {
     },
 
     show_badgers_button: function () {
-      return (this.report_info.member_id != this.user_id);
+      return (this.report_info.member_id != this.user_id
+       && this.user_id !== 0);
     },
 
     award_badgers_text: function () {
