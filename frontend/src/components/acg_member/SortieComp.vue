@@ -17,6 +17,9 @@
         <th>
           Asset status:
         </th>
+        <th>
+          Badgers:
+        </th>
       </tr>
       <TRLinkButton
         v-for="report in reportStats(this.character_id)"
@@ -48,6 +51,10 @@
         <td>
           {{ assetStatus[report.asset_status] }}
         </td>
+        <td v-if="report.responses > 0">
+          {{ report.responses }}
+        </td>
+        <td v-else></td>
       </TRLinkButton>
     </table>
   </div>

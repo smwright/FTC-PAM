@@ -42,8 +42,8 @@
         campaign.
       </p>
       <p class="text-align-justify">
-        The historical units are listed on the left in the vertical menu. Click on the name of the unit to get more information about
-        a particular historical unit. Click on the button labeled "Historical units" if you can't see the list. Additionally
+        The historical units are listed on the left in the vertical menu. The pages to show more information about
+        the historical units are still under development. Click on the button labeled "Historical units" if you can't see the list. Additionally
         you can filter the list to show only units from a particular faction by using the faction buttons, or search for a
         unit with a specific name by using the search field.
       </p>

@@ -19,6 +19,22 @@ const state = {
 // getters
 const getters = {
 
+  findByKey: (state) => (table, keyName, keyValue) => {
+
+    return state[table].find(
+      function (item) {
+        return item[keyName] == keyValue;
+      });
+  },
+
+  filterByKey: (state) => (table, keyName, keyValue) => {
+
+    return state[table].filter(
+      function (item) {
+        return item[keyName] == keyValue;
+      });
+  },
+
   membersByUnitId: (state) => (id_inn, showActive, showOnLeave, showDismissed, showPassedAway, searchString) => {
 
     return state.members.filter(
@@ -33,6 +49,17 @@ const getters = {
               && (member.callsign.toLowerCase().includes(searchString.toLowerCase()) || searchString === "")
 
           );
+      }
+    )
+  },
+
+  memberPhantoms: (state) => (searchString) => {
+
+    return state.members.filter(
+      function (member) {
+        return (member.acg_unit_id === null ||
+               member.member_status === null)
+            && (member.callsign.toLowerCase().includes(searchString.toLowerCase()) || searchString === "");
       }
     )
   },

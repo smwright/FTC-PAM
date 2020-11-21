@@ -5,6 +5,7 @@ const state = {
 
   campaign: {},
   campaign_units: [],
+  briefings: [],
   missions: [],
   campaign_unit_plane_asset_status: [],
   campaign_unit_member_info: [],
@@ -20,6 +21,7 @@ const state = {
   assets: [],
   members: [],
   pilot_fates: [],
+  report_response: []
 
 };
 
@@ -28,7 +30,7 @@ const getters = {
 
   findByKey: (state) => (table, keyName, keyValue) => {
 
-    // console.log("Serching "+keyName+" = "+keyValue+" in "+table);
+    // console.log("Serching "+keyName+" = "+key Value+" in "+table);
     return state[table].find(
       function (item) {
         return item[keyName] == keyValue;
@@ -42,6 +44,20 @@ const getters = {
       function (item) {
         return item[keyName] == keyValue;
       });
+  },
+
+  filterByKeys: (state) => (table, filterInput) => {
+
+    let filterArray = JSON.parse(JSON.stringify(state[table]));
+    let filterEntries = Object.entries(filterInput);
+    for(let i=0; i<filterEntries.length; i++){
+      filterArray = filterArray.filter(
+        function (item) {
+          return item[filterEntries[i][0]] == filterEntries[i][1];
+        });
+    }
+    return filterArray;
+
   },
 
   nestedData: (state) => (table) => {
@@ -466,7 +482,7 @@ const  actions = {
     //                      customise the database call, i.e. filtering, ordering, ...
     // payload.data_array_name: Name of the array in the store to save the data
     return new Promise(function (resolve, reject) {
-      Vue.prototype.$dbCon.requestViewData("memberInfo on behalf of " + payload.caller, payload.call_object)
+      Vue.prototype.$dbCon.requestViewData("missionStore on behalf of " + payload.caller, payload.call_object)
         .then(response => {
 
           context.commit("setDataArray",
@@ -1674,6 +1690,75 @@ const  actions = {
 
         console.log(error.message);
       })
+  },
+
+  awardRevokeBadgers(context, payload) {
+
+    let response_parcel = {
+      id: -1,
+      report_id: context.state.report.report_id,
+      member_id: payload.member_id
+    }
+
+    let member_report_response = context.getters.filterByKeys("report_response",
+      {
+        report_id: context.state.report.report_id,
+        member_id: payload.member_id
+      }
+    );
+
+    console.log("mrr: "+JSON.stringify(member_report_response));
+    if(member_report_response.length > 0) {
+
+      Vue.prototype.$dbCon.deleteData("missionStore on behalf of "+payload.caller,
+        {table:"report_response", payload: [{id: member_report_response[0].id}]})
+        .then(response => {
+
+          console.log("Badgers reclaiming: " + response.message);
+          context.commit("logger/addEntry", {message: "Badgers reclaiming: "+response.message}, {root: true});
+          context.dispatch("loadStoreData",
+            {
+              caller: "missionStore - Badgers revoking",
+              call_object: {
+                view: "report_response_info",
+                mission_id: context.state.report.mission_id
+              },
+              data_array_name: "report_response"
+            });
+
+        })
+        .catch(error => {
+
+          console.log(error.message);
+        });
+
+    } else {
+
+      Vue.prototype.$dbCon.insertUpdateData("missionStore on behalf of " + payload.caller,
+        {
+          table: "report_response",
+          payload: [response_parcel]
+        })
+        .then(response => {
+
+          console.log("Badgers awarding: " + response.message);
+          context.commit("logger/addEntry", {message: "Badgers awarding: "+response.message}, {root: true});
+          context.dispatch("loadStoreData",
+            {
+              caller: "missionStore - Badgers awarding",
+              call_object: {
+                view: "report_response_info",
+                mission_id: context.state.report.mission_id
+              },
+              data_array_name: "report_response"
+            });
+
+        })
+        .catch(error => {
+
+          console.log(error.message);
+        })
+    }
   }
 
 }

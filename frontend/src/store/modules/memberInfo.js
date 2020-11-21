@@ -19,7 +19,9 @@ const state = {
   character_claim_ground: [],
   character_decorations: [],
   character_transfers: [],
-  reports: []
+  reports: [],
+  report_response: []
+
 };
 
 // getters
@@ -39,6 +41,20 @@ const getters = {
       function (item) {
         return item[keyName] === keyValue;
       });
+  },
+
+  filterByKeys: (state) => (table, filterInput) => {
+
+    let filterArray = JSON.parse(JSON.stringify(state[table]));
+    let filterEntries = Object.entries(filterInput);
+    for(let i=0; i<filterEntries.length; i++){
+      filterArray = filterArray.filter(
+        function (item) {
+          return item[filterEntries[i][0]] == filterEntries[i][1];
+        });
+    }
+    return filterArray;
+
   },
 
   membersByUnitId: (state) => (id_inn, showActive, showOnLeave, showDismissed, showPassedAway, searchString) => {
@@ -171,6 +187,8 @@ const getters = {
         asset_ok: 0,
         asset_damaged: 0,
         asset_lost: 0};
+
+      result_array.attended_missions = Array.from(new Set(stats_array.map(x => x.mission_id)));
 
       for(var i=0; i < stats_array.length; i++) {
 
@@ -346,6 +364,14 @@ const getters = {
           return item.character_id === character_id
             && item.accepted === 1;
         });
+    }
+    for(let i=0; i<stats_array.length; i++){
+
+      let responses = state.report_response.filter(
+        function (report) {
+          return report.report_id == stats_array[i].report_id;
+        });
+      stats_array[i].responses = responses.length;
     }
 
     return stats_array;

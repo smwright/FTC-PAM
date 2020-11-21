@@ -31,6 +31,12 @@
       v-on:click="switchShowPassedAway()"
       v-bind:class="{passedAway: showPassedAway}"
     >{{ showPassedAwayButtonText }}</div>
+    <DivLinkButton
+      class="unit-buttons"
+      v-bind="{routeName: 'UnitOverview'}"
+    >
+      Unit overview
+    </DivLinkButton>
     <MemberAdminSideNavComp
       v-for="unit in acg_units"
       v-bind:key="unit.id"
@@ -42,19 +48,41 @@
       v-bind:showPassedAway="showPassedAway"
       v-bind:searchString="searchString"
     ></MemberAdminSideNavComp>
+    <HideableDiv>
+      <template
+        slot="buttonHidden">
+        <div class="unit-buttons div-button clearfix">
+          <span>
+            Lost & Found
+          </span>
+        </div>
+      </template>
+      <DivLinkButton
+        class="member-buttons"
+        v-for="member in memberPhantoms(searchString)"
+        v-bind:key="member.id"
+        v-bind="{routeName: 'AdminMember', routeParams: {member_id: member.member_id}}"
+      >
+        {{ member.callsign }}
+      </DivLinkButton>
+
+    </HideableDiv>
+
   </div>
 </template>
 
 <script>
-import { mapState } from "vuex"
+import { mapState, mapGetters } from "vuex"
 import MemberAdminSideNavComp from "./MemberAdminSideNavComp"
 import DivLinkButton from "../basic_comp/DivLinkButton"
+import HideableDiv from "../basic_comp/HideableDiv"
 
 export default {
   name: "MemberAdminSideNav",
   components: {
     MemberAdminSideNavComp,
-    DivLinkButton
+    DivLinkButton,
+    HideableDiv
   },
   mounted () {
 
@@ -101,7 +129,11 @@ export default {
 
     ...mapState('memberAdmin', {
       acg_units: state => state.acg_units
-    })
+    }),
+
+    ...mapGetters("memberAdmin", [
+       "memberPhantoms",
+    ])
   },
   methods: {
 
@@ -125,6 +157,13 @@ export default {
 </script>
 
 <style scoped>
+
+.unit-buttons{
+  color: #F28900;
+  font-size: 1em;
+  margin: 2px 0px 0px 15px;
+  width: calc(100% - 15px - 26px);
+}
 
 .narrow{
   font-size: 1em;

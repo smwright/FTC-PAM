@@ -2,8 +2,8 @@
   <div>
     <template v-if="extended_info">
       <table>
-        <tr v-for="award in filterByKey('character_decorations', 'character_id', character_id)">
-          <td>
+        <tr v-for="award in filterByKeys('character_decorations', { character_id: character_id, awarded: 1})">
+          <td v-if="awardImage(award.award_image)">
             <img
               v-bind:class="{ medalSmall: small_awards }"
               v-bind:src="awardImage(award.award_image)"
@@ -17,8 +17,9 @@
       </table>
 
     </template>
-    <template v-else v-for="award in filterByKey('character_decorations', 'character_id', character_id)">
+    <template v-else v-for="award in filterByKeys('character_decorations', { character_id: character_id, awarded: 1})">
       <img
+        v-if="awardImage(award.award_image)"
         v-bind:class="{ medalSmall: small_awards }"
         v-bind:src="awardImage(award.award_image)"
         v-bind:title="award.award_name"
@@ -50,7 +51,8 @@ export default {
   computed: {
 
     ...mapGetters("memberInfo", [
-      "filterByKey"
+      "filterByKey",
+      "filterByKeys"
 
     ])
 
@@ -61,12 +63,14 @@ export default {
 
       var baseURL = "/assets/images/";
       if(
-        award_image !== "MedalAB" &&
-        award_image !== "MedalFBA.png" &&
-        award_image !== "MedalFBAgd.png" &&
-        award_image !== "MedalAB_VVS.png")
+        award_image != "MedalAB" &&
+        award_image != "MedalFBA.png" &&
+        award_image != "MedalFBAgd.png" &&
+        award_image != "MedalAB_VVS.png")
       {
         return baseURL + "medals_big/" + award_image;
+      } else {
+        return false;
       }
 
     }

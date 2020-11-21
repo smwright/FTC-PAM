@@ -9,10 +9,9 @@ THIS FILE LISTS ALL DATABASE CHANGES IN SPECIFIC DEVELOPMENT BRANCHES:
     asset-subtree: add claimable
 
 -FEAT-unit-admin
-    decoration_info
-    character_latest_report
-    character_latest_report_date
-    report_info
+    mission_unit_active_members
+    mission_unit_attending_members
+    mission_unit_attending_members_count
 
 -FEAT-unit_info
     campaign_max_min_ext_date

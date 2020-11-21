@@ -32,6 +32,7 @@ function whitelist_table($name) {
         "report" => array("id"),
         "report_detail_lw" => array("id"),
         "report_detail_raf" => array("id"),
+        "report_response" => array("id"),
         "roster_asset" => array("id"),
         "transfer" => array("id")
     );
