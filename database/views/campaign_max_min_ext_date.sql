@@ -1,6 +1,6 @@
 CREATE 
     ALGORITHM = UNDEFINED 
-    DEFINER = `root`@`localhost` 
+    DEFINER = `cl45-acg-pam-2`@`%` 
     SQL SECURITY DEFINER
 VIEW `campaign_max_min_ext_date` AS
     SELECT 
@@ -8,7 +8,7 @@ VIEW `campaign_max_min_ext_date` AS
         `c`.`mn_date` AS `mn_date`,
         `c`.`mx_date` AS `mx_date`,
         IF(ISNULL(MAX(`c_mn`.`mx_date`)),
-            `c`.`mn_date`,
+            '2012-05-14',
             MAX(`c_mn`.`mx_date`)) AS `mn_date_ext`,
         IF(ISNULL(MIN(`c_mx`.`mn_date`)),
             CURDATE(),
