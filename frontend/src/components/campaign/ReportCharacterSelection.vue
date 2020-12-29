@@ -18,7 +18,7 @@
     <template v-if="info_loaded">
       <!--<div v-for="character in selectableCharacters(user_unit.depl_unit_id, user_unit.faction,-->
             <!--missionById(this.$route.params.mission_id).hist_date)">-->
-        <div v-for="character in selectableCharacters(depl_unit_id, faction, mission_hist_date)">
+        <div v-for="character in selectableCharacters(hist_unit_id, faction, mission_hist_date)">
         <!--<div>{{ JSON.stringify(character) }}</div>-->
 
         <template v-if="character !== null">
@@ -61,6 +61,7 @@ export default {
       .then(async response => {
         // this.user_unit = response[0];
         this.depl_unit_id = response[0].depl_unit_id;
+        this.hist_unit_id = response[0].hist_unit_id;
         this.faction = response[0].faction;
         this.mission_hist_date = this.missionById(this.$route.params.mission_id).hist_date;
         this.user_id = await this.$auth.getUserId(this.$options.name);
@@ -85,6 +86,7 @@ export default {
       info_loaded: false,
       user_unit: null,
       depl_unit_id: null,
+      hist_unit_id: null,
       faction: null,
       mission_hist_date: null,
       user_id: null,
