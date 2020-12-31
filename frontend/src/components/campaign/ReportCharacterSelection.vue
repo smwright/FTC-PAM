@@ -10,7 +10,7 @@
         <li>The character has not flown a sortie for a mission with a later historic date than this mission.</li>
       </ul>
       <p>If you have a character that fulfils the criteria mentioned above and that has already flown a sortie for your
-      assigned unit for this campaign, then this is the only available character.</p>
+      assigned historical unit for this campaign, then this is the only available character.</p>
     </div>
     <!--<p>Unit: {{ JSON.stringify(user_unit) }}</p>-->
     <!--<p>Mission:  {{ missionById(this.$route.params.mission_id) }}</p>-->
