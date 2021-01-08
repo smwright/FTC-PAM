@@ -151,33 +151,53 @@ const  actions = {
         reject(error);
       });
 
-      await context.dispatch('loadStoreData',
-        {
-          caller: payload.caller,
-          call_object: {
-            view: "campaign_unit_member_info",
-            acg_unit_id: payload.acg_unit_id
-          },
-          data_array_name: "member_info"
+      if(payload.unit_type === "acg_unit"){
+        await context.dispatch('loadStoreData',
+          {
+            caller: payload.caller,
+            call_object: {
+              view: "campaign_unit_member_info",
+              acg_unit_id: payload.unit_id
+            },
+            data_array_name: "member_info"
 
-        }
-      ).catch(error => {
-        reject(error);
-      });
+          }
+        ).catch(error => {
+          reject(error);
+        });
 
-      await context.dispatch('loadStoreData',
-        {
-          caller: payload.caller,
-          call_object: {
-            view: "campaign_unit_member_info_current",
-            acg_unit_id: payload.acg_unit_id
-          },
-          data_array_name: "member_info_current"
+        await context.dispatch('loadStoreData',
+          {
+            caller: payload.caller,
+            call_object: {
+              view: "campaign_unit_member_info_current",
+              acg_unit_id: payload.acg_unit_id
+            },
+            data_array_name: "member_info_current"
 
-        }
-      ).catch(error => {
-        reject(error.message);
-      });
+          }
+        ).catch(error => {
+          reject(error.message);
+        });
+        
+      } else if(payload.unit_type === "hist_unit"){
+        await context.dispatch('loadStoreData',
+          {
+            caller: payload.caller,
+            call_object: {
+              view: "campaign_unit_member_info",
+              hist_unit_id: payload.unit_id
+            },
+            data_array_name: "member_info"
+
+          }
+        ).catch(error => {
+          reject(error);
+        });
+      }
+
+
+
 
       resolve();
 

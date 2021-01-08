@@ -24,6 +24,7 @@ import CharacterProfile from '../components/acg_member/CharacterProfile'
 import UnitInfoSideNav from '../components/acg_unit/UnitInfoSideNav'
 import UnitGeneral from '../components/acg_unit/UnitGeneralComp'
 import ACGUnit from '../components/acg_unit/ACGUnit'
+import HistUnit from '../components/acg_unit/HistUnit'
 
 //Campaign
 import CampaignList from '../components/campaign/CampaignList'
@@ -181,7 +182,7 @@ const router = new VueRouter({
       path: '/units/hist/:unit_id',
       name: 'HistUnitInfo',
       components: {
-        default: UnitGeneral,
+        default: HistUnit,
         sidenav: UnitInfoSideNav
       },
     },

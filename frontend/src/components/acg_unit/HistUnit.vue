@@ -2,8 +2,8 @@
   <div>
     <div class="container">
       <!--<LinkButton-->
-        <!--v-bind="{routeName: 'UnitGeneral', routeParams: {unit_id: this.$route.params.unit_id}}">-->
-        <!--General Info-->
+      <!--v-bind="{routeName: 'UnitGeneral', routeParams: {unit_id: this.$route.params.unit_id}}">-->
+      <!--General Info-->
       <!--</LinkButton>-->
     </div>
 
@@ -14,22 +14,21 @@
     >
 
       <p class="text-align-justify">
-        Use the dropdown to either display the current roster of {{ this.acgName }}, or the roster of {{ this.acgName }}
-      during a particular campaign. Only campaigns that {{ this.acgName }} took part in are available. The list for the current
-      roster is divided into two lists, one for currently active members and one for members on leave (R&R). The campaign
-      specific rosters show the members and any transfer- or membership status events that happened during the campaign.</p>
+        Use the dropdown to display the roster of {{ this.histName }} during a particular campaign. Only campaigns that {{ this.histName }}
+        took part in are available. The list for the current  roster is divided into two lists, one for currently active
+        members and one for members on leave (R&R). The rosters show the members and any transfer- or membership status events
+        that happened during the campaign.</p>
       <p>Select any of the displayed members in the roster to navigate to the members profile page for more detailed information.</p>
 
       <select v-model="campaign_to_show">
-        <option v-bind:value="0">Current roster</option>
         <option
           v-for="campaign in participated_campaigns"
           v-bind:value="campaign.campaign_id"
-        >{{campaign.campaign_name}} - {{ campaign.acg_unit_name }} flew as {{ campaign.hist_unit_name }}</option>
+        >{{campaign.campaign_name}} - {{ campaign.hist_unit_name }} represented by {{ campaign.acg_unit_name }}</option>
       </select>
 
       <Roster
-        v-bind:unit_id="this.unit_id"
+        v-bind:unit_id="this.acg_unit_id"
         v-bind:campaign_id="this.campaign_to_show"
       >
       </Roster>
@@ -45,7 +44,7 @@ import LinkButton from "../basic_comp/LinkButton"
 import Roster from "./UnitRoster"
 
 export default {
-  name: "ACGUnit",
+  name: "HistUnit",
   components: {
     LinkButton,
     Roster
@@ -76,25 +75,24 @@ export default {
   },
   computed: {
 
-    acgName: function () {
+    acg_unit_id: function () {
 
-      let unit_Array = this.filterByKey("campaign_units", "acg_unit_id", this.unit_id);
+      let unit_Array = this.filterByKeys("campaign_units",
+          {
+            campaign_id: this.campaign_to_show,
+            hist_unit_id: this.unit_id
+          }
+        );
       if(unit_Array.length > 0){
-        return unit_Array[0].acg_unit_name;
+        return unit_Array[0].acg_unit_id;
       } else {
-        return "";
+        return 0;
       }
     },
 
     histName: function () {
 
-      let unit_Array = this.filterByKeys("campaign_units",
-        {
-          acg_unit_id: this.unit_id,
-          campaign_id: this.campaign_to_show
-
-        }
-      );
+      let unit_Array = this.filterByKey("campaign_units", "hist_unit_id", this.unit_id);
       if(unit_Array.length > 0){
         return unit_Array[0].hist_unit_name;
       } else {
@@ -104,7 +102,7 @@ export default {
 
     participated_campaigns: function () {
 
-      let return_array =  this.filterByKey("campaign_units", "acg_unit_id", this.unit_id);
+      let return_array =  this.filterByKey("campaign_units", "hist_unit_id", this.unit_id);
       return_array.sort(function(a,b){
         return b.campaign_id - a.campaign_id;
       })
@@ -132,7 +130,7 @@ export default {
         await this.$store.dispatch('unitInfo/loadUnitInfo',
           {
             caller: this.$options.name,
-            unit_type: "acg_unit",
+            unit_type: "hist_unit",
             unit_id: id
 
           }
@@ -141,8 +139,8 @@ export default {
 
           this.data_loaded = true;
         }).catch(error => {
-            console.log(error.message);
-          });
+          console.log(error.message);
+        });
 
       }
     }
