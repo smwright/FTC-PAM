@@ -2,7 +2,7 @@
   <div>
     <div class="heading">Briefing</div>
       <div v-if="briefing_info !== undefined" class="white-space-pre-line">
-        <template v-if="is_authorized | briefing_info.faction == 0">
+        <template v-if="is_authorized | briefing_info.faction == 0 | briefing_info.mission_status == 2">
           <TextWithImage
             class="typed-on-paper"
             v-bind:original_text="this.decodeHTML(briefing_info.text)"
