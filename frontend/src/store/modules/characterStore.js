@@ -21,12 +21,12 @@ const getters = {
       });
   },
 
-  selectableCharacters: (state) => (depl_unit_id, faction, mission_hist_date) => {
+  selectableCharacters: (state) => (hist_unit_id, faction, mission_hist_date) => {
 
     // Check for character that flew in this deployed unit
     var characters = state.characters.filter(
       function (character) {
-        return character.deployed_unit_id === depl_unit_id &&
+        return character.hist_unit_id === hist_unit_id &&
           character.character_status <= 1;
       }
     )
