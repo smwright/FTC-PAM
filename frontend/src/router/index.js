@@ -15,6 +15,8 @@ import ACGUnits from '../components/acg_info/ACGUnits'
 import ACGRanks from '../components/acg_info/ACGRanks'
 import ACGCampaigns from '../components/acg_info/ACGCampaigns'
 import ACGCampaignRules from '../components/acg_info/ACGCampaignRules'
+import ACGCampaignProcedures from '../components/acg_info/ACGProcedures'
+import ACGAfterActionReports from '../components/acg_info/ACGAfterActionReports'
 
 //ACG Members
 import MemberIndex from '../components/acg_member/MemberIndex'
@@ -121,6 +123,24 @@ const router = new VueRouter({
       components: {
         sidenav: ACGInfoSideNav,
         centercontent: ACGCampaignRules,
+        rightsidenav: EmptySideNav,
+      }
+    },
+    {
+      path: '/campaignprocedures/',
+      name: 'ACGCampaignProcedures',
+      components: {
+        sidenav: ACGInfoSideNav,
+        centercontent: ACGCampaignProcedures,
+        rightsidenav: EmptySideNav,
+      }
+    },
+    {
+      path: '/campaignafteractionreports/',
+      name: 'ACGAfterActionReports',
+      components: {
+        sidenav: ACGInfoSideNav,
+        centercontent: ACGAfterActionReports,
         rightsidenav: EmptySideNav,
       }
     },

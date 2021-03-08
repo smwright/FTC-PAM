@@ -31,9 +31,6 @@
             for technical help and a reception for interested persons to introduce themselves. Do not hesitate to register
             and take part in the conversation, or ask us any questions you have about the group.
           </p>
-          <p class="text-align-justify">
-            ACG members: Go here to access the submission forms for their after action reports.
-          </p>
         </a>
       </div>
 
