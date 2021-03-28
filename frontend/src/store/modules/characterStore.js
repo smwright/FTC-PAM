@@ -40,7 +40,7 @@ const getters = {
     characters = state.characters.filter(
       function (character) {
         return character.faction === faction &&
-          Date.parse(character.last_mission_hist_date) < Date.parse(mission_hist_date) &&
+          Date.parse(character.last_mission_hist_date) <= Date.parse(mission_hist_date) &&
           character.character_status <= 1;
       }
     )
