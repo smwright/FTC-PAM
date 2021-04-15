@@ -16,6 +16,7 @@ const state = {
   character_claim_lw: [],
   character_claim_vvs_group: [],
   character_claim_vvs_pers: [],
+  character_claim_ra: [],
   character_claim_ground: [],
   character_decorations: [],
   character_transfers: [],
@@ -240,6 +241,13 @@ const getters = {
             });
           result_array = {Confirmed: 0, Unconfirmed: 0};
           break;
+        case "ra":
+          stats_array = state.character_claim_ra.filter(
+            function (item) {
+              return item.character_id === character_id;
+            });
+          result_array = {Destroyed: 0, Probable: 0, Damaged: 0};
+          break;
         case "ground":
           stats_array = state.character_claim_ground.filter(
             function (item) {
@@ -275,6 +283,10 @@ const getters = {
           stats_array = state.character_claim_vvs_group;
           result_array = {Confirmed: 0, Unconfirmed: 0};
           break;
+        case "ra":
+          stats_array = state.character_claim_ra;
+          result_array = {Destroyed: 0, Probable: 0, Damaged: 0};
+          break;
         case "ground":
           stats_array = state.character_claim_ground;
           result_array = {};
@@ -301,7 +313,7 @@ const getters = {
     }
 
 
-    if(type == "raf") {
+    if(type == "raf" | type == "ra") {
 
       for(var i=0; i < stats_array.length; i++){
         result_array.Destroyed += stats_array[i].destroyed;

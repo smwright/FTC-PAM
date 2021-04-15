@@ -96,12 +96,12 @@ export default {
 
     isAxis: function (faction) {
 
-      return faction === 1;
+      return faction === 1 || faction === 4;
     },
 
     isAllied: function (faction) {
 
-      return faction === 2 || faction ===3;
+      return faction === 2 || faction === 3;
     },
   }
 }

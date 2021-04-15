@@ -173,7 +173,17 @@ export default {
 
         var report_detail = {};
 
+      } else if (this.faction == 4) {
+
+        var report_detail = {
+          id: -1,
+          report_id: -1,
+          sezione: 4,
+          sezione_pos: 4
+        };
+
       }
+
 
       this.$store.commit('missionStore/setReportDetails',
         report_detail);
