@@ -83,12 +83,12 @@ import { mapState, mapGetters} from "vuex"
 
       isAxis: function () {
 
-        return this.faction === 1;
+        return this.faction === 1 || this.faction === 4;
       },
 
       isAllied: function () {
 
-        return this.faction === 2 || this.faction ===3;
+        return this.faction === 2 || this.faction === 3;
       },
 
       ...mapGetters("missionStore", [

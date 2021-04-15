@@ -547,6 +547,11 @@ const  actions = {
 
           payload.aerial_claim_view = "claim_vvs_info";
 
+        } else if (context.state.report.faction == 4) {
+
+          payload.detail_view = "report_detail_ra";
+          payload.aerial_claim_view = "claim_ra_info";
+
         }
         await context.dispatch("loadReportDetails", payload);
         await context.dispatch("loadAerialClaims", payload);
@@ -914,6 +919,20 @@ const  actions = {
         } else if (report.faction == 3) {
 
 
+        } else if (report.faction == 4) {
+
+          // ------------------------------------------------------------------------
+          // Sending RA specific details
+          // ------------------------------------------------------------------------
+          response_detail = await Vue.prototype.$dbCon.insertUpdateData("missionStore on behalf of "+payload.caller,
+            {
+              table: "report_detail_ra",
+              payload: [report_details]
+            });
+          // console.log(" Report detail LW: "+response.message);
+          context.commit("logger/addEntry", {message: "Report detail RA: "+response.message}, {root: true});
+
+
         }
 
         if(context.state.report_details !== undefined && report_details.id < 0) {
@@ -1158,6 +1177,30 @@ const  actions = {
             });
           // console.log("Claim spec: "+claim_specific_response.message);
 
+
+        } else if (context.state.report.faction == 4) {
+
+          // ------------------------------------------------------------------------
+          // Sending RA claims
+          // ------------------------------------------------------------------------
+
+          for (var i = 0; i < aerial_claims.length; i++) {
+
+            aerial_claim_specific.push({
+              id: aerial_claims[i].claim_detail_id,
+              claim_id: aerial_claims[i].claim_id,
+              enemy_status: aerial_claims[i].enemy_status,
+              shared: aerial_claims[i].shared,
+            });
+
+          }
+
+          claim_specific_response = await Vue.prototype.$dbCon.insertUpdateData("missionStore on behalf of " + payload.caller,
+            {
+              table: "claim_ra",
+              payload: aerial_claim_specific
+            });
+          // console.log("Claim spec: "+claim_specific_response.message);
 
         }
 
