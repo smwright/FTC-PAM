@@ -635,7 +635,12 @@ select {
 }
 
 .luftwaffe {
-  background-color: rgba(0,0,102,0.25);
+   background-color: rgba(0,0,102,0.25);
+   border-radius: 15px;
+ }
+
+.ra {
+  background-color: rgba(0,0,202,0.25);
   border-radius: 15px;
 }
 

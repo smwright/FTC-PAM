@@ -52,6 +52,21 @@
           </template>
         </template>
       </span>
+      <span v-if="claimStats(character_id, report_id, 'ra') !== undefined">
+        <template v-for="(amount, object) in claimStats(character_id, report_id, 'ra')">
+          <template v-if="amount > 0">
+            <template v-if="object === 'Destroyed'">
+              Dest: {{ amount }}
+            </template>
+            <template v-if="object === 'Probable'">
+              Prb: {{ amount }}
+            </template>
+            <template v-if="object === 'Damaged'">
+              Dmg: {{ amount }}
+            </template>
+          </template>
+        </template>
+      </span>
       <span v-if="claimStats(character_id, report_id, 'ground_total') !== undefined">
         <template v-for="(amount, object) in claimStats(character_id, report_id, 'ground_total')">
           <template v-if="amount > 0">
@@ -112,6 +127,19 @@
                   <td>{{ amount }}</td>
                 </tr>
               </template>
+            </template>
+          </table>
+        </div>
+
+        <div class="inline-table float-left" v-if="claimStats(character_id, report_id, 'ra') !== undefined">
+          <table>
+            <tr><td>RA victories:</td></tr>
+            <tr><td colspan="2"><hr></td></tr>
+            <template v-for="(amount, object) in claimStats(character_id, report_id, 'ra')">
+              <tr v-if="amount > 0">
+                <td>{{ object }}:</td>
+                <td>{{ amount }}</td>
+              </tr>
             </template>
           </table>
         </div>

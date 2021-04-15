@@ -56,7 +56,8 @@ export default {
           {short: "", long: ""}, //0
           {short: "LW", long:"Luftwaffe"}, //1
           {short: "RAF", long:"Royal Air Force"}, //2
-          {short: "VVS", long:"Voyenno-vozdushnyye sily RKKA"} //3
+          {short: "VVS", long:"Voyenno-vozdushnyye sily RKKA"}, //3
+          {short: "RA", long: "Regia Aeronautica"} //4
         ],
 
       flightStatus:
@@ -142,6 +143,24 @@ export default {
           "Not observed", //0
           "Parachuted", //1
           "Dead" //2
+        ],
+
+      sezioneStatus:
+        [
+          "1.Sezione", //0
+          "2.Sezione", //1
+          "3.Sezione", //2
+          "4.Sezione", //3
+          "N/A", //5
+        ],
+
+      sezionePosStatus:
+        [
+          "Capo squadriglia", //0
+          "Capo sezione", //1
+          "Spalla", //2
+          "Gregario", //3
+          "N/A" //4
         ],
 
       deplUnitTypeStatus:

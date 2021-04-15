@@ -33,6 +33,12 @@
             {{rankAbbreviation(3)}}
           </div>
         </div>
+        <div class="float-left">
+          <img class="uniform-images" v-bind:src="rankImage(4)"/>
+          <div class="text-align-center">
+            {{rankAbbreviation(4)}}
+          </div>
+        </div>
 
       </div>
     </template>
@@ -99,6 +105,7 @@ export default {
       if (this.faction === 1) return baseURL + "lw_ranks/LWUniform.png"
       if (this.faction === 2) return baseURL + "raf_ranks/RAFUniform.png"
       if (this.faction === 3) return baseURL + "vvs_ranks/VVSUniform.png"
+      if (this.faction === 4) return baseURL + "ra_ranks/RAUniform.png"
     },
 
 
@@ -135,6 +142,13 @@ export default {
           return baseURL + "medals_big/MedalAB_VVS.png";
         }
       }
+      if (this.faction === 4) {
+
+        if(awards.find(function (item) {return item.award_abr === "PBRABrass"})) {
+          return baseURL + "medals_big/MedalPBRABrass.png";
+        }
+      }
+
 
       return undefined;
     },
@@ -168,6 +182,7 @@ export default {
       if (faction === 1) return baseURL + "lw_ranks/" + rank_image;
       if (faction === 2) return baseURL + "raf_ranks/" + rank_image;
       if (faction === 3) return baseURL + "vvs_ranks/" + rank_image;
+      if (faction === 4) return baseURL + "ra_ranks/" + rank_image;
     },
 
     rankAbbreviation: function(faction) {
