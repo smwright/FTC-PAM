@@ -65,7 +65,18 @@
                     <span>Claimable</span>
                     <input type="checkbox" id="checkbox-claim" v-model="tree.data.claimable" true-value=1 false-value=0>
                   </div>
-                  <div class="float-right">
+                  <div v-if="tree.data.report_count != null | tree.data.claim_count != null">
+                    <div v-if="tree.data.report_count != null">
+                      The asset has been used in {{ tree.data.report_count }} reports.
+                    </div>
+                    <div v-if="tree.data.claim_count != null">
+                      The asset has been used in {{ tree.data.claim_count }} claims.
+                    </div>
+                    <div>
+                      To delete the asset, first relink all claims and report to new assets.
+                    </div>
+                  </div>
+                  <div v-else class="float-right">
                     <button v-on:click="deleteAsset(tree.data)">Delete</button>
                   </div>
                 </template>
