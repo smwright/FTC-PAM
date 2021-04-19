@@ -1,13 +1,20 @@
 <template>
   <div>
     <div class="heading">Briefing</div>
-      <div v-if="briefing_info !== null" class="white-space-pre-line">
-        <template v-if="is_authorized | briefing_info.faction == 0">
-          <TextWithImage class="typed-on-paper" v-bind:original_text="this.decodeHTML(briefing_info.text)"></TextWithImage>
+      <div v-if="briefing_info !== undefined" class="white-space-pre-line">
+        <template v-if="is_authorized | briefing_info.faction == 0 | briefing_info.mission_status == 2">
+          <TextWithImage
+            class="typed-on-paper"
+            v-bind:original_text="this.decodeHTML(briefing_info.text)"
+            v-bind:allow_markdown="true"
+          ></TextWithImage>
           <!--{{ this.decodeHTML(briefing_info.text) }}-->
         </template>
         <template v-else>
-          <TextWithImage class="typed-on-paper" v-bind:original_text="this.decodeHTML(this.encryptBriefing(briefing_info.text, 5))"></TextWithImage>
+          <TextWithImage
+            class="typed-on-paper"
+            v-bind:original_text="this.decodeHTML(this.encryptBriefing(briefing_info.text, 5))"
+          ></TextWithImage>
           <!--{{ this.encryptBriefing(briefing_info.text, 5) }}-->
         </template>
       </div>
@@ -15,6 +22,7 @@
 </template>
 
 <script>
+import { mapState, mapGetters } from "vuex"
 import stringConv from "../../resource/stringConverter"
 import TextWithImage from "../basic_comp/TextWithImages"
 
@@ -26,7 +34,7 @@ export default {
   mixins: [stringConv],
   mounted () {
 
-    this.loadBriefing(this.$route.params.mission_id, this.$route.params.briefing_faction);
+    this.checkAuthentication();
   },
   beforeRouteUpdate (to, from, next) {
     // called when the route that renders this component has changed,
@@ -35,47 +43,43 @@ export default {
     // navigate between `/foo/1` and `/foo/2`, the same `Foo` component instance
     // will be reused, and this hook will be called when that happens.
     // has access to `this` component instance.
-    this.loadBriefing(to.params.mission_id, to.params.briefing_faction);
+    this.checkAuthentication();
     next();
   },
 
   data () {
     return {
-      briefing_info: null,
       is_authorized: false,
     }
   },
-  methods: {
+  computed: {
 
-    loadBriefing: function (mission_id, faction) {
+    briefing_info: function () {
 
-      this.$dbCon.requestViewData(this.$options.name,
-      {view:"briefing_info", mission_id: mission_id, faction: faction})
-      .then(response => {
-
-        this.briefing_info = response[0];
-        this.checkAuthentication(mission_id, faction);
-      })
-      .catch(error => {
-        console.log(error.message);
-      });
+      let briefing = this.filterByKeys("briefings",
+        {
+          mission_id: this.$route.params.mission_id,
+          faction: this.$route.params.briefing_faction
+        }
+      );
+      return briefing[0];
     },
 
-    checkAuthentication: function (mission_id, faction) {
+    ...mapGetters("missionStore", [
+      "filterByKeys",
+    ])
+  },
+  methods: {
 
-      if(this.briefing_info.mission_status == 2) {
-        this.is_authorized = true;
-      } else {
+    checkAuthentication: function () {
 
-        this.$auth.getFaction(this.$options.name, mission_id)
-          .then(response => {
-            this.is_authorized = response[0].faction === faction;
-          })
-          .catch(error => {
-            console.log(error.message);
-          });
-        this.is_authorized = false;
-      }
+      this.$auth.getFaction(this.$options.name, this.$route.params.mission_id)
+        .then(response => {
+          this.is_authorized = response[0].faction == this.$route.params.briefing_faction;
+        })
+        .catch(error => {
+          console.log(error.message);
+        });
     },
 
     encryptBriefing: function (plainText, group_length) {

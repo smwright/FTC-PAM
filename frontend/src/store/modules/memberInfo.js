@@ -16,10 +16,13 @@ const state = {
   character_claim_lw: [],
   character_claim_vvs_group: [],
   character_claim_vvs_pers: [],
+  character_claim_ra: [],
   character_claim_ground: [],
   character_decorations: [],
   character_transfers: [],
-  reports: []
+  reports: [],
+  report_response: []
+
 };
 
 // getters
@@ -39,6 +42,20 @@ const getters = {
       function (item) {
         return item[keyName] === keyValue;
       });
+  },
+
+  filterByKeys: (state) => (table, filterInput) => {
+
+    let filterArray = JSON.parse(JSON.stringify(state[table]));
+    let filterEntries = Object.entries(filterInput);
+    for(let i=0; i<filterEntries.length; i++){
+      filterArray = filterArray.filter(
+        function (item) {
+          return item[filterEntries[i][0]] == filterEntries[i][1];
+        });
+    }
+    return filterArray;
+
   },
 
   membersByUnitId: (state) => (id_inn, showActive, showOnLeave, showDismissed, showPassedAway, searchString) => {
@@ -172,6 +189,8 @@ const getters = {
         asset_damaged: 0,
         asset_lost: 0};
 
+      result_array.attended_missions = Array.from(new Set(stats_array.map(x => x.mission_id)));
+
       for(var i=0; i < stats_array.length; i++) {
 
         result_array.sorties += stats_array[i].accepted;
@@ -222,6 +241,13 @@ const getters = {
             });
           result_array = {Confirmed: 0, Unconfirmed: 0};
           break;
+        case "ra":
+          stats_array = state.character_claim_ra.filter(
+            function (item) {
+              return item.character_id === character_id;
+            });
+          result_array = {Destroyed: 0, Probable: 0, Damaged: 0};
+          break;
         case "ground":
           stats_array = state.character_claim_ground.filter(
             function (item) {
@@ -257,6 +283,10 @@ const getters = {
           stats_array = state.character_claim_vvs_group;
           result_array = {Confirmed: 0, Unconfirmed: 0};
           break;
+        case "ra":
+          stats_array = state.character_claim_ra;
+          result_array = {Destroyed: 0, Probable: 0, Damaged: 0};
+          break;
         case "ground":
           stats_array = state.character_claim_ground;
           result_array = {};
@@ -283,7 +313,7 @@ const getters = {
     }
 
 
-    if(type == "raf") {
+    if(type == "raf" | type == "ra") {
 
       for(var i=0; i < stats_array.length; i++){
         result_array.Destroyed += stats_array[i].destroyed;
@@ -346,6 +376,14 @@ const getters = {
           return item.character_id === character_id
             && item.accepted === 1;
         });
+    }
+    for(let i=0; i<stats_array.length; i++){
+
+      let responses = state.report_response.filter(
+        function (report) {
+          return report.report_id == stats_array[i].report_id;
+        });
+      stats_array[i].responses = responses.length;
     }
 
     return stats_array;

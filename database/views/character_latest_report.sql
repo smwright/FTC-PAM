@@ -10,6 +10,7 @@ VIEW `character_latest_report` AS
         `career_character`.`last_name` AS `last_name`,
         `report`.`deployed_unit_id` AS `deployed_unit_id`,
         `deployed_unit`.`acg_unit_id` AS `acg_unit_id`,
+        `deployed_unit`.`hist_unit_id` AS `hist_unit_id`,
         `report`.`pilot_status` AS `character_status`,
         `hist_unit`.`faction` AS `faction`,
         `hist_unit`.`name` AS `hist_unit_name`,

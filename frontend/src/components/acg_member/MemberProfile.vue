@@ -129,6 +129,18 @@ export default {
           {
             caller: this.$options.name,
             call_object: {
+              view: "report_response_info",
+              author_id: this.member_id
+            },
+            data_array_name: "report_response"
+          }
+        ).catch(error => {
+          console.log(error.message);
+        });
+        this.$store.dispatch('memberInfo/loadStoreData',
+          {
+            caller: this.$options.name,
+            call_object: {
               view: "character_claim_raf",
               member_id: this.member_id
             },
@@ -169,6 +181,18 @@ export default {
               member_id: this.member_id
             },
             data_array_name: "character_claim_vvs_pers"
+          }
+        ).catch(error => {
+          console.log(error.message);
+        });
+        this.$store.dispatch('memberInfo/loadStoreData',
+          {
+            caller: this.$options.name,
+            call_object: {
+              view: "character_claim_ra",
+              member_id: this.member_id
+            },
+            data_array_name: "character_claim_ra"
           }
         ).catch(error => {
           console.log(error.message);

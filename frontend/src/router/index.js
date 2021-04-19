@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import * as auth from '@/resource/auth.js'
 
 import EmptySideNav from '@/components/EmptySideNav'
+import MainSideNav from '@/components/MainSideNav'
 
 //ACG Info
 import ACGInfoIndex from '@/components/acg_info/ACGInfoIndex'
@@ -35,6 +36,8 @@ import CampaignInfoSideNav from '../components/campaign/SideNav'
 import CampaignInfoMissionUnitsSideNav from '../components/campaign/MissionUnitSideNav'
 import Report from '../components/campaign/Report'
 import CampaignMissionSynop from '../components/campaign/Synop'
+import FateMap from '../components/campaign/SynopPilotFateMap'
+import RecommendedReports from '../components/campaign/ReportRecommendations'
 
 //Report submission
 import ReportCharacterSelection from '../components/campaign/ReportCharacterSelection'
@@ -192,7 +195,15 @@ const router = new VueRouter({
       name: 'CampaignList',
       components: {
         default: CampaignList,
-        sidenav: EmptySideNav
+        sidenav: MainSideNav
+      }
+    },
+    {
+      path: '/recrep',
+      name: 'RecommendedReports',
+      components: {
+        default: RecommendedReports,
+        sidenav: MainSideNav
       }
     },
     {
@@ -218,6 +229,13 @@ const router = new VueRouter({
           },
         },
         {
+          path: 'recrepcamp',
+          name: 'RecommendedReportsCampaign',
+          components: {
+            subcontent: RecommendedReports
+          },
+        },
+        {
           path: 'missions/:mission_id',
           name: 'MissionInfo',
           components: {
@@ -240,6 +258,13 @@ const router = new VueRouter({
               }
             },
             {
+              path: 'fatemap/:member_id/:flight_number',
+              name: 'FateMap',
+              components: {
+                mission_lobby_content: FateMap
+              }
+            },
+            {
               path: 'report/:report_id',
               name: 'Report',
               components: {
@@ -252,7 +277,7 @@ const router = new VueRouter({
               components: {
                 mission_lobby_content: ReportCharacterSelection
               }
-            }
+            },
           ]
         },
       ],

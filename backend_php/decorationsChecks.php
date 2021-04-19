@@ -171,34 +171,39 @@ function checkRAFDecorations($characterID, $missionID, $dbx){
     //Check for RAF Pilot Brevet
     $medalAbr = "AB";
     $criteria = $succesfulReturns > 1;
+    $msg = "succesfulReturns $succesfulReturns > 1";
     addRemoveDecoration($medalAbr, $criteria, $decorationsArray, $awardedArray,
-        $awardArray, $characterID, $missionDate, $dbx);
+        $awardArray, $characterID, $missionDate, $dbx, $msg);
 
     //Victory Medal
     $medalAbr = "VM";
     $criteria = $succesfulReturnsNonBOB > 3;
+    $msg = "succesfulReturns not BoB $succesfulReturns > 3";
     addRemoveDecoration($medalAbr, $criteria, $decorationsArray, $awardedArray,
-        $awardArray, $characterID, $missionDate, $dbx);
+        $awardArray, $characterID, $missionDate, $dbx, $msg);
 
     //Victory Medal with Battle of Britain Clasp
     $medalAbr = "VMBOB";
     $criteria = $succesfulReturnsBOB > 3;
+    $msg = "succesfulReturns BoB $succesfulReturns > 3";
     addRemoveDecoration($medalAbr, $criteria, $decorationsArray, $awardedArray,
-        $awardArray, $characterID, $missionDate, $dbx);
+        $awardArray, $characterID, $missionDate, $dbx, $msg);
 
 
     //Mentioned in Dispatches
     $medalAbr = "MiD";
     $criteria = $destroyed > 4;
+    $msg = "dest $destroyed > 4";
     addRemoveDecoration($medalAbr, $criteria, $decorationsArray, $awardedArray,
-        $awardArray, $characterID, $missionDate, $dbx);
+        $awardArray, $characterID, $missionDate, $dbx, $msg);
 
 
     //Distinguished Flying Medal
     $medalAbr = "DFM";
     $criteria = ($destroyed > 7 | $points > 119) & $rankValue < 8;
+    $msg = "(dest $destroyed > 7 | points $points > 119) & rank value $rankValue < 8";
     addRemoveDecoration($medalAbr, $criteria, $decorationsArray, $awardedArray,
-        $awardArray, $characterID, $missionDate, $dbx);
+        $awardArray, $characterID, $missionDate, $dbx, $msg);
 
 
     //Distinguished Flying Medal with Bar
@@ -206,43 +211,49 @@ function checkRAFDecorations($characterID, $missionID, $dbx){
     $criteriaA = $destroyed > 15;
     $criteriaB = $points > 199;
     $criteria = ($criteriaA | $criteriaB) & $rankValue < 8;
+    $msg = "(dest $destroyed > 15 | points $points > 199) & rank value $rankValue < 8";
     addRemoveDecoration($medalAbr, $criteria, $decorationsArray, $awardedArray,
-        $awardArray, $characterID, $missionDate, $dbx);
+        $awardArray, $characterID, $missionDate, $dbx, $msg);
 
 
     //Distinguished Flying Cross
     $medalAbr = "DFC";
     $criteria = ($destroyed > 7 | $points > 119) & $rankValue >= 8;
+    $msg = "(dest $destroyed > 7 | points $points > 119) & rank value $rankValue >= 8";
     addRemoveDecoration($medalAbr, $criteria, $decorationsArray, $awardedArray,
-        $awardArray, $characterID, $missionDate, $dbx);
+        $awardArray, $characterID, $missionDate, $dbx, $msg);
 
 
     //Distinguished Flying Cross with Bar
     $medalAbr = "DFC*";
     $criteria = ($destroyed > 15 | $points > 199) & $rankValue >= 8;
+    $msg = "(dest $destroyed > 15 | points $points > 199) & rank value $rankValue >= 8";
     addRemoveDecoration($medalAbr, $criteria, $decorationsArray, $awardedArray,
-        $awardArray, $characterID, $missionDate, $dbx);
+        $awardArray, $characterID, $missionDate, $dbx, $msg);
 
 
     //Distinguished Flying Cross with two Bars
     $medalAbr = "DFC**";
     $criteria = $points > 499 & $rankValue >= 8;
+    $msg = "points $points > 499 & rank value $rankValue >= 8";
     addRemoveDecoration($medalAbr, $criteria, $decorationsArray, $awardedArray,
-        $awardArray, $characterID, $missionDate, $dbx);
+        $awardArray, $characterID, $missionDate, $dbx, $msg);
 
 
     //Distinguished Service Order
     $medalAbr = "DSO";
     $criteria = $succesfulReturns > 9 & $destroyed > 6 & $rtbRatio >= 0.6 & $rankValue >= 8;
+    $msg = "successful returns $succesfulReturns > 9 & dest $destroyed > 6 & RTB ratio$rtbRatio >= 0.6 & rank value $rankValue >= 8";
     addRemoveDecoration($medalAbr, $criteria, $decorationsArray, $awardedArray,
-        $awardArray, $characterID, $missionDate, $dbx);
+        $awardArray, $characterID, $missionDate, $dbx, $msg);
 
 
     //Distinguished Service Order with Bar
     $medalAbr = "DSO*";
     $criteria = $succesfulReturns > 19 & $destroyed > 14 & $rtbRatio >= 0.85 & $rankValue >= 8;
+    $msg = "successful returns $succesfulReturns > 19 & dest $destroyed > 14 & RTB ratio $rtbRatio >= 0.85 & rank value $rankValue >= 8";
     addRemoveDecoration($medalAbr, $criteria, $decorationsArray, $awardedArray,
-        $awardArray, $characterID, $missionDate, $dbx);
+        $awardArray, $characterID, $missionDate, $dbx, $msg);
 
 }
 
@@ -360,32 +371,47 @@ function checkLWDecorations($characterID, $missionID, $dbx){
         $rtbRatio = 0;
     }
 
+    //Sorties in Platzschutzstaffel Pitomnik
+    $sql = "SELECT COUNT(report.id) AS sorties ".
+        "FROM report ".
+        "LEFT JOIN deployed_unit ON deployed_unit.id = report.deployed_unit_id ".
+        "LEFT JOIN hist_unit ON hist_unit.id = deployed_unit.hist_unit_id ".
+        "WHERE hist_unit.id = 96 AND character_id = $characterID AND report.accepted=1 ".
+        "AND report.mission_id <= $missionID";
+    $result = mysqli_query($dbx, $sql);
+    $row = mysqli_fetch_assoc($result);
+    $sortiesPSSP = $row["sorties"];
+
     //Check for Flugzeugführer und Beobachterabzeichen
     $medalAbr = "FBA";
     $criteria = $succesfulReturns > 1;
+    $msg = "succesful returns $succesfulReturns > 1";
     addRemoveDecoration($medalAbr, $criteria, $decorationsArray, $awardedArray,
-        $awardArray, $characterID, $missionDate, $dbx);
+        $awardArray, $characterID, $missionDate, $dbx, $msg);
 
 
     //Check for Verwundetenabzeichen in schwarz
     $medalAbr = "VA II";
     $criteria = $pilotWounded > 0;
+    $msg = "Pilot wounded $pilotWounded > 0";
     addRemoveDecoration($medalAbr, $criteria, $decorationsArray, $awardedArray,
-        $awardArray, $characterID, $missionDate, $dbx);
+        $awardArray, $characterID, $missionDate, $dbx, $msg);
 
 
     //Check for Verwundetenabzeichen in silber
     $medalAbr = "VA I";
     $criteria = $pilotWounded > 1;
+    $msg = "Pilot wounded $pilotWounded > 1";
     addRemoveDecoration($medalAbr, $criteria, $decorationsArray, $awardedArray,
-        $awardArray, $characterID, $missionDate, $dbx);
+        $awardArray, $characterID, $missionDate, $dbx, $msg);
 
 
     //Mentioned in Wehrmachtsbericht
     $medalAbr = "WB";
     $criteria = $succesfulReturns > 9 & $rtbRatio >= 0.8;
+    $msg = "Successful returns $succesfulReturns > 9 & RTB-ratio $rtbRatio >= 0.8";
     addRemoveDecoration($medalAbr, $criteria, $decorationsArray, $awardedArray,
-        $awardArray, $characterID, $missionDate, $dbx);
+        $awardArray, $characterID, $missionDate, $dbx, $msg);
 
 
     //Eisernes Kreuz 2. Klasse
@@ -394,61 +420,70 @@ function checkLWDecorations($characterID, $missionID, $dbx){
     $criteriaB = $pilotWounded > 1;
     $criteriaC = $succesfulReturns > 9 & $rtbRatio >= 0.8;
     $criteria = ($criteriaA | $criteriaB | $criteriaC);
+    $msg = "conf $conf > 2 | pilot wounded $pilotWounded > 1 | (Successful returns $succesfulReturns > 9 & RTB-ratio $rtbRatio >= 0.8";
     addRemoveDecoration($medalAbr, $criteria, $decorationsArray, $awardedArray,
-        $awardArray, $characterID, $missionDate, $dbx);
+        $awardArray, $characterID, $missionDate, $dbx, $msg);
 
 
     //Eisernes Kreuz 1. Klasse
     $medalAbr = "EK I";
     $criteria = $conf > 5;
+    $msg = "conf $conf > 5";
     addRemoveDecoration($medalAbr, $criteria, $decorationsArray, $awardedArray,
-        $awardArray, $characterID, $missionDate, $dbx);
+        $awardArray, $characterID, $missionDate, $dbx, $msg);
 
 
     //Ritterkreuz des Eisernen Kreuzes
     $medalAbr = "RK II";
-    $criteria = $points > 14;
+    $criteria = $points >= 15;
+    $msg = "points $points >= 15";
     addRemoveDecoration($medalAbr, $criteria, $decorationsArray, $awardedArray,
-        $awardArray, $characterID, $missionDate, $dbx);
+        $awardArray, $characterID, $missionDate, $dbx, $msg);
 
 
     //Ritterkreuz des Eisernen Kreuzes mit Eichenlaub
     $medalAbr = "RK I";
-    $criteria = $points > 19;
+    $criteria = $points >= 20;
+    $msg = "points $points >= 20";
     addRemoveDecoration($medalAbr, $criteria, $decorationsArray, $awardedArray,
-        $awardArray, $characterID, $missionDate, $dbx);
+        $awardArray, $characterID, $missionDate, $dbx, $msg);
 
 
     //Ehrenpokal der Luftwaffe
     $medalAbr = "EP";
-    $criteria = $points > 24;
+    $criteria = $points >= 25;
+    $msg = "points $points >= 25";
     addRemoveDecoration($medalAbr, $criteria, $decorationsArray, $awardedArray,
-        $awardArray, $characterID, $missionDate, $dbx);
+        $awardArray, $characterID, $missionDate, $dbx, $msg);
 
 
     //Check for Flugzeugführer und Beobachterabzeichen in Gold mit Brillianten
     $medalAbr = "FBAgd";
     $criteria = $succesfulReturns > 29 & $conf > 19;
+    $msg = "Successful returns $succesfulReturns > 29 & conf $conf > 19";
     addRemoveDecoration($medalAbr, $criteria, $decorationsArray, $awardedArray,
-        $awardArray, $characterID, $missionDate, $dbx);
+        $awardArray, $characterID, $missionDate, $dbx, $msg);
 
     //Frontflugspange für Kampf- und Sturzkampfflieger in Bronze
     $medalAbr = "FFS-KSKb";
     $criteria = $sortiesWithGroundVictories > 2;
+    $msg = "Sorties with ground victories $sortiesWithGroundVictories > 2";
     addRemoveDecoration($medalAbr, $criteria, $decorationsArray, $awardedArray,
-        $awardArray, $characterID, $missionDate, $dbx);
+        $awardArray, $characterID, $missionDate, $dbx, $msg);
 
     //Frontflugspange für Kampf- und Sturzkampfflieger in Silber
     $medalAbr = "FFS-KSKs";
     $criteria = $sortiesWithGroundVictories > 5;
+    $msg = "Sorties with ground victories $sortiesWithGroundVictories > 5";
     addRemoveDecoration($medalAbr, $criteria, $decorationsArray, $awardedArray,
-        $awardArray, $characterID, $missionDate, $dbx);
+        $awardArray, $characterID, $missionDate, $dbx, $msg);
 
     //Frontflugspange für Kampf- und Sturzkampfflieger in Gold
     $medalAbr = "FFS-KSKg";
     $criteria = $sortiesWithGroundVictories > 11;
+    $msg = "Sorties with ground victories $sortiesWithGroundVictories > 11";
     addRemoveDecoration($medalAbr, $criteria, $decorationsArray, $awardedArray,
-        $awardArray, $characterID, $missionDate, $dbx);
+        $awardArray, $characterID, $missionDate, $dbx, $msg);
 
     //Medaille Winterschlacht im Osten
     $medalAbr = "OFM";
@@ -456,8 +491,16 @@ function checkLWDecorations($characterID, $missionID, $dbx){
     $criteriaB = $pilotWoundedBOM == 1;
     $criteriaC = $daysSurvivedOnTheFrontBoM > 29;
     $criteria = ($criteriaA | $criteriaB | $criteriaC);
+    $msg = "Sorties BoM $sortiesBOM > 14 | pilot wounded BoM $pilotWoundedBOM == 1 | days survived on front BoM $daysSurvivedOnTheFrontBoM > 29";
     addRemoveDecoration($medalAbr, $criteria, $decorationsArray, $awardedArray,
-        $awardArray, $characterID, $missionDate, $dbx);
+        $awardArray, $characterID, $missionDate, $dbx, $msg);
+
+    //Ärmelband Platzschutzstaffel Pitomnik
+    $medalAbr = "SR PSSP";
+    $criteria = $sortiesPSSP > 0;
+    $msg = "Sorties with Platzschutzstfl Pitomnik $sortiesPSSP > 0";
+    addRemoveDecoration($medalAbr, $criteria, $decorationsArray, $awardedArray,
+        $awardArray, $characterID, $missionDate, $dbx, $msg);
 
 }
 
@@ -525,7 +568,7 @@ function checkVVSDecorations($characterID, $missionID, $dbx){
         "SUM(report.pilot_status = 1) AS pilotWND, SUM(report.asset_status = 2) AS aeroLST ".
         "FROM report LEFT JOIN mission ON report.mission_id = mission.id ".
         "WHERE report.character_id = $characterID AND report.accepted = 1 AND mission.id <= $missionID ".
-        "AND (hist_date < '1941-10-15 00:00:00' AND hist_date > '1942-04-15 23:59:59')";
+        "AND (hist_date < '1941-10-15 00:00:00' OR hist_date > '1942-04-15 23:59:59')";
     $result = mysqli_query($dbx, $sql);
     $row = mysqli_fetch_assoc($result);
 
@@ -570,8 +613,9 @@ function checkVVSDecorations($characterID, $missionID, $dbx){
     $sql = "SELECT MAX(x.conf) AS maxConf, MAX(x.unconf) AS maxUnconf ".
         "FROM ( ".
         "SELECT SUM(claim_vvs.confirmed=1) AS conf, SUM(claim_vvs.confirmed=0) AS unconf ".
-        "FROM claim_vvs LEFT JOIN report ON claim_vvs.report_id = report.id ".
-        "WHERE character_id = $characterID AND report.accepted=1 AND claim_vvs.accepted = 1 ".
+        "FROM claim LEFT JOIN claim_vvs ON claim.id = claim_vvs.claim_id ".
+        "LEFT JOIN report ON claim.report_id = report.id ".
+        "WHERE character_id = $characterID AND report.accepted=1 AND claim.accepted = 1 ".
         "AND claim_vvs.group_claim = 0 AND report.mission_id <= $missionID ".
         "GROUP BY mission_id ) AS x ";
     $result = mysqli_query($dbx, $sql);
@@ -592,26 +636,30 @@ function checkVVSDecorations($characterID, $missionID, $dbx){
     //Aviation Badge
     $medalAbr = "AB_VVS";
     $criteria = $succesfulReturns > 1;
+    $msg = "Successful Returns: $succesfulReturns > 1";
     addRemoveDecoration($medalAbr, $criteria, $decorationsArray, $awardedArray,
-        $awardArray, $characterID, $missionDate, $dbx);
+        $awardArray, $characterID, $missionDate, $dbx, $msg);
 
     //Order of the Red Star
     $medalAbr = "OOTRS_VVS";
     $criteria = $conf > 2;
+    $msg = "conf: $conf > 2";
     addRemoveDecoration($medalAbr, $criteria, $decorationsArray, $awardedArray,
-        $awardArray, $characterID, $missionDate, $dbx);
+        $awardArray, $characterID, $missionDate, $dbx, $msg);
 
     //Order of the Red Banner
     $medalAbr = "OOTRB_VVS";
     $criteria = $conf > 5;
+    $msg = "conf: $conf > 5";
     addRemoveDecoration($medalAbr, $criteria, $decorationsArray, $awardedArray,
-        $awardArray, $characterID, $missionDate, $dbx);
+        $awardArray, $characterID, $missionDate, $dbx, $msg);
 
     //Medal "For Courage"
     $medalAbr = "MFC_VVS";
     $criteria = $maxConfPerSortie > 2;
+    $msg = "max. conf per sortie $maxConfPerSortie > 2";
     addRemoveDecoration($medalAbr, $criteria, $decorationsArray, $awardedArray,
-        $awardArray, $characterID, $missionDate, $dbx);
+        $awardArray, $characterID, $missionDate, $dbx, $msg);
 
     //Medal "For Battle Merit"
 //    $medalAbr = "FBM_VVS";
@@ -621,61 +669,71 @@ function checkVVSDecorations($characterID, $missionID, $dbx){
 
     //Order of Lenin
     $medalAbr = "OOL_VVS";
-    $criteria = ($conf & $gconf) > 9 & $sorties > 20;
+    $criteria = ($conf + $gconf) > 9 & $sorties > 20;
+    $msg = "(conf: $conf + gconf: $gconf) > 9 & sorties $sorties > 20";
     addRemoveDecoration($medalAbr, $criteria, $decorationsArray, $awardedArray,
-        $awardArray, $characterID, $missionDate, $dbx);
+        $awardArray, $characterID, $missionDate, $dbx, $msg);
 
     //Aircraft Kill Bonus
     $medalAbr = "AKB_VVS";
     $criteria = $conf > 0;
+    $msg = "conf: $conf > 0";
     addRemoveDecoration($medalAbr, $criteria, $decorationsArray, $awardedArray,
-        $awardArray, $characterID, $missionDate, $dbx);
+        $awardArray, $characterID, $missionDate, $dbx, $msg);
 
     //5 Combat Sortie Bonus
     $medalAbr = "5CSB_VVS";
     $criteria = $succesfulReturns > 4;
+    $msg = "Successful returns: $succesfulReturns > 4";
     addRemoveDecoration($medalAbr, $criteria, $decorationsArray, $awardedArray,
-        $awardArray, $characterID, $missionDate, $dbx);
+        $awardArray, $characterID, $missionDate, $dbx, $msg);
 
     //15 Combat Sortie Bonus
     $medalAbr = "15CSB_VVS";
     $criteria = $succesfulReturns > 14;
+    $msg = "Successful returns: $succesfulReturns > 14";
     addRemoveDecoration($medalAbr, $criteria, $decorationsArray, $awardedArray,
-        $awardArray, $characterID, $missionDate, $dbx);
+        $awardArray, $characterID, $missionDate, $dbx, $msg);
 
     //25 Combat Sortie Bonus
     $medalAbr = "25CSB_VVS";
     $criteria = $succesfulReturns > 24;
+    $msg = "Successful returns: $succesfulReturns > 24";
     addRemoveDecoration($medalAbr, $criteria, $decorationsArray, $awardedArray,
-        $awardArray, $characterID, $missionDate, $dbx);
+        $awardArray, $characterID, $missionDate, $dbx, $msg);
 
     //40 Combat Sortie Bonus
     $medalAbr = "40CSB_VVS";
     $criteria = $succesfulReturns > 39;
+    $msg = "Successful returns: $succesfulReturns > 39";
     addRemoveDecoration($medalAbr, $criteria, $decorationsArray, $awardedArray,
-        $awardArray, $characterID, $missionDate, $dbx);
+        $awardArray, $characterID, $missionDate, $dbx, $msg);
 
     //Medal "For the Defence of Moscow"
     $medalAbr = "MFTDOM_VVS";
     $criteriaA = $sortiesBOM > 14;
     $criteriaB = $daysSurvivedOnTheFrontBoM > 30;
     $criteria = ($criteriaA | $criteriaB);
+    $msg = "(sorties BM $sortiesBOM > 14 |  days survived at front BoM $daysSurvivedOnTheFrontBoM > 30)";
     addRemoveDecoration($medalAbr, $criteria, $decorationsArray, $awardedArray,
-        $awardArray, $characterID, $missionDate, $dbx);
+        $awardArray, $characterID, $missionDate, $dbx, $msg);
 
 
 }
 
 function addRemoveDecoration($medalAbr, $criteria, $decorationsArray, $awardedArray, $awardArray,
-                             $characterID, $missionDate, $dbx){
-
+                             $characterID, $missionDate, $dbx, $msg){
+    echo "Checking: $medalAbr for character $characterID after mission $missionDate --";
+    echo "$msg -- ";
     if(!in_array($medalAbr, $decorationsArray)){
 
         if($criteria){
+            echo " criteria fulfilled ";
             $awardID = $awardArray[$medalAbr];
             $sql = "INSERT INTO decoration (character_id, award_id, date, awarded, recommendation_date) VALUES ".
                 "($characterID, $awardID, '$missionDate', false, '$missionDate')";
             mysqli_query($dbx, $sql);
+            echo " awarded ";
         }
     } else if(!$awardedArray[$medalAbr]["awarded"]){
 
@@ -683,8 +741,10 @@ function addRemoveDecoration($medalAbr, $criteria, $decorationsArray, $awardedAr
             $decorationID = $awardedArray[$medalAbr]["id"];
             $sql = "DELETE FROM decoration WHERE id=$decorationID";
             mysqli_query($dbx, $sql);
+            echo " revoked ";
         }
     }
+    echo " ============ ";
 }
 
 function getRankValueAtMission($memberID, $missionID, $dbx){

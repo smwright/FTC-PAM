@@ -1,9 +1,10 @@
 <template>
   <div class="CampaignInfoMissions">
     <DivLinkButton
+      v-if="campaign[0] !== undefined"
       v-for="(mission) in campaign_missions"
       v-bind:key="mission.id"
-      v-bind="{routeName: 'MissionInfo', routeParams: {mission_id: mission.id}}"
+      v-bind="{routeName: 'MissionSynop', routeParams: {mission_id: mission.id, depl_unit_id: campaign[0].root_unit_id}}"
     >
       <MissionHeader v-bind="mission"></MissionHeader>
     </DivLinkButton>
@@ -44,7 +45,8 @@ export default {
   computed: {
 
     ...mapState("missionStore", {
-      campaign_missions: state => state.missions
+      campaign_missions: state => state.missions,
+      campaign: state => state.campaign
     })
   }
 }

@@ -31,33 +31,57 @@
         <EditReportLW v-if="report_info.faction==1" v-bind="report_info"></EditReportLW>
         <EditReportRAF v-else-if="report_info.faction==2" v-bind="report_info"></EditReportRAF>
         <EditReportVVS v-else-if="report_info.faction==3" v-bind="report_info"></EditReportVVS>
+        <EditReportRA v-else-if="report_info.faction==4" v-bind="report_info"></EditReportRA>
       </div>
       <br>
       <div class="typed-on-paper" v-if="report_loaded">
         <EditClaimSlipLW v-if="report_info.faction==1" v-bind="report_info"></EditClaimSlipLW>
         <EditClaimSlipRAF v-else-if="report_info.faction==2" v-bind="report_info"></EditClaimSlipRAF>
         <EditClaimSlipVVS v-else-if="report_info.faction==3" v-bind="report_info"></EditClaimSlipVVS>
+        <EditClaimSlipRA v-else-if="report_info.faction==4" v-bind="report_info"></EditClaimSlipRA>
       </div>
     </template>
 
     <!--This part is for showing the report and claim slip -->
 
     <template v-else>
-      <div class="clearfix container">
-        <button v-if="this.show_edit_button" v-on:click="toggleEdit" class="float-right">Edit report</button>
+      <div v-if="this.show_edit_button" class="clearfix container">
+        <button v-on:click="toggleEdit" class="float-right">Edit report</button>
       </div>
+
+      <div class="clearfix container">
+        <div v-if="this.show_badgers_button" class="float-right">
+          <button v-on:click="awardRevokeBadgers" class="float-right">{{ this.award_badgers_text.button_text }}</button>
+          <span class="float-right padding-2-10">{{ this.award_badgers_text.info_text }}</span>
+        </div>
+
+        <div class="float-left">
+          <!--<span>The author received {{ this.awarded_badgers_list.length }} Badgers.</span>-->
+          <HideableDiv
+            v-bind:changing-button="false"
+          >
+            <template slot="buttonHidden">
+              <span class="donor-button">This report earned {{ this.awarded_badgers_list.length }} Badgers.</span>
+            </template>
+            <span>Badgers received from: {{ this.awarded_badgers_list.map(function (item){return item.response_callsign;}).join(",") }}</span>
+          </HideableDiv>
+        </div>
+
+      </div>
+
       <!--<template v-if="report_info != undefined && report_details != undefined">-->
       <div class="typed-on-paper" v-if="report_loaded">
         <ReportLW v-if="report_info.faction==1" v-bind="report_info"></ReportLW>
         <ReportRAF v-else-if="report_info.faction==2" v-bind="report_info"></ReportRAF>
         <ReportVVS v-else-if="report_info.faction==3" v-bind="report_info"></ReportVVS>
+        <ReportRA v-else-if="report_info.faction==4" v-bind="report_info"></ReportRA>
       </div>
       <br>
       <div class="typed-on-paper" v-if="report_loaded">
         <ClaimSlipLW v-if="report_info.faction==1" v-bind="report_info"></ClaimSlipLW>
         <ClaimSlipRAF v-else-if="report_info.faction==2" v-bind="report_info"></ClaimSlipRAF>
         <ClaimSlipVVS v-else-if="report_info.faction==3" v-bind="report_info"></ClaimSlipVVS>
-
+        <ClaimSlipRA v-else-if="report_info.faction==4" v-bind="report_info"></ClaimSlipRA>
       </div>
 
       <template v-else>
@@ -71,15 +95,19 @@
 import ReportLW from "./ReportLW"
 import ReportRAF from "./ReportRAF"
 import ReportVVS from "./ReportVVS"
+import ReportRA from "./ReportRA"
 import EditReportLW from "./EditReportLW"
 import EditReportRAF from "./EditReportRAF"
 import EditReportVVS from "./EditReportVVS"
+import EditReportRA from "./EditReportRA"
 import ClaimSlipRAF from "./ClaimSlipRAF"
 import EditClaimSlipRAF from "./EditClaimSlipRAF"
 import ClaimSlipLW from "./ClaimSlipLW"
 import EditClaimSlipLW from "./EditClaimSlipLW"
 import ClaimSlipVVS from "./ClaimSlipVVS"
 import EditClaimSlipVVS from "./EditClaimSlipVVS"
+import ClaimSlipRA from "./ClaimSlipRA"
+import EditClaimSlipRA from "./EditClaimSlipRA"
 import HideableDiv from "../basic_comp/HideableDiv"
 import { mapState, mapGetters } from "vuex"
 
@@ -94,11 +122,15 @@ export default {
     ReportLW,
     ReportRAF,
     ReportVVS,
+    ReportRA,
     EditReportLW,
     EditReportRAF,
     EditReportVVS,
+    EditReportRA,
     ClaimSlipVVS,
     EditClaimSlipVVS,
+    EditClaimSlipRA,
+    ClaimSlipRA,
     HideableDiv
   },
   mounted () {
@@ -131,6 +163,36 @@ export default {
         && this.report_info != undefined
         && this.report_info.member_id == this.user_id) ;
     },
+
+    show_badgers_button: function () {
+      return (this.report_info.member_id != this.user_id
+       && this.user_id !== 0);
+    },
+
+    award_badgers_text: function () {
+      let member_report_response = this.filterByKeys("report_response",
+        {
+          report_id: this.$route.params.report_id,
+          member_id: this.user_id,
+        }
+      );
+      if(member_report_response.length > 0){
+        return({
+          info_text: "You gave the author some Badgers. Changed your mind?",
+          button_text: "Take back Badgers"
+        })
+      } else {
+        return({
+          info_text: "Like this report?",
+          button_text: "Give Badgers"
+        })
+      }
+    },
+
+    awarded_badgers_list: function () {
+      return this.filterByKey("report_response", "report_id", this.$route.params.report_id);
+    },
+
     ...mapState("missionStore", {
       report_info: state => state.report,
       report_details: state => state.report_details,
@@ -138,7 +200,9 @@ export default {
 
     ...mapGetters("missionStore", [
       "missionById",
-      "missionStatusById"
+      "missionStatusById",
+      "filterByKey",
+      "filterByKeys"
     ])
   },
   watch: {
@@ -210,6 +274,16 @@ export default {
           this.info_text = "ERROR: "+error;
 
         });
+    },
+
+    awardRevokeBadgers: async function () {
+
+      this.$store.dispatch('missionStore/awardRevokeBadgers',
+        {
+          caller: this.$options.name,
+          member_id: this.user_id,
+        });
+
     }
 
   }
@@ -227,4 +301,11 @@ export default {
   padding: 5px;
 }
 
+.donor-button {
+  cursor: pointer;
+}
+
+.donor-button:hover {
+  color: #F28900;
+}
 </style>

@@ -84,18 +84,56 @@
               <template slot="buttonVisible">
                 <button>Hide briefing form</button>
               </template>
-              <div>
-                <template v-for="(faction, index) in factionStatus">
-                  <input type="radio" v-bind:value="index" v-model="briefing_faction">
-                  <label v-if="index === 0">General</label>
-                  <label>{{faction.long}}</label>
-                </template>
-                <span>b-id: {{ selected_briefing }}</span>
+              <div class="clearfix">
+                <div>
+                  <template v-for="(faction, index) in factionStatus">
+                    <input type="radio" v-bind:value="index" v-model="briefing_faction">
+                    <label v-if="index === 0">General</label>
+                    <label>{{faction.long}}</label>
+                  </template>
+                </div>
+                <!--<span>b-id: {{ selected_briefing }}</span>-->
+
+                <HideableDiv v-bind:changing-button="true">
+                  <template slot="buttonHidden">
+                    <button>Show Markdown help</button>
+                  </template>
+                  <template slot="buttonVisible">
+                    <button>Hide Markdown help</button>
+                  </template>
+                  <MarkdownHelp class="typed-on-paper"></MarkdownHelp>
+                </HideableDiv>
+
               </div>
               <div>
-                <textarea v-model="mission_briefing" class="textarea-style"></textarea>
+                <textarea
+                  v-model="mission_briefing"
+                  class="briefing-form textarea-style"></textarea>
+              </div>
+              <div class="briefing-preview">
+                <TextWithImage
+                  class="typed-on-paper"
+                  v-bind:allow_markdown="true"
+                  v-bind:original_text="this.decodeHTML(mission_briefing)"
+                ></TextWithImage>
               </div>
             </HideableDiv>
+
+            <div>
+              <label class="">Front image:</label>
+              <div class="clearfix">
+                <ImageUpload
+                  class="front-image float-left"
+                  v-model="front_image"
+                  savePath="/assets/images/front_images/"
+                >
+                </ImageUpload>
+                <div class="float-left padding-10">
+                  <p v-if="front_image != null">Image URL: {{ front_image.getAll('imageURL') }}</p>
+                  <button v-on:click="clearFrontImage">Clear image</button>
+                </div>
+              </div>
+            </div>
 
             <!--Delete button-->
             <div class="clearfix">
@@ -118,6 +156,9 @@ import statConv from "../../resource/statusConverter"
 import stringConv from "../../resource/stringConverter"
 import SwitchableDiv from "../basic_comp/SwitchableDiv"
 import MissionHeader from "../campaign/MissionHeader"
+import ImageUpload from "../basic_comp/ImageUpload"
+import TextWithImage from "../basic_comp/TextWithImages"
+import MarkdownHelp from "../basic_comp/MarkdownHelp"
 
 export default {
   name: "CampaignMissionsComp",
@@ -125,7 +166,10 @@ export default {
     SwitchableDiv,
     DatePicker,
     HideableDiv,
-    MissionHeader
+    MissionHeader,
+    ImageUpload,
+    TextWithImage,
+    MarkdownHelp
   },
   mixins: [
     statConv,
@@ -208,7 +252,6 @@ export default {
 
     mission_status: {
       get () {
-
         var mission = this.$store.getters['campaignAdmin/missionsById'](this.mission_id);
         return (mission !== undefined) ? mission.mission_status : "";
       },
@@ -242,9 +285,39 @@ export default {
             text: this.encodeHTML(value)
           });
       }
-    }
-  },
+    },
 
+    front_image: {
+      get() {
+        console.log("GEtting msision "+this.mission_id)
+        var mission = this.$store.getters['campaignAdmin/missionsById'](this.mission_id);
+        console.log("M;MSIO "+mission);
+        if(mission.front_image instanceof FormData) {
+
+          return mission.front_image;
+        } else {
+          if(!mission.front_image){
+            return null;
+          } else {
+            let formData = new FormData();
+            formData.append("imageURL", mission.front_image);
+            return formData;
+          }
+        }
+        return null;
+      },
+      set(value) {
+        this.$store.commit('campaignAdmin/updateValue',
+          {
+            array_name: "missions",
+            id_column_name: "id",
+            id_column_value: this.mission_id,
+            update_column_name: "front_image",
+            update_column_value: value
+          });
+      }
+    },
+  },
   methods: {
 
     deleteMission: function () {
@@ -254,6 +327,17 @@ export default {
       }
 
       this.$store.commit('campaignAdmin/deleteMission', {id: this.mission_id});
+    },
+
+    clearFrontImage: function () {
+      this.$store.commit('campaignAdmin/updateValue',
+        {
+          array_name: "missions",
+          id_column_name: "id",
+          id_column_value: this.mission_id,
+          update_column_name: "front_image",
+          update_column_value: null
+        });
     }
   },
 
@@ -268,6 +352,22 @@ export default {
 
 div {
   margin: 2px 0px;
+}
+
+.front-image {
+  width: 425px;
+  min-height: 163px;
+}
+
+.briefing-form {
+  width: 100%;
+  height: 25em;
+}
+
+.briefing-preview {
+  resize: vertical;
+  overflow: auto;
+  height: 50em;
 }
 
 </style>

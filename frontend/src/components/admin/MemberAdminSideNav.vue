@@ -48,19 +48,41 @@
       v-bind:showPassedAway="showPassedAway"
       v-bind:searchString="searchString"
     ></MemberAdminSideNavComp>
+    <HideableDiv>
+      <template
+        slot="buttonHidden">
+        <div class="unit-buttons div-button clearfix">
+          <span>
+            Lost & Found
+          </span>
+        </div>
+      </template>
+      <DivLinkButton
+        class="member-buttons"
+        v-for="member in memberPhantoms(searchString)"
+        v-bind:key="member.id"
+        v-bind="{routeName: 'AdminMember', routeParams: {member_id: member.member_id}}"
+      >
+        {{ member.callsign }}
+      </DivLinkButton>
+
+    </HideableDiv>
+
   </div>
 </template>
 
 <script>
-import { mapState } from "vuex"
+import { mapState, mapGetters } from "vuex"
 import MemberAdminSideNavComp from "./MemberAdminSideNavComp"
 import DivLinkButton from "../basic_comp/DivLinkButton"
+import HideableDiv from "../basic_comp/HideableDiv"
 
 export default {
   name: "MemberAdminSideNav",
   components: {
     MemberAdminSideNavComp,
-    DivLinkButton
+    DivLinkButton,
+    HideableDiv
   },
   mounted () {
 
@@ -107,7 +129,11 @@ export default {
 
     ...mapState('memberAdmin', {
       acg_units: state => state.acg_units
-    })
+    }),
+
+    ...mapGetters("memberAdmin", [
+       "memberPhantoms",
+    ])
   },
   methods: {
 
