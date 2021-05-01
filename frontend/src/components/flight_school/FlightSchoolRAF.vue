@@ -253,4 +253,5 @@
   .buttonPlatformImage {
     width: 5%;
 
-  }</style>
+  }
+</style>
