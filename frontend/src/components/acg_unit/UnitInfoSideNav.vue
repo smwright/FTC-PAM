@@ -26,38 +26,41 @@
         <div class="div-button heading">Historical units</div>
       </template>
 
-      <div class="search-div">
-        <div class="container narrow">
-          <label>Search unit:</label>
-          <input v-model="searchString">
-        </div>
-        <div
-          class="div-button narrow"
-          v-on:click="switchShowLW()"
-          v-bind:class="{luftwaffe: showLW}"
-        >{{ showLWButtonText }}</div>
-        <div
-          class="div-button narrow"
-          v-on:click="switchShowRAF()"
-          v-bind:class="{raf: showRAF}"
-        >{{ showRAFButtonText }}</div>
-        <div
-          class="div-button narrow"
-          v-on:click="switchShowVVS()"
-          v-bind:class="{vvs: showVVS}"
-        >{{ showVVSButtonText }}</div>
-      </div>
+      <HistUnitSideNav>
+      </HistUnitSideNav>
 
-      <DivLinkButton
-        class="unit-buttons"
-        v-for="unit in hist_units_filtered"
-        v-bind:class="{ luftwaffe: (unit.faction == 1), raf: (unit.faction == 2), vvs: (unit.faction == 3)}"
-        v-bind:key="unit.id"
-        v-bind="{routeName: 'HistUnitInfo', routeParams: {unit_id: unit.id}}"
-      >
-        <img class="unitEmblem" :src="unit.image"/>
-        <span class="heading">{{ unit.name }}</span>
-      </DivLinkButton>
+      <!--<div class="search-div">-->
+        <!--<div class="container narrow">-->
+          <!--<label>Search unit:</label>-->
+          <!--<input v-model="searchString">-->
+        <!--</div>-->
+        <!--<div-->
+          <!--class="div-button narrow"-->
+          <!--v-on:click="switchShowLW()"-->
+          <!--v-bind:class="{luftwaffe: showLW}"-->
+        <!--&gt;{{ showLWButtonText }}</div>-->
+        <!--<div-->
+          <!--class="div-button narrow"-->
+          <!--v-on:click="switchShowRAF()"-->
+          <!--v-bind:class="{raf: showRAF}"-->
+        <!--&gt;{{ showRAFButtonText }}</div>-->
+        <!--<div-->
+          <!--class="div-button narrow"-->
+          <!--v-on:click="switchShowVVS()"-->
+          <!--v-bind:class="{vvs: showVVS}"-->
+        <!--&gt;{{ showVVSButtonText }}</div>-->
+      <!--</div>-->
+
+      <!--<DivLinkButton-->
+        <!--class="unit-buttons"-->
+        <!--v-for="unit in hist_units_filtered"-->
+        <!--v-bind:class="{ luftwaffe: (unit.faction == 1), raf: (unit.faction == 2), vvs: (unit.faction == 3)}"-->
+        <!--v-bind:key="unit.id"-->
+        <!--v-bind="{routeName: 'HistUnitInfo', routeParams: {unit_id: unit.id}}"-->
+      <!--&gt;-->
+        <!--<img class="unitEmblem" :src="unit.image"/>-->
+        <!--<span class="heading">{{ unit.name }}</span>-->
+      <!--</DivLinkButton>-->
     </HideableDiv>
 
   </div>
@@ -68,19 +71,21 @@ import { mapState, mapGetters } from "vuex"
 import statusConv from "../../resource/statusConverter"
 import DivLinkButton from "../basic_comp/DivLinkButton"
 import HideableDiv from "../basic_comp/HideableDiv"
+import HistUnitSideNav from "../acg_unit/HistUnitSideNav"
 
 export default {
   name: "UnitInfoSideNav",
   components: {
     DivLinkButton,
-    HideableDiv
+    HideableDiv,
+    HistUnitSideNav
   },
   mixins: [
     statusConv
   ],
   mounted () {
 
-    this.$store.dispatch('unitInfo/loadStoreData',
+    this.$store.dispatch('unitAdmin/loadStoreData',
       {
         caller: this.$options.name,
         call_object: {
@@ -92,7 +97,7 @@ export default {
       console.log(error.message);
     });
 
-    this.$store.dispatch('unitInfo/loadStoreData',
+    this.$store.dispatch('unitAdmin/loadStoreData',
       {
         caller: this.$options.name,
         call_object: {
@@ -104,7 +109,7 @@ export default {
       console.log(error.message);
     });
 
-    this.$store.dispatch('unitInfo/loadStoreData',
+    this.$store.dispatch('unitAdmin/loadStoreData',
       {
         caller: this.$options.name,
         call_object: {
@@ -119,70 +124,70 @@ export default {
   data() {
     return {
 
-      showLW: true,
-      showRAF: true,
-      showVVS: true,
-      searchString: "",
+      // showLW: true,
+      // showRAF: true,
+      // showVVS: true,
+      // searchString: "",
     }
   },
   computed: {
 
-    showLWButtonText: function () {
+    // showLWButtonText: function () {
+    //
+    //   return this.showLW ? "Hide "+this.factionStatus[1].long : "Show "+this.factionStatus[1].long
+    // },
+    //
+    // showRAFButtonText: function () {
+    //
+    //   return this.showRAF ? "Hide "+this.factionStatus[2].long : "Show "+this.factionStatus[2].long
+    // },
+    //
+    // showVVSButtonText: function () {
+    //
+    //   return this.showVVS ? "Hide "+this.factionStatus[3].long : "Show "+this.factionStatus[3].long
+    // },
+    //
+    // hist_units_filtered: function () {
+    //
+    //   let showLW = this.showLW;
+    //   let showRAF = this.showRAF;
+    //   let showVVS = this.showVVS;
+    //   let hist_units = this.filterByString("hist_units", "name", this.searchString);
+    //   return hist_units.filter(
+    //     function (unit) {
+    //       return (
+    //         (showLW && unit.faction === 1) ||
+    //         (showRAF && unit.faction === 2) ||
+    //         (showVVS && unit.faction === 3)
+    //       );
+    //     });
+    //
+    //   return hist_units;
+    // },
 
-      return this.showLW ? "Hide "+this.factionStatus[1].long : "Show "+this.factionStatus[1].long
-    },
-
-    showRAFButtonText: function () {
-
-      return this.showRAF ? "Hide "+this.factionStatus[2].long : "Show "+this.factionStatus[2].long
-    },
-
-    showVVSButtonText: function () {
-
-      return this.showVVS ? "Hide "+this.factionStatus[3].long : "Show "+this.factionStatus[3].long
-    },
-
-    hist_units_filtered: function () {
-
-      let showLW = this.showLW;
-      let showRAF = this.showRAF;
-      let showVVS = this.showVVS;
-      let hist_units = this.filterByString("hist_units", "name", this.searchString);
-      return hist_units.filter(
-        function (unit) {
-          return (
-            (showLW && unit.faction === 1) ||
-            (showRAF && unit.faction === 2) ||
-            (showVVS && unit.faction === 3)
-          );
-        });
-
-      return hist_units;
-    },
-
-    ...mapState('unitInfo', {
+    ...mapState('unitAdmin', {
       acg_units: state => state.acg_units,
-      hist_units: state => state.hist_units
+      // hist_units: state => state.hist_units
     }),
 
-    ...mapGetters("unitInfo", [
+    ...mapGetters("unitAdmin", [
       "filterByKey",
       "filterByString"
     ])
   },
   methods: {
 
-    switchShowLW: function () {
-      this.showLW = !this.showLW;
-    },
-
-    switchShowRAF: function () {
-      this.showRAF = !this.showRAF;
-    },
-
-    switchShowVVS: function () {
-      this.showVVS = !this.showVVS;
-    },
+    // switchShowLW: function () {
+    //   this.showLW = !this.showLW;
+    // },
+    //
+    // switchShowRAF: function () {
+    //   this.showRAF = !this.showRAF;
+    // },
+    //
+    // switchShowVVS: function () {
+    //   this.showVVS = !this.showVVS;
+    // },
 
   }
 }

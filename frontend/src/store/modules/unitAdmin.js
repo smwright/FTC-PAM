@@ -3,13 +3,16 @@ import Vue from "vue"
 
 const state = {
 
-  // acg_units: [],
-  // decorations: [],
+  acg_units: [],
+  hist_units: [],
+  campaign_units: [],
+  promotions: [],
   assets: [],
   r_assets: [],
-  campaign_units: [],
   member_info: [],
+  member_info_current: [],
   member_r_assets: [],
+  promotion_log: [],
   rank_lookup: [],
   mission_unit_active_members: [],
   mission_unit_attending_members_count: []
@@ -50,6 +53,19 @@ const getters = {
 
   },
 
+  filterByString: (state) => (table, keyName, searchValue) => {
+
+    return state[table].filter(
+      function (item) {
+        return (searchValue === "" || item[keyName].toLowerCase().includes(searchValue.toLowerCase()));
+      });
+  },
+
+  nestedData: (state) => (table) => {
+
+    return Vue.prototype.$dbCon.nestData(state[table]);
+  },
+
 }
 
 // mutations
@@ -61,6 +77,14 @@ const mutations = {
     // array_name: Name of the array to set
     // array_data: Date to store in the array
     state[payload.array_name] = payload.array_data;
+  },
+
+  addToDataArray (state, payload) {
+    // Needed values:
+    // array_name: Name of the array to add to
+    // array_data: Date to store add to the array
+    state[payload.array_name] = state[payload.array_name].concat(payload.array_data);
+
   },
 
   addToArray (state, payload) {
@@ -123,6 +147,83 @@ const  actions = {
           reject(error.message);
         });
     })
+  },
+
+  loadStoreDataAdd(context, payload) {
+
+    // payload.caller: Name of the calling component,
+    // payload.call_object: Object specifying the view/table to be loaded, plus additional variables that
+    //                      customise the database call, i.e. filtering, ordering, ...
+    // payload.data_array_name: Name of the array in the store to save the data
+    return new Promise(function (resolve, reject) {
+      Vue.prototype.$dbCon.requestViewData("unitAdmin on behalf of " + payload.caller, payload.call_object)
+        .then(response => {
+
+          context.commit("addToDataArray",
+            {
+              array_name: payload.data_array_name,
+              array_data: response
+            });
+          resolve(response);
+
+        })
+        .catch(error => {
+          reject(error);
+        });
+    })
+  },
+
+  loadUnitInfo(context, payload) {
+
+    return new Promise( async function (resolve, reject) {
+
+      await context.dispatch('loadStoreData',
+        {
+          caller: payload.caller,
+          call_object: {
+            view: "campaign_info_unit",
+            // acg_unit_id: payload.acg_unit_id
+          },
+          data_array_name: "campaign_units"
+
+        }
+      ).catch(error => {
+        reject(error);
+      });
+
+      await context.dispatch('loadStoreData',
+        {
+          caller: payload.caller,
+          call_object: {
+            view: "campaign_unit_member_info",
+            acg_unit_id: payload.acg_unit_id
+          },
+          data_array_name: "member_info"
+
+        }
+      ).catch(error => {
+        reject(error);
+      });
+
+      await context.dispatch('loadStoreData',
+        {
+          caller: payload.caller,
+          call_object: {
+            view: "campaign_unit_member_info_current",
+            acg_unit_id: payload.acg_unit_id
+          },
+          data_array_name: "member_info_current"
+
+        }
+      ).catch(error => {
+        reject(error.message);
+      });
+
+      resolve();
+
+
+    })
+
   },
 
   sendMemberRosterAssets(context, payload) {

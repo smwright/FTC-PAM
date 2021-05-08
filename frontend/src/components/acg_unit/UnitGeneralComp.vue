@@ -59,7 +59,7 @@ export default {
   name: "UnitGeneralComp",
   computed: {
 
-    ...mapState('unitInfo', {
+    ...mapState('unitAdmin', {
       acg_units: state => state.acg_units,
       hist_units: state => state.hist_units
     })

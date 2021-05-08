@@ -49,7 +49,7 @@ import AdminUnitOverview from '../components/admin/UnitAdminOverview'
 import AdminUnit from '../components/admin/UnitAdmin'
 import AdminMember from '../components/admin/Member'
 import AdminCampaign from '../components/admin/Campaign'
-import AdminHistUnit from '../components/admin/HistUnits'
+import AdminHistUnit from '../components/admin/HistUnit'
 import Assets from '../components/admin/Assets'
 import RosterAssets from '../components/admin/RosterAsset'
 
@@ -329,7 +329,7 @@ const router = new VueRouter({
       meta: {requiresAdmin: true},
     },
     {
-      path: '/admin/hist-unit',
+      path: '/admin/hist-unit/:unit_id',
       name: 'AdminHistUnit',
       components: {
         default: AdminHistUnit,

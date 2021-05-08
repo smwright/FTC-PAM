@@ -117,7 +117,7 @@ export default {
     },
     store_module: {
       type: [String],
-      default: "unitInfo"
+      default: "unitAdmin"
     },
     sepia_images: {
       type: Boolean,

@@ -16,7 +16,7 @@ export default {
   components: {UnitBaseComp},
   mounted () {
 
-    this.$store.dispatch('unitInfo/loadStoreData',
+    this.$store.dispatch('unitAdmin/loadStoreData',
       {
         caller: this.$options.name,
         call_object: {
@@ -42,7 +42,7 @@ export default {
       console.log(error.message);
     });
 
-    this.$store.dispatch('unitInfo/loadStoreData',
+    this.$store.dispatch('unitAdmin /loadStoreData',
       {
         caller: this.$options.name,
         call_object: {
@@ -55,7 +55,7 @@ export default {
       console.log(error.message);
     });
 
-    this.$store.dispatch('unitInfo/loadStoreData',
+    this.$store.dispatch('unitAdmin/loadStoreData',
       {
         caller: this.$options.name,
         call_object: {
@@ -76,7 +76,7 @@ export default {
   computed: {
 
 
-    ...mapGetters("unitInfo", [
+    ...mapGetters("unitAdmin", [
       "nestedData",
     ])
 

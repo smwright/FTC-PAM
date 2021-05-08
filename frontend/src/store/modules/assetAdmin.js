@@ -120,7 +120,7 @@ const  actions = {
     //                      customise the database call, i.e. filtering, ordering, ...
     // payload.data_array_name: Name of the array in the store to save the data
     return new Promise(function (resolve, reject) {
-      Vue.prototype.$dbCon.requestViewData("unitInfo on behalf of " + payload.caller, payload.call_object)
+      Vue.prototype.$dbCon.requestViewData("assetAdmin on behalf of " + payload.caller, payload.call_object)
         .then(response => {
 
           context.commit("setDataArray",

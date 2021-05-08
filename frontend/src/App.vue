@@ -634,6 +634,11 @@ select {
   border-radius: 15px;
 }
 
+.nofaction {
+  background-color: rgba(255, 255, 255, 0.25);
+  border-radius: 15px;
+}
+
 .luftwaffe {
    background-color: rgba(0,0,102,0.25);
    border-radius: 15px;

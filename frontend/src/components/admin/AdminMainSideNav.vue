@@ -43,9 +43,21 @@
     <!--       -->
     <!--HISTORICAL UNITS-->
     <!--       -->
-    <DivLinkButton v-bind="{routeName: 'AdminHistUnit'}">
-      <div class="heading">Historical Units</div>
-    </DivLinkButton>
+
+    <!--<DivLinkButton v-bind="{routeName: 'AdminHistUnit'}">-->
+      <!--<div class="heading">Historical Units</div>-->
+    <!--</DivLinkButton>-->
+    <HideableDiv>
+      <template slot="buttonHidden">
+        <div class="div-button heading">Historical units</div>
+      </template>
+
+      <HistUnitSideNav
+        routeName="AdminHistUnit"
+      >
+      </HistUnitSideNav>
+
+    </HideableDiv>
 
 
     <!--<div class="side-nav-heading heading">Utilities</div>-->
@@ -74,6 +86,7 @@
   import HideableDiv from "../basic_comp/HideableDiv"
   import MemberAdminSideNav from "./MemberAdminSideNav"
   import UnitAdminSideNav from "./UnitAdminSideNav"
+  import HistUnitSideNav from "../acg_unit/HistUnitSideNav"
 
   export default {
     name: "AdminMainSideNav",
@@ -81,7 +94,8 @@
       DivLinkButton,
       HideableDiv,
       MemberAdminSideNav,
-      UnitAdminSideNav
+      UnitAdminSideNav,
+      HistUnitSideNav
     },
     mounted () {
       //Loads campaigns if there's only the NEW CAMPAIGN is in campaign store
@@ -89,10 +103,18 @@
         this.$store.dispatch('campaignAdmin/loadCampaigns', {caller: this.$options.name});
       }
 
-      // //Loads campaigns if there's only the NEW CAMPAIGN is in campaign store
-      // if (this.$store.state.campaignAdmin.campaigns.length == 1){
-      //   this.$store.dispatch('campaignAdmin/loadCampaigns', {caller: this.$options.name});
-      // }
+
+      this.$store.dispatch('unitAdmin/loadStoreData',
+        {
+          caller: this.$options.name,
+          call_object: {
+            view: "hist_unit_info",
+          },
+          data_array_name: "hist_units"
+        }
+      ).catch(error => {
+        console.log(error.message);
+      });
 
     },
     computed: {

@@ -111,11 +111,11 @@ export default {
       return return_array;
     },
 
-    ...mapState('unitInfo', {
+    ...mapState('unitAdmin', {
 
     }),
 
-    ...mapGetters("unitInfo", [
+    ...mapGetters("unitAdmin", [
       "findByKey",
       "filterByKey",
       "filterByKeys"
@@ -129,7 +129,7 @@ export default {
       this.unit_id = id;
       if(id > 0){
 
-        await this.$store.dispatch('unitInfo/loadUnitInfo',
+        await this.$store.dispatch('unitAdmin/loadUnitInfo',
           {
             caller: this.$options.name,
             acg_unit_id: id
