@@ -8,6 +8,7 @@ VIEW `character_latest_report` AS
         `career_character`.`personified_by` AS `member_id`,
         `career_character`.`first_name` AS `first_name`,
         `career_character`.`last_name` AS `last_name`,
+        `career_character`.`portrait_seed` AS `portrait_seed`,
         `report`.`deployed_unit_id` AS `deployed_unit_id`,
         `deployed_unit`.`acg_unit_id` AS `acg_unit_id`,
         `deployed_unit`.`hist_unit_id` AS `hist_unit_id`,
