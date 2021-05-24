@@ -3,11 +3,11 @@
     <div>
       <hr>
       <span>Aerial Claims:</span>
-      <ClaimRAF
+      <ClaimRA
         v-for="aerial_claim in aerial_claims"
         v-bind:key="aerial_claim.claim_id"
         v-bind="aerial_claim"
-      ></ClaimRAF>
+      ></ClaimRA>
     </div>
     <div>
       <hr>
@@ -36,7 +36,7 @@
 <script>
   import stringConv from "../../resource/stringConverter"
   import statConv from "../../resource/statusConverter"
-  import ClaimRAF from "./ClaimRAF"
+  import ClaimRA from "./ClaimRA"
   import ClaimGround from "./ClaimGround"
   import Comment from "./Comment"
   import { mapState, mapGetters } from "vuex"
@@ -44,7 +44,7 @@
   export default {
     name: "ClaimSlipRA",
     components: {
-      ClaimRAF,
+      ClaimRA,
       ClaimGround,
       Comment
     },
