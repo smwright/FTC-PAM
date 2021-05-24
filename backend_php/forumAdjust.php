@@ -184,6 +184,10 @@ function updateMemberForumGroups($memberId, $dbx) {
             // Axis - LW
             $opp_faction_group = array(14);
             $own_faction_group = array(15);
+        } else if($faction == 4) {
+            // Axis - RA
+            $opp_faction_group = array(14);
+            $own_faction_group = array(15);
         } else {
             // RESERVE UNITS
             if($user_unit_forum_group == 61){
@@ -359,7 +363,13 @@ function adjustForumGroup($row, $dbx){
         $own_faction_group = 15;
         $opposing_faction_group = 14;
         $colour = '000066';
+    } else if($faction == 4) {
+        // Axis - RA
+        $own_faction_group = 15;
+        $opposing_faction_group = 14;
+        $colour = '000066';
     }
+
     // colours: Axis = 000066
     // colours: Allies = 990000
 
