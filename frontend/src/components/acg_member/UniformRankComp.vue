@@ -1,30 +1,19 @@
 <template>
-  <div>
-    <!-- Simple single component style-->
-    <div
-      v-if="single_component"
-    >
-      <div class="uniform-images">
-        <img  v-bind:src="rankImage(faction)"/>
-      </div>
-      <div class="text-align-center">
-        {{rankName(faction)}}
-      </div>
-    </div>
-
-    <!-- Predefined styles for rosters -->
-    <div
-      v-else
-      :class="[showBig ? 'uniform1' : 'uniform2']"
-    >
-      <template v-if="faction != 0">
-        <img class="uniform-images" v-bind:src="uniformImage"/>
-        <img class="uniform-images" v-bind:src="rankImage(faction)"/>
-        <img
-          v-if="showWings"
-          class="uniform-images" v-bind:src="wingsImage"/>
-      </template>
-      <template v-else>
+  <div :class="[showBig ? 'uniform1' : 'uniform2']">
+    <template v-if="faction != 0">
+      <CharacterPortrait
+        class="inline-block portrait"
+        v-bind:faction="faction"
+        v-bind:seed="portrait_seed"
+      ></CharacterPortrait>
+      <!--<img class="uniform-images" v-bind:src="uniformImage"/>-->
+      <img class="inline-block uniform-images" v-bind:src="rankImage(faction)"/>
+      <img
+        v-if="showWings"
+        class="uniform-images" v-bind:src="wingsImage"/>
+    </template>
+    <template v-else>
+      <div>
         <div>
           <div>
             Rank-value {{rank_real_value}}
@@ -63,10 +52,13 @@
 </template>
 
 <script>
-import {mapState, mapGetters} from "vuex"
+import CharacterPortrait from "../acg_member/CharacterPotraitComp"
 
 export default {
   name: "UniformRankComp",
+  components: {
+    CharacterPortrait
+  },
   props: {
 
     single_component: {
@@ -101,18 +93,28 @@ export default {
       type: [Number, String],
       default: 0
     },
+    portrait_seed: {
+      type: String,
+      default: ""
+    },
     rank_lookup: {
       type: Array,
       default: function () {
         return [];
       }
     },
+    character_decorations: {
+      type: Array,
+      default: function () {
+        return [];
+      }
+    }
   },
   computed: {
 
     showBig: function () {
       // return true;
-      return  this.faction == 0 || this.character_id > 0;
+      return  this.faction == 0 || this.character_id !== 0;
     },
 
     showWings: function () {
@@ -134,7 +136,12 @@ export default {
     wingsImage: function () {
 
       var baseURL = "/assets/images/";
-      var awards = this.filterByKey('character_decorations', 'character_id', this.character_id);
+      let character_id = this.character_id;
+      var awards = this.character_decorations.filter(
+        function (item) {
+          return item["character_id"] == character_id;
+        });
+
 
       if (this.faction === 1) {
 
@@ -174,10 +181,6 @@ export default {
       return undefined;
     },
 
-    ...mapGetters("memberInfo", [
-      "filterByKey"
-
-    ])
   },
   methods: {
 
@@ -240,10 +243,16 @@ export default {
 
 <style scoped>
 
+.portrait {
+  max-height: 100px;
+  horiz-align: center;
+  vertical-align: middle;
+}
+
 .uniform-images {
   max-height: 90px;
   horiz-align: center;
-  text-align: center;
+  vertical-align: middle;
 }
 
 .uniform1 {
