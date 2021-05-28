@@ -1,52 +1,66 @@
 <template>
-  <div :class="[showBig ? 'uniform1' : 'uniform2']">
-    <template v-if="faction != 0">
-      <CharacterPortrait
-        class="inline-block portrait"
-        v-bind:faction="faction"
-        v-bind:seed="portrait_seed"
-      ></CharacterPortrait>
-      <!--<img class="uniform-images" v-bind:src="uniformImage"/>-->
-      <img class="inline-block uniform-images" v-bind:src="rankImage(faction)"/>
-      <img
-        v-if="showWings"
-        class="uniform-images" v-bind:src="wingsImage"/>
+  <div>
+    <!-- Simple single component style-->
+    <template
+      v-if="single_component"
+    >
+      <div>
+        <img class="rank-images" v-bind:src="rankImage(faction)"/>
+      </div>
+      <div class="text-align-center">
+        {{rankName(faction)}}
+      </div>
     </template>
     <template v-else>
-      <div>
-        <div>
+      <div :class="[showBig ? 'uniform1' : 'uniform2']">
+        <template v-if="faction != 0">
+          <CharacterPortrait
+            v-if="show_portrait"
+            class="inline-block portrait"
+            v-bind:faction="faction"
+            v-bind:seed="portrait_seed"
+          ></CharacterPortrait>
+          <img v-else class="uniform-images" v-bind:src="uniformImage"/>
+          <img class="inline-block uniform-images" v-bind:src="rankImage(faction)"/>
+          <img
+            v-if="showWings"
+            class="uniform-images" v-bind:src="wingsImage"/>
+        </template>
+        <template v-else>
           <div>
-            Rank-value {{rank_real_value}}
-          </div>
+            <div>
+              Rank-value {{rank_real_value}}
+            </div>
 
-        </div>
-        <div class="clearfix">
-          <div class="float-left">
-            <img class="uniform-images" v-bind:src="rankImage(1)"/>
-            <div class="text-align-center">
-              {{rankAbbreviation(1)}}
-            </div>
           </div>
-          <div class="float-left">
-            <img class="uniform-images" v-bind:src="rankImage(2)"/>
-            <div class="text-align-center">
-              {{rankAbbreviation(2)}}
+          <div class="clearfix">
+            <div class="float-left">
+              <img class="uniform-images" v-bind:src="rankImage(1)"/>
+              <div class="text-align-center">
+                {{rankAbbreviation(1)}}
+              </div>
             </div>
-          </div>
-          <div class="float-left">
-            <img class="uniform-images" v-bind:src="rankImage(3)"/>
-            <div class="text-align-center">
-              {{rankAbbreviation(3)}}
+            <div class="float-left">
+              <img class="uniform-images" v-bind:src="rankImage(2)"/>
+              <div class="text-align-center">
+                {{rankAbbreviation(2)}}
+              </div>
             </div>
-          </div>
-          <div class="float-left">
-            <img class="uniform-images" v-bind:src="rankImage(4)"/>
-            <div class="text-align-center">
-              {{rankAbbreviation(4)}}
+            <div class="float-left">
+              <img class="uniform-images" v-bind:src="rankImage(3)"/>
+              <div class="text-align-center">
+                {{rankAbbreviation(3)}}
+              </div>
             </div>
-          </div>
+            <div class="float-left">
+              <img class="uniform-images" v-bind:src="rankImage(4)"/>
+              <div class="text-align-center">
+                {{rankAbbreviation(4)}}
+              </div>
+            </div>
 
-        </div>
+          </div>
+        </template>
       </div>
     </template>
   </div>
@@ -61,7 +75,6 @@ export default {
     CharacterPortrait
   },
   props: {
-
     single_component: {
       type: Boolean,
       default: false
@@ -98,6 +111,10 @@ export default {
       type: String,
       default: ""
     },
+    show_portrait: {
+      type: Boolean,
+      default: true
+    },
     rank_lookup: {
       type: Array,
       default: function () {
@@ -109,7 +126,8 @@ export default {
       default: function () {
         return [];
       }
-    }
+    },
+
   },
   computed: {
 
@@ -200,7 +218,6 @@ export default {
         )
 
         if(rank_obj == undefined) return "";
-
         rank_image = rank_obj.image;
 
       } else {
@@ -221,7 +238,7 @@ export default {
             && item.faction == faction;
         }
       )
-      if(rank_obj == undefined) return "";
+
       return rank_obj.abreviation;
     },
 
@@ -252,8 +269,13 @@ export default {
 
 .uniform-images {
   max-height: 90px;
-  horiz-align: center;
   vertical-align: middle;
+}
+
+.rank-images {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .uniform1 {

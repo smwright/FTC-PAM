@@ -4,7 +4,9 @@
 
       <div class="heading character-header">
         <span>{{ decodeHTML(rank_abreviation) }}</span>
-        <span>{{ decodeHTML(first_name) }} {{ decodeHTML(last_name) }}</span>
+        <span>{{ decodeHTML(first_name) }} </span>
+        <span v-if="callsign != null">'{{ decodeHTML(callsign) }}'</span>
+        <span>{{ decodeHTML(last_name) }}</span>
       </div>
 
       <div
@@ -71,6 +73,10 @@ export default {
       default: null
     },
     last_name: {
+      type: String,
+      default: null
+    },
+    callsign: {
       type: String,
       default: null
     },

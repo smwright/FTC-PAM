@@ -72,6 +72,7 @@
               v-bind:rank_real_value="rank_value"
               v-bind:rank_lookup ="ranks"
               v-bind:faction="1"
+              v-bind:show_portrait="false"
             ></UniformRankComp>
           </td>
           <td>
@@ -81,6 +82,7 @@
               v-bind:rank_real_value="rank_value"
               v-bind:rank_lookup ="ranks"
               v-bind:faction="2"
+              v-bind:show_portrait="false"
             ></UniformRankComp>
           </td>
           <td>
@@ -90,6 +92,7 @@
               v-bind:rank_real_value="rank_value"
               v-bind:rank_lookup ="ranks"
               v-bind:faction="3"
+              v-bind:show_portrait="false"
             ></UniformRankComp>
           </td>
         </tr>
