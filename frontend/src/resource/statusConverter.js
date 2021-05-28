@@ -225,7 +225,17 @@ export default {
         head: [1, 2, 3, 4, 5, 6, 7, 8],
         mouth: [1, 2, 5, 8, 9, 10, 11, 12, 14, 15, 16],
         nose: [1, 3, 7, 10],
-      }
+      },
+
+      ra_images: { //images for the Luftwaffe character portraits
+        background: [1, 2, 3, 4, 5, 6, 7],
+        ears: [1, 2, 3, 4, 5, 6, 7],
+        eyes: [1, 2, 3, 4, 5, 6],
+        hair: [1, 2, 3, 4, 5, 6, 7],
+        head: [1, 2],
+        mouth: [1, 2, 3, 4, 5, 6, 7],
+        nose: [1, 2, 3, 4, 5, 6, 7],
+      },
 
     }
   }

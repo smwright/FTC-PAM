@@ -67,7 +67,7 @@ export default {
       if(this.faction === 1) return "lw";
       if(this.faction === 2) return "raf";
       if(this.faction === 3) return "vvs";
-      if(this.faction === 4) return "lw";
+      if(this.faction === 4) return "ra";
       return null;
     },
 
@@ -88,8 +88,6 @@ export default {
       let ears_id = this.iseed[1];
       if(img_array.includes(ears_id)){
         return this.baseURL + this.img_path + "/ears/" + ears_id + ".png";
-      } else {
-        return this.baseURL + this.img_path + "/ears/" + img_array[0] + ".png";
       }
 
     },
@@ -99,8 +97,6 @@ export default {
       let eyes_id = this.iseed[2];
       if(img_array.includes(eyes_id)){
         return this.baseURL + this.img_path + "/eyes/" + eyes_id + ".png";
-      } else {
-        return this.baseURL + this.img_path + "/eyes/" + img_array[0] + ".png";
       }
 
     },
@@ -110,8 +106,6 @@ export default {
       let hair_id = this.iseed[3];
       if(img_array.includes(hair_id)){
         return this.baseURL + this.img_path + "/hair/" + hair_id + ".png";
-      } else {
-        return this.baseURL + this.img_path + "/hair/" + img_array[0] + ".png";
       }
 
     },
@@ -121,8 +115,6 @@ export default {
       let head_id = this.iseed[4];
       if(img_array.includes(head_id)){
         return this.baseURL + this.img_path + "/head/" + head_id + ".png";
-      } else {
-        return this.baseURL + this.img_path + "/head/" + img_array[0] + ".png";
       }
 
     },
@@ -132,8 +124,6 @@ export default {
       let mouth_id = this.iseed[5];
       if(img_array.includes(mouth_id)){
         return this.baseURL + this.img_path + "/mouth/" + mouth_id + ".png";
-      } else {
-        return this.baseURL + this.img_path + "/mouth/" + img_array[0] + ".png";
       }
 
     },
@@ -143,9 +133,7 @@ export default {
       let nose_id = this.iseed[6];
       if(img_array.includes(nose_id)){
         return this.baseURL + this.img_path + "/nose/" + nose_id + ".png";
-      } else {
-        return this.baseURL + this.img_path + "/nose/" + img_array[0] + ".png";
-      }
+      } 
 
     },
 
@@ -158,6 +146,7 @@ export default {
 
     getImage: function () {
 
+      console.log("seed: "+ this.seed);
       if(this.seed !== null | this.seed !== ""){
 
         let frame_offset = {x: 38, y:40};

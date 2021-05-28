@@ -1387,6 +1387,14 @@ const  actions = {
           // ------------------------------------------------------------------------
           claim_detail_response = await Vue.prototype.$dbCon.deleteData("missionStore on behalf of "+payload.caller,
             {table:"claim_vvs", payload: claim_detail_ids});
+        } else if (context.state.report.faction == 4) {
+
+          // ------------------------------------------------------------------------
+          // Deleting RA claims
+          // ------------------------------------------------------------------------
+          claim_detail_response = await Vue.prototype.$dbCon.deleteData("missionStore on behalf of "+payload.caller,
+            {table:"claim_ra", payload: claim_detail_ids});
+
         }
 
         // console.log("Claim: "+claim_response.message);
@@ -1583,6 +1591,17 @@ const  actions = {
 
 
         } else if (report.faction == 3) {
+
+
+        } else if (report.faction == 4) {
+
+          // ------------------------------------------------------------------------
+          // Deleting RA specific details
+          // ------------------------------------------------------------------------
+          response = await Vue.prototype.$dbCon.deleteData("missionStore on behalf of "+payload.caller,
+            {table:"report_detail_ra", payload: [{id: state.report_details.id}]});
+
+          context.commit("logger/addEntry", {message: "Report detail RA: "+response.message}, {root: true});
 
 
         }
