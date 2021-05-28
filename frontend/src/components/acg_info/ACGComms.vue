@@ -1,5 +1,5 @@
 <template>
-  <div class="width-80 margin-auto">
+  <div class="width-80">
     <div class="text-align-center">
       <h1>Join us on our Comms!</h1>
     </div>

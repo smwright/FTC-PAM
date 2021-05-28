@@ -1,5 +1,9 @@
 <template >
   <div>
+    <div v-if="campaign" class="container text-align-justify">
+      Get an overview of the units or missions of {{ campaign.name }}.
+    </div>
+
     <DivLinkButton class="heading" v-bind="{routeName: 'CampaignUnits', routeParams:{campaign_id: campaign_id}}">
       Units
     </DivLinkButton>
@@ -9,7 +13,6 @@
     <DivLinkButton class="heading" v-bind="{routeName: 'RecommendedReportsCampaign', routeParams:{campaign_id: campaign_id}}">
       Recommended reports
     </DivLinkButton>
-
 
     <router-view name="sideview_units"></router-view>
   </div>

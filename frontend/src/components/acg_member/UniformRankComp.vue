@@ -1,37 +1,56 @@
 <template>
-  <div :class="[showBig ? 'uniform1' : 'uniform2']">
-    <template v-if="faction != 0">
-      <img class="uniform-images" v-bind:src="uniformImage"/>
-      <img class="uniform-images" v-bind:src="rankImage(faction)"/>
-      <img
-        v-if="showWings"
-        class="uniform-images" v-bind:src="wingsImage"/>
-    </template>
-    <template v-else>
-      <div>
-        <div>
-          Rank-value {{rank_real_value}}
-        </div>
-
+  <div>
+    <!-- Simple single component style-->
+    <div
+      v-if="single_component"
+    >
+      <div class="uniform-images">
+        <img  v-bind:src="rankImage(faction)"/>
       </div>
-      <div class="clearfix">
-        <div class="float-left">
-          <img class="uniform-images" v-bind:src="rankImage(1)"/>
-          <div class="text-align-center">
-            {{rankAbbreviation(1)}}
+      <div class="text-align-center">
+        {{rankName(faction)}}
+      </div>
+    </div>
+
+    <!-- Predefined styles for rosters -->
+    <div
+      v-else
+      :class="[showBig ? 'uniform1' : 'uniform2']"
+    >
+      <template v-if="faction != 0">
+        <img class="uniform-images" v-bind:src="uniformImage"/>
+        <img class="uniform-images" v-bind:src="rankImage(faction)"/>
+        <img
+          v-if="showWings"
+          class="uniform-images" v-bind:src="wingsImage"/>
+      </template>
+      <template v-else>
+        <div>
+          <div>
+            Rank-value {{rank_real_value}}
           </div>
+
         </div>
-        <div class="float-left">
-          <img class="uniform-images" v-bind:src="rankImage(2)"/>
-          <div class="text-align-center">
-            {{rankAbbreviation(2)}}
+        <div class="clearfix">
+          <div class="float-left">
+            <img class="uniform-images" v-bind:src="rankImage(1)"/>
+            <div class="text-align-center">
+              {{rankAbbreviation(1)}}
+            </div>
           </div>
-        </div>
-        <div class="float-left">
-          <img class="uniform-images" v-bind:src="rankImage(3)"/>
-          <div class="text-align-center">
-            {{rankAbbreviation(3)}}
+          <div class="float-left">
+            <img class="uniform-images" v-bind:src="rankImage(2)"/>
+            <div class="text-align-center">
+              {{rankAbbreviation(2)}}
+            </div>
           </div>
+          <div class="float-left">
+            <img class="uniform-images" v-bind:src="rankImage(3)"/>
+            <div class="text-align-center">
+              {{rankAbbreviation(3)}}
+            </div>
+          </div>
+
         </div>
         <div class="float-left">
           <img class="uniform-images" v-bind:src="rankImage(4)"/>
@@ -40,8 +59,6 @@
           </div>
         </div>
 
-      </div>
-    </template>
   </div>
 </template>
 
@@ -52,6 +69,10 @@ export default {
   name: "UniformRankComp",
   props: {
 
+    single_component: {
+      type: Boolean,
+      default: false
+    },
     character_id: {
       type: Number,
       default: 0
@@ -174,6 +195,8 @@ export default {
           }
         )
 
+        if(rank_obj == undefined) return "";
+
         rank_image = rank_obj.image;
 
       } else {
@@ -194,8 +217,21 @@ export default {
             && item.faction == faction;
         }
       )
-
+      if(rank_obj == undefined) return "";
       return rank_obj.abreviation;
+    },
+
+    rankName: function(faction) {
+
+      let real_value = this.rank_real_value;
+      let rank_obj = this.rank_lookup.find(
+        function(item) {
+          return item.real_value == real_value
+            && item.faction == faction;
+        }
+      )
+      if(rank_obj == undefined) return "";
+      return rank_obj.rank_name;
     },
   }
 
@@ -207,6 +243,7 @@ export default {
 .uniform-images {
   max-height: 90px;
   horiz-align: center;
+  text-align: center;
 }
 
 .uniform1 {
