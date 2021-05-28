@@ -19,21 +19,33 @@
 </template>
 
 <script>
-import { mapGetters} from "vuex"
-import DivLinkButton from "../basic_comp/DivLinkButton"
+  import { mapState, mapGetters } from "vuex"
+  import DivLinkButton from "../basic_comp/DivLinkButton"
 
-export default {
-  name: 'SideNav',
-  components: {
-    DivLinkButton
-  },
-  data () {
-    return {
-      campaign_id: this.$route.params.campaign_id
+  export default {
+    name: 'SideNav',
+    components: {
+      DivLinkButton
+    },
+    created () {
+
+    },
+    data () {
+      return {
+        campaign_id: this.$route.params.campaign_id
+      }
+    },
+    computed: {
+
+      ...mapState("missionStore", {
+
+        campaign: state => state.campaign[0],
+      }),
+    },
+    methods: {
+
     }
-  },
-}
-
+  }
 
 </script>
 

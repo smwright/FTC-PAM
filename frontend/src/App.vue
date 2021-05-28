@@ -545,9 +545,9 @@ select {
   display: inline-block;
 }
 
-.inline{
-  display: inline
-}
+/*.inline{*/
+  /*display: inline*/
+/*}*/
 
 .table {
   display: table;

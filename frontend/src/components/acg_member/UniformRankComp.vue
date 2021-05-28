@@ -39,15 +39,16 @@
               {{rankAbbreviation(3)}}
             </div>
           </div>
-
-        </div>
-        <div class="float-left">
-          <img class="uniform-images" v-bind:src="rankImage(4)"/>
-          <div class="text-align-center">
-            {{rankAbbreviation(4)}}
+          <div class="float-left">
+            <img class="uniform-images" v-bind:src="rankImage(4)"/>
+            <div class="text-align-center">
+              {{rankAbbreviation(4)}}
+            </div>
           </div>
-        </div>
 
+        </div>
+      </div>
+    </template>
   </div>
 </template>
 
