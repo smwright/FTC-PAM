@@ -1,5 +1,5 @@
 <template>
-  <div class="width-80 margin-auto">
+  <div class="width-80">
     <div class="text-align-center">
       <h1>Looking to Join?</h1>
     </div>

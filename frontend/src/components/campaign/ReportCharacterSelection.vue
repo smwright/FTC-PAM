@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="heading">CHARACTER SELECTION</div>
     <div class="container">
+      <p class = heading>CHARACTER SELECTION</p>
       <p>Choose one of the characters below or create a new character for your report. What characters are available to
       you depends on a set of criteria.</p>
       <ul>
@@ -23,7 +23,10 @@
 
         <template v-if="character !== null">
           <div class="div-button" v-on:click="selectCharacter(character)">
-            <CharacterHeader v-bind="character"></CharacterHeader>
+            <CharacterHeader
+              v-bind="character"
+              v-bind:character_decorations="decorationsByCharacterId(character.character_id)"
+            ></CharacterHeader>
             <div v-if="character.last_mission_hist_date != undefined">
               <span>Last sortie on {{ character.last_mission_hist_date }} for {{ character.hist_unit_name }}.</span>
             </div>
@@ -42,6 +45,7 @@
 
 <script>
 import CharacterHeader from "../campaign/CharacterHeader"
+import statConv from "../../resource/statusConverter"
 import { mapGetters } from "vuex"
 
 export default {
@@ -50,11 +54,24 @@ export default {
   components: {
     CharacterHeader
   },
+  mixins: [statConv],
   async mounted () {
 
     // Load character info
     this.$store.dispatch('characterStore/loadCharacters',
       {caller: this.$options.name, member_id: await this.$auth.getUserId(this.$options.name)})
+      .then(async response => {
+        this.$store.dispatch('characterStore/loadStoreData',
+          {
+            caller: this.$options.name,
+            call_object: {
+              view: "decoration_info",
+              member_id: await this.$auth.getUserId(this.$options.name)
+            },
+            data_array_name: "decorations"
+          }
+        )
+      })
       .then(async response => {
         return await this.$auth.getUserUnit(this.$options.name, this.$route.params.campaign_id)
       })
@@ -97,7 +114,8 @@ export default {
   computed: {
 
     ...mapGetters("characterStore", [
-      "selectableCharacters"
+      "selectableCharacters",
+      "decorationsByCharacterId"
     ]),
 
     ...mapGetters("missionStore", [
@@ -115,6 +133,44 @@ export default {
           .then(response => {
             character.first_name = response.first_name;
             character.last_name = response.last_name;
+
+            let portrait_arr = [];
+            switch(this.faction) {
+              case 1:
+                portrait_arr = this.lw_images;
+                break;
+              case 2:
+                portrait_arr = this.raf_images;
+                break;
+              case 3:
+                portrait_arr = this.vvs_images;
+                break;
+              case 4:
+                portrait_arr = this.lw_images;
+                break;
+              default:
+                portrait_arr = [];
+                break;
+            }
+
+            let array = portrait_arr.background;
+            let bg = array[Math.floor(Math.random() * array.length)];
+            array = portrait_arr.ears;
+            let ears = array[Math.floor(Math.random() * array.length)];
+            array = portrait_arr.eyes;
+            let eyes = array[Math.floor(Math.random() * array.length)];
+            array = portrait_arr.hair;
+            let hair = array[Math.floor(Math.random() * array.length)];
+            array = portrait_arr.head;
+            let head = array[Math.floor(Math.random() * array.length)];
+            array = portrait_arr.mouth;
+            let mouth = array[Math.floor(Math.random() * array.length)];
+            array = portrait_arr.nose;
+            let nose = array[Math.floor(Math.random() * array.length)];
+
+            character.portrait_seed = bg + "-" + ears + "-" + eyes + "-" + hair + "-"
+              + head + "-" + mouth + "-" + nose;
+
           })
           .catch(error => {
             console.log(error.message);
@@ -142,7 +198,8 @@ export default {
         markings: null,
         synopsis: null,
         accepted: 0,
-        accepted_by: null
+        accepted_by: null,
+        portrait_seed: character.portrait_seed
       }
 
       console.log(JSON.stringify(report_info));

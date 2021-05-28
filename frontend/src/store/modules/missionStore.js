@@ -21,8 +21,8 @@ const state = {
   assets: [],
   members: [],
   pilot_fates: [],
-  report_response: []
-
+  report_response: [],
+  decorations: []
 };
 
 // getters
@@ -560,6 +560,16 @@ const  actions = {
       }
       await context.dispatch("loadAssets", payload);
       await context.dispatch("loadMembers", payload);
+      await context.dispatch('loadStoreData',
+        {
+          caller: 'missionStore',
+          call_object: {
+            view: "decoration_info",
+            character_id: context.state.report.character_id
+          },
+          data_array_name: "decorations"
+        }
+      )
 
       resolve();
     })
@@ -765,7 +775,8 @@ const  actions = {
                     id: -1,
                     personified_by: report.member_id,
                     first_name: report.first_name,
-                    last_name: report.last_name
+                    last_name: report.last_name,
+                    portrait_seed: report.portrait_seed
                   }]
               });
           } catch (err) {
@@ -985,7 +996,7 @@ const  actions = {
 
       } catch (e) {
 
-        console.log(JSON.stringify(e))
+        console.log(JSON.stringify(e));
         reject(e);
       }
     })
