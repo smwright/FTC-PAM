@@ -3,7 +3,7 @@
       <span>{{ real_date }}</span>
       <span>{{ name }}</span>
       <span>({{ hist_date }})</span>
-    <div class="inline float-right">
+    <div class="float-right">
       <span>{{ missionStatus[mission_status] }}</span>
     </div>
   </div>

@@ -2,7 +2,7 @@
   <div>
     <template v-if="extended_info">
       <table>
-        <tr v-for="award in filterByKeys('character_decorations', { character_id: character_id, awarded: 1})">
+        <tr v-for="award in character_decorations">
           <td v-if="awardImage(award.award_image)">
             <img
               v-bind:class="{ medalSmall: small_awards }"
@@ -17,7 +17,7 @@
       </table>
 
     </template>
-    <template v-else v-for="award in filterByKeys('character_decorations', { character_id: character_id, awarded: 1})">
+    <template v-else v-for="award in character_decorations">
       <img
         v-if="awardImage(award.award_image)"
         v-bind:class="{ medalSmall: small_awards }"
@@ -30,7 +30,6 @@
 </template>
 
 <script>
-import { mapState, mapGetters } from "vuex"
 
 export default {
   name: "AwardComp",
@@ -46,15 +45,15 @@ export default {
     extended_info: {
       type: Boolean,
       default: false
+    },
+    character_decorations: {
+      type: Array,
+      default: function () {
+        return [];
+      }
     }
   },
   computed: {
-
-    ...mapGetters("memberInfo", [
-      "filterByKey",
-      "filterByKeys"
-
-    ])
 
   },
   methods: {

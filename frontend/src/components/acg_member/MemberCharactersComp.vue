@@ -37,6 +37,8 @@
                 v-bind:rank_image="character.rank_image"
                 v-bind:rank_disp_value="character.disp_value"
                 v-bind:faction="character.faction"
+                v-bind:portrait_seed="character.portrait_seed"
+                v-bind:character_decorations="decorations"
               ></UniformRankComp>
 
               <div class="inline-block width-60 container uniform-stripe">
@@ -44,6 +46,7 @@
                   class=""
                   v-bind:character_id="character.character_id"
                   v-bind:small_awards="true"
+                  v-bind:character_decorations="character_decorations(character.character_id)"
                 ></AwardComp>
               </div>
             </div>
@@ -85,6 +88,7 @@ export default {
     ...mapState("memberInfo", {
 
       characters: state => state.member_characters,
+      decorations: state => state.character_decorations
     }),
 
     ...mapGetters("memberInfo", [
@@ -103,6 +107,15 @@ export default {
 
       return faction === 2 || faction === 3;
     },
+
+    character_decorations: function (character_id) {
+
+      var awards = this.decorations.filter(
+        function (item) {
+          return item["character_id"] == character_id;
+        });
+      return awards;
+    }
   }
 }
 </script>

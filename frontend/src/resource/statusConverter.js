@@ -174,18 +174,69 @@ export default {
       ],
 
       numberEnemyACStatus:
-        [
-          "NIL", //0
-          "less than 3", //1
-          "less than 10", //2
-          "less than 20", //3
-          "20+", //4
-          "30+", //5
-          "40+", //6
-          "50+", //7
-          "60+", //8
-          "100+" //9
-        ]
+      [
+        "NIL", //0
+        "less than 3", //1
+        "less than 10", //2
+        "less than 20", //3
+        "20+", //4
+        "30+", //5
+        "40+", //6
+        "50+", //7
+        "60+", //8
+        "100+" //9
+      ],
+
+      lw_images: { //images for the Luftwaffe character portraits
+        background: [1, 2, 3, 4, 5, 6, 7],
+        ears: [1, 2, 3, 4, 5, 6, 7],
+        eyes: [1, 2, 3, 4, 5, 6],
+        hair: [1, 2, 3, 4, 5, 6, 7],
+        head: [1, 2, 3, 4, 5, 6, 7],
+        mouth: [1, 2, 3, 4, 5, 6, 7],
+        nose: [1, 2, 3, 4, 5, 6, 7],
+      },
+
+      raf_images: { //images for the Luftwaffe character portraits
+        background: [1, 2, 3, 4, 5, 6,],
+        ears: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+        eyes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
+        hair: [1, 2, 3, 4, 6, 7, 8, 9, 10, 11],
+        head: [1, 2, 3, 4, 5, 6, 7, 8],
+        mouth: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
+        nose: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+      },
+
+      usaaf_images: { //images for the Luftwaffe character portraits
+        background: [3, 5, 6],
+        ears: [1, 2, 3, 4, 5, 6],
+        eyes: [1, 2, 3, 4, 5, 6],
+        hair: [1, 2, 3, 4, 5, 6],
+        head: [1, 2, 3, 4, 5, 6],
+        mouth: [1, 2, 3, 4, 5, 6],
+        nose: [1, 2, 3, 4, 5, 6],
+      },
+
+      vvs_images: { //images for the Luftwaffe character portraits
+        background: [1, 5],
+        ears: [4, 6, 8],
+        eyes: [1, 2, 3, 6, 7, 8, 11, 12],
+        hair: [1, 2, 3, 4, 5, 6, 9],
+        head: [1, 2, 3, 4, 5, 6, 7, 8],
+        mouth: [1, 2, 5, 8, 9, 10, 11, 12, 14, 15, 16],
+        nose: [1, 3, 7, 10],
+      },
+
+      ra_images: { //images for the Luftwaffe character portraits
+        background: [1, 2, 3, 4, 5, 6, 7],
+        ears: [1, 2, 3, 4, 5, 6, 7],
+        eyes: [1, 2, 3, 4, 5, 6],
+        hair: [1, 2, 3, 4, 5, 6, 7],
+        head: [1, 2],
+        mouth: [1, 2, 3, 4, 5, 6, 7],
+        nose: [1, 2, 3, 4, 5, 6, 7],
+      },
+
     }
   }
 }

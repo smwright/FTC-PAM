@@ -27,7 +27,7 @@ function whitelist_table($name) {
         "briefing" => array("mission_id", "faction", "text"),
         "campaign" => array("name", "is_primary", "platform", "campaign_status", "time", "open", "campaign_link",
             "description", "image"),
-        "career_character" => array("personified_by", "first_name", "last_name"),
+        "career_character" => array("personified_by", "first_name", "last_name", "portrait_seed"),
         "claim" => array("report_id", "asset_id", "description", "accepted", "accepted_by"),
         "claim_lw" => array("claim_id", "claim_time", "place", "opponent", "type_of_destruction", "type_of_impact",
             "fate_of_crew", "witness", "confirmed"),

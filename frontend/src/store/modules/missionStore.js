@@ -21,8 +21,8 @@ const state = {
   assets: [],
   members: [],
   pilot_fates: [],
-  report_response: []
-
+  report_response: [],
+  decorations: []
 };
 
 // getters
@@ -560,6 +560,16 @@ const  actions = {
       }
       await context.dispatch("loadAssets", payload);
       await context.dispatch("loadMembers", payload);
+      await context.dispatch('loadStoreData',
+        {
+          caller: 'missionStore',
+          call_object: {
+            view: "decoration_info",
+            character_id: context.state.report.character_id
+          },
+          data_array_name: "decorations"
+        }
+      )
 
       resolve();
     })
@@ -765,7 +775,8 @@ const  actions = {
                     id: -1,
                     personified_by: report.member_id,
                     first_name: report.first_name,
-                    last_name: report.last_name
+                    last_name: report.last_name,
+                    portrait_seed: report.portrait_seed
                   }]
               });
           } catch (err) {
@@ -985,7 +996,7 @@ const  actions = {
 
       } catch (e) {
 
-        console.log(JSON.stringify(e))
+        console.log(JSON.stringify(e));
         reject(e);
       }
     })
@@ -1376,6 +1387,14 @@ const  actions = {
           // ------------------------------------------------------------------------
           claim_detail_response = await Vue.prototype.$dbCon.deleteData("missionStore on behalf of "+payload.caller,
             {table:"claim_vvs", payload: claim_detail_ids});
+        } else if (context.state.report.faction == 4) {
+
+          // ------------------------------------------------------------------------
+          // Deleting RA claims
+          // ------------------------------------------------------------------------
+          claim_detail_response = await Vue.prototype.$dbCon.deleteData("missionStore on behalf of "+payload.caller,
+            {table:"claim_ra", payload: claim_detail_ids});
+
         }
 
         // console.log("Claim: "+claim_response.message);
@@ -1572,6 +1591,17 @@ const  actions = {
 
 
         } else if (report.faction == 3) {
+
+
+        } else if (report.faction == 4) {
+
+          // ------------------------------------------------------------------------
+          // Deleting RA specific details
+          // ------------------------------------------------------------------------
+          response = await Vue.prototype.$dbCon.deleteData("missionStore on behalf of "+payload.caller,
+            {table:"report_detail_ra", payload: [{id: state.report_details.id}]});
+
+          context.commit("logger/addEntry", {message: "Report detail RA: "+response.message}, {root: true});
 
 
         }

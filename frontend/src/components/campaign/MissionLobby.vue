@@ -2,7 +2,22 @@
   <div>
     <div class="container">
       <MissionHeader v-bind="missionById"></MissionHeader>
-      <button class="margin-top-bottom" v-if="show_add_report_button" v-on:click="addReport">Add new report</button>
+      <HideableDiv
+        v-if="missionById !== undefined"
+        v-bind:changing-button="true"
+      >
+        <template slot="buttonVisible">
+          <button>Hide help</button>
+          <button class="margin-top-bottom" v-if="show_add_report_button" v-on:click.stop="addReport">Add new report</button>
+
+        </template>
+        <template slot="buttonHidden">
+          <button>Show help</button>
+          <button class="margin-top-bottom" v-if="show_add_report_button" v-on:click.stop="addReport">Add new report</button>
+
+        </template>
+        <MissionHelp v-bind:mission_name="missionById.name"></MissionHelp>
+      </HideableDiv>
     </div>
     <router-view name="mission_lobby_content"></router-view>
   </div>
@@ -10,12 +25,16 @@
 
 <script>
 import MissionHeader from "./MissionHeader";
+import MissionHelp from "./MissionLobbyHelp"
+import HideableDiv from "../basic_comp/HideableDiv"
 import { mapGetters } from "vuex"
 
 export default {
   name: "MissionLobby",
   components: {
     MissionHeader,
+    HideableDiv,
+    MissionHelp
   },
   mounted () {
 

@@ -21,6 +21,7 @@ VIEW `report_info` AS
         `career_character`.`id` AS `character_id`,
         `career_character`.`first_name` AS `first_name`,
         `career_character`.`last_name` AS `last_name`,
+        `career_character`.`portrait_seed` AS `portrait_seed`,
         `acg_member`.`id` AS `member_id`,
         `acg_member`.`callsign` AS `callsign`,
         `hist_unit`.`faction` AS `faction`,

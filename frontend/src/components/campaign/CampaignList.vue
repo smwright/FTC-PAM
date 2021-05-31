@@ -1,7 +1,19 @@
 <template>
   <div>
-    <p class="container">Here you find a list of all ACG campaigns. The list contains future, current
-    and past campaigns.</p>
+    <div class="container">
+      <p class="text-align-justify">The historical campaign is ACGs main event. Participation is mandatory and exclusive to ACG members.
+        Non members interested in joining are welcome to join in and try it out though. On this page you’ll find a list of
+        past-, current- and future campaigns. The list will give you the name of the campaign, which simulator it was flown
+        on, what time it was or is flown (usually Sunday’s 1900 local british time), and it’s current status (In preparation,
+        ongoing or finished). There’s also some statistics like average number of participants per mission, how many missions
+        were flown etc.. .
+      </p>
+      <p class="text-align-justify">
+        Click on any campaign to access information about the unit setup of the campaign, mission briefings and after action
+        reports.
+      </p>
+
+    </div>
     <template>
       <h3>Ongoing campaigns</h3>
       <DivLinkButton

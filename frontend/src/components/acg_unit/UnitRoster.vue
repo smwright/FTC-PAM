@@ -42,6 +42,7 @@
             v-bind:rank_real_value="member.rank_value"
             v-bind:rank_lookup="rank_lookup"
             v-bind:faction="roster_d.faction"
+            v-bind:show_portrait="false"
             ></UniformRankComp>
 
             <div class="inline-block padding-10 info-comp min-height-100px">

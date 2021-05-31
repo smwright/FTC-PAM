@@ -1,6 +1,23 @@
 <template>
   <div>
-    <p>Here you find a list of all units of the campaign {{campaign_id}}.</p>
+    <div v-if="campaign" class="container">
+      <p class="text-align-justify">
+        The list below shows all units that
+        <template v-if="campaign.campaign_status > 1">
+          took
+        </template>
+        <template v-else>
+          take
+        </template>
+        part in {{ campaign.name }}. Each campaign has a distinct structure of historical units and subunits, depending
+        on the historical context of the campaign. Some of the units are represented by ACG base units, that is a group
+        of ACG pilots flying at that unit.
+      </p>
+      <p class="text-align-justify">
+        Click on the + and - buttons of each unit to unfold and fold the unit structure. Click on the units to get collected
+        statistics of the unit and all of its subunits, or the pilot roster of a unit.
+      </p>
+    </div>
     <div v-for="child in nestedData('campaign_units')">
       <UnitBaseComp v-bind="child"></UnitBaseComp>
     </div>
@@ -9,7 +26,7 @@
 
 <script>
 import UnitBaseComp from "./UnitBaseComp";
-import { mapGetters } from "vuex"
+import { mapState, mapGetters } from "vuex"
 
 export default {
   name: 'Unit',
@@ -75,6 +92,10 @@ export default {
   },
   computed: {
 
+    ...mapState("missionStore", {
+
+      campaign: state => state.campaign[0],
+    }),
 
     ...mapGetters("unitAdmin", [
       "nestedData",
