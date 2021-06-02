@@ -133,3 +133,41 @@ WHERE faction = 3);
 --         mouth: [1, 2, 5, 8, 9, 10, 11, 12, 14, 15, 16],
 --         nose: [1, 3, 7, 10],
 --       }
+
+SELECT 
+CONCAT(
+	"2-",
+	ELT(FLOOR(RAND()*7)+1, '1', '2', '3', '4' , '5' , '6' , '7'), "-",
+    ELT(FLOOR(RAND()*6)+1, '1', '2', '3', '4' , '5' , '6'), "-",
+    ELT(FLOOR(RAND()*7)+1, '1', '2', '3', '4' , '5' , '6' , '7'), "-",
+    ELT(FLOOR(RAND()*7)+1, '1', '2', '3', '4' , '5' , '6' , '7'), "-",
+    ELT(FLOOR(RAND()*7)+1, '1', '2', '3', '4' , '5' , '6' , '7'), "-",
+    ELT(FLOOR(RAND()*7)+1, '1', '2', '3', '4' , '5' , '6' , '7')
+);
+
+UPDATE career_character
+SET
+portrait_seed = CONCAT(
+	"2-",
+	ELT(FLOOR(RAND()*7)+1, '1', '2', '3', '4' , '5' , '6' , '7'), "-",
+    ELT(FLOOR(RAND()*6)+1, '1', '2', '3', '4' , '5' , '6'), "-",
+    ELT(FLOOR(RAND()*7)+1, '1', '2', '3', '4' , '5' , '6' , '7'), "-",
+    ELT(FLOOR(RAND()*2)+1, '1', '2'), "-",
+    ELT(FLOOR(RAND()*7)+1, '1', '2', '3', '4' , '5' , '6' , '7'), "-",
+    ELT(FLOOR(RAND()*7)+1, '1', '2', '3', '4' , '5' , '6' , '7')
+) WHERE id IN (
+SELECT DISTINCT
+character_id
+FROM report 
+LEFT JOIN deployed_unit ON report.deployed_unit_id = deployed_unit.id
+LEFT JOIN hist_unit ON deployed_unit.hist_unit_id = hist_unit.id
+WHERE faction = 4);
+-- ra_images: { //images for the Luftwaffe character portraits
+--         background: [1, 2, 3, 4, 5, 6, 7],
+--         ears: [1, 2, 3, 4, 5, 6, 7],
+--         eyes: [1, 2, 3, 4, 5, 6],
+--         hair: [1, 2, 3, 4, 5, 6, 7],
+--         head: [1, 2],
+--         mouth: [1, 2, 3, 4, 5, 6, 7],
+--         nose: [1, 2, 3, 4, 5, 6, 7],
+--       },
