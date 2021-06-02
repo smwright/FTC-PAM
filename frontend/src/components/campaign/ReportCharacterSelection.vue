@@ -146,7 +146,7 @@ export default {
                 portrait_arr = this.vvs_images;
                 break;
               case 4:
-                portrait_arr = this.lw_images;
+                portrait_arr = this.ra_images;
                 break;
               default:
                 portrait_arr = [];
