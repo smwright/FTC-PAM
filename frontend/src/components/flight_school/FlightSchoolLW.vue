@@ -23,7 +23,7 @@
         <img title="IL-2 Sturmovik: Great Battles" class="buttonPlatformImage" src="../../assets/images/flight_school_images/il2_gb_logo.png"/>
         <span class="buttonTitles">Aircraft Specifications</span>
         <br>
-        <span>Ths is the IL-2 Great Battles Forum page for all aircraft included in the IL-2 Great Battles series. Scroll down to find the specifications for all LW Aircraft included in the expansions. </span>
+        <span>This is the IL-2 Great Battles Forum page for all aircraft included in the IL-2 Great Battles series. Scroll down to find the specifications for all LW Aircraft included in the expansions. </span>
       </div>
     </div>
     <div class="div-button-half float-left" v-on:click="navigate_to('https://www.theairtacticalassaultgroup.com/wiki/doku.php?id=germanflightmanuals')">
@@ -31,7 +31,7 @@
         <img class="buttonImageThumbnail" src="../../assets/images/flight_school_images/lw/officers.jpg"/>
         <span class="buttonTitles">Organisation</span>
         <br>
-        <span>This is the Wiki page of Team Fusion (the people developing the game), where you can find all information about the aircraft included in IL-2 Sturmovik: Cliffs of Dover 'Blitz'. </span>
+        <span>This is a work in progress. </span>
       </div>
     </div>
     <div class="div-button-half float-right" v-on:click="navigate_to('https://forum.il2sturmovik.com/topic/25993-aircraft-flight-and-technical-specifications-and-operational-details/')">
@@ -39,7 +39,7 @@
         <img class="buttonImageThumbnail" src="../../assets/images/flight_school_images/lw/ranks.jpg"/>
         <span class="buttonTitles">Ranks & Appointments</span>
         <br>
-        <span>Ths is the IL-2 Great Battles Forum page for all aircraft included in the IL-2 Great Battles series. Scroll down to find the specifications for all LW Aircraft included in the expansions. </span>
+        <span>This is a work in progress. </span>
       </div>
     </div>
   </div>
