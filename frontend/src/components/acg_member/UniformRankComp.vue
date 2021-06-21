@@ -164,16 +164,16 @@ export default {
 
       if (this.faction === 1) {
 
-        if(awards.find(function (item) {return item.award_abr === "FBA"})) {
+        if(awards.find(function (item) {return item.award_abr === "FBA" && item.awarded })) {
           return baseURL + "medals_big/MedalFBA.png";
         }
-        if(awards.find(function (item) {return item.award_abr === "FBAgd"})) {
+        if(awards.find(function (item) {return item.award_abr === "FBAgd"  && item.awarded})) {
           return baseURL + "medals_big/MedalFBAgd.png";
         }
       }
       if (this.faction === 2) {
 
-        if(awards.find(function (item) {return item.award_abr === "AB"})) {
+        if(awards.find(function (item) {return item.award_abr === "AB"  && item.awarded})) {
           if(this.rank_disp_value < 8){
 
             return baseURL + "medals_big/MedalABFabric.png";
@@ -185,13 +185,13 @@ export default {
       }
       if (this.faction === 3) {
 
-        if(awards.find(function (item) {return item.award_abr === "AB_VVS"})) {
+        if(awards.find(function (item) {return item.award_abr === "AB_VVS"  && item.awarded})) {
           return baseURL + "medals_big/MedalAB_VVS.png";
         }
       }
       if (this.faction === 4) {
 
-        if(awards.find(function (item) {return item.award_abr === "PBRABrass"})) {
+        if(awards.find(function (item) {return item.award_abr === "PBRABrass"  && item.awarded})) {
           return baseURL + "medals_big/MedalPBRABrass.png";
         }
       }

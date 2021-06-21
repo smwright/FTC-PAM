@@ -3,7 +3,7 @@
     <template v-if="extended_info">
       <table>
         <tr v-for="award in character_decorations">
-          <td v-if="awardImage(award.award_image)">
+          <td v-if="award.awarded && awardImage(award.award_image)">
             <img
               v-bind:class="{ medalSmall: small_awards }"
               v-bind:src="awardImage(award.award_image)"
@@ -19,7 +19,7 @@
     </template>
     <template v-else v-for="award in character_decorations">
       <img
-        v-if="awardImage(award.award_image)"
+        v-if="award.awarded && awardImage(award.award_image)"
         v-bind:class="{ medalSmall: small_awards }"
         v-bind:src="awardImage(award.award_image)"
         v-bind:title="award.award_name"
@@ -51,7 +51,7 @@ export default {
       default: function () {
         return [];
       }
-    }
+    },
   },
   computed: {
 
