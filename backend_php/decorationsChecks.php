@@ -54,6 +54,10 @@ function checkDecorations($characterID, $faction, $dbx){
         for($missionID = $mnmid; $missionID <= $mxmid; $missionID++){
             checkVVSDecorations($characterID, $missionID, $dbx);
         }
+    } else if($faction == 4){
+        for($missionID = $mnmid; $missionID <= $mxmid; $missionID++){
+            checkVVSDecorations($characterID, $missionID, $dbx);
+        }
     }
 
 
@@ -718,6 +722,160 @@ function checkVVSDecorations($characterID, $missionID, $dbx){
     addRemoveDecoration($medalAbr, $criteria, $decorationsArray, $awardedArray,
         $awardArray, $characterID, $missionDate, $dbx, $msg);
 
+
+}
+
+function checkRADecorations($characterID, $missionID, $dbx){
+
+
+    //Get date of mission
+    $sql = "SELECT mission.real_date FROM mission WHERE mission.id = $missionID";
+    $result = mysqli_query($dbx, $sql);
+    $row = mysqli_fetch_assoc($result);
+    $missionDate = $row["real_date"];
+
+
+    //Get all decorations of the character
+    $sql = "SELECT award.abreviation, decoration.id, decoration.awarded FROM award ".
+        "LEFT JOIN decoration ON decoration.award_id = award.id ".
+        "WHERE decoration.character_id = $characterID";
+    $result = mysqli_query($dbx, $sql);
+    $decorationsArray = array();
+    $awardedArray = array();
+    while($row = mysqli_fetch_array($result)){
+        $decorationsArray[] = $row[0];
+        $awardedArray[$row[0]]["id"] = $row[1];
+        $awardedArray[$row[0]]["awarded"] = $row[2];
+    }
+
+    //Get all awards
+    $sql = "SELECT id, abreviation FROM award ".
+        "WHERE faction = 2";
+    $result = mysqli_query($dbx, $sql);
+    while($row = mysqli_fetch_array($result)){
+        $awardArray["$row[1]"] = $row[0];
+    }
+
+    //Get stats for character of non-Battle of Britain missions
+    $sql = "SELECT COUNT(report.id) AS sorties, SUM(report.pilot_status = 0) AS pilotOK, ".
+        "SUM(report.pilot_status = 1) AS pilotWND, SUM(report.asset_status = 2) AS aeroLST ".
+        "FROM report LEFT JOIN mission ON report.mission_id = mission.id ".
+        "WHERE report.character_id = $characterID AND report.accepted = 1 AND mission.id <= $missionID ".
+        "AND (hist_date < '1940-06-10 00:00:00' OR hist_date > '1940-10-31 23:59:59')";
+    $result = mysqli_query($dbx, $sql);
+    $row = mysqli_fetch_assoc($result);
+
+    $sortiesNonBOB = $row["sorties"];
+    $aeroLostNonBOB = $row["aeroLST"];
+    $pilotOKNonBOB = $row["pilotOK"];
+    $pilotWoundedNonBOB = $row["pilotWND"];
+
+    //Get stats for character of Battle of Britain missions
+    $sql = "SELECT COUNT(report.id) AS sorties, SUM(report.pilot_status = 0) AS pilotOK, ".
+        "SUM(report.pilot_status = 1) AS pilotWND, SUM(report.asset_status = 2) AS aeroLST ".
+        "FROM report LEFT JOIN mission ON report.mission_id = mission.id ".
+        "WHERE report.character_id = $characterID AND report.accepted = 1 AND mission.id <= $missionID ".
+        "AND (hist_date >= '1940-06-10 00:00:00' AND hist_date <= '1940-10-31 23:59:59')";
+    $result = mysqli_query($dbx, $sql);
+    $row = mysqli_fetch_assoc($result);
+
+
+    $sortiesBOB = $row["sorties"];
+    $aeroLostBOB = $row["aeroLST"];
+    $pilotOKBOB = $row["pilotOK"];
+    $pilotWoundedBOB = $row["pilotWND"];
+
+    $sorties = $sortiesNonBOB + $sortiesBOB;
+    $aeroLost = $aeroLostNonBOB + $aeroLostBOB;
+    $pilotOK = $pilotOKNonBOB + $pilotOKBOB;
+    $pilotWounded = $pilotWoundedNonBOB + $pilotWoundedBOB;
+
+    $sql = "SELECT career_character.personified_by FROM career_character ".
+        "WHERE career_character.id = $characterID";
+    $querry = mysqli_query($dbx, $sql);
+    $result = mysqli_fetch_assoc($querry);
+    $memberID = $result["personified_by"];
+    $rankValue = getRankValueAtMission($memberID, $missionID, $dbx);
+
+    $sql = "SELECT SUM(destrtable.pointsdestr) AS destr FROM report ".
+        "LEFT JOIN (SELECT claim.report_id, (1-claim_raf.shared*0.5) AS pointsdestr FROM claim
+            LEFT JOIN claim_raf ON claim.id = claim_raf.claim_id WHERE enemy_status = 0 AND claim.accepted = 1) AS destrtable ON destrtable.report_id = report.id ".
+        "WHERE report.accepted = 1  AND character_id = $characterID AND report.mission_id <= $missionID";
+
+    $result = mysqli_query($dbx, $sql);
+    $row = mysqli_fetch_assoc($result);
+    $destroyed = $row["destr"];
+
+    $sql = "SELECT SUM(probtable.pointsprob) AS prob FROM report ".
+        "LEFT JOIN (SELECT claim.report_id, (1-claim_raf.shared*0.5) AS pointsprob FROM claim
+           LEFT JOIN claim_raf ON claim.id = claim_raf.claim_id WHERE enemy_status = 1 AND claim.accepted = 1) AS probtable ON probtable.report_id = report.id ".
+        "WHERE report.accepted = 1 AND character_id = $characterID AND report.mission_id <= $missionID";
+
+    $result = mysqli_query($dbx, $sql);
+    $row = mysqli_fetch_assoc($result);
+    $probable = $row["prob"];
+
+    $sql = "SELECT COUNT(dmgtable.pointsdmg) AS dmg FROM report ".
+        "LEFT JOIN (SELECT claim.report_id, (1-claim_raf.shared*0.5) AS pointsdmg FROM claim
+             LEFT JOIN claim_raf ON claim.id = claim_raf.claim_id WHERE enemy_status = 2 AND claim.accepted = 1) AS dmgtable ON dmgtable.report_id = report.id ".
+        "WHERE report.accepted = 1 AND character_id = $characterID AND report.mission_id <= $missionID";
+//    echo $sql;
+    $result = mysqli_query($dbx, $sql);
+    $row = mysqli_fetch_assoc($result);
+    $damaged = $row["dmg"];
+
+    $succesfulReturnsNonBOB = $pilotOKNonBOB + $pilotWoundedNonBOB;
+    $succesfulReturnsBOB = $pilotOKBOB + $pilotWoundedBOB;
+    $succesfulReturns = $pilotOK + $pilotWounded;
+    $points = $destroyed*10 + $probable*5 + $damaged*2;
+    if($sorties > 0){
+        $rtbRatio = 1 - $aeroLost/$sorties;
+    } else {
+        $rtbRatio = 0;
+    }
+
+    //Check for RA Pilot Badge
+    $medalAbr = "BPM";
+    $criteria = $succesfulReturns > 1;
+    $msg = "succesfulReturns $succesfulReturns > 1";
+    addRemoveDecoration($medalAbr, $criteria, $decorationsArray, $awardedArray,
+        $awardArray, $characterID, $missionDate, $dbx, $msg);
+
+    //Medaglia di bronzo al valor Militare
+    $medalAbr = "VMB";
+    $criteria = ($destroyed >= 2 | $points > 30);
+    $msg = "(dest $destroyed >= 2 | points $points > 30)";
+    addRemoveDecoration($medalAbr, $criteria, $decorationsArray, $awardedArray,
+        $awardArray, $characterID, $missionDate, $dbx, $msg);
+
+
+    //Medaglia d' argento al valor Militare
+    $medalAbr = "VMA";
+    $criteria = ($destroyed >= 5 | $points > 100);
+    $msg = "(dest $destroyed >= 5 | points $points > 100)";
+    addRemoveDecoration($medalAbr, $criteria, $decorationsArray, $awardedArray,
+        $awardArray, $characterID, $missionDate, $dbx, $msg);
+
+    //Croce al Merito di Guerra
+    $medalAbr = "CMG";
+    $criteria = $succesfulReturns >= 6 & ($destroyed >= 2 | $points > 30);
+    $msg = "succesfulReturns $succesfulReturns >= 6 & ($destroyed >= 2 | $points > 30)";
+    addRemoveDecoration($medalAbr, $criteria, $decorationsArray, $awardedArray,
+        $awardArray, $characterID, $missionDate, $dbx, $msg);
+
+    //Croce al Valore Militare
+    $medalAbr = "CVM";
+    $criteria = $succesfulReturns > 10 & ($destroyed >= 5 | $points > 100);
+    $msg = "succesfulReturns $succesfulReturns > 10 & ($destroyed >= 5 | $points > 100)";
+    addRemoveDecoration($medalAbr, $criteria, $decorationsArray, $awardedArray,
+        $awardArray, $characterID, $missionDate, $dbx, $msg);
+
+    //Croce di Ferro 2a Classe
+    $medalAbr = "CF II";
+    $criteria = ($destroyed >= 8 | $points > 150);
+    $msg = "(dest $destroyed >= 8 | points $points > 150)";
+    addRemoveDecoration($medalAbr, $criteria, $decorationsArray, $awardedArray,
+        $awardArray, $characterID, $missionDate, $dbx, $msg);
 
 }
 
