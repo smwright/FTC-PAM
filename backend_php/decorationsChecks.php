@@ -750,7 +750,7 @@ function checkRADecorations($characterID, $missionID, $dbx){
 
     //Get all awards
     $sql = "SELECT id, abreviation FROM award ".
-        "WHERE faction = 2";
+        "WHERE faction = 4";
     $result = mysqli_query($dbx, $sql);
     while($row = mysqli_fetch_array($result)){
         $awardArray["$row[1]"] = $row[0];
@@ -798,8 +798,8 @@ function checkRADecorations($characterID, $missionID, $dbx){
     $rankValue = getRankValueAtMission($memberID, $missionID, $dbx);
 
     $sql = "SELECT SUM(destrtable.pointsdestr) AS destr FROM report ".
-        "LEFT JOIN (SELECT claim.report_id, (1-claim_raf.shared*0.5) AS pointsdestr FROM claim
-            LEFT JOIN claim_raf ON claim.id = claim_raf.claim_id WHERE enemy_status = 0 AND claim.accepted = 1) AS destrtable ON destrtable.report_id = report.id ".
+        "LEFT JOIN (SELECT claim.report_id, (1-claim_ra.shared*0.5) AS pointsdestr FROM claim
+            LEFT JOIN claim_ra ON claim.id = claim_ra.claim_id WHERE enemy_status = 0 AND claim.accepted = 1) AS destrtable ON destrtable.report_id = report.id ".
         "WHERE report.accepted = 1  AND character_id = $characterID AND report.mission_id <= $missionID";
 
     $result = mysqli_query($dbx, $sql);
@@ -807,8 +807,8 @@ function checkRADecorations($characterID, $missionID, $dbx){
     $destroyed = $row["destr"];
 
     $sql = "SELECT SUM(probtable.pointsprob) AS prob FROM report ".
-        "LEFT JOIN (SELECT claim.report_id, (1-claim_raf.shared*0.5) AS pointsprob FROM claim
-           LEFT JOIN claim_raf ON claim.id = claim_raf.claim_id WHERE enemy_status = 1 AND claim.accepted = 1) AS probtable ON probtable.report_id = report.id ".
+        "LEFT JOIN (SELECT claim.report_id, (1-claim_ra.shared*0.5) AS pointsprob FROM claim
+           LEFT JOIN claim_ra ON claim.id = claim_ra.claim_id WHERE enemy_status = 1 AND claim.accepted = 1) AS probtable ON probtable.report_id = report.id ".
         "WHERE report.accepted = 1 AND character_id = $characterID AND report.mission_id <= $missionID";
 
     $result = mysqli_query($dbx, $sql);
@@ -816,8 +816,8 @@ function checkRADecorations($characterID, $missionID, $dbx){
     $probable = $row["prob"];
 
     $sql = "SELECT COUNT(dmgtable.pointsdmg) AS dmg FROM report ".
-        "LEFT JOIN (SELECT claim.report_id, (1-claim_raf.shared*0.5) AS pointsdmg FROM claim
-             LEFT JOIN claim_raf ON claim.id = claim_raf.claim_id WHERE enemy_status = 2 AND claim.accepted = 1) AS dmgtable ON dmgtable.report_id = report.id ".
+        "LEFT JOIN (SELECT claim.report_id, (1-claim_ra.shared*0.5) AS pointsdmg FROM claim
+             LEFT JOIN claim_ra ON claim.id = claim_ra.claim_id WHERE enemy_status = 2 AND claim.accepted = 1) AS dmgtable ON dmgtable.report_id = report.id ".
         "WHERE report.accepted = 1 AND character_id = $characterID AND report.mission_id <= $missionID";
 //    echo $sql;
     $result = mysqli_query($dbx, $sql);
