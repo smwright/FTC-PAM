@@ -858,15 +858,15 @@ function checkRADecorations($characterID, $missionID, $dbx){
 
     //Croce al Merito di Guerra
     $medalAbr = "CMG";
-    $criteria = $succesfulReturns >= 6 & ($destroyed >= 2 | $points > 30);
-    $msg = "succesfulReturns $succesfulReturns >= 6 & ($destroyed >= 2 | $points > 30)";
+    $criteria = $succesfulReturns > 5 & ($destroyed >= 2 | $points > 30);
+    $msg = "succesfulReturns $succesfulReturns > 5 & (dest $destroyed >= 2 | points $points > 30)";
     addRemoveDecoration($medalAbr, $criteria, $decorationsArray, $awardedArray,
         $awardArray, $characterID, $missionDate, $dbx, $msg);
 
     //Croce al Valore Militare
     $medalAbr = "CVM";
     $criteria = $succesfulReturns > 10 & ($destroyed >= 5 | $points > 100);
-    $msg = "succesfulReturns $succesfulReturns > 10 & ($destroyed >= 5 | $points > 100)";
+    $msg = "succesfulReturns $succesfulReturns > 10 & (dest $destroyed >= 5 | points $points > 100)";
     addRemoveDecoration($medalAbr, $criteria, $decorationsArray, $awardedArray,
         $awardArray, $characterID, $missionDate, $dbx, $msg);
 
