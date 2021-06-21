@@ -824,6 +824,16 @@ function checkRADecorations($characterID, $missionID, $dbx){
     $row = mysqli_fetch_assoc($result);
     $damaged = $row["dmg"];
 
+    $sql = "SELECT COUNT(DISTINCT report.id) AS swgv ".
+        "FROM report LEFT JOIN claim ON claim.report_id = report.id ".
+        "LEFT JOIN claim_ground ON claim.id = claim_ground.claim_id ".
+        "WHERE character_id = $characterID AND report.accepted=1 AND claim.accepted = 1 ".
+        "AND claim_ground.id IS NOT NULL AND report.mission_id <= $missionID";
+    $result = mysqli_query($dbx, $sql);
+    $row = mysqli_fetch_assoc($result);
+
+    $sortiesWithGroundVictories = $row["swgv"];
+
     $succesfulReturnsNonBOB = $pilotOKNonBOB + $pilotWoundedNonBOB;
     $succesfulReturnsBOB = $pilotOKBOB + $pilotWoundedBOB;
     $succesfulReturns = $pilotOK + $pilotWounded;
@@ -843,37 +853,37 @@ function checkRADecorations($characterID, $missionID, $dbx){
 
     //Medaglia di bronzo al valor Militare
     $medalAbr = "VMB";
-    $criteria = ($destroyed >= 2 | $points > 30);
-    $msg = "(dest $destroyed >= 2 | points $points > 30)";
+    $criteria = ($destroyed >= 2 | $points > 30 | $sortiesWithGroundVictories > 3);
+    $msg = "(dest $destroyed >= 2 | points $points > 30 | sortiesWithGroundVictories $sortiesWithGroundVictories > 3)";
     addRemoveDecoration($medalAbr, $criteria, $decorationsArray, $awardedArray,
         $awardArray, $characterID, $missionDate, $dbx, $msg);
 
 
     //Medaglia d' argento al valor Militare
     $medalAbr = "VMA";
-    $criteria = ($destroyed >= 5 | $points > 100);
-    $msg = "(dest $destroyed >= 5 | points $points > 100)";
+    $criteria = ($destroyed >= 5 | $points > 100 | $sortiesWithGroundVictories > 8);
+    $msg = "(dest $destroyed >= 5 | points $points > 100 | sortiesWithGroundVictories $sortiesWithGroundVictories > 8)";
     addRemoveDecoration($medalAbr, $criteria, $decorationsArray, $awardedArray,
         $awardArray, $characterID, $missionDate, $dbx, $msg);
 
     //Croce al Merito di Guerra
     $medalAbr = "CMG";
-    $criteria = $succesfulReturns > 5 & ($destroyed >= 2 | $points > 30);
-    $msg = "succesfulReturns $succesfulReturns > 5 & (dest $destroyed >= 2 | points $points > 30)";
+    $criteria = $succesfulReturns > 5 & ($destroyed >= 2 | $points > 30 | $sortiesWithGroundVictories > 3);
+    $msg = "succesfulReturns $succesfulReturns > 5 & (dest $destroyed >= 2 | points $points > 30 | sortiesWithGroundVictories $sortiesWithGroundVictories > 3)";
     addRemoveDecoration($medalAbr, $criteria, $decorationsArray, $awardedArray,
         $awardArray, $characterID, $missionDate, $dbx, $msg);
 
     //Croce al Valore Militare
     $medalAbr = "CVM";
-    $criteria = $succesfulReturns > 10 & ($destroyed >= 5 | $points > 100);
-    $msg = "succesfulReturns $succesfulReturns > 10 & (dest $destroyed >= 5 | points $points > 100)";
+    $criteria = $succesfulReturns > 10 & ($destroyed >= 5 | $points > 100 | $sortiesWithGroundVictories > 8);
+    $msg = "succesfulReturns $succesfulReturns > 10 & (dest $destroyed >= 5 | points $points > 100 | sortiesWithGroundVictories $sortiesWithGroundVictories > 8)";
     addRemoveDecoration($medalAbr, $criteria, $decorationsArray, $awardedArray,
         $awardArray, $characterID, $missionDate, $dbx, $msg);
 
     //Croce di Ferro 2a Classe
     $medalAbr = "CF II";
-    $criteria = ($destroyed >= 8 | $points > 150);
-    $msg = "(dest $destroyed >= 8 | points $points > 150)";
+    $criteria = ($destroyed >= 8 | $points > 150 | $sortiesWithGroundVictories > 10);
+    $msg = "(dest $destroyed >= 8 | points $points > 150 | sortiesWithGroundVictories $sortiesWithGroundVictories > 10)";
     addRemoveDecoration($medalAbr, $criteria, $decorationsArray, $awardedArray,
         $awardArray, $characterID, $missionDate, $dbx, $msg);
 
