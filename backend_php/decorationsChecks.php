@@ -56,7 +56,7 @@ function checkDecorations($characterID, $faction, $dbx){
         }
     } else if($faction == 4){
         for($missionID = $mnmid; $missionID <= $mxmid; $missionID++){
-            checkVVSDecorations($characterID, $missionID, $dbx);
+            checkRADecorations($characterID, $missionID, $dbx);
         }
     }
 
