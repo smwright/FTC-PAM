@@ -65,7 +65,8 @@ export default {
         award_image != "MedalAB" &&
         award_image != "MedalFBA.png" &&
         award_image != "MedalFBAgd.png" &&
-        award_image != "MedalAB_VVS.png")
+        award_image != "MedalAB_VVS.png" &&
+        award_image != "MedalBPM.png")
       {
         return baseURL + "medals_big/" + award_image;
       } else {
