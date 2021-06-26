@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="container">
-      <button v-on:click="">Save unit</button>
-      <button v-on:click="">Fetch unit</button>
+      <button v-on:click="sendHUnits">Save unit</button>
+      <button v-on:click="fetchHUnits">Fetch unit</button>
     </div>
 
     <div class="clearfix container">
@@ -80,16 +80,16 @@
         <button class="float-left" v-on:click="clearImage">Clear image</button>
       </div>
       <div class="inline-table float-left half-width">
-        <label>Unit forum emblem:</label>
-        <p>Image URL:
-          <template v-if="unit_f_emblem != null">{{ unit_f_emblem.getAll('imageURL')[0] }}</template>
-        </p>        <ImageUpload
-          class="img-container"
-          v-model="unit_f_emblem"
-          savePath="/assets/images/unit_emblems/"
-        >
-        </ImageUpload>
-        <button class="float-left" v-on:click="clearImage">Clear image</button>
+        <!--<label>Unit forum emblem:</label>-->
+        <!--<p>Image URL:-->
+          <!--<template v-if="unit_f_emblem != null">{{ unit_f_emblem.getAll('imageURL')[0] }}</template>-->
+        <!--</p>        <ImageUpload-->
+          <!--class="img-container"-->
+          <!--v-model="unit_f_emblem"-->
+          <!--savePath="/assets/images/unit_emblems/"-->
+        <!--&gt;-->
+        <!--</ImageUpload>-->
+        <!--<button class="float-left" v-on:click="clearImage">Clear image</button>-->
       </div>
     </div>
   </div>
@@ -114,7 +114,7 @@ export default {
   data () {
     return {
 
-      unit_id: 0
+      unit_id: -1
     }
   },
   computed: {
@@ -188,7 +188,6 @@ export default {
         var unit = this.$store.getters['unitAdmin/findByKey']('hist_units', 'id', this.unit_id );
         if(unit === undefined) return null;
         if(unit !== undefined && unit.image instanceof FormData) {
-
           return unit.image;
         } else {
           if(!unit.image){
@@ -201,7 +200,7 @@ export default {
         }
       },
       set(value) {
-        this.$store.commit('assetAdmin/updateValue',
+        this.$store.commit('unitAdmin/updateValue',
           {
             array_name: "hist_units",
             id_column_name: "id",
@@ -211,34 +210,34 @@ export default {
           });
       }
     },
-    unit_f_emblem: {
-      get() {
-        var unit = this.$store.getters['unitAdmin/findByKey']('hist_units', 'id', this.unit_id );
-        if(unit === undefined) return null;
-        if(unit !== undefined && unit.f_image instanceof FormData) {
-
-          return unit.f_image;
-        } else {
-          if(!unit.f_image){
-            return null;
-          } else {
-            let formData = new FormData();
-            formData.append("imageURL", unit.f_image);
-            return formData;
-          }
-        }
-      },
-      set(value) {
-        this.$store.commit('assetAdmin/updateValue',
-          {
-            array_name: "hist_units",
-            id_column_name: "id",
-            id_column_value: this.unit_id,
-            update_column_name: "f_image",
-            update_column_value: value
-          });
-      }
-    },
+    // unit_f_emblem: {
+    //   get() {
+    //     var unit = this.$store.getters['unitAdmin/findByKey']('hist_units', 'id', this.unit_id );
+    //     if(unit === undefined) return null;
+    //     if(unit !== undefined && unit.f_image instanceof FormData) {
+    //
+    //       return unit.f_image;
+    //     } else {
+    //       if(!unit.f_image){
+    //         return null;
+    //       } else {
+    //         let formData = new FormData();
+    //         formData.append("imageURL", unit.f_image);
+    //         return formData;
+    //       }
+    //     }
+    //   },
+    //   set(value) {
+    //     this.$store.commit('unitAdmin/updateValue',
+    //       {
+    //         array_name: "hist_units",
+    //         id_column_name: "id",
+    //         id_column_value: this.unit_id,
+    //         update_column_name: "f_image",
+    //         update_column_value: value
+    //       });
+    //   }
+    // },
   },
   beforeRouteUpdate (to, from, next) {
 
@@ -250,6 +249,7 @@ export default {
     updateUnitID: function (id) {
 
       this.unit_id = Number(id);
+
     },
 
     clearImage: function () {
@@ -261,6 +261,25 @@ export default {
           update_column_name: "image",
           update_column_value: null
         });
+    },
+
+    sendHUnits: function () {
+
+      this.$store.dispatch('unitAdmin/sendHUnits',
+        {
+          caller: this.$options.name
+        }
+      ).then(response => {
+        this.$store.dispatch('unitAdmin/loadHUnits', {caller: this.$options.name});
+      })
+      .catch(error => {
+        console.log(error.message);
+      });
+    },
+
+    fetchHUnits: function () {
+
+      this.$store.dispatch('unitAdmin/loadHUnits', {caller: this.$options.name});
     }
 
   }

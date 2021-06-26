@@ -52,6 +52,12 @@
         <div class="div-button heading">Historical units</div>
       </template>
 
+      <DivLinkButton
+        class="unit-buttons"
+        v-bind:key="-1"
+        v-bind="{routeName: 'AdminHistUnit', routeParams: {unit_id: -1}}"
+      ><span class="heading">New historic unit</span></DivLinkButton>
+
       <HistUnitSideNav
         routeName="AdminHistUnit"
       >
@@ -103,18 +109,8 @@
         this.$store.dispatch('campaignAdmin/loadCampaigns', {caller: this.$options.name});
       }
 
+      this.$store.dispatch('unitAdmin/loadHUnits', {caller: this.$options.name});
 
-      this.$store.dispatch('unitAdmin/loadStoreData',
-        {
-          caller: this.$options.name,
-          call_object: {
-            view: "hist_unit_info",
-          },
-          data_array_name: "hist_units"
-        }
-      ).catch(error => {
-        console.log(error.message);
-      });
 
     },
     computed: {

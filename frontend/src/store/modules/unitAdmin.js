@@ -226,9 +226,105 @@ const  actions = {
 
   },
 
+  loadHUnits(context, payload) {
+
+    return new Promise( async function (resolve, reject) {
+
+      await context.dispatch('loadStoreData',
+        {
+          caller: payload.caller,
+          call_object: {
+            view: "hist_unit_info",
+          },
+          data_array_name: "hist_units"
+
+        }
+      ).then(resp => {
+
+        context.commit('addToDataArray',
+          {
+            array_name: "hist_units",
+            array_data: {
+              id: -1,
+              name: "NEW UNIT",
+              code: "",
+              faction: 0,
+              type: 1,
+              description: "",
+              image: ""
+            }
+          });
+      }).catch(error => {
+        reject(error);
+      });
+
+      resolve();
+
+    })
+
+
+
+  },
+
+  sendHUnits(context, payload) {
+
+    return new Promise(async function(resolve, reject) {
+
+      try {
+
+        //Cloning_h_units_array
+        let hist_units_send_array = [];
+        let formData;
+        context.commit("logger/addEntry", {message: "Saving historical units"}, {root: true});
+        context.commit("logger/addEntry", {message: "Sending historical unit emblems"}, {root: true});
+        for(let i=0; i<context.state.hist_units.length; i++){
+
+          formData = context.state.hist_units[i].image;
+          if(formData instanceof FormData){
+
+            await Vue.prototype.$dbCon.uploadImageFile("ImageUpload on behalf of "+payload.caller, formData)
+              .then(response => {
+                context.commit("logger/addEntry", {message: response.message}, {root: true});
+                formData = response.path;
+              })
+              .catch(error => {
+                context.commit("logger/addEntry", {message: error.error}, {root: true});
+              })
+          }
+
+          hist_units_send_array.push(
+            {
+              id: context.state.hist_units[i].id,
+              name: context.state.hist_units[i].name,
+              code: context.state.hist_units[i].code,
+              faction: context.state.hist_units[i].faction,
+              type: context.state.hist_units[i].type,
+              description: context.state.hist_units[i].description,
+              image: formData
+            }
+          );
+        }
+
+        let response = await Vue.prototype.$dbCon.insertUpdateData("unitAdmin on behalf of "+payload.caller,
+          {
+            table: "hist_unit",
+            payload: hist_units_send_array
+          });
+        context.commit("logger/addEntry", {message: "Hist unit: "+ response.message}, {root: true});
+
+        resolve();
+      } catch (e) {
+
+        console.log(JSON.stringify(e))
+        reject(e);
+
+      }
+
+    })
+  },
+
   sendMemberRosterAssets(context, payload) {
 
-    console.log("HERE");
     return new Promise(async function(resolve, reject) {
 
       try {

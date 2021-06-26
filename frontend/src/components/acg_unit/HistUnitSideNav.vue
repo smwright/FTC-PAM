@@ -30,11 +30,12 @@
     <DivLinkButton
       class="unit-buttons"
       v-for="unit in hist_units_filtered"
+      v-if="unit.id > 0"
       v-bind:class="{ nofaction: (unit.faction == 0), luftwaffe: (unit.faction == 1), raf: (unit.faction == 2), vvs: (unit.faction == 3)}"
       v-bind:key="unit.id"
       v-bind="{routeName: routeName, routeParams: {unit_id: unit.id}}"
     >
-      <img class="unitEmblem" :src="unit.image"/>
+      <img class="unitEmblem" :src="unit_emblem(unit.image)"/>
       <span class="heading">{{ unit.name }}</span>
     </DivLinkButton>
   </div>
@@ -140,6 +141,15 @@ export default {
 
     switchShowVVS: function () {
       this.showVVS = !this.showVVS;
+    },
+
+    unit_emblem: function (image) {
+
+      if(image instanceof FormData) {
+        return image.getAll('imageURL');
+      } else {
+        return image;
+      }
     },
 
   }
