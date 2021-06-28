@@ -6,6 +6,7 @@ VIEW `campaign_unit_member_info` AS
     SELECT 
         `cum`.`campaign_id` AS `campaign_id`,
         `cum`.`acg_unit_id` AS `acg_unit_id`,
+        `du`.`hist_unit_id` AS `hist_unit_id`,
         `cum`.`member_id` AS `member_id`,
         `cmm`.`mn_date` AS `mn_date`,
         `cmm`.`mx_date` AS `mx_date`,
@@ -20,7 +21,9 @@ VIEW `campaign_unit_member_info` AS
         `rai`.`markings` AS `markings`,
         `rai`.`image` AS `image`
     FROM
-        (((((((`campaign_unit_member` `cum`
+        ((((((((`campaign_unit_member` `cum`
+        LEFT JOIN `deployed_unit` `du` ON (((`du`.`acg_unit_id` = `cum`.`acg_unit_id`)
+            AND (`du`.`campaign_id` = `cum`.`campaign_id`))))
         LEFT JOIN `campaign_max_min_ext_date` `cmm` ON ((`cum`.`campaign_id` = `cmm`.`id`)))
         LEFT JOIN `transfer_status_events` `t` ON (((`t`.`member_id` = `cum`.`member_id`)
             AND (`t`.`date_in` < `cmm`.`mx_date`)
@@ -33,5 +36,6 @@ VIEW `campaign_unit_member_info` AS
         LEFT JOIN `promotion` `p` ON (((`cmp`.`member_id` = `p`.`member_id`)
             AND (`cmp`.`mx_date` = `p`.`promotion_date`))))
         LEFT JOIN `member_roster_asset` `mra` ON (((`mra`.`member_id` = `cum`.`member_id`)
+            AND (`mra`.`acg_unit_id` = `cum`.`acg_unit_id`)
             AND (`mra`.`campaign_id` = `cum`.`campaign_id`))))
         LEFT JOIN `roster_asset_info` `rai` ON ((`rai`.`id` = `mra`.`roster_asset_id`)))

@@ -75,7 +75,7 @@
             v-bind:member_id="member.member.member_id"
             v-bind:campaign_id="campaign_to_show"
             v-bind:asset_id="selectedAsset"
-
+            v-bind:acg_unit_id="acg_unit_id"
           >
           </UnitRosterSelect>
 
@@ -154,7 +154,6 @@ export default {
 
     fetchRAssets: function () {
 
-      console.log("FETCHINT");
       this.$store.dispatch('unitAdmin/loadStoreData',
         {
           caller: this.$options.name,
@@ -207,6 +206,7 @@ export default {
           caller: this.$options.name,
           call_object: {
             view: "member_roster_asset",
+            acg_unit_id: this.acg_unit_id
           },
           data_array_name: "member_r_assets"
         });

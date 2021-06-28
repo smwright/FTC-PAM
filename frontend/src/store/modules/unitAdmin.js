@@ -127,7 +127,6 @@ const  actions = {
 
   sendMemberRosterAssets(context, payload) {
 
-    console.log("HERE");
     return new Promise(async function(resolve, reject) {
 
       try {
@@ -136,7 +135,7 @@ const  actions = {
           function(item){
             return item.roster_asset_id !== null;
           });
-        console.log(JSON.stringify(send_array));
+
         let delete_array = context.state.member_r_assets.filter(
           function(item){
             return item.roster_asset_id === null & item.id > 0;

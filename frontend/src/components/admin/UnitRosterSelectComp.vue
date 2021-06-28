@@ -37,6 +37,10 @@ export default {
       type: [Number, String],
       default: 0
     },
+    acg_unit_id: {
+      type: [Number, String],
+      default: 0
+    },
     asset_id: {
       type: [Number, String],
       default: null
@@ -72,7 +76,8 @@ export default {
         var asset = this.$store.getters['unitAdmin/filterByKeys']('member_r_assets',
           {
             member_id: this.member_id,
-            campaign_id: this.campaign_id
+            campaign_id: this.campaign_id,
+            acg_unit_id: this.acg_unit_id
           }
         );
         if(asset.length > 0) {
@@ -93,6 +98,7 @@ export default {
               array_data: {
                 member_id: this.member_id,
                 campaign_id: this.campaign_id,
+                acg_unit_id: this.acg_unit_id,
                 roster_asset_id: value
               }
             });
