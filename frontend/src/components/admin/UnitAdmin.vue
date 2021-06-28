@@ -142,6 +142,7 @@ export default {
             caller: this.$options.name,
             call_object: {
               view: "member_roster_asset",
+              acg_unit_id: id
             },
             data_array_name: "member_r_assets"
           });
