@@ -3,7 +3,7 @@ include_once(dirname(__FILE__).'/dbx.php');
 
 //Set true if developing.
 $dev = true;
-$dev_user = "Thaine";
+$dev_user = "Ben";
 
 if(!$dev){
     // Getting info from phpBB forum session
@@ -60,9 +60,14 @@ switch ($params['action']){
         $newUserInfo = getUserInfo($username);
         if($newUserInfo != null){
             $res_array['username'] = $newUserInfo['username'];
-            $res_array['userID'] = $newUserInfo['id'];
+            $res_array['userID'] = $newUserInfo['member_id'];
             $res_array['callsign'] = $newUserInfo['callsign'];
-            $res_array['admin'] = $newUserInfo['admin'];
+            if($newUserInfo['member_status'] == 0){
+               $res_array['admin'] = $newUserInfo['admin'];
+            } else {
+               $res_array['admin'] = 0;
+            }
+
         }
     }
     echo(json_encode($res_array,JSON_NUMERIC_CHECK));
@@ -73,7 +78,7 @@ function getUserInfo($username) {
 
 
     $dbx = getDBx();
-    $sql = "SELECT id, username, callsign, admin FROM acg_member WHERE username = '$username'";
+    $sql = "SELECT member_id, username, callsign, admin, member_status FROM member_info_with_last_status WHERE username = '$username'";
     $result = mysqli_query($dbx, $sql);
     if (mysqli_num_rows($result)>0) {
         $res_array = mysqli_fetch_all($result, MYSQLI_ASSOC);
